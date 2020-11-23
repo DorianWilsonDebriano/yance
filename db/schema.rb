@@ -10,10 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_142127) do
+ActiveRecord::Schema.define(version: 2020_11_23_172342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "class_bookings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "sports_class_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sports_class_id"], name: "index_class_bookings_on_sports_class_id"
+    t.index ["user_id"], name: "index_class_bookings_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "sports_class_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sports_class_id"], name: "index_reviews_on_sports_class_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "sports_classes", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "date_time"
+    t.string "duration"
+    t.string "category"
+    t.integer "difficulty_level"
+    t.integer "sweat_level"
+    t.string "experience_level"
+    t.boolean "equipment", default: false
+    t.string "language"
+    t.bigint "trainer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["trainer_id"], name: "index_sports_classes_on_trainer_id"
+  end
+
+  create_table "trainers", force: :cascade do |t|
+    t.text "bio"
+    t.string "sport_category"
+    t.string "city"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_trainers_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +74,10 @@ ActiveRecord::Schema.define(version: 2020_11_23_142127) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "class_bookings", "sports_classes"
+  add_foreign_key "class_bookings", "users"
+  add_foreign_key "reviews", "sports_classes"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "sports_classes", "trainers"
+  add_foreign_key "trainers", "users"
 end
