@@ -5,57 +5,41 @@
   <div class="favourites d-flex justify-content-start">
     <h2>All your favourite sports</h2>
   </div>
-  <div id="sports_classes">
-    <% @results.each do |result| %>
-      <% if result.class == SportsClass  %>
-        <h4><%= result.title %></h4>
-        <p><%= result.duration %></p>
-        <p><%= result.category %></p>
-        <p><%= result.experience_level %></p>
-        <p><%= result.trainer.user.first_name %></p>
-      <% end  %>
-    <% end %>
-  </div>
-  <div class="sports_classes_cards d-flex flex-row p-5">
-      <% @sports_classes.each do |sports_class| %>
-    <div class="card p-3 m-3 rounded">
-        <p><%= sports_class.duration %></p>
-        <p><%= sports_class.category %></p>
-        <p><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
-        <p><%= sports_class.title %></p>
-        <p><%= sports_class.trainer.user.first_name %></p>
-        <div class="info-book-buttons d-flex justify-content-center">
-          <a class="btn btn-warning px-1 m-1" href="#" role="button">Info</a>
-          <a class="btn btn-dark px-1 m-1" href="#" role="button">Book</a>
+  <% if params[:query].present? %>
+    <div id="sports_classes" class="sports_classes_cards d-flex flex-row p-5">
+        <% @results.each do |result| %>
+          <% if result.class == SportsClass  %>
+          <div class="card p-3 m-3 rounded">
+            <p><%= result.duration %></p>
+            <p><%= result.category %></p>
+            <p><%= result.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+            <p><%= result.title %></p>
+            <p><%= result.experience_level %></p>
+            <p><%= result.trainer.user.first_name %></p>
+          <div class="info-book-buttons d-flex justify-content-center">
+            <a class="btn btn-warning px-1 m-1" href="#" role="button">Info</a>
+            <a class="btn btn-dark px-1 m-1" href="#" role="button">Book</a>
+          </div>
         </div>
+          <% end  %>
+        <% end %>
     </div>
+  <% else %>
+    <div class="sports_classes_cards d-flex flex-row p-5">
+      <% @sports_classes.each do |sports_class| %>
+        <div class="card p-3 m-3 rounded">
+          <p><%= sports_class.duration %></p>
+          <p><%= sports_class.category %></p>
+          <p><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+          <p><%= sports_class.title %></p>
+          <p><%= sports_class.experience_level %></p>
+          <p><%= sports_class.trainer.user.first_name %></p>
+          <div class="info-book-buttons d-flex justify-content-center">
+            <a class="btn btn-warning px-1 m-1" href="#" role="button">Info</a>
+            <a class="btn btn-dark px-1 m-1" href="#" role="button">Book</a>
+          </div>
+        </div>
       <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
-
-<!--   create_table "sports_classes", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "date_time"
-    t.string "duration"
-    t.string "category"
-    t.integer "difficulty_level"
-    t.integer "sweat_level"
-    t.string "experience_level"
-    t.boolean "equipment", default: false
-    t.string "language"
-    t.bigint "trainer_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["trainer_id"], name: "index_sports_classes_on_trainer_id"
-  end
-
-  create_table "trainers", force: :cascade do |t|
-    t.text "bio"
-    t.string "sport_category"
-    t.string "city"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_trainers_on_user_id"
-  end -->
