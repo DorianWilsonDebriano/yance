@@ -8,22 +8,40 @@ puts 'deleting all previous 🌱!'
 # USER SEEDS
 adham = User.create!(
   email: "adham@gmail.com",
-  password: "adham123"
+  password: "adham123",
+  first_name: "Adham",
+  last_name: "Jaafar",
+  bio: "I live, breathe, eat sports",
+  language: "English",
+
   )
 
 cassy = User.create!(
   email: "cassy@gmail.com",
-  password: "cassy123"
+  password: "cassy123",
+  first_name: "Cassy",
+  last_name: "Dodd",
+  bio: "I live, breathe, eat sports",
+  language: "English",
   )
 
 dorian = User.create!(
   email: "dw.debriano@gmail.com",
-  password: "dorian123"
+  password: "dorian123",
+  first_name: "Dorian",
+  last_name: "Wilson",
+  bio: "I live, breathe, eat sports",
+  language: "English",
+
   )
 
 edoardo = User.create!(
   email: "edoardo@gmail.com",
-  password: "edo123"
+  password: "edo123",
+  first_name: "Edoardo",
+  last_name: "Maraia",
+  bio: "I live, breathe, eat sports",
+  language: "English",
   )
 
 # TRAINER SEEDS
