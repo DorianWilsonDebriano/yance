@@ -47,7 +47,9 @@ dorian = User.new(
 dorian.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 dorian.save!
 
-edoardo = User.create!(
+file = URI.open('https://avatars0.githubusercontent.com/u/56122943?s=400&u=cc0448ec43408ed8f5a061ef369d45b4d8f720e8&v=4')
+
+edoardo = User.new(
   email: "edoardo@gmail.com",
   password: "edo123",
   first_name: "Edoardo",
@@ -55,6 +57,8 @@ edoardo = User.create!(
   bio: "I live, breathe, eat sports",
   language: "English",
   )
+edoardo.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+edoardo.save!
 
 
 # TRAINER SEEDS
