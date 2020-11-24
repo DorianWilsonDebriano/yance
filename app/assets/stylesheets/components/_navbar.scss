@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 52px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,20 +15,21 @@
 #nav-name {
   font-size: 25px;
   position: absolute;
-  top: 25px;
+  top: 11px;
+  left: 69px;
 }
 
-h2 {
-  font-size: 1rem;
-}
 #navbarLogoAndName {
   justify-content: space-between;
+    h2 {
+    font-size: 0.9rem;
+    }
 }
 
 #nav-statement{
   position: absolute;
   left: 167px;
-  top: 28px;
+  top: 18px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -38,7 +40,12 @@ h2 {
   color: rgba(0, 0, 0, 0.8);
 }
 
-.nav-link {
+#navbarDropdown {
+  cursor: pointer;
+}
+
+#BecomeAtrainer {
   position:fixed;
   right: 98px;
+  font-size: 0.9rem;
 }

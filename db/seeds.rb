@@ -27,19 +27,20 @@ cassy = User.create!(
   language: "English",
   )
 
-dorian = User.create!(
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606231422/Dorian-profile-pic-square_zkwni6.jpg')
+
+dorian = User.new(
   email: "dw.debriano@gmail.com",
   password: "dorian123",
   first_name: "Dorian",
   last_name: "Wilson",
   bio: "I live, breathe, eat sports",
   language: "English",
-
   )
+dorian.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+dorian.save!
 
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606231422/Dorian-profile-pic-square_zkwni6.jpg')
-
-edoardo = User.new(
+edoardo = User.create!(
   email: "edoardo@gmail.com",
   password: "edo123",
   first_name: "Edoardo",
@@ -47,8 +48,7 @@ edoardo = User.new(
   bio: "I live, breathe, eat sports",
   language: "English",
   )
-edoardo.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
-edoardo.save!
+
 
 # TRAINER SEEDS
 
