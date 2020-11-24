@@ -8,4 +8,5 @@ class TrainersController < ApplicationController
 
   def create
   end
+
 end
