@@ -6,7 +6,7 @@
     <h2>All your favourite sports</h2>
   </div>
   <% if params[:query].present? %>
-    <div id="sports_classes" class="sports_classes_cards d-flex flex-row p-5">
+    <div id="sports_classes" class="sports_classes_cards d-flex flex-row p-5 flex-wrap">
         <% @results.each do |result| %>
           <% if result.class == SportsClass  %>
           <div class="card p-3 m-3 rounded">
@@ -25,7 +25,7 @@
         <% end %>
     </div>
   <% else %>
-    <div class="sports_classes_cards d-flex flex-row p-5">
+    <div class="sports_classes_cards d-flex flex-row p-5 flex-wrap">
       <% @sports_classes.each do |sports_class| %>
         <div class="card p-3 m-3 rounded">
           <p><%= sports_class.duration %></p>
