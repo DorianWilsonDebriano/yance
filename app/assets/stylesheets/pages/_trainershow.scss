@@ -1,0 +1,57 @@
+
+.container{
+  width:100vw;
+}
+
+
+.page-content{
+  border:1px solid black;
+  height: 100vh;
+}
+.header-image{
+  border:1px solid black;
+  height: 25%;
+}
+.remaining{
+  border:1px solid red;
+  height:75%;
+  display:flex;
+}
+.trainer-tags{
+  width:65%;
+  border:1px solid black;
+}
+.video-reviews{
+  width:35%;
+  border:1px solid black;
+}
+.trainer{
+  border:1px solid black;
+  height:20%;
+}
+.tags{
+  border:1px solid black;
+  height:10%;
+}
+.bio{
+  border:1px solid black;
+  height:30%;
+}
+.upcoming{
+  border:1px solid black;
+  height:40%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding-top:5px;
+}
+.class1{
+  border:1px solid black;
+  width:45%;
+  height:80%;
+}
+.class2{
+  border:1px solid black;
+  width:45%;
+  height:80%;
+}
