@@ -1,0 +1,16 @@
+<div class="container">
+  <%= simple_form_for [@trainer, @sportsclass] do |f| %>
+    <%= f.input :title, input_html: { autocomplete: 'The title of your class' } %>
+    <%= f.input :description, input_html: { autocomplete: 'Your class in a few sentences' } %>
+    <%= f.input :date_time %>
+    <%= f.input :duration, input_html: { autocomplete: 'How long will your class be?' } %>
+    <%= f.input :category, input_html: { autocomplete: 'What type of sport category fits best to your class?' } %>
+    <%= f.input :experience_level, as: :radio_buttons, collection: ["Beginner", "Intermediate", "Advanced"], wrapper: :vertical_collection_inline %>
+    <%= f.input :difficulty_level, as: :radio_buttons, collection: [1, 2, 3], wrapper: :vertical_collection_inline %>
+    <%= f.input :sweat_level, as: :radio_buttons, collection: [1, 2, 3], wrapper: :vertical_collection_inline %>
+    <%= f.input :equipment, as: :radio_buttons%>
+    <%= f.input :language, input_html: { autocomplete: 'In which language will you do your class?' } %>
+    <%= f.button :submit, class: 'btn btn-primary', notice: "Your class has been saved!" %>
+    <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+  <% end %>
+</div>
