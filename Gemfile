@@ -31,6 +31,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'bootstrap', '~> 4.5', '>= 4.5.3'
 
+#setting up dotenv
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'cloudinary', '~> 1.16.0'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'

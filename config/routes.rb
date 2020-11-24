@@ -15,5 +15,5 @@ Rails.application.routes.draw do
     resources :class_bookings, only: %i[show new create destroy]
   end
   resources :class_bookings, only: %i[edit update destroy]
-#   get "/stream", to: "classes#stream"
+  get "/stream", to: "classes#stream"
 end
