@@ -8,4 +8,6 @@ class TrainersController < ApplicationController
 
   def create
   end
+
+  authorize @trainer
 end
