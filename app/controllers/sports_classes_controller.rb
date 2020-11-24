@@ -1,5 +1,6 @@
 class SportsClassesController < ApplicationController
   def index
+    @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
   end
 
   def show
