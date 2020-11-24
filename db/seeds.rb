@@ -103,7 +103,7 @@ trainer_5.save!
 sports_class_1 = SportsClass.new(
     title: "Monday Morning Wake-up",
     description: "Start your week right with this slow-burner!",
-    date_time: DateTime.new(2020,2,3,7),
+    date_time: DateTime.new(2020,11,23,7),
     duration: "50 mins",
     category: "Cardio",
     difficulty_level: 2,
@@ -120,7 +120,7 @@ sports_class_1.save!
 sports_class_2 = SportsClass.new(
     title: "Tuesday Flex",
     description: "Lets make the week even better together",
-    date_time: DateTime.new(2020,2,4,7),
+    date_time: DateTime.new(2020,11,24,17),
     duration: "60 mins",
     category: "Yoga",
     difficulty_level: 2,
@@ -137,7 +137,7 @@ sports_class_2.save!
 sports_class_3 = SportsClass.new(
     title: "Wednesday Whirl",
     description: "Lets move!",
-    date_time: DateTime.new(2020,2,5,7),
+    date_time: DateTime.new(2020,11,25,13),
     duration: "30 mins",
     category: "Zumba",
     difficulty_level: 2,
@@ -155,7 +155,7 @@ sports_class_3.save!
 sports_class_4 = SportsClass.new(
     title: "Feel it Friday",
     description: "Burn off the weeks stress and frustrations!",
-    date_time: DateTime.new(2020,2,6,7),
+    date_time: DateTime.new(2020,11,27,18),
     duration: "40 mins",
     category: "HITT",
     difficulty_level: 2,
@@ -172,7 +172,7 @@ sports_class_4.save!
 sports_class_5 = SportsClass.new(
     title: "Saturday Start",
     description: "A smooth start to your stress-free weekend",
-    date_time: DateTime.new(2020,2,6,8),
+    date_time: DateTime.new(2020,11,28,8),
     duration: "90 mins",
     category: "Yoga",
     difficulty_level: 2,
