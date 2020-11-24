@@ -25,7 +25,7 @@ before_action :authenticate_user!
   private
 
   def trainer_params
-    params.require(:trainer).permit(:bio, :city, :sport_category)
+    params.require(:trainer).permit(:bio, :city, :sport_category, :profile_photo, :time_line_photo)
   end
 
 end
