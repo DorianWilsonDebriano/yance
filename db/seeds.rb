@@ -102,11 +102,11 @@ sports_class_1 = SportsClass.new(
 sports_class_1.save!
 
 sports_class_2 = SportsClass.new(
-    title: "Monday Morning Wake-up",
-    description: "Start your week right with this slow-burner!",
-    date_time: DateTime.new(2020,2,3,7),
-    duration: "50 mins",
-    category: "Cardio",
+    title: "Tuesday Flex",
+    description: "Lets make the week even better together",
+    date_time: DateTime.new(2020,2,4,7),
+    duration: "60 mins",
+    category: "Yoga",
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
@@ -119,11 +119,11 @@ sports_class_2 = SportsClass.new(
 sports_class_2.save!
 
 sports_class_3 = SportsClass.new(
-    title: "Monday Morning Wake-up",
-    description: "Start your week right with this slow-burner!",
-    date_time: DateTime.new(2020,2,3,7),
-    duration: "50 mins",
-    category: "Cardio",
+    title: "Wednesday Whirl",
+    description: "Lets move!",
+    date_time: DateTime.new(2020,2,5,7),
+    duration: "30 mins",
+    category: "Zumba",
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
@@ -137,14 +137,14 @@ sports_class_3.save!
 
 
 sports_class_4 = SportsClass.new(
-    title: "Monday Morning Wake-up",
-    description: "Start your week right with this slow-burner!",
-    date_time: DateTime.new(2020,2,3,7),
-    duration: "50 mins",
-    category: "Cardio",
+    title: "Feel it Friday",
+    description: "Burn off the weeks stress and frustrations!",
+    date_time: DateTime.new(2020,2,6,7),
+    duration: "40 mins",
+    category: "HITT",
     difficulty_level: 2,
     sweat_level: 3,
-    experience_level: "Beginner",
+    experience_level: "Advanced",
     equipment: false,
     language: "English",
     trainer: trainer_4,

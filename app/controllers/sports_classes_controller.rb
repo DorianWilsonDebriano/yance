@@ -3,6 +3,10 @@ class SportsClassesController < ApplicationController
 
   def index
     @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
+
+    # SEARCHKICK
+    @results = Searchkick.search(models: [SportsClass, Trainer])
+    @results = Searchkick.search(params[:query], models: [SportsClass, Trainer]) if params[:query].present?
   end
 
   def show
