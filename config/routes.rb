@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :sports_classes, only: %i[edit update destroy]
   resources :reviews, only: %i[edit update destroy]
 
-  resources :classes, only: %i[index show] do
+  resources :sports_classes, only: %i[index show] do
     resources :class_bookings, only: %i[show new create destroy]
   end
   resources :class_bookings, only: %i[edit update destroy]
