@@ -3,7 +3,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <%= link_to "#", class: "navbar-brand" do %>
-          <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+          <%= image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1606231079/Yance-yelloy-logo_weypsf.png" %>
         <% end %>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
           <%= link_to "Become a trainer", new_trainer_path , class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= cl_image_tag @user.photo.key, height: 300, width: 600, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag @user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "User Profile", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

@@ -35,7 +35,7 @@ dorian = User.create!(
 
   )
 
-edoardo = User.create!(
+edoardo = User.new(
   email: "edoardo@gmail.com",
   password: "edo123",
   first_name: "Edoardo",
@@ -43,6 +43,8 @@ edoardo = User.create!(
   bio: "I live, breathe, eat sports",
   language: "English",
   )
+hero_1.photo.attach(io: File.open('app/assets/images/annoy-your-neighbor.jpg'), filename: 'annoy-your-neighbor.jpg')
+edoardo.save!
 
 # TRAINER SEEDS
 
