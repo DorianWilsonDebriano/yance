@@ -9,6 +9,7 @@ class SportsClassesController < ApplicationController
   end
 
   def new
+    @trainer = Trainer.find(params[:trainer_id])
     @sportsclass = SportsClass.new
     authorize @sportsclass
   end
@@ -18,7 +19,7 @@ class SportsClassesController < ApplicationController
     @sportsclass = SportsClass.new(sports_class_params)
     @sportsclass.trainer = @trainer
     if @sportsclass.save
-      redirect_to root_path, notice: "Your class has been created"
+      redirect_to sports_classes_path, notice: "Your class has been created"
     else
       render :new
     end
