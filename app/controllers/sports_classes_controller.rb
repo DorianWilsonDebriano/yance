@@ -1,5 +1,6 @@
 class SportsClassesController < ApplicationController
   def index
+    @sports_classes = SportsClass.all
   end
 
   def show
