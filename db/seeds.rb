@@ -1,4 +1,6 @@
 require 'date'
+require "open-uri"
+
 
 SportsClass.destroy_all
 Trainer.destroy_all
@@ -35,6 +37,8 @@ dorian = User.create!(
 
   )
 
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606231422/Dorian-profile-pic-square_zkwni6.jpg')
+
 edoardo = User.new(
   email: "edoardo@gmail.com",
   password: "edo123",
@@ -43,7 +47,7 @@ edoardo = User.new(
   bio: "I live, breathe, eat sports",
   language: "English",
   )
-hero_1.photo.attach(io: File.open('app/assets/images/annoy-your-neighbor.jpg'), filename: 'annoy-your-neighbor.jpg')
+edoardo.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 edoardo.save!
 
 # TRAINER SEEDS
