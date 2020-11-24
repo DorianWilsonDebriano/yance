@@ -9,27 +9,30 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 38px;
+  position: absolute;
+  top: 14%;
+  left: 4%;
 }
 
 #nav-name {
   font-size: 25px;
   position: absolute;
-  top: 11px;
-  left: 69px;
+  top: 19%;
+  left: 7.8%;
 }
 
 #navbarLogoAndName {
   justify-content: space-between;
     h2 {
     font-size: 0.9rem;
-    }
+  }
 }
 
 #nav-statement{
   position: absolute;
-  left: 167px;
-  top: 18px;
+  left: 14%;
+  top: 23%;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -45,7 +48,8 @@
 }
 
 #BecomeAtrainer {
-  position:fixed;
-  right: 98px;
+  position: absolute;
+  right: 163px;
+  top: 2%;
   font-size: 0.9rem;
 }

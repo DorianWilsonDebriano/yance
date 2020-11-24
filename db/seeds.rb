@@ -8,17 +8,22 @@ User.destroy_all
 puts 'deleting all previous 🌱!'
 
 # USER SEEDS
-adham = User.create!(
+file = URI.open('https://avatars0.githubusercontent.com/u/68596947?s=400&u=f18b9637ef88a32845322a4167ee2d6fe0333c38&v=4')
+
+adham = User.new(
   email: "adham@gmail.com",
   password: "adham123",
   first_name: "Adham",
   last_name: "Jaafar",
   bio: "I live, breathe, eat sports",
   language: "English",
-
   )
+adham.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+adham.save!
 
-cassy = User.create!(
+file = URI.open('https://avatars1.githubusercontent.com/u/68464312?s=400&u=9cca4a525d11b96017a6892fac06a8b708868b71&v=4')
+
+cassy = User.new(
   email: "cassy@gmail.com",
   password: "cassy123",
   first_name: "Cassy",
@@ -26,6 +31,8 @@ cassy = User.create!(
   bio: "I live, breathe, eat sports",
   language: "English",
   )
+cassy.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+cassy.save!
 
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606231422/Dorian-profile-pic-square_zkwni6.jpg')
 
