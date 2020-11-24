@@ -10,7 +10,7 @@
     <div class="card p-3 m-3 rounded">
         <p><%= sports_class.duration %></p>
         <p><%= sports_class.category %></p>
-        <p><%= sports_class.date_time %></p>
+        <p><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
         <p><%= sports_class.title %></p>
         <p><%= sports_class.trainer.user.first_name %></p>
         <div class="info-book-buttons d-flex justify-content-center">
