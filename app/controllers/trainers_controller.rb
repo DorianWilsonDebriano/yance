@@ -3,10 +3,12 @@ before_action :authenticate_user!
 
   def show
     @trainer = Trainer.find(params[:id])
+    authorize @trainer
   end
 
   def new
     @trainer = Trainer.new
+    authorize @trainer
   end
 
   def create
@@ -17,6 +19,7 @@ before_action :authenticate_user!
     else
       render :new
     end
+    authorize @trainer
   end
 
   private
