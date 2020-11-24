@@ -10,6 +10,7 @@
     <%= f.input :sweat_level, as: :radio_buttons, collection: [1, 2, 3], wrapper: :vertical_collection_inline %>
     <%= f.input :equipment, as: :radio_buttons%>
     <%= f.input :language, input_html: { autocomplete: 'In which language will you do your class?' } %>
+    <%= f.input :photo %>
     <%= f.button :submit, class: 'btn btn-primary', notice: "Your class has been saved!" %>
     <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
   <% end %>
