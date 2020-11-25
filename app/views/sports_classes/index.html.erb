@@ -33,19 +33,35 @@
         <% end %>
         <div class="card-bottom-section">
           <p class="class-card-title"><%= sports_class.title %></p>
-          <div class="class-card-fullname">
-            <p class="class-card-firstname"><%= sports_class.trainer.user.first_name %></p>
-            <p class="class-card-lastname"><%= sports_class.trainer.user.last_name %></p>
-          </div>
-          <div>
-
+          <div class="class-card-levels d-flex row">
+            <div class="class-card-difficulty col-4">
+              <p class="class-card-level-title">DIFFICULTY</p>
+              <p class="class-card-level-content"> <%= sports_class.difficulty_level %> </p>
+            </div>
+            <div class="class-card-sweat col-4">
+              <p class="class-card-level-title">SWEAT</p>
+              <p class="class-card-level-content"> <%= sports_class.sweat_level %> </p>
+            </div>
+            <div class="class-card-experience col-4">
+              <p class="class-card-level-title">LEVEL</p>
+              <p class="class-card-level-content"> <%= sports_class.experience_level %> </p>
+            </div>
           </div>
         </div>
-        <div class="info-book-buttons d-flex justify-content-center">
-          <a class="btn btn-dark px-1 m-1" href="#" role="button"><%= link_to "Book", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST" %></a>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%= sports_class.id %>">
-            info
-          </button>
+        <div class="class-card-footer-grey mt-4">
+          <div class="class-card-trainer">
+            <%= cl_image_tag sports_class.trainer.user.photo.key, class: "avatar-bordered" %>
+            <div class="class-card-fullname">
+              <p class="class-card-firstname"><%= sports_class.trainer.user.first_name %></p>
+              <p class="class-card-lastname"><%= sports_class.trainer.user.last_name %></p>
+            </div>
+          </div>
+          <div class="class-info-book-buttons d-flex justify-content-center">
+            <button class="btn class-card-book-button"><%= link_to "Book", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST", class: "card-book-class-link" %></button>
+            <button type="button" class="btn class-card-info-button class-info-link" data-toggle="modal" data-target="#modal-<%= sports_class.id %>">
+              info
+            </button>
+          </div>
         </div>
         <div class="modal fade" id="modal-<%= sports_class.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable class-modal-dialog">
@@ -73,7 +89,7 @@
                       <p class="class-modal-level-content"> <%= sports_class.sweat_level %> </p>
                     </div>
                     <div class="class-modal-experience col-4">
-                      <p class="class-modal-level-title">EXPERIENCE</p>
+                      <p class="class-modal-level-title">LEVEL</p>
                       <p class="class-modal-level-content"> <%= sports_class.experience_level %> </p>
                     </div>
                   </div>
