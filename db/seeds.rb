@@ -1,4 +1,6 @@
 require 'date'
+require "open-uri"
+
 
 SportsClass.destroy_all
 Trainer.destroy_all
@@ -6,16 +8,22 @@ User.destroy_all
 puts 'deleting all previous 🌱!'
 
 # USER SEEDS
-adham = User.create!(
+file = URI.open('https://avatars0.githubusercontent.com/u/68596947?s=400&u=f18b9637ef88a32845322a4167ee2d6fe0333c38&v=4')
+
+adham = User.new(
   email: "adham@gmail.com",
   password: "adham123",
   first_name: "Adham",
   last_name: "Jaafar",
   bio: "I live, breathe, eat sports",
   language: "English",
-)
+  )
+adham.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+adham.save!
 
-cassy = User.create!(
+file = URI.open('https://avatars1.githubusercontent.com/u/68464312?s=400&u=9cca4a525d11b96017a6892fac06a8b708868b71&v=4')
+
+cassy = User.new(
   email: "cassy@gmail.com",
   password: "cassy123",
   first_name: "Cassy",
@@ -23,18 +31,25 @@ cassy = User.create!(
   bio: "I live, breathe, eat sports",
   language: "English",
   )
+cassy.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+cassy.save!
 
-dorian = User.create!(
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606231422/Dorian-profile-pic-square_zkwni6.jpg')
+
+dorian = User.new(
   email: "dw.debriano@gmail.com",
   password: "dorian123",
   first_name: "Dorian",
   last_name: "Wilson",
   bio: "I live, breathe, eat sports",
   language: "English",
-
   )
+dorian.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+dorian.save!
 
-edoardo = User.create!(
+file = URI.open('https://avatars0.githubusercontent.com/u/56122943?s=400&u=cc0448ec43408ed8f5a061ef369d45b4d8f720e8&v=4')
+
+edoardo = User.new(
   email: "edoardo@gmail.com",
   password: "edo123",
   first_name: "Edoardo",
@@ -42,6 +57,9 @@ edoardo = User.create!(
   bio: "I live, breathe, eat sports",
   language: "English",
   )
+edoardo.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+edoardo.save!
+
 
 sarah = User.create!(
   email: "sarah@gmail.com",
