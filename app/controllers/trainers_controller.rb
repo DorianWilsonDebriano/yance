@@ -4,6 +4,7 @@ before_action :authenticate_user!
   def show
     @trainer = Trainer.find(params[:id])
     authorize @trainer
+    @reviews =@trainer.sports_classes.map{|sports_class| sports_class.reviews}
   end
 
   def new

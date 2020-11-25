@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :trainers, dependent: :destroy
 
   has_one_attached :photo
-
 end

@@ -19,7 +19,7 @@
           </div>
 
           <div class = "trainer-name-follow">
-            <p class = "trainer-name">Jennifer Harris</p>
+            <p class = "trainer-name"><%=@trainer.user.first_name%> <%=@trainer.user.last_name%></p>
             <p class = "follow-review">follow</p>
             <p class = "follow-review">review</p>
           </div>
@@ -57,7 +57,10 @@
           </div>
 
           <div class = "user-reviews">
-
+            <%@reviews.each do |review|%>
+              <p><%=@trainer.user.username%></p>
+              <p><%=@review.content%></p>
+            <%end%>
           </div>
 
         </div>
