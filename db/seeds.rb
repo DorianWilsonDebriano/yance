@@ -60,15 +60,6 @@ edoardo = User.new(
 edoardo.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 edoardo.save!
 
-
-sarah = User.create!(
-  email: "sarah@gmail.com",
-  password: "sarah123",
-  first_name: "Sarah",
-  last_name: "Smith",
-  bio: "I live, breathe, eat sports",
-  language: "English",
-)
 # TRAINER SEEDS
 
 trainer_1 = Trainer.new(
@@ -106,15 +97,6 @@ trainer_4 = Trainer.new(
 )
 # TRAINER PIC
 trainer_4.save!
-
-trainer_5 = Trainer.new(
-  bio: "In my classes you will feel the burn!",
-  sport_category: "Yoga",
-  city: "London",
-  user: sarah,
-)
-# TRAINER PIC
-trainer_5.save!
 
 # CLASS SEEDS
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
@@ -190,24 +172,5 @@ sports_class_4 = SportsClass.new(
 
 sports_class_4.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_4.save!
-
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
-sports_class_5 = SportsClass.new(
-    title: "Weekend Start",
-    description: "A smooth start to your stress-free weekend",
-    date_time: DateTime.new(2020,11,28,8),
-    duration: "90 mins",
-    category: "Yoga",
-    difficulty_level: 2,
-    sweat_level: 3,
-    experience_level: "Intermediate",
-    equipment: true,
-    language: "English",
-    trainer: trainer_5,
-)
-
-# CLASS PIC/VIDEO?
-sports_class_5.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
-sports_class_5.save!
 
 puts 'new seeds planted!'

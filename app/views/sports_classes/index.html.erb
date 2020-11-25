@@ -49,12 +49,14 @@
           </div>
         </div>
         <div class="class-card-footer-grey mt-4">
-          <div class="class-card-trainer">
-            <%= cl_image_tag sports_class.trainer.user.photo.key, class: "avatar-bordered" %>
-            <div class="class-card-fullname">
-              <p class="class-card-firstname"><%= sports_class.trainer.user.first_name %></p>
-              <p class="class-card-lastname"><%= sports_class.trainer.user.last_name %></p>
-            </div>
+            <div class="class-card-trainer">
+            <% if sports_class.trainer.user.photo.attached? %>
+              <%= cl_image_tag sports_class.trainer.user.photo.key, class: "avatar-bordered" %>
+            <% end %>
+              <div class="class-card-fullname">
+                <p class="class-card-firstname"><%= sports_class.trainer.user.first_name %></p>
+                <p class="class-card-lastname"><%= sports_class.trainer.user.last_name %></p>
+              </div>
           </div>
           <div class="class-info-book-buttons d-flex justify-content-center">
             <button class="btn class-card-book-button"><%= link_to "Book", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST", class: "card-book-class-link" %></button>
@@ -107,9 +109,11 @@
                     <div class="class-modal-trainer-name">
                       <span> with <strong> <%= sports_class.trainer.user.first_name %> <%= sports_class.trainer.user.last_name %> </strong> </span>
                     </div>
-                    <div class="class-modal-avatar">
-                      <%= cl_image_tag sports_class.trainer.user.photo.key, class: "class-trainer-photo" %>
-                    </div>
+                    <% if sports_class.trainer.user.photo.attached? %>
+                      <div class="class-modal-avatar">
+                        <%= cl_image_tag sports_class.trainer.user.photo.key, class: "class-trainer-photo" %>
+                      </div>
+                   <% end %>
                     <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
