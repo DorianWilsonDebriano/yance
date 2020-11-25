@@ -2,16 +2,11 @@ class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
 
   def index
+    policy_scope(SportsClass)
     if params[:query].present?
-      sports_classes = policy_scope(SportsClass)
-      # trainers = policy_scope(Trainer)
-      # @sports_classes = Searchkick.search(params[:query], models:[sports_classes, trainers])
-      @sports_classes = sports_classes.search(params[:query])
-      # if @sports_classes.first.class == Trainer
-      #   @sports_classes = @sports_classes.first.sports_classes
-      # end
+      @sports_classes = SportsClass.search(params[:query])
     else
-      @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
+      @sports_classes = SportsClass.all
     end
   end
 
