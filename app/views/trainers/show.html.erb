@@ -1,0 +1,82 @@
+<div class="container">
+  <div class = "page-content">
+    <!-- inside the rest page we have a div for the header image, and a div for the remaning contents -->
+    <div class = "header-image">
+      <% if @trainer.time_line_photo.attached? %>
+      <%= cl_image_tag @trainer.time_line_photo.key,height: 123.5, width: 522,  crop: :fill %>
+      <% end %>
+    </div>
+
+    <div class = "remaining">
+      <!-- inside remaining we have two div blocks -->
+      <div class = "trainer-tags">
+        <div class = "trainer">
+
+          <div class="trainer-img">
+            <% if @trainer.profile_photo.attached? %>
+            <%= cl_image_tag @trainer.profile_photo.key,height: 64, width: 64,  crop: :fill %>
+            <% end %>
+          </div>
+
+          <div class = "trainer-name-follow">
+            <p class = "trainer-name">Jennifer Harris</p>
+            <p class = "follow-review">follow</p>
+            <p class = "follow-review">review</p>
+          </div>
+
+        </div>
+
+        <div class = "tags">
+          <p class = "title-font"> Tags</p>
+          <p class = "category"><%=@trainer.sport_category%></p>
+        </div>
+
+        <div class = "bio">
+          <p class = "title-font"> A little bit about me</p>
+          <p class = "content-font"><%=@trainer.bio%></p>
+        </div>
+
+        <div class = "upcoming">
+          <p class = "title-font"> Upcoming classes</p>
+          <div class ="classes">
+            <div class = "class1"></div>
+            <div class = "class2"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class = "video-reviews">
+        <div class = "video">
+
+        </div>
+
+          <div class = "top-review-row">
+            <p class = "title-font">Reviews</p>
+            <p class ="write-review">Write a review</p>
+          </div>
+
+          <div class = "user-reviews">
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

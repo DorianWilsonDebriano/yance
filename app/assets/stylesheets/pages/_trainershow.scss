@@ -1,0 +1,134 @@
+
+.container{
+  width:100vw;
+}
+.page-content{
+  height: 100vh;
+  background-color:white;
+}
+.header-image{
+  height: 25%;
+}
+.remaining{
+  height:75%;
+  display:flex;
+}
+.trainer-tags{
+  width:65%;
+}
+.video-reviews{
+  width:35%;
+}
+.trainer{
+  height:15%;
+  display:flex;
+}
+.trainer-img img{
+  border-radius:50%;
+  border:2px solid #FFC24D;
+  position:relative;
+  bottom:32px;
+  left:8px;
+}
+.trainer-name-follow{
+  display:flex;
+  padding-left: 16px;
+}
+.trainer-name-follow p{
+  display:flex;
+  padding-left: 8px;
+  margin-right:4px;
+}
+.trainer-name{
+  font-family:"Montserrat";
+  font-size:14px;
+}
+.follow-review{
+  font-family:"Montserrat";
+  font-size:10px;
+  background-color:#FFC24D;
+  color:white;
+  border-radius:16px;
+  height:24px;
+  margin-right:8px;
+  margin-left:8px;
+  width:52px;
+  align-items: center;
+  text-align:center;
+
+}
+.tags{
+  height:15%;
+}
+.category{
+  background-color:#D7EBFF;
+  width:72px;
+  height:18px;
+  border-radius:8px;
+  text-align: center;
+  align-items:center;
+  color:#023365;
+  font-family:"Montserrat";
+  font-size:10px;
+  margin-left:8px;
+}
+.title-font{
+  font-size:12px;
+  font-family:"Montserrat";
+  margin-left:8px;
+}
+.content-font{
+  font-size:12px;
+  margin-left:8px;
+}
+
+.bio{
+  height:25%;
+}
+.upcoming{
+  height:45%;
+  justify-content: center;
+  align-items: center;
+  padding-top:5px;
+}
+.classes{
+  display:flex;
+  justify-content:space-around;
+  padding-top:16px;
+}
+.class1{
+  border:1px solid black;
+  width:35%;
+  height:168px;
+}
+.class2{
+  border:1px solid black;
+  width:35%;
+  height:168px;
+}
+.video{
+  border:1px solid black;
+  width:95%;
+  height:40%;
+}
+.top-review-row{
+  display:flex;
+  padding-top:16px;
+  justify-content: space-around;
+}
+.write-review{
+  color:#FFC24D;
+  font-family:"Montserrat";
+  font-size:12px;
+  width:120px;
+  border: 1px solid #FFC24D;
+  border-radius:16px;
+  align-items:center;
+  text-align:center;
+}
+.user-reviews{
+  height:44%;
+  width:95%;
+  border:1px solid black;
+}
+
