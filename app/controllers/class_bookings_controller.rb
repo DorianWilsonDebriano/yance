@@ -1,4 +1,5 @@
 class ClassBookingsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @sportsclass = SportsClass.find(params[:sportsclass_id])
