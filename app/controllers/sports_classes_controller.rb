@@ -2,12 +2,18 @@ class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
 
   def index
+<<<<<<< HEAD
     policy_scope(SportsClass)
     if params[:query].present?
       @sports_classes = SportsClass.search(params[:query])
     else
       @sports_classes = SportsClass.all
     end
+=======
+    @classbooking = ClassBooking.new
+    @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
+    @classbookings = policy_scope(ClassBooking)
+>>>>>>> master
   end
 
   def show
@@ -48,6 +54,6 @@ class SportsClassesController < ApplicationController
   end
 
   def sports_class_params
-    params.require(:sports_class).permit(:title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language)
+    params.require(:sports_class).permit(:title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :photo)
   end
 end

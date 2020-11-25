@@ -1,13 +1,29 @@
 .class-modal-book-button {
   background-color: $yance-yellow;
-  color: black;
   border-radius: 4px;
   width: 100%;
 }
 
 .class-modal-info-button {
   background-color: black;
-  color: white;
   border-radius: 4px;
   width: 100%;
+}
+
+.visit-trainer-link {
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: white;
+    text-decoration: underline;
+ }
+}
+
+.book-class-link {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: black;
+    text-decoration: underline;
+ }
 }

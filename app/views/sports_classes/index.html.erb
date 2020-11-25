@@ -5,86 +5,93 @@
   <div class="favourites d-flex justify-content-start">
     <h2>All your favourite sports</h2>
   </div>
-    <div class="sports_classes_cards d-flex flex-row p-5 flex-wrap">
-      <% @sports_classes.each do |sports_class| %>
-    <div class="card p-3 m-3 rounded">
+  <div class="sports_classes_cards d-flex flex-row p-5">
+    <% @sports_classes.each do |sports_class| %>
+      <div class="card p-3 m-3 rounded">
         <p><%= sports_class.duration %></p>
         <p><%= sports_class.category %></p>
         <p><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
         <p><%= sports_class.title %></p>
         <p><%= sports_class.trainer.user.first_name %></p>
         <div class="info-book-buttons d-flex justify-content-center">
-          <a class="btn btn-dark px-1 m-1" href="#" role="button">Book</a>
+          <a class="btn btn-dark px-1 m-1" href="#" role="button"><%= link_to "Book", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST" %></a>
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%= sports_class.id %>">
             info
           </button>
         </div>
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable sports-class-modal-dialog">
-              <div class="modal-content sports-class-modal-content">
-                <div class="sports-class-modal-inner-content row justify-content-between">
-                  <div class="sports-class-modal-left-column col-5 border pt-4 pl-5">
-                    <div class="sports-class-modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel"> <%= sports_class.title %></h5>
-                      <p><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
-                      <p><%= sports_class.category %></p>
+        <div class="modal fade" id="modal-<%= sports_class.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable class-modal-dialog">
+            <div class="modal-content class-modal-content">
+              <div class="class-modal-inner-content row justify-content-between">
+                <div class="class-modal-left-column col-5 pt-4 pl-5">
+                  <div class="class-modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> <strong> <%= sports_class.title %> </strong></h5>
+                    <p class="class-modal-date"><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+                    <p class="class-modal-category"><%= sports_class.category %></p>
+                  </div>
+                  <% if sports_class.photo.attached? %>
+                    <div class="class-modal-class-image">
+                      <%= cl_image_tag sports_class.photo.key, class: "class-image" %>
                     </div>
-                    <div class="sports-class-modal-class-image">
-                      <%= cl_image_tag("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606233503/5ga1phiumirnzxngyiccpzfjp42j.jpg", width: 250, height: 200, crop: :fill) %>
+                  <% end %>
+                  <br>
+                  <div class="class-modal-levels d-flex row pr-3 pl-2">
+                    <div class="class-modal-difficulty col-4">
+                      <p class="class-modal-level-title">DIFFICULTY</p>
+                      <p class="class-modal-level-content"> <%= sports_class.difficulty_level %> </p>
                     </div>
-                    <div class="sports-class-modal-levels d-flex justify-content-between">
-                      <div class="sports-class-modal-experience">
-                        <p>LEVEL</p>
-                        <p> <%= sports_class.experience_level %> </p>
-                      </div>
-                      <div class="sports-class-modal-difficulty">
-                        <p>DIFFICULTY</p>
-                        <p> <%= sports_class.difficulty_level %> </p>
-                      </div>
-                      <div class="sports-class-modal-sweat">
-                        <p>SWEAT</p>
-                        <p> <%= sports_class.sweat_level %> </p>
-                      </div>
+                    <div class="class-modal-sweat col-4">
+                      <p class="class-modal-level-title">SWEAT</p>
+                      <p class="class-modal-level-content"> <%= sports_class.sweat_level %> </p>
                     </div>
-                    <div class="sports-class-modal-sweat">
-                      <p>Equipment needed?</p>
-                      <p> <%= sports_class.equipment %> </p>
+                    <div class="class-modal-experience col-4">
+                      <p class="class-modal-level-title">EXPERIENCE</p>
+                      <p class="class-modal-level-content"> <%= sports_class.experience_level %> </p>
                     </div>
                   </div>
-                  <div class="sports-class-modal-right-column col-7 border pt-4 pr-5">
-                    <div class="sports-class-modal-right-header d-flex justify-content-between">
-                      <div class="sports-class-modal-trainer-name">
-                        <span><%= sports_class.trainer.user.first_name %> <%= sports_class.trainer.user.last_name %></span>
-                      </div>
-                      <div class="sports-class-modal-avatar">
-                        <%= cl_image_tag("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606233503/5ga1phiumirnzxngyiccpzfjp42j.jpg", width: 100, height: 100, crop: :fill) %>
-                      </div>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
+                  <div class="class-modal-equipment">
+                    <p class="class-modal-equipment-title">Equipment needed?</p>
+                    <% if sports_class.equipment == false %>
+                      <p class="class-modal-equipment-content">none</p>
+                    <% else %>
+                      <p class="class-modal-equipment-content">yes, see class description</p>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="class-modal-right-column col-7 pt-4 pr-5">
+                  <div class="class-modal-right-header d-flex justify-content-between">
+                    <div class="class-modal-trainer-name">
+                      <span> with <strong> <%= sports_class.trainer.user.first_name %> <%= sports_class.trainer.user.last_name %> </strong> </span>
                     </div>
-                    <div class="sports-class-modal-description">
-                      <p>Class description</p>
-                      <p><%= sports_class.description %></p>
+                    <div class="class-modal-avatar">
+                      <%= cl_image_tag sports_class.trainer.user.photo.key, class: "class-trainer-photo" %>
                     </div>
-                    <div class="sports-class-modal-bio">
-                      <p>Trainer bio</p>
-                      <p><%= sports_class.trainer.bio %></p>
+                    <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="class-modal-description">
+                    <p> <strong> Class description </strong></p>
+                    <p><%= sports_class.description %></p>
+                  </div>
+                  <div class="class-modal-bio">
+                    <p> <strong> Trainer bio </strong></p>
+                    <p><%= sports_class.trainer.bio %></p>
+                  </div>
+                  <div>
+                    <div class="align-center pr-3 py-2">
+                      <button type="button" class="btn class-modal-book-button" data-dismiss="modal"> <%= link_to "book", new_sports_class_class_booking_path(sports_class), class: "book-class-link" %></button>
                     </div>
                     <div class="align-center pr-3 py-2">
-                      <button type="button" class="btn class-modal-book-button" data-dismiss="modal">book</button>
-                    </div>
-                    <div class="align-center pr-3 py-2">
-                      <button type="button" class="btn class-modal-info-button">visit trainer profile</button>
+                      <button type="button" class="btn class-modal-info-button"> <%= link_to "visit trainer profile", trainer_path(sports_class.trainer), class: "visit-trainer-link" %></button>
                     </div>
                   </div>
                 </div>
-<!--                 <div class="modal-footer d-flex justify-content-center">
-                </div> -->
               </div>
             </div>
           </div>
+        </div>
       </div>
     <% end %>
   </div>

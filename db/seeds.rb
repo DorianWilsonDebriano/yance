@@ -117,6 +117,7 @@ trainer_5 = Trainer.new(
 trainer_5.save!
 
 # CLASS SEEDS
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
 
 sports_class_1 = SportsClass.new(
     title: "Monday Morning Wake-up",
@@ -127,14 +128,15 @@ sports_class_1 = SportsClass.new(
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
-    equipment: false,
+    equipment: true,
     language: "English",
     trainer: trainer_1,
 )
 
-# CLASS PIC/VIDEO?
+sports_class_1.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_1.save!
 
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
 sports_class_2 = SportsClass.new(
     title: "Tuesday Flex",
     description: "Lets make the week even better together",
@@ -144,14 +146,15 @@ sports_class_2 = SportsClass.new(
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
-    equipment: false,
+    equipment: true,
     language: "English",
     trainer: trainer_2,
 )
 
-# CLASS PIC/VIDEO?
+sports_class_2.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_2.save!
 
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
 sports_class_3 = SportsClass.new(
     title: "Wednesday Whirl",
     description: "Lets move!",
@@ -161,15 +164,15 @@ sports_class_3 = SportsClass.new(
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
-    equipment: false,
+    equipment: true,
     language: "English",
     trainer: trainer_3,
 )
 
-# CLASS PIC/VIDEO?
+sports_class_3.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_3.save!
 
-
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
 sports_class_4 = SportsClass.new(
     title: "Feel it Friday",
     description: "Burn off the weeks stress and frustrations!",
@@ -178,13 +181,14 @@ sports_class_4 = SportsClass.new(
     category: "HITT",
     difficulty_level: 2,
     sweat_level: 3,
-    experience_level: "Advanced",
-    equipment: false,
+    experience_level: "Beginner",
+    equipment: true,
     language: "English",
     trainer: trainer_4,
 )
 
-# CLASS PIC/VIDEO?
+
+sports_class_4.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_4.save!
 
 sports_class_5 = SportsClass.new(
@@ -205,30 +209,3 @@ sports_class_5 = SportsClass.new(
 sports_class_5.save!
 
 puts 'new seeds planted!'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
