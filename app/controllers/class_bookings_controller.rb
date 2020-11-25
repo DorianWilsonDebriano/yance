@@ -18,6 +18,9 @@ class ClassBookingsController < ApplicationController
   end
 
   def destroy
-
+    @classbooking = ClassBooking.find(params[:id])
+    @classbooking.destroy
+    redirect_to sports_classes_path
+    authorize @classbooking
   end
 end
