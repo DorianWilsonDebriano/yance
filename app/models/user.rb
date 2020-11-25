@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :trainers, dependent: :destroy
 
+  has_many :class_bookings, dependent: :destroy
+
   has_one_attached :photo
 
 end

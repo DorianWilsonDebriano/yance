@@ -5,13 +5,15 @@
   <div class="favourites d-flex justify-content-start">
     <h2>All your favourite sports</h2>
   </div>
-<!--   # <%# if @user.classbookings? %>
+
+  <% if current_user.class_bookings.length > 0 %>
     <div class="upcoming-classes">
       <h2>All your upcaming classes</h2>
-      <% #@classbookings.each do |classbooking| %>
-      <% #end %>
+      <% @classbookings.each do |classbooking| %>
+        <%= classbooking.sports_class.title %>
+      <% end %>
     </div>
-  <%#p end %> -->
+  <% end %>
 
   <div class="sports_classes_cards d-flex flex-row p-5">
     <% @sports_classes.each do |sports_class| %>
