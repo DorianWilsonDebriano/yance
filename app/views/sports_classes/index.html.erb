@@ -6,7 +6,15 @@
     <h2>All your favourite sports</h2>
   </div>
   <h2 class="all-classes-title">All classes</h2>
-  <div class="sports-classes-cards">
+<!--   # <%# if @user.classbookings? %>
+    <div class="upcoming-classes">
+      <h2>All your upcaming classes</h2>
+      <% #@classbookings.each do |classbooking| %>
+      <% #end %>
+    </div>
+  <%#p end %> -->
+
+  <div class="sports-classes-cards pt-3">
     <% @sports_classes.each do |sports_class| %>
       <div class="sports-classes-card pt-3">
         <div class="class-card-header d-flex justify-content-between">
@@ -34,8 +42,7 @@
           </div>
         </div>
         <div class="info-book-buttons d-flex justify-content-center">
-          <button type="button" class="btn btn-primary">Book</button>
-          <!-- Button trigger modal -->
+          <a class="btn btn-dark px-1 m-1" href="#" role="button"><%= link_to "Book", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST" %></a>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%= sports_class.id %>">
             info
           </button>
