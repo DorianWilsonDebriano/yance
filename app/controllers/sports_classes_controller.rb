@@ -2,7 +2,9 @@ class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
 
   def index
+    @classbooking = ClassBooking.new
     @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
+    @classbookings = policy_scope(ClassBooking)
   end
 
   def show
