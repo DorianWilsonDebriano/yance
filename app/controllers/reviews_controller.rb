@@ -1,12 +1,12 @@
 class ReviewsController < ApplicationController
   def new
-    @trainer = Trainer.find(params[:trainer_id])
+    @sportsclass = SportsClass.find(params[:sports_class_id])
     @review = Review.new
     authorize @review
   end
 
   def create
-    @trainer = Trainer.find(params[:trainer_id])
+    @sportsclass = SportsClass.find(params[:sports_class_id])
     @review = Review.new(review_params)
     @review.user = current_user
     if review.save

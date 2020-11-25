@@ -51,17 +51,19 @@
 
         </div>
 
-          <div class = "top-review-row">
-            <p class = "title-font">Reviews</p>
-            <p class ="write-review">Write a review</p>
-          </div>
+        <div class = "top-review-row">
+          <p class = "title-font">Reviews</p>
+          <p class ="write-review">Write a review</p>
+        </div>
 
-          <div class = "user-reviews">
-            <%@reviews.each do |review|%>
-              <p><%=@trainer.user.username%></p>
-              <p><%=@review.content%></p>
-            <%end%>
-          </div>
+        <div class = "user-reviews">
+          <%@reviews.each do |review|%>
+          <p><%=user.username%></p>
+          <p><%=review.content%></p>
+          <p><% review.rating.times do %></p>
+          <span><i class="fas fa-star"></i></span>
+          <% end %>
+          <%end%>
 
         </div>
 
@@ -70,7 +72,9 @@
     </div>
 
   </div>
+
 </div>
+
 
 
 

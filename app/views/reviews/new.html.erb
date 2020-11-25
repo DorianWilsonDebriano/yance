@@ -1,5 +1,5 @@
-<%= simple_form_for [@trainer, @review], remote: true do |f| %>
+<%= simple_form_for [@sportsclass, @review], remote: true do |f| %>
   <%= f.input :content, label: "Write a review" %>
   <%= f.input :rating, collection: (0..5), label: "Rating out of five:"%>
-  <%=link_to 'Create Review', trainer_path(@trainer)%>
+  <%=link_to 'Create Review', sports_class_path(@sportsclass)%>
 <% end %>
