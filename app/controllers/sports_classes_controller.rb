@@ -4,6 +4,7 @@ class SportsClassesController < ApplicationController
   def index
     @classbooking = ClassBooking.new
     @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
+    @classbookings = policy_scope(ClassBooking)
   end
 
   def show

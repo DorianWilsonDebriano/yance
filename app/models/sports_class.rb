@@ -12,7 +12,6 @@ class SportsClass < ApplicationRecord
   validates :difficulty_level, presence: true
   validates :sweat_level, presence: true
   validates :experience_level, presence: true
-  validates :equipment, presence: true
   validates :language, presence: true
   validates :photo, presence: true
 end

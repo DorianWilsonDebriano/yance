@@ -12,7 +12,7 @@ class ClassBookingsController < ApplicationController
     @classbooking.user = current_user
     @classbooking.sports_class = @sports_class
     if @classbooking.save
-      redirect_to sports_classes, notice: "You booked your class"
+      redirect_to sports_classes_path, notice: "You booked your class"
     end
     authorize @classbooking
   end
