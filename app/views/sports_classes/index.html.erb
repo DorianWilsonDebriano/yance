@@ -4,6 +4,7 @@
    <p>This will be the search bar</p>
   </div>
 
+  <% if user_signed_in? %>
   <h2 class="all-classes-title">All classes</h2>
     <% if current_user.class_bookings.length > 0 %>
       <div class="upcoming-classes">
@@ -19,7 +20,7 @@
         </ul>
       </div>
     <% end %>
-
+  <% end %>
   <div class="favourites d-flex justify-content-start">
     <h2>All your favourite sports</h2>
   </div>
