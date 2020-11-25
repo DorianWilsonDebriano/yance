@@ -7,10 +7,13 @@
       <%= form_tag sports_classes_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control",
+          class: "form-control searchbar",
           placeholder: "All sports"
         %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <div class="button">
+          <%= submit_tag "", class: "btn search-button" %>
+          <i class="fas fa-search search-icon"></i>
+        </div>
       <% end %>
     </div>
   </div>
