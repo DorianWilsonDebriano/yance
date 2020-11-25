@@ -170,7 +170,7 @@ sports_class_4 = SportsClass.new(
 sports_class_4.save!
 
 sports_class_5 = SportsClass.new(
-    title: "Saturday Start",
+    title: "Weekend Start",
     description: "A smooth start to your stress-free weekend",
     date_time: DateTime.new(2020,11,28,8),
     duration: "90 mins",
@@ -186,7 +186,7 @@ sports_class_5 = SportsClass.new(
 # CLASS PIC/VIDEO?
 sports_class_5.save!
 
-puts 'new seeds added!'
+puts 'new seeds planted!'
 
 
 

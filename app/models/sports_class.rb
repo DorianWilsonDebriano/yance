@@ -10,7 +10,7 @@ class SportsClass < ApplicationRecord
       trainer: self.trainer,
       duration: duration,
       experience_level: experience_level,
-      category: category,
+      category: category
     }
   end
 end
