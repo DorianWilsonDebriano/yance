@@ -1,0 +1,44 @@
+.sports-classes-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.sports-classes-card {
+  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+
+.class-card-header {
+  padding: 0px 16px;
+}
+
+.class-card-duration {
+  font-size: 14px;
+  font-weight: bolder;
+  margin-bottom: 4px;
+}
+
+.class-card-datetime {
+  font-size: 12px;
+}
+
+.class-card-category {
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.class-card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-bottom-section {
+  padding: 8px 16px 0px 16px;
+}
+
+.class-card-title {
+  font-size: 14px;
+  font-weight: bolder;
+}
