@@ -191,6 +191,7 @@ sports_class_4 = SportsClass.new(
 sports_class_4.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_4.save!
 
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
 sports_class_5 = SportsClass.new(
     title: "Weekend Start",
     description: "A smooth start to your stress-free weekend",
@@ -200,12 +201,13 @@ sports_class_5 = SportsClass.new(
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Intermediate",
-    equipment: false,
+    equipment: true,
     language: "English",
     trainer: trainer_5,
 )
 
 # CLASS PIC/VIDEO?
+sports_class_5.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_5.save!
 
 puts 'new seeds planted!'
