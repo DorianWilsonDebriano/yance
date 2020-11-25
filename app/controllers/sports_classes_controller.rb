@@ -4,7 +4,7 @@ class SportsClassesController < ApplicationController
   def index
     @classbooking = ClassBooking.new
     @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
-    @classbookings = policy_scope(ClassBooking)
+    @classbookings = policy_scope(ClassBooking).where(user: current_user)
   end
 
   def show

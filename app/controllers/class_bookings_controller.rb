@@ -1,4 +1,5 @@
 class ClassBookingsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @sportsclass = SportsClass.find(params[:sportsclass_id])
@@ -18,6 +19,9 @@ class ClassBookingsController < ApplicationController
   end
 
   def destroy
-
+    @classbooking = ClassBooking.find(params[:id])
+    @classbooking.destroy
+    redirect_to sports_classes_path
+    authorize @classbooking
   end
 end

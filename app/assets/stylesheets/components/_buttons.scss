@@ -1,3 +1,24 @@
+
+.visit-trainer-link {
+  font-weight: bolder;
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: white;
+    text-decoration: underline;
+ }
+}
+
+.book-class-link {
+  font-weight: bolder;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: black;
+    text-decoration: underline;
+ }
+}
+
 .class-modal-book-button {
   background-color: $yance-yellow;
   border-radius: 4px;
@@ -10,7 +31,28 @@
   width: 100%;
 }
 
-.visit-trainer-link {
+.class-card-book-button {
+  background-color: $yance-yellow;
+  border-radius: 4px;
+  width: 40%;
+  width: 40%;
+  margin-right: 17px;
+}
+
+.class-info-book-buttons {
+  padding: 0px 12px 12px 12px;
+}
+
+.class-card-info-button {
+  background-color: black;
+  border-radius: 4px;
+  color: white;
+  width: 40%;
+}
+
+.class-info-link {
+  font-size: 12px;
+  font-weight: bolder;
   text-decoration: none;
   color: white;
   &:hover {
@@ -19,7 +61,9 @@
  }
 }
 
-.book-class-link {
+.card-book-class-link {
+  font-size: 12px;
+  font-weight: bolder;
   text-decoration: none;
   color: black;
   &:hover {
