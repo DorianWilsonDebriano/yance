@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
   def create
     @trainer = Trainer.find(params[:trainer_id])
     @review = Review.new(review_params)
-    #@review.trainer = @trainer.... has to be edited
     @review.user = current_user
     if review.save
       redirect_to trainer_path(@trainer)
