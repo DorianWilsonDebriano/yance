@@ -1,5 +1,11 @@
 .profile-header {
   margin-top: 20px;
+  margin-left: 20px;
+  h2 {
+    position: relative;
+    top: 7px;
+    padding-left: 20px;
+  }
 }
 
 .user-info {
@@ -16,7 +22,12 @@
    li{
     text-decoration: none;
     list-style: none;
+    font-size: 12px;
    }
+   p {
+    font-weight: bolder;
+    color: $dark-text;
+  }
 }
 
 .about-me {
@@ -27,27 +38,49 @@
    li{
   text-decoration: none;
   list-style: none;
+  font-size: 12px;
  }
+  p {
+    font-weight: bolder;
+    color: $dark-text;
+  }
 }
 
-.profile-upcoming-classes {
+.upcoming-classes-section {
   margin-top: 20px;
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   border-radius: 4px;
+  padding: 12px;
+    h2 {
+    font-size: 18px;
+    font-weight: bolder;
+    color: $dark-text;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.profile-upcoming-classes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
-  padding: 12px;
 }
 
-.edit-buttons {
+#info-edit-icon {
   position: absolute;
   left: 47%;
   top: 144px;
   font-size: 25px;
+  color: #929292;
 }
 
-
+#about-edit-icon {
+  position: absolute;
+  top: 144px;
+  font-size: 25px;
+  right: 176px;
+  color: #929292;
+}
 
 .sports-classes-card {
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
@@ -130,5 +163,4 @@
 .class-card-footer-grey {
   background-color: rgba(196, 196, 196, 0.1);
 }
-
 

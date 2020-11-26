@@ -85,3 +85,17 @@
     font-weight: bold;
   }
 }
+
+.profile-cancel-booking {
+  width: 100%;
+  border-radius: 0px 0px 4px 4px;
+  background-color: black;
+}
+
+.profile-cancel-button {
+  color: white;
+  text-decoration: none;
+    &:hover {
+      color:white;
+    }
+}
