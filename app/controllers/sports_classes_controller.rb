@@ -1,12 +1,22 @@
+require "date"
+
 class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
 
   def index
-    policy_scope(SportsClass).order(created_at: :desc)
+    @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
     if params[:query].present?
-      @sports_classes = SportsClass.search(params[:query])
+      @sports_classes = @sports_classes.search(params[:query])
+    end
+    if params[:starts_at].present?
+      @sports_classes = @sports_classes.filter do |sports_class|
+        time_query = params[:starts_at].split(' ')
+        range_one = time_query.first
+        range_two = time_query.last
+        sports_class.date_time.between?(range_one, range_two)
+      end
     else
-      @sports_classes = SportsClass.all
+      # @sports_classes = SportsClass.all
     end
 
     @classbooking = ClassBooking.new

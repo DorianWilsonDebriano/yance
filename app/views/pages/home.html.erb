@@ -10,6 +10,11 @@
           class: "form-control searchbar",
           placeholder: "All sports"
         %>
+         <%= text_field_tag :starts_at,
+         params[:starts_at],
+        class: "datepicker",
+          placeholder: "Date"
+          %>
         <div class="button">
           <%= submit_tag "", class: "btn search-button" %>
           <i class="fas fa-search search-icon"></i>
@@ -18,4 +23,6 @@
     </div>
   </div>
 </div>
+
+
 
