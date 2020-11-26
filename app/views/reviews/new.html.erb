@@ -1,0 +1,6 @@
+<%= simple_form_for [@sportsclass, @review] do |f| %>
+  <%= f.input :content, label: "Write a review" %>
+  <%= f.input :rating, collection: (0..5), label: "Rating:"%>
+
+  <%=f.submit 'Create Review'%>
+<% end %>

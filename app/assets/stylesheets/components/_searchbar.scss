@@ -4,6 +4,8 @@
   height: 50px;
 }
 
+.searchbar:focus {outline:0;}
+
 .search-button {
   height: 40px;
   width: 40px;
@@ -26,7 +28,41 @@
   align-items: center;
   right: 21px;
   top: 5px;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+}
+
+form_tag {
+  position: relative;
+  width: 70%;
+}
+
+.datepicker {
+  position: absolute;
+  height: 50px;
+  right: 75px;
+  top: 0px;
+  width: 34%;
+  padding: 5px 12px;
+  border-radius: 75px / 75px;
+  background-color: white !important;
+  border: 1px solid #ced4d9;
+}
+
+.datepicker:focus {outline:0;}
+
+.flatpickr-day.selected {
+  background-color: #FECD42 !important;
+  border: none;
+}
+
+.flatpickr-day.selected:hover {
+  background-color: #FECD42 !important;
+  border: none;
+}
+.flatpickr-day.startRange {
+  background-color: #FECD42;
+}
+
+.flatpickr-day.endRange {
+  background-color: #FECD42 !important;
+  border: none;
 }

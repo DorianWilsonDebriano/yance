@@ -4,6 +4,8 @@ before_action :authenticate_user!
   def show
     @trainer = Trainer.find(params[:id])
     authorize @trainer
+    @reviews = @trainer.reviews
+    @review = Review.new
   end
 
   def new
@@ -27,5 +29,4 @@ before_action :authenticate_user!
   def trainer_params
     params.require(:trainer).permit(:bio, :city, :sport_category, :profile_photo, :time_line_photo)
   end
-
 end
