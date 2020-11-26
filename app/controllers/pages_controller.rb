@@ -9,6 +9,8 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @user = current_user
+    @user_bookings = current_user.class_bookings
   end
 
 end
