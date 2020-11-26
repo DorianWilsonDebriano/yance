@@ -1,7 +1,26 @@
 <div class="container d-flex justify-content-center flex-column">
 
-  <div class="search_bar d-flex justify-content-center">
-   <p>This will be the search bar</p>
+  <div class="search-container">
+   <div class="row justify-content-center">
+      <div class="col-sm-8 mt-3">
+        <%= form_tag sports_classes_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control searchbar",
+            placeholder: "All sports"
+          %>
+           <%= text_field_tag :starts_at,
+           params[:starts_at],
+          class: "datepicker",
+            placeholder: "Date"
+            %>
+          <div class="button">
+            <%= submit_tag "", class: "btn search-button" %>
+            <i class="fas fa-search search-icon"></i>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <% if user_signed_in? %>
