@@ -1,4 +1,5 @@
 class SportsClass < ApplicationRecord
+
   belongs_to :trainer, dependent: :destroy
   has_one_attached :photo
   has_many :class_bookings
@@ -15,6 +16,7 @@ class SportsClass < ApplicationRecord
   validates :language, presence: true
   validates :photo, presence: true
 
+
   searchkick word_start: %i[title trainer]
 
   def search_data
@@ -28,4 +30,5 @@ class SportsClass < ApplicationRecord
       category: category
     }
   end
+
 end
