@@ -5,26 +5,67 @@
   </div>
 
   <% if user_signed_in? %>
-  <h2 class="all-classes-title">All classes</h2>
     <% if current_user.class_bookings.length > 0 %>
-      <div class="upcoming-classes">
-        <h2>All your upcaming classes</h2>
-        <ul>
+        <h2 class="all-classes-title">All your upcaming classes</h2>
+        <div class="booked-sports-classes-cards pt-3">
           <% @classbookings.each do |classbooking| %>
-            <li><%= classbooking.sports_class.title %></li>
-            <li><%= classbooking.sports_class.description %></li>
-            <li><%= classbooking.sports_class.date_time %></li>
-            <li><%= classbooking.sports_class.duration %></li>
-            <li><%= link_to "Cancel Booking", class_booking_path(classbooking), method: :delete, data: { confirm: "Are you sure?" } %></li>
+            <div class="booked-sports-classes-card pt-3">
+              <div class="booked-class-card-header d-flex justify-content-between">
+                <div class="booked-card-header-left">
+                  <p class="booked-class-card-duration"><%= classbooking.sports_class.duration %></p>
+                  <p class="booked-class-card-datetime"><%= classbooking.sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+                </div>
+                <div class="booked-card-header-right">
+                  <p class="booked-class-card-category"><%= classbooking.sports_class.category %></p>
+                </div>
+              </div>
+              <% if classbooking.sports_class.photo.attached? %>
+                <div>
+                  <%= cl_image_tag classbooking.sports_class.photo.key, class: "booked-class-card-image" %>
+                </div>
+              <% end %>
+              <div class="booked-card-bottom-section">
+                <p class="booked-class-card-title"><%= classbooking.sports_class.title %></p>
+                <div class="booked-class-card-levels d-flex row">
+                  <div class="booked-class-card-difficulty col-4">
+                    <p class="booked-class-card-level-title">DIFFICULTY</p>
+                    <p class="booked-class-card-level-content"> <%= classbooking.sports_class.difficulty_level %> </p>
+                  </div>
+                  <div class="booked-class-card-sweat col-4">
+                    <p class="booked-class-card-level-title">SWEAT</p>
+                    <p class="booked-class-card-level-content"> <%= classbooking.sports_class.sweat_level %> </p>
+                  </div>
+                  <div class="booked-class-card-experience col-4">
+                    <p class="booked-class-card-level-title">LEVEL</p>
+                    <p class="booked-class-card-level-content"> <%= classbooking.sports_class.experience_level %> </p>
+                  </div>
+                </div>
+              </div>
+              <div class="booked-class-card-footer-grey mt-4">
+                <div class="booked-class-card-trainer">
+                  <% if classbooking.sports_class.trainer.user.photo.attached? %>
+                    <%= cl_image_tag classbooking.sports_class.trainer.user.photo.key, class: "avatar-bordered" %>
+                  <% end %>
+                    <div class="booked-class-card-fullname">
+                      <p class="booked-class-card-firstname"><%= classbooking.sports_class.trainer.user.first_name %></p>
+                      <p class="booked-class-card-lastname"><%= classbooking.sports_class.trainer.user.last_name %></p>
+                    </div>
+                </div>
+                <div class="class-info-book-buttons d-flex justify-content-center">
+                   <button class="btn go-to-class-button"><%= link_to "go to class", "#", method: "GET"%></button>
+                </div>
+              </div>
+            </div>
           <% end %>
-        </ul>
-      </div>
+        </div>
     <% end %>
   <% end %>
-  <div class="favourites d-flex justify-content-start">
+
+  <div class="favourites d-flex justify-content-start mt-4">
     <h2>All your favourite sports</h2>
   </div>
 
+  <h2 class="all-classes-title">All classes</h2>
   <div class="sports-classes-cards pt-3">
     <% @sports_classes.each do |sports_class| %>
       <div class="sports-classes-card pt-3">
@@ -60,7 +101,7 @@
           </div>
         </div>
         <div class="class-card-footer-grey mt-4">
-            <div class="class-card-trainer">
+          <div class="class-card-trainer">
             <% if sports_class.trainer.user.photo.attached? %>
               <%= cl_image_tag sports_class.trainer.user.photo.key, class: "avatar-bordered" %>
             <% end %>
