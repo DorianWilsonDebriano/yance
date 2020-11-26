@@ -127,10 +127,25 @@
   border-radius:16px;
   align-items:center;
   text-align:center;
+  height:20px;
 }
 .user-reviews{
   height:44%;
   width:95%;
-  border:1px solid black;
 }
-
+.color-star{
+   color:#FFC24D;
+}
+.one-review{
+  display:flex;
+  font-family:'Montserrat';
+  font-weight: bold;
+  font-size:10px;
+  margin-left:16px;
+}
+.review-content{
+  font-family:'Montserrat';
+  font-size:10px;
+  margin-left:16px;
+  margin-bottom:8px;
+}

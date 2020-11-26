@@ -9,12 +9,13 @@ class ReviewsController < ApplicationController
     @sportsclass = SportsClass.find(params[:sports_class_id])
     @review = Review.new(review_params)
     @review.user = current_user
-    if review.save
-      redirect_to trainer_path(@trainer)
+    @review.sports_class = @sportsclass
+    authorize @review
+    if @review.save!
+      redirect_to trainer_path(@sportsclass.trainer)
     else
       render :new
     end
-    authorize @review
   end
 
   def edit

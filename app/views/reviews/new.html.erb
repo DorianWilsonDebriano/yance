@@ -1,5 +1,6 @@
-<%= simple_form_for [@sportsclass, @review], remote: true do |f| %>
+<%= simple_form_for [@sportsclass, @review] do |f| %>
   <%= f.input :content, label: "Write a review" %>
   <%= f.input :rating, collection: (0..5), label: "Rating out of five:"%>
-  <%=link_to 'Create Review', sports_class_path(@sportsclass)%>
+
+  <%=f.submit 'Create Review'%>
 <% end %>

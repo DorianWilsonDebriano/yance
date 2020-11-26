@@ -53,25 +53,33 @@
 
         <div class = "top-review-row">
           <p class = "title-font">Reviews</p>
-          <p class ="write-review">Write a review</p>
+           <%=link_to "Write a review", new_sports_class_review_path(params[:id]), class: "write-review"%>
         </div>
 
         <div class = "user-reviews">
-          <%@reviews.each do |review|%>
-          <p><%=user.username%></p>
-          <p><%=review.content%></p>
-          <p><% review.rating.times do %></p>
-          <span><i class="fas fa-star"></i></span>
-          <% end %>
+          <% @reviews.each do |review| %>
+          <div class = "one-review">
+            <%=review.user.username%>
+            <%=review.rating.times do%>
+            <i class="fas fa-star color-star"></i>
+            <% end %>
+          </div>
+          <div class = "review-content">
+            <%=review.content%>
+          </div>
           <%end%>
 
-        </div>
+          </div>
 
       </div>
 
     </div>
 
   </div>
+
+</div>
+
+</div>
 
 </div>
 
