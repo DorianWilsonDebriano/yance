@@ -4,6 +4,7 @@ require "open-uri"
 
 SportsClass.destroy_all
 Trainer.destroy_all
+puts "destroy users"
 User.destroy_all
 puts 'deleting all previous 🌱!'
 
@@ -100,7 +101,6 @@ trainer_4.save!
 
 # CLASS SEEDS
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
-
 sports_class_1 = SportsClass.new(
     title: "Monday Morning Wake-up",
     description: "Start your week right with this slow-burner!",
@@ -114,7 +114,6 @@ sports_class_1 = SportsClass.new(
     language: "English",
     trainer: trainer_1,
 )
-
 sports_class_1.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_1.save!
 

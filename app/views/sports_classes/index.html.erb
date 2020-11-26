@@ -1,24 +1,35 @@
 <div class="container d-flex justify-content-center flex-column">
+
   <div class="search_bar d-flex justify-content-center">
    <p>This will be the search bar</p>
   </div>
+
+  <% if user_signed_in? %>
+  <h2 class="all-classes-title">All classes</h2>
+    <% if current_user.class_bookings.length > 0 %>
+      <div class="upcoming-classes">
+        <h2>All your upcaming classes</h2>
+        <ul>
+          <% @classbookings.each do |classbooking| %>
+            <li><%= classbooking.sports_class.title %></li>
+            <li><%= classbooking.sports_class.description %></li>
+            <li><%= classbooking.sports_class.date_time %></li>
+            <li><%= classbooking.sports_class.duration %></li>
+            <li><%= link_to "Cancel Booking", class_booking_path(classbooking), method: :delete, data: { confirm: "Are you sure?" } %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
   <div class="favourites d-flex justify-content-start">
     <h2>All your favourite sports</h2>
   </div>
-  <h2 class="all-classes-title">All classes</h2>
-<!--   # <%# if @user.classbookings? %>
-    <div class="upcoming-classes">
-      <h2>All your upcaming classes</h2>
-      <% #@classbookings.each do |classbooking| %>
-      <% #end %>
-    </div>
-  <%#p end %> -->
 
   <div class="sports-classes-cards pt-3">
     <% @sports_classes.each do |sports_class| %>
       <div class="sports-classes-card pt-3">
         <div class="class-card-header d-flex justify-content-between">
-           <div class="card-header-left">
+          <div class="card-header-left">
             <p class="class-card-duration"><%= sports_class.duration %></p>
             <p class="class-card-datetime"><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
           </div>
@@ -128,7 +139,7 @@
                   </div>
                   <div>
                     <div class="align-center pr-3 py-2">
-                      <button type="button" class="btn class-modal-book-button" data-dismiss="modal"> <%= link_to "book", new_sports_class_class_booking_path(sports_class), class: "book-class-link" %></button>
+                      <button type="button" class="btn class-modal-book-button" data-dismiss="modal"> <%= link_to "Book", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST", class: "book-class-link" %></button>
                     </div>
                     <div class="align-center pr-3 py-2">
                       <button type="button" class="btn class-modal-info-button"> <%= link_to "visit trainer profile", trainer_path(sports_class.trainer), class: "visit-trainer-link" %></button>
