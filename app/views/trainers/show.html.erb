@@ -60,7 +60,7 @@
           <% @reviews.each do |review| %>
           <div class = "one-review">
             <%=review.user.username%>
-            <%=review.rating.times do%>
+            <%review.rating.times do%>
             <i class="fas fa-star color-star"></i>
             <% end %>
           </div>
