@@ -35,7 +35,6 @@ form_tag {
   width: 70%;
 }
 
-
 .datepicker {
   position: absolute;
   height: 50px;
@@ -55,10 +54,6 @@ form_tag {
   border: none;
 }
 
-// .flatpickr-day.selected:hover {
-//   background-color: #FECD42;
-// }
-
 .flatpickr-day.startRange {
   background-color: #FECD42;
 }
@@ -67,3 +62,4 @@ form_tag {
   background-color: #FECD42 !important;
   border: none;
 }
+
