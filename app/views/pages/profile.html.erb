@@ -67,19 +67,20 @@
             </div>
           </div>
         </div>
-        <div class="class-card-footer-grey mt-4">
-            <div class="class-card-trainer">
-            <% if user_booking.sports_class.trainer.user.photo.attached? %>
-              <%= cl_image_tag user_booking.sports_class.trainer.user.photo.key, class: "avatar-bordered" %>
-            <% end %>
-              <div class="class-card-fullname">
-                <p class="class-card-firstname"><%= user_booking.sports_class.trainer.user.first_name %></p>
-                <p class="class-card-lastname"><%= user_booking.sports_class.trainer.user.last_name %></p>
-              </div>
-          </div>
-          <div class="class-info-book-buttons d-flex justify-content-center">
-          </div>
+        <div class="booked-class-card-footer-grey mt-4">
+        <div class="booked-class-card-trainer">
+          <% if user_booking.sports_class.trainer.user.photo.attached? %>
+            <%= cl_image_tag user_booking.sports_class.trainer.user.photo.key, class: "avatar-bordered" %>
+          <% end %>
+            <div class="booked-class-card-fullname">
+              <p class="booked-class-card-firstname"><%= user_booking.sports_class.trainer.user.first_name %></p>
+              <p class="booked-class-card-lastname"><%= user_booking.sports_class.trainer.user.last_name %></p>
+            </div>
         </div>
+        <div class="class-info-book-buttons d-flex justify-content-center">
+          <button class="btn go-to-class-button"><%= link_to "go to class", "#", method: "GET"%></button>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
