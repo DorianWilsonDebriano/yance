@@ -6,10 +6,22 @@ class SportsClassPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    record.user == user
   end
 
   def create?
-    true
+    record.user == user
+  end
+
+  def edit?
+    record.trainer.user == user
+  end
+
+  def update?
+    record.trainer.user == user
+  end
+
+  def destroy?
+    record.trainer.user == user
   end
 end
