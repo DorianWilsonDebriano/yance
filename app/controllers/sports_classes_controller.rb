@@ -8,8 +8,6 @@ class SportsClassesController < ApplicationController
   end
 
   def show
-    @review.sportsclass = @sportsclass
-    @trainer.sportsclass = @trainer
   end
 
   def new
