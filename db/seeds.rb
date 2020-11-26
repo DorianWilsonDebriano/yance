@@ -61,7 +61,6 @@ edoardo = User.new(
 edoardo.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 edoardo.save!
 
-
 # TRAINER SEEDS
 
 trainer_1 = Trainer.new(
@@ -69,7 +68,7 @@ trainer_1 = Trainer.new(
   sport_category: "Cardio",
   city: "Berlin",
   user: edoardo,
-    )
+)
 # TRAINER PIC
 trainer_1.save!
 
@@ -78,7 +77,7 @@ trainer_2 = Trainer.new(
   sport_category: "Yoga",
   city: "Paris",
   user: dorian,
-    )
+)
 # TRAINER PIC
 trainer_2.save!
 
@@ -87,7 +86,7 @@ trainer_3 = Trainer.new(
   sport_category: "Zumba",
   city: "Copenhagen",
   user: cassy,
-    )
+)
 # TRAINER PIC
 trainer_3.save!
 
@@ -96,7 +95,7 @@ trainer_4 = Trainer.new(
   sport_category: "HITT",
   city: "Amsterdam",
   user: adham,
-    )
+)
 # TRAINER PIC
 trainer_4.save!
 
@@ -105,7 +104,7 @@ file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1
 sports_class_1 = SportsClass.new(
     title: "Monday Morning Wake-up",
     description: "Start your week right with this slow-burner!",
-    date_time: DateTime.new(2020,2,3,7),
+    date_time: DateTime.new(2020,11,23,7),
     duration: "50 mins",
     category: "Cardio",
     difficulty_level: 2,
@@ -120,11 +119,11 @@ sports_class_1.save!
 
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
 sports_class_2 = SportsClass.new(
-    title: "Monday Morning Wake-up",
-    description: "Start your week right with this slow-burner!",
-    date_time: DateTime.new(2020,2,3,7),
-    duration: "50 mins",
-    category: "Cardio",
+    title: "Tuesday Flex",
+    description: "Lets make the week even better together",
+    date_time: DateTime.new(2020,11,24,17),
+    duration: "60 mins",
+    category: "Yoga",
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
@@ -138,11 +137,11 @@ sports_class_2.save!
 
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
 sports_class_3 = SportsClass.new(
-    title: "Monday Morning Wake-up",
-    description: "Start your week right with this slow-burner!",
-    date_time: DateTime.new(2020,2,3,7),
-    duration: "50 mins",
-    category: "Cardio",
+    title: "Wednesday Whirl",
+    description: "Lets move!",
+    date_time: DateTime.new(2020,11,25,13),
+    duration: "30 mins",
+    category: "Zumba",
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
@@ -156,11 +155,11 @@ sports_class_3.save!
 
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
 sports_class_4 = SportsClass.new(
-    title: "Monday Morning Wake-up",
-    description: "Start your week right with this slow-burner!",
-    date_time: DateTime.new(2020,2,3,7),
-    duration: "50 mins",
-    category: "Cardio",
+    title: "Feel it Friday",
+    description: "Burn off the weeks stress and frustrations!",
+    date_time: DateTime.new(2020,11,27,18),
+    duration: "40 mins",
+    category: "HITT",
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
@@ -173,32 +172,4 @@ sports_class_4 = SportsClass.new(
 sports_class_4.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_4.save!
 
-
-puts 'new seeds added!'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+puts 'new seeds planted!'
