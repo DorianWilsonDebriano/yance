@@ -2,8 +2,14 @@ class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
 
   def index
+    policy_scope(SportsClass).order(created_at: :desc)
+    if params[:query].present?
+      @sports_classes = SportsClass.search(params[:query])
+    else
+      @sports_classes = SportsClass.all
+    end
+
     @classbooking = ClassBooking.new
-    @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
     @classbookings = policy_scope(ClassBooking).where(user: current_user)
   end
 
