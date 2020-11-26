@@ -54,6 +54,10 @@ form_tag {
   border: none;
 }
 
+.flatpickr-day.selected:hover {
+  background-color: #FECD42 !important;
+  border: none;
+}
 .flatpickr-day.startRange {
   background-color: #FECD42;
 }
@@ -62,4 +66,3 @@ form_tag {
   background-color: #FECD42 !important;
   border: none;
 }
-
