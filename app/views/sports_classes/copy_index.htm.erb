@@ -1,0 +1,17 @@
+  <% if user_signed_in? %>
+  <h2 class="all-classes-title">All classes</h2>
+    <% if current_user.class_bookings.length > 0 %>
+      <div class="upcoming-classes">
+        <h2>All your upcaming classes</h2>
+        <ul>
+          <% @classbookings.each do |classbooking| %>
+            <li><%= classbooking.sports_class.title %></li>
+            <li><%= classbooking.sports_class.description %></li>
+            <li><%= classbooking.sports_class.date_time %></li>
+            <li><%= classbooking.sports_class.duration %></li>
+            <li><%= link_to "Cancel Booking", class_booking_path(classbooking), method: :delete, data: { confirm: "Are you sure?" } %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
