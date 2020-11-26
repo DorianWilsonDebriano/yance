@@ -11,3 +11,12 @@
   font-weight: bolder;
   color: $dark-text;
 }
+
+.section-title {
+  h2 {
+    font-size: 18px;
+    font-weight: bolder;
+    color: $dark-text;
+    padding-top: 12px;
+  }
+}
