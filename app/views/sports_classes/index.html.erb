@@ -25,7 +25,7 @@
 
   <% if user_signed_in? %>
     <% if current_user.class_bookings.length > 0 %>
-        <h2 class="all-classes-title">All your upcaming classes</h2>
+        <h2 class="all-classes-title pt-5">Your upcoming classes</h2>
         <div class="booked-sports-classes-cards pt-3">
           <% @classbookings.each do |classbooking| %>
             <div class="booked-sports-classes-card pt-3">
@@ -74,6 +74,7 @@
                    <button class="btn go-to-class-button"><%= link_to "go to class", "#", method: "GET"%></button>
                 </div>
               </div>
+              <button class="btn profile-cancel-booking"> <%= link_to "cancel booking", class_booking_path(classbooking), method: :delete, data: { confirm: "Are you sure?" }, class: "profile-cancel-button" %> </button>
             </div>
           <% end %>
         </div>
