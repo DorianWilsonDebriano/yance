@@ -1,11 +1,11 @@
-<div class = "com-md-6">
-<h2>Become A Trainer </h2>
-<%= simple_form_for @trainer do |f| %>
-  <%= f.input :city %>
-  <%= f.input :sport_category %>
-  <%= f.input :bio %>
-  <%= f.input :profile_photo, as: :file %>
-  <%= f.input :time_line_photo, as: :file %>
-  <%= f.button :submit, class: 'btn btn-save', notice: "Congratulations! You're now a trainer!"%>
-<% end %>
+<div class = "page col-md-6">
+  <h2>Become A Trainer </h2>
+  <%= simple_form_for @trainer do |f| %>
+    <%= f.input :city %>
+    <%= f.input :sport_category %>
+    <%= f.input :bio %>
+    <%= f.input :profile_photo, as: :file %>
+    <%= f.input :time_line_photo, as: :file %>
+    <%= f.button :submit, class: 'btn btn-save', notice: "Congratulations! You're now a trainer!"%>
+  <% end %>
 </div>

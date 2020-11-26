@@ -1,7 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  height: 52px;
+  height: 54px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,7 +22,7 @@
 #nav-name {
   font-size: 25px;
   position: absolute;
-  top: 19%;
+  top: 15%;
   left: 7.8%;
 }
 
@@ -32,7 +36,7 @@
 #nav-statement{
   position: absolute;
   left: 14%;
-  top: 28%;
+  top: 31%;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -50,6 +54,12 @@
 #BecomeAtrainer {
   position: absolute;
   right: 163px;
-  top: 4%;
-  font-size: 0.9rem;
+  font-size: 15px;
+}
+
+#create-class {
+  right: 232px;
+  position: relative;
+  font-size: 15px;
+  top: 16%;
 }
