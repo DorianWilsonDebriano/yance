@@ -3,7 +3,7 @@
     <div>
       <p> <strong> ABOUT </strong></p>
       <p><%= link_to "Become a trainer", new_trainer_path, class: "footer-link" %></p>
-      <p><%= link_to "Create a class", new_trainer_sports_class_path(current_user), class: "footer-link" %></p>
+      <p><%= link_to "Create a class", new_trainer_sports_class_path(@user), class: "footer-link" %></p>
     </div>
     <div class="text-right">
       <p><strong>INFO</strong></p>
