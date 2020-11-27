@@ -17,8 +17,10 @@
             placeholder: "Date"
             %>
           <div class="button">
-            <%= submit_tag "", class: "btn search-button" %>
-            <i class="fas fa-search search-icon"></i>
+            <%= button_tag(type: "submit", class: "btn search-button") do %>
+              <i class="fas fa-search search-icon"></i>
+          <% end %>
+
           </div>
         <% end %>
       </div>
