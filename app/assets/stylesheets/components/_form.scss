@@ -3,7 +3,7 @@
   padding: 10px 20px;
   margin-top: 50px;
   border-radius: 32px !important;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
   h2 {
     font-size: 25px;
     font-weight: bold;
@@ -34,4 +34,8 @@
 
 .form-trainer{
 
+}
+
+.class-sign-up-button {
+  background-color: #FECD42;
 }

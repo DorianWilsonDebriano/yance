@@ -6,7 +6,8 @@ class SportsClassPolicy < ApplicationPolicy
   end
 
   def new?
-    record.user == user
+    # record.user == user
+    true
   end
 
   def show?
@@ -14,7 +15,8 @@ class SportsClassPolicy < ApplicationPolicy
   end
 
   def create?
-    record.user == user
+    # record.user == user
+    true
   end
 
   def edit?

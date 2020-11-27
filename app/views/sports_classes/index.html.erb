@@ -26,7 +26,7 @@
   <% if user_signed_in? %>
     <% if current_user.class_bookings.length > 0 %>
         <h2 class="all-classes-title pt-5">Your upcoming classes</h2>
-        <div class="booked-sports-classes-cards pt-3">
+        <div class="booked-sports-classes-cards pt-3 ">
           <% @classbookings.each do |classbooking| %>
             <div class="booked-sports-classes-card pt-3">
               <div class="booked-class-card-header d-flex justify-content-between">
@@ -81,11 +81,11 @@
     <% end %>
   <% end %>
 
-  <div class="favourites d-flex justify-content-start mt-4">
+<!--   <div class="favourites d-flex justify-content-start mt-4">
     <h2>All your favourite sports</h2>
-  </div>
+  </div> -->
 
-  <h2 class="all-classes-title">All classes</h2>
+  <h2 class="all-classes-title mt-5">All classes</h2>
   <div class="sports-classes-cards pt-3">
     <% @sports_classes.each do |sports_class| %>
       <div class="sports-classes-card pt-3">
@@ -105,7 +105,7 @@
         <% end %>
         <div class="card-bottom-section">
           <p class="class-card-title"><%= sports_class.title %></p>
-          <div class="class-card-levels d-flex row">
+          <div class="class-card-levels row">
             <div class="class-card-difficulty col-4">
               <p class="class-card-level-title">DIFFICULTY</p>
               <p class="class-card-level-content"> <%= sports_class.difficulty_level %> </p>
