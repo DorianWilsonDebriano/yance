@@ -59,7 +59,7 @@ class SportsClassesController < ApplicationController
   def destroy
     authorize @sportsclass
     @sportsclass.destroy
-    redirect_to sports_classes_path, notice: "Your class has been updated"
+    redirect_to sports_classes_path, notice: "#{@sportsclass.title} has been deleted"
   end
 
   private
