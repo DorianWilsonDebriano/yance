@@ -56,9 +56,11 @@ class SportsClassesController < ApplicationController
       render :edit
     end
   end
+
   def destroy
-    authorize @sportsclass
+    # authorize @sportsclass
     @sportsclass.destroy
+    raise
     redirect_to sports_classes_path, notice: "#{@sportsclass.title} has been deleted"
   end
 
