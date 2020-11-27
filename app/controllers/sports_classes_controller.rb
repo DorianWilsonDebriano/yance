@@ -29,14 +29,15 @@ class SportsClassesController < ApplicationController
   def new
     @trainer = Trainer.find(params[:trainer_id])
     @sportsclass = SportsClass.new
-    authorize @trainer, policy_class: SportsClassPolicy
+    authorize @sportsclass
+    # authorize @trainer, policy_class: SportsClassPolicy
   end
 
   def create
     @trainer = Trainer.find(params[:trainer_id])
     @sportsclass = SportsClass.new(sports_class_params)
     @sportsclass.trainer = @trainer
-    authorize @trainer, policy_class: SportsClassPolicy
+    authorize @sportsclass
     if @sportsclass.save
       redirect_to sports_classes_path, notice: "Your class has been created"
     else
