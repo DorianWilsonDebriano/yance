@@ -24,8 +24,13 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item" id="BecomeAtrainer">
-          <%= link_to "become a trainer", new_trainer_path , class: "nav-link" %>
+          <%= link_to "Become a trainer", new_trainer_path , class: "nav-link" %>
         </li>
+        <% if current_user.trainers.present? %>
+          <div id="create-class">
+            <%= link_to "Create a class", new_trainer_sports_class_path(current_user) , class: "nav-link" %>
+          </div>
+        <% end %>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

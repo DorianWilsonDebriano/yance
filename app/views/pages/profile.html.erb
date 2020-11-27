@@ -1,0 +1,88 @@
+<div class="page container">
+  <div class="profile-header d-flex align-center">
+    <div class="profile-avatar">
+      <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
+    </div>
+    <div>
+      <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+    </div>
+  </div>
+
+  <div class="user-info d-flex">
+    <div class="my-account">
+      <p>Your account</p>
+      <div class="edit-buttons">
+        <%= link_to edit_user_registration_path do %>
+            <i class="fas fa-pen-square" id="info-edit-icon"></i>
+        <% end %>
+      </div>
+      <li> <strong>login:</strong> <%= current_user.email %> </li>
+      <li> <strong>password:</strong> ************ <%= link_to "edit password", edit_user_password_path %> </li>
+    </div>
+    <div class="about-me">
+      <p>About you</p>
+      <div class="edit-buttons">
+        <%= link_to edit_user_registration_path do %>
+            <i class="fas fa-pen-square" id="about-edit-icon"></i>
+        <% end %>
+      </div>
+      <li> <strong>language:</strong> <%= current_user.language %> </li>
+      <li> <strong>bio:</strong> <%= current_user.bio %> </li>
+    </div>
+  </div>
+  <div class="upcoming-classes-section d-flex justify-content-center flex-column">
+    <h2>Your upcoming classes</h2>
+    <div class="profile-upcoming-classes">
+      <% @user_bookings.each do |user_booking| %>
+        <div class="sports-classes-card pt-3">
+          <div class="class-card-header d-flex justify-content-between">
+            <div class="card-header-left">
+              <p class="class-card-duration"><%= user_booking.sports_class.duration %></p>
+              <p class="class-card-datetime"><%= user_booking.sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+            </div>
+            <div class="card-header-right">
+              <p class="class-card-category"><%= user_booking.sports_class.category %></p>
+            </div>
+          </div>
+          <% if user_booking.sports_class.photo.attached? %>
+            <div>
+              <%= cl_image_tag user_booking.sports_class.photo.key, class: "class-card-image" %>
+            </div>
+          <% end %>
+          <div class="card-bottom-section">
+            <p class="class-card-title"><%= user_booking.sports_class.title %></p>
+            <div class="class-card-levels d-flex row">
+              <div class="class-card-difficulty col-4">
+                <p class="class-card-level-title">DIFFICULTY</p>
+                <p class="class-card-level-content"> <%= user_booking.sports_class.difficulty_level %> </p>
+              </div>
+              <div class="class-card-sweat col-4">
+                <p class="class-card-level-title">SWEAT</p>
+                <p class="class-card-level-content"> <%= user_booking.sports_class.sweat_level %> </p>
+              </div>
+              <div class="class-card-experience col-4">
+                <p class="class-card-level-title">LEVEL</p>
+                <p class="class-card-level-content"> <%= user_booking.sports_class.experience_level %> </p>
+              </div>
+            </div>
+          </div>
+          <div class="booked-class-card-footer-grey mt-4">
+            <div class="booked-class-card-trainer">
+              <% if user_booking.sports_class.trainer.user.photo.attached? %>
+                <%= cl_image_tag user_booking.sports_class.trainer.user.photo.key, class: "avatar-bordered" %>
+              <% end %>
+                <div class="booked-class-card-fullname">
+                  <p class="booked-class-card-firstname"><%= user_booking.sports_class.trainer.user.first_name %></p>
+                  <p class="booked-class-card-lastname"><%= user_booking.sports_class.trainer.user.last_name %></p>
+                </div>
+            </div>
+            <div class="class-info-book-buttons d-flex justify-content-center">
+               <button class="btn go-to-class-button"><%= link_to "go to class", "#", method: "GET"%></button>
+            </div>
+          </div>
+          <button class="btn profile-cancel-booking"> <%= link_to "cancel booking", class_booking_path(user_booking), method: :delete, data: { confirm: "Are you sure?" }, class: "profile-cancel-button" %> </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

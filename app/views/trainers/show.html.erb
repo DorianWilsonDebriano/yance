@@ -19,7 +19,7 @@
           </div>
 
           <div class = "trainer-name-follow">
-            <p class = "trainer-name">Jennifer Harris</p>
+            <p class = "trainer-name"><%=@trainer.user.first_name%> <%=@trainer.user.last_name%></p>
             <p class = "follow-review">follow</p>
             <p class = "follow-review">review</p>
           </div>
@@ -51,23 +51,38 @@
 
         </div>
 
-          <div class = "top-review-row">
-            <p class = "title-font">Reviews</p>
-            <p class ="write-review">Write a review</p>
-          </div>
-
-          <div class = "user-reviews">
-
-          </div>
-
+        <div class = "top-review-row">
+          <p class = "title-font">Reviews</p>
+           <%=link_to "Write a review", new_sports_class_review_path(params[:id]), class: "write-review"%>
         </div>
+
+        <div class = "user-reviews">
+          <% @reviews.each do |review| %>
+          <div class = "one-review">
+            <%=review.user.username%>
+            <%review.rating.times do%>
+            <i class="fas fa-star color-star"></i>
+            <% end %>
+          </div>
+          <div class = "review-content">
+            <%=review.content%>
+          </div>
+          <%end%>
+
+          </div>
 
       </div>
 
     </div>
 
   </div>
+
 </div>
+
+</div>
+
+</div>
+
 
 
 
