@@ -36,7 +36,7 @@ class SportsClassesController < ApplicationController
     @trainer = Trainer.find(params[:trainer_id])
     @sportsclass = SportsClass.new(sports_class_params)
     @sportsclass.trainer = @trainer
-    authorize @sportsclass
+    authorize @trainer, policy_class: SportsClassPolicy
     if @sportsclass.save
       redirect_to sports_classes_path, notice: "Your class has been created"
     else
