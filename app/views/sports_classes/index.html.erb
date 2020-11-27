@@ -1,4 +1,4 @@
-<div class="container d-flex justify-content-center flex-column">
+<div class="page container d-flex justify-content-center flex-column">
 
   <div class="search-container">
    <div class="row justify-content-center">
@@ -15,9 +15,9 @@
             placeholder: "Date"
             %>
           <div class="button">
-            <%= submit_tag "", class: "btn search-button" %>
-            <i class="fas fa-search search-icon"></i>
-          </div>
+            <%= button_tag(type: "submit", class: "btn search-button") do %>
+              <i class="fas fa-search search-icon"></i>
+          <% end %>
         <% end %>
       </div>
     </div>

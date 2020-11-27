@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :trainers, dependent: :destroy
-
+  has_many :sports_classes, through: :trainers
 
 
   has_many :class_bookings, dependent: :destroy
