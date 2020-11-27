@@ -54,9 +54,9 @@
 }
 
 .class-info-link {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bolder;
-  text-decoration: none;
+  text-decoration: none!important;
   color: white;
   &:hover {
     color: white;
@@ -65,8 +65,8 @@
 }
 
 .card-book-class-link {
-  font-size: 12px;
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: 15px;
   text-decoration: none;
   color: black;
   &:hover {
@@ -91,6 +91,8 @@
 
 .profile-cancel-booking {
   width: 100%;
+  font-weight: bolder;
+  font-size:15px;
   border-radius: 0px 0px 4px 4px;
   background-color: black;
 }
