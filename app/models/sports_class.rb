@@ -1,6 +1,6 @@
 class SportsClass < ApplicationRecord
 
-  belongs_to :trainer, dependent: :destroy
+  belongs_to :trainer
   has_one_attached :photo
   has_many :class_bookings
   has_many :reviews
