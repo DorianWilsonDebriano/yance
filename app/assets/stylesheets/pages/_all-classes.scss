@@ -16,6 +16,18 @@
   padding-top: 73px;
 }
 
+div:focus {
+  outline: none;
+}
+
+input:focus {
+    outline:none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .main-content {
   min-height: 100vh;
   display: flex;
@@ -23,4 +35,3 @@
   .content {
     flex-grow: 1;
   }
-}
