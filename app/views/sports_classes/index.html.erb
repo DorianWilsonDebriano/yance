@@ -26,7 +26,7 @@
   <% if user_signed_in? %>
     <% if current_user.class_bookings.length > 0 %>
         <h2 class="all-classes-title pt-5">Your upcoming classes</h2>
-        <div class="booked-sports-classes-cards pt-3">
+        <div class="booked-sports-classes-cards pt-3 ">
           <% @classbookings.each do |classbooking| %>
             <div class="booked-sports-classes-card pt-3">
               <div class="booked-class-card-header d-flex justify-content-between">

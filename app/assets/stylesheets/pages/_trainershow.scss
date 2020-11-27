@@ -1,24 +1,22 @@
 
-.container{
-  width:100vw;
-}
 .page-content{
   height: 100vh;
   background-color:white;
+
 }
 .header-image{
-  height: 25%;
+  height: 400px;
+  overflow:hidden;
+  border-radius:8px;
 }
 .remaining{
   height:75%;
   display:flex;
 }
-.trainer-tags{
-  width:65%;
+.banner-image{
+width:100%;
 }
-.video-reviews{
-  width:35%;
-}
+
 .trainer{
   height:15%;
   display:flex;
@@ -33,6 +31,7 @@
 .trainer-name-follow{
   display:flex;
   padding-left: 16px;
+  padding-top:8px;
 }
 .trainer-name-follow p{
   display:flex;
@@ -92,11 +91,11 @@
   justify-content: center;
   align-items: center;
   padding-top:5px;
+
 }
 .classes{
-  display:flex;
-  justify-content:space-around;
   padding-top:16px;
+
 }
 .class1{
   border:1px solid black;
