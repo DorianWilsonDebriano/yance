@@ -135,16 +135,16 @@ sports_class_2 = SportsClass.new(
 sports_class_2.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_2.save!
 
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606487059/raphael-nast-2ia6IXXNGwY-unsplash_qki4wo.jpg')
 sports_class_3 = SportsClass.new(
-    title: "Wednesday Whirl",
-    description: "Lets move!",
+    title: "Ballet Fit",
+    description: "Look and feel like a dancer with Cassy. Her workout consists of ballet and palettes, which will help sculpt and shape your body. You won't be twirling or prancing, but you will feel the burn!",
     date_time: DateTime.new(2020,11,25,13),
     duration: "30 mins",
-    category: "Zumba",
-    difficulty_level: 2,
+    category: "dance",
+    difficulty_level: 4,
     sweat_level: 3,
-    experience_level: "Beginner",
+    experience_level: "Advanced",
     equipment: true,
     language: "English",
     trainer: trainer_3,
@@ -153,7 +153,7 @@ sports_class_3 = SportsClass.new(
 sports_class_3.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_3.save!
 
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606486726/clem-onojeghuo-n6gnCa77Urc-unsplash_h7uuak.jpg')
 sports_class_4 = SportsClass.new(
     title: "Feel it Friday",
     description: "Burn off the weeks stress and frustrations!",
@@ -171,5 +171,24 @@ sports_class_4 = SportsClass.new(
 
 sports_class_4.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_4.save!
+
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606486726/tyler-nix-Y1drF0Y3Oe0-unsplash_dorywz.jpg')
+sports_class_5 = SportsClass.new(
+    title: "Lunch Break Energizer",
+    description: "No time for both lunch break and a workout? Those days are over when you try the new 10-minute version of Adham's popular lunch break workout!",
+    date_time: DateTime.new(2020,11,27,18),
+    duration: "40 mins",
+    category: "HITT",
+    difficulty_level: 2,
+    sweat_level: 3,
+    experience_level: "Beginner",
+    equipment: true,
+    language: "English",
+    trainer: trainer_4,
+)
+
+
+sports_class_5.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+sports_class_5.save!
 
 puts 'new seeds planted!'

@@ -26,6 +26,8 @@
 .class-image {
   max-width: 280px;
   border-radius: 4px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .class-modal-right-column {
@@ -43,9 +45,9 @@
   height: 25%;
 }
 
-.class-modal-class-image {
-  height: 30%;
-}
+// .class-modal-class-image {
+//   height: 30%;
+// }
 
 .class-modal-avatar {
 
