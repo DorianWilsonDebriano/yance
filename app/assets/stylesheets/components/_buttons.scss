@@ -86,6 +86,20 @@
   }
 }
 
+.go-to-created-class-button {
+  border-radius: 25px;
+  border: solid 1.8px;
+  border-color: #FECD42;
+  position: relative;
+  left: 109px;
+  top: -16px;
+  a {
+    color:$yance-yellow;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
 .profile-cancel-booking {
   width: 100%;
   border-radius: 0px 0px 4px 4px;
@@ -98,4 +112,12 @@
     &:hover {
       color:white;
     }
+}
+
+.new-class-icon {
+  color: #FECD42;
+  font-size: 34px;
+  position: absolute;
+  top: 144px;
+  right: 88px;
 }
