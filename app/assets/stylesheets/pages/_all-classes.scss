@@ -15,3 +15,15 @@
 .page {
   padding-top: 73px;
 }
+
+div:focus {
+  outline: none;
+}
+
+input:focus {
+    outline:none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
