@@ -1,1 +1,150 @@
-// Specific CSS for your home-page
+.home-page-logo {
+  width: 300px;
+  position: relative;
+  left: 360px;
+}
+
+.home-page-logo-img {
+  height: 40px;
+}
+
+.home-page-logo-name {
+  height: 52px;
+  margin-left: 16px;
+  position: relative;
+  bottom: 9px;
+}
+
+#home-title {
+    font-size: 24px;
+    font-weight: bolder;
+    width: 418px;
+    position: relative;
+    left: 359px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
+  }
+
+.banner-section {
+  height: 100vh;
+  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606478868/yance-background-image_tetvbe.png")
+}
+
+.banner-content {
+  padding-top: 25vh;
+}
+
+.learn-more {
+  text-align: center;
+  position: relative;
+  top: 180px;
+    p {
+    color: white;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+#banner-caret {
+  color: white;
+  font-size: 32px;
+}
+
+
+.punchliner-search {
+  margin-top: 90px;
+  justify-content: space-between;
+}
+
+#punchliner-searchbar-right {
+  width: 650px;
+}
+
+.home-info-section {
+  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606480943/background-blocks_kio8x2.png");
+  height: 695px;
+  justify-content: space-between;
+  margin-top: 50px;
+
+}
+.punchliner-left {
+  width: 325px;
+  h2 {
+    font-weight: bolder;
+    font-size: 24px;
+    color: $dark-text;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+.punchliner-right {
+  h2 {
+    font-weight: bolder;
+    font-size: 24px;
+    color: $dark-text;
+    text-align: end;
+    padding-right: 10px;
+  }
+}
+
+
+#punchliner-left-bottom {
+  position: relative;
+  top: 400px;
+  left: 150px;
+}
+
+#punchliner-right-top {
+  width: 325px;
+  position: relative;
+  top: 130px;
+  right: 140px;
+  h2 {
+      font-weight: bolder;
+      font-size: 24px;
+      color: $dark-text;
+    }
+    p {
+      font-size: 16px;
+    }
+}
+
+.promo-banner {
+  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606389292/h5txfhai6twx8hqc5dwiskfnxgvs.jpg");
+  height: 145px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  h2 {
+    font-weight: bolder;
+    font-size: 32px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
+  }
+}
+
+.how-it-works-section {
+  margin-top: 70px;
+  h2 {
+    font-weight: bolder;
+    font-size: 24px;
+    color: $dark-text;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+.how-to-image {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
+  border-radius: 8px;
+  height: 200px;
+  margin: 30px 0px 30px 0px;
+
+}
