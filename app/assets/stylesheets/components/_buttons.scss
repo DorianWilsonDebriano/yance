@@ -48,12 +48,15 @@
   border-radius: 4px;
   color: white;
   width: 40%;
+  &:hover{
+    text-decoration: none;
+  }
 }
 
 .class-info-link {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bolder;
-  text-decoration: none;
+  text-decoration: none!important;
   color: white;
   &:hover {
     color: white;
@@ -62,8 +65,8 @@
 }
 
 .card-book-class-link {
-  font-size: 12px;
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: 15px;
   text-decoration: none;
   color: black;
   &:hover {
@@ -102,6 +105,8 @@
 
 .profile-cancel-booking {
   width: 100%;
+  font-weight: bolder;
+  font-size:15px;
   border-radius: 0px 0px 4px 4px;
   background-color: black;
 }
@@ -113,6 +118,16 @@
       color:white;
     }
 }
+
+.class-sign-up-button {
+  background-color: black;
+  border-radius: 4px;
+  font-size: 25px;
+  width: 100%;
+  color: white;
+    &:hover {
+      color:white;
+    }
 
 .new-class-icon {
   color: #FECD42;
