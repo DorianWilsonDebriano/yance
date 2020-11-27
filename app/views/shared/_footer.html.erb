@@ -1,9 +1,11 @@
 <div class="footer">
   <div class="container d-flex justify-content-between p-5 mt-5">
     <div>
+    <% if user_signed_in? %>
       <p> <strong> ABOUT </strong></p>
       <p><%= link_to "Become a trainer", new_trainer_path, class: "footer-link" %></p>
       <p><%= link_to "Create a class", new_trainer_sports_class_path(@user), class: "footer-link" %></p>
+    <% end %>
     </div>
     <div class="text-right">
       <p><strong>INFO</strong></p>
