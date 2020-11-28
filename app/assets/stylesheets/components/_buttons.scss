@@ -76,7 +76,9 @@
 }
 
 .go-to-class-button {
+  margin-top: 6px;
   border-radius: 25px;
+  font-size: 17px;
   border: solid 1.8px;
   border-color: $yance-yellow;
   position: relative;
@@ -92,7 +94,7 @@
 .go-to-created-class-button {
   border-radius: 25px;
   border: solid 1.8px;
-  border-color: #FECD42;
+  border-color: $yance-yellow;
   position: relative;
   left: 109px;
   top: -16px;
@@ -119,10 +121,10 @@
     }
 }
 
-.class-sign-up-button {
-  background-color: black;
+.class-log-in-button {
+  background-color: $yance-yellow!important;
   border-radius: 4px;
-  font-size: 25px;
+  font-weight: bold;
   width: 100%;
   color: white;
     &:hover {
@@ -130,9 +132,25 @@
     }
 }
 .new-class-icon {
-  color: #FECD42;
+  color: $yance-yellow;
   font-size: 34px;
   position: absolute;
   top: 144px;
   right: 88px;
+}
+
+.class-sign-up-button {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  background-color: black!important;
+  border-radius: 32px;
+  font-weight: bold;
+  font-size: 18px;
+  width: 100%;
+  color: white!important;
+}
+
+
+.btn:focus, .btn.focus {
+  box-shadow: none;
 }
