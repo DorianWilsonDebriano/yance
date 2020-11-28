@@ -1,96 +1,167 @@
-<div class = "container-fluid">
-  <div class = "header-image">
+<div class="container-fluid">
+  <div class="header-image">
   <% if @trainer.time_line_photo.attached? %>
-  <%= cl_image_tag @trainer.time_line_photo.key,height: 123.5, width: 522,  crop: :fill %>
+    <%= cl_image_tag @trainer.time_line_photo.key, class: "banner-image" %>
   <%else%>
-  <%= image_tag("banner", class:"banner-image") %>
+    <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606587598/pexels-nataliya-vaitkevich-5412249_otsho9.jpg", class: "banner-image" %>
   <% end %>
   </div>
 </div>
-<div class = "container">
-  <div class= "row">
-    <div class = "col-8">
-      <div class = "trainer-tags">
-        <div class = "trainer">
-
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="trainer-tags">
+        <div class="trainer">
           <div class="trainer-img">
             <% if @trainer.profile_photo.attached? %>
-            <%= cl_image_tag @trainer.profile_photo.key,height: 64, width: 64,  crop: :fill %>
+              <%= cl_image_tag @trainer.profile_photo.key, class: "trainer-profile-avatar" %>
+            <% else %>
+              <%= cl_image_tag @trainer.user.photo.key, class: "trainer-profile-avatar" %>
             <% end %>
           </div>
-
-          <div class = "trainer-name-follow">
-            <p class = "trainer-name"><%=@trainer.user.first_name%> <%=@trainer.user.last_name%></p>
-            <p class = "follow-review">follow</p>
-            <p class = "follow-review">review</p>
+          <div class="trainer-name-follow">
+            <p class="trainer-name"><%=@trainer.user.first_name%> <%=@trainer.user.last_name%></p>
+<!--             <p class = "follow-review">follow</p>
+            <p class = "follow-review">review</p> -->
           </div>
 
         </div>
 
-        <div class = "tags">
-          <p class = "title-font"> Tags</p>
-          <p class = "category"><%=@trainer.sport_category%></p>
+        <div class="tags">
+          <p class="title-font">Tags</p>
+          <p class="category"><%=@trainer.sport_category%></p>
         </div>
 
-        <div class = "bio">
-          <p class = "title-font"> A little bit about me</p>
-          <p class = "content-font"><%=@trainer.bio%></p>
+        <div class="bio">
+          <p class="title-font"> A little bit about me</p>
+          <p class="content-font"><%=@trainer.bio%></p>
         </div>
 
-        <div class = "upcoming">
-          <p class = "title-font"> Upcoming classes</p>
-          <div class ="classes row">
-            <% @trainer.sports_classes.each do |sportsclass| %>
-            <div class = "col-6 py-2">
-                 <div class="sports-classes-card pt-3">
-              <div class="class-card-header d-flex justify-content-between">
-                <div class="card-header-left">
-                  <p class="class-card-duration"><%= sportsclass.duration %></p>
-                  <p class="class-card-datetime"><%= sportsclass.date_time.strftime("%A %b %d %Y %H:%M") %></p>
-                </div>
-                <div class="card-header-right">
-                  <p class="class-card-category"><%= sportsclass.category %></p>
-                </div>
-              </div>
-            </div>
-            <% if sportsclass.photo.attached? %>
-            <div>
-              <%= cl_image_tag sportsclass.photo.key, class: "class-card-image" %>
-            </div>
-            <%end%>
-            <div class="booked-card-bottom-section">
-                <p class="booked-class-card-title"><%= sportsclass.title %></p>
-                <div class="booked-class-card-levels d-flex row">
-                  <div class="booked-class-card-difficulty col-4">
-                    <p class="booked-class-card-level-title">DIFFICULTY</p>
-                    <p class="booked-class-card-level-content"> <%= sportsclass.difficulty_level %> </p>
+        <div class="upcoming">
+          <p class="title-font"> <%= @trainer.user.first_name%>'s upcoming classes</p>
+          <div class="d-flex justify-content-center flex-column">
+            <div class="classes">
+              <% @trainer.sports_classes.each do |sportsclass| %>
+                <div class="sports-classes-card pt-3">
+                  <div class="class-card-header d-flex justify-content-between">
+                    <div class="card-header-left">
+                      <p class="class-card-duration"><%= sportsclass.duration %></p>
+                      <p class="class-card-datetime"><%= sportsclass.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+                    </div>
+                    <div class="card-header-right">
+                      <p class="class-card-category"><%= sportsclass.category %></p>
+                    </div>
                   </div>
-                  <div class="booked-class-card-sweat col-4">
-                    <p class="booked-class-card-level-title">SWEAT</p>
-                    <p class="booked-class-card-level-content"> <%= sportsclass.sweat_level %> </p>
+                  <% if sportsclass.photo.attached? %>
+                    <div>
+                      <%= cl_image_tag sportsclass.photo.key, class: "class-card-image" %>
+                    </div>
+                  <% end %>
+                  <div class="card-bottom-section">
+                    <p class="class-card-title"><%= sportsclass.title %></p>
+                    <div class="class-card-levels row">
+                      <div class="class-card-difficulty col-4">
+                        <p class="class-card-level-title">DIFFICULTY</p>
+                        <p class="class-card-level-content"> <%= sportsclass.difficulty_level %> </p>
+                      </div>
+                      <div class="class-card-sweat col-4">
+                        <p class="class-card-level-title">SWEAT</p>
+                        <p class="class-card-level-content"> <%= sportsclass.sweat_level %> </p>
+                      </div>
+                      <div class="class-card-experience col-4">
+                        <p class="class-card-level-title">LEVEL</p>
+                        <p class="class-card-level-content"> <%= sportsclass.experience_level %> </p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="booked-class-card-experience col-4">
-                    <p class="booked-class-card-level-title">LEVEL</p>
-                    <p class="booked-class-card-level-content"> <%= sportsclass.experience_level %> </p>
+                  <div>
+                    <div class="class-info-book-buttons d-flex justify-content-center">
+                      <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, @classbooking), method: "POST", class: "card-book-class-link btn class-card-book-button" %>
+                      <button type="button" class="btn class-card-info-button class-info-link" data-toggle="modal" data-target="#modal-<%= sportsclass.id %>">
+                        INFO
+                      </button>
+                    </div>
                   </div>
                 </div>
+                <!-- modal -->
+                <div class="modal fade" id="modal-<%= sportsclass.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable class-modal-dialog">
+                    <div class="modal-content class-modal-content">
+                      <div class="class-modal-inner-content row justify-content-between">
+                        <div class="class-modal-left-column col-5 pt-4 pl-5">
+                          <div class="class-modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"> <strong> <%= sportsclass.title %> </strong></h5>
+                            <p class="class-modal-date"><%= sportsclass.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+                            <p class="class-modal-category"><%= sportsclass.category %></p>
+                          </div>
+                          <% if sportsclass.photo.attached? %>
+                            <div class="class-modal-class-image">
+                              <%= cl_image_tag sportsclass.photo.key, class: "class-image" %>
+                            </div>
+                          <% end %>
+                          <br>
+                          <div class="class-modal-levels d-flex row pr-3 pl-2">
+                            <div class="class-modal-difficulty col-4">
+                              <p class="class-modal-level-title">DIFFICULTY</p>
+                              <p class="class-modal-level-content"> <%= sportsclass.difficulty_level %> </p>
+                            </div>
+                            <div class="class-modal-sweat col-4">
+                              <p class="class-modal-level-title">SWEAT</p>
+                              <p class="class-modal-level-content"> <%= sportsclass.sweat_level %> </p>
+                            </div>
+                            <div class="class-modal-experience col-4">
+                              <p class="class-modal-level-title">LEVEL</p>
+                              <p class="class-modal-level-content"> <%= sportsclass.experience_level %> </p>
+                            </div>
+                          </div>
+                          <div class="class-modal-equipment">
+                            <p class="class-modal-equipment-title">Equipment needed?</p>
+                            <% if sportsclass.equipment == false %>
+                              <p class="class-modal-equipment-content">none</p>
+                            <% else %>
+                              <p class="class-modal-equipment-content">yes, see class description</p>
+                            <% end %>
+                          </div>
+                        </div>
+                        <div class="class-modal-right-column col-7 pt-4 pr-5">
+                          <div class="class-modal-right-header d-flex justify-content-between">
+                            <div class="class-modal-trainer-name">
+                              <span> with <strong> <%= sportsclass.trainer.user.first_name %> <%= sportsclass.trainer.user.last_name %> </strong> </span>
+                            </div>
+                            <% if sportsclass.trainer.user.photo.attached? %>
+                              <div class="class-modal-avatar">
+                                <%= cl_image_tag sportsclass.trainer.user.photo.key, class: "class-trainer-photo" %>
+                              </div>
+                            <% end %>
+                            <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="class-modal-description">
+                            <p> <strong> Class description </strong></p>
+                            <p><%= sportsclass.description %></p>
+                          </div>
+                          <div class="class-modal-bio">
+                            <p> <strong> Trainer bio </strong></p>
+                            <p><%= sportsclass.trainer.bio %></p>
+                          </div>
+                          <div>
+                            <div class="align-center pr-3 py-2">
+                              <%= link_to "Book", sports_class_class_bookings_path(sportsclass,@classbooking), method: "POST", class: "book-class-link btn class-modal-book-button" %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
             </div>
-            <div>
-              <div class="align-center pr-3 py-2">
-                <button type="button" class="btn class-modal-book-button" data-dismiss="modal"> <%= link_to "Book", sports_class_class_bookings_path(sportsclass,@classbooking), method: "POST", class: "book-class-link" %></button>
-              </div>
-              <div class="align-center pr-3 py-2">
-                <button type="button" class="btn class-modal-info-button"> <%= link_to "visit trainer profile", trainer_path(sportsclass.trainer), class: "visit-trainer-link" %></button>
-              </div>
-            </div>
-
-            </div>
-
-            <%end%>
           </div>
         </div>
       </div>
     </div>
+
     <div class = "col-4">
       <div class = "video-reviews">
 
@@ -119,7 +190,6 @@
 
     </div>
   </div>
-
 </div>
 
 

@@ -1,5 +1,5 @@
 <div class="page container d-flex justify-content-center flex-column">
-
+<!-- search bar -->
   <div class="search-container">
    <div class="row justify-content-center">
       <div class="col-sm-8 mt-3">
@@ -22,7 +22,7 @@
       </div>
     </div>
   </div>
-
+<!-- user bookings -->
   <% if user_signed_in? %>
     <% if current_user.class_bookings.length > 0 %>
         <h2 class="all-classes-title pt-5">Your upcoming classes</h2>
@@ -85,6 +85,7 @@
     <h2>All your favourite sports</h2>
   </div> -->
 
+<!-- all classes -->
   <h2 class="all-classes-title mt-5">All classes</h2>
   <div class="sports-classes-cards pt-3">
     <% @sports_classes.each do |sports_class| %>
@@ -137,6 +138,7 @@
             </button>
           </div>
         </div>
+<!-- class modal -->
         <div class="modal fade" id="modal-<%= sports_class.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable class-modal-dialog">
             <div class="modal-content class-modal-content">
