@@ -147,7 +147,10 @@
                           </div>
                           <div>
                             <div class="align-center pr-3 py-2">
-                              <%= link_to "Book", sports_class_class_bookings_path(sportsclass,@classbooking), method: "POST", class: "book-class-link btn class-modal-book-button" %>
+                              <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass,@classbooking), method: "POST", class: "book-class-link btn class-modal-book-button" %>
+                            </div>
+                            <div class="align-center pr-3 py-2">
+                              <%= link_to "VISIT TRAINER", trainer_path(sportsclass.trainer), class: "visit-trainer-link btn class-modal-info-button" %>
                             </div>
                           </div>
                         </div>
@@ -157,10 +160,6 @@
                 </div>
               <% end %>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class = "col-4">
       <div class = "video-reviews">
