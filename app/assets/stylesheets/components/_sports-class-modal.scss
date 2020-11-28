@@ -27,7 +27,10 @@
   max-width: 280px;
   border-radius: 4px;
   object-fit: cover;
+  object-position: center;
   width: 100%;
+  overflow: hidden;
+  max-height: 200px;
 }
 
 .class-modal-right-column {
