@@ -57,11 +57,18 @@ form_tag {
   border: none;
 }
 
-.datepicker:focus {outline:0;}
+// FLATPICKR
 
 .flatpickr-day.selected {
   background-color: #FECD42 !important;
   border: none;
+  box-shadow: none!important;
+}
+
+.flatpickr-day.selected:focus {
+  background-color: #FECD42 !important;
+  border: none;
+  outline: 0;
 }
 
 .flatpickr-day.selected:hover {
@@ -69,13 +76,56 @@ form_tag {
   border: none;
 }
 
-.flatpickr-day.startRange {
-  border-right: none !important;
-  background-color: #FECD42;
+// START RANGE
+
+.flatpickr-day.startRange:hover {
+  background-color: #FECD42 !important;
+  border: none;
+  box-shadow: none !important;
 }
 
+.flatpickr-day.startRange {
+  background-color: #FECD42 !important;
+  border: none;
+  box-shadow: none !important;
+}
+
+.flatpickr-day.selected.startRange:focus {
+  background-color: #FECD42 !important;
+  border: none;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.flatpickr-day.startRange:focus {
+  background-color: #FECD42 !important;
+  border: none;
+
+}
+
+// END RANGE
+
+.flatpickr-day.selected.endRange:focus {
+  background-color: #FECD42 !important;
+  border: none;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.flatpickr-day.selected.endRange {
+  background-color: #FECD42 !important;
+  border: none;
+  box-shadow: none !important;
+}
+
+.flatpickr-day.endRange:hover {
+  background-color: #FECD42 !important;
+  border: none;
+  box-shadow: none !important;
+}
 
 .flatpickr-day.endRange {
   background-color: #FECD42 !important;
   border: none;
+  box-shadow: none !important;
 }
