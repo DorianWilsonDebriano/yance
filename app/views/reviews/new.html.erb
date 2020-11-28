@@ -1,5 +1,5 @@
 <div class="page">
-  <%= simple_form_for [@sportsclass, @review] do |f| %>
+  <%= simple_form_for [@trainer, @review] do |f| %>
     <%= f.input :content, label: "Write a review" %>
     <%= f.input :rating, collection: (0..5), label: "Rating:"%>
 

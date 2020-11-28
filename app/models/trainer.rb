@@ -2,7 +2,7 @@ class Trainer < ApplicationRecord
   belongs_to :user
   has_many :sports_classes, dependent: :destroy
 
-  has_many :reviews, through: :sports_classes
+  has_many :reviews
 
 
   has_one_attached :profile_photo
