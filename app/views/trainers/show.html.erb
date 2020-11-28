@@ -160,37 +160,41 @@
                 </div>
               <% end %>
             </div>
-
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Reviews -->
     <div class = "col-4">
       <div class = "video-reviews">
-
-
         <div class = "top-review-row">
           <p class = "title-font">Reviews</p>
           <%=link_to "Write a review", new_trainer_review_path(@trainer), class: "write-review"%>
         </div>
-
-        <div class = "user-reviews">
+        <div class = "user-reviews pt-4">
           <% @reviews.each do |review| %>
-          <div class = "one-review">
-            <%=review.user.username%>
-            <%review.rating.times do%>
-            <i class="fas fa-star color-star"></i>
-            <% end %>
-          </div>
-          <div class = "review-content">
-            <%=review.content%>
-          </div>
-          <%end%>
-
+            <div class="one-review">
+              <div class="review-user">
+                <div>
+                  <%= cl_image_tag review.user.photo.key, class: "review-avatar" %>
+                </div>
+                <p class="review-user-name"><%= review.user.first_name %> <%= review.user.last_name %></p>
+              </div>
+              <div class="review-stars">
+                <% review.rating.times do %>
+                  <i class="fas fa-star color-star"></i>
+                <% end %>
+              </div>
+              <div class = "review-content">
+                <p><%= review.content %></p>
+              </div>
+            </div>
+          <% end %>
         </div>
-
       </div>
-
     </div>
   </div>
 </div>
-
 
 
 
