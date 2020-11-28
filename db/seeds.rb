@@ -1,7 +1,7 @@
 require 'date'
 require "open-uri"
 
-
+ClassBooking.destroy_all
 SportsClass.destroy_all
 Trainer.destroy_all
 puts "destroy users"
