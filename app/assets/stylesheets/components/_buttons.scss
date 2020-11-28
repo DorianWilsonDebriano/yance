@@ -76,7 +76,9 @@
 }
 
 .go-to-class-button {
+  margin-top: 6px;
   border-radius: 25px;
+  font-weight: 17px;
   border: solid 1.8px;
   border-color: $yance-yellow;
   position: relative;
@@ -92,7 +94,7 @@
 .go-to-created-class-button {
   border-radius: 25px;
   border: solid 1.8px;
-  border-color: #FECD42;
+  border-color: $yance-yellow;
   position: relative;
   left: 109px;
   top: -16px;
@@ -120,7 +122,7 @@
 }
 
 .class-log-in-button {
-  background-color: #FECD42!important;
+  background-color: $yance-yellow!important;
   border-radius: 4px;
   font-weight: bold;
   width: 100%;
@@ -130,7 +132,7 @@
     }
 }
 .new-class-icon {
-  color: #FECD42;
+  color: $yance-yellow;
   font-size: 34px;
   position: absolute;
   top: 144px;
@@ -146,7 +148,4 @@
   font-size: 18px;
   width: 100%;
   color: white!important;
-    &:hover {
-      color:white;
-    }
 }
