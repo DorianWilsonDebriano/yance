@@ -78,7 +78,7 @@
 .go-to-class-button {
   margin-top: 6px;
   border-radius: 25px;
-  font-weight: 17px;
+  font-size: 17px;
   border: solid 1.8px;
   border-color: $yance-yellow;
   position: relative;
@@ -148,4 +148,9 @@
   font-size: 18px;
   width: 100%;
   color: white!important;
+}
+
+
+.btn:focus, .btn.focus {
+  box-shadow: none;
 }
