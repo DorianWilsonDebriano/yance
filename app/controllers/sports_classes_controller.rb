@@ -11,9 +11,10 @@ class SportsClassesController < ApplicationController
     if params[:starts_at].present?
       @sports_classes = @sports_classes.filter do |sports_class|
         time_query = params[:starts_at].split(' ')
-        range_one = time_query.first
-        range_two = time_query.last
-        sports_class.date_time.between?(range_one, range_two)
+        range_one = time_query.first.to_date
+        range_two = time_query.last.to_date
+        sports_class.date_time.to_date.between?(range_one, range_two)
+
       end
     end
 
