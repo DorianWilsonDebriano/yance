@@ -1,14 +1,15 @@
-<div class="container">
-  <div class = "page-content">
-    <!-- inside the rest page we have a div for the header image, and a div for the remaning contents -->
-    <div class = "header-image">
-      <% if @trainer.time_line_photo.attached? %>
-      <%= cl_image_tag @trainer.time_line_photo.key,height: 123.5, width: 522,  crop: :fill %>
-      <% end %>
-    </div>
-
-    <div class = "remaining">
-      <!-- inside remaining we have two div blocks -->
+<div class = "container-fluid">
+  <div class = "header-image">
+  <% if @trainer.time_line_photo.attached? %>
+  <%= cl_image_tag @trainer.time_line_photo.key,height: 123.5, width: 522,  crop: :fill %>
+  <%else%>
+  <%= image_tag("banner", class:"banner-image") %>
+  <% end %>
+  </div>
+</div>
+<div class = "container">
+  <div class= "row">
+    <div class = "col-8">
       <div class = "trainer-tags">
         <div class = "trainer">
 
@@ -38,22 +39,65 @@
 
         <div class = "upcoming">
           <p class = "title-font"> Upcoming classes</p>
-          <div class ="classes">
-            <div class = "class1"></div>
-            <div class = "class2"></div>
+          <div class ="classes row">
+            <% @trainer.sports_classes.each do |sportsclass| %>
+            <div class = "col-6 py-2">
+                 <div class="sports-classes-card pt-3">
+              <div class="class-card-header d-flex justify-content-between">
+                <div class="card-header-left">
+                  <p class="class-card-duration"><%= sportsclass.duration %></p>
+                  <p class="class-card-datetime"><%= sportsclass.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+                </div>
+                <div class="card-header-right">
+                  <p class="class-card-category"><%= sportsclass.category %></p>
+                </div>
+              </div>
+            </div>
+            <% if sportsclass.photo.attached? %>
+            <div>
+              <%= cl_image_tag sportsclass.photo.key, class: "class-card-image" %>
+            </div>
+            <%end%>
+            <div class="booked-card-bottom-section">
+                <p class="booked-class-card-title"><%= sportsclass.title %></p>
+                <div class="booked-class-card-levels d-flex row">
+                  <div class="booked-class-card-difficulty col-4">
+                    <p class="booked-class-card-level-title">DIFFICULTY</p>
+                    <p class="booked-class-card-level-content"> <%= sportsclass.difficulty_level %> </p>
+                  </div>
+                  <div class="booked-class-card-sweat col-4">
+                    <p class="booked-class-card-level-title">SWEAT</p>
+                    <p class="booked-class-card-level-content"> <%= sportsclass.sweat_level %> </p>
+                  </div>
+                  <div class="booked-class-card-experience col-4">
+                    <p class="booked-class-card-level-title">LEVEL</p>
+                    <p class="booked-class-card-level-content"> <%= sportsclass.experience_level %> </p>
+                  </div>
+                </div>
+            </div>
+            <div>
+              <div class="align-center pr-3 py-2">
+                <button type="button" class="btn class-modal-book-button" data-dismiss="modal"> <%= link_to "Book", sports_class_class_bookings_path(sportsclass,@classbooking), method: "POST", class: "book-class-link" %></button>
+              </div>
+              <div class="align-center pr-3 py-2">
+                <button type="button" class="btn class-modal-info-button"> <%= link_to "visit trainer profile", trainer_path(sportsclass.trainer), class: "visit-trainer-link" %></button>
+              </div>
+            </div>
+
+            </div>
+
+            <%end%>
           </div>
         </div>
-
       </div>
-
+    </div>
+    <div class = "col-4">
       <div class = "video-reviews">
-        <div class = "video">
 
-        </div>
 
         <div class = "top-review-row">
           <p class = "title-font">Reviews</p>
-           <%=link_to "Write a review", new_sports_class_review_path(params[:id]), class: "write-review"%>
+          <%=link_to "Write a review", new_sports_class_review_path(params[:id]), class: "write-review"%>
         </div>
 
         <div class = "user-reviews">
@@ -69,19 +113,21 @@
           </div>
           <%end%>
 
-          </div>
+        </div>
 
       </div>
 
     </div>
-
   </div>
 
 </div>
 
-</div>
 
-</div>
+
+
+
+
+
 
 
 
