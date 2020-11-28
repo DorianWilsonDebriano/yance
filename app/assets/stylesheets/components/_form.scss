@@ -10,10 +10,6 @@
     margin-bottom: 30px;
     text-align: center;
   }
-  .btn {
-    width: 100%;
-    margin-bottom: 20px
-  }
   input{
     border-radius: 32px !important;
   }
@@ -24,7 +20,9 @@
 
   a {
     text-decoration: none;
+    text-align: center;
     color: black;
+    font-size: 19px;
   }
   label {
     font-weight: bold;
@@ -32,10 +30,4 @@
   }
 }
 
-.form-trainer{
 
-}
-
-.class-sign-up-button {
-  background-color: #FECD42;
-}
