@@ -28,3 +28,12 @@ a {
 .dropdown-item.active, .dropdown-item:active {
   background-color: white;
 }
+
+.main-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .content {
+    flex-grow: 1;
+  }
+}

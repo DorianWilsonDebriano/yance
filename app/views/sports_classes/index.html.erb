@@ -93,12 +93,12 @@
         <div class="class-card-header d-flex justify-content-between">
           <div class="card-header-left">
             <p class="class-card-duration"><%= sports_class.duration %></p>
-            <p class="class-card-datetime"><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
           </div>
           <div class="card-header-right">
             <p class="class-card-category"><%= sports_class.category %></p>
           </div>
         </div>
+        <p class="class-card-datetime"><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
         <% if sports_class.photo.attached? %>
           <div>
             <%= cl_image_tag sports_class.photo.key, class: "class-card-image" %>
