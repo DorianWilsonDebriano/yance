@@ -12,7 +12,6 @@
 
 .class-card-header {
   padding: 0px 16px;
-  height: 57.48px;
 }
 
 .class-card-duration {
@@ -24,12 +23,15 @@
 .class-card-datetime {
   font-size: 12px;
   font-weight: bolder;
+  width: 100%;
+  padding: 0px 16px;
   color: #929292;
 }
 
 .class-card-category {
   font-size: 14px;
   font-weight: bolder;
+  text-align: end;
 }
 
 .class-card-image {
