@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_150907) do
+ActiveRecord::Schema.define(version: 2020_11_28_224650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,10 +49,10 @@ ActiveRecord::Schema.define(version: 2020_11_24_150907) do
     t.integer "rating"
     t.text "content"
     t.bigint "user_id", null: false
-    t.bigint "sports_class_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["sports_class_id"], name: "index_reviews_on_sports_class_id"
+    t.bigint "trainer_id"
+    t.index ["trainer_id"], name: "index_reviews_on_trainer_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_150907) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "class_bookings", "sports_classes"
   add_foreign_key "class_bookings", "users"
-  add_foreign_key "reviews", "sports_classes"
+  add_foreign_key "reviews", "trainers"
   add_foreign_key "reviews", "users"
   add_foreign_key "sports_classes", "trainers"
   add_foreign_key "trainers", "users"

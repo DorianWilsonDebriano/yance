@@ -3,7 +3,6 @@ class SportsClass < ApplicationRecord
   belongs_to :trainer
   has_one_attached :photo
   has_many :class_bookings
-  has_many :reviews
 
   validates :title, presence: true
   validates :description, presence: true

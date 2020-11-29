@@ -1,10 +1,15 @@
 require 'date'
 require "open-uri"
 
-
+puts "destroying all bookings"
+Booking.destroy_all
+puts "destroying all reviews"
+Review.destroy_all
+puts "destroying all classes"
 SportsClass.destroy_all
+puts "destroying all trainers"
 Trainer.destroy_all
-puts "destroy users"
+puts "destroying all users"
 User.destroy_all
 puts 'deleting all previous 🌱!'
 
