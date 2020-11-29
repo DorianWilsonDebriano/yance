@@ -89,13 +89,13 @@
     <% end %>
   <% end %>
 
-<!--   <div class="favourites d-flex justify-content-start mt-4">
-    <h2>All your favourite sports</h2>
-  </div> -->
-<div class="filter-cards">
-  <h2 class="all-classes-title">Your favorite classes</h2>
-  <%= render "shared/filter-cards" %>
-</div>
+<!-- favorite cllasses -->
+  <% if user_signed_in? %>
+    <div class="filter-cards">
+      <h2 class="all-classes-title">Your favorite classes</h2>
+      <%= render "shared/filter-cards" %>
+    </div>
+  <% end %>
 
 <!-- all classes -->
   <h2 class="all-classes-title mt-5">All classes</h2>
