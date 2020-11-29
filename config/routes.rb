@@ -7,8 +7,8 @@ Rails.application.routes.draw do
    resources :trainers, only: %i[show new create] do
     resources :sports_classes, only: %i[new create]
     resources :reviews, only: %i[new create]
-
   end
+
   resources :sports_classes, only: %i[edit update destroy]
   resources :reviews, only: %i[edit update destroy]
 

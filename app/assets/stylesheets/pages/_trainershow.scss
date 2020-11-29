@@ -125,6 +125,10 @@ align-items: center;
 height: 29px;
 display: flex;
 justify-content: center;
+  &:hover {
+    color: white;
+    background-color: #FFC24D;
+  }
 }
 
 .user-reviews{
