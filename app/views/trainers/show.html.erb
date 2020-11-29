@@ -192,7 +192,11 @@
             <div class="one-review">
               <div class="review-user">
                 <div>
-                  <%= cl_image_tag review.user.photo.key, class: "review-avatar" %>
+                  <% if review.user.photo.present? %>
+                    <%= cl_image_tag review.user.photo.key, class: "review-avatar" %>
+                  <% else %>
+                    <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "review-avatar" %>
+                  <% end %>
                 </div>
                 <p class="review-user-name"><%= review.user.first_name %> <%= review.user.last_name %></p>
               </div>

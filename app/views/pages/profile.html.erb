@@ -1,7 +1,11 @@
 <div class="page container mb-5">
   <div class="profile-header d-flex align-center">
     <div class="profile-avatar">
-      <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
+      <% if current_user.photo.present? %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
+      <% else %>
+        <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "avatar-large" %>
+      <% end %>
     </div>
     <div>
       <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
@@ -36,7 +40,7 @@
     <div class="profile-created-classes-section d-flex justify-content-center flex-column">
       <h2>Your upcoming created classes</h2>
       <div class="new-class-icon">
-        <%= link_to new_trainer_sports_class_path(current_user) do %>
+        <%= link_to new_trainer_sports_class_path(current_user.trainers.ids) do %>
 <!--           <i class="fas fa-plus-circle new-class-icon"></i> -->
           <i class="fas fa-plus new-class-icon"></i>
         <% end %>

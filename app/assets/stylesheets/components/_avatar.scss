@@ -25,6 +25,9 @@
 .trainer-profile-avatar {
   width: 125px;
   border-radius: 50%;
+  height: 125px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .review-avatar {
