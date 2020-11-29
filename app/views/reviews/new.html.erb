@@ -1,8 +1,14 @@
-<div class="page">
-  <%= simple_form_for [@trainer, @review] do |f| %>
-    <%= f.input :content, label: "Write a review" %>
-    <%= f.input :rating, collection: (0..5), label: "Rating:"%>
+<div class="page container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-6 ">
+      <div class="form-login mb-5">
+        <%= simple_form_for [@trainer, @review] do |f| %>
+          <%= f.input :content, label: "Write a review" %>
+          <%= f.input :rating, collection: (0..5), label: "Rating:"%>
 
-    <%=f.submit 'Create Review'%>
-  <% end %>
+          <%=f.submit 'Create Review', class: "btn btn class-sign-up-button"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
