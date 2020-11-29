@@ -80,7 +80,7 @@
 
 .class-modal-level-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   font-size: 14px;
   font-weight: bolder;
 }
@@ -103,4 +103,8 @@
   font-size: 24px;
   color: red;
   margin-left: 10px;
+}
+
+.class-modal-level-content #text {
+  color: transparent;
 }

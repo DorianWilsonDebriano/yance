@@ -30,4 +30,5 @@ class SportsClass < ApplicationRecord
     }
   end
 
+
 end

@@ -4,3 +4,4 @@ class ClassBooking < ApplicationRecord
 
   validates_uniqueness_of :user_id, :scope => [:sports_class_id]
 end
+
