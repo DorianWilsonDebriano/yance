@@ -1,12 +1,21 @@
-<div class="page container">
-  <div class="membership-cards d-flex justify-content-center">
+<div class="page container d-flex justify-content-center flex-column">
+  <h2>Our Memberships</h2>
+  <div class="membership-cards pt-5">
     <% @memberships.each do |membership| %>
       <div class="membership-card">
-        <p><%= membership.title %></p>
-        <p>Renewed on the <%= membership.expiration_date %></p>
-        <p><%= membership.credits %> live classes available per month</p>
-        <p><%= membership.price %> €</p>
-        <%= link_to "Subscribe", new_membership_subscription_path(membership) %>
+        <div class="membership-header">
+          <p class="membership-title"><%= membership.title %></p>
+        </div>
+        <div class="membership-details">
+          <p class="membership-credits"> <strong>Access to:</strong> <br> <%= membership.credits %> live classes available per month</p>
+        </div>
+        <div class="membership-footer">
+          <p class="membership-price"><strong><%= membership.price %> € </strong><span><strong> /month</strong> <br> Reniewed monthly </span></p>
+          <div class="membership-buttons">
+            <div><%= link_to "Choose", new_membership_subscription_path(membership), class: "btn subscribe-button" %></div>
+            <div><%= link_to "more information", new_membership_subscription_path(membership), class: "btn info-button" %></div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

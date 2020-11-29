@@ -1,1 +1,63 @@
+.membership-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
 
+.membership-card {
+  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  border-radius: 8px;
+  text-align: center;
+  height: 70vh;
+  position: relative;
+}
+
+.membership-title {
+  font-size: 16px;
+  font-weight: bolder;
+  padding-top: 16px;
+}
+
+.membership-dates {
+  font-size: 14px;
+}
+
+.membership-credits {
+  font-size: 14px;
+}
+
+.membership-price {
+  font-size: 24px;
+  span {
+    font-size: 14px;
+  }
+  padding-bottom: 24px;
+}
+
+.membership-footer {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  padding: 12px;
+  background-color: rgba(196, 196, 196, 0.1);
+}
+
+.subscribe-button {
+  margin-bottom: 12px;
+  background-color: $yance-yellow;
+  border-radius: 4px;
+  width: 100%;
+  font-weight: bolder;
+}
+
+.info-button {
+  font-weight: bolder;
+  background-color: black;
+  border-radius: 4px;
+  width: 100%;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
