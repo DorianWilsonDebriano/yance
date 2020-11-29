@@ -8,10 +8,6 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :username,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "username" }%>
             <%= f.input :first_name,
                         required: true,
                         autofocus: true,
@@ -24,6 +20,11 @@
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "email" }%>
+            <%= f.input :photo,
+                        as: :file,
+                        required: false,
+                        hint: "leave it blank if you don't want a profile picture",
+                        input_html: { autocomplete: "your profile picture" } %>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

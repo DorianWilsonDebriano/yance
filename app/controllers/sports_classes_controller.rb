@@ -27,6 +27,7 @@ class SportsClassesController < ApplicationController
 
   def new
     @trainer = Trainer.find(params[:trainer_id])
+    @trainer.user = current_user
     @sportsclass = SportsClass.new
     authorize @sportsclass
     # authorize @trainer, policy_class: SportsClassPolicy
