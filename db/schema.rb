@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_224650) do
+ActiveRecord::Schema.define(version: 2020_11_29_153417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 2020_11_28_224650) do
     t.index ["user_id"], name: "index_class_bookings_on_user_id"
   end
 
+  create_table "memberships", force: :cascade do |t|
+    t.string "title"
+    t.date "expiration_date"
+    t.integer "credits"
+    t.float "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "content"
@@ -71,6 +80,15 @@ ActiveRecord::Schema.define(version: 2020_11_28_224650) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["trainer_id"], name: "index_sports_classes_on_trainer_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "membership_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["membership_id"], name: "index_subscriptions_on_membership_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "trainers", force: :cascade do |t|
@@ -106,5 +124,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_224650) do
   add_foreign_key "reviews", "trainers"
   add_foreign_key "reviews", "users"
   add_foreign_key "sports_classes", "trainers"
+  add_foreign_key "subscriptions", "memberships"
+  add_foreign_key "subscriptions", "users"
   add_foreign_key "trainers", "users"
 end
