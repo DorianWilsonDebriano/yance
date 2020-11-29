@@ -1,17 +1,17 @@
 require 'date'
 require "open-uri"
 
-puts "destroying all bookings"
+puts "uprooting all bookings 🌱"
 ClassBooking.destroy_all
-puts "destroying all reviews"
+puts "uprooting all reviews 🌱"
 Review.destroy_all
-puts "destroying all classes"
+puts "uprooting all classes 🌱"
 SportsClass.destroy_all
-puts "destroying all trainers"
+puts "uprooting all trainers 🌱"
 Trainer.destroy_all
-puts "destroying all users"
+puts "uprooting all users 🌱"
 User.destroy_all
-puts 'deleting all previous 🌱!'
+puts 'all previous seeds deleted 🌱!'
 
 # USER SEEDS
 file = URI.open('https://avatars0.githubusercontent.com/u/68596947?s=400&u=f18b9637ef88a32845322a4167ee2d6fe0333c38&v=4')
@@ -87,7 +87,7 @@ trainer_2 = Trainer.new(
 trainer_2.save!
 
 trainer_3 = Trainer.new(
-  bio: "An inclusive classroom environment where we can shape-up out minds and body is my mantra",
+  bio: "An inclusive classroom environment, where we can shape-up our minds and body is my mantra",
   sport_category: "Zumba",
   city: "Frankfurt",
   user: cassy,
@@ -273,7 +273,7 @@ sports_class_9.save!
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606490631/victor-freitas-WvDYdXDzkhs-unsplash_e9kbsd.jpg')
 sports_class_10 = SportsClass.new(
     title: "Iron Bars",
-    description: "There's nothing easy about Adham's workout, but it's well worth it! You'll be doing a whole lot of lifting, deadlift and squats using your barbell Now let's get you summer ready!",
+    description: "There's nothing easy about my workout, but it's well worth it! You'll be doing a whole lot of lifting, deadlift and squats using your barbell Now let's get you summer ready!",
     date_time: DateTime.new(2020,12,5,13),
     duration: "50 mins",
     category: "Resistance Training",
@@ -308,4 +308,22 @@ sports_class_11 = SportsClass.new(
 sports_class_11.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_11.save!
 
-puts 'new seeds planted!'
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606651671/pexels-karolina-grabowska-4498154_t6btmr.jpg')
+sports_class_12 = SportsClass.new(
+    title: "Hula whoop",
+    description: "Abs don't come easy, but the simplicity of the hoola hoop should get those obliques standing out and start burning the hard to shift belly fat!",
+    date_time: DateTime.new(2020,12,27,13),
+    duration: "45 mins",
+    category: "dance",
+    difficulty_level: 3,
+    sweat_level: 4,
+    experience_level: "Beginner",
+    equipment: true,
+    language: "English",
+    trainer: trainer_3,
+)
+
+sports_class_12.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+sports_class_12.save!
+
+puts 'new seeds planted 🌻!'
