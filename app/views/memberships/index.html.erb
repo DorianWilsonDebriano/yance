@@ -1,1 +1,13 @@
-<p>these are all the memberships</p>
+<div class="page container">
+  <div class="membership-cards d-flex justify-content-center">
+    <% @memberships.each do |membership| %>
+      <div class="membership-card">
+        <p><%= membership.title %></p>
+        <p>Renewed on the <%= membership.expiration_date %></p>
+        <p><%= membership.credits %> live classes available per month</p>
+        <p><%= membership.price %> €</p>
+        <%= link_to "Subscribe", new_membership_subscription_path(membership) %>
+      </div>
+    <% end %>
+  </div>
+</div>

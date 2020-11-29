@@ -1,0 +1,17 @@
+<div class="page container">
+  <div class="user-info">
+    <p>first name: <%= current_user.first_name %></p>
+    <p>last name: <%= current_user.first_name %></p>
+    <p>email: <%= current_user.email %></p>
+  </div>
+  <div class="membership-info">
+    <p>Membership type: <%= @membership.title %></p>
+    <p>Available classes per month: <%= @membership.credits %></p>
+    <p>Monthly price: <%= @membership.price %></p>
+    <p>This membership will be automatically renewed on the: <%= @membership.expiration_date %>. You can cancel your subscription anytime from your profile page.</p>
+  </div>
+  <div class="confirm">
+    <%= link_to "confirm subscription", membership_subscriptions_path, method: "POST" %>
+  </div>
+
+</div>

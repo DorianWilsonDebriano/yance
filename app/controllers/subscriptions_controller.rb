@@ -10,14 +10,14 @@ class SubscriptionsController < ApplicationController
 
   def create
     @membership = Membership.find(params[:membership_id])
-    @subscription.user = current_user
     @subscription = Subscription.new
+    @subscription.user = current_user
+    @subscription.membership = @membership
     authorize @subscription
     if @subscription.save
-      @membership.expiration_date = Date.now + 30.days
-      redirect_to sports_classes_path
+      redirect_to sports_classes_path, notice: "You can now join #{@membership.credits} live classes this month"
     else
-      render :new
+      redirect_to sports_classes_path, notice: "You have already subscribed to the #{@membership.title} membership"
     end
   end
 

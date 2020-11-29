@@ -1,6 +1,10 @@
 require 'date'
 require "open-uri"
 
+puts "uprooting subscriptions"
+Subscription.destroy_all
+puts "uprooting memberships"
+Membership.destroy_all
 puts "uprooting all bookings 🌱"
 ClassBooking.destroy_all
 puts "uprooting all reviews 🌱"
@@ -12,6 +16,31 @@ Trainer.destroy_all
 puts "uprooting all users 🌱"
 User.destroy_all
 puts 'all previous seeds deleted 🌱!'
+
+# MEMBERSHIP SEEDS
+light = Membership.new(
+  title: "Yance Lite",
+  expiration_date: Time.now + 30.days,
+  credits: 4,
+  price: 19.99,
+  )
+light.save!
+
+medium = Membership.new(
+  title: "Yance Lite",
+  expiration_date: Time.now + 30.days,
+  credits: 8,
+  price: 19.99,
+  )
+medium.save!
+
+unlimited = Membership.new(
+  title: "Yance Lite",
+  expiration_date: Time.now + 30.days,
+  credits: 20,
+  price: 19.99,
+  )
+unlimited.save!
 
 # USER SEEDS
 file = URI.open('https://avatars0.githubusercontent.com/u/68596947?s=400&u=f18b9637ef88a32845322a4167ee2d6fe0333c38&v=4')
