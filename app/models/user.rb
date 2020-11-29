@@ -10,5 +10,7 @@ class User < ApplicationRecord
   has_many :class_bookings, dependent: :destroy
   has_many :reviews
 
+  has_many :subscriptions
+
   has_one_attached :photo
 end
