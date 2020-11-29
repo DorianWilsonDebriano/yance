@@ -48,11 +48,19 @@
                 <div class="booked-class-card-levels d-flex row">
                   <div class="booked-class-card-difficulty col-4">
                     <p class="booked-class-card-level-title">DIFFICULTY</p>
-                    <p class="booked-class-card-level-content"> <%= classbooking.sports_class.difficulty_level %> </p>
+                    <p class="booked-class-card-level-content">
+                      <% classbooking.sports_class.difficulty_level.times do %>
+                      <i class="fas fa-dumbbell" id="difficulty"></i>
+                      <% end %>
+                    </p>
                   </div>
                   <div class="booked-class-card-sweat col-4">
                     <p class="booked-class-card-level-title">SWEAT</p>
-                    <p class="booked-class-card-level-content"> <%= classbooking.sports_class.sweat_level %> </p>
+                    <p class="booked-class-card-level-content">
+                      <% classbooking.sports_class.sweat_level.times do %>
+                      <i class="fas fa-tint" id="sweat"></i>
+                      <% end %>
+                   </p>
                   </div>
                   <div class="booked-class-card-experience col-4">
                     <p class="booked-class-card-level-title">LEVEL</p>
@@ -60,7 +68,7 @@
                   </div>
                 </div>
               </div>
-              <div class="booked-class-card-footer-grey mt-4">
+              <div class="booked-class-card-footer-grey">
                 <div class="booked-class-card-trainer">
                   <% if classbooking.sports_class.trainer.user.photo.attached? %>
                     <%= cl_image_tag classbooking.sports_class.trainer.user.photo.key, class: "avatar-bordered" %>
@@ -109,11 +117,19 @@
           <div class="class-card-levels row">
             <div class="class-card-difficulty col-4">
               <p class="class-card-level-title">DIFFICULTY</p>
-              <p class="class-card-level-content"> <%= sports_class.difficulty_level %> </p>
+              <p class="class-card-level-content">
+                <% sports_class.difficulty_level.times do %>
+                <i class="fas fa-dumbbell" id="difficulty"></i>
+                <% end %>
+              </p>
             </div>
             <div class="class-card-sweat col-4">
               <p class="class-card-level-title">SWEAT</p>
-              <p class="class-card-level-content"> <%= sports_class.sweat_level %> </p>
+              <p class="class-card-level-content">
+                <% sports_class.sweat_level.times do %>
+                <i class="fas fa-tint" id="sweat"></i>
+                <% end %>
+              </p>
             </div>
             <div class="class-card-experience col-4">
               <p class="class-card-level-title">LEVEL</p>
@@ -158,15 +174,25 @@
                   <div class="class-modal-levels d-flex row pr-3 pl-2">
                     <div class="class-modal-difficulty col-4">
                       <p class="class-modal-level-title">DIFFICULTY</p>
-                      <p class="class-modal-level-content"> <%= sports_class.difficulty_level %> </p>
+                      <p class="class-modal-level-content">
+                        <% sports_class.difficulty_level.times do %>
+                        <i class="fas fa-dumbbell" id="difficulty"></i>
+                        <% end %>
+                      </p>
                     </div>
                     <div class="class-modal-sweat col-4">
                       <p class="class-modal-level-title">SWEAT</p>
-                      <p class="class-modal-level-content"> <%= sports_class.sweat_level %> </p>
+                      <p class="class-modal-level-content">
+                        <% sports_class.sweat_level.times do %>
+                        <i class="fas fa-tint" id="sweat"></i>
+                        <% end %>
+                      </p>
                     </div>
                     <div class="class-modal-experience col-4">
                       <p class="class-modal-level-title">LEVEL</p>
-                      <p class="class-modal-level-content"> <%= sports_class.experience_level %> </p>
+                      <p class="class-modal-level-content">
+                        <%= sports_class.experience_level %>
+                      </p>
                     </div>
                   </div>
                   <div class="class-modal-equipment">

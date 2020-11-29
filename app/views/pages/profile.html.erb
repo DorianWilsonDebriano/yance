@@ -67,11 +67,19 @@
               <div class="class-card-levels d-flex row">
                 <div class="class-card-difficulty col-4">
                   <p class="class-card-level-title">DIFFICULTY</p>
-                  <p class="class-card-level-content"> <%= sports_class.difficulty_level %> </p>
+                  <p class="class-card-level-content">
+                    <% sports_class.difficulty_level.times do %>
+                    <i class="fas fa-dumbbell" id="difficulty"></i>
+                    <% end %>
+                  </p>
                 </div>
                 <div class="class-card-sweat col-4">
                   <p class="class-card-level-title">SWEAT</p>
-                  <p class="class-card-level-content"> <%= sports_class.sweat_level %> </p>
+                  <p class="class-card-level-content">
+                    <% sports_class.sweat_level.times do %>
+                    <i class="fas fa-tint" id="sweat"></i>
+                    <% end %>
+                  </p>
                 </div>
                 <div class="class-card-experience col-4">
                   <p class="class-card-level-title">LEVEL</p>
@@ -115,11 +123,19 @@
             <div class="class-card-levels d-flex row">
               <div class="class-card-difficulty col-4">
                 <p class="class-card-level-title">DIFFICULTY</p>
-                <p class="class-card-level-content"> <%= user_booking.sports_class.difficulty_level %> </p>
+                <p class="class-card-level-content">
+                  <% user_booking.sports_class.difficulty_level.times do %>
+                  <i class="fas fa-dumbbell" id="difficulty"></i>
+                  <% end %>
+                </p>
               </div>
               <div class="class-card-sweat col-4">
                 <p class="class-card-level-title">SWEAT</p>
-                <p class="class-card-level-content"> <%= user_booking.sports_class.sweat_level %> </p>
+                <p class="class-card-level-content">
+                  <% user_booking.sports_class.sweat_level.times do %>
+                  <i class="fas fa-tint" id="sweat"></i>
+                  <% end %>
+                </p>
               </div>
               <div class="class-card-experience col-4">
                 <p class="class-card-level-title">LEVEL</p>
