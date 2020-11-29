@@ -2,7 +2,7 @@ require 'date'
 require "open-uri"
 
 puts "destroying all bookings"
-Booking.destroy_all
+ClassBooking.destroy_all
 puts "destroying all reviews"
 Review.destroy_all
 puts "destroying all classes"
