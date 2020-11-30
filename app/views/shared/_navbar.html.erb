@@ -26,11 +26,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <% if current_user.subscriptions.present? %>
+        <% if current_user.subscription.present? %>
           <div class="available-credits">
-            <% current_user.subscriptions.each do |subscription| %>
-              <p> Available credits: <%= subscription.membership.credits %> </p>
-            <% end %>
+            <p>Remaining credits: <%= current_user.subscription.membership.credits %></p>
           </div>
         <% end %>
         <li class="nav-item" id="BecomeAtrainer">
