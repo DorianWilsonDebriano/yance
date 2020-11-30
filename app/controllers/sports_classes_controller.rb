@@ -6,7 +6,7 @@ class SportsClassesController < ApplicationController
   def index
     @sports_classes = policy_scope(SportsClass).order(date_time: :asc)
     handle_search
-    handle_date_search
+    # handle_date_search
     handle_filters
 
     @classbooking = ClassBooking.new
@@ -67,20 +67,54 @@ class SportsClassesController < ApplicationController
   end
 
   def handle_search
+      # if params[:starts_at].present? && params[:query].present?
+      #  @sports_classes = @sports_classes.search(params[:query]) && SportsClass.where(date_time: Range.new(*params[:starts_at].split(" to ")))
+      # end
+
     if params[:query].present?
       @sports_classes = @sports_classes.search(params[:query])
     end
-  end
-
-  def handle_date_search
     if params[:starts_at].present?
       @sports_classes = SportsClass.where(date_time: Range.new(*params[:starts_at].split(" to ")))
     end
   end
 
+  # unless params[:query].nil? || params[:starts_at].nil?
+  #    @sports_classes = @sports_classes.search(params[:query])
+  #    @sports_classes = SportsClass.where(date_time: Range.new(*params[:starts_at].split(" to ")))
+
+  # end
+
+    # def index
+    # @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
+    # if params[:query].present?
+    #   @sports_classes = @sports_classes.search(params[:query])
+    # end
+    # if params[:starts_at].present?
+    #   @sports_classes = @sports_classes.filter do |sports_class|
+    #     time_query = params[:starts_at].split(' ')
+    #     range_one = time_query.first.to_date
+    #     range_two = time_query.last.to_date
+    #     sports_class.date_time.between?(range_one, range_two)
+    #     raise
+    #   end
+    # end
+
   def handle_filters
     if params.dig(:sports_class, :category).present?
       @sports_classes = @sports_classes.where(category: params[:sports_class][:category])
+    end
+
+    if params.dig(:sports_class, :difficulty_level).present?
+      @sports_classes = @sports_classes.where(difficulty_level: params[:sports_class][:difficulty_level])
+    end
+
+    if params.dig(:sports_class, :experience_level).present?
+      @sports_classes = @sports_classes.where(experience_level: params[:sports_class][:experience_level])
+    end
+
+    if params.dig(:sports_class, :sweat_level).present?
+      @sports_classes = @sports_classes.where(sweat_level: params[:sports_class][:sweat_level])
     end
   end
 end

@@ -36,6 +36,33 @@ class SportsClass < ApplicationRecord
     SportsClass.all.each do |sports_class|
       categories << sports_class.category unless categories.include?(sports_class.category)
     end
-    categories
+    categories.sort
+  end
+
+  def self.difficulty_level
+    difficulty = []
+
+    SportsClass.all.each do |sports_class|
+      difficulty << sports_class.difficulty_level unless difficulty.include?(sports_class.difficulty_level)
+    end
+    difficulty.sort
+  end
+
+  def self.experience_level
+    experience = []
+
+    SportsClass.all.each do |sports_class|
+      experience << sports_class.experience_level unless experience.include?(sports_class.experience_level)
+    end
+    experience.sort
+  end
+
+  def self.sweat_level
+    sweat = []
+
+    SportsClass.all.each do |sports_class|
+      sweat << sports_class.sweat_level unless sweat.include?(sports_class.sweat_level)
+    end
+    sweat.sort
   end
 end

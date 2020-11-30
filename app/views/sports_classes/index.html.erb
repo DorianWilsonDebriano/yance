@@ -1,11 +1,43 @@
 <div class="page d-flex">
 <!-- sidebar filters -->
   <div class="sidebar">
-    <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-      <%=s.label :category, "Sport Type" %>
-      <%= s.select(:category, SportsClass.categories, {}, { onchange: "this.form.submit()" })  %>
-      <%= s.hidden_field(:starts_at, value: params[:starts_at] ) %>
-    <% end %>
+    <div class="dropdown-filter">
+      <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
+        <%=s.label :category, "Sport Type" %>
+        <%= s.select(:category, SportsClass.categories, {include_blank: true}, { onchange: "this.form.submit()" })  %>
+        <%= s.hidden_field(:starts_at, value: params[:starts_at] ) %>
+      <% end %>
+    </div>
+    <div class="dropdown-filter">
+      <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
+        <%=s.label :difficulty_level, "Difficulty Level" %>
+        <%= s.select(:difficulty_level, SportsClass.difficulty_level, {include_blank: true}, { onchange: "this.form.submit()" })  %>
+        <% if  params[:sports_class].present? %>
+          <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="dropdown-filter">
+      <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
+        <%=s.label :experience_level, "Experience Level" %>
+        <%= s.select(:experience_level, SportsClass.experience_level, {include_blank: true}, { onchange: "this.form.submit()" })  %>
+        <% if  params[:sports_class].present? %>
+          <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
+          <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="dropdown-filter">
+      <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
+        <%=s.label :sweat_level, "Sweat Level" %>
+        <%= s.select(:sweat_level, SportsClass.sweat_level, {include_blank: true}, { onchange: "this.form.submit()" })  %>
+        <% if  params[:sports_class].present? %>
+          <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
+          <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
+          <%= s.hidden_field(:experience_level, value: params[:sports_class][:experience_level]) %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
   <div class="page container d-flex justify-content-center flex-column">
     <!-- search bar -->
