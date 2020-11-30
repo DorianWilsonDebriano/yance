@@ -39,8 +39,18 @@
   margin-right: 17px;
 }
 
+.booked-class-info-buttons {
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+  background-color: rgba(200, 200, 200, 0.1);
+  width: 100px;
+}
+
 .class-info-book-buttons {
-  padding: 0px 12px 12px 12px;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .class-card-info-button {
@@ -89,7 +99,21 @@
   }
 }
 
-.fa-video
+.fa-video {
+  font-size: 30px;
+  color: $yance-yellow;
+}
+
+.fa-window-close {
+  font-size: 30px;
+  color: black;
+  margin-top: 12px;
+}
+
+#cancel-class {
+  color: black;
+  font-size: 10px;
+}
 
 .go-to-created-class-button {
   border-radius: 25px;
