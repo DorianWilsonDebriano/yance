@@ -16,6 +16,9 @@
       <li id="nav-statement">
         <h2>every sport live and online</h2>
       </li>
+      <li id="memberships">
+        <p><%= link_to "Memberships", memberships_path, class: "memberships" %></p>
+      </li>
     </ul>
   </div>
 
@@ -23,6 +26,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+        <% if current_user.subscription.present? %>
+          <div class="available-credits">
+            <p>Remaining credits: <%= current_user.subscription.membership.credits %></p>
+          </div>
+        <% end %>
         <li class="nav-item" id="BecomeAtrainer">
           <%= link_to "Become a trainer", new_trainer_path , class: "nav-link" %>
         </li>

@@ -16,6 +16,12 @@ Rails.application.routes.draw do
     resources :class_bookings, only: %i[show new create]
   end
 
+  resources :memberships, only: %i[index show] do
+    resources :subscriptions, only: %i[show new create]
+  end
+
+  resources :subscriptions, only: %i[edit update destroy]
+
   # delete "booking/:id", to: "class_bookings#destroy"
 
   resources :class_bookings, only: %i[edit update destroy]
