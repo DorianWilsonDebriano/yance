@@ -81,7 +81,7 @@
           </div>
           <div>
             <div class="align-center pr-3 py-2">
-              <%= link_to "BOOK", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST", class: "book-class-link btn class-modal-book-button" %>
+              <%= link_to "BOOK", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST", class: "book-class-link btn class-modal-book-button", id:'sweet-alert-book'%>
             </div>
             <div class="align-center pr-3 py-2">
               <%= link_to "VISIT TRAINER", trainer_path(sports_class.trainer), class: "visit-trainer-link btn class-modal-info-button" %>

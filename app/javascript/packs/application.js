@@ -31,11 +31,43 @@ import "../plugins/flatpickr"
 
 import { initStarRating } from '../plugins/init_star_rating';
 
+import { initSweetalert } from '../plugins/init_sweetalert';
+import { initSweetalertAll } from '../plugins/init_sweetalert_all';
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initStarRating();
+  initSweetalert('#sweet-alert-trainer', {
+    title: "Congratulations!",
+    text: "You're now a trainer",
+    icon: "success"
+  });
+  initSweetalert('#sweet-alert-class', {
+    title: "Congratulations!",
+    text: "Your class has been created",
+    icon: "success"
+  });
+  initSweetalert('#sweet-alert-book', {
+    title: "Congratulations!",
+    text: "Your class has been booked",
+    icon: "success"
+  });
+  initSweetalertAll('#sweet-alert-delete',{
+   text: "You're about to cancel your booking. Are you sure?",
+   icon: 'warning',
+ }, (value) => {
+  if (value) {
+    console.log(value,"hello");
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+
+
 });
+});
+
 
 
