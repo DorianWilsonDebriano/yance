@@ -1,7 +1,7 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 24%;
+  width: 16%;
   border-right: 1px solid $light-gray;
   padding: 20px;
   .sidebar-position {
@@ -17,7 +17,8 @@
   form {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid $light-gray;
+  // border-bottom: 1px solid $light-gray;
+  width: 100%;
   }
   select {
     border: none;
