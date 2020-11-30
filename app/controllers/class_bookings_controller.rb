@@ -12,7 +12,9 @@ class ClassBookingsController < ApplicationController
     @classbooking = ClassBooking.new
     @classbooking.user = current_user
     @classbooking.sports_class = @sports_class
+    @membership = current_user.subscription.membership
     if @classbooking.save
+      @membership.update(credits: @membership.credits - 1)
       redirect_to sports_classes_path, notice: "You booked your class"
     else
       redirect_to sports_classes_path, notice: "You have already booked this class"
@@ -22,7 +24,9 @@ class ClassBookingsController < ApplicationController
 
   def destroy
     @classbooking = ClassBooking.find(params[:id])
+    @membership = current_user.subscription.membership
     @classbooking.destroy
+    @membership.update(credits: @membership.credits + 1)
     redirect_to sports_classes_path
     authorize @classbooking
   end

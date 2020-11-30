@@ -1,0 +1,23 @@
+<div class="page container d-flex justify-content-center flex-column">
+  <h2 class="text-center">All you need is one subscription</h2>
+  <p class="text-center">Choose the model that works best for you and start working out immediately!</p>
+  <div class="membership-cards pt-5">
+    <% @memberships.each do |membership| %>
+      <div class="membership-card">
+        <div class="membership-header">
+          <p class="membership-title"><%= membership.title %></p>
+        </div>
+        <div class="membership-details">
+          <p class="membership-credits"> <strong>Includes:</strong> <br> <br> <%= membership.credits %> live classes available per month</p>
+          <p class="membership-description"> <%= membership.description %> </p>
+        </div>
+        <div class="membership-footer">
+          <p class="membership-price"><strong><%= membership.price %> € </strong><span><strong> /month</strong> <br> Renewed monthly </span></p>
+          <div class="membership-buttons">
+            <div><%= link_to "Choose", new_membership_subscription_path(membership), class: "btn subscribe-button" %></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
