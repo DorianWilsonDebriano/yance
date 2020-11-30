@@ -19,7 +19,8 @@ puts 'all previous seeds deleted 🌱!'
 
 # MEMBERSHIP SEEDS
 light = Membership.new(
-  title: "Yance Lite",
+  title: "Yance Starter Package",
+  description: "Perfect for working out once a week",
   expiration_date: Time.now + 30.days,
   credits: 4,
   price: 19.99,
@@ -27,18 +28,20 @@ light = Membership.new(
 light.save!
 
 medium = Membership.new(
-  title: "Yance Lite",
+  title: "Yance Routine Package",
+  description: "Perfect for working out twice a week",
   expiration_date: Time.now + 30.days,
   credits: 8,
-  price: 19.99,
+  price: 29.99,
   )
 medium.save!
 
 unlimited = Membership.new(
-  title: "Yance Lite",
+  title: "Yance Experience Package",
+  description: "Unlimited access to live classes",
   expiration_date: Time.now + 30.days,
   credits: 20,
-  price: 19.99,
+  price: 39.99,
   )
 unlimited.save!
 

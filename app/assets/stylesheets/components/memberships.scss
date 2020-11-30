@@ -8,7 +8,7 @@
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   border-radius: 8px;
   text-align: center;
-  height: 70vh;
+  height: 60vh;
   position: relative;
 }
 
@@ -16,6 +16,10 @@
   font-size: 16px;
   font-weight: bolder;
   padding-top: 16px;
+}
+
+.membership-description {
+  font-size: 14px;
 }
 
 .membership-dates {
@@ -60,4 +64,8 @@
   &:hover {
     color: white;
   }
+}
+
+.membership-details {
+  padding-top: 12px;
 }

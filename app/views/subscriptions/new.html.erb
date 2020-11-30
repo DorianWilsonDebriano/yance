@@ -1,17 +1,22 @@
 <div class="page container">
-  <div class="user-info">
-    <p>first name: <%= current_user.first_name %></p>
-    <p>last name: <%= current_user.first_name %></p>
-    <p>email: <%= current_user.email %></p>
+  <p class="subscription-tagline">Great! <%= current_user.first_name %>, everything is ready. Please confirm that all the informaion is correct and hit confirm!</p>
+  <div class="d-flex pt-5 membership-recap">
+    <div class="container user-subscription-info">
+      <p class="info-title">Your information</p>
+      <p> <strong> first name:</strong>  <%= current_user.first_name %></p>
+      <p><strong> last name:</strong>  <%= current_user.last_name %></p>
+      <p><strong> email:</strong>  <%= current_user.email %></p>
+    </div>
+    <div class="container">
+      <p class="info-title">Your membership</p>
+      <p><strong> Membership: </strong>  <%= @membership.title %> </p>
+      <p><strong>Available monthly class credits:  </strong><%= @membership.credits %> credits /month</p>
+      <p><strong>Price:  </strong><%= @membership.price %>€ per month</p>
+      <br>
+      <p>This membership will be automatically renewed on the: <%= @membership.expiration_date %>. You can cancel your subscription anytime from your profile page.</p>
+      <div class="confirm">
+        <%= link_to "confirm subscription", membership_subscriptions_path, method: "POST", class: "btn subscribe-button" %>
+      </div>
+    </div>
   </div>
-  <div class="membership-info">
-    <p>Membership type: <%= @membership.title %></p>
-    <p>Available classes per month: <%= @membership.credits %></p>
-    <p>Monthly price: <%= @membership.price %></p>
-    <p>This membership will be automatically renewed on the: <%= @membership.expiration_date %>. You can cancel your subscription anytime from your profile page.</p>
-  </div>
-  <div class="confirm">
-    <%= link_to "confirm subscription", membership_subscriptions_path, method: "POST" %>
-  </div>
-
 </div>
