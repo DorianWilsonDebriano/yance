@@ -1,4 +1,8 @@
 require "date"
+require 'uri'
+require 'net/http'
+require 'openssl'
+require 'json'
 
 class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
@@ -23,6 +27,8 @@ class SportsClassesController < ApplicationController
   end
 
   def show
+
+
   end
 
   def new
@@ -39,6 +45,8 @@ class SportsClassesController < ApplicationController
     @sportsclass.trainer = @trainer
     authorize @sportsclass
     if @sportsclass.save
+      room = create_room(@sportsclass)
+      @sportsclass.update(room: JSON.parse(room.body)["name"])
       redirect_to sports_classes_path, notice: "Your class has been created"
     else
       render :new
@@ -65,6 +73,22 @@ class SportsClassesController < ApplicationController
   end
 
   private
+
+  def create_room(sportsclass)
+    url = URI("https://api.daily.co/v1/rooms")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Post.new(url)
+    request["Content-Type"] = 'application/json'
+    request["Authorization"] = 'Bearer ' + ENV["DAILY"]
+    request.body = "{\"name\":\"#{sportsclass.id}\",\"privacy\":\"public\"}"
+
+    response = http.request(request)
+    return response
+  end
 
   def set_sports_class
     @sportsclass = SportsClass.find(params[:id])

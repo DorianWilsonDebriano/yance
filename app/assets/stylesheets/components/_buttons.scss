@@ -180,3 +180,37 @@
 .btn:focus, .btn.focus {
   box-shadow: none;
 }
+
+.back-button-profile {
+  border-radius: 4px;
+  border: solid 2px;
+  font-size: 9px;
+  font-weight: bold;
+  color: white;
+  background-color: #d1d1d1;
+  border-color: #d1d1d1;
+  position: relative;
+  left: -123px;
+  top: 65px;
+   &:hover {
+    background-color: white;
+    color:#d1d1d1;
+   }
+}
+
+.back-button-trainer-show {
+  border-radius: 4px;
+  border: solid 2px;
+  font-size: 9px;
+  font-weight: bold;
+  color: white;
+  background-color: #d1d1d1;
+  border-color: #d1d1d1;
+  position: relative;
+  left: -282px;
+  top: 22px;
+   &:hover {
+    background-color: white;
+    color:#d1d1d1;
+   }
+}

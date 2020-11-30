@@ -11,7 +11,7 @@
       <p class="booked-class-card-category"><strong><%= classbooking.sports_class.category %></strong> with <strong><%= classbooking.sports_class.trainer.user.first_name %> <%= classbooking.sports_class.trainer.user.last_name %></strong> </p>
     </div>
     <div class="booked-class-info-buttons">
-      <button class="btn go-to-class-icon"><%= link_to "#", method: "GET" do %>
+      <button class="btn go-to-class-icon"><%= link_to sports_class_path(classbooking.sports_class), method: "GET" do %>
           <i class="fas fa-video"></i>
         <% end %>
       </button>
