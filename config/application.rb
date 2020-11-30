@@ -16,6 +16,18 @@ module Yance
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*',
+          headers: :any,
+          expose: ['access-token', 'authorization', 'Authorization', 'expiry', 'token-type', 'uid', 'client'],
+          methods: [:get, :post, :options, :delete, :put]
+      end
+    end
+
+    config.hosts << "8a1e5899b647.ngrok.io"
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
