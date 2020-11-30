@@ -1,56 +1,23 @@
-<div class="booked-sports-classes-card pt-3">
-  <div class="booked-class-card-header d-flex justify-content-between">
-    <div class="booked-card-header-left">
+<div class="booked-sports-classes-card pt-3 d-flex">
+    <% if classbooking.sports_class.photo.attached? %>
+      <div>
+        <%= cl_image_tag classbooking.sports_class.photo.key, class: "booked-class-card-image" %>
+      </div>
+    <% end %>
+    <div class="booked-class-card-header">
+      <p class="booked-class-card-title"><%= classbooking.sports_class.title %></p>
       <p class="booked-class-card-duration"><%= classbooking.sports_class.duration %></p>
       <p class="booked-class-card-datetime"><%= classbooking.sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
-    </div>
-    <div class="booked-card-header-right">
-      <p class="booked-class-card-category"><%= classbooking.sports_class.category %></p>
-    </div>
-  </div>
-  <% if classbooking.sports_class.photo.attached? %>
-    <div>
-      <%= cl_image_tag classbooking.sports_class.photo.key, class: "booked-class-card-image" %>
-    </div>
-  <% end %>
-  <div class="booked-card-bottom-section">
-    <p class="booked-class-card-title"><%= classbooking.sports_class.title %></p>
-    <div class="booked-class-card-levels d-flex row">
-      <div class="booked-class-card-difficulty col-4">
-        <p class="booked-class-card-level-title">DIFFICULTY</p>
-        <p class="booked-class-card-level-content">
-          <% classbooking.sports_class.difficulty_level.times do %>
-          <i class="fas fa-dumbbell" id="difficulty"></i>
-          <% end %>
-        </p>
-      </div>
-      <div class="booked-class-card-sweat col-4">
-        <p class="booked-class-card-level-title">SWEAT</p>
-        <p class="booked-class-card-level-content">
-          <% classbooking.sports_class.sweat_level.times do %>
-          <i class="fas fa-tint" id="sweat"></i>
-          <% end %>
-       </p>
-      </div>
-      <div class="booked-class-card-experience col-4">
-        <p class="booked-class-card-level-title">LEVEL</p>
-        <p class="booked-class-card-level-content"> <%= classbooking.sports_class.experience_level %> </p>
-      </div>
-    </div>
-  </div>
-  <div class="booked-class-card-footer-grey">
-    <div class="booked-class-card-trainer">
-      <% if classbooking.sports_class.trainer.user.photo.attached? %>
-        <%= cl_image_tag classbooking.sports_class.trainer.user.photo.key, class: "avatar-bordered" %>
-      <% end %>
-        <div class="booked-class-card-fullname">
-          <p class="booked-class-card-firstname"><%= classbooking.sports_class.trainer.user.first_name %></p>
-          <p class="booked-class-card-lastname"><%= classbooking.sports_class.trainer.user.last_name %></p>
-        </div>
+      <p class="booked-class-card-category"><%= classbooking.sports_class.category %> with <%= classbooking.sports_class.trainer.user.first_name %> <%= classbooking.sports_class.trainer.user.last_name %> </p>
     </div>
     <div class="class-info-book-buttons d-flex justify-content-center">
-       <button class="btn go-to-class-button"><%= link_to "GO TO CLASS", "#", method: "GET"%></button>
+       <button class="btn go-to-class-icon"><%= link_to "#", method: "GET" do %>
+          <i class="fas fa-video"></i>
+         <% end %>
+       </button>
     </div>
-  </div>
-  <button class="btn profile-cancel-booking"> <%= link_to "CANCEL BOOKING", class_booking_path(classbooking), method: :delete, data: { confirm: "Are you sure?" }, class: "profile-cancel-button" %> </button>
+    <button class="btn profile-cancel-booking-icon"> <%= link_to class_booking_path(classbooking), method: :delete, data: { confirm: "Are you sure?" }, class: "profile-cancel-button" do %>
+      <i class="fas fa-window-close"></i>
+      <% end %>
+    </button>
 </div>

@@ -76,20 +76,20 @@
 }
 
 .go-to-class-button {
-  margin-top: 6px;
+  display: inline-block;
+  height: 50px;
   border-radius: 25px;
-  font-size: 17px;
+  font-size: 12px;
   border: solid 1.8px;
   border-color: $yance-yellow;
-  position: relative;
-  left: 75px;
-  top: -25px;
   a {
     color:$yance-yellow;
     text-decoration: none;
     font-weight: bold;
   }
 }
+
+.fa-video
 
 .go-to-created-class-button {
   border-radius: 25px;
@@ -108,9 +108,11 @@
 .profile-cancel-booking {
   width: 100%;
   font-weight: bolder;
-  font-size:15px;
-  border-radius: 0px 0px 4px 4px;
+  font-size:12px;
+  border-radius: 4px;
   background-color: black;
+  display: inline-block;
+  height: 50px;
 }
 
 .profile-cancel-button {
