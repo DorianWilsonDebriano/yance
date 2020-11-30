@@ -19,6 +19,9 @@
               <%= cl_image_tag @trainer.user.photo.key, class: "trainer-profile-avatar" %>
             <% end %>
           </div>
+          <div class="backbutton">
+            <%= link_to "BACK", sports_classes_path, class: "btn back-button-trainer-show"%>
+          </div>
           <div class="trainer-name-follow">
             <p class="trainer-name"><%=@trainer.user.first_name%> <%=@trainer.user.last_name%></p>
 <!--             <p class = "follow-review">follow</p>
