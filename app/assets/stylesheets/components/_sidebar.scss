@@ -4,24 +4,36 @@
   width: 24%;
   border-right: 1px solid $light-gray;
   padding: 20px;
+  .sidebar-position {
+    position: fixed;
+  }
 }
 
 #new_sports_class {
-  padding: 24px;
+  padding: 24px 0;
 }
 
-form {
+.dropdown-filter {
+  form {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid $light-gray;
-}
-
-select {
-  border: none;
-  border-radius: 4px;
-  width: 20%;
-}
-
-label {
-  margin: 0px;
+  }
+  select {
+    border: none;
+    border-radius: 4px;
+    width: 20%;
+  }
+  select:focus {
+    outline: 0 !important;
+  }
+  label {
+    margin: 0px;
+  }
+  input {
+    margin: 0 8px;
+  }
+  input[type=range]+.thumb{
+    background-color: #400090;
+ }
 }

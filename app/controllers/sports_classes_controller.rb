@@ -116,6 +116,10 @@ class SportsClassesController < ApplicationController
     if params.dig(:sports_class, :sweat_level).present?
       @sports_classes = @sports_classes.where(sweat_level: params[:sports_class][:sweat_level])
     end
+
+    if params.dig(:sports_class, :duration).present?
+      @sports_classes = @sports_classes.where(duration: params[:sports_class][:duration])
+    end
   end
 end
 
