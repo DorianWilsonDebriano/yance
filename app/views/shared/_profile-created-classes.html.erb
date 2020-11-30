@@ -41,7 +41,7 @@
     </div>
     <div class="created-class-card-footer mt-4">
       <div class="class-info-book-buttons">
-        <button class="btn go-to-created-class-button"><%= link_to "GO TO CLASS", "#", method: "GET"%></button>
+        <button class="btn go-to-created-class-button"><%= link_to "go to class", sports_class_path(sports_class), method: "GET"%></button>
         <button class="btn profile-cancel-booking"> <%= link_to "CANCEL CLASS", sports_class_path(sports_class), method: :delete, data: { confirm: "Are you sure?" }, class: "profile-cancel-button" %> </button>
       </div>
     </div>
