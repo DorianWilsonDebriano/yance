@@ -1,11 +1,11 @@
 require "date"
 class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
+
   def index
     @sports_classes = policy_scope(SportsClass).order(date_time: :asc)
     handle_search
     handle_date_search
-    handle_filters
     handle_filter_cards
     @classbooking = ClassBooking.new
     @classbookings = policy_scope(ClassBooking).where(user: current_user)
@@ -66,21 +66,8 @@ class SportsClassesController < ApplicationController
   end
 
   def handle_filter_cards
-    if params.dig(:sports_class, :category).present?
-      @sports_classes = @sports_classes.where(category: params[:sports_class][:category])
-    end
-  end
-
-  def handle_filters
-    if params.dig(:sports_class, :category).present?
-      @sports_classes = @sports_classes.where(category: params[:sports_class][:category])
-    end
-    # Parameters: {"sports_class"=>{"difficulty_level"=>"1", "starts_at"=>"", "category"=>""}}
-    if params.dig(:sports_class, :difficulty_level).present?
-      @sports_classes = @sports_classes.where(difficulty_level: params[:sports_class][:difficulty_level])
-        if params.dig(:sports_class, :category, :difficulty_level).present?
-          @sports_classes = @sports_classes.where(category: params[:sports_class][:category], difficulty_level: params[:sports_class][:difficulty_level])
-        end
+    if params[:query].present?
+      @sports_classes = SportsClass.where(category: params[:category])
     end
   end
 end
