@@ -1,0 +1,10 @@
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  width: 16%;
+  border-right: 1px solid $light-gray;
+}
+
+#new_sports_class {
+  padding: 24px;
+}

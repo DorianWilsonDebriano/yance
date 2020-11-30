@@ -1,6 +1,7 @@
 import flatpickr from "flatpickr";
 
 flatpickr(".datepicker", {
-  dateFormat: "d/M/Y",
+  altInput: true,
+  dateFormat: "Z",
   mode: "range"
 });

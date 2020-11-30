@@ -5,18 +5,9 @@ class SportsClassesController < ApplicationController
 
   def index
     @sports_classes = policy_scope(SportsClass).order(date_time: :asc)
-    if params[:query].present?
-      @sports_classes = @sports_classes.search(params[:query])
-    end
-    if params[:starts_at].present?
-      @sports_classes = @sports_classes.filter do |sports_class|
-        time_query = params[:starts_at].split(' ')
-        range_one = time_query.first.to_date
-        range_two = time_query.last.to_date
-        sports_class.date_time.to_date.between?(range_one, range_two)
-
-      end
-    end
+    handle_search
+    handle_date_search
+    handle_filters
 
     @classbooking = ClassBooking.new
     @classbookings = policy_scope(ClassBooking).where(user: current_user)
@@ -74,4 +65,51 @@ class SportsClassesController < ApplicationController
   def sports_class_params
     params.require(:sports_class).permit(:title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :photo)
   end
+
+  def handle_search
+    if params[:query].present?
+      @sports_classes = @sports_classes.search(params[:query])
+    end
+  end
+
+  def handle_date_search
+    if params[:starts_at].present?
+      @sports_classes = SportsClass.where(date_time: Range.new(*params[:starts_at].split(" to ")))
+    end
+  end
+
+  def handle_filters
+    if params.dig(:sports_class, :category).present?
+      @sports_classes = @sports_classes.where(category: params[:sports_class][:category])
+    end
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

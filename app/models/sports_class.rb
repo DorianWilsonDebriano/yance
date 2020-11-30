@@ -29,4 +29,13 @@ class SportsClass < ApplicationRecord
       category: category
     }
   end
+
+  def self.categories
+    categories = []
+
+    SportsClass.all.each do |sports_class|
+      categories << sports_class.category unless categories.include?(sports_class.category)
+    end
+    categories
+  end
 end
