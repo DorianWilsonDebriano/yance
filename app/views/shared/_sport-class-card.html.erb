@@ -52,7 +52,8 @@
       <% if user_signed_in? %>
         <% if current_user.subscription.present? %>
           <% if current_user.subscription.membership.credits > 0 %>
-            <%= link_to "BOOK", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST", class: "card-book-class-link btn class-card-book-button" %>
+            <button class="card-book-class-link btn class-card-book-button" id="sweet-alert-booked"> BOOK </button>
+            <%= link_to "", sports_class_class_bookings_path(sports_class,@classbooking), method: :post, class: "hidden", id:'book-link' %>
           <% else %>
             <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
             <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
@@ -61,8 +62,10 @@
           <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
         <% end %>
       <% else %>
-        <%= link_to "BOOK", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST", class: "card-book-class-link btn class-card-book-button" %>
+      <button class="card-book-class-link btn class-card-book-button" id="sweet-alert-booked"> BOOK </button>
+      <%= link_to "", sports_class_class_bookings_path(sports_class,@classbooking), method: :post, class: "hidden", id:'book-link' %>
       <% end %>
+
       <button type="button" class="btn class-card-info-button class-info-link" data-toggle="modal" data-target="#modal-<%= sports_class.id %>">
         INFO
       </button>
