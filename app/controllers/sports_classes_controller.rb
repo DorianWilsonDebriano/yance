@@ -99,7 +99,6 @@ class SportsClassesController < ApplicationController
 
   def handle_date_search
     if params[:starts_at].present?
-
       if params[:starts_at].include?(" to ")
         starts_at, ends_at = *params[:starts_at].split(" to ")
         starts_at = starts_at.in_time_zone("CET")
