@@ -52,16 +52,25 @@ document.addEventListener('turbolinks:load', () => {
     text: "Your class has been created",
     icon: "success"
   });
-  initSweetalert('#sweet-alert-booked', {
+  initSweetalertAll('#sweet-alert-booked', {
     title: "Congratulations!",
     text: "Your class has been booked",
-    icon: "success"
-  });
+    icon: "success",
+  }, (value) => {
+  if (value) {
+    console.log(value,"hello");
+    const link = document.querySelector('#book-link');
+    link.click();
+  }
+});
   initSweetalert('#sweet-alert-subscription', {
     title: "Congratulations!",
     text: "Your membership has been upgraded",
     icon: "success"
   });
+
+
+
   initSweetalertAll('#sweet-alert-delete',{
    text: "You're about to cancel your booking. Are you sure?",
    icon: 'warning',
