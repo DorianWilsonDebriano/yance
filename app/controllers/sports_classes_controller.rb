@@ -40,7 +40,7 @@ class SportsClassesController < ApplicationController
     if @sportsclass.save
       room = create_room(@sportsclass)
       @sportsclass.update(room: JSON.parse(room.body)["name"])
-      redirect_to sports_classes_path, notice: "Your class has been created"
+      redirect_to sports_classes_path
     else
       render :new
     end
