@@ -22,5 +22,8 @@
           <% end %>
         </button>
       </div>
-  </div>
+
+    </div>
+    <button class="btn profile-cancel-booking"> <%= link_to "CANCEL BOOKING", class_booking_path(user_booking), method: :delete,  class: "profile-cancel-button", id:"sweet-alert-delete"%> </button>
+
 <% end %>

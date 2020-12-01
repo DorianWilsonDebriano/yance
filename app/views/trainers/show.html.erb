@@ -16,7 +16,7 @@
             <% if @trainer.profile_photo.attached? %>
               <%= cl_image_tag @trainer.profile_photo.key, class: "trainer-profile-avatar" %>
             <% else %>
-              <%= cl_image_tag @trainer.user.photo.key, class: "trainer-profile-avatar" %>
+              <%= cl_image_tag "http://squashcity.pl/wp-content/uploads/2020/08/placeholder-avatar-square.jpg", class: "trainer-profile-avatar" %>
             <% end %>
           </div>
           <div class="backbutton">
