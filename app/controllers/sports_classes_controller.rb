@@ -11,13 +11,12 @@ class SportsClassesController < ApplicationController
   def index
     @sports_classes = policy_scope(SportsClass).order(date_time: :asc)
     handle_search
-    handle_date_search
     handle_filter_cards
+    handle_date_search
     @classbooking = ClassBooking.new
     @classbookings = policy_scope(ClassBooking).where(user: current_user)
   end
   def show
-
 
   end
   def new
@@ -40,9 +39,11 @@ class SportsClassesController < ApplicationController
       render :new
     end
   end
+
   def edit
     authorize @sportsclass
   end
+
   def update
     authorize @sportsclass
     if @sportsclass.update(sports_class_params)
@@ -51,11 +52,13 @@ class SportsClassesController < ApplicationController
       render :edit
     end
   end
+
   def destroy
     # authorize @sportsclass
     @sportsclass.destroy
     redirect_to sports_classes_path, notice: "#{@sportsclass.title} has been deleted"
   end
+
   private
 
   def create_room(sportsclass)
@@ -73,6 +76,7 @@ class SportsClassesController < ApplicationController
     response = http.request(request)
     return response
   end
+
   def set_sports_class
     @sportsclass = SportsClass.find(params[:id])
     authorize @sportsclass
@@ -80,11 +84,13 @@ class SportsClassesController < ApplicationController
   def sports_class_params
     params.require(:sports_class).permit(:title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :photo)
   end
+
   def handle_search
     if params[:query].present?
       @sports_classes = @sports_classes.search(params[:query])
     end
   end
+
   def handle_date_search
     if params[:starts_at].present?
       @sports_classes = SportsClass.where(date_time: Range.new(*params[:starts_at].split(" to ")))
@@ -92,7 +98,7 @@ class SportsClassesController < ApplicationController
   end
 
   def handle_filter_cards
-    if params[:query].present?
+    if params[:category].present?
       @sports_classes = SportsClass.where(category: params[:category])
     end
   end
