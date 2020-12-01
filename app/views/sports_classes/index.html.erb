@@ -82,8 +82,10 @@
       <% if current_user.class_bookings.length > 0 %>
           <h2 class="all-classes-title pt-5">Your upcoming classes</h2>
           <div class="booked-sports-classes-cards pt-3 ">
-            <% @classbookings.each do |classbooking| %>
-              <%= render partial: "shared/booked-sport-class-card", locals: { classbooking: classbooking } %>
+            <% cache @classbookings do %>
+              <% @classbookings.each do |classbooking| %>
+                <%= render partial: "shared/booked-sport-class-card", locals: { classbooking: classbooking }, cached: true %>
+              <% end %>
             <% end %>
           </div>
       <% end %>
@@ -101,7 +103,7 @@
     <div class="sports-classes-cards pt-3">
       <% cache @sports_classes do %>
         <% @sports_classes.each do |sports_class| %>
-          <%= render partial: "shared/sport-class-card", locals: { sports_class: sports_class } %>
+          <%= render partial: "shared/sport-class-card", locals: { sports_class: sports_class }, cached: true %>
         <% end %>
       <% end %>
     </div>
