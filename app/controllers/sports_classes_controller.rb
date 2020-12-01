@@ -4,9 +4,9 @@ class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
 
   def index
-    @sports_classes = policy_scope(SportsClass).order(date_time: :asc)
+    @sports_classes = policy_scope(SportsClass).order(date_time: :asc).includes(:trainer)
     handle_search
-    # handle_date_search
+    handle_date_search
     handle_filters
 
     @classbooking = ClassBooking.new
@@ -67,38 +67,25 @@ class SportsClassesController < ApplicationController
   end
 
   def handle_search
-      # if params[:starts_at].present? && params[:query].present?
-      #  @sports_classes = @sports_classes.search(params[:query]) && SportsClass.where(date_time: Range.new(*params[:starts_at].split(" to ")))
-      # end
-
     if params[:query].present?
       @sports_classes = @sports_classes.search(params[:query])
     end
-    if params[:starts_at].present?
-      @sports_classes = SportsClass.where(date_time: Range.new(*params[:starts_at].split(" to ")))
-    end
   end
 
-  # unless params[:query].nil? || params[:starts_at].nil?
-  #    @sports_classes = @sports_classes.search(params[:query])
-  #    @sports_classes = SportsClass.where(date_time: Range.new(*params[:starts_at].split(" to ")))
+  def handle_date_search
+    if params[:starts_at].present?
+      if params[:starts_at].include?(" to ")
+        starts_at, ends_at = *params[:starts_at].split(" to ")
+        starts_at = starts_at.in_time_zone("CET")
+        ends_at = ends_at.in_time_zone("CET")
+        @sports_classes = @sports_classes.where(date_time: Range.new(starts_at, ends_at))
+      else
+        starts_at = params[:starts_at].in_time_zone("CET")
+        @sports_classes = @sports_classes.where(date_time: Range.new(starts_at, starts_at.advance(days: 1)))
+      end
 
-  # end
-
-    # def index
-    # @sports_classes = policy_scope(SportsClass).order(created_at: :desc)
-    # if params[:query].present?
-    #   @sports_classes = @sports_classes.search(params[:query])
-    # end
-    # if params[:starts_at].present?
-    #   @sports_classes = @sports_classes.filter do |sports_class|
-    #     time_query = params[:starts_at].split(' ')
-    #     range_one = time_query.first.to_date
-    #     range_two = time_query.last.to_date
-    #     sports_class.date_time.between?(range_one, range_two)
-    #     raise
-    #   end
-    # end
+    end
+  end
 
   def handle_filters
     if params.dig(:sports_class, :category).present?

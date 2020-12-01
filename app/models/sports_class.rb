@@ -1,7 +1,9 @@
 class SportsClass < ApplicationRecord
   belongs_to :trainer
+  has_one(:user, through: :trainer)
   has_one_attached :photo
   has_many :class_bookings
+
 
   validates :title, presence: true,length: { maximum: 40,
     too_long: "%{count} characters is the maximum allowed" }
@@ -16,19 +18,29 @@ class SportsClass < ApplicationRecord
   validates :language, presence: true
   validates :photo, presence: true
 
-  searchkick word_start: %i[title trainer]
+  # searchkick word_start: %i[title trainer]
 
-  def search_data
-    {
-      title: title,
-      description: description,
-      trainer_first: trainer.user.first_name,
-      trainer_last: trainer.user.last_name,
-      duration: duration,
-      experience_level: experience_level,
-      category: category
+  # def search_data
+  #   {
+  #     title: title,
+  #     description: description,
+  #     trainer_first: trainer.user.first_name,
+  #     trainer_last: trainer.user.last_name,
+  #     duration: duration,
+  #     experience_level: experience_level,
+  #     category: category
+  #   }
+  # end
+
+  include PgSearch::Model
+  pg_search_scope :search,
+    against: [:category, :title, :description],
+    associated_against: {
+      user: [ :first_name, :last_name ]
+    },
+    using: {
+      tsearch: { prefix: true }
     }
-  end
 
   def self.categories
     categories = []
