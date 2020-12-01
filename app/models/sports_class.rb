@@ -78,14 +78,12 @@ class SportsClass < ApplicationRecord
     sweat.sort
   end
 
-
   def self.durations
     durations = []
 
     SportsClass.all.each do |sports_class|
       durations << sports_class.duration unless durations.include?(sports_class.duration)
     end
-      # durations = durations.map { |x| x.split(" mins") }.flatten!
-      durations.sort
+    durations.sort
   end
 end

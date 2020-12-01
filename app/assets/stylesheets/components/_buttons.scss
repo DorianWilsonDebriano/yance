@@ -39,8 +39,18 @@
   margin-right: 17px;
 }
 
+.booked-class-info-buttons {
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+  background-color: rgba(200, 200, 200, 0.1);
+  width: 100px;
+}
+
 .class-info-book-buttons {
-  padding: 0px 12px 12px 12px;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .class-card-info-button {
@@ -76,14 +86,12 @@
 }
 
 .go-to-class-button {
-  margin-top: 6px;
+  display: inline-block;
+  height: 50px;
   border-radius: 25px;
-  font-size: 17px;
+  font-size: 12px;
   border: solid 1.8px;
   border-color: $yance-yellow;
-  position: relative;
-  left: 75px;
-  top: -25px;
   a {
     color:$yance-yellow;
     text-decoration: none;
@@ -91,12 +99,28 @@
   }
 }
 
+.fa-video {
+  font-size: 30px;
+  color: $yance-yellow;
+}
+
+.fa-window-close {
+  font-size: 30px;
+  color: black;
+  margin-top: 12px;
+}
+
+#cancel-class {
+  color: black;
+  font-size: 10px;
+}
+
 .go-to-created-class-button {
   border-radius: 25px;
   border: solid 1.8px;
   border-color: $yance-yellow;
   position: relative;
-  left: 109px;
+  left: 86px;
   top: -16px;
   a {
     color:$yance-yellow;
@@ -108,9 +132,11 @@
 .profile-cancel-booking {
   width: 100%;
   font-weight: bolder;
-  font-size:15px;
-  border-radius: 0px 0px 4px 4px;
+  font-size:12px;
+  border-radius: 4px;
   background-color: black;
+  display: inline-block;
+  height: 50px;
 }
 
 .profile-cancel-button {
@@ -131,11 +157,12 @@
       color:white;
     }
 }
+
 .new-class-icon {
   color: $yance-yellow;
   font-size: 34px;
   position: absolute;
-  top: 144px;
+  top: 186px;
   right: 88px;
 }
 
@@ -153,4 +180,38 @@
 
 .btn:focus, .btn.focus {
   box-shadow: none;
+}
+
+.back-button-profile {
+  border-radius: 4px;
+  border: solid 2px;
+  font-size: 9px;
+  font-weight: bold;
+  color: white;
+  background-color: #d1d1d1;
+  border-color: #d1d1d1;
+  position: relative;
+  left: -123px;
+  top: 65px;
+   &:hover {
+    background-color: white;
+    color:#d1d1d1;
+   }
+}
+
+.back-button-trainer-show {
+  border-radius: 4px;
+  border: solid 2px;
+  font-size: 9px;
+  font-weight: bold;
+  color: white;
+  background-color: #d1d1d1;
+  border-color: #d1d1d1;
+  position: relative;
+  left: -282px;
+  top: 22px;
+   &:hover {
+    background-color: white;
+    color:#d1d1d1;
+   }
 }

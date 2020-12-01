@@ -88,22 +88,19 @@
           </div>
       <% end %>
     <% end %>
-
-    <!-- favorite cllasses -->
-    <% if user_signed_in? %>
-      <div class="filter-cards">
-        <h2 class="all-classes-title">Your favorite classes</h2>
-        <%= render "shared/filter-cards" %>
-      </div>
-    <% end %>
+  <!-- favorite cllasses -->
+  <% if user_signed_in? %>
+    <div class="filter-cards">
+      <h2 class="all-classes-title">Most popular classes</h2>
+      <%= render "shared/filter-cards" %>
+    </div>
+  <% end %>
 
   <!-- all classes -->
-      <h2 class="all-classes-title mt-5">All classes</h2>
-      <div class="sports-classes-cards pt-3">
-        <% @sports_classes.each do |sports_class| %>
-          <%= render partial: "shared/sport-class-card", locals: { sports_class: sports_class } %>
-        <% end %>
-      </div>
-  </div>
-
+    <h2 class="all-classes-title mt-5">All classes</h2>
+    <div class="sports-classes-cards pt-3">
+      <% @sports_classes.each do |sports_class| %>
+        <%= render partial: "shared/sport-class-card", locals: { sports_class: sports_class } %>
+      <% end %>
+    </div>
 </div>

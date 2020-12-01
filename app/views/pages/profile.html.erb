@@ -1,4 +1,7 @@
 <div class="page container mb-5">
+  <div class="backbutton">
+    <%= link_to "BACK", sports_classes_path, class: "btn back-button-profile"%>
+  </div>
   <div class="profile-header d-flex align-center">
     <div class="profile-avatar">
       <% if current_user.photo.present? %>
@@ -22,6 +25,15 @@
       </div>
       <li> <strong>login:</strong> <%= current_user.email %> </li>
       <li> <strong>password:</strong> ************ <%= link_to "edit password", edit_user_password_path %> </li>
+      <% if current_user.subscription.present? %>
+        <li><strong>membership:</strong> <%= current_user.subscription.membership.title %></li>
+        <li><strong>remaining credits:</strong> <%= current_user.subscription.membership.credits %></li>
+        <li><strong>renews on:</strong> <%= current_user.subscription.membership.expiration_date %></li>
+      <% else %>
+        <li><strong>membership:</strong> <%= link_to "choose a membership", memberships_path %> </li>
+        <li><strong>remaining credits:</strong> 0</li>
+        <li><strong>renews on:</strong> <%= link_to "choose a membership", memberships_path %></li>
+      <% end %>
     </div>
     <div class="about-me">
       <p>About you</p>

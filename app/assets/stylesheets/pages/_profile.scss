@@ -48,9 +48,9 @@
 
 .upcoming-classes-section {
   margin-top: 20px;
-  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  // box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   border-radius: 4px;
-  padding: 12px;
+  // padding: 12px;
     h2 {
     font-size: 18px;
     font-weight: bolder;
@@ -62,21 +62,21 @@
 
 .profile-upcoming-classes {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
 #info-edit-icon {
   position: absolute;
   left: 47%;
-  top: 169px;
+  top: 197px;
   font-size: 25px;
   color: #929292;
 }
 
 #about-edit-icon {
   position: absolute;
-  top: 169px;
+  top: 197px;
   font-size: 25px;
   right: 176px;
   color: #929292;
@@ -166,9 +166,9 @@
 
 .profile-created-classes-section {
   margin-top: 20px;
-  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  // box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   border-radius: 4px;
-  padding: 12px;
+  // padding: 12px;
     h2 {
     font-size: 18px;
     font-weight: bolder;
@@ -179,6 +179,6 @@
 }
 .profile-created-classes {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }

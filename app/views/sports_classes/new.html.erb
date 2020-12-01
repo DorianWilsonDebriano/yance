@@ -1,4 +1,7 @@
 <div class="page container">
+    <div class="backbutton">
+    <%= link_to "BACK", sports_classes_path, class: "btn back-button-profile"%>
+  </div>
   <div class="row d-flex justify-content-center">
     <div class="col-xs-12 col-sm-6 col-sm-offset-6 ">
       <div class="form-login mb-5">
@@ -16,7 +19,7 @@
           <%= f.input :language, input_html: { autocomplete: 'In which language will you do your class?' } %>
           <%= f.input :photo, as: :file %>
           <%= f.button :submit, class: 'btn class-sign-up-button', notice: "Your class has been saved!" %>
-          <%= f.button :button, "Cancel", type: "reset", class: "btn class-sign-up-button" %>
+          <%= f.button :button, "Reset", type: "reset", class: "btn class-sign-up-button" %>
         <% end %>
       </div>
     </div>

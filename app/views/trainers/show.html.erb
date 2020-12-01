@@ -19,6 +19,9 @@
               <%= cl_image_tag @trainer.user.photo.key, class: "trainer-profile-avatar" %>
             <% end %>
           </div>
+          <div class="backbutton">
+            <%= link_to "BACK", sports_classes_path, class: "btn back-button-trainer-show"%>
+          </div>
           <div class="trainer-name-follow">
             <p class="trainer-name"><%=@trainer.user.first_name%> <%=@trainer.user.last_name%></p>
 <!--             <p class = "follow-review">follow</p>
@@ -162,11 +165,8 @@
                             <p><%= sportsclass.trainer.bio %></p>
                           </div>
                           <div>
-                            <div class="align-center pr-3 py-2">
+                            <div class="align-center pt-5 pr-3">
                               <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass,@classbooking), method: "POST", class: "book-class-link btn class-modal-book-button" %>
-                            </div>
-                            <div class="align-center pr-3 py-2">
-                              <%= link_to "VISIT TRAINER", trainer_path(sportsclass.trainer), class: "visit-trainer-link btn class-modal-info-button" %>
                             </div>
                           </div>
                         </div>

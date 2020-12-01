@@ -1,6 +1,10 @@
 require 'date'
 require "open-uri"
 
+puts "uprooting subscriptions"
+Subscription.destroy_all
+puts "uprooting memberships"
+Membership.destroy_all
 puts "uprooting all bookings 🌱"
 ClassBooking.destroy_all
 puts "uprooting all reviews 🌱"
@@ -12,6 +16,34 @@ Trainer.destroy_all
 puts "uprooting all users 🌱"
 User.destroy_all
 puts 'all previous seeds deleted 🌱!'
+
+# MEMBERSHIP SEEDS
+light = Membership.new(
+  title: "Yance Starter Package",
+  description: "Perfect for working out once a week",
+  expiration_date: Time.now + 30.days,
+  credits: 4,
+  price: 19.99,
+  )
+light.save!
+
+medium = Membership.new(
+  title: "Yance Routine Package",
+  description: "Perfect for working out twice a week",
+  expiration_date: Time.now + 30.days,
+  credits: 8,
+  price: 29.99,
+  )
+medium.save!
+
+unlimited = Membership.new(
+  title: "Yance Experience Package",
+  description: "Unlimited access to live classes",
+  expiration_date: Time.now + 30.days,
+  credits: 20,
+  price: 39.99,
+  )
+unlimited.save!
 
 # USER SEEDS
 file = URI.open('https://avatars0.githubusercontent.com/u/68596947?s=400&u=f18b9637ef88a32845322a4167ee2d6fe0333c38&v=4')
@@ -257,7 +289,7 @@ sports_class_9 = SportsClass.new(
     description: "This is another hard-hitting workout by the kettlebell king. This workout will define every inch of your body.",
     date_time: DateTime.new(2020,12,30,13),
     duration: "50 mins",
-    category: "Resistance Training",
+    category: "Strength",
     difficulty_level: 3,
     sweat_level: 3,
     experience_level: "Advanced",
@@ -276,7 +308,7 @@ sports_class_10 = SportsClass.new(
     description: "There's nothing easy about my workout, but it's well worth it! You'll be doing a whole lot of lifting, deadlift and squats using your barbell Now let's get you summer ready!",
     date_time: DateTime.new(2020,12,5,13),
     duration: "50 mins",
-    category: "Resistance Training",
+    category: "Strength",
     difficulty_level: 3,
     sweat_level: 3,
     experience_level: "Advanced",

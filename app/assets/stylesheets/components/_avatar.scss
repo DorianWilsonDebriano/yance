@@ -1,29 +1,42 @@
 .avatar {
   width: 43px;
+  height: 43px;
   border-radius: 50%;
   border: 2px solid #FECD42;
   margin-right: 39px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .avatar-large {
   width: 56px;
+  height: 56px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 .avatar-bordered {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+  object-fit: cover;
+  object-position: center;
 }
 .avatar-square {
   width: 40px;
+  height: 40px;
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+  object-fit: cover;
+  object-position: center;
 }
 
 .trainer-profile-avatar {
   width: 125px;
+  height: 125px;
   border-radius: 50%;
   height: 125px;
   object-fit: cover;
@@ -32,7 +45,10 @@
 
 .review-avatar {
   width: 43px;
+  height: 43px;
   border-radius: 50%;
   border: 2px solid #FECD42;
   margin-right: 12px;
+  object-fit: cover;
+  object-position: center;
 }
