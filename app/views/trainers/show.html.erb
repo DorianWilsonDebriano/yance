@@ -16,7 +16,7 @@
             <% if @trainer.profile_photo.attached? %>
               <%= cl_image_tag @trainer.profile_photo.key, class: "trainer-profile-avatar" %>
             <% else %>
-              <%= cl_image_tag @trainer.user.photo.key, class: "trainer-profile-avatar" %>
+              <%= cl_image_tag @trainer.profile_photo.key, class: "trainer-profile-avatar" %>
             <% end %>
           </div>
           <div class="backbutton">
@@ -224,14 +224,14 @@
                 </div>
                 <p class="review-user-name"><%= review.user.first_name %> <%= review.user.last_name %></p>
               </div>
-              <div class="review-stars">
-                <% review.rating.times do %>
-                  <i class="fas fa-star color-star"></i>
-                <% end %>
-              </div>
-              <div class = "review-content">
-                <p><%= review.content %></p>
-              </div>
+                <div class="review-stars">
+                  <% review.rating.times do %>
+                    <i class="fas fa-star color-star"></i>
+                  <% end %>
+                </div>
+                <div class = "review-content">
+                  <p><%= review.content %></p>
+                </div>
             </div>
           <% end %>
         </div>

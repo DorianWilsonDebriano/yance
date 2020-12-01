@@ -24,7 +24,7 @@
         <% end %>
       </div>
       <li> <strong>login:</strong> <%= current_user.email %> </li>
-      <li> <strong>password:</strong> ************ <%= link_to "edit password", edit_user_password_path %> </li>
+      <li> <strong>password:</strong> ************ <%= link_to "edit password", edit_user_registration_path %> </li>
       <% if current_user.subscription.present? %>
         <li><strong>membership:</strong> <%= current_user.subscription.membership.title %></li>
         <li><strong>remaining credits:</strong> <%= current_user.subscription.membership.credits %></li>
