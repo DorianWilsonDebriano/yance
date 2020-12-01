@@ -1,4 +1,7 @@
 <div class="page container mb-5">
+  <div class="backbutton">
+    <%= link_to "BACK", sports_classes_path, class: "btn back-button-profile"%>
+  </div>
   <div class="profile-header d-flex align-center">
     <div class="profile-avatar">
       <% if current_user.photo.present? %>
