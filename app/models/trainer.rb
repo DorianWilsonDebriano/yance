@@ -8,5 +8,5 @@ class Trainer < ApplicationRecord
   has_one_attached :profile_photo
   has_one_attached :time_line_photo
 
-  searchkick
+  # searchkick
 end
