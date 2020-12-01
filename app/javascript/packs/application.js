@@ -31,10 +31,65 @@ import "../plugins/flatpickr"
 
 import { initStarRating } from '../plugins/init_star_rating';
 
+// for confirmations
+import { initSweetalert } from '../plugins/init_sweetalert';
+// for cancellations
+import { initSweetalertAll } from '../plugins/init_sweetalert_all';
+
+
+
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initStarRating();
+  initSweetalert('#sweet-alert-trainer', {
+    title: "Congratulations!",
+    text: "You're now a trainer",
+    icon: "success"
+  });
+  initSweetalert('#sweet-alert-class', {
+    title: "Congratulations!",
+    text: "Your class has been created",
+    icon: "success"
+  });
+  initSweetalertAll('#sweet-alert-booked', {
+    title: "Congratulations!",
+    text: "Your class has been booked",
+    icon: "success",
+  }, (value) => {
+    console.log(value)
+  if (value) {
+    console.log(value,"hello");
+    const id = value.classList[0].split("-")[3]
+    console.log(id)
+    const link = document.getElementsByClassName(id);
+    console.log(link)
+    link[0].click();
+  }
 });
+  initSweetalert('#sweet-alert-subscription', {
+    title: "Congratulations!",
+    text: "Your membership has been upgraded",
+    icon: "success"
+  });
+
+
+
+  initSweetalertAll('#sweet-alert-delete',{
+   text: "You're about to cancel your booking. Are you sure?",
+   icon: 'warning',
+   buttons: true,
+   dangerMode: true,
+ }, (value) => {
+  if (value) {
+    console.log(value,"hello");
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
+
+});
+
 
 

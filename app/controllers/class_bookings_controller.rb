@@ -12,10 +12,10 @@ class ClassBookingsController < ApplicationController
     @classbooking = ClassBooking.new
     @classbooking.user = current_user
     @classbooking.sports_class = @sports_class
-    @membership = current_user.subscription.membership
+    @membership = current_user.subscription.membership if current_user.subscription != nil
     if @classbooking.save
-      @membership.update(credits: @membership.credits - 1)
-      redirect_to sports_classes_path, notice: "You booked your class"
+      @membership.update(credits: @membership.credits - 1) if current_user.subscription != nil
+      redirect_to sports_classes_path
     else
       redirect_to sports_classes_path, notice: "You have already booked this class"
     end

@@ -15,7 +15,7 @@
       <br>
       <p>This membership will be automatically renewed on the: <%= @membership.expiration_date %>. You can cancel your subscription anytime from your profile page.</p>
       <div class="confirm">
-        <%= link_to "confirm subscription", membership_subscriptions_path, method: "POST", class: "btn subscribe-button" %>
+        <%= link_to "confirm subscription", membership_subscriptions_path, method: "POST", class: "btn subscribe-button", id:'sweet-alert-subscription' %>
       </div>
     </div>
   </div>
