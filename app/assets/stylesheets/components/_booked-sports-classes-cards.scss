@@ -1,22 +1,24 @@
 .booked-sports-classes-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
 
 .booked-sports-classes-card {
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   border-radius: 4px;
+  justify-content: space-between;
+  max-height: 167px;
 }
 
 .booked-class-card-header {
   padding: 0px 16px;
+  padding-top: 12px;
 }
 
 .booked-class-card-duration {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bolder;
-  margin-bottom: 4px;
 }
 
 .booked-class-card-datetime {
@@ -26,15 +28,15 @@
 }
 
 .booked-class-card-category {
-  font-size: 14px;
-  font-weight: bolder;
+  font-size: 12px;
 }
 
 .booked-class-card-image {
-  width: 100%;
-  height: 150px;
+  width: 200px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: 4px 0px 0px 4px;
 }
 
 .booked-card-bottom-section {
@@ -42,7 +44,7 @@
 }
 
 .booked-class-card-title {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bolder;
 }
 
