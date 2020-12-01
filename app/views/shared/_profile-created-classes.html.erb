@@ -1,49 +1,26 @@
 <% @user_sports_classes.each do |sports_class| %>
-  <div class="sports-classes-card pt-3">
-    <div class="class-card-header d-flex justify-content-between">
-      <div class="card-header-left">
-        <p class="class-card-duration"><%= sports_class.duration %></p>
-        <p class="profile-class-card-datetime"><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
-      </div>
-      <div class="card-header-right">
-        <p class="class-card-category"><%= sports_class.category %></p>
-      </div>
-    </div>
-    <% if sports_class.photo.attached? %>
-      <div>
-        <%= cl_image_tag sports_class.photo.key, class: "class-card-image" %>
-      </div>
-    <% end %>
-    <div class="card-bottom-section">
-      <p class="class-card-title"><%= sports_class.title %></p>
-      <div class="class-card-levels d-flex row">
-        <div class="class-card-difficulty col-4">
-          <p class="class-card-level-title">DIFFICULTY</p>
-          <p class="class-card-level-content">
-            <% sports_class.difficulty_level.times do %>
-            <i class="fas fa-dumbbell" id="difficulty"></i>
-            <% end %>
-          </p>
+  <div class="booked-sports-classes-card d-flex">
+      <% if sports_class.photo.attached? %>
+        <div>
+          <%= cl_image_tag sports_class.photo.key, class: "booked-class-card-image" %>
         </div>
-        <div class="class-card-sweat col-4">
-          <p class="class-card-level-title">SWEAT</p>
-          <p class="class-card-level-content">
-            <% sports_class.sweat_level.times do %>
-            <i class="fas fa-tint" id="sweat"></i>
-            <% end %>
-          </p>
-        </div>
-        <div class="class-card-experience col-4">
-          <p class="class-card-level-title">LEVEL</p>
-          <p class="class-card-level-content"> <%= sports_class.experience_level %> </p>
-        </div>
+      <% end %>
+      <div class="booked-class-card-header">
+        <p class="booked-class-card-datetime"><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+        <p class="booked-class-card-title"><%= sports_class.title %></p>
+        <p class="booked-class-card-duration"><%= sports_class.duration %></p>
+        <p class="booked-class-card-category"><strong><%= sports_class.category %></strong></p>
       </div>
-    </div>
-    <div class="created-class-card-footer mt-4">
-      <div class="class-info-book-buttons">
-        <button class="btn go-to-created-class-button"><%= link_to "go to class", sports_class_path(sports_class), method: "GET"%></button>
-        <button class="btn profile-cancel-booking"> <%= link_to "CANCEL CLASS", sports_class_path(sports_class), method: :delete, data: { confirm: "Are you sure?" }, class: "profile-cancel-button" %> </button>
+      <div class="booked-class-info-buttons">
+        <button class="btn go-to-class-icon"><%= link_to sports_class_path(sports_class), method: "GET" do %>
+            <i class="fas fa-video"></i>
+          <% end %>
+        </button>
+        <button class="btn profile-cancel-booking-icon"> <%= link_to sports_class_path(sports_class), method: :delete, data: { confirm: "Are you sure?" }, class: "profile-cancel-button" do %>
+            <i class="fas fa-window-close"></i>
+            <p id="cancel-class">cancel</p>
+          <% end %>
+        </button>
       </div>
-    </div>
   </div>
 <% end %>
