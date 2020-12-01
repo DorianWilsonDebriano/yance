@@ -21,7 +21,7 @@
   width: 100%;
   font-size: 12px;
   text-align: left;
-  padding: 10px 10px 30px 10px;
+  padding: 7px 5px 5px 5px;
   border: 1px solid #EAEAEA;
   border-radius: 32px;
   background-color: white;
@@ -35,8 +35,7 @@
 #sports_class_experience_level_experienced + label {
   color: #FD1015;
   text-align:center;
-  font-size: 18px;
-  padding-top: 26px;
+
 }
 
 #sports_class_experience_level_experienced:checked + label {
@@ -48,8 +47,7 @@
 #sports_class_experience_level_beginner + label {
   color: #57C784;
   text-align:center;
-  font-size: 18px;
-  padding-top: 26px;
+
 }
 
 #sports_class_experience_level_beginner:checked + label {
@@ -61,8 +59,7 @@
 #sports_class_experience_level_good + label {
   color: #62DDF5;
   text-align:center;
-  font-size: 18px;
-  padding-top: 26px;
+
 }
 
 #sports_class_experience_level_good:checked + label {
@@ -83,12 +80,108 @@
   width: 100%;
   font-size: 12px;
   text-align: left;
-  padding: 10px 10px 30px 10px;
-  border: 1px solid #EAEAEA;
-  border-radius: 4px;
+  border: 1px solid $difficulty-level;
+  border-radius: 50%;
   background-color: white;
+  padding:10px;
 }
 
-#sports_class_difficulty_level_1 + label {
-  background-image: url("../assets/images/dumbell-solid.svg");
+.difficulty:checked + label {
+  color: white !important;
 }
+
+
+#sports_class_difficulty_level_1 + label {
+  color: $difficulty-level;
+  text-align:center;
+
+}
+
+#sports_class_difficulty_level_1:checked + label {
+  background-color: $difficulty-level;
+  border-color: $difficulty-level;
+}
+
+
+#sports_class_difficulty_level_2 + label {
+  color: $difficulty-level;
+  text-align:center;
+
+}
+
+#sports_class_difficulty_level_2:checked + label {
+  background-color: $difficulty-level;
+  border-color: $difficulty-level;
+}
+
+
+#sports_class_difficulty_level_3 + label {
+  color: $difficulty-level;
+  text-align:center;
+
+}
+
+#sports_class_difficulty_level_3:checked + label {
+  background-color: $difficulty-level;
+  border-color: $difficulty-level;
+}
+
+
+.sweat {
+  position: absolute;
+  transform: scale(0);
+}
+
+.sweat + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  border: 1px solid $sweat-level;
+  border-radius: 50%;
+  background-color: white;
+  padding:10px;
+}
+
+.sweat:checked + label {
+  color: white !important;
+}
+
+
+#sports_class_sweat_level_1 + label {
+  color: $sweat-level;
+  text-align:center;
+
+}
+
+#sports_class_sweat_level_1:checked + label {
+  background-color: $sweat-level;
+  border-color: $sweat-level;
+}
+
+
+#sports_class_sweat_level_2 + label {
+  color: $sweat-level;
+  text-align:center;
+
+}
+
+#sports_class_sweat_level_2:checked + label {
+  background-color: $sweat-level;
+  border-color: $sweat-level;
+}
+
+
+#sports_class_sweat_level_3 + label {
+  color: $sweat-level;
+  text-align:center;
+
+}
+
+#sports_class_sweat_level_3:checked + label {
+  background-color: $sweat-level;
+  border-color: $sweat-level;
+}
+
