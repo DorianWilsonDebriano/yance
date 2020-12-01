@@ -50,7 +50,7 @@
     </div>
     <div class="class-info-book-buttons d-flex justify-content-center">
 
-      <%= link_to "BOOK", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST", class: "card-book-class-link btn class-card-book-button", id: 'sweet-alert-book' %>
+      <%= link_to "BOOK", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST",id:'sweet-alert-booked', class: "card-book-class-link btn class-card-book-button"%>
 
       <% if user_signed_in? %>
         <% if current_user.subscription.present? %>
@@ -64,7 +64,7 @@
           <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
         <% end %>
       <% else %>
-        <%= link_to "BOOK", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST", class: "card-book-class-link btn class-card-book-button" %>
+        <%= link_to "BOOK", sports_class_class_bookings_path(sports_class,@classbooking), method: "POST", class: "card-book-class-link btn class-card-book-button", id:'sweet-alert-booked' %>
       <% end %>
 
       <button type="button" class="btn class-card-info-button class-info-link" data-toggle="modal" data-target="#modal-<%= sports_class.id %>">

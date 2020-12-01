@@ -50,9 +50,14 @@ document.addEventListener('turbolinks:load', () => {
     text: "Your class has been created",
     icon: "success"
   });
-  initSweetalert('#sweet-alert-book', {
+  initSweetalert('#sweet-alert-booked', {
     title: "Congratulations!",
     text: "Your class has been booked",
+    icon: "success"
+  });
+  initSweetalert('#sweet-alert-subscription', {
+    title: "Congratulations!",
+    text: "Your membership has been upgraded",
     icon: "success"
   });
   initSweetalertAll('#sweet-alert-delete',{
