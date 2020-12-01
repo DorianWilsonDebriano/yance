@@ -80,8 +80,6 @@
   width: 100%;
   font-size: 12px;
   text-align: left;
-  border: 1px solid $difficulty-level;
-  border-radius: 50%;
   background-color: white;
   padding:10px;
 }
@@ -90,42 +88,57 @@
   color: white !important;
 }
 
-
-#sports_class_difficulty_level_1 + label {
-  color: $difficulty-level;
-  text-align:center;
-
-}
-
-#sports_class_difficulty_level_1:checked + label {
-  background-color: $difficulty-level;
+#sports_class_difficulty_level_1:checked + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f44b";
+  font-size: 25px;
   border-color: $difficulty-level;
 }
 
-
-#sports_class_difficulty_level_2 + label {
+#sports_class_difficulty_level_1 + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 21px;
+  content: "\f44b";
+  position: absolute;
+  background-color: white;
   color: $difficulty-level;
-  text-align:center;
-
 }
-
-#sports_class_difficulty_level_2:checked + label {
-  background-color: $difficulty-level;
+#sports_class_difficulty_level_2:checked + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f44b";
+  font-size: 25px;
   border-color: $difficulty-level;
 }
 
-
-#sports_class_difficulty_level_3 + label {
+#sports_class_difficulty_level_2 + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 21px;
+  content: "\f44b";
+  position: absolute;
+  background-color: white;
   color: $difficulty-level;
-  text-align:center;
-
 }
-
-#sports_class_difficulty_level_3:checked + label {
-  background-color: $difficulty-level;
+#sports_class_difficulty_level_3:checked + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f44b";
+  font-size: 25px;
   border-color: $difficulty-level;
 }
 
+#sports_class_difficulty_level_3 + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 21px;
+  content: "\f44b";
+  position: absolute;
+  background-color: white;
+  color: $difficulty-level;
+}
 
 .sweat {
   position: absolute;
@@ -139,49 +152,63 @@
   width: 100%;
   font-size: 12px;
   text-align: left;
-  border: 1px solid $sweat-level;
-  border-radius: 50%;
   background-color: white;
   padding:10px;
 }
 
-.sweat:checked + label {
-  color: white !important;
+#sports_class_sweat_level_1:checked + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f043";
+  font-size: 25px;
+  border-color: $sweat-level;
+  position: absolute;
+  background-color: white;
 }
 
-
-#sports_class_sweat_level_1 + label {
+#sports_class_sweat_level_1 + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 21px;
+  content: "\f043";
+  position: absolute;
+  background-color: white;
   color: $sweat-level;
-  text-align:center;
-
+}
+#sports_class_sweat_level_2:checked + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f043";
+  font-size: 25px;
+  border-color: $sweat-level;
+  position: absolute;
+  background-color: white;
 }
 
-#sports_class_sweat_level_1:checked + label {
-  background-color: $sweat-level;
+#sports_class_sweat_level_2 + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 21px;
+  content: "\f043";
+  position: absolute;
+  background-color: white;
+  color: $sweat-level;
+}
+#sports_class_sweat_level_3:checked + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f043";
+  font-size: 25px;
   border-color: $sweat-level;
 }
 
-
-#sports_class_sweat_level_2 + label {
+#sports_class_sweat_level_3 + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 21px;
+  content: "\f043";
+  position: absolute;
+  background-color: white;
   color: $sweat-level;
-  text-align:center;
-
-}
-
-#sports_class_sweat_level_2:checked + label {
-  background-color: $sweat-level;
-  border-color: $sweat-level;
-}
-
-
-#sports_class_sweat_level_3 + label {
-  color: $sweat-level;
-  text-align:center;
-
-}
-
-#sports_class_sweat_level_3:checked + label {
-  background-color: $sweat-level;
-  border-color: $sweat-level;
 }
 

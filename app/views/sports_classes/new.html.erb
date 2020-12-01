@@ -18,8 +18,12 @@
                         collection_wrapper_class: 'category-wrapper',
                         item_wrapper_class: 'category-item',
                         collection: ["Beginner","Good","Experienced"] %>
-          <%= f.input :difficulty_level, as: :radio_buttons, input_html: { class: "difficulty"}, collection: [1, 2, 3], wrapper: :vertical_collection_inline %>
-          <%= f.input :sweat_level, as: :radio_buttons, input_html: { class: "sweat"}, collection: [1, 2, 3], wrapper: :vertical_collection_inline %>
+          <%= f.input :difficulty_level, as: :radio_buttons, input_html: { class: "difficulty"},
+                       collection: [1, 2, 3],
+                       wrapper: :vertical_collection_inline %>
+          <%= f.input :sweat_level, as: :radio_buttons, input_html: { class: "sweat"},
+                      collection: [1, 2, 3],
+                      wrapper: :vertical_collection_inline %>
           <%= f.input :equipment, as: :radio_buttons%>
           <%= f.input :language, input_html: { autocomplete: 'In which language will you do your class?' } %>
           <%= f.input :photo, as: :file %>
