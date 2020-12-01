@@ -1,4 +1,5 @@
 class SportsClass < ApplicationRecord
+
   belongs_to :trainer
   has_one(:user, through: :trainer)
   has_one_attached :photo
@@ -87,3 +88,4 @@ class SportsClass < ApplicationRecord
     durations.sort
   end
 end
+
