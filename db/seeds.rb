@@ -1,9 +1,9 @@
 require 'date'
 require "open-uri"
 
-puts "uprooting subscriptions"
+puts "uprooting all subscriptions 🌱"
 Subscription.destroy_all
-puts "uprooting memberships"
+puts "uprooting all memberships 🌱"
 Membership.destroy_all
 puts "uprooting all bookings 🌱"
 ClassBooking.destroy_all
