@@ -136,7 +136,7 @@ class SportsClassesController < ApplicationController
 
   def handle_filter_cards
     if params[:category].present?
-      @sports_classes = SportsClass.where(category: params[:category])
+      @sports_classes = SportsClass.where(category: params[:category]).order(date_time: :asc)
     end
   end
 end
