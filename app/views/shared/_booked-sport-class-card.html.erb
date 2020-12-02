@@ -8,7 +8,7 @@
     <p class="booked-class-card-datetime"><%= classbooking.sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
     <p class="booked-class-card-title"><%= classbooking.sports_class.title %></p>
     <p class="booked-class-card-duration"><%= classbooking.sports_class.duration %></p>
-    <p class="booked-class-card-category"><strong><%= classbooking.sports_class.category %></strong> with <strong><%= classbooking.sports_class.trainer.user.first_name %> <%= classbooking.sports_class.trainer.user.last_name %></strong> </p>
+    <p class="booked-class-card-category"><strong><%= classbooking.sports_class.category %></strong> with <strong><%= classbooking.sports_class.user.first_name %> <%= classbooking.sports_class.user.last_name %></strong> </p>
   </div>
   <div class="booked-class-info-buttons">
     <button class="btn go-to-class-icon"><%= link_to sports_class_path(classbooking.sports_class), method: "GET" do %>

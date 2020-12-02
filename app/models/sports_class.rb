@@ -1,8 +1,8 @@
 class SportsClass < ApplicationRecord
-  belongs_to :trainer, touch: true
+  belongs_to :trainer
   has_one(:user, through: :trainer)
   has_one_attached :photo
-  has_many :class_bookings, dependent: :destroy, touch: true
+  has_many :class_bookings
   has_many :users, through: :class_bookings
 
 

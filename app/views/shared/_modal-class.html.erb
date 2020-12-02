@@ -60,11 +60,11 @@
         <div class="class-modal-right-column col-7 pt-4 pr-5">
           <div class="class-modal-right-header d-flex justify-content-between">
             <div class="class-modal-trainer-name">
-              <span> with <strong> <%= sports_class.trainer.user.first_name %> <%= sports_class.trainer.user.last_name %> </strong> </span>
+              <span> with <strong> <%= sports_class.user.first_name %> <%= sports_class.user.last_name %> </strong> </span>
             </div>
-            <% if sports_class.trainer.user.photo.attached? %>
+            <% if sports_class.user.photo.attached? %>
               <div class="class-modal-avatar">
-                <%= cl_image_tag sports_class.trainer.user.photo.key, class: "class-trainer-photo" %>
+                <%= cl_image_tag sports_class.user.photo.key, class: "class-trainer-photo" %>
               </div>
            <% end %>
             <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
