@@ -16,7 +16,7 @@
             <% if @trainer.profile_photo.attached? %>
               <%= cl_image_tag @trainer.profile_photo.key, class: "trainer-profile-avatar" %>
             <% else %>
-              <%= cl_image_tag @trainer.profile_photo.key, class: "trainer-profile-avatar" %>
+              <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "trainer-profile-avatar" %>
             <% end %>
           </div>
           <div class="backbutton">

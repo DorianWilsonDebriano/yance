@@ -46,7 +46,8 @@ document.addEventListener('turbolinks:load', () => {
   initSweetalert('#sweet-alert-trainer', {
     title: "Congratulations!",
     text: "You're now a trainer",
-    icon: "success"
+    icon: "success",
+    timer: 4000,
   });
   initSweetalert('#sweet-alert-class', {
     title: "Congratulations!",
@@ -56,7 +57,8 @@ document.addEventListener('turbolinks:load', () => {
   initSweetalertAll('#sweet-alert-booked', {
     title: "Congratulations!",
     text: "Your class has been booked",
-    icon: "success",
+    icon: "success",,
+    timer: 4000,
   }, (value) => {
     console.log(value)
   if (value) {
@@ -71,7 +73,8 @@ document.addEventListener('turbolinks:load', () => {
   initSweetalert('#sweet-alert-subscription', {
     title: "Congratulations!",
     text: "Your membership has been upgraded",
-    icon: "success"
+    icon: "success",
+    timer: 4000,
   });
 
 
@@ -79,6 +82,7 @@ document.addEventListener('turbolinks:load', () => {
   initSweetalertAll('#sweet-alert-delete',{
    text: "You're about to cancel your booking. Are you sure?",
    icon: 'warning',
+   timer: 6000,
    buttons: true,
    dangerMode: true,
  }, (value) => {
