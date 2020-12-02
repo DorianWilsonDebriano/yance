@@ -7,6 +7,8 @@ Rails.application.configure do
 
   # whitelist host to allow requests to hostname
   config.hosts << "www.yancesport.com"
+  config.hosts << "yance-dorianwilsondebriano.herokuapp.com"
+
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

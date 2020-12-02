@@ -305,7 +305,7 @@ sports_class_9.save!
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606490631/victor-freitas-WvDYdXDzkhs-unsplash_e9kbsd.jpg')
 sports_class_10 = SportsClass.new(
     title: "Iron Bars",
-    description: "There's nothing easy about my workout, but it's well worth it! You'll be doing a whole lot of lifting, deadlift and squats using your barbell Now let's get you summer ready!",
+    description: "There's nothing easy about my workout, but it's well worth it! You'll be doing a whole lot of lifting and squats using your barbell Now let's get you summer ready!",
     date_time: DateTime.new(2020,12,5,13),
     duration: "50 mins",
     category: "Strength",
