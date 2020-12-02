@@ -56,7 +56,7 @@ document.addEventListener('turbolinks:load', () => {
   initSweetalertAll('#sweet-alert-booked', {
     title: "Congratulations!",
     text: "Your class has been booked",
-    icon: "success",
+    icon: "success"
   }, (value) => {
     console.log(value)
   if (value) {
