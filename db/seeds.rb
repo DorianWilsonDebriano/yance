@@ -101,8 +101,8 @@ edoardo.save!
 # TRAINER SEEDS
 
 trainer_1 = Trainer.new(
-  bio: "A personal trainer who can help you shift that unwanted lockdown weight!",
-  sport_category: "Pilates",
+  bio: "I have always had a passion for sports and in the past couple of years flexibility has become my speciality, in both yoga and pilates.",
+  sport_category: "Flexibility",
   city: "Berlin",
   user: edoardo,
 )
@@ -110,7 +110,7 @@ trainer_1 = Trainer.new(
 trainer_1.save!
 
 trainer_2 = Trainer.new(
-  bio: "Come join my class and release the stress of your week",
+  bio: "Join my class and release the stress of your week, when we have healthy bodies, we have healthy minds. It's time to unlock your enlightenment.",
   sport_category: "Yoga",
   city: "Paris",
   user: dorian,
@@ -119,8 +119,8 @@ trainer_2 = Trainer.new(
 trainer_2.save!
 
 trainer_3 = Trainer.new(
-  bio: "An inclusive classroom environment, where we can shape-up our minds and body is my mantra",
-  sport_category: "Stetching",
+  bio: "I like to create an inclusive classroom environment, where we can shape-up our minds and body together, with a mixture of cardio and stretching.",
+  sport_category: "Full Body",
   city: "Frankfurt",
   user: cassy,
 )
@@ -128,7 +128,7 @@ trainer_3 = Trainer.new(
 trainer_3.save!
 
 trainer_4 = Trainer.new(
-  bio: "In my classes you will feel the burn!",
+  bio: "In my classes you will feel the burn! For those who want muscle definition and excellent core strength with the tricks I learned while in the army.",
   sport_category: "Cardio",
   city: "Amsterdam",
   user: adham,
@@ -140,7 +140,7 @@ trainer_4.save!
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606651900/pexels-cottonbro-4753923_o90hn5.jpg')
 sports_class_1 = SportsClass.new(
     title: "Kick Start",
-    description: "Let's kick start our way into the coming week right!",
+    description: "Let's kick start our way into the coming week right! Excellent energizer, challenges your technique, endurance, and above all, concentration. This class will give you the ultimate kick to boost your fitness.",
     date_time: DateTime.new(2020,12,6,18),
     duration: "60 mins",
     category: "Cardio",
@@ -157,7 +157,7 @@ sports_class_1.save!
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606491396/dane-wetton-t1NEMSm1rgI-unsplash_ksd3vg.jpg')
 sports_class_2 = SportsClass.new(
     title: "Monday Morning Wake-up",
-    description: "Start your week right with this slow-burner!",
+    description: "Before you set off to work or start your day, let's start your week right with this slow-burner! We'll engage your muscles and wake-up our bodies together, giving you the best boost for the week.",
     date_time: DateTime.new(2020,12,7,7),
     duration: "50 mins",
     category: "Pilates",
@@ -174,7 +174,7 @@ sports_class_2.save!
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606303073/an6ys6litaabmulfs6hmzkz7zajn.jpg')
 sports_class_3 = SportsClass.new(
     title: "Tuesday Flex",
-    description: "Lets make the week even better together",
+    description: "Lets make the week even better together and work off the Monday blues. We'll focus on our positions and balance and achieve the perfect downward dog!",
     date_time: DateTime.new(2020,12,8,17),
     duration: "60 mins",
     category: "Yoga",
@@ -207,13 +207,13 @@ sports_class_4 = SportsClass.new(
 sports_class_4.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_4.save!
 
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606491474/alexander-redl-d3bYmnZ0ank-unsplash_cp8d5d.jpg')
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606914423/pexels-andrea-piacquadio-3838389_ulk2bb.jpg')
 sports_class_5 = SportsClass.new(
     title: "Feel it Friday",
-    description: "Burn off the week's stress and frustrations!",
+    description: "Push off the week's stress and frustrations! We will be focusing on our glutes and calves and thighs with squats and lunges, get ready for the burn.",
     date_time: DateTime.new(2020,12,11,18),
     duration: "40 mins",
-    category: "Cardio",
+    category: "Strength",
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
@@ -226,19 +226,19 @@ sports_class_5 = SportsClass.new(
 sports_class_5.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_5.save!
 
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606491307/jonathan-borba-lrQPTQs7nQQ-unsplash_rrjtqc.jpg')
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606917603/scott-broome-cuOHHP5tx5g-unsplash_tgyxqm.jpg')
 sports_class_6 = SportsClass.new(
     title: "Lunch Break Energizer",
-    description: "No time for both a lunch break and a workout? Those days are over when you try the new 10-minute version of my popular lunch break workout!",
+    description: "No time for both a lunch break and a workout? Those days are over when you try the new 20-minute version of my popular lunch break workout!",
     date_time: DateTime.new(2020,12,10,20),
-    duration: "40 mins",
-    category: "Cardio",
+    duration: "20 mins",
+    category: "Pilates",
     difficulty_level: 2,
     sweat_level: 2,
     experience_level: "Beginner",
     equipment: true,
     language: "English",
-    trainer: trainer_4,
+    trainer: trainer_1,
 )
 
 
@@ -251,7 +251,7 @@ sports_class_7 = SportsClass.new(
     description: "Your everyday go-to pilates flow. Perfect for all levels this class is designed to lengthen, align and sculpt. I will take time in these class to focus on technique and breathing!",
     date_time: DateTime.new(2020,12,12,15),
     duration: "40 mins",
-    category: "Strength",
+    category: "Pilates",
     difficulty_level: 2,
     sweat_level: 2,
     experience_level: "Beginner",
@@ -264,7 +264,7 @@ sports_class_7 = SportsClass.new(
 sports_class_7.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_7.save!
 
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606486727/emily-sea-coiWR0gT8Cw-unsplash_vzy3ry.jpg')
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606913765/pexels-cottonbro-4327018_e0qfzp.jpg')
 sports_class_8 = SportsClass.new(
     title: "Yoga Vinyasa",
     description: "Vinyasa flow is a strong and well rounded practice that includes core conditioning, flexibility, balance and movement.",
@@ -276,17 +276,17 @@ sports_class_8 = SportsClass.new(
     experience_level: "Good",
     equipment: true,
     language: "English",
-    trainer: trainer_1,
+    trainer: trainer_2,
 )
 
 
 sports_class_8.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_8.save!
 
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606490125/taco-fleur-qxoOajPS55U-unsplash_iyiup8.jpg')
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606914512/pexels-ketut-subiyanto-4720238_cbiyvx.jpg')
 sports_class_9 = SportsClass.new(
     title: "Kettle Bell Crush",
-    description: "This is another hard-hitting workout by the kettlebell king. This workout will define every inch of your body.",
+    description: "This is another hard-hitting workout by the kettlebell king. This workout will define every inch of your body, from head to toe, not for the faint hearted! 10kg kettlebell or equivalent needed as equiptment.",
     date_time: DateTime.new(2020,12,30,13),
     duration: "50 mins",
     category: "Strength",
@@ -343,7 +343,7 @@ sports_class_11.save!
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606651671/pexels-karolina-grabowska-4498154_t6btmr.jpg')
 sports_class_12 = SportsClass.new(
     title: "Hula whoop",
-    description: "Abs don't come easy, but the simplicity of the hoola hoop should get those obliques standing out and start burning the hard to shift belly fat!",
+    description: "Abs don't come easy, but the simplicity of the hula hoop should get those obliques standing out and start burning the notoriously hard to shift belly fat! Let's get our cores stronger and defined!",
     date_time: DateTime.new(2020,12,27,13),
     duration: "45 mins",
     category: "Cardio",
@@ -358,12 +358,10 @@ sports_class_12 = SportsClass.new(
 sports_class_12.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_12.save!
 
-# NEW SEEDS
-
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606907454/pexels-ketut-subiyanto-4473635_lqoicw.jpg')
 sports_class_13 = SportsClass.new(
     title: "Pilates Pause",
-    description: "Want to join me for a breather? This class is aimed as beginners, strengthening muscles and becoming aware of our bodies.",
+    description: "Want to join me for a breather? This class is aimed as beginners, strengthening muscles and becoming aware of our bodies We'll start with lengthening and build up to our first positions!.",
     date_time: DateTime.new(2020,12,24,15),
     duration: "60 mins",
     category: "Pilates",
@@ -400,7 +398,7 @@ sports_class_14.save!
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606908088/pexels-cottonbro-4761352_ongvpe.jpg')
 sports_class_15 = SportsClass.new(
     title: "Hop, Skip to the Beat",
-    description: "Stress busting, heart pumping class! Prepare to make your fat cry",
+    description: "Stress busting, heart pumping class! Prepare to make your fat cry, you'll need to have a skipping rope and be ready to sweat a LOT",
     date_time: DateTime.new(2020,12,26,19),
     duration: "20 mins",
     category: "Cardio",
@@ -415,7 +413,7 @@ sports_class_15 = SportsClass.new(
 sports_class_15.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_15.save!
 
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606907448/pexels-polina-tankilevitch-3735471_ajl3gm.jpg')
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606910228/pexels-elly-fairytale-4662469_ipll4u.jpg')
 sports_class_16 = SportsClass.new(
     title: "Kundalini Yoga",
     description: "Awaken the Kundalini - we can work on the resting posture together as well as our breathing techniques.",
@@ -433,7 +431,7 @@ sports_class_16 = SportsClass.new(
 sports_class_16.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_16.save!
 
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606907448/pexels-polina-tankilevitch-3735471_ajl3gm.jpg')
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606913765/pexels-cottonbro-4325495_jtsped.jpg')
 sports_class_17 = SportsClass.new(
     title: "Gentle Yoga",
     description: "Embark on your journey with Yoga, in this class we will start at the very basics of posture and awareness of our breathing and bodies.",
