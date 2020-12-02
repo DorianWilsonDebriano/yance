@@ -28,6 +28,8 @@
 .banner-section {
   height: 100vh;
   background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606478868/yance-background-image_tetvbe.png")
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .banner-content {
@@ -63,11 +65,14 @@
 
 .home-info-section {
   background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606480943/background-blocks_kio8x2.png");
-  height: 695px;
+  height: 800px;
   justify-content: space-between;
   margin-top: 50px;
-
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+
 .punchliner-left {
   width: 325px;
   h2 {
