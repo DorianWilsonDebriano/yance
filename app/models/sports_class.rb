@@ -4,6 +4,7 @@ class SportsClass < ApplicationRecord
   has_one(:user, through: :trainer)
   has_one_attached :photo
   has_many :class_bookings
+  has_many :users, through: :class_bookings
 
 
   validates :title, presence: true,length: { maximum: 40,

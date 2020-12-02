@@ -65,9 +65,11 @@
   <% end %>
   <!-- upcoming classes section -->
   <div class="upcoming-classes-section d-flex justify-content-center flex-column">
-    <h2>Your upcoming booked classes</h2>
-    <div class="profile-upcoming-classes">
-      <%= render "shared/profile-upcoming-classes" %>
-    </div>
+    <% if current_user.class_bookings.present? %>
+      <h2>Your upcoming booked classes</h2>
+      <div class="profile-upcoming-classes">
+        <%= render "shared/profile-upcoming-classes" %>
+      </div>
+    <% end %>
   </div>
 </div>
