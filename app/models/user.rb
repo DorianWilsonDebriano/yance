@@ -14,4 +14,8 @@ class User < ApplicationRecord
   has_one :membership, through: :subscription
 
   has_one_attached :photo
+
+  def all_booked_classes
+    class_bookings.map { |booking| booking.sports_class }
+  end
 end

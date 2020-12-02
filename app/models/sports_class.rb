@@ -87,3 +87,4 @@ class SportsClass < ApplicationRecord
     durations.sort
   end
 end
+

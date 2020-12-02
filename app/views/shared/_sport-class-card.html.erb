@@ -52,8 +52,13 @@
       <% if user_signed_in? %>
         <% if current_user.subscription.present? %>
           <% if current_user.subscription.membership.credits > 0 %>
-            <button class="card-book-class-link btn class-card-book-button" id="sweet-alert-booked"> BOOK </button>
-            <%= link_to "", sports_class_class_bookings_path(sports_class,@classbooking), method: :post, class: "hidden", id:'book-link' %>
+            <% if current_user.all_booked_classes.include?(sports_class) %>
+              <button class="card-book-class-link btn class-card-book-button" disabled id="sweet-alert-booked"> BOOK </button>
+              <%= link_to "", sports_class_class_bookings_path(sports_class, @classbooking), method: :post, class: "hidden", id:'book-link' %>
+            <% else %>
+              <button class="sweet-alert-booked-<%= sports_class.id %> card-book-class-link btn class-card-book-button " id="sweet-alert-booked"> BOOK </button>
+              <%= link_to "", sports_class_class_bookings_path(sports_class, @classbooking), method: :post, class: "hidden #{sports_class.id}", id:'book-link' %>
+            <% end %>
           <% else %>
             <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
             <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
@@ -61,9 +66,9 @@
         <% else %>
           <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
         <% end %>
-      <% else %>
-      <button class="card-book-class-link btn class-card-book-button" id="sweet-alert-booked"> BOOK </button>
-      <%= link_to "", sports_class_class_bookings_path(sports_class,@classbooking), method: :post, class: "hidden", id:'book-link' %>
+        <% else %>
+        <button class="card-book-class-link btn class-card-book-button" id="sweet-alert-booked"> BOOK </button>
+        <%= link_to "", sports_class_class_bookings_path(sports_class,@classbooking), method: :post, class: "hidden", id:'book-link' %>
       <% end %>
 
       <button type="button" class="btn class-card-info-button class-info-link" data-toggle="modal" data-target="#modal-<%= sports_class.id %>">

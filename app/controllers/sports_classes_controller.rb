@@ -30,6 +30,7 @@ class SportsClassesController < ApplicationController
     @sportsclass = SportsClass.new
     authorize @sportsclass
     # authorize @trainer, policy_class: SportsClassPolicy
+
   end
   def create
     @trainer = Trainer.find(params[:trainer_id])
@@ -39,7 +40,7 @@ class SportsClassesController < ApplicationController
     if @sportsclass.save
       room = create_room(@sportsclass)
       @sportsclass.update(room: JSON.parse(room.body)["name"])
-      redirect_to sports_classes_path, notice: "Your class has been created"
+      redirect_to sports_classes_path
     else
       render :new
     end
@@ -99,7 +100,6 @@ class SportsClassesController < ApplicationController
 
   def handle_date_search
     if params[:starts_at].present?
-
       if params[:starts_at].include?(" to ")
         starts_at, ends_at = *params[:starts_at].split(" to ")
         starts_at = starts_at.in_time_zone("CET")
