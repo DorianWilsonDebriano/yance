@@ -10,14 +10,16 @@ class SportsClassesController < ApplicationController
 
   def index
 
-    @sports_classes = policy_scope(SportsClass).order(date_time: :asc).includes(:trainer)
+    @sports_classes = policy_scope(SportsClass)
+      .order(date_time: :asc)
+      .includes(trainer: { user: { photo_attachment: :blob } }, photo_attachment: :blob)
     handle_search
     handle_date_search
     handle_filters
     handle_filter_cards
 
     @classbooking = ClassBooking.new
-    @classbookings = policy_scope(ClassBooking).where(user: current_user)
+    @classbookings = current_user.class_bookings.includes(user: [:subscription, :membership])
   end
 
   def show
