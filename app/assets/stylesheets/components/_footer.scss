@@ -1,15 +1,76 @@
 .footer {
-  height: 300px;
-  background-color: #F7F7F7;
+  height: 280px;
+  background-color: #F7F7F7 ;
 }
 
-.footer-link {
-  text-decoration: none;
-  color: black;
+.top-part{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1.4fr;
+  height: 250px;
+  grid-gap:16px;
+
 }
 
-.rights {
-  color: $dark-text;
-  font-weight: bolder;
-  font-size: 16px;
+.about{
+  font-family: "Montserrat";
+  align-items:center;
+  text-align:center;
+  font-weight:bold;
 }
+.description{
+  font-family:"Montserrat";
+  font-size:12px;
+  text-align:center;
+
+}
+
+.color-icon{
+  margin-left:4px;
+  margin-right:4px;
+}
+.list-item{
+  font-family:"Montserrat";
+  font-size:12px;
+  align-items:center;
+  text-align:center;
+}
+ul {
+  list-style-type: none;
+  padding:0;
+}
+.color-plane{
+ color:#FECD42;
+}
+.btn-style{
+  border:2px solid black;
+  border-radius:8px;
+  font-size:10px;
+  font-weight:bold;
+  width:72px;
+}
+.background{
+  background-color:black
+}
+.socials{
+display:flex;
+justify-content:center;
+}
+.link-color{
+  color:black !important;
+
+}
+.link-color:hover{
+  font-weight:bold !important;
+}
+
+// .footer-link {
+//   text-decoration: none;
+  // color: black;
+
+// }
+
+// .rights {
+//   color: $dark-text;
+//   font-weight: bolder;
+//   font-size: 16px;
+// }
