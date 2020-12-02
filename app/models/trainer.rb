@@ -8,5 +8,9 @@ class Trainer < ApplicationRecord
   has_one_attached :profile_photo
   has_one_attached :time_line_photo
 
+  validates :city, presence: true
+  validates :bio, presence: true
+  validates :sport_category, presence: true
+
   # searchkick
 end

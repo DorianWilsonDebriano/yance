@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
     @user_bookings = current_user.class_bookings
-    @user_sports_classes = current_user.sports_classes
+    @user_sports_classes = current_user.sports_classes.order(date_time: :asc)
   end
 
 end
