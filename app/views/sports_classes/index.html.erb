@@ -2,17 +2,16 @@
 <!-- sidebar filters -->
   <div class="sidebar">
     <div class="sidebar-position">
+      <p> Narrow your search </p>
       <div class="dropdown-filter">
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-          <%=s.label :category, "Sport Type" %>
-          <%= s.select(:category, SportsClass.categories, {include_blank: true}, { onchange: "this.form.submit()" })  %>
+            <%= s.select(:category, SportsClass.categories, {prompt: 'Sport Type', selected: params.dig(:sports_class, :category) }, { onchange: "this.form.submit()" } )%>
           <%= s.hidden_field(:starts_at, value: params[:starts_at] ) %>
         <% end %>
       </div>
       <div class="dropdown-filter">
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-          <%=s.label :difficulty_level, "Difficulty Level" %>
-          <%= s.select(:difficulty_level, SportsClass.difficulty_level, {include_blank: true}, { onchange: "this.form.submit()" })  %>
+          <%= s.select(:difficulty_level, SportsClass.difficulty_level,  {prompt: 'Difficulty Level', selected:  params.dig(:sports_class, :difficulty_level) }, { onchange: "this.form.submit()" })  %>
           <% if  params[:sports_class].present? %>
             <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
           <% end %>
@@ -20,8 +19,7 @@
       </div>
       <div class="dropdown-filter">
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-          <%=s.label :experience_level, "Experience Level" %>
-          <%= s.select(:experience_level, SportsClass.experience_level, {include_blank: true}, { onchange: "this.form.submit()" })  %>
+          <%= s.select(:experience_level, SportsClass.experience_level, {prompt: 'Experience Level', selected: params.dig(:sports_class, :experience_level) }, { onchange: "this.form.submit()" })  %>
           <% if  params[:sports_class].present? %>
             <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
             <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
@@ -30,8 +28,7 @@
       </div>
       <div class="dropdown-filter">
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-          <%=s.label :sweat_level, "Sweat Level" %>
-          <%= s.select(:sweat_level, SportsClass.sweat_level, {include_blank: true}, { onchange: "this.form.submit()" })  %>
+          <%= s.select(:sweat_level, SportsClass.sweat_level, {prompt: 'Sweat Level', selected:  params.dig(:sports_class, :sweat_level) }, { onchange: "this.form.submit()" })  %>
           <% if  params[:sports_class].present? %>
             <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
             <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
@@ -41,8 +38,7 @@
       </div>
       <div class="dropdown-filter">
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-          <%=s.label :duration, "Duration" %>
-          <%= s.select(:duration, SportsClass.durations, {include_blank: true}, { onchange: "this.form.submit()" })  %>
+          <%= s.select(:duration, SportsClass.durations, {prompt: 'Duration', selected: params.dig(:sports_class, :duration) }, { onchange: "this.form.submit()" })  %>
           <% if  params[:sports_class].present? %>
             <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
             <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
@@ -82,8 +78,10 @@
       <% if current_user.class_bookings.length > 0 %>
           <h2 class="all-classes-title pt-5">Your upcoming classes</h2>
           <div class="booked-sports-classes-cards pt-3 ">
-            <% @classbookings.each do |classbooking| %>
-              <%= render partial: "shared/booked-sport-class-card", locals: { classbooking: classbooking } %>
+            <% cache @classbookings do %>
+              <% @classbookings.each do |classbooking| %>
+                <%= render partial: "shared/booked-sport-class-card", locals: { classbooking: classbooking }, cached: true %>
+              <% end %>
             <% end %>
           </div>
       <% end %>
@@ -99,8 +97,10 @@
   <!-- all classes -->
     <h2 class="all-classes-title mt-5">All classes</h2>
     <div class="sports-classes-cards pt-3">
-      <% @sports_classes.each do |sports_class| %>
-        <%= render partial: "shared/sport-class-card", locals: { sports_class: sports_class } %>
+      <% cache @sports_classes do %>
+        <% @sports_classes.each do |sports_class| %>
+          <%= render partial: "shared/sport-class-card", locals: { sports_class: sports_class }, cached: true %>
+        <% end %>
       <% end %>
     </div>
 </div>

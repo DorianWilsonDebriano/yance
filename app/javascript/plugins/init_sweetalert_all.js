@@ -6,7 +6,7 @@ const initSweetalertAll = (selector, options = {}, callback = () => {}) => {
   if (swalButton) { // protect other pages
     swalButton.forEach( element =>
        element.addEventListener('click', () => {
-       swal(options).then(callback);
+       swal(options).then(callback(element));
        })
       )
   }
