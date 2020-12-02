@@ -15,8 +15,10 @@
           <div class="trainer-img">
             <% if @trainer.profile_photo.attached? %>
               <%= cl_image_tag @trainer.profile_photo.key, class: "trainer-profile-avatar" %>
-            <% else %>
+            <% elsif @trainer.user.photo.attached? %>
               <%= cl_image_tag @trainer.user.photo.key, class: "trainer-profile-avatar" %>
+            <% else %>
+              <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "trainer-profile-avatar" %>
             <% end %>
           </div>
           <div class="backbutton">
@@ -186,10 +188,10 @@
                                   <% end %>
                                 <% else %>
                                   <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
-                                  <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
+                                  <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "book-class-link btn class-modal-book-button" %>
                                 <% end %>
                               <% else %>
-                                <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
+                                <%= link_to "BOOK", memberships_path, class: "book-class-link btn class-modal-book-button" %>
                               <% end %>
                             </div>
                           </div>
@@ -224,14 +226,14 @@
                 </div>
                 <p class="review-user-name"><%= review.user.first_name %> <%= review.user.last_name %></p>
               </div>
-              <div class="review-stars">
-                <% review.rating.times do %>
-                  <i class="fas fa-star color-star"></i>
-                <% end %>
-              </div>
-              <div class = "review-content">
-                <p><%= review.content %></p>
-              </div>
+                <div class="review-stars">
+                  <% review.rating.times do %>
+                    <i class="fas fa-star color-star"></i>
+                  <% end %>
+                </div>
+                <div class = "review-content">
+                  <p><%= review.content %></p>
+                </div>
             </div>
           <% end %>
         </div>

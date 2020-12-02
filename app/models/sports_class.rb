@@ -1,9 +1,9 @@
 class SportsClass < ApplicationRecord
-
-  belongs_to :trainer
+  belongs_to :trainer, touch: true
   has_one(:user, through: :trainer)
   has_one_attached :photo
   has_many :class_bookings
+  has_many :users, through: :class_bookings
 
 
   validates :title, presence: true,length: { maximum: 40,

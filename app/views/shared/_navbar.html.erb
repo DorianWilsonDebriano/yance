@@ -46,6 +46,9 @@
             <%= image_tag "http://squashcity.pl/wp-content/uploads/2020/08/placeholder-avatar-square.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <% if current_user.trainers.present? %>
+                <%= link_to "Trainer profile", trainer_path(current_user.trainers.ids), class: "dropdown-item" %>
+              <% end %>
               <%= link_to "User Profile", profile_path , class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>

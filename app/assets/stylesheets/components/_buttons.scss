@@ -37,6 +37,9 @@
   width: 40%;
   width: 40%;
   margin-right: 17px;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .booked-class-info-buttons {
@@ -214,4 +217,11 @@
     background-color: white;
     color:#d1d1d1;
    }
+}
+
+#sweet-alert-booked {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
