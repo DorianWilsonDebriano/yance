@@ -102,7 +102,7 @@ edoardo.save!
 
 trainer_1 = Trainer.new(
   bio: "A personal trainer who can help you shift that unwanted lockdown weight!",
-  sport_category: "Cardio",
+  sport_category: "Pilates",
   city: "Berlin",
   user: edoardo,
 )
@@ -120,7 +120,7 @@ trainer_2.save!
 
 trainer_3 = Trainer.new(
   bio: "An inclusive classroom environment, where we can shape-up our minds and body is my mantra",
-  sport_category: "Zumba",
+  sport_category: "Stetching",
   city: "Frankfurt",
   user: cassy,
 )
@@ -129,7 +129,7 @@ trainer_3.save!
 
 trainer_4 = Trainer.new(
   bio: "In my classes you will feel the burn!",
-  sport_category: "HITT",
+  sport_category: "Cardio",
   city: "Amsterdam",
   user: adham,
 )
@@ -143,12 +143,12 @@ sports_class_1 = SportsClass.new(
     description: "Let's kick start our way into the coming week right!",
     date_time: DateTime.new(2020,12,6,18),
     duration: "60 mins",
-    category: "Kick Boxing",
+    category: "Cardio",
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Good",
     equipment: true,
-    language: "German",
+    language: "English",
     trainer: trainer_3,
 )
 sports_class_1.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
@@ -160,7 +160,7 @@ sports_class_2 = SportsClass.new(
     description: "Start your week right with this slow-burner!",
     date_time: DateTime.new(2020,12,7,7),
     duration: "50 mins",
-    category: "Stretching",
+    category: "Pilates",
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
@@ -195,7 +195,7 @@ sports_class_4 = SportsClass.new(
     description: "Look and feel like a dancer with me. My workout consists of ballet and palettes, which will help sculpt and shape your body. You won't be twirling or prancing, but you will feel the burn!",
     date_time: DateTime.new(2020,12,9,13),
     duration: "30 mins",
-    category: "Dance",
+    category: "Cardio",
     difficulty_level: 3,
     sweat_level: 3,
     experience_level: "Advanced",
@@ -213,7 +213,7 @@ sports_class_5 = SportsClass.new(
     description: "Burn off the week's stress and frustrations!",
     date_time: DateTime.new(2020,12,11,18),
     duration: "40 mins",
-    category: "HITT",
+    category: "Cardio",
     difficulty_level: 2,
     sweat_level: 3,
     experience_level: "Beginner",
@@ -232,7 +232,7 @@ sports_class_6 = SportsClass.new(
     description: "No time for both a lunch break and a workout? Those days are over when you try the new 10-minute version of my popular lunch break workout!",
     date_time: DateTime.new(2020,12,10,20),
     duration: "40 mins",
-    category: "HITT",
+    category: "Cardio",
     difficulty_level: 2,
     sweat_level: 2,
     experience_level: "Beginner",
@@ -251,7 +251,7 @@ sports_class_7 = SportsClass.new(
     description: "Your everyday go-to pilates flow. Perfect for all levels this class is designed to lengthen, align and sculpt. I will take time in these class to focus on technique and breathing!",
     date_time: DateTime.new(2020,12,12,15),
     duration: "40 mins",
-    category: "Pilates",
+    category: "Strength",
     difficulty_level: 2,
     sweat_level: 2,
     experience_level: "Beginner",
@@ -295,7 +295,7 @@ sports_class_9 = SportsClass.new(
     experience_level: "Advanced",
     equipment: true,
     language: "English",
-    trainer: trainer_2,
+    trainer: trainer_4,
 )
 
 
@@ -321,11 +321,11 @@ sports_class_10 = SportsClass.new(
 sports_class_10.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_10.save!
 
-file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606491710/madison-lavern-4gcqRf3-f2I-unsplash_ljr7uu.jpg')
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606910224/pexels-cottonbro-4325445_zyracp.jpg')
 sports_class_11 = SportsClass.new(
     title: "Just Relax",
     description: "Sometimes we just need relax and reboot. Come away with us and free your mind of any worries. My workout is a combination of yoga and stretching which will activate and relax your muscles.",
-    date_time: DateTime.new(2020,12,7,20),
+    date_time: DateTime.new(2020,12,6,20),
     duration: "60 mins",
     category: "Yoga",
     difficulty_level: 1,
@@ -346,7 +346,7 @@ sports_class_12 = SportsClass.new(
     description: "Abs don't come easy, but the simplicity of the hoola hoop should get those obliques standing out and start burning the hard to shift belly fat!",
     date_time: DateTime.new(2020,12,27,13),
     duration: "45 mins",
-    category: "Dance",
+    category: "Cardio",
     difficulty_level: 1,
     sweat_level: 3,
     experience_level: "Beginner",
@@ -357,5 +357,117 @@ sports_class_12 = SportsClass.new(
 
 sports_class_12.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 sports_class_12.save!
+
+# NEW SEEDS
+
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606907454/pexels-ketut-subiyanto-4473635_lqoicw.jpg')
+sports_class_13 = SportsClass.new(
+    title: "Pilates Pause",
+    description: "Want to join me for a breather? This class is aimed as beginners, strengthening muscles and becoming aware of our bodies.",
+    date_time: DateTime.new(2020,12,24,15),
+    duration: "60 mins",
+    category: "Pilates",
+    difficulty_level: 1,
+    sweat_level: 1,
+    experience_level: "Beginner",
+    equipment: true,
+    language: "English",
+    trainer: trainer_1,
+)
+
+sports_class_13.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+sports_class_13.save!
+
+
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606907448/pexels-polina-tankilevitch-3735532_ahirth.jpg')
+sports_class_14 = SportsClass.new(
+    title: "Muscle Release",
+    description: "Tight muscles? Stressed? Sore from working out? With me, we can loosen tightness and become limber once more!",
+    date_time: DateTime.new(2020,12,26,19),
+    duration: "30 mins",
+    category: "Stretching",
+    difficulty_level: 2,
+    sweat_level: 1,
+    experience_level: "Beginner",
+    equipment: true,
+    language: "English",
+    trainer: trainer_3,
+)
+
+sports_class_14.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+sports_class_14.save!
+
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606908088/pexels-cottonbro-4761352_ongvpe.jpg')
+sports_class_15 = SportsClass.new(
+    title: "Hop, Skip to the Beat",
+    description: "Stress busting, heart pumping class! Prepare to make your fat cry",
+    date_time: DateTime.new(2020,12,26,19),
+    duration: "20 mins",
+    category: "Cardio",
+    difficulty_level: 3,
+    sweat_level: 3,
+    experience_level: "Advanced",
+    equipment: true,
+    language: "English",
+    trainer: trainer_4,
+)
+
+sports_class_15.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+sports_class_15.save!
+
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606907448/pexels-polina-tankilevitch-3735471_ajl3gm.jpg')
+sports_class_16 = SportsClass.new(
+    title: "Kundalini Yoga",
+    description: "Awaken the Kundalini - we can work on the resting posture together as well as our breathing techniques.",
+    date_time: DateTime.new(2020,12,27,19),
+    duration: "40 mins",
+    category: "Yoga",
+    difficulty_level: 2,
+    sweat_level: 2,
+    experience_level: "Good",
+    equipment: true,
+    language: "English",
+    trainer: trainer_2,
+)
+
+sports_class_16.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+sports_class_16.save!
+
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606907448/pexels-polina-tankilevitch-3735471_ajl3gm.jpg')
+sports_class_17 = SportsClass.new(
+    title: "Gentle Yoga",
+    description: "Embark on your journey with Yoga, in this class we will start at the very basics of posture and awareness of our breathing and bodies.",
+    date_time: DateTime.new(2020,12,22,19),
+    duration: "90 mins",
+    category: "Yoga",
+    difficulty_level: 1,
+    sweat_level: 1,
+    experience_level: "Beginner",
+    equipment: true,
+    language: "English",
+    trainer: trainer_2,
+)
+
+sports_class_17.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+sports_class_17.save!
+
+file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606909564/pexels-cliff-booth-4056723_pox47p.jpg')
+sports_class_18 = SportsClass.new(
+    title: "Flexibiliyay",
+    description: "We will sculpt long lean muscles with my stetches, let's reach for the stars!",
+    date_time: DateTime.new(2020,12,31,8),
+    duration: "40 mins",
+    category: "Stretching",
+    difficulty_level: 3,
+    sweat_level: 1,
+    experience_level: "Good",
+    equipment: true,
+    language: "English",
+    trainer: trainer_3,
+)
+
+sports_class_18.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+sports_class_18.save!
+
 
 puts 'new seeds planted 🌻!'
