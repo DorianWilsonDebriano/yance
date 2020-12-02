@@ -2,6 +2,7 @@
 <!-- sidebar filters -->
   <div class="sidebar">
     <div class="sidebar-position">
+      <p> Narrow your search </p>
       <div class="dropdown-filter">
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
             <%= s.select(:category, SportsClass.categories, {prompt: 'Sport Type', selected: params.dig(:sports_class, :category) }, { onchange: "this.form.submit()" } )%>
