@@ -85,12 +85,8 @@
                     <div class="class-info-book-buttons d-flex justify-content-center">
                       <% if current_user.subscription.present? %>
                         <% if current_user.subscription.credits > 0 %>
-                          <% if current_user.all_booked_classes.include?(sportsclass) %>
-                            <button class="card-book-class-link btn class-card-book-button" disabled id="sweet-alert-booked"> BOOK </button>
-                            <%= link_to "", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "hidden", id:'book-link' %>
-                          <% else %>
-                            <button class="sweet-alert-booked-<%= sportsclass.id %> card-book-class-link btn class-card-book-button " id="sweet-alert-booked"> BOOK </button>
-                            <%= link_to "", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "hidden #{sportsclass.id}", id:'book-link' %>
+                          <% unless current_user.all_booked_classes.include?(sportsclass) %>
+                            <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "sweet-alert-booked-#{sportsclass.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
                           <% end %>
                         <% else %>
                           <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
@@ -179,12 +175,8 @@
                             <div class="align-center pt-5 pr-3">
                               <% if current_user.subscription.present? %>
                                 <% if current_user.subscription.credits > 0 %>
-                                  <% if current_user.all_booked_classes.include?(sportsclass) %>
-                                    <button class="book-class-link btn class-modal-book-button" disabled id="sweet-alert-booked"> BOOK </button>
-                                    <%= link_to "", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "hidden", id:'book-link' %>
-                                  <% else %>
-                                    <button class="sweet-alert-booked-<%= sportsclass.id %> book-class-link btn class-modal-book-button " id="sweet-alert-booked"> BOOK </button>
-                                    <%= link_to "", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "hidden #{sportsclass.id}", id:'book-link' %>
+                                  <% unless current_user.all_booked_classes.include?(sportsclass) %>
+                                    <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "sweet-alert-booked-#{sportsclass.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
                                   <% end %>
                                 <% else %>
                                   <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
