@@ -42,7 +42,7 @@ class SportsClassesController < ApplicationController
     if @sportsclass.save
       room = create_room(@sportsclass)
       @sportsclass.update(room: JSON.parse(room.body)["name"])
-      redirect_to sports_classes_path
+      redirect_to sports_classes_path, notice: "#{@sportsclass.title} has been created!"
     else
       render :new
     end
@@ -55,7 +55,7 @@ class SportsClassesController < ApplicationController
   def update
     authorize @sportsclass
     if @sportsclass.update(sports_class_params)
-      redirect_to sports_classes_path
+      redirect_to sports_classes_path, notice: "#{@sportsclass.title} has been updated."
     else
       render :edit
     end
@@ -64,7 +64,7 @@ class SportsClassesController < ApplicationController
   def destroy
     # authorize @sportsclass
     @sportsclass.destroy
-    redirect_to sports_classes_path
+    redirect_to sports_classes_path, notice: "Your class has been deleted."
   end
 
   private
