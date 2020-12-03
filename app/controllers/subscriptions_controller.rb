@@ -13,6 +13,7 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new
     @subscription.user = current_user
     @subscription.membership = @membership
+    @subscription.credits = @membership.credits
     authorize @subscription
     if @subscription.save
       redirect_to sports_classes_path
