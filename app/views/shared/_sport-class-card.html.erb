@@ -51,7 +51,7 @@
     <div class="class-info-book-buttons d-flex justify-content-center">
       <% if user_signed_in? %>
         <% if current_user.subscription.present? %>
-          <% if current_user.subscription.membership.credits > 0 %>
+          <% if current_user.subscription.credits > 0 %>
             <% if current_user.all_booked_classes.include?(sports_class) %>
               <button class="card-book-class-link btn class-card-book-button" disabled id="sweet-alert-booked"> BOOK </button>
               <%= link_to "", sports_class_class_bookings_path(sports_class, @classbooking), method: :post, class: "hidden", id:'book-link' %>

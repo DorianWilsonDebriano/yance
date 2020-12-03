@@ -28,7 +28,7 @@
       <% if user_signed_in? %>
         <% if current_user.subscription.present? %>
           <div class="available-credits">
-            <p>Remaining credits: <%= current_user.subscription.membership.credits %></p>
+            <p>Remaining credits: <%= current_user.subscription.credits %></p>
           </div>
         <% end %>
         <li class="nav-item" id="BecomeAtrainer">

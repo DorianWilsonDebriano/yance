@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_161033) do
+ActiveRecord::Schema.define(version: 2020_12_03_094048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_161033) do
     t.bigint "membership_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "credits"
     t.index ["membership_id"], name: "index_subscriptions_on_membership_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
