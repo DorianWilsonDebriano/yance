@@ -27,7 +27,7 @@
       <li> <strong>password:</strong> ************ <%= link_to "edit password", edit_user_registration_path %> </li>
       <% if current_user.subscription.present? %>
         <li><strong>membership:</strong> <%= current_user.subscription.membership.title %></li>
-        <li><strong>remaining credits:</strong> <%= current_user.subscription.membership.credits %></li>
+        <li><strong>remaining credits:</strong> <%= current_user.subscription.credits %></li>
         <li><strong>renews on:</strong> <%= current_user.subscription.membership.expiration_date %></li>
       <% else %>
         <li><strong>membership:</strong> <%= link_to "choose a membership", memberships_path %> </li>
