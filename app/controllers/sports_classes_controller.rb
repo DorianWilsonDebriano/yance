@@ -19,7 +19,7 @@ class SportsClassesController < ApplicationController
     handle_filter_cards
 
     @classbooking = ClassBooking.new
-    @classbookings = current_user.class_bookings.includes(user: [:subscription, :membership])
+    @classbookings = current_user&.class_bookings&.includes(user: [:subscription, :membership]) || []
   end
 
   def show
