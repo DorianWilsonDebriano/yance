@@ -70,11 +70,11 @@ document.addEventListener("turbolinks:load", () => {
   //   }
   // );
 
-  initSweetalert("#sweet-alert-subscription", {
-    title: "Congratulations!",
-    text: "Your membership has been upgraded",
-    icon: "success",
-  });
+  // initSweetalert("#sweet-alert-subscription", {
+  //   title: "Congratulations!",
+  //   text: "Your membership has been upgraded",
+  //   icon: "success",
+  // });
 
   // initSweetalert(
   //   "#sweet-alert-delete",
