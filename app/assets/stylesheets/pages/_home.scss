@@ -16,14 +16,30 @@
 }
 
 #home-title {
+    display: flex;
+    justify-content: center;
     font-size: 24px;
     font-weight: bolder;
-    width: 418px;
-    position: relative;
-    left: 359px;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
   }
+
+  #browse-text{
+    color: white;
+  }
+
+.browse-button {
+  background-color: #FEDF44;
+  border: none;
+  border-radius: 25px;
+  color: black;
+  font-weight: bolder;
+  padding: 12px 16px;
+  font-size: 14px;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 1) 0px 1px 12px;
+  }
+}
 
 .banner-section {
   height: 100vh;
@@ -34,12 +50,14 @@
 
 .banner-content {
   padding-top: 25vh;
+  display: flex;
+  justify-content: center;
 }
 
 .learn-more {
   text-align: center;
   position: relative;
-  top: 180px;
+  top: 140px;
     p {
     color: white;
   }
@@ -65,7 +83,7 @@
 
 .home-info-section {
   background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606480943/background-blocks_kio8x2.png");
-  height: 800px;
+  height: 700px;
   justify-content: space-between;
   margin-top: 50px;
   background-repeat: no-repeat;
@@ -73,8 +91,8 @@
   background-size: cover;
 }
 
+
 .punchliner-left {
-  width: 325px;
   h2 {
     font-weight: bolder;
     font-size: 24px;
@@ -93,28 +111,6 @@
     text-align: end;
     padding-right: 10px;
   }
-}
-
-
-#punchliner-left-bottom {
-  position: relative;
-  top: 400px;
-  left: 100px;
-}
-
-#punchliner-right-top {
-  width: 325px;
-  position: relative;
-  top: 130px;
-  right: 100px;
-  h2 {
-      font-weight: bolder;
-      font-size: 24px;
-      color: $dark-text;
-    }
-    p {
-      font-size: 16px;
-    }
 }
 
 .promo-banner {

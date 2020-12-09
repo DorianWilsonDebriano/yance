@@ -48,6 +48,18 @@
   padding: 12px;
 }
 
+@media(max-width: 992px) {
+  .profile-upcoming-classes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .profile-upcoming-classes {
+    grid-template-columns: 1fr;
+  }
+}
+
 .info-edit-icon {
   position: absolute;
   left: 47%;

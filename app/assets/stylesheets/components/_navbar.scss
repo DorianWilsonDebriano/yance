@@ -14,23 +14,30 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 38px;
-  position: absolute;
-  top: 14%;
-  left: 4%;
+  // position: absolute;
+  // top: 14%;
+  // left: 4%;
+  margin-right: 20px;
+}
+
+.logo-credits {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
 }
 
 #nav-name {
   font-size: 25px;
-  position: absolute;
-  top: 15%;
-  left: 7.8%;
+}
+
+#nav-credits {
+ margin: 0;
+ font-weight: bolder;
 }
 
 #navbarLogoAndName {
-  justify-content: space-between;
-    h2 {
-    font-size: 0.9rem;
-  }
+  flex-grow: 0;
 }
 
 #nav-statement{

@@ -4,6 +4,18 @@
   gap: 40px;
 }
 
+@media(max-width: 992px) {
+  .sports-classes-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .sports-classes-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .sports-classes-card {
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
