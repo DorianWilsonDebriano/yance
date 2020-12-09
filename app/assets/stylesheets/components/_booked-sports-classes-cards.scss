@@ -4,6 +4,12 @@
   gap: 40px;
 }
 
+@media(max-width: 992px) {
+  .booked-sports-classes-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 .booked-sports-classes-card {
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   border-radius: 4px;
