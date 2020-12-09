@@ -1,0 +1,52 @@
+.footer-signup-form {
+
+}
+
+#mc_embed_signup{
+  clear:left;
+}
+
+.email-input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.newsletter-signup{
+  width: 100%;
+  background-color: #FECD42;
+  border: none;
+  border-radius: 4px;
+  color: black;
+}
+
+.circle-newsletter-signup{
+  width: 100%;
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+#circle-newsletter-label {
+  color: white;
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+.circle-signup {
+  width: 80%;
+}
+
+.circle-email-input {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.circle-signup-form {
+
+}
