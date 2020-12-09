@@ -1,38 +1,38 @@
 <div class="page banner-section">
   <div class="banner-content">
-    <div class="home-page-logo d-flex">
-      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606477689/Group_14_dhiu4f.png", class: "home-page-logo-img" %>
-      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606477690/heading_xfu4jd.png", class: "home-page-logo-name" %>
-    </div>
-    <h2 id="home-title">For when would you like to book your next live class?</h2>
+    <div class="navigation">
+      <h2 id="home-title">For when would you like to book your next live class?</h2>
   <!-- searchbar -->
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-sm-8 mt-3">
-          <%= form_tag sports_classes_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control searchbar",
-              placeholder: "All sports"
-            %>
-             <%= text_field_tag :starts_at,
-             params[:starts_at],
-            class: "datepicker",
-              placeholder: "Date"
+      <div class="">
+        <div class="row justify-content-center">
+          <div class="col-sm-12 my-3">
+            <%= form_tag sports_classes_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control searchbar",
+                placeholder: "All sports"
               %>
-            <div class="button">
-              <%= button_tag(type: "submit", class: "btn search-button") do %>
-                <i class="fas fa-search search-icon"></i>
-            <% end %>
+               <%= text_field_tag :starts_at,
+               params[:starts_at],
+              class: "datepicker",
+                placeholder: "Date"
+                %>
+              <div class="button">
+                <%= button_tag(type: "submit", class: "btn search-button") do %>
+                  <i class="fas fa-search search-icon"></i>
+              <% end %>
 
-            </div>
-          <% end %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="learn-more">
-      <p>Not a member yet? Learn more</p>
-      <a href="#home-content"><i class="fas fa-angle-down" id="banner-caret"></i></a>
+      <p id="browse-text">Not sure what to look for?</p>
+      <%= link_to "BROWSE", sports_classes_path, class: "btn browse-button" %>
+      <div class="learn-more">
+        <p>Not a member yet? Learn more</p>
+        <a href="#home-content"><i class="fas fa-angle-down" id="banner-caret"></i></a>
+      </div>
     </div>
   </div>
 <!-- punchliner section -->

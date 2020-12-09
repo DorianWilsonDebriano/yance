@@ -16,14 +16,30 @@
 }
 
 #home-title {
+    display: flex;
+    justify-content: center;
     font-size: 24px;
     font-weight: bolder;
-    width: 418px;
-    position: relative;
-    left: 359px;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
   }
+
+  #browse-text{
+    color: white;
+  }
+
+.browse-button {
+  background-color: #FEDF44;
+  border: none;
+  border-radius: 25px;
+  color: black;
+  font-weight: bolder;
+  padding: 12px 16px;
+  font-size: 14px;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 1) 0px 1px 12px;
+  }
+}
 
 .banner-section {
   height: 100vh;
@@ -34,12 +50,14 @@
 
 .banner-content {
   padding-top: 25vh;
+  display: flex;
+  justify-content: center;
 }
 
 .learn-more {
   text-align: center;
   position: relative;
-  top: 180px;
+  top: 140px;
     p {
     color: white;
   }
