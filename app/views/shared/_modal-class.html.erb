@@ -15,7 +15,7 @@
           <% end %>
           <br>
           <div class="class-modal-levels d-flex row pr-3 pl-2">
-            <div class="class-modal-difficulty col-4">
+            <div class="class-modal-difficulty col-sm-12 col-lg-4">
               <p class="class-modal-level-title">DIFFICULTY</p>
               <p class="class-modal-level-content">
                 <% sports_class.difficulty_level.times do %>
@@ -23,7 +23,7 @@
                 <% end %>
               </p>
             </div>
-            <div class="class-modal-sweat col-4">
+            <div class="class-modal-sweat col-sm-12 col-lg-4">
               <p class="class-modal-level-title">SWEAT</p>
               <p class="class-modal-level-content">
                 <% sports_class.sweat_level.times do %>
@@ -31,21 +31,21 @@
                 <% end %>
               </p>
             </div>
-            <div class="class-modal-experience col-4">
+            <div class="class-modal-experience col-sm-12 col-lg-4">
               <p class="class-modal-level-title">LEVEL</p>
               <p class="class-modal-level-content">
                 <%= sports_class.experience_level %>
               </p>
             </div>
           </div>
-          <div class="class-modal-equipment">
+          <!-- <div class="class-modal-equipment">
             <p class="class-modal-equipment-title">Equipment needed?</p>
             <% if sports_class.equipment == false %>
               <p class="class-modal-equipment-content">none</p>
             <% else %>
               <p class="class-modal-equipment-content">yes, see class description</p>
             <% end %>
-          </div>
+          </div> -->
           <% if policy(sports_class).edit? %>
             <%= link_to edit_sports_class_path(sports_class) do  %>
               <i class="fas fa-pen-square"></i>

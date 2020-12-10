@@ -19,6 +19,7 @@
   width: 50%;
   margin-right: 20px;
   padding: 12px;
+  position: relative;
    li{
     text-decoration: none;
     list-style: none;
@@ -35,6 +36,7 @@
   border-radius: 4px;
   width: 50%;
   padding: 12px;
+  position: relative;
    li{
   text-decoration: none;
   list-style: none;
@@ -74,18 +76,26 @@
 
 #info-edit-icon {
   position: absolute;
-  left: 47%;
-  top: 197px;
+  right: 8px;
+  top: 8px;
   font-size: 25px;
   color: #929292;
 }
 
 #about-edit-icon {
   position: absolute;
-  top: 197px;
+  top: 8px;
   font-size: 25px;
-  right: 176px;
+  right: 8px;
   color: #929292;
+}
+
+.new-class-icon {
+  color: $yance-yellow;
+  font-size: 34px;
+  position: absolute;
+  top: 2px;
+  right: 4px;
 }
 
 .sports-classes-card {
@@ -172,9 +182,8 @@
 
 .profile-created-classes-section {
   margin-top: 20px;
-  // box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   border-radius: 4px;
-  // padding: 12px;
+  position:relative;
     h2 {
     font-size: 18px;
     font-weight: bolder;
