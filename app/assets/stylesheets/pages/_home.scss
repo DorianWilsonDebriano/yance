@@ -190,7 +190,12 @@
 
 @media(max-width: 768px) {
   .newsletter-circle {
-    right: 120px;
-    height: 140px;
+    display: none;
+  }
+}
+
+@media(max-width: 768px) {
+  .navigation {
+    padding: 12px;
   }
 }

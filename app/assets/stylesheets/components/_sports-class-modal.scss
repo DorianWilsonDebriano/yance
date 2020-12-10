@@ -41,11 +41,13 @@
 }
 
 .class-modal-description {
-  height: 25%;
+  height: 30%;
+  font-size: 14px;
 }
 
 .class-modal-bio {
-  height: 25%;
+  height: 30%;
+  font-size: 14px;
 }
 
 // .class-modal-class-image {
@@ -64,10 +66,25 @@
   right: 40px;
 }
 
+@media(max-width: 768px) {
+  .class-trainer-photo {
+    height: 60px;
+    width: 60px;
+    right: 0px;
+  }
+}
+
 .modal-close {
   position: absolute;
   top: 1%;
   left: 92%;
+}
+
+@media(max-width: 768px) {
+  .modal-close {
+    top: 2%;
+    left: 83%;
+  }
 }
 
 .class-modal-level-title {
