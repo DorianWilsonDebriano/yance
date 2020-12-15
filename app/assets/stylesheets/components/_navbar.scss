@@ -90,3 +90,15 @@
   font-size: 14px;
   font-weight: bolder;
 }
+
+.dropdown-menu-right {
+  border-radius: 4px;
+  border-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 12px;
+}
+
+.dropdown-item {
+  &:hover {
+    background-color: rgba(254, 223, 68, 0.2);
+  }
+}

@@ -1,0 +1,48 @@
+<div class="page container mb-5">
+  <div class="backbutton">
+    <%= link_to "BACK", sports_classes_path, class: "btn back-button-profile"%>
+  </div>
+  <div class="profile-header d-flex align-center">
+    <div class="profile-avatar">
+      <% if current_user.photo.present? %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
+      <% else %>
+        <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "avatar-large" %>
+      <% end %>
+    </div>
+    <div>
+      <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+    </div>
+  </div>
+<!-- user info section -->
+  <div class="user-info d-flex">
+    <div class="my-account">
+      <p>Your account</p>
+      <div class="edit-buttons">
+        <%= link_to edit_user_registration_path do %>
+            <i class="fas fa-pen-square" id="info-edit-icon"></i>
+        <% end %>
+      </div>
+      <li> <strong>login:</strong> <%= current_user.email %> </li>
+      <li> <strong>password:</strong> ************ <%= link_to "edit password", edit_user_registration_path %> </li>
+      <% if current_user.subscription.present? %>
+        <li><strong>membership:</strong> <%= current_user.subscription.membership.title %></li>
+        <li><strong>remaining credits:</strong> <%= current_user.subscription.credits %></li>
+        <li><strong>renews on:</strong> <%= current_user.subscription.membership.expiration_date %></li>
+      <% else %>
+        <li><strong>membership:</strong> <%= link_to "choose a membership", memberships_path %> </li>
+        <li><strong>remaining credits:</strong> 0</li>
+        <li><strong>renews on:</strong> <%= link_to "choose a membership", memberships_path %></li>
+      <% end %>
+    </div>
+    <div class="about-me">
+      <p>About you</p>
+      <div class="edit-buttons">
+        <%= link_to edit_user_registration_path do %>
+            <i class="fas fa-pen-square" id="about-edit-icon"></i>
+        <% end %>
+      </div>
+      <li> <strong>language:</strong> <%= current_user.language %> </li>
+      <li> <strong>bio:</strong> <%= current_user.bio %> </li>
+    </div>
+  </div>

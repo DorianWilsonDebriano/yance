@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/search", to: "pages#search", as: :search
   get "/profile", to: "pages#profile"
+  get "/settings", to: "pages#settings"
 
    resources :trainers, only: %i[show new create] do
     resources :sports_classes, only: %i[new create]

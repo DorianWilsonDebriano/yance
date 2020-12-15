@@ -1,75 +1,46 @@
 <div class="page container mb-5">
-  <div class="backbutton">
-    <%= link_to "BACK", sports_classes_path, class: "btn back-button-profile"%>
-  </div>
-  <div class="profile-header d-flex align-center">
-    <div class="profile-avatar">
-      <% if current_user.photo.present? %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
-      <% else %>
-        <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "avatar-large" %>
-      <% end %>
-    </div>
-    <div>
-      <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
-    </div>
-  </div>
-<!-- user info section -->
-  <div class="user-info d-flex">
-    <div class="my-account">
-      <p>Your account</p>
-      <div class="edit-buttons">
-        <%= link_to edit_user_registration_path do %>
-            <i class="fas fa-pen-square" id="info-edit-icon"></i>
-        <% end %>
-      </div>
-      <li> <strong>login:</strong> <%= current_user.email %> </li>
-      <li> <strong>password:</strong> ************ <%= link_to "edit password", edit_user_registration_path %> </li>
-      <% if current_user.subscription.present? %>
-        <li><strong>membership:</strong> <%= current_user.subscription.membership.title %></li>
-        <li><strong>remaining credits:</strong> <%= current_user.subscription.credits %></li>
-        <li><strong>renews on:</strong> <%= current_user.subscription.membership.expiration_date %></li>
-      <% else %>
-        <li><strong>membership:</strong> <%= link_to "choose a membership", memberships_path %> </li>
-        <li><strong>remaining credits:</strong> 0</li>
-        <li><strong>renews on:</strong> <%= link_to "choose a membership", memberships_path %></li>
-      <% end %>
-    </div>
-    <div class="about-me">
-      <p>About you</p>
-      <div class="edit-buttons">
-        <%= link_to edit_user_registration_path do %>
-            <i class="fas fa-pen-square" id="about-edit-icon"></i>
-        <% end %>
-      </div>
-      <li> <strong>language:</strong> <%= current_user.language %> </li>
-      <li> <strong>bio:</strong> <%= current_user.bio %> </li>
-    </div>
-  </div>
+  <h2 class="page-title">Your classes</h2>
 
-  <!-- created classes section -->
-  <% if current_user.trainers.present? %>
-    <div class="profile-created-classes-section d-flex justify-content-center flex-column">
-      <h2>Your upcoming created classes</h2>
-      <div class="new-class-icon">
-        <%= link_to new_trainer_sports_class_path(current_user.trainers.ids) do %>
-          <i class="fas fa-plus new-class-icon"></i>
+  <!-- tabs -->
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link profile-tab active" id="upcoming-tab" data-toggle="tab" href="#upcoming" role="tab" aria-controls="upcoming" aria-selected="true">Upcoming</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link profile-tab" id="created-tab" data-toggle="tab" href="#created" role="tab" aria-controls="created" aria-selected="false">Created</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="upcoming" role="tabpanel" aria-labelledby="upcoming-tab">
+      <div class="upcoming-classes-section d-flex justify-content-center flex-column">
+        <!-- upcoming classes section -->
+        <% if current_user.class_bookings.present? %>
+          <h2>Your bookings</h2>
+          <div class="profile-upcoming-classes">
+            <%= render "shared/profile-upcoming-classes" %>
+          </div>
+        <% else %>
+          <h2>Your bookings</h2>
+          <div class="profile-upcoming-classes">
+            <p>Nothings booked yet! Go book your first class!</p>
+          </div>
         <% end %>
       </div>
-      <% if @user_sports_classes != nil %>
-        <div class="profile-created-classes ">
-          <%= render "shared/profile-created-classes" %>
+      <%= link_to "Explore yance", sports_classes_path, class: "btn browse-button mt-5" %>
+    </div>
+    <div class="tab-pane fade" id="created" role="tabpanel" aria-labelledby="created-tab">
+      <!-- created classes section -->
+      <% if current_user.trainers.present? %>
+        <div class="profile-created-classes-section d-flex justify-content-center flex-column">
+          <h2>Your upcoming created classes</h2>
+          <% if @user_sports_classes != nil %>
+            <div class="profile-created-classes ">
+              <%= render "shared/profile-created-classes" %>
+            </div>
+          <% end %>
         </div>
       <% end %>
+      <%= link_to "Create a class", new_trainer_sports_class_path(current_user.trainers.ids), class: "btn browse-button mt-5" %>
     </div>
-  <% end %>
-  <!-- upcoming classes section -->
-  <div class="upcoming-classes-section d-flex justify-content-center flex-column">
-    <% if current_user.class_bookings.present? %>
-      <h2>Your upcoming booked classes</h2>
-      <div class="profile-upcoming-classes">
-        <%= render "shared/profile-upcoming-classes" %>
-      </div>
-    <% end %>
   </div>
 </div>
