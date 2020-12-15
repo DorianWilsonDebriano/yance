@@ -79,7 +79,7 @@ class SportsClassesController < ApplicationController
     request = Net::HTTP::Post.new(url)
     request["Content-Type"] = 'application/json'
     request["Authorization"] = 'Bearer ' + ENV["DAILY"]
-    request.body = "{\"name\":\"#{sportsclass.id}\",\"privacy\":\"public\"}"
+    request.body = "{\"properties\":{\"exp\":\"#{sportsclass.date_time.to_i + 86400}\",\"enable_chat\":true},\"name\":\"#{sportsclass.id}\",\"privacy\":\"public\"}"
 
     response = http.request(request)
     return response
