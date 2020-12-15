@@ -16,7 +16,7 @@
           <i class="fas fa-video"></i>
         <% end %>
       </button>
-      <button class="btn profile-cancel-booking-icon"> <%= link_to class_booking_path(user_booking), method: :delete, class: "profile-cancel-button", id:"sweet-alert-delete" do %>
+      <button class="btn profile-cancel-booking-icon"> <%= link_to class_booking_path(user_booking), method: :delete, data: {confirm: "Are you sure?"}, class: "profile-cancel-button", id:"sweet-alert-delete" do %>
           <i class="fas fa-window-close"></i>
           <p id="cancel-class">cancel</p>
         <% end %>

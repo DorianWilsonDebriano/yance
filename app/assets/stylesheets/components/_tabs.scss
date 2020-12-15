@@ -1,0 +1,38 @@
+.profile-tab {
+  color: black;
+  border: none;
+  padding: 8px 8px 16px 8px;
+  margin: 0px 4px;
+  &:hover {
+    border: none;
+    color: black;
+    background-color: rgb(245, 245, 245);
+  }
+}
+
+.active {
+  border: none;
+  &:hover {
+    border: none;
+    color: black;
+  }
+}
+
+
+.nav-link.active {
+  border: none;
+  border-bottom: 3px solid #555555 !important;
+  background-color: transparent !important;
+  padding: 8px 8px 16px 8px;
+  color: black;
+  font-weight: bolder;
+}
+
+.nav-item.show {
+  border: none;
+  background-color: transparent;
+}
+
+#created-tab {
+  margin-left: 24px;
+}
