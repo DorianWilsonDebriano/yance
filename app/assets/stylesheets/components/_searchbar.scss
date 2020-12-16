@@ -16,7 +16,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: #FECD42;
+  background-color: $yance-yellow;
   border: none;
 }
 
@@ -64,45 +64,45 @@ form_tag {
 // FLATPICKR
 
 .flatpickr-day.selected {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
   box-shadow: none!important;
 }
 
 .flatpickr-day.selected:focus {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
   outline: 0;
 }
 
 .flatpickr-day.selected:hover {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
 }
 
 // START RANGE
 
 .flatpickr-day.startRange:hover {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
   box-shadow: none !important;
 }
 
 .flatpickr-day.startRange {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
   box-shadow: none !important;
 }
 
 .flatpickr-day.selected.startRange:focus {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
   outline: 0;
   box-shadow: none !important;
 }
 
 .flatpickr-day.startRange:focus {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
 
 }
@@ -110,26 +110,26 @@ form_tag {
 // END RANGE
 
 .flatpickr-day.selected.endRange:focus {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
   outline: 0;
   box-shadow: none !important;
 }
 
 .flatpickr-day.selected.endRange {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
   box-shadow: none !important;
 }
 
 .flatpickr-day.endRange:hover {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
   box-shadow: none !important;
 }
 
 .flatpickr-day.endRange {
-  background-color: #FECD42 !important;
+  background-color: $yance-yellow !important;
   border: none;
   box-shadow: none !important;
 }

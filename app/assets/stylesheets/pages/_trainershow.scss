@@ -29,7 +29,7 @@
 
 .trainer-img img{
   border-radius: 50%;
-  border: 2px solid #FFC24D;
+  border: 2px solid $yance-yellow;
   position: relative;
   bottom: 32px;
   left: 8px;
@@ -56,7 +56,7 @@
 .follow-review{
   font-family:"Montserrat";
   font-size:11px;
-  background-color:#FFC24D;
+  background-color: $yance-yellow;
   color:white;
   border-radius:16px;
   height:24px;
@@ -122,10 +122,10 @@
 }
 
 .write-review{
-color: #FFC24D;
+color:  $yance-yellow;
 font-size: 16px;
 width: 135px;
-border: 1px solid #FFC24D;
+border: 1px solid  $yance-yellow;
 border-radius: 16px;
 align-items: center;
 height: 29px;
@@ -133,7 +133,7 @@ display: flex;
 justify-content: center;
   &:hover {
     color: white;
-    background-color: #FFC24D;
+    background-color:  $yance-yellow;
   }
 }
 
@@ -142,5 +142,5 @@ justify-content: center;
   width: 95%;
 }
 .color-star{
-   color:#FFC24D;
+   color: $yance-yellow;
 }
