@@ -9,8 +9,10 @@ class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
 
   def index
-
+    start_range = Time.zone.now.change(hour: 0, min: 0, sec: 0).in_time_zone("CET")
+    end_range = Time.zone.now.change(hour: 0, min: 0, sec: 0).in_time_zone("CET").advance(days: 8)
     @sports_classes = policy_scope(SportsClass)
+      .where(date_time: Range.new(start_range, end_range))
       .order(date_time: :asc)
       .includes(trainer: { user: { photo_attachment: :blob } }, photo_attachment: :blob)
     handle_search
@@ -102,13 +104,20 @@ class SportsClassesController < ApplicationController
 
   def handle_date_search
     if params[:starts_at].present?
+      # if search for dates, only upcoming classes displayed, not past ones
       if params[:starts_at].include?(" to ")
-        starts_at, ends_at = *params[:starts_at].split(" to ")
-        starts_at = starts_at.in_time_zone("CET")
+        starts_at_string, ends_at = *params[:starts_at].split(" to ")
+        if starts_at_string > Time.zone.now.change(hour: 0, min: 0, sec: 0).in_time_zone("CET")
+          starts_at = starts_at_string.in_time_zone("CET")
+        else
+          starts_at = Time.zone.now.change(hour: 0, min: 0, sec: 0).in_time_zone("CET")
+        end
         ends_at = ends_at.in_time_zone("CET").advance(days: 1)
         @sports_classes = @sports_classes.where(date_time: Range.new(starts_at, ends_at))
       else
         starts_at = params[:starts_at].in_time_zone("CET")
+        #The below line is for if we want the single date search to only bring up classes on the current day, not very user friendly.
+        # starts_at = Time.zone.now.change(hour: 0, min: 0, sec: 0).in_time_zone("CET")
         @sports_classes = @sports_classes.where(date_time: Range.new(starts_at, starts_at.advance(days: 1)))
       end
     end
