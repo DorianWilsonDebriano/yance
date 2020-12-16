@@ -175,7 +175,7 @@ file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1
 sports_class_3 = SportsClass.new(
     title: "Tuesday Flex",
     description: "Lets make the week even better together and work off the Monday blues. We'll focus on our positions and balance and achieve the perfect downward dog!",
-    date_time: DateTime.new(2020,12,8,17),
+    date_time: DateTime.new(2020,12,23,17),
     duration: "60 mins",
     category: "Yoga",
     difficulty_level: 2,
@@ -193,7 +193,7 @@ file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1
 sports_class_4 = SportsClass.new(
     title: "Ballet Fit",
     description: "Look and feel like a dancer with me. My workout consists of ballet and palettes, which will help sculpt and shape your body. You won't be twirling or prancing, but you will feel the burn!",
-    date_time: DateTime.new(2020,12,9,13),
+    date_time: DateTime.new(2020,12,17,13),
     duration: "30 mins",
     category: "Cardio",
     difficulty_level: 3,
@@ -211,7 +211,7 @@ file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1
 sports_class_5 = SportsClass.new(
     title: "Feel it Friday",
     description: "Push off the week's stress and frustrations! We will be focusing on our glutes and calves and thighs with squats and lunges, get ready for the burn.",
-    date_time: DateTime.new(2020,12,11,18),
+    date_time: DateTime.new(2020,12,26,18),
     duration: "40 mins",
     category: "Strength",
     difficulty_level: 2,
@@ -230,7 +230,7 @@ file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1
 sports_class_6 = SportsClass.new(
     title: "Lunch Break Energizer",
     description: "No time for both a lunch break and a workout? Those days are over when you try the new 20-minute version of my popular lunch break workout!",
-    date_time: DateTime.new(2020,12,10,20),
+    date_time: DateTime.new(2020,12,24,20),
     duration: "20 mins",
     category: "Pilates",
     difficulty_level: 2,
@@ -249,7 +249,7 @@ file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1
 sports_class_7 = SportsClass.new(
     title: "Pure Pilates",
     description: "Your everyday go-to pilates flow. Perfect for all levels this class is designed to lengthen, align and sculpt. I will take time in these class to focus on technique and breathing!",
-    date_time: DateTime.new(2020,12,12,15),
+    date_time: DateTime.new(2020,12,18,15),
     duration: "40 mins",
     category: "Pilates",
     difficulty_level: 2,
