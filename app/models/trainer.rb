@@ -13,8 +13,6 @@ class Trainer < ApplicationRecord
   validates :bio, presence: true
   validates :sport_category, presence: true
 
-  # searchkick
-
   private
 
   def send_welcome_trainer_email
