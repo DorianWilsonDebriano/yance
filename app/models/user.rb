@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_create :send_welcome_email
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -18,4 +19,11 @@ class User < ApplicationRecord
   def all_booked_classes
     class_bookings.map { |booking| booking.sports_class }
   end
+
+  private
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome_user.deliver_now
+  end
+
 end
