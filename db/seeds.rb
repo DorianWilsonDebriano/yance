@@ -18,35 +18,17 @@ User.destroy_all
 puts 'all previous seeds deleted 🌱!'
 
 # MEMBERSHIP SEEDS
-light = Membership.new(
-  title: "Yance Starter Package",
-  description: "Perfect for working out once a week, start your free 14 day trial now.",
-  expiration_date: Time.now + 30.days,
-  credits: 4,
-  price: 19.99,
-  )
-light.save!
-
-medium = Membership.new(
-  title: "Yance Routine Package",
-  description: "Perfect for working out twice a week, start your free 14 day trial now.",
-  expiration_date: Time.now + 30.days,
-  credits: 8,
-  price: 29.99,
-  )
-medium.save!
-
 unlimited = Membership.new(
   title: "Yance Experience Package",
   description: "Unlimited access to live classes, start your free 14 day trial now.",
   expiration_date: Time.now + 30.days,
   credits: 20,
-  price: 39.99,
+  price: 26.99,
   )
 unlimited.save!
 
 # USER SEEDS
-file = URI.open('https://avatars0.githubusercontent.com/u/68596947?s=400&u=f18b9637ef88a32845322a4167ee2d6fe0333c38&v=4')
+file = URI.open('https://avatars0.githubusercontent.com/u/71378921?s=400&u=8724f6aa24fc0e1a31a8a5b6435ef4881cb46d6c&v=4')
 
 briz = User.new(
   email: "briz@yancesports.com",
