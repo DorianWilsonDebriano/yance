@@ -48,21 +48,21 @@ unlimited.save!
 # USER SEEDS
 file = URI.open('https://avatars0.githubusercontent.com/u/68596947?s=400&u=f18b9637ef88a32845322a4167ee2d6fe0333c38&v=4')
 
-adham = User.new(
-  email: "adham@gmail.com",
-  password: "adham123",
-  first_name: "Adham",
-  last_name: "Jaafar",
+briz = User.new(
+  email: "briz@yancesports.com",
+  password: "briz123!",
+  first_name: "Briz",
+  last_name: "Le Lem",
   bio: "I live, breathe, eat sports",
   language: "English",
   )
-adham.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
-adham.save!
+briz.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+briz.save!
 
 file = URI.open('https://avatars1.githubusercontent.com/u/68464312?s=400&u=9cca4a525d11b96017a6892fac06a8b708868b71&v=4')
 
 cassy = User.new(
-  email: "cassy@gmail.com",
+  email: "cassy@yancesports.com",
   password: "cassy123",
   first_name: "Cassy",
   last_name: "Dodd",
@@ -75,7 +75,7 @@ cassy.save!
 file = URI.open('https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606231422/Dorian-profile-pic-square_zkwni6.jpg')
 
 dorian = User.new(
-  email: "dw.debriano@gmail.com",
+  email: "dorian@yancesports.com",
   password: "dorian123",
   first_name: "Dorian",
   last_name: "Wilson",
@@ -88,7 +88,7 @@ dorian.save!
 file = URI.open('https://avatars0.githubusercontent.com/u/56122943?s=400&u=cc0448ec43408ed8f5a061ef369d45b4d8f720e8&v=4')
 
 edoardo = User.new(
-  email: "edoardo@gmail.com",
+  email: "edoardo@yancesports.com",
   password: "edo123",
   first_name: "Edoardo",
   last_name: "Maraia",
@@ -131,7 +131,7 @@ trainer_4 = Trainer.new(
   bio: "In my classes you will feel the burn! For those who want muscle definition and excellent core strength with the tricks I learned while in the army.",
   sport_category: "Cardio",
   city: "Amsterdam",
-  user: adham,
+  user: briz,
 )
 # TRAINER PIC
 trainer_4.save!
