@@ -69,7 +69,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   config.action_mailer.delivery_method     = :postmark
-  config.action_mailer.postmark_settings   = { api_token: ENV['031f681b-e593-45ec-8544-28914688e7e2'] }
+  config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
   config.action_mailer.default_url_options = { host: "https://yance-dorianwilsondebriano.herokuapp.com/" }
 
   # Ignore bad email addresses and do not raise email delivery errors.
