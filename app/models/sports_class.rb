@@ -5,13 +5,17 @@ class SportsClass < ApplicationRecord
   has_many :class_bookings
   has_many :users, through: :class_bookings
 
-  validates :title, presence: true, length: { maximum: 40,
-    too_long: "%<count> characters is the maximum allowed" }
+  validates :title, presence: true, length: {
+    maximum: 40,
+    too_long: "%{count} characters is the maximum allowed"
+  }
   validates :description, presence: true
   validates :date_time, presence: true
   validates :duration, presence: true
-  validates :category, presence: true, length: { maximum: 30,
-    too_long: "%<count> characters is the maximum allowed" }
+  validates :category, presence: true, length: {
+    maximum: 15,
+    too_long: "%{count} characters is the maximum allowed"
+  }
   validates :difficulty_level, presence: true
   validates :sweat_level, presence: true
   validates :experience_level, presence: true
