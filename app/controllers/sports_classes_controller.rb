@@ -4,7 +4,6 @@ require 'net/http'
 require 'openssl'
 require 'json'
 
-
 class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
 
@@ -34,8 +33,8 @@ class SportsClassesController < ApplicationController
     @sportsclass = SportsClass.new
     authorize @sportsclass
     # authorize @trainer, policy_class: SportsClassPolicy
-
   end
+
   def create
     @trainer = Trainer.find(params[:trainer_id])
     @sportsclass = SportsClass.new(sports_class_params)
@@ -151,30 +150,3 @@ class SportsClassesController < ApplicationController
     end
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
