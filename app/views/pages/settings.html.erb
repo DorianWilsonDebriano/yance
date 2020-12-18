@@ -15,6 +15,9 @@
     </div>
   </div>
 <!-- user info section -->
+ <div class="section-title">
+    <h2>Your information</h2>
+  </div>
   <div class="user-info d-flex">
     <div class="my-account">
       <p>Your account</p>
@@ -46,3 +49,26 @@
       <li> <strong>bio:</strong> <%= current_user.bio %> </li>
     </div>
   </div>
+  <!-- trainer stats for users with trainer -->
+  <% if current_user.trainers.present? %>
+    <div class="trainer-stats-section">
+      <h2>Your trainer statistics</h2>
+      <div class="stat-highlights">
+        <div class="stat-highlight-box">
+          <p id="stat-hightlight-title">Classes created</p>
+          <p id="stat-hightlight-number"> <%= current_user.sports_classes.count %> </p>
+        </div>
+      </div>
+      <div class="class-stats">
+        <div class="class-stats-labels">
+          <p>Date</p>
+          <p>Class name</p>
+          <p>Participants</p>
+          <p>Revenue</p>
+          <p>Status</p>
+        </div>
+        <%= render collection: current_user.sports_classes, partial: "shared/class-stats", as: :sports_class %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+<div class="class-stat-details">
+  <p id="stat-date"> <%= sports_class.date_time %> </p>
+  <p> <%= sports_class.title %> </p>
+  <p> <%= sports_class.class_bookings.count %> </p>
+  <% if sports_class.class_bookings.count == 0 %>
+    <p> 0 €</p>
+  <% elsif sports_class.class_bookings.count <= 15 %>
+    <p> 15 €</p>
+  <% else %>
+    <p> <%= sports_class.class_bookings.count * 1 %> € </p>
+  <% end %>
+  <% if sports_class.date_time < Time.now %>
+    <p id="stat-done"> done </p>
+  <% else %>
+    <p id="stat-coming"> coming </p>
+  <% end %>
+</div>
