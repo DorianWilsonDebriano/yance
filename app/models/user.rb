@@ -11,8 +11,7 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   def all_booked_classes
-    classes = class_bookings.map { |booking| booking.sports_class }
-
+    SportsClass.find(class_bookings.pluck(:sports_class_id))
   end
 
   private
