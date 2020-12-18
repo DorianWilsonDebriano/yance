@@ -6,9 +6,11 @@
     <li class="nav-item">
       <a class="nav-link profile-tab active" id="upcoming-tab" data-toggle="tab" href="#upcoming" role="tab" aria-controls="upcoming" aria-selected="true">Upcoming</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link profile-tab" id="created-tab" data-toggle="tab" href="#created" role="tab" aria-controls="created" aria-selected="false">Created</a>
-    </li>
+    <% if current_user.trainers.present? %>
+      <li class="nav-item">
+        <a class="nav-link profile-tab" id="created-tab" data-toggle="tab" href="#created" role="tab" aria-controls="created" aria-selected="false">Created</a>
+      </li>
+    <% end %>
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="upcoming" role="tabpanel" aria-labelledby="upcoming-tab">
@@ -30,17 +32,17 @@
     </div>
     <div class="tab-pane fade" id="created" role="tabpanel" aria-labelledby="created-tab">
       <!-- created classes section -->
-      <% if current_user.trainers.present? %>
         <div class="profile-created-classes-section d-flex justify-content-center flex-column">
-          <h2>Your upcoming created classes</h2>
-          <% if @user_sports_classes != nil %>
-            <div class="profile-created-classes ">
-              <%= render "shared/profile-created-classes" %>
-            </div>
+          <% if current_user.trainers.present? %>
+            <h2>Your upcoming created classes</h2>
+            <% if @user_sports_classes != nil %>
+              <div class="profile-created-classes ">
+                <%= render "shared/profile-created-classes" %>
+              </div>
+            <% end %>
           <% end %>
         </div>
-      <% end %>
       <%= link_to "Create a class", new_trainer_sports_class_path(current_user.trainers.ids), class: "btn browse-button mt-5" %>
-    </div>
+      </div>
   </div>
 </div>

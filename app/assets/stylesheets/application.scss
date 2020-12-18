@@ -38,3 +38,14 @@ a {
     flex-grow: 1;
   }
 }
+
+.section-title {
+  margin-top: 20px;
+    h2 {
+    font-size: 18px;
+    font-weight: bolder;
+    color: $dark-text;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
