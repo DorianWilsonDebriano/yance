@@ -36,25 +36,33 @@
 }
 
 .trainer-name-follow{
-  display: flex;
   padding-left: 16px;
   padding-top: 8px;
-}
-
-.trainer-name-follow p {
-  display: flex;
-  padding-left: 8px;
-  margin-right: 4px;
+    p {
+    display: flex;
+    padding-left: 8px;
+    margin-right: 4px;
+  }
 }
 
 .trainer-name{
-  font-family: "Montserrat";
+  margin-bottom: 8px;
   font-size: 24px;
   font-weight: bolder;
 }
 
+.trainer-edit {
+  color: #118AB1;
+  font-weight: bolder;
+  opacity: 0.8;
+    &:hover {
+      color: #118AB1;
+      font-weight: bolder;
+      opacity: 1;
+    }
+}
+
 .follow-review{
-  font-family:"Montserrat";
   font-size:11px;
   background-color: $yance-yellow;
   color:white;
@@ -67,18 +75,14 @@
   text-align:center;
 }
 
-// .tags{
-
-//   height: 15%;
-// }
-
 .category{
-  background-color: #D7EBFF;
+  color: white;
+  background-color:  #118AB1;
+  opacity: 0.6;
   // width:72px;
   // height:18px;
   border-radius: 25px;
   align-items:center;
-  color:#023365;
   font-size: 16px;
   display: inline-block;
   padding: 4px 12px 4px 12px;
@@ -115,17 +119,13 @@
   }
 }
 
-.top-review-row{
-  display:flex;
-  padding-top:16px;
-  justify-content: space-around;
-}
-
 .write-review{
-color:  $yance-yellow;
+color: #118AB1;
+font-weight: bolder;
+opacity: 0.8;
 font-size: 16px;
 width: 135px;
-border: 1px solid  $yance-yellow;
+border: 1px solid  #118AB1;
 border-radius: 16px;
 align-items: center;
 height: 29px;
@@ -133,7 +133,8 @@ display: flex;
 justify-content: center;
   &:hover {
     color: white;
-    background-color:  $yance-yellow;
+    background-color:  #118AB1;
+    opacity: 0.8;
   }
 }
 

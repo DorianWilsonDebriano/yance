@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :sports_classes, only: %i[edit update destroy]
+  resources :trainers, only: %i[edit update destroy]
   resources :reviews, only: %i[edit update destroy]
 
 
