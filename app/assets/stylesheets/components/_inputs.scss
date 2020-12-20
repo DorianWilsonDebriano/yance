@@ -140,6 +140,15 @@
   border-color: $difficulty-level;
 }
 
+.upload-photo {
+  border: 1px solid #d3d3d3;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  border-radius: 2px;
+}
+
 #sports_class_difficulty_level_2 + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;

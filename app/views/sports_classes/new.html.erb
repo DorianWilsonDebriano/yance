@@ -1,15 +1,12 @@
 <div class="page container">
-    <div class="backbutton">
-    <%= link_to "BACK", sports_classes_path, class: "btn back-button-profile"%>
-  </div>
   <div class="row d-flex justify-content-center">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-6 ">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-6 ">
       <div class="form-login mb-5">
         <h2>Create a new class</h2>
-        <%= simple_form_for [@trainer, @sportsclass] do |f| %>
+        <%= simple_form_for [@trainer, @sportsclass], html: { autocomplete: 'off' } do |f| %>
           <%= f.input :title, placeholder: 'The title of your class' %>
           <%= f.input :description, placeholder: 'Your class in a few sentences' %>
-          <%= f.input :date_time, as: :string, label: "Date and Time", html: { autocomplete: 'off' }, placeholder: "Date and Time", input_html: {class: "datetimepicker"} %>
+          <%= f.input :date_time, as: :string, label: "Date and Time", placeholder: "Date and Time", input_html: {class: "datetimepicker"} %>
           <%= f.input :duration, placeholder: 'How long will your class be?' %>
           <%= f.input :category, as: :radio_buttons,
                       input_html: {class: "sport-category-selector"},
@@ -29,7 +26,8 @@
                       wrapper: :vertical_collection_inline %>
           <%= f.input :equipment, input_html: { class: "equipment-toggle" } %>
           <%= f.input :language, placeholder: 'In which language will you do your class?' %>
-          <%= f.input :photo, as: :file %>
+          <%= image_tag "", width: 300, class: 'hidden', id: "photo-preview" %>
+          <%= f.input :photo, input_html: { class: 'hidden d-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
 
           <%= f.button :submit, class: 'btn class-sign-up-button sweet-alert', id:"sweet-alert-class" %>
         <% end %>
