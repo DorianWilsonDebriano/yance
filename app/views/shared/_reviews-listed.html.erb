@@ -1,0 +1,23 @@
+<div class="one-review">
+  <div class="review-user">
+    <div>
+      <% if review.user.photo.present? %>
+        <%= cl_image_tag review.user.photo.key, class: "review-avatar" %>
+      <% else %>
+        <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "review-avatar" %>
+      <% end %>
+    </div>
+    <p class="review-user-name"><%= review.user.first_name %> <%= review.user.last_name %>
+      <br>
+      <span> <%= review.created_at.strftime("%b %d %Y") %> </span>
+     </p>
+  </div>
+  <div class="review-stars">
+    <% review.rating.times do %>
+      <i class="fas fa-star color-star"></i>
+    <% end %>
+  </div>
+  <div class = "review-content">
+    <p><%= review.content %></p>
+  </div>
+</div>
