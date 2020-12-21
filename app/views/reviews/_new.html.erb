@@ -1,12 +1,12 @@
-<div class="page container">
+<div class="container reviews-section pt-4">
   <div class="row d-flex justify-content-center">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-6 ">
-      <div class="form-login mb-5">
+    <div class="col-12 p-0">
+      <div class="review-form mb-5">
         <%= simple_form_for [@trainer, @review] do |f| %>
           <%= f.input :content, label: "Write a review" %>
           <%= f.input :rating, collection: (1..5), label: "Rating:"%>
 
-          <%=f.submit 'Create Review', class: "btn btn class-sign-up-button"%>
+          <%=f.submit 'Create Review', class: "btn review-button"%>
         <% end %>
       </div>
     </div>

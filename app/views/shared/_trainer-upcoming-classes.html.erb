@@ -1,0 +1,61 @@
+<div class="sports-classes-card pt-3">
+  <div class="class-card-header d-flex justify-content-between">
+    <div class="card-header-left">
+      <p class="class-card-duration"><%= sportsclass.duration %></p>
+      <p class="class-card-datetime"><%= sportsclass.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+    </div>
+    <div class="card-header-right">
+      <p class="class-card-category"><%= sportsclass.category %></p>
+    </div>
+  </div>
+  <% if sportsclass.photo.attached? %>
+    <div>
+      <%= cl_image_tag sportsclass.photo.key, class: "class-card-image" %>
+    </div>
+  <% end %>
+  <div class="card-bottom-section">
+    <p class="class-card-title"><%= sportsclass.title %></p>
+    <div class="class-card-levels row">
+      <div class="class-card-difficulty col-4">
+        <p class="class-card-level-title">DIFFICULTY</p>
+        <p class="class-card-level-content">
+          <% sportsclass.difficulty_level.times do %>
+          <i class="fas fa-dumbbell" id="difficulty"></i>
+          <% end %>
+        </p>
+      </div>
+      <div class="class-card-sweat col-4">
+        <p class="class-card-level-title">SWEAT</p>
+        <p class="class-card-level-content">
+          <% sportsclass.sweat_level.times do %>
+          <i class="fas fa-tint" id="sweat"></i>
+          <% end %>
+        </p>
+      </div>
+      <div class="class-card-experience col-4">
+        <p class="class-card-level-title">LEVEL</p>
+        <p class="class-card-level-content"> <%= sportsclass.experience_level %> </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="class-info-book-buttons d-flex justify-content-center">
+      <% if current_user.subscription.present? %>
+        <% if current_user.subscription.credits > 0 %>
+          <% unless current_user.all_booked_classes.include?(sportsclass) %>
+            <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "sweet-alert-booked-#{sportsclass.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
+          <% end %>
+        <% else %>
+          <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
+          <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
+        <% end %>
+      <% else %>
+        <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
+      <% end %>
+      <button type="button" class="btn class-card-info-button class-info-link" data-toggle="modal" data-target="#modal-<%= sportsclass.id %>">
+        INFO
+      </button>
+    </div>
+  </div>
+</div>
+<%= render partial: "shared/trainer-modal-class", locals: { sportsclass: sportsclass } %>

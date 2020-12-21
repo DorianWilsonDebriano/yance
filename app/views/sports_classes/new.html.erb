@@ -1,7 +1,4 @@
 <div class="page container">
-    <div class="backbutton">
-    <%= link_to "BACK", sports_classes_path, class: "btn back-button-profile"%>
-  </div>
   <div class="row d-flex justify-content-center">
     <div class="col-xs-12 col-sm-6 col-sm-offset-6 ">
       <div class="form-login mb-5">
@@ -29,7 +26,7 @@
           <%= f.input :photo, as: :file %>
 
           <%= f.button :submit, class: 'btn class-sign-up-button sweet-alert', id:"sweet-alert-class" %>
-          <%= f.button :button, "Cancel", type: "reset", class: "btn class-sign-up-button" %>
+          <%= f.button :button, "Cancel", type: "reset", class: "btn" %>
         <% end %>
       </div>
     </div>

@@ -1,3 +1,12 @@
+.top-review-row{
+  padding-left: 42px;
+  display: flex;
+}
+
+.reviews-section {
+  padding-left: 43px;
+  padding-right: 0px;
+}
 .one-review {
   margin-left: 42px;
   border-bottom: solid 1px #F7F7F7;
@@ -10,17 +19,52 @@
 }
 
 .review-user-name {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bolder;
   margin-bottom: 0px;
+  span {
+    font-weight: normal;
+    color: #717171;
+  }
 }
 
 .review-stars {
-  font-size: 12px;
+  font-size: 16px;
   padding: 8px 0px;
 }
 
 .review-content{
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 12px;
 }
+
+.review-form {
+  background-color: white;
+  label {
+    font-size: 14px;
+    font-weight: bolder;
+    color: $dark-text;
+  }
+
+  textarea{
+    border-radius: 8px !important;
+  }
+}
+
+.review-button {
+  font-size: 14px;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+    &:hover {
+      color: white;
+      background-color: black;
+    }
+  }
+
+.review-count {
+  font-size: 16px;
+  font-weight: bolder;
+  color: $dark-text;
+}
+

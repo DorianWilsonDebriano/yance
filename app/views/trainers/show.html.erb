@@ -21,11 +21,11 @@
               <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "trainer-profile-avatar" %>
             <% end %>
           </div>
-          <div class="backbutton">
-            <%= link_to "BACK", sports_classes_path, class: "btn back-button-trainer-show"%>
-          </div>
           <div class="trainer-name-follow">
             <p class="trainer-name"><%=@trainer.user.first_name%> <%=@trainer.user.last_name%></p>
+            <% if @trainer.user == current_user %>
+              <p> <%= link_to "edit your trainer page", edit_trainer_path(@trainer), class: "trainer-edit" %> </p>
+            <% end %>
           </div>
         </div>
         <div class="tags">
@@ -40,215 +40,29 @@
           <p class="title-font"> <%= @trainer.user.first_name%>'s upcoming classes</p>
           <div class="d-flex justify-content-center flex-column">
             <div class="classes">
-              <% @trainer.sports_classes.each do |sportsclass| %>
-                <div class="sports-classes-card pt-3">
-                  <div class="class-card-header d-flex justify-content-between">
-                    <div class="card-header-left">
-                      <p class="class-card-duration"><%= sportsclass.duration %></p>
-                      <p class="class-card-datetime"><%= sportsclass.date_time.strftime("%A %b %d %Y %H:%M") %></p>
-                    </div>
-                    <div class="card-header-right">
-                      <p class="class-card-category"><%= sportsclass.category %></p>
-                    </div>
-                  </div>
-                  <% if sportsclass.photo.attached? %>
-                    <div>
-                      <%= cl_image_tag sportsclass.photo.key, class: "class-card-image" %>
-                    </div>
-                  <% end %>
-                  <div class="card-bottom-section">
-                    <p class="class-card-title"><%= sportsclass.title %></p>
-                    <div class="class-card-levels row">
-                      <div class="class-card-difficulty col-4">
-                        <p class="class-card-level-title">DIFFICULTY</p>
-                        <p class="class-card-level-content">
-                          <% sportsclass.difficulty_level.times do %>
-                          <i class="fas fa-dumbbell" id="difficulty"></i>
-                          <% end %>
-                        </p>
-                      </div>
-                      <div class="class-card-sweat col-4">
-                        <p class="class-card-level-title">SWEAT</p>
-                        <p class="class-card-level-content">
-                          <% sportsclass.sweat_level.times do %>
-                          <i class="fas fa-tint" id="sweat"></i>
-                          <% end %>
-                        </p>
-                      </div>
-                      <div class="class-card-experience col-4">
-                        <p class="class-card-level-title">LEVEL</p>
-                        <p class="class-card-level-content"> <%= sportsclass.experience_level %> </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="class-info-book-buttons d-flex justify-content-center">
-                      <% if current_user.subscription.present? %>
-                        <% if current_user.subscription.credits > 0 %>
-                          <% unless current_user.all_booked_classes.include?(sportsclass) %>
-                            <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "sweet-alert-booked-#{sportsclass.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
-                          <% end %>
-                        <% else %>
-                          <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
-                          <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
-                        <% end %>
-                      <% else %>
-                        <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
-                      <% end %>
-                      <button type="button" class="btn class-card-info-button class-info-link" data-toggle="modal" data-target="#modal-<%= sportsclass.id %>">
-                        INFO
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <!-- modal -->
-                <div class="modal fade" id="modal-<%= sportsclass.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable class-modal-dialog">
-                    <div class="modal-content class-modal-content">
-                      <div class="class-modal-inner-content row justify-content-between">
-                        <div class="class-modal-left-column col-5 pt-4 pl-5">
-                          <div class="class-modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"> <strong> <%= sportsclass.title %> </strong></h5>
-                            <p class="class-modal-date"><%= sportsclass.date_time.strftime("%A %b %d %Y %H:%M") %></p>
-                            <p class="class-modal-category"><%= sportsclass.category %></p>
-                          </div>
-                          <% if sportsclass.photo.attached? %>
-                            <div class="class-modal-class-image">
-                              <%= cl_image_tag sportsclass.photo.key, class: "class-image" %>
-                            </div>
-                          <% end %>
-                          <br>
-                          <div class="class-modal-levels d-flex row pr-3 pl-2">
-                            <div class="class-modal-difficulty col-sm-12 col-lg-4">
-                              <p class="class-modal-level-title">DIFFICULTY</p>
-                              <p class="class-modal-level-content">
-                                <% sportsclass.difficulty_level.times do %>
-                                <i class="fas fa-dumbbell" id="difficulty"></i>
-                                <% end %>
-                              </p>
-                            </div>
-                            <div class="class-modal-sweat col-sm-12 col-lg-4">
-                              <p class="class-modal-level-title">SWEAT</p>
-                              <p class="class-modal-level-content">
-                                <% sportsclass.sweat_level.times do %>
-                                <i class="fas fa-tint" id="sweat"></i>
-                                <% end %>
-                              </p>
-                            </div>
-                            <div class="class-modal-experience col-sm-12 col-lg-4">
-                              <p class="class-modal-level-title">LEVEL</p>
-                              <p class="class-modal-level-content"> <%= sportsclass.experience_level %> </p>
-                            </div>
-                          </div>
-                          <!-- <div class="class-modal-equipment">
-                            <p class="class-modal-equipment-title">Equipment needed?</p>
-                            <% if sportsclass.equipment == false %>
-                              <p class="class-modal-equipment-content">none</p>
-                            <% else %>
-                              <p class="class-modal-equipment-content">yes, see class description</p>
-                            <% end %>
-                          </div> -->
-                        </div>
-                        <div class="class-modal-right-column col-7 pt-4 pr-5">
-                          <div class="class-modal-right-header d-flex justify-content-between">
-                            <div class="class-modal-trainer-name">
-                              <span> with <strong> <%= sportsclass.trainer.user.first_name %> <%= sportsclass.trainer.user.last_name %> </strong> </span>
-                            </div>
-                            <% if sportsclass.trainer.user.photo.attached? %>
-                              <div class="class-modal-avatar">
-                                <%= cl_image_tag sportsclass.trainer.user.photo.key, class: "class-trainer-photo" %>
-                              </div>
-                            <% end %>
-                            <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="class-modal-description">
-                            <p> <strong> Class description </strong></p>
-                            <p><%= sportsclass.description %></p>
-                          </div>
-                          <div class="class-modal-bio">
-                            <p> <strong> Trainer bio </strong></p>
-                            <p><%= sportsclass.trainer.bio %></p>
-                          </div>
-                          <div>
-                            <div class="align-center pt-5 pr-3">
-                              <% if current_user.subscription.present? %>
-                                <% if current_user.subscription.credits > 0 %>
-                                  <% unless current_user.all_booked_classes.include?(sportsclass) %>
-                                    <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "sweet-alert-booked-#{sportsclass.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
-                                  <% end %>
-                                <% else %>
-                                  <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
-                                  <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "book-class-link btn class-modal-book-button" %>
-                                <% end %>
-                              <% else %>
-                                <%= link_to "BOOK", memberships_path, class: "book-class-link btn class-modal-book-button" %>
-                              <% end %>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
+              <%= render collection: @trainer_classes, partial: "shared/trainer-upcoming-classes", as: :sportsclass  %>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Reviews -->
-    <div class = "col-sm-12 col-lg-4">
-      <div class = "video-reviews">
-        <div class = "top-review-row">
-          <p class = "title-font">Reviews</p>
-          <%=link_to "Write a review", new_trainer_review_path(@trainer), class: "write-review"%>
-        </div>
-        <div class = "user-reviews pt-4">
-          <% @reviews.each do |review| %>
-            <div class="one-review">
-              <div class="review-user">
-                <div>
-                  <% if review.user.photo.present? %>
-                    <%= cl_image_tag review.user.photo.key, class: "review-avatar" %>
-                  <% else %>
-                    <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "review-avatar" %>
-                  <% end %>
-                </div>
-                <p class="review-user-name"><%= review.user.first_name %> <%= review.user.last_name %></p>
-              </div>
-                <div class="review-stars">
-                  <% review.rating.times do %>
-                    <i class="fas fa-star color-star"></i>
-                  <% end %>
-                </div>
-                <div class = "review-content">
-                  <p><%= review.content %></p>
-                </div>
-            </div>
+    <div class="col-sm-12 col-lg-4">
+      <div class="video-reviews">
+        <% if @trainer.user != current_user %>
+          <%= render "reviews/new" %>
+        <% end %>
+        <div class="top-review-row pt-2">
+          <% if @trainer.reviews.count == 1 %>
+            <p class="review-count"><i class="fas fa-star"></i> <%= @trainer.reviews.count %> review</p>
+          <% else %>
+            <p class="review-count"><i class="fas fa-star"></i> <%= @trainer.reviews.count %> reviews</p>
           <% end %>
+        </div>
+        <div class="user-reviews">
+          <%= render collection: @reviews, partial: "shared/reviews-listed", as: :review %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
