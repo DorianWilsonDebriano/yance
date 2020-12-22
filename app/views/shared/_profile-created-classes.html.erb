@@ -6,16 +6,21 @@
         </div>
       <% end %>
       <div class="booked-class-card-header">
-        <p class="booked-class-card-datetime"><%= sports_class.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+        <p class="booked-class-card-datetime"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
         <p class="booked-class-card-title"><%= sports_class.title %></p>
         <p class="booked-class-card-duration"><%= sports_class.duration %></p>
         <p class="booked-class-card-category"><strong><%= sports_class.category %></strong></p>
       </div>
-      <div class="booked-class-info-buttons">
+      <div class="created-class-info-buttons">
         <button class="btn go-to-class-icon"><%= link_to sports_class_path(sports_class), method: "GET" do %>
             <i class="fas fa-video"></i>
           <% end %>
         </button>
+        <div class="profile-edit-class-button">
+          <%= link_to edit_sports_class_path(sports_class), class: "profile-edit-class-button" do %>
+            <i class="fas fa-pen-square" id=""></i>
+          <% end %>
+        </div>
         <button class="btn profile-cancel-booking-icon"> <%= link_to sports_class_path(sports_class), method: :delete, data: {confirm: "Are you sure?"}, class: "profile-cancel-button", id:"sweet-alert-delete" do %>
             <i class="fas fa-window-close"></i>
             <p id="cancel-class">cancel</p>

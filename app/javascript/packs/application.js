@@ -44,6 +44,7 @@ document.addEventListener("turbolinks:load", () => {
   altInput: true,
   altFormat: "d M Y",
   dateFormat: "Z",
+  minDate: "today",
   mode: "range"
   });
 

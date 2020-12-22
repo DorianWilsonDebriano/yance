@@ -26,32 +26,37 @@
   padding: 0px 16px;
 }
 
-.class-card-duration {
-  font-size: 14px;
-  font-weight: bolder;
-  margin-bottom: 4px;
-}
 
 .profile-class-card-datetime {
   font-size: 12px;
   font-weight: bolder;
   width: 100%;
   padding: 0px 0px;
-  color: #929292;
+  color: black;
+  text-align: center;
 }
 
 .class-card-datetime {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bolder;
   width: 100%;
   padding: 0px 16px;
+  color: black;
+  text-align: center;
+}
+
+.class-card-duration {
+  font-size: 12px;
+  font-weight: bolder;
+  margin-bottom: 4px;
   color: #929292;
 }
 
 .class-card-category {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bolder;
   text-align: end;
+  color: #929292;
 }
 
 .class-card-image {
@@ -96,14 +101,17 @@
 .class-card-fullname {
   margin-left: 20px;
   font-weight: bolder;
+  color: black;
 }
 
 .class-card-firstname {
   margin-bottom: 0px;
+  color: black;
 }
 
 .class-card-lastname {
   margin-bottom: 0px;
+  color: black;
 }
 
 .class-card-footer-grey {
