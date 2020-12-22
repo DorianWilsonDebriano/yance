@@ -1,4 +1,5 @@
 class SportsClass < ApplicationRecord
+  after_create :send_new_class_confirmation_email
   CATEGORIES = ["yoga", "pilates", "cardio", "strength", "stretching", "barre", "meditation", "dance", "full body", "back", "legs", "arms", "abs", "HIIT", "crossfit", "body building", "aerobics", "martial arts"]
   belongs_to :trainer
   has_one(:user, through: :trainer)
@@ -51,5 +52,11 @@ class SportsClass < ApplicationRecord
 
   def self.durations
     SportsClass.pluck(:duration).uniq.sort
+  end
+
+  private
+
+  def send_new_class_confirmation_email
+    SportsClassMailer.with(sports_class: self, trainer: trainer).new_class_confirmation.deliver_now
   end
 end
