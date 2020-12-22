@@ -3,34 +3,17 @@
 
   <!-- tabs -->
   <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link profile-tab active" id="upcoming-tab" data-toggle="tab" href="#upcoming" role="tab" aria-controls="upcoming" aria-selected="true">Upcoming</a>
-    </li>
     <% if current_user.trainers.present? %>
       <li class="nav-item">
-        <a class="nav-link profile-tab" id="created-tab" data-toggle="tab" href="#created" role="tab" aria-controls="created" aria-selected="false">Created</a>
+        <a class="nav-link profile-tab active" id="created-tab" data-toggle="tab" href="#created" role="tab" aria-controls="created" aria-selected="false">Created</a>
       </li>
     <% end %>
+    <li class="nav-item">
+      <a class="nav-link profile-tab" id="upcoming-tab" data-toggle="tab" href="#upcoming" role="tab" aria-controls="upcoming" aria-selected="true">Booked</a>
+    </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="upcoming" role="tabpanel" aria-labelledby="upcoming-tab">
-      <div class="upcoming-classes-section d-flex justify-content-center flex-column">
-        <!-- upcoming classes section -->
-        <% if current_user.class_bookings.present? %>
-          <h2>Your bookings</h2>
-          <div class="profile-upcoming-classes">
-            <%= render "shared/profile-upcoming-classes" %>
-          </div>
-        <% else %>
-          <h2>Your bookings</h2>
-          <div class="profile-upcoming-classes">
-            <p>Nothings booked yet! Go book your first class!</p>
-          </div>
-        <% end %>
-      </div>
-      <%= link_to "Explore yance", sports_classes_path, class: "btn browse-button mt-5" %>
-    </div>
-    <div class="tab-pane fade" id="created" role="tabpanel" aria-labelledby="created-tab">
+    <div class="tab-pane fade show active" id="created" role="tabpanel" aria-labelledby="created-tab">
       <!-- created classes section -->
         <div class="profile-created-classes-section d-flex justify-content-center flex-column">
           <% if current_user.trainers.present? %>
@@ -44,5 +27,22 @@
         </div>
       <%= link_to "Create a class", new_trainer_sports_class_path(current_user.trainers.ids), class: "btn browse-button mt-5" %>
       </div>
+      <div class="tab-pane fade" id="upcoming" role="tabpanel" aria-labelledby="upcoming-tab">
+        <div class="upcoming-classes-section d-flex justify-content-center flex-column">
+          <!-- booked classes section -->
+          <% if current_user.class_bookings.present? %>
+            <h2>Your bookings</h2>
+            <div class="profile-upcoming-classes">
+              <%= render "shared/profile-upcoming-classes" %>
+            </div>
+          <% else %>
+            <h2>Your bookings</h2>
+            <div class="profile-upcoming-classes">
+              <p>Nothings booked yet! Go book your first class!</p>
+            </div>
+          <% end %>
+        </div>
+        <%= link_to "Explore yance", sports_classes_path, class: "btn browse-button mt-5" %>
+    </div>
   </div>
 </div>

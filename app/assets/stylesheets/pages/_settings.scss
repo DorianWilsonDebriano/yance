@@ -9,6 +9,68 @@
     }
 }
 
+.user-name {
+  padding-left: 24px;
+  margin-top: 12px;
+    h2 {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+}
+
+.profile-header {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bolder;
+  color: #354147;
+  padding-top: 12px;
+  padding-bottom: 26px;
+}
+
+.user-info {
+  margin-top: 12px;
+  justify-content: space-around;
+}
+
+.my-account {
+  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  border-radius: 4px;
+  width: 50%;
+  margin-right: 20px;
+  padding: 12px;
+  position: relative;
+   li{
+    text-decoration: none;
+    list-style: none;
+    font-size: 12px;
+   }
+   p {
+    font-weight: bolder;
+    color: $dark-text;
+  }
+}
+
+.about-me {
+  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  border-radius: 4px;
+  width: 50%;
+  padding: 12px;
+  position: relative;
+   li{
+  text-decoration: none;
+  list-style: none;
+  font-size: 12px;
+ }
+  p {
+    font-weight: bolder;
+    color: $dark-text;
+  }
+}
+
 .trainer-stats-section {
   margin-top: 20px;
     h2 {
