@@ -1,3 +1,14 @@
+.edit-profile {
+  color: #118AB1;
+  font-weight: bolder;
+  opacity: 0.8;
+    &:hover {
+      color: #118AB1;
+      font-weight: bolder;
+      opacity: 1;
+    }
+}
+
 .trainer-stats-section {
   margin-top: 20px;
     h2 {

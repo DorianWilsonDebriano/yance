@@ -1,4 +1,5 @@
 <div class="sports-classes-card pt-3">
+  <p class="class-card-datetime"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
   <div class="class-card-header d-flex justify-content-between">
     <div class="card-header-left">
       <p class="class-card-duration"><%= sports_class.duration %></p>
@@ -7,7 +8,6 @@
       <p class="class-card-category"><%= sports_class.category %></p>
     </div>
   </div>
-  <p class="class-card-datetime"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
   <% if sports_class.photo.attached? %>
     <div>
       <%= cl_image_tag sports_class.photo.key, class: "class-card-image" %>
@@ -41,11 +41,15 @@
   <div class="class-card-footer-grey mt-4">
     <div class="class-card-trainer">
       <% if sports_class.user.photo.attached? %>
-        <%= cl_image_tag sports_class.user.photo.key, class: "avatar-bordered" %>
+        <%= link_to trainer_path(sports_class.trainer.id) do %>
+          <%= cl_image_tag sports_class.user.photo.key, class: "avatar-bordered" %>
+        <% end %>
       <% end %>
         <div class="class-card-fullname">
-          <p class="class-card-firstname"><%= sports_class.user.first_name %></p>
-          <p class="class-card-lastname"><%= sports_class.user.last_name %></p>
+          <%= link_to trainer_path(sports_class.trainer.id) do %>
+            <p class="class-card-firstname"><%= sports_class.user.first_name %></p>
+            <p class="class-card-lastname"><%= sports_class.user.last_name %></p>
+          <% end %>
         </div>
     </div>
     <div class="class-info-book-buttons d-flex justify-content-center">
