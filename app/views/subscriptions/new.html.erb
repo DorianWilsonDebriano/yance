@@ -11,7 +11,7 @@
       <p class="info-title">Your membership</p>
       <p><strong> Membership: </strong>  <%= @membership.title %> </p>
       <p><strong>Available monthly class credits:  </strong><%= @membership.credits %> credits /month</p>
-      <p><strong>Price:  </strong><%= @membership.price %>€ per month</p>
+      <p><strong>Price:  </strong><%= humanized_money_with_symbol(@membership.price) %> per month</p>
       <br>
       <p>This membership will be automatically renewed on the: <%= @membership.expiration_date %>. You can cancel your subscription anytime from your profile page.</p>
       <div class="confirm">
