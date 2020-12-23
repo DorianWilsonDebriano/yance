@@ -35,4 +35,6 @@ Rails.application.routes.draw do
   get "/stream", to: "classes#stream"
 
   resources :customer_portal_sessions, only: [:create]
+
+  resources :webhooks
 end
