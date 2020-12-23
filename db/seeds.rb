@@ -23,7 +23,7 @@ unlimited = Membership.new(
   description: "Unlimited access to live classes, start your free 14 day trial now.",
   expiration_date: Time.now + 30.days,
   credits: 20,
-  price: 26.99,
+  price_cents: 2699,
   )
 unlimited.save!
 
