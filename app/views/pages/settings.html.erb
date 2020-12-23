@@ -30,6 +30,9 @@
         <li><strong>remaining credits:</strong> 0</li>
         <li><strong>renews on:</strong> <%= link_to "choose a membership", memberships_path %></li>
       <% end %>
+      <form method="POST" action="/create_customer_portal_session">
+        <button type="submit">Manage billing</button>
+      </form>
     </div>
     <div class="about-me">
       <p>About you</p>
