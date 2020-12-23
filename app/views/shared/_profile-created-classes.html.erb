@@ -6,10 +6,10 @@
         </div>
       <% end %>
       <div class="booked-class-card-header">
-        <p class="booked-class-card-datetime"><%= user_sports_classes.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
-        <p class="booked-class-card-title"><%= user_sports_classes.title %></p>
-        <p class="booked-class-card-duration"><%= user_sports_classes.duration %></p>
-        <p class="booked-class-card-category"><strong><%= user_sports_classes.category %></strong></p>
+        <p class="booked-class-card-datetime"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
+        <p class="booked-class-card-title"><%= sports_class.title %></p>
+        <p class="booked-class-card-duration"><%= sports_class.duration %> minutes</p>
+        <p class="booked-class-card-category"><strong><%= sports_class.category %></strong></p>
       </div>
       <div class="created-class-info-buttons">
         <button class="btn go-to-class-icon"><%= link_to sports_class_path(user_sports_classes), method: "GET" do %>

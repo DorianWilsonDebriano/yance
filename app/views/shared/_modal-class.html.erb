@@ -38,24 +38,6 @@
               </p>
             </div>
           </div>
-          <!-- <div class="class-modal-equipment">
-            <p class="class-modal-equipment-title">Equipment needed?</p>
-            <% if sports_class.equipment == false %>
-              <p class="class-modal-equipment-content">none</p>
-            <% else %>
-              <p class="class-modal-equipment-content">yes, see class description</p>
-            <% end %>
-          </div> -->
-          <% if policy(sports_class).edit? %>
-            <%= link_to edit_sports_class_path(sports_class) do  %>
-              <i class="fas fa-pen-square"></i>
-            <% end %>
-          <% end %>
-          <% if policy(sports_class).destroy? %>
-            <%= link_to sports_class_path(sports_class), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          <% end %>
         </div>
         <div class="class-modal-right-column col-7 pt-4 pr-5">
           <div class="class-modal-right-header d-flex justify-content-between">

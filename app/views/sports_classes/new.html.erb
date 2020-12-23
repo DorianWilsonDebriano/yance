@@ -7,7 +7,7 @@
           <%= f.input :title, placeholder: 'The title of your class' %>
           <%= f.input :description, placeholder: 'Your class in a few sentences' %>
           <%= f.input :date_time, as: :string, label: "Date and Time", placeholder: "Date and Time", input_html: {class: "datetimepicker"} %>
-          <%= f.input :duration, placeholder: 'How long will your class be?' %>
+          <%= f.input :duration, label: "Duration (in minutes)", placeholder: 'How long will your class be?', input_html: {id: "duration-selector"} %>
           <%= f.input :category, as: :radio_buttons,
                       input_html: {class: "sport-category-selector"},
                       item_wrapper_class: 'sport-category-item',
