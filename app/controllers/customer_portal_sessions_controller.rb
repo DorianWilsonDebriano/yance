@@ -1,8 +1,8 @@
 class CustomerPortalSessionsController < ApplicationController
-
+  before_action :skip_authorization, only: [:create]
   def create
   portal_session = Stripe::BillingPortal::Session.create({
-    customer: current_user.id,
+    customer: 'cus_Ia6uu8xXbZUSPw',
     return_url: 'http://localhost:3000/settings',
   })
 
