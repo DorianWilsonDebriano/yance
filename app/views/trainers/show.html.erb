@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="header-image">
   <% if @trainer.time_line_photo.attached? %>
-    <%= cl_image_tag @trainer.time_line_photo.key, class: "banner-image" %>
+    <%= cl_image_tag @trainer.time_line_photo.key, class: "" %>
   <%else%>
-    <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606934530/pexels-cottonbro-4753885_tsedne.jpg", class: "banner-image" %>
+    <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606934530/pexels-cottonbro-4753885_tsedne.jpg", class: "timeline-image" %>
   <% end %>
   </div>
 </div>
