@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-
   end
 
   def search
@@ -13,5 +12,4 @@ class PagesController < ApplicationController
     @user_bookings = current_user.class_bookings
     @user_sports_classes = current_user.sports_classes.order(date_time: :asc)
   end
-
 end

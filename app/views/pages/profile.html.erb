@@ -20,7 +20,7 @@
             <h2>Your upcoming created classes</h2>
             <% if @user_sports_classes != nil %>
               <div class="profile-created-classes ">
-                <%= render "shared/profile-created-classes" %>
+                <%= render collection: @user_sports_classes, partial: "shared/profile-created-classes", as: :user_sports_classes %>
               </div>
             <% end %>
           <% end %>
@@ -33,7 +33,7 @@
           <% if current_user.class_bookings.present? %>
             <h2>Your bookings</h2>
             <div class="profile-upcoming-classes">
-              <%= render "shared/profile-upcoming-classes" %>
+              <%= render collection: @user_bookings, partial: "shared/profile-upcoming-classes", as: :user_booking  %>
             </div>
           <% else %>
             <h2>Your bookings</h2>
