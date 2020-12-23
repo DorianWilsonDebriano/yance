@@ -15,17 +15,18 @@
   bottom: 9px;
 }
 
+.navigation {
+  padding-left: 12px;
+}
+
 #home-title {
-    display: flex;
-    justify-content: center;
     font-size: 24px;
     font-weight: bolder;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
+    color: $dark-text;
   }
 
   #browse-text{
-    color: white;
+    color: $dark-text;
   }
 
 .browse-button {
@@ -43,15 +44,40 @@
 
 .banner-section {
   height: 100vh;
-  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606478868/yance-background-image_tetvbe.png");
+  padding-left: 100px;
+  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608752031/background-shape_aucxuq.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: fill;
 }
 
+.banner-image {
+  // border-radius: 200px 70px 200px 460px;
+  margin-right: 25px;
+  animation: morph 8s ease-in-out infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes morph {
+  0% {
+      border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+      border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+
+
 .banner-content {
-  padding-top: 25vh;
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .learn-more {
@@ -88,16 +114,22 @@
   width: 650px;
 }
 
-.home-info-section {
-  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606480943/background-blocks_kio8x2.png");
-  height: 700px;
-  justify-content: space-between;
-  margin-top: 50px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.classes-focus-section {
+  display: flex;
+  align-items: center;
 }
 
+.home-info-section {
+  height: 340px;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.check-it-out {
+  font-weight: bolder;
+  color: $dark-text;
+}
 
 .punchliner-left {
   h2 {
@@ -115,8 +147,9 @@
     font-weight: bolder;
     font-size: 24px;
     color: $dark-text;
-    text-align: end;
-    padding-right: 10px;
+  }
+  p {
+    font-size: 16px;
   }
 }
 

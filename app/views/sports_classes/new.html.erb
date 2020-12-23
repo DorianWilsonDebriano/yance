@@ -1,7 +1,7 @@
-<div class="page container">
-  <div class="row d-flex justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-6 ">
-      <div class="form-login mb-5">
+<div class="new-class-page">
+  <div class="row d-flex">
+    <div class="col-xs-12 col-lg-6 ">
+      <div class="form-create-class">
         <h2>Create a new class</h2>
         <%= simple_form_for [@trainer, @sportsclass], html: { autocomplete: 'off' } do |f| %>
           <%= f.input :title, placeholder: 'The title of your class' %>
@@ -12,26 +12,30 @@
                       input_html: {class: "sport-category-selector"},
                       item_wrapper_class: 'sport-category-item',
                       collection: SportsClass::CATEGORIES %>
-          <%= f.input :experience_level, as: :radio_buttons,
-                       input_html: { class: "experience"},
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'category-wrapper',
-                        item_wrapper_class: 'category-item',
-                        collection: ["Beginner", "Good", "Experienced"] %>
-          <%= f.input :difficulty_level, as: :radio_buttons, input_html: { class: "difficulty"},
-                       collection: [1, 2, 3],
-                       wrapper: :vertical_collection_inline %>
-          <%= f.input :sweat_level, as: :radio_buttons, input_html: { class: "sweat"},
-                      collection: [1, 2, 3],
-                      wrapper: :vertical_collection_inline %>
-          <%= f.input :equipment, input_html: { class: "equipment-toggle" } %>
-          <%= f.input :language, placeholder: 'In which language will you do your class?' %>
+<!--           <div class="d-flex justify-content-around"> -->
+            <%= f.input :experience_level, as: :radio_buttons,
+                         input_html: { class: "experience"},
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'category-wrapper',
+                          item_wrapper_class: 'category-item',
+                          collection: ["Beginner", "Good", "Experienced"] %>
+            <%= f.input :difficulty_level, as: :radio_buttons, input_html: { class: "difficulty"},
+                         collection: [1, 2, 3],
+                         wrapper: :vertical_collection_inline %>
+            <%= f.input :sweat_level, as: :radio_buttons, input_html: { class: "sweat"},
+                        collection: [1, 2, 3],
+                        wrapper: :vertical_collection_inline %>
+<!--           </div> -->
+          <%= f.input :language, collection: SportsClass::LANGUAGES, prompt: :translate %>
           <%= image_tag "", width: 300, class: 'hidden', id: "photo-preview" %>
           <%= f.input :photo, input_html: { class: 'hidden d-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
 
           <%= f.button :submit, class: 'btn class-sign-up-button sweet-alert', id:"sweet-alert-class" %>
         <% end %>
       </div>
+    </div>
+    <div class="form-image col-lg-6">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608741555/OH5C6497_mt2r3x.jpg", class: "form-image" %>
     </div>
   </div>
 </div>
