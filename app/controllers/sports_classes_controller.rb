@@ -8,8 +8,8 @@ class SportsClassesController < ApplicationController
   before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
 
   def index
-    start_range = Time.zone.now.change(hour: 0, min: 0, sec: 0).in_time_zone("#{Time.now.zone}")
-    end_range = Time.zone.now.change(hour: 0, min: 0, sec: 0).in_time_zone("#{Time.now.zone}").advance(days: 8)
+    start_range = Time.zone.now.in_time_zone(Time.now.zone)
+    end_range = Time.zone.now.in_time_zone(Time.now.zone).advance(days: 8)
     @sports_classes = policy_scope(SportsClass)
       .where(date_time: Range.new(start_range, end_range))
       .order(date_time: :asc)
@@ -18,7 +18,6 @@ class SportsClassesController < ApplicationController
     handle_date_search
     handle_filters
     handle_filter_cards
-
     @classbooking = ClassBooking.new
     @classbookings = current_user&.class_bookings&.includes(user: [:subscription, :membership]) || []
   end
@@ -104,11 +103,11 @@ class SportsClassesController < ApplicationController
     if params[:starts_at].present?
       if params[:starts_at].include?(" to ")
         starts_at, ends_at = *params[:starts_at].split(" to ")
-        starts_at = starts_at.in_time_zone("#{Time.now.zone}")
-        ends_at = ends_at.in_time_zone("#{Time.now.zone}").advance(days: 1)
+        starts_at = starts_at.in_time_zone(Time.now.zone)
+        ends_at = ends_at.in_time_zone(Time.now.zone).advance(days: 1)
         @sports_classes = @sports_classes.where(date_time: Range.new(starts_at, ends_at))
       else
-        starts_at = params[:starts_at].in_time_zone("#{Time.now.zone}")
+        starts_at = params[:starts_at].in_time_zone(Time.now.zone)
         @sports_classes = @sports_classes.where(date_time: Range.new(starts_at, starts_at.advance(days: 1)))
       end
     end
