@@ -76,6 +76,7 @@ edoardo = User.new(
   last_name: "Maraia",
   bio: "I live, breathe, eat sports",
   language: "English, Italian",
+  stripe_customer_id: "cus_Ick9TpTq5MQogn"
   )
 edoardo.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 edoardo.save!
