@@ -1,3 +1,19 @@
+#duration-selector {
+  width: 50%;
+}
+
+@media(max-width: 992px) {
+  #duration-selector {
+    width: 80%;
+  }
+}
+
+@media(max-width: 768px) {
+  #duration-selector {
+    width: 100%;
+  }
+}
+
 .sport-category-item {
   display: inline-block;
 }
