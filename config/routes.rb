@@ -32,4 +32,6 @@ Rails.application.routes.draw do
 
   resources :class_bookings, only: %i[edit update destroy]
   get "/stream", to: "classes#stream"
+
+  resources :customer_portal_sessions, only: [:create]
 end

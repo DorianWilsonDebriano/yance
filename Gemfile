@@ -49,6 +49,8 @@ gem 'postmark-rails'
 
 #Library for dealing with money and currency conversion
 gem 'money-rails'
+#handles payments
+gem 'stripe'
 
 group :development, :test do
   gem 'pry-byebug'
