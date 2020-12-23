@@ -47,6 +47,9 @@ gem 'simple_form'
 
 gem 'postmark-rails'
 
+#Library for dealing with money and currency conversion
+gem 'money-rails'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
