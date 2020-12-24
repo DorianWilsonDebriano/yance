@@ -1,3 +1,6 @@
+.home-page {
+  padding-top: 48px;
+}
 .home-page-logo {
   width: 300px;
   position: relative;
@@ -16,7 +19,7 @@
 }
 
 .navigation {
-  padding-left: 12px;
+  height: 300px;
 }
 
 #home-title {
@@ -43,17 +46,10 @@
 }
 
 .banner-section {
-  height: 100vh;
-  padding-left: 100px;
-  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608752031/background-shape_aucxuq.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: fill;
 }
 
 .banner-image {
   // border-radius: 200px 70px 200px 460px;
-  margin-right: 25px;
   animation: morph 8s ease-in-out infinite;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   transition: all 1s ease-in-out;
@@ -72,37 +68,23 @@
   }
 }
 
-
+@media(max-width: 950px) {
+  .banner-image {
+    width: 80%;
+  }
+}
 
 .banner-content {
+  margin: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.learn-more {
-  text-align: center;
-  position: relative;
-  top: 140px;
-    p {
-    color: white;
-  }
-  a {
-    text-decoration: none;
-    color: white;
-  }
-}
-
-@media(max-width: 768px) {
-  .learn-more {
-    display: none;
-  }
-}
-
-#banner-caret {
-  color: white;
-  font-size: 32px;
+  height: 100vh;
+  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608752031/background-shape_aucxuq.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fill;
 }
 
 
@@ -121,10 +103,22 @@
 }
 
 .home-info-section {
-  height: 340px;
-  border-radius: 8px;
+  height: 485px;
+  border-radius: 4px;
   object-fit: cover;
   object-position: center;
+}
+
+@media(max-width: 950px) {
+  .home-info-section {
+    height: 400px
+  }
+}
+
+@media(max-width: 768px) {
+  .home-info-section {
+    height: 300px
+  }
 }
 
 .check-it-out {
@@ -133,6 +127,9 @@
 }
 
 .punchliner-left {
+  height: 290px;
+  position: relative;
+  text-align: end;
   h2 {
     font-weight: bolder;
     font-size: 24px;
@@ -144,6 +141,8 @@
 }
 
 .punchliner-right {
+  position: relative;
+  height: 200px;
   h2 {
     font-weight: bolder;
     font-size: 24px;
@@ -151,38 +150,6 @@
   }
   p {
     font-size: 16px;
-  }
-}
-
-.promo-banner {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606389292/h5txfhai6twx8hqc5dwiskfnxgvs.jpg");
-  height: 145px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  h2 {
-    font-weight: bolder;
-    font-size: 32px;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
-    color: white;
-    text-decoration: none;
-    &:hover {
-      color: white;
-      text-decoration: none;
-    }
-  }
-}
-
-.promo-banner-text {
-  color: white;
-  text-decoration: none;
-  &:hover {
-    color: white;
-    text-decoration: none;
   }
 }
 
@@ -204,28 +171,6 @@
   height: 200px;
   margin: 30px 0px 30px 0px;
 
-}
-
-.newsletter-circle {
-  position: absolute;
-  right: 50px;
-  bottom: 20px;
-  width: 250px;
-  // background-color: rgba(255, 255, 255, 0.4);
-  background-color: rgba(254, 205, 66, 0.8);
-  border-radius: 4px;
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 12px;
-}
-
-@media(max-width: 768px) {
-  .newsletter-circle {
-    display: none;
-  }
 }
 
 @media(max-width: 768px) {

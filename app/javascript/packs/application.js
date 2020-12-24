@@ -42,7 +42,7 @@ document.addEventListener("turbolinks:load", () => {
 
   flatpickr(".datepicker", {
   altInput: true,
-  altFormat: "d M Y",
+  altFormat: "d M",
   dateFormat: "Z",
   minDate: "today",
   mode: "range"
