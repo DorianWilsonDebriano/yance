@@ -5,7 +5,7 @@ require 'openssl'
 require 'json'
 
 class SportsClassesController < ApplicationController
-  before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
+  before_action :set_sports_class, only: [:show, :edit, :update, :duplicate, :destroy]
 
   def index
     start_range = Time.zone.now.in_time_zone(Time.now.zone)
@@ -54,9 +54,20 @@ class SportsClassesController < ApplicationController
   def update
     authorize @sportsclass
     if @sportsclass.update(sports_class_params)
-      redirect_to profile_path, notice: "#{@sportsclass.title} has been updated."
+      redirect_to profile_path, notice: "#{@sportsclass.title}'s information has been saved."
     else
       render :edit
+    end
+  end
+
+  def duplicate
+    @dup_sportsclass = @sportsclass.deep_clone include: [:photo_attachment, :photo_blob]
+    @trainer = @dup_sportsclass.trainer
+    authorize @dup_sportsclass
+    if @dup_sportsclass.save
+      room = create_room(@dup_sportsclass)
+      @dup_sportsclass.update(room: JSON.parse(room.body)["name"])
+      redirect_to edit_sports_class_path(@dup_sportsclass)
     end
   end
 
