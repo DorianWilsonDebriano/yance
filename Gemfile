@@ -47,6 +47,8 @@ gem 'simple_form'
 
 gem 'postmark-rails'
 
+gem 'activeadmin'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
