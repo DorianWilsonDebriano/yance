@@ -11,6 +11,8 @@ ActiveAdmin.register SportsClass do
                 class_booking_attributes: [:id, :user_id, :sports_class_id],
                 trainer_attributes: [:id, :bio, :sport_category, :city, :user_id]
 
+  # filter :title, as: :check_boxes, collection: proc { SportsClass.all }
+  #        :description
 
   index do
     column "Sports Class" do |sports_class|
@@ -18,7 +20,25 @@ ActiveAdmin.register SportsClass do
     end
     column "Trainer" do |sports_class|
       sports_class.trainer.user.first_name
-      link_to sports_class.trainer.user.first_name, admin_trainer_sports_classes_path(trainer)
+      # link_to trainer.user.first_name, admin_trainer_sports_classes_path(trainer)
+    end
+    column "Description" do |sports_class|
+      sports_class.description
+    end
+    column "Category" do |sports_class|
+      sports_class.category
+    end
+    column "Photo" do |sports_class|
+      link_to image_tag(sports_class.photo), admin_sports_class_path(sports_class)
+    end
+    column "Streaming Room" do |sports_class|
+      sports_class.room
+    end
+    column "Language" do |sports_class|
+      sports_class.language
+    end
+    column "Date" do |sports_class|
+      sports_class.date_time
     end
   end
 # column "Title" do |post|
