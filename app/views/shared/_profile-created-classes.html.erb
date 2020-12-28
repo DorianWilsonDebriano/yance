@@ -1,4 +1,4 @@
-<% if user_sports_classes.date_time > Time.now %>
+<% if user_sports_classes.date_time > (Time.now - 1.hour) %>
   <div class="booked-sports-classes-card d-flex">
       <% if user_sports_classes.photo.attached? %>
         <div>
