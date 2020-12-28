@@ -1,0 +1,11 @@
+.grid_container {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  object-fit: cover;
+  height: 300px !important;
+  width: 300px !important;
+
+}
