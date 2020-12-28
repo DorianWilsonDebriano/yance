@@ -13,7 +13,7 @@
     </div>
     <div class="booked-class-info-buttons">
       <button class="btn go-to-class-icon"><%= link_to sports_class_path(user_booking.sports_class), method: "GET" do %>
-          <i class="fas fa-video"></i>
+          <i class="fas fa-video" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Join the live stream"></i>
         <% end %>
       </button>
       <button class="btn profile-cancel-booking-icon"> <%= link_to class_booking_path(user_booking), method: :delete, data: {confirm: "Are you sure?"}, class: "profile-cancel-button", id:"sweet-alert-delete" do %>
