@@ -5,7 +5,7 @@
         <div class="class-modal-left-column col-5 pt-4 pl-5">
           <div class="class-modal-header">
             <h5 class="modal-title" id="exampleModalLabel"> <strong> <%= sportsclass.title %> </strong></h5>
-            <p class="class-modal-date"><%= sportsclass.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
+            <p class="class-modal-date"><%= sportsclass.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y at %H:%M") %></p>
             <p class="class-modal-category"><%= sportsclass.category %></p>
           </div>
           <% if sportsclass.photo.attached? %>
