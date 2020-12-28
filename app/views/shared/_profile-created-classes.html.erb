@@ -16,16 +16,6 @@
             <i class="fas fa-video"></i>
           <% end %>
         </button>
-        <div class="profile-edit-class-button">
-          <%= link_to edit_sports_class_path(user_sports_classes), class: "profile-edit-class-button" do %>
-            <i class="fas fa-pen-square" id=""></i>
-          <% end %>
-        </div>
-        <button class="btn profile-cancel-booking-icon"> <%= link_to sports_class_path(user_sports_classes), method: :delete, data: {confirm: "Are you sure?"}, class: "profile-cancel-button", id:"sweet-alert-delete" do %>
-            <i class="fas fa-window-close"></i>
-            <p id="cancel-class">cancel</p>
-          <% end %>
-        </button>
       </div>
   </div>
 <% end %>
