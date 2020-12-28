@@ -1,4 +1,4 @@
-<% if user_sports_classes.date_time > Time.now %>
+<% if user_sports_classes.date_time > (Time.now - 1.hour) %>
   <div class="booked-sports-classes-card d-flex">
       <% if user_sports_classes.photo.attached? %>
         <div>
@@ -11,19 +11,9 @@
         <p class="booked-class-card-duration"><%= user_sports_classes.duration %> minutes</p>
         <p class="booked-class-card-category"><strong><%= user_sports_classes.category %></strong></p>
       </div>
-      <div class="created-class-info-buttons">
+      <div class="created-class-info-buttons" id="created-class-profile">
         <button class="btn go-to-class-icon"><%= link_to sports_class_path(user_sports_classes), method: "GET" do %>
-            <i class="fas fa-video"></i>
-          <% end %>
-        </button>
-        <div class="profile-edit-class-button">
-          <%= link_to edit_sports_class_path(user_sports_classes), class: "profile-edit-class-button" do %>
-            <i class="fas fa-pen-square" id=""></i>
-          <% end %>
-        </div>
-        <button class="btn profile-cancel-booking-icon"> <%= link_to sports_class_path(user_sports_classes), method: :delete, data: {confirm: "Are you sure?"}, class: "profile-cancel-button", id:"sweet-alert-delete" do %>
-            <i class="fas fa-window-close"></i>
-            <p id="cancel-class">cancel</p>
+            <i class="fas fa-video created-class-join-video" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Join the live stream"></i>
           <% end %>
         </button>
       </div>

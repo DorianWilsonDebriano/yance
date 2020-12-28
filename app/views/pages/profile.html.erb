@@ -17,6 +17,11 @@
         <a class="nav-link profile-tab" id="upcoming-tab" data-toggle="tab" href="#upcoming" role="tab" aria-controls="upcoming" aria-selected="true">Booked</a>
       </li>
     <% end %>
+    <% if current_user.trainers.present? %>
+      <li class="nav-item">
+        <a class="nav-link profile-tab" id="manage-tab" data-toggle="tab" href="#manage" role="tab" aria-controls="manage" aria-selected="false">Manage Classes</a>
+      </li>
+    <% end %>
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="created" role="tabpanel" aria-labelledby="created-tab">
@@ -30,7 +35,6 @@
             </div>
           <% end %>
         </div>
-        <%= link_to "Create a class", new_trainer_sports_class_path(current_user.trainers.ids), class: "btn browse-button mt-5" %>
       <% end %>
     </div>
     <% if current_user.trainers.empty? %>
@@ -53,6 +57,26 @@
         <% end %>
       </div>
       <%= link_to "Explore yance", sports_classes_path, class: "btn browse-button mt-5" %>
+    </div>
+    <div class="tab-pane fade" id="manage" role="tabpanel" aria-labelledby="manage-tab">
+      <!-- manage classes section -->
+      <% if current_user.trainers.present? %>
+        <div class="trainer-stats-section">
+          <h2>Manage your classes</h2>
+          <%= link_to "Create a class", new_trainer_sports_class_path(current_user.trainers.ids), class: "btn browse-button" %>
+          <div class="class-stats">
+            <div class="class-stats-labels">
+              <p>Date</p>
+              <p>Class name</p>
+              <p>Participants</p>
+              <p>Revenue</p>
+              <p>Status</p>
+              <p>Actions</p>
+            </div>
+            <%= render collection: current_user.sports_classes.order(date_time: :desc), partial: "shared/class-stats", as: :sports_class %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
