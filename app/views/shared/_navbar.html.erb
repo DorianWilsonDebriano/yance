@@ -40,7 +40,7 @@
         <% end %>
         <% if current_user.trainers.present? %>
           <li class="nav-item" id="">
-            <%= link_to "Create a class", new_trainer_sports_class_path(current_user.trainers.ids) , class: "nav-link" %>
+            <%= link_to "Your Classes", profile_path, class: "nav-link" %>
           </li>
         <% end %>
         <li class="nav-item dropdown">

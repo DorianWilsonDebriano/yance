@@ -1,5 +1,5 @@
 <div class="class-stat-details">
-  <p id="stat-date"> <%= sports_class.date_time.in_time_zone("#{Time.now.zone}") %> </p>
+  <p id="stat-date"> <%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%d/%m/%Y") %> at <%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%H:%M") %> </p>
   <p> <%= sports_class.title %> </p>
   <p> <%= sports_class.class_bookings.count %> </p>
   <% if sports_class.class_bookings.count == 0 %>
@@ -14,4 +14,21 @@
   <% else %>
     <p id="stat-coming"> coming </p>
   <% end %>
+  <div class="manage-action-buttons">
+    <%= link_to duplicate_path(sports_class) do %>
+      <i class="fas fa-copy manage-duplicate-button" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Duplicate this class's information for a quick-create"></i>
+    <% end %>
+    <% if sports_class.date_time > Time.zone.now %>
+      <%= link_to edit_sports_class_path(sports_class) do %>
+        <i class="fas fa-pen-square" id="manage-edit-button" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Edit this class's information"></i>
+      <% end %>
+      <%= link_to sports_class_path(sports_class), method: :delete, data: {confirm: "Are you sure?"} do %>
+        <i class="fas fa-window-close" id="manage-cancel-button" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Cancel this class"></i>
+      <% end %>
+      <%= link_to sports_class_path(sports_class), method: "GET" do %>
+        <i class="fas fa-video" id="manage-stream-button" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Join the live stream"></i>
+      <% end %>
+    <% end %>
+
+  </div>
 </div>
