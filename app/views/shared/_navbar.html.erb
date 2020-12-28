@@ -2,25 +2,14 @@
   <div class="logo-credits">
     <div class="navbar-brand d-flex justify-content-between">
       <%= link_to root_path do %>
-        <%= image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1606231079/Yance-yelloy-logo_weypsf.png" %>
+        <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609194683/Yance-logo-svg_qq3q16.svg" %>
       <% end %>
       <h1 id="nav-name">yance</h1>
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-<!--     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <% if user_signed_in? %>
-            <% if current_user.subscription.present? %>
-              <p class="nav-link" id="nav-credits">Remaining credits: <%= current_user.subscription.credits %></p>
-            <% end %>
-          <% end %>
-        </li>
-      </ul>
-    </div> -->
   </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
