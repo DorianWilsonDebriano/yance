@@ -1,5 +1,5 @@
 <div class="sports-classes-card pt-3">
-  <p class="class-card-datetime"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
+  <p class="class-card-datetime"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y at %H:%M") %></p>
   <div class="class-card-header d-flex justify-content-between">
     <div class="card-header-left">
       <p class="class-card-duration"><%= sports_class.duration %> minutes</p>

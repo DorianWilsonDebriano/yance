@@ -9,7 +9,7 @@ class SportsClassesController < ApplicationController
 
   def index
     start_range = Time.zone.now.in_time_zone(Time.now.zone) - 30.minutes
-    end_range = Time.zone.now.in_time_zone(Time.now.zone).advance(days: 8)
+    end_range = Time.zone.now.in_time_zone(Time.now.zone).advance(days: 90)
     @sports_classes = policy_scope(SportsClass)
       .where(date_time: Range.new(start_range, end_range))
       .order(date_time: :asc)
