@@ -1,12 +1,10 @@
 ActiveAdmin.register User do
-  permit_params :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :username, :first_name, :last_name, :bio, :language, :admin, :photo_attachment, :photo_blob
-  # ,
-  # subscription_attributes: [:id, :user_id, :membership_id, :credits],membership_attributes: [:id, :title, :credits, :price, :description], trainer_attributes: [:id, :bio, :sport_category, :city, :user_id]
+  permit_params :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :username
+
   actions :all, except: :new
 
   filter :first_name, as: :select
   filter :last_name, as: :select
-  filter :trainers, as: :select
   filter :trainers, collection: -> { Trainer.pluck(:id) }
   filter :email, as: :select
   filter :language, as: :select
@@ -55,6 +53,9 @@ ActiveAdmin.register User do
       row :last_name do
         user.last_name
       end
+      row :email do
+        user.email
+      end
       row :user_created_on do
         user.created_at
       end
@@ -67,6 +68,10 @@ ActiveAdmin.register User do
       row :languages do
         user.language
       end
+      row :membership do
+        user_membership = Membership.find(Subscription.where(user_id: Subscription.pluck(:user_id)).first.membership_id)
+        link_to user_membership.title, admin_membership_path(user_membership)
+      end
       row :class_bookings do
         user_bookings = SportsClass.find(user.class_bookings.pluck(:sports_class_id))
         ul do
@@ -74,10 +79,6 @@ ActiveAdmin.register User do
             li link_to sports_class.title, admin_sports_class_path(sports_class)
           end
         end
-      end
-      row :membership do
-        user_membership = Membership.find(Subscription.where(user_id: Subscription.pluck(:user_id)).first.membership_id)
-        link_to user_membership.title, admin_membership_path(user_membership)
       end
       row :Trainer_ID do
         link_to user.trainer_ids.join, admin_trainer_path(user.trainer_ids)
@@ -89,4 +90,3 @@ ActiveAdmin.register User do
     active_admin_comments
   end
 end
-
