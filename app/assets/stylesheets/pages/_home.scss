@@ -120,7 +120,7 @@
   display: grid;
   gap: 36px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-top: 42px;
+  margin-top: 46px;
 }
 
 @media(max-width: 950px) {
@@ -149,6 +149,20 @@
     color: $yance-yellow;
     transition: 0.2s;
    }
+   p {
+    font-size: 24px;
+   }
+}
+
+.explore-center {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 42px;
+}
+
+#explore-center {
+  margin: 0px;
+  left: 0%;
 }
 
 #go-button {
@@ -237,6 +251,12 @@
   .punchliner-right {
     margin: 16px;
   }
+}
+
+#membership-pricing-image {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .how-it-works-section {
