@@ -6,6 +6,10 @@
 //
 // For example, to change the sidebar width:
 // $sidebar-width: 242px;
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
 
 // Active Admin's got SASS!
 @import "active_admin/mixins";
@@ -17,6 +21,9 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
-header {
-  background-color: #FEDF44 !important;
+#header {
+  background-color: white;
+  background-image: none;
+  font-family: "Montserrat", "sans-serif";
+  text-shadow: none;
 }

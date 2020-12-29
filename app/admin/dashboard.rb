@@ -9,7 +9,7 @@ ActiveAdmin.register_page "Dashboard" do
             panel "Current Users" do
               ul do
                 User.limit(20).map do |user|
-                  li link_to(user.email, admin_user_path(user))
+                  li link_to(user.first_name, admin_user_path(user))
                 end
               end
             end
