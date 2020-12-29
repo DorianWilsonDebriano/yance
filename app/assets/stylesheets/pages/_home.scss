@@ -22,6 +22,12 @@
   height: 300px;
 }
 
+@media(max-width: 768px) {
+  .navigation {
+    margin: 24px 16px 16px 16px;
+  }
+}
+
 #home-title {
     font-size: 24px;
     font-weight: bolder;
@@ -70,7 +76,15 @@
 
 @media(max-width: 950px) {
   .banner-image {
-    width: 80%;
+    width: 95%;
+  }
+}
+
+@media(max-width: 768px) {
+  .banner-image {
+    margin-top: 36px;
+    padding-bottom: 26px;
+    width: 95%;
   }
 }
 
@@ -87,6 +101,76 @@
   background-position: fill;
 }
 
+.sport-category-section {
+  margin-top: 54px;
+  h2 {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 24px;
+  color: $dark-text;
+  }
+  p {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 24px;
+  }
+}
+
+.sport-category-grid {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 46px;
+}
+
+@media(max-width: 950px) {
+  .sport-category-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sport-category-block {
+  height: 300px;
+}
+
+.sport-category-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+
+.explore-category {
+  font-weight: bolder;
+  font-size: 24px;
+  color: $dark-text;
+   &:hover {
+    color: $yance-yellow;
+    transition: 0.2s;
+   }
+   p {
+    font-size: 24px;
+   }
+}
+
+.explore-center {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 42px;
+}
+
+#explore-center {
+  margin: 0px;
+  left: 0%;
+}
+
+#go-button {
+  height: 36px;
+  width: 36px;
+  object-fit: cover;
+  object-position: center;
+}
 
 .punchliner-search {
   margin-top: 90px;
@@ -111,13 +195,17 @@
 
 @media(max-width: 950px) {
   .home-info-section {
-    height: 400px
+    height: 400px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
 
 @media(max-width: 768px) {
   .home-info-section {
-    height: 300px
+    height: 310px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
 
@@ -140,6 +228,12 @@
   }
 }
 
+@media(max-width: 768px) {
+  .punchliner-left {
+    margin: 16px;
+  }
+}
+
 .punchliner-right {
   position: relative;
   height: 200px;
@@ -151,6 +245,18 @@
   p {
     font-size: 16px;
   }
+}
+
+@media(max-width: 768px) {
+  .punchliner-right {
+    margin: 16px;
+  }
+}
+
+#membership-pricing-image {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .how-it-works-section {
