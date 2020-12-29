@@ -1,25 +1,15 @@
 ActiveAdmin.register User do
-  # has_one :subscription
-  # has_one :membership, through: :subscription
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  permit_params :email,
-                :encrypted_password,
-                :reset_password_token,
-                :reset_password_sent_at,
-                :remember_created_at,
-                :username,
-                :first_name,
-                :last_name,
-                :bio,
-                :language,
-                :admin,
-                subscription_attributes: [:id, :user_id, :membership_id, :credits],
-                membership_attributes: [:id, :title, :credits, :price, :description],
-                trainer_attributes: [:id, :bio, :sport_category, :city, :user_id]
+  permit_params :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :username, :first_name, :last_name, :bio, :language, :admin, :photo_attachment, :photo_blob
+  # ,
+  # subscription_attributes: [:id, :user_id, :membership_id, :credits],membership_attributes: [:id, :title, :credits, :price, :description], trainer_attributes: [:id, :bio, :sport_category, :city, :user_id]
+  actions :all, except: :new
+
+  filter :first_name, as: :select
+  filter :last_name, as: :select
+  filter :trainers, as: :select
+  filter :trainers, collection: -> { Trainer.pluck(:id) }
+  filter :email, as: :select
+  filter :language, as: :select
 
   index do
     column "Name" do |user|
@@ -51,11 +41,12 @@ ActiveAdmin.register User do
         end
       end
     end
+    actions
   end
 
   show title: :first_name do
     attributes_table do
-      row :profile_picture do |ad|
+      row :profile_picture do
         image_tag user.photo
       end
       row :first_name do
@@ -64,7 +55,7 @@ ActiveAdmin.register User do
       row :last_name do
         user.last_name
       end
-      row :user_created_on do |ad|
+      row :user_created_on do
         user.created_at
       end
       row :bio do
@@ -75,6 +66,14 @@ ActiveAdmin.register User do
       end
       row :languages do
         user.language
+      end
+      row :class_bookings do
+        user_bookings = SportsClass.find(user.class_bookings.pluck(:sports_class_id))
+        ul do
+          user_bookings.each do |sports_class|
+            li link_to sports_class.title, admin_sports_class_path(sports_class)
+          end
+        end
       end
       row :membership do
         user_membership = Membership.find(Subscription.where(user_id: Subscription.pluck(:user_id)).first.membership_id)
@@ -91,12 +90,3 @@ ActiveAdmin.register User do
   end
 end
 
-  # sidebar "Details", only: :show do
-  #   attributes_table_for book do
-  #     row :title
-  #     row :author
-  #     row :publisher
-  #     row('Published?') { |b| status_tag b.published? }
-  #   end
-  # end
-# end

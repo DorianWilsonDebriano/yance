@@ -1,5 +1,6 @@
 ActiveAdmin.register Trainer do
   # belongs_to :user
+  includes :user
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
