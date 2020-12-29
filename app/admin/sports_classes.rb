@@ -48,10 +48,16 @@ ActiveAdmin.register SportsClass do
     column "Date" do |sports_class|
       sports_class.date_time
     end
+    column "ID" do |sports_class|
+      link_to sports_class.id, admin_sports_class_path(sports_class)
+    end
   end
 
   show title: :title do
       attributes_table do
+        row :id do
+          sports_class.id
+        end
         row :class_picture do
           image_tag sports_class.photo
         end
@@ -76,24 +82,12 @@ ActiveAdmin.register SportsClass do
         row :experience_level do
           sports_class.experience_level
         end
-        # row :membership do
-        #   user_membership = Membership.find(Subscription.where(user_id: Subscription.pluck(:user_id)).first.membership_id)
-        #   link_to user_membership.title, admin_membership_path(user_membership)
-        # end
-        # row :class_bookings do
-        #   user_bookings = SportsClass.find(user.class_bookings.pluck(:sports_class_id))
-        #   ul do
-        #     user_bookings.each do |sports_class|
-        #       li link_to sports_class.title, admin_sports_class_path(sports_class)
-        #     end
-        #   end
-        # end
-        # row :Trainer_ID do
-        #   link_to user.trainer_ids.join, admin_trainer_path(user.trainer_ids)
-        # end
-        # row :authorised_admin do
-        #   user.admin
-        # end
+        row :sweat_level do
+          sports_class.sweat_level
+        end
+        row :total_bookings do
+          sports_class.class_bookings.count
+        end
       end
       active_admin_comments
   end

@@ -10,26 +10,26 @@ ActiveAdmin.register User do
   filter :language, as: :select
 
   index do
-    column "Name" do |user|
+    column "First Name" do |user|
       link_to user.first_name, admin_user_path(user)
     end
     column "Last Name" do |user|
       link_to user.last_name, admin_user_path(user)
     end
-    column "Email" do |user|
-      link_to user.email, admin_user_path(user)
-    end
     column "Photo" do |user|
       link_to image_tag(user.photo), admin_user_path(user)
     end
-    column "Trainer ID" do |user|
-      link_to user.trainer_ids.join, admin_trainer_path(user.trainer_ids)
+    column "Email" do |user|
+      link_to user.email, admin_user_path(user)
     end
     column "Lanuages" do |user|
       user.language
     end
     column "Admin" do |user|
       user.admin
+    end
+    column "ID" do |user|
+      link_to user.id, admin_user_path(user)
     end
     column "Classes" do |user|
       user_classes = SportsClass.find(user.sports_class_ids)
@@ -80,7 +80,7 @@ ActiveAdmin.register User do
           end
         end
       end
-      row :Trainer_ID do
+      row :id_trainer do
         link_to user.trainer_ids.join, admin_trainer_path(user.trainer_ids)
       end
       row :authorised_admin do
