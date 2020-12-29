@@ -36,6 +36,31 @@
     </div>
   </div>
 </div>
+<!-- Sport Categories section -->
+<div class="container sport-category-section">
+  <h2>Add any type of sport to your lifestyle</h2>
+  <p>Being active from home is a part of our lifestyle. Whether you're new to home sports or it's already in your routine, we want to give you an awesome, interactive experience with many opportunities to find the sport you love.</p>
+  <div class="sport-category-grid">
+    <div class="sport-category-block">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609253928/carla-photo_lwjnvi.jpg", class: "sport-category-image" %>
+      <p>
+        <%= link_to "yoga", sports_classes_path(query:[:yoga]), class: "explore-category" %>
+      </p>
+    </div>
+    <div class="sport-category-block">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609254710/OH5C5934_copy_fgflxr.jpg", class: "sport-category-image" %>
+      <%= link_to "abs", sports_classes_path(query:[:abs]), class: "explore-category" %>
+    </div>
+    <div class="sport-category-block">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609254049/OH5C6445_botcll.jpg", class: "sport-category-image" %>
+      <%= link_to "cardio", sports_classes_path(query:[:cardio]), class: "explore-category" %>
+    </div>
+    <div class="sport-category-block">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609254082/IMG_6126_edubet.jpg", class: "sport-category-image" %>
+      <%= link_to "stretching", sports_classes_path(query:[:stretching]), class: "explore-category" %>
+    </div>
+  </div>
+</div>
 <!-- info-images section -->
 <div class="container">
   <div class="row py-5 classes-focus-section">
