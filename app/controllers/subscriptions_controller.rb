@@ -2,10 +2,10 @@ class SubscriptionsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @membership = Membership.find(params[:membership_id])
-    @user = current_user
-    @subscription = Subscription.new
-    authorize @subscription
+    # @membership = Membership.find(params[:membership_id])
+    # @user = current_user
+    # @subscription = Subscription.new
+    # authorize @subscription
   end
 
   def create
