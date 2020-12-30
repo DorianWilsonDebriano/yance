@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :username
+  permit_params :email, :username, :first_name, :last_name, :language, :bio, :admin
 
   actions :all, except: :new
 
@@ -8,6 +8,35 @@ ActiveAdmin.register User do
   filter :trainers, collection: -> { Trainer.pluck(:id) }
   filter :email, as: :select
   filter :language, as: :select
+
+  form do |f|
+    f.inputs 'Details', class: "admin-form" do
+      f.semantic_errors
+      f.input :email, input_html: { style: 'width: 20%' }
+      f.input :first_name, input_html: { style: 'width: 20%' }
+      f.input :last_name, input_html: { style: 'width: 20%' }
+      f.input :language, input_html: { style: 'width: 20%' }
+      f.input :admin, as: :select, input_html: { style: 'width: 21.5%' }
+      f.input :bio, input_html: { style: 'width: 20%' }
+      f.input :photo, input_html: { style: 'width: 20%' }
+      f.button :submit, class: 'btn class-sign-up-button sweet-alert', id:"sweet-alert-class"
+    end
+  end
+
+  controller do
+    def edit
+      @user = User.find(params[:id])
+    end
+
+    def update
+      @user = User.find(params[:id])
+      if @user.update(permitted_params[:user])
+        redirect_to admin_users_path, notice: "#{@user.first_name}'s information has been saved."
+      else
+        render :edit
+      end
+    end
+  end
 
   index do
     column "First Name" do |user|
