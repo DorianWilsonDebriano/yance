@@ -16,14 +16,162 @@
 @import "active_admin/base";
 // Active Admin
 @import "pages/sports_class_admin";
+@import "pages/dashboard_admin";
 
-// Overriding any non-variable Sass must be done after the fact.
-// For example, to change the default status-tag color:
-//
-//   .status_tag { background: #6090DB; }
+body {
+  font-family: $body-font;
+  color: black;
+}
+
+// Navbar
 #header {
   background-color: white;
   background-image: none;
-  font-family: "Montserrat", "sans-serif";
+  font-family: $body-font;
   text-shadow: none;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
+  border-bottom: none;
+  ul.tabs > li a {
+    color: black;
+  }
+}
+
+#header ul.tabs > li.current > a {
+  background: $yance-yellow;
+  color: black;
+}
+
+#header ul.tabs > li > a:hover {
+  background: $yance-yellow;
+  color: black;
+}
+
+#header #utility_nav a:hover {
+  text-decoration: none;
+  background: $yance-yellow;
+}
+
+#header #utility_nav a:hover {
+  text-decoration: none;
+  background: $yance-yellow;
+  color: black;
+}
+
+// Dashboard Panel
+
+#title_bar {
+    background-color: white;
+    background-image: none;
+    text-shadow: none;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 1px #FFF inset;
+    font-family: $headers-font;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 0.5em;
+    color: black;
+    padding: 5px 10px 3px 10px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+    display: table;
+    border-bottom-color: #EEE;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 10px 30px;
+    z-index: 800;
+}
+
+h2 {
+  color: black;
+}
+
+// remove bullet points everywhere
+li {
+  list-style-type: none;
+}
+
+// buttons
+
+#title_bar .action_items span.action_item > a, #title_bar .action_items span.action_item > .dropdown_menu > a {
+    border-radius: 200px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.0em;
+    font-family: $body-font;
+    line-height: 12px;
+    margin-right: 3px;
+    padding: 7px 16px 6px;
+    text-decoration: none;
+    background-color: black;
+    background-image: none;
+    box-shadow: none;
+    border: none;
+    text-shadow: none;
+    color: white;
+    padding: 12px 17px 10px;
+    margin: 0px;
+}
+
+#title_bar .action_items span.action_item > a:not(.disabled):hover {
+  background-color: $yance-yellow;
+  background-image: none;
+  color: black;
+}
+
+form input[type=submit], form input[type=button], form button {
+    border-radius: 200px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.0em;
+    font-family: $body-font;
+    line-height: 12px;
+    margin: 3px;
+    padding: 7px 16px 6px;
+    text-decoration: none;
+    background-color: black;
+    background-image: none;
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+form input[type=submit]:not(.disabled):hover, form input[type=button]:not(.disabled):hover, form button:not(.disabled):hover {
+  background-color: $yance-yellow;
+  background-image: none;
+  color: black;
+}
+
+form.filter_form a.clear_filters_btn {
+  border-radius: 200px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.0em;
+  font-family: $body-font;
+  line-height: 12px;
+  margin: 3px;
+  padding: 7px 16px 6px;
+  text-decoration: none;
+  background-color: black;
+  background-image: none;
+  text-shadow: none;
+  box-shadow: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+form.filter_form a.clear_filters_btn:not(.disabled):hover {
+  background-color: $yance-yellow;
+  background-image: none;
+  color: black;
+}
+
+// images
+
+img {
+  border-radius: 8px;
 }

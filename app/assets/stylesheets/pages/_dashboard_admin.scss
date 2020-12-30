@@ -1,0 +1,52 @@
+.blank_slate_container {
+  .blank_slate {
+    border-radius: 3px;
+    border: none;
+    color: #AAA;
+    display: inline-block;
+    font-family: $body-font;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 14px 25px;
+    text-align: center;
+  }
+}
+
+.section, .panel {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px #ddd;
+    margin-bottom: 20px;
+    overflow: hidden;
+    // margin: 8px;
+}
+
+.section > div, .panel > div {
+  padding: 3px 15px;
+}
+
+.section > h3, .panel > h3 {
+    background-color: $yance-yellow;
+    background-image: none;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 0.5em;
+    color: black;
+    padding: 5px 10px 3px 10px;
+}
+
+a, a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a, a:link, a {
+    color: black;
+    text-decoration: none;
+}
+
+
