@@ -14,3 +14,42 @@ img {
   background-image: none;
 }
 
+table.index_table th {
+    background-color: $yance-yellow;
+    background-image: none;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 0.5em;
+    color: black;
+    padding: 5px 10px 3px 10px;
+    border-right: none;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-right: 1px solid white;
+}
+
+
+table.index_table tr.even td {
+    background: white;
+}
+
+// edit page of a sports class
+
+form fieldset legend span {
+    display: block;
+    background-color: $yance-yellow;
+    background-image: none;
+    text-shadow: none;
+    border: solid none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 1px #FFF inset;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 0.5em;
+    color: black;
+    padding: 5px 10px 3px 10px;
+}
