@@ -1,12 +1,7 @@
 ActiveAdmin.register SportsClass do
   includes :trainer
   actions :all, except: :new
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  # trainers = Trainer.where(id: SportsClass.pluck(:trainer_id))
-  #
+
   permit_params :title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :trainer_id, :room, class_booking_attributes: [:id, :user_id, :sports_class_id], trainer_attributes: [:id, :bio, :sport_category, :city, :user_id]
 
   filter :title, as: :select
@@ -86,46 +81,44 @@ ActiveAdmin.register SportsClass do
   end
 
   show title: :title do
-      attributes_table do
-        row :id do
-          sports_class.id
-        end
-        row :class_picture do
-          image_tag sports_class.photo
-        end
-        row :title do
-          sports_class.title
-        end
-        row :description do
-          sports_class.description
-        end
-        row :Trainer_ID do
-          link_to sports_class.trainer_id, admin_trainer_path(sports_class.trainer_id)
-        end
-        row :sports_class_created_on do
-          sports_class.created_at
-        end
-        row :language do
-          sports_class.language
-        end
-        row :difficulty_level do
-          sports_class.difficulty_level
-        end
-        row :experience_level do
-          sports_class.experience_level
-        end
-        row :sweat_level do
-          sports_class.sweat_level
-        end
-        row :duration do
-          sports_class.duration
-        end
-        row :total_bookings do
-          sports_class.class_bookings.count
-        end
+    attributes_table do
+      row :id do
+        sports_class.id
       end
-      active_admin_comments
+      row :class_picture do
+        image_tag sports_class.photo
+      end
+      row :title do
+        sports_class.title
+      end
+      row :description do
+        sports_class.description
+      end
+      row :Trainer_ID do
+        link_to sports_class.trainer_id, admin_trainer_path(sports_class.trainer_id)
+      end
+      row :sports_class_created_on do
+        sports_class.created_at
+      end
+      row :language do
+        sports_class.language
+      end
+      row :difficulty_level do
+        sports_class.difficulty_level
+      end
+      row :experience_level do
+        sports_class.experience_level
+      end
+      row :sweat_level do
+        sports_class.sweat_level
+      end
+      row :duration do
+        sports_class.duration
+      end
+      row :total_bookings do
+        sports_class.class_bookings.count
+      end
+    end
+    active_admin_comments
   end
 end
-
-
