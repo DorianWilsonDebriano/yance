@@ -1,0 +1,7 @@
+<h1>Redirecting your call... please hold</h1>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script charset="utf-8">
+  var stripe = Stripe('pk_test_51HyK1yH6qDbw82kKNxqmW2E5MxF5f45DeE317jF60kyNsMwZWYdA4lSeDUOvNqhSpAkoBWyA6RZXTTEOgAQ67j5Q00bHdkTlvh');
+  stripe.redirectToCheckout({ sessionId: "<%= @session.id %>" });
+</script>
