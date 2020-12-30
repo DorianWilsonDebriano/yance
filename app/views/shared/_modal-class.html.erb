@@ -65,13 +65,8 @@
             <div class="align-center pr-3 py-2">
               <% if user_signed_in? %>
                 <% if current_user.subscription.present? %>
-                  <% if current_user.subscription.credits > 0 %>
-                    <% unless current_user.all_booked_classes.include?(sports_class) %>
-                      <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, @classbooking), method: :post, class: "sweet-alert-booked-#{sports_class.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
-                    <% end %>
-                  <% else %>
-                    <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
-                    <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "book-class-link btn class-modal-book-button" %>
+                  <% unless current_user.all_booked_classes.include?(sports_class) %>
+                    <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, @classbooking), method: :post, class: "sweet-alert-booked-#{sports_class.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
                   <% end %>
                 <% else %>
                   <%= link_to "BOOK", memberships_path, class: "book-class-link btn class-modal-book-button" %>

@@ -14,7 +14,6 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new
     @subscription.user = current_user
     @subscription.membership = @membership
-    # @subscription.credits = @membership.credits
     authorize @subscription
     if @subscription.save
       customer = create_stripe_customer(@user)
@@ -23,7 +22,7 @@ class SubscriptionsController < ApplicationController
       render :checkout
     else
       flash.now[:error] = @user.errors.full_messages
-      render :memberships
+      redirect_to memberships_path
     end
   end
 
@@ -54,7 +53,7 @@ class SubscriptionsController < ApplicationController
 
     Stripe::Checkout::Session.create({
       customer: current_user.stripe_customer_id,
-      success_url: 'http://localhost:3000/memberships',
+      success_url: 'http://localhost:3000/',
       cancel_url: 'http://localhost:3000/memberships',
       payment_method_types: ['card'],
       line_items: [{
