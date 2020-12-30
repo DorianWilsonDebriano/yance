@@ -20,16 +20,17 @@ ActiveAdmin.register SportsClass do
 
   form do |f|
     f.inputs 'Details', class: "admin-form" do
-      f.input :title, input_html: { style: 'width: 8.5%' }
-      f.input :trainer_id, as: :select, collection: Trainer.pluck(:id), input_html: { style: 'width: 10%' }
-      f.input :category, as: :select, collection: SportsClass.categories, input_html: { style: 'width: 10%' }
-      f.input :sweat_level, as: :select, collection: SportsClass.sweat_level, input_html: { style: 'width: 10%' }
-      f.input :difficulty_level, as: :select, collection: SportsClass.difficulty_level, input_html: { style: 'width: 10%' }
-      f.input :experience_level, as: :select, collection: SportsClass.experience_level, input_html: { style: 'width: 10%' }
-      f.input :duration, input_html: { type: 'number', style: 'width: 8.5%' }
-      f.input :language, input_html: { style: 'width: 8.5%' }
-      f.input :room, as: :select, collection: SportsClass.pluck(:room), input_html: { style: 'width: 10%' }
-      f.input :photo, input_html: { style: 'width: 10%' }
+      f.input :title, input_html: { style: 'width: 18.5%' }
+      f.input :trainer_id, as: :select, collection: Trainer.pluck(:id), input_html: { style: 'width: 20%' }
+      f.input :category, as: :select, collection: SportsClass.categories, input_html: { style: 'width: 20%' }
+      f.input :sweat_level, as: :select, collection: SportsClass.sweat_level, input_html: { style: 'width: 20%' }
+      f.input :difficulty_level, as: :select, collection: SportsClass.difficulty_level, input_html: { style: 'width: 20%' }
+      f.input :experience_level, as: :select, collection: SportsClass.experience_level, input_html: { style: 'width: 20%' }
+      f.input :duration, input_html: { type: 'number', style: 'width: 18.5%' }
+      f.input :language, input_html: { style: 'width: 18.5%' }
+      f.input :description, input_html: { style: 'width: 18.5%' }
+      f.input :room, as: :select, collection: SportsClass.pluck(:room), input_html: { style: 'width: 20%' }
+      f.input :photo, input_html: { style: 'width: 20%' }
       f.button :submit, class: 'btn class-sign-up-button sweet-alert', id:"sweet-alert-class"
     end
   end

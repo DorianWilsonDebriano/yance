@@ -3,16 +3,34 @@ ActiveAdmin.register Trainer do
   permit_params :bio, :sport_category, :city, :user_id
   actions :all, except: :new
 
-  # or
-  #
-  # permit_params do
-  #   permitted = [:bio, :sport_category, :city, :user_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
   filter :id, as: :select
   filter :city, as: :select
   filter :sport_category, as: :select
+
+  form do |f|
+    f.inputs 'Details', class: "admin-form" do
+      f.semantic_errors
+      f.input :bio, input_html: { style: 'width: 20%' }
+      f.input :sport_category, input_html: { style: 'width: 20%' }
+      f.input :city, input_html: { style: 'width: 20%' }
+      f.button :submit, class: 'btn class-sign-up-button sweet-alert', id:"sweet-alert-class"
+    end
+  end
+
+  controller do
+    def edit
+      @trainer = Trainer.find(params[:id])
+    end
+
+    def update
+      @trainer = Trainer.find(params[:id])
+      if @trainer.update(permitted_params[:trainer])
+        redirect_to admin_trainers_path, notice: "#{@trainer.id}'s information has been saved."
+      else
+        render :edit
+      end
+    end
+  end
 
   index do
     column "First Name" do |trainer|
