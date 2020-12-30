@@ -7,9 +7,7 @@ ActiveAdmin.register SportsClass do
   # Uncomment all parameters which should be permitted for assignment
   # trainers = Trainer.where(id: SportsClass.pluck(:trainer_id))
   #
-  permit_params :title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :trainer_id, :room,
-                class_booking_attributes: [:id, :user_id, :sports_class_id],
-                trainer_attributes: [:id, :bio, :sport_category, :city, :user_id]
+  permit_params :title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :trainer_id, :room, class_booking_attributes: [:id, :user_id, :sports_class_id], trainer_attributes: [:id, :bio, :sport_category, :city, :user_id]
 
   filter :title, as: :select
   filter :date_time, as: :date_range
@@ -19,6 +17,37 @@ ActiveAdmin.register SportsClass do
   filter :sweat_level, as: :select
   filter :experience_level, as: :select
   filter :language, as: :select
+
+  form do |f|
+    f.inputs 'Details', class: "admin-form" do
+      f.input :title, input_html: { maxlength: 2, style: 'width: 8.5%' }
+      f.input :trainer_id, as: :select, collection: Trainer.pluck(:id), input_html: { style: 'width: 10%' }
+      f.input :category, as: :select, collection: SportsClass.categories, input_html: { style: 'width: 10%' }
+      f.input :sweat_level, as: :select, collection: SportsClass.sweat_level, input_html: { style: 'width: 10%' }
+      f.input :difficulty_level, as: :select, collection: SportsClass.difficulty_level, input_html: { style: 'width: 10%' }
+      f.input :experience_level, as: :select, collection: SportsClass.experience_level, input_html: { style: 'width: 10%' }
+      f.input :duration, input_html: { type: 'number', style: 'width: 10%' }
+      f.input :language, as: :select, collection: SportsClass.pluck(:language), input_html: { style: 'width: 10%' }
+      f.input :room, as: :select, collection: SportsClass.pluck(:room), input_html: { style: 'width: 10%' }
+      f.input :photo, input_html: { style: 'width: 10%' }
+      f.button :submit, class: 'btn class-sign-up-button sweet-alert', id:"sweet-alert-class"
+    end
+  end
+
+  controller do
+    def edit
+      @sports_class = SportsClass.find(params[:id])
+    end
+
+    def update
+      @sports_class = SportsClass.find(params[:id])
+      if @sports_class.update(permitted_params[:sports_class])
+        redirect_to admin_sports_classes_path, notice: "#{@sports_class.title}'s information has been saved."
+      else
+        render :edit
+      end
+    end
+  end
 
   index do
     column "Sports Class" do |sports_class|
@@ -52,6 +81,7 @@ ActiveAdmin.register SportsClass do
     column "ID" do |sports_class|
       link_to sports_class.id, admin_sports_class_path(sports_class)
     end
+    actions
   end
 
   show title: :title do
@@ -86,6 +116,9 @@ ActiveAdmin.register SportsClass do
         row :sweat_level do
           sports_class.sweat_level
         end
+        row :duration do
+          sports_class.duration
+        end
         row :total_bookings do
           sports_class.class_bookings.count
         end
@@ -93,3 +126,5 @@ ActiveAdmin.register SportsClass do
       active_admin_comments
   end
 end
+
+
