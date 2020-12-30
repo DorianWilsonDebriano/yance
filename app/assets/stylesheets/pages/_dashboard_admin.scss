@@ -9,6 +9,9 @@
     font-weight: bold;
     padding: 14px 25px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
@@ -18,9 +21,26 @@
     box-shadow: 0 1px 4px #ddd;
     margin-bottom: 20px;
     overflow: hidden;
-    // margin: 8px;
 }
 
+.dashboard-colums {
+
+}
+
+.dashboard-column {
+  margin: 16px;
+  display: flex;
+  flex-direction: row;
+  flex: wrap;
+  height: 50vh;
+  padding: 8px;
+}
+
+.dashboard-column > .panel {
+  height: 40vh;
+  width: 20vw;
+
+}
 .section > div, .panel > div {
   padding: 3px 15px;
 }
