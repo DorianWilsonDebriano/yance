@@ -64,7 +64,13 @@
             <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
           <% end %>
         <% else %>
-          <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
+          <% if sports_class.password.present? %>
+            <button type="button" class="card-book-class-link btn class-card-book-button" data-toggle="modal" data-target="#modal-<%= sports_class.id %>">
+              BOOK
+            </button>
+          <% else %>
+            <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
+          <% end %>
         <% end %>
         <% else %>
           <%= link_to "BOOK", new_user_session_path, class: "card-book-class-link btn class-card-book-button" %>
@@ -75,6 +81,8 @@
       </button>
     </div>
   </div>
+<!-- password modal -->
+  <%= render partial: "shared/password-popup", locals: { sports_class: sports_class } %>
 <!-- class modal -->
   <%= render partial: "shared/modal-class", locals: { sports_class: sports_class } %>
 </div>
