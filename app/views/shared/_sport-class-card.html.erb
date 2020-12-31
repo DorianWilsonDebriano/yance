@@ -57,14 +57,20 @@
         <% if current_user.subscription.present? %>
           <% if current_user.subscription.credits > 0 %>
             <% unless current_user.all_booked_classes.include?(sports_class) %>
-              <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, @classbooking), method: :post, class: "sweet-alert-booked-#{sports_class.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
+              <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sports_class.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
             <% end %>
           <% else %>
             <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
             <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
           <% end %>
         <% else %>
-          <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
+          <% if sports_class.password.present? %>
+            <button type="button" class="card-book-class-link btn class-card-book-button" data-toggle="modal" data-target="#password-modal-<%= sports_class.id %>">
+              BOOK
+            </button>
+          <% else %>
+            <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
+          <% end %>
         <% end %>
         <% else %>
           <%= link_to "BOOK", new_user_session_path, class: "card-book-class-link btn class-card-book-button" %>
@@ -75,6 +81,8 @@
       </button>
     </div>
   </div>
+<!-- password modal -->
+  <%= render partial: "shared/password-popup", locals: { sports_class: sports_class } %>
 <!-- class modal -->
   <%= render partial: "shared/modal-class", locals: { sports_class: sports_class } %>
 </div>
