@@ -101,7 +101,7 @@ class SportsClassesController < ApplicationController
   end
 
   def sports_class_params
-    params.require(:sports_class).permit(:title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :photo)
+    params.require(:sports_class).permit(:title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :password, :photo)
   end
 
   def handle_search
