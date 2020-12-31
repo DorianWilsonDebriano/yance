@@ -43,7 +43,7 @@ class ClassBookingsController < ApplicationController
   private
 
   def class_booking_params
-    params.require(:class_booking).permit(:password, user_attributes: [:id], sports_class_attributes: [:id])
+    params.require(:class_booking).permit(:password)
   end
 
   def check_password
