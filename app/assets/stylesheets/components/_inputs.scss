@@ -111,6 +111,13 @@
   border-color: #62DDF5;
 }
 
+.category-wrapper-difficulty {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 250px;
+}
+
 
 .difficulty {
   position: absolute;
@@ -118,14 +125,14 @@
 }
 
 .difficulty + label {
-  display: block;
+  // display: block;
   cursor: pointer;
-  box-sizing: border-box;
-  width: 100%;
-  font-size: 12px;
-  text-align: left;
-  background-color: white;
-  padding:10px;
+  // box-sizing: border-box;
+  // width: 100%;
+  // font-size: 12px;
+  text-align: center;
+  // background-color: white;
+  // padding:10px;
 }
 
 .difficulty:checked + label {
@@ -136,61 +143,59 @@
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f44b";
-  font-size: 25px;
-  border-color: $difficulty-level;
+  font-size: 18px;
+  color: $difficulty-level;
+  width: 100px;
 }
 
 #sports_class_difficulty_level_1 + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 21px;
+  font-size: 18px;
   content: "\f44b";
   position: absolute;
   background-color: white;
-  color: $difficulty-level;
+  color: #BFC5C9;
+  width: 100px;
 }
 #sports_class_difficulty_level_2:checked + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\f44b";
-  font-size: 25px;
-  border-color: $difficulty-level;
+  content: "\f44b   \f44b";
+  font-size: 18px;
+  color: $difficulty-level;
+  width: 80px;
 }
 
-.upload-photo {
-  border: 1px solid #d3d3d3;
-  padding: 16px 24px;
-  cursor: pointer;
-  font-weight: 500;
-  background: white;
-  border-radius: 2px;
-}
 
 #sports_class_difficulty_level_2 + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 21px;
-  content: "\f44b";
+  font-size: 18px;
+  content: "\f44b   \f44b";
   position: absolute;
   background-color: white;
-  color: $difficulty-level;
+  color: #BFC5C9;
+  width: 80px;
 }
 #sports_class_difficulty_level_3:checked + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\f44b";
-  font-size: 25px;
-  border-color: $difficulty-level;
+  content: "\f44b   \f44b   \f44b";
+  font-size: 18px;
+  color: $difficulty-level;
+  width: 100px;
 }
 
 #sports_class_difficulty_level_3 + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 21px;
-  content: "\f44b";
+  font-size: 18px;
+  content: "\f44b   \f44b   \f44b";
   position: absolute;
   background-color: white;
-  color: $difficulty-level;
+  color: #BFC5C9;
+  width: 100px;
 }
 
 .sweat {
@@ -199,70 +204,77 @@
 }
 
 .sweat + label {
-  display: block;
+  // display: block;
   cursor: pointer;
-  box-sizing: border-box;
-  width: 100%;
-  font-size: 12px;
-  text-align: left;
+  // box-sizing: border-box;
+  // width: 100%;
+  // font-size: 12px;
+  text-align: center;
   background-color: white;
-  padding:10px;
+  // padding:10px;
 }
 
 #sports_class_sweat_level_1:checked + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f043";
-  font-size: 25px;
-  border-color: $sweat-level;
+  font-size: 18px;
+  color: $sweat-level;
   position: absolute;
   background-color: white;
+  width: 100px;
 }
 
 #sports_class_sweat_level_1 + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 21px;
+  font-size: 18px;
   content: "\f043";
   position: absolute;
   background-color: white;
-  color: $sweat-level;
+  color: #BFC5C9;
+  width: 100px;
 }
 #sports_class_sweat_level_2:checked + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\f043";
-  font-size: 25px;
-  border-color: $sweat-level;
+  content: "\f043   \f043";
+  font-size: 18px;
+  color: $sweat-level;
   position: absolute;
   background-color: white;
+  width: 80px;
 }
 
 #sports_class_sweat_level_2 + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 21px;
-  content: "\f043";
+  font-size: 18px;
+  content: "\f043   \f043";
   position: absolute;
   background-color: white;
-  color: $sweat-level;
+  color: #BFC5C9;
+  width: 80px;
 }
 #sports_class_sweat_level_3:checked + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\f043";
-  font-size: 25px;
-  border-color: $sweat-level;
+  content: "\f043   \f043   \f043";
+  font-size: 18px;
+  color: $sweat-level;
+  background-color: white;
+  width: 80px;
 }
 
 #sports_class_sweat_level_3 + label::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 21px;
-  content: "\f043";
+  font-size: 18px;
+  content: "\f043   \f043   \f043";
   position: absolute;
   background-color: white;
-  color: $sweat-level;
+  color: #BFC5C9;
+  width: 80px;
 }
 
 .equipment-toggle {
@@ -313,4 +325,13 @@
 
 .equipment-toggle:checked + label::after {
   left: 18px;
+}
+
+.upload-photo {
+  border: 1px solid #d3d3d3;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  border-radius: 2px;
 }

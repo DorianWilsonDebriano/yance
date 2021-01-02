@@ -1,11 +1,18 @@
-<div class="page container">
-  <div class="row d-flex justify-content-center">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4 ">
+<div class="new-class-page">
+  <div class="row d-flex">
+    <div class="form-image-login col-lg-5">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609606910/OH5C6089_copy_tnifjq.jpg", class: "form-image-login" %>
+    </div>
+    <div class="col-xs-12 col-lg-7 ">
       <div class="form-login">
-        <h2>Log in</h2>
+        <div class="form-header">
+          <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609194683/Yance-logo-svg_qq3q16.svg", class: "form-logo-login" %>
+          <h2>Log in to yance</h2>
+          <p>Not a client yet? <%= link_to "sign up", new_user_registration_path, id: "" %> </p>
+        </div>
 
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs">
+        <div class="form-inputs">
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <%= f.input :email,
                         required: false,
                         autofocus: true,
@@ -14,13 +21,12 @@
                         required: false,
                         input_html: { autocomplete: "current-password" } %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Log in", class: "btn class-log-in-button" %>
-          </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Log in", class: "btn class-log-in-button" %>
+            </div>
           <% end %>
-          <%= render "devise/shared/links", class: "btn class-sign-up-buttonclass << self; self end" %>
+          </div>
         </div>
     </div>
   </div>
