@@ -72,9 +72,9 @@ class SportsClassesController < ApplicationController
   end
 
   def destroy
-    # authorize @sportsclass
     @sportsclass.destroy
     redirect_to profile_path, notice: "Your class has been deleted."
+    authorize @sportsclass
   end
 
   private
