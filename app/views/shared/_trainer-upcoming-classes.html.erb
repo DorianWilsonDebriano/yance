@@ -1,11 +1,14 @@
-<div class="sports-classes-card pt-3">
-  <p class="class-card-datetime"><%= sportsclass.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y at %H:%M") %></p>
+<div class="sports-classes-card">
   <div class="class-card-header d-flex justify-content-between">
-    <div class="card-header-left">
-      <p class="class-card-duration"><%= sportsclass.duration %> minutes</p>
+    <div class="time-label">
+      <p class="class-card-month"><%= sportsclass.date_time.in_time_zone("#{Time.now.zone}").strftime("%A") %></p>
+      <p class="class-card-day"><%= sportsclass.date_time.in_time_zone("#{Time.now.zone}").strftime("%b %d") %></p>
+      <p class="class-card-time"><%= sportsclass.date_time.in_time_zone("#{Time.now.zone}").strftime("%H:%M") %></p>
     </div>
     <div class="card-header-right">
       <p class="class-card-category"><%= sportsclass.category %></p>
+      <p class="class-card-duration"><%= sportsclass.duration %> minutes</p>
+      <p class="class-card-language">in <%= sportsclass.language %></p>
     </div>
   </div>
   <% if sportsclass.photo.attached? %>

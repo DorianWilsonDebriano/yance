@@ -31,12 +31,12 @@
                         autofocus: true,
                         input_html: { autocomplete: "email" }%>
             <div class="d-flex mb-2">
-            <%= image_tag "", class: 'hidden img-thumbnail rounded-circle mr-4', id: "photo-preview" %>
-            <%= f.input :photo,
-                        input_html: { class: 'hidden d-none', id: 'photo-input' },
-                        label_html: { class: 'upload-photo mt-3'},
-                        label: '📷 profile photo',
-                        hint: "leave it blank for no profile picture" %>
+              <%= image_tag "", class: 'hidden img-thumbnail rounded-circle mr-4', id: "photo-preview" %>
+              <%= f.input :photo,
+                          input_html: { class: 'hidden d-none', id: 'photo-input' },
+                          label_html: { class: 'upload-photo mt-3'},
+                          label: '📷 profile photo',
+                          hint: "leave it blank for no profile picture" %>
             </div>
             <%= f.input :password,
                         required: true,

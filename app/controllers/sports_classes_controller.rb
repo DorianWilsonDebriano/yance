@@ -148,7 +148,11 @@ class SportsClassesController < ApplicationController
 
   def handle_filter_cards
     if params[:category].present?
-      @sports_classes = SportsClass.where(category: params[:category]).order(date_time: :asc)
+      start_range = Time.zone.now.in_time_zone(Time.now.zone) - 30.minutes
+      end_range = Time.zone.now.in_time_zone(Time.now.zone).advance(days: 90)
+      @sports_classes = SportsClass
+        .where(category: params[:category], date_time: Range.new(start_range, end_range))
+        .order(date_time: :asc)
     end
   end
 end

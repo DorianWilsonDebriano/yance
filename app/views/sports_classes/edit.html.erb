@@ -1,6 +1,9 @@
-<div class="new-class-page">
+<div class="new-class-page mb-5">
   <div class="row d-flex">
-    <div class="col-xs-12 col-lg-6 ">
+    <div class="form-image col-xs-12 col-lg-12">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608741555/OH5C6497_mt2r3x.jpg", class: "form-image" %>
+    </div>
+    <div class="col-xs-12 col-lg-12 ">
       <div class="form-create-class">
         <h2>Information about your class</h2>
         <%= simple_form_for [@trainer, @sportsclass], html: { autocomplete: 'off' } do |f| %>
@@ -39,14 +42,18 @@
                       hint: "leave it blank if you don't want to change it",
                       required: false,
                       input_html: { class: "difficulty"},
-                      collection: [1, 2, 3],
-                      wrapper: :vertical_collection_inline %>
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper-difficulty',
+                      item_wrapper_class: 'category-item',
+                      collection: [1, 2, 3] %>
           <%= f.input :sweat_level, as: :radio_buttons,
                       hint: "leave it blank if you don't want to change it",
                       required: false,
                       input_html: { class: "sweat"},
-                      collection: [1, 2, 3],
-                      wrapper: :vertical_collection_inline %>
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper-difficulty',
+                      item_wrapper_class: 'category-item',
+                      collection: [1, 2, 3] %>
 <!--           </div> -->
           <%= f.input :language,
                       hint: "leave it blank if you don't want to change it",
@@ -61,9 +68,6 @@
           <%= f.button :submit, class: 'btn class-sign-up-button sweet-alert', id:"sweet-alert-class" %>
         <% end %>
       </div>
-    </div>
-    <div class="form-image col-lg-6">
-      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608741555/OH5C6497_mt2r3x.jpg", class: "form-image" %>
     </div>
   </div>
 </div>

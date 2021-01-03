@@ -3,15 +3,17 @@
 }
 
 .form-image {
+  height: 300px;
   width: 100%;
   object-fit: cover;
   object-position: center;
-  height: 1130px;
+  // height: 1145px;
+  padding: 0px;
 }
 
 @media(max-width: 992px) {
   .form-image {
-    display: none;
+    height: 200px;
   }
 }
 
@@ -47,29 +49,61 @@
   }
 }
 
-.form-create-class {
-  padding: 0px 32px;
+.form-image-edit-user {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 1180px;
+}
+
+@media(max-width: 992px) {
+  .form-image-edit-user {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.form-image-trainer {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  // height: 1145px;
+  padding: 0px;
+}
+
+@media(max-width: 992px) {
+  .form-image-trainer {
+    height: 200px;
+  }
+}
+
+.form-create-trainer {
+  margin: 0px 150px;
   margin-bottom: 0px;
   h2 {
-    margin-top: 10px;
-    font-size: 25px;
+    margin-top: 20px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
   }
+
   input{
     border-radius: 32px !important;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   textarea{
     border-radius: 32px !important;
-    font-size: 14px;
+    font-size: 12px;
   }
   a {
     text-decoration: none;
     text-align: center;
     color: black;
-    font-size: 14px;
+    font-size: 12px;
   }
   label {
     font-weight: bold;
@@ -78,6 +112,53 @@
   legend {
     font-weight: bold;
     font-size: 14px;
+  }
+}
+
+@media(max-width: 992px) {
+  .form-create-trainer {
+    margin: 20px;
+  }
+}
+
+.form-create-class {
+  margin: 0px 300px;
+  margin-bottom: 0px;
+  h2 {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  input{
+    border-radius: 32px !important;
+    font-size: 12px;
+  }
+
+  textarea{
+    border-radius: 32px !important;
+    font-size: 12px;
+  }
+  a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+  }
+  label {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  legend {
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+@media(max-width: 992px) {
+  .form-create-class {
+    margin: 20px;
   }
 }
 
@@ -138,7 +219,6 @@
 
 @media(max-width: 992px) {
   .form-login {
-    margin: 0;
     margin: 20px;
   }
 }

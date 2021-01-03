@@ -1,4 +1,4 @@
-<div class="page d-flex">
+<div class="page d-flex mb-5">
 <!-- sidebar filters -->
   <div class="sidebar">
     <div class="sidebar-position">
@@ -49,49 +49,49 @@
       </div>
     </div>
   </div>
-    <div class="page container d-flex justify-content-center flex-column">
-      <!-- search bar -->
-      <div class="search-container">
-       <div class="row justify-content-center">
-          <div class="col-sm-8 mt-3">
-            <%= form_tag sports_classes_path, method: :get do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control searchbar",
-                placeholder: "All sports"
+  <div class="page container d-flex justify-content-center flex-column">
+    <!-- search bar -->
+    <div class="search-container">
+      <div class="row justify-content-center">
+        <div class="col-sm-8 mt-3">
+          <%= form_tag sports_classes_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control searchbar",
+              placeholder: "All sports"
+            %>
+             <%= text_field_tag :starts_at,
+              params[:starts_at],
+              class: "datepicker",
+              placeholder: "Date"
               %>
-               <%= text_field_tag :starts_at,
-                params[:starts_at],
-                class: "datepicker",
-                placeholder: "Date"
-                %>
-              <div class="button">
-                <%= button_tag(type: "submit", class: "btn search-button") do %>
-                  <i class="fas fa-search search-icon"></i>
+            <div class="button">
+              <%= button_tag(type: "submit", class: "btn search-button") do %>
+                <i class="fas fa-search search-icon"></i>
               <% end %>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         </div>
-    </div>
-    <!-- user bookings -->
-    <% if user_signed_in? %>
-      <% if @classbookings.length > 0 %>
-          <h2 class="all-classes-title pt-5">Your upcoming classes</h2>
-          <div class="booked-sports-classes-cards pt-3 ">
-              <%= render collection: @classbookings, partial: "shared/booked-sport-class-card", as: :classbooking %>
-          </div>
+      </div>
+  <!-- user bookings -->
+      <% if user_signed_in? %>
+        <% if @classbookings.length > 0 %>
+            <h2 class="all-classes-title pt-5">Your upcoming classes</h2>
+            <div class="booked-sports-classes-cards pt-3 ">
+                <%= render collection: @classbookings, partial: "shared/booked-sport-class-card", as: :classbooking %>
+            </div>
+        <% end %>
       <% end %>
-    <% end %>
   <!-- favorite classes -->
-    <div class="filter-cards">
-      <h2 class="all-classes-title">Most popular classes</h2>
-      <%= render "shared/filter-cards" %>
-    </div>
+      <div class="filter-cards">
+        <h2 class="all-classes-title">Most popular classes</h2>
+        <%= render "shared/filter-cards" %>
+      </div>
 
   <!-- all classes -->
-    <h2 class="all-classes-title mt-5">All classes</h2>
-    <div class="sports-classes-cards pt-3">
-      <%= render collection: @sports_classes, partial: "shared/sport-class-card", as: :sports_class %>
+      <h2 class="all-classes-title mt-5">All classes</h2>
+      <div class="sports-classes-cards pt-3">
+        <%= render collection: @sports_classes, partial: "shared/sport-class-card", as: :sports_class %>
+      </div>
     </div>
-</div>
-</div>
+  </div>
