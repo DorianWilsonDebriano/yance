@@ -78,11 +78,11 @@
       <% if @classbookings.length > 0 %>
           <h2 class="all-classes-title pt-5">Your upcoming classes</h2>
           <div class="booked-sports-classes-cards pt-3 ">
-                <%= render collection: @classbookings, partial: "shared/booked-sport-class-card", as: :classbooking %>
+              <%= render collection: @classbookings, partial: "shared/booked-sport-class-card", as: :classbooking %>
           </div>
       <% end %>
     <% end %>
-  <!-- favorite cllasses -->
+  <!-- favorite classes -->
     <div class="filter-cards">
       <h2 class="all-classes-title">Most popular classes</h2>
       <%= render "shared/filter-cards" %>

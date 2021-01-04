@@ -20,6 +20,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 
+#for deep clones (duplicates)
+gem 'deep_cloneable', '~> 3.0.0'
+
 gem 'redis-rails'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -46,6 +49,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 
 gem 'postmark-rails'
+
+gem 'activeadmin'
 
 group :development, :test do
   gem 'pry-byebug'

@@ -5,7 +5,7 @@
         <div class="class-modal-left-column col-5 pt-4 pl-5">
           <div class="class-modal-header">
             <h5 class="modal-title" id="exampleModalLabel"> <strong> <%= sports_class.title %> </strong></h5>
-            <p class="class-modal-date"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
+            <p class="class-modal-date"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y at %H:%M") %></p>
             <p class="class-modal-category"><%= sports_class.category %></p>
           </div>
           <% if sports_class.photo.attached? %>
@@ -38,24 +38,6 @@
               </p>
             </div>
           </div>
-          <!-- <div class="class-modal-equipment">
-            <p class="class-modal-equipment-title">Equipment needed?</p>
-            <% if sports_class.equipment == false %>
-              <p class="class-modal-equipment-content">none</p>
-            <% else %>
-              <p class="class-modal-equipment-content">yes, see class description</p>
-            <% end %>
-          </div> -->
-          <% if policy(sports_class).edit? %>
-            <%= link_to edit_sports_class_path(sports_class) do  %>
-              <i class="fas fa-pen-square"></i>
-            <% end %>
-          <% end %>
-          <% if policy(sports_class).destroy? %>
-            <%= link_to sports_class_path(sports_class), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          <% end %>
         </div>
         <div class="class-modal-right-column col-7 pt-4 pr-5">
           <div class="class-modal-right-header d-flex justify-content-between">
@@ -85,14 +67,12 @@
                 <% if current_user.subscription.present? %>
                   <% if current_user.subscription.credits > 0 %>
                     <% unless current_user.all_booked_classes.include?(sports_class) %>
-                      <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, @classbooking), method: :post, class: "sweet-alert-booked-#{sports_class.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
+                      <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sports_class.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
                     <% end %>
                   <% else %>
                     <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
-                    <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "book-class-link btn class-modal-book-button" %>
+                    <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
                   <% end %>
-                <% else %>
-                  <%= link_to "BOOK", memberships_path, class: "book-class-link btn class-modal-book-button" %>
                 <% end %>
               <% end %>
             </div>

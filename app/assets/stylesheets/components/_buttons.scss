@@ -45,7 +45,7 @@
 .booked-class-info-buttons {
   align-items: center;
   text-align: center;
-  padding-top: 12px;
+  padding-top: 24px;
   background-color: rgba(200, 200, 200, 0.1);
   width: 100px;
 }
@@ -107,6 +107,10 @@
   color: $yance-yellow;
 }
 
+.created-class-join-video{
+  font-size: 38px;
+}
+
 .fa-window-close {
   font-size: 29px;
   color: black;
@@ -119,11 +123,11 @@
 }
 
 .created-class-info-buttons {
-  align-items: center;
   text-align: center;
-  padding-top: 4px;
   background-color: rgba(200, 200, 200, 0.1);
   width: 100px;
+  display: flex;
+  justify-content: center;
 }
 
 // .go-to-created-class-button {
