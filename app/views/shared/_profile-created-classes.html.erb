@@ -1,29 +1,19 @@
-<% @user_sports_classes.each do |sports_class| %>
+<% if user_sports_classes.date_time > (Time.now - 1.hour) %>
   <div class="booked-sports-classes-card d-flex">
-      <% if sports_class.photo.attached? %>
+      <% if user_sports_classes.photo.attached? %>
         <div>
-          <%= cl_image_tag sports_class.photo.key, class: "booked-class-card-image" %>
+          <%= cl_image_tag user_sports_classes.photo.key, class: "booked-class-card-image" %>
         </div>
       <% end %>
       <div class="booked-class-card-header">
-        <p class="booked-class-card-datetime"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
-        <p class="booked-class-card-title"><%= sports_class.title %></p>
-        <p class="booked-class-card-duration"><%= sports_class.duration %></p>
-        <p class="booked-class-card-category"><strong><%= sports_class.category %></strong></p>
+        <p class="booked-class-card-datetime"><%= user_sports_classes.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y at %H:%M") %></p>
+        <p class="booked-class-card-title"><%= user_sports_classes.title %></p>
+        <p class="booked-class-card-duration"><%= user_sports_classes.duration %> minutes</p>
+        <p class="booked-class-card-category"><strong><%= user_sports_classes.category %></strong></p>
       </div>
-      <div class="created-class-info-buttons">
-        <button class="btn go-to-class-icon"><%= link_to sports_class_path(sports_class), method: "GET" do %>
-            <i class="fas fa-video"></i>
-          <% end %>
-        </button>
-        <div class="profile-edit-class-button">
-          <%= link_to edit_sports_class_path(sports_class), class: "profile-edit-class-button" do %>
-            <i class="fas fa-pen-square" id=""></i>
-          <% end %>
-        </div>
-        <button class="btn profile-cancel-booking-icon"> <%= link_to sports_class_path(sports_class), method: :delete, data: {confirm: "Are you sure?"}, class: "profile-cancel-button", id:"sweet-alert-delete" do %>
-            <i class="fas fa-window-close"></i>
-            <p id="cancel-class">cancel</p>
+      <div class="created-class-info-buttons" id="created-class-profile">
+        <button class="btn go-to-class-icon"><%= link_to sports_class_path(user_sports_classes), method: "GET" do %>
+            <i class="fas fa-video created-class-join-video" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Join the live stream"></i>
           <% end %>
         </button>
       </div>

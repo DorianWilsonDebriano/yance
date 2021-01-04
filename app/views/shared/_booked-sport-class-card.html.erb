@@ -1,24 +1,25 @@
-<div class="booked-sports-classes-card d-flex">
-  <% if classbooking.sports_class.photo.attached? %>
-    <div>
-      <%= cl_image_tag classbooking.sports_class.photo.key, class: "booked-class-card-image" %>
+<% if classbooking.sports_class.date_time > (Time.now - 1.hour) %>
+  <div class="booked-sports-classes-card d-flex">
+    <% if classbooking.sports_class.photo.attached? %>
+      <div>
+        <%= cl_image_tag classbooking.sports_class.photo.key, class: "booked-class-card-image" %>
+      </div>
+    <% end %>
+      <div class="booked-class-card-header">
+      <p class="booked-class-card-datetime"><%= classbooking.sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y at %H:%M") %></p>
+      <p class="booked-class-card-title"><%= classbooking.sports_class.title %></p>
+      <p class="booked-class-card-duration"><%= classbooking.sports_class.duration %> minutes</p>
+      <p class="booked-class-card-category"><strong><%= classbooking.sports_class.category %></strong> with <strong><%= classbooking.sports_class.user.first_name %> <%= classbooking.sports_class.user.last_name %></strong> </p>
     </div>
-  <% end %>
-  <div class="booked-class-card-header">
-    <p class="booked-class-card-datetime"><%= classbooking.sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
-    <p class="booked-class-card-title"><%= classbooking.sports_class.title %></p>
-    <p class="booked-class-card-duration"><%= classbooking.sports_class.duration %></p>
-    <p class="booked-class-card-category"><strong><%= classbooking.sports_class.category %></strong> with <strong><%= classbooking.sports_class.user.first_name %> <%= classbooking.sports_class.user.last_name %></strong> </p>
+    <div class="booked-class-info-buttons">
+      <button class="btn go-to-class-icon"><%= link_to sports_class_path(classbooking.sports_class), method: "GET" do %>
+          <i class="fas fa-video" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Join the live stream"></i>
+        <% end %>
+      </button>
+        <%= link_to class_booking_path(classbooking), method: :delete, data: {confirm: "Are you sure?"}, class: "btn profile-cancel-booking-icon", id:"sweet-alert-delete" do %>
+          <i class="fas fa-window-close"></i>
+          <p id="cancel-class">cancel</p>
+        <% end %>
+   </div>
   </div>
-  <div class="booked-class-info-buttons">
-    <button class="btn go-to-class-icon"><%= link_to sports_class_path(classbooking.sports_class), method: "GET" do %>
-        <i class="fas fa-video"></i>
-      <% end %>
-    </button>
-      <%= link_to class_booking_path(classbooking), method: :delete, data: {confirm: "Are you sure?"}, class: "btn profile-cancel-booking-icon", id:"sweet-alert-delete" do %>
-        <i class="fas fa-window-close"></i>
-        <p id="cancel-class">cancel</p>
-      <% end %>
- </div>
-</div>
-
+<% end %>

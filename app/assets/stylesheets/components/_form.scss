@@ -1,3 +1,54 @@
+.new-class-page {
+  padding-top: 55px;
+}
+
+.form-image {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+}
+
+@media(max-width: 992px) {
+  .form-image {
+    display: none;
+  }
+}
+
+.form-create-class {
+  padding: 0px 32px;
+  margin-bottom: 0px;
+  h2 {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+  }
+  input{
+    border-radius: 32px !important;
+    font-size: 14px;
+  }
+
+  textarea{
+    border-radius: 32px !important;
+    font-size: 14px;
+  }
+  a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+  }
+  label {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  legend {
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
 .form-login {
   background: white;
   padding: 10px 20px;
@@ -50,5 +101,6 @@
 }
 
  .swal button:hover {
-background-color: #7ecff4; }
+background-color: #7ecff4;
+}
 

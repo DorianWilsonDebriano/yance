@@ -1,3 +1,6 @@
+.home-page {
+  padding-top: 48px;
+}
 .home-page-logo {
   width: 300px;
   position: relative;
@@ -15,17 +18,24 @@
   bottom: 9px;
 }
 
+.navigation {
+  height: 300px;
+}
+
+@media(max-width: 768px) {
+  .navigation {
+    margin: 24px 16px 16px 16px;
+  }
+}
+
 #home-title {
-    display: flex;
-    justify-content: center;
     font-size: 24px;
     font-weight: bolder;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
+    color: $dark-text;
   }
 
   #browse-text{
-    color: white;
+    color: $dark-text;
   }
 
 .browse-button {
@@ -42,42 +52,125 @@
 }
 
 .banner-section {
-  height: 100vh;
-  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606478868/yance-background-image_tetvbe.png");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-.banner-content {
-  padding-top: 25vh;
-  display: flex;
-  justify-content: center;
+.banner-image {
+  // border-radius: 200px 70px 200px 460px;
+  animation: morph 8s ease-in-out infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  transition: all 1s ease-in-out;
+  width: 100%;
 }
 
-.learn-more {
-  text-align: center;
-  position: relative;
-  top: 140px;
-    p {
-    color: white;
+@keyframes morph {
+  0% {
+      border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
   }
-  a {
-    text-decoration: none;
-    color: white;
+  50% {
+      border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+@media(max-width: 950px) {
+  .banner-image {
+    width: 95%;
   }
 }
 
 @media(max-width: 768px) {
-  .learn-more {
-    display: none;
+  .banner-image {
+    margin-top: 36px;
+    padding-bottom: 26px;
+    width: 95%;
   }
 }
 
-#banner-caret {
-  color: white;
-  font-size: 32px;
+.banner-content {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608752031/background-shape_aucxuq.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fill;
 }
 
+.sport-category-section {
+  margin-top: 54px;
+  h2 {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 24px;
+  color: $dark-text;
+  }
+  p {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 24px;
+  }
+}
+
+.sport-category-grid {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 46px;
+}
+
+@media(max-width: 950px) {
+  .sport-category-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sport-category-block {
+  height: 300px;
+}
+
+.sport-category-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+
+.explore-category {
+  font-weight: bolder;
+  font-size: 24px;
+  color: $dark-text;
+   &:hover {
+    color: $yance-yellow;
+    transition: 0.2s;
+   }
+   p {
+    font-size: 24px;
+   }
+}
+
+.explore-center {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 42px;
+}
+
+#explore-center {
+  margin: 0px;
+  left: 0%;
+}
+
+#go-button {
+  height: 36px;
+  width: 36px;
+  object-fit: cover;
+  object-position: center;
+}
 
 .punchliner-search {
   margin-top: 90px;
@@ -88,18 +181,43 @@
   width: 650px;
 }
 
-.home-info-section {
-  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606480943/background-blocks_kio8x2.png");
-  height: 700px;
-  justify-content: space-between;
-  margin-top: 50px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.classes-focus-section {
+  display: flex;
+  align-items: center;
 }
 
+.home-info-section {
+  height: 485px;
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media(max-width: 950px) {
+  .home-info-section {
+    height: 400px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media(max-width: 768px) {
+  .home-info-section {
+    height: 310px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+.check-it-out {
+  font-weight: bolder;
+  color: $dark-text;
+}
 
 .punchliner-left {
+  height: 290px;
+  position: relative;
+  text-align: end;
   h2 {
     font-weight: bolder;
     font-size: 24px;
@@ -110,46 +228,35 @@
   }
 }
 
+@media(max-width: 768px) {
+  .punchliner-left {
+    margin: 16px;
+  }
+}
+
 .punchliner-right {
+  position: relative;
+  height: 200px;
   h2 {
     font-weight: bolder;
     font-size: 24px;
     color: $dark-text;
-    text-align: end;
-    padding-right: 10px;
+  }
+  p {
+    font-size: 16px;
   }
 }
 
-.promo-banner {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606389292/h5txfhai6twx8hqc5dwiskfnxgvs.jpg");
-  height: 145px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  h2 {
-    font-weight: bolder;
-    font-size: 32px;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
-    color: white;
-    text-decoration: none;
-    &:hover {
-      color: white;
-      text-decoration: none;
-    }
+@media(max-width: 768px) {
+  .punchliner-right {
+    margin: 16px;
   }
 }
 
-.promo-banner-text {
-  color: white;
-  text-decoration: none;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+#membership-pricing-image {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .how-it-works-section {
@@ -170,28 +277,6 @@
   height: 200px;
   margin: 30px 0px 30px 0px;
 
-}
-
-.newsletter-circle {
-  position: absolute;
-  right: 50px;
-  bottom: 20px;
-  width: 250px;
-  // background-color: rgba(255, 255, 255, 0.4);
-  background-color: rgba(254, 205, 66, 0.8);
-  border-radius: 4px;
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 12px;
-}
-
-@media(max-width: 768px) {
-  .newsletter-circle {
-    display: none;
-  }
 }
 
 @media(max-width: 768px) {

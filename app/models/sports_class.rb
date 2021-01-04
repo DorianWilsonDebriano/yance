@@ -1,5 +1,6 @@
 class SportsClass < ApplicationRecord
   CATEGORIES = ["yoga", "pilates", "cardio", "strength", "stretching", "barre", "meditation", "dance", "full body", "back", "legs", "arms", "abs", "HIIT", "crossfit", "body building", "aerobics", "martial arts"]
+  LANGUAGES = ["English", "German"]
   belongs_to :trainer
   has_one(:user, through: :trainer)
   has_one_attached :photo

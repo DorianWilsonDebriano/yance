@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_094048) do
+ActiveRecord::Schema.define(version: 2020_12_30_173421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.string "author_type"
+    t.bigint "author_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_094048) do
     t.bigint "sports_class_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password"
     t.index ["sports_class_id"], name: "index_class_bookings_on_sports_class_id"
     t.index ["user_id"], name: "index_class_bookings_on_user_id"
   end
@@ -70,7 +85,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_094048) do
     t.string "title"
     t.text "description"
     t.datetime "date_time"
-    t.string "duration"
+    t.integer "duration"
     t.string "category"
     t.integer "difficulty_level"
     t.integer "sweat_level"
@@ -81,6 +96,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_094048) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "room"
+    t.string "password"
     t.index ["trainer_id"], name: "index_sports_classes_on_trainer_id"
   end
 
@@ -121,6 +137,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_094048) do
     t.string "last_name"
     t.text "bio"
     t.string "language"
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
