@@ -29,6 +29,7 @@ import "../plugins/flatpickr";
 
 import { previewImageOnFileSelect } from "../components/photo_preview";
 import { initStarRating } from "../plugins/init_star_rating";
+import { init_popover } from "../components/popover";
 // for confirmations
 // import { initSweetalert } from "../plugins/init_sweetalert";
 // for cancellations
@@ -39,11 +40,13 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   initStarRating();
   previewImageOnFileSelect();
+  init_popover();
 
   flatpickr(".datepicker", {
   altInput: true,
-  altFormat: "d M Y",
+  altFormat: "d M",
   dateFormat: "Z",
+  minDate: "today",
   mode: "range"
   });
 

@@ -1,72 +1,72 @@
-.trainer-stats-section {
-  margin-top: 20px;
+.edit-profile {
+  color: #118AB1;
+  font-weight: bolder;
+  opacity: 0.8;
+    &:hover {
+      color: #118AB1;
+      font-weight: bolder;
+      opacity: 1;
+    }
+}
+
+.user-name {
+  padding-left: 24px;
+  margin-top: 12px;
     h2 {
-    font-size: 18px;
+    font-size: 24px;
+    font-weight: bolder;
+  }
+}
+
+.profile-header {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bolder;
+  color: #354147;
+  padding-top: 12px;
+  padding-bottom: 26px;
+}
+
+.user-info {
+  margin-top: 12px;
+  justify-content: space-around;
+}
+
+.my-account {
+  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  border-radius: 4px;
+  width: 50%;
+  margin-right: 20px;
+  padding: 12px;
+  position: relative;
+   li{
+    text-decoration: none;
+    list-style: none;
+    font-size: 12px;
+   }
+   p {
     font-weight: bolder;
     color: $dark-text;
-    padding-top: 12px;
-    padding-bottom: 12px;
   }
 }
 
-.stat-highlights{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 40px;
-}
-
-.stat-highlight-box {
+.about-me {
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   border-radius: 4px;
-  text-align: center;
+  width: 50%;
   padding: 12px;
-  border-radius: 8px;
-  p {
-    font-size: 12px;
-  }
-}
-
-#stat-hightlight-title {
-  font-weight: bolder;
+  position: relative;
+   li{
+  text-decoration: none;
+  list-style: none;
   font-size: 12px;
-  color: $dark-text;
-}
-
-#stat-hightlight-number {
-  font-weight: bolder;
-  font-size: 24px;
-  color: #FEDF44;
-}
-
-.class-stats {
-  margin-top: 20px;
-  border-radius: 4px;
-  min-height: 50vh;
-  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
-  padding: 12px;
-}
-
-.class-stats-labels {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
-  font-weight: bolder;
-  gap: 12px;
-  margin-left: 16px;
-  padding-bottom: 12px;
-}
-
-.class-stat-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
-  gap: 12px;
-  margin-left: 16px;
-}
-
-#stat-date {
-  font-weight: bolder;
-  color: #929292;
-}
-
-#stat-coming {
-  color: #19E2A8;
+ }
+  p {
+    font-weight: bolder;
+    color: $dark-text;
+  }
 }

@@ -5,7 +5,7 @@
         <div class="class-modal-left-column col-5 pt-4 pl-5">
           <div class="class-modal-header">
             <h5 class="modal-title" id="exampleModalLabel"> <strong> <%= sportsclass.title %> </strong></h5>
-            <p class="class-modal-date"><%= sportsclass.date_time.strftime("%A %b %d %Y %H:%M") %></p>
+            <p class="class-modal-date"><%= sportsclass.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y at %H:%M") %></p>
             <p class="class-modal-category"><%= sportsclass.category %></p>
           </div>
           <% if sportsclass.photo.attached? %>
@@ -72,14 +72,12 @@
               <% if current_user.subscription.present? %>
                 <% if current_user.subscription.credits > 0 %>
                   <% unless current_user.all_booked_classes.include?(sportsclass) %>
-                    <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "sweet-alert-booked-#{sportsclass.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
+                    <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sportsclass.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
                   <% end %>
                 <% else %>
                   <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
                   <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "book-class-link btn class-modal-book-button" %>
                 <% end %>
-              <% else %>
-                <%= link_to "BOOK", memberships_path, class: "book-class-link btn class-modal-book-button" %>
               <% end %>
             </div>
           </div>
