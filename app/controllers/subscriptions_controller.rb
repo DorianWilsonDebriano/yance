@@ -21,8 +21,7 @@ class SubscriptionsController < ApplicationController
       session[:token] = @user.session_token
       render :checkout
     else
-      flash.now[:error] = @user.errors.full_messages
-      redirect_to memberships_path
+      redirect_to memberships_path, notice: "You are alredy subscribed to this membership"
     end
   end
 
