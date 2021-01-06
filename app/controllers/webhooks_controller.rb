@@ -1,6 +1,8 @@
 class WebhooksController < ApplicationController
 
   skip_before_action :verify_authenticity_token
+  before_action :skip_authorization
+
   def create
     payload = request.body.read
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
@@ -25,13 +27,12 @@ class WebhooksController < ApplicationController
     when 'checkout.session.completed'
       session = event.data.object
       @user = User.find_by(stripe_customer_id: session.customer)
-      @user.update(subscription_status: 'active')
+      @user.subscription.update(subscription_status: 'active')
     when 'customer.subscription.updated', 'customer.subscription.deleted'
       subscription = event.data.object
       @user = User.find_by(stripe_customer_id: subscription.customer)
-      @user.update(
-        subscription_status: user.subscription.subscription_status,
-        membership: subscription.items.data[0].price.lookup_key,
+      @user.subscription.update(
+        subscription_status: subscription.status
       )
     end
 

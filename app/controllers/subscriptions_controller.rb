@@ -62,5 +62,8 @@ class SubscriptionsController < ApplicationController
       }],
       mode: 'subscription',
     })
+    # session = event.data.object
+    # @subscription = Subscription.find_by(user_id: current_user.id)
+    # @subscription.update!(stripe_id: session.checkout.session.subscription)
   end
 end
