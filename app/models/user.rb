@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :trainers, dependent: :destroy
@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   private
 
-  def send_welcome_email
+  def after_confirmation
     UserMailer.with(user: self).welcome_user.deliver_now
   end
 end
