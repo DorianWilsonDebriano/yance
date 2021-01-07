@@ -20,7 +20,8 @@ class SubscriptionsController < ApplicationController
       @session = create_checkout_session(customer, @user)
       session[:token] = @user.session_token
       render :checkout
-    else
+    elsif
+      @membership == current_user.membership
       redirect_to memberships_path, notice: "You are alredy subscribed to this membership"
     end
   end
@@ -40,7 +41,7 @@ class SubscriptionsController < ApplicationController
     customer = Stripe::Customer.create(
       email: current_user.email,
       metadata: {
-        selected_membership: @membership.title
+        selected_membership: current_user.membership
       }
     )
     user.update!(stripe_customer_id: customer.id)
@@ -48,7 +49,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def create_checkout_session(customer, user)
-    price = Stripe::Price.list(lookup_keys: [user.membership.title]).data.first
+    price = Stripe::Price.list(lookup_keys: [current_user.membership.title]).data.first
 
     Stripe::Checkout::Session.create({
       customer: current_user.stripe_customer_id,
@@ -56,7 +57,7 @@ class SubscriptionsController < ApplicationController
       cancel_url: 'http://localhost:3000/memberships',
       payment_method_types: ['card'],
       line_items: [{
-        price: 'price_1HyeqcH6qDbw82kK298cKplg',
+        price: price.id,
         quantity: 1,
       }],
       mode: 'subscription',
