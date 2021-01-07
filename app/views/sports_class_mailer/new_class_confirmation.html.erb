@@ -51,11 +51,7 @@
                 <tr>
                   <td class="td" style="width:650px; min-width:650px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                      <tr>
-                        <td class="fluid-img" style="border-bottom: 7px solid #FEDF44; font-size:0pt; line-height:0pt; text-align:left;">
-                          <%= cl_image_tag @sportsclass.photo.key, width: "650", height: "366", border: "0" %>
-                        </td>
-                      </tr>
+
                       <tr>
                         <td class="bbrr" bgcolor="#ffffff" style="border-radius:0px 0px 12px 12px;">
                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -65,9 +61,56 @@
                                   <tr>
                                     <td class="h3 center pb25" style="color:#000000; font-family:'Montserrat', Arial ,sans-serif; font-size:24px; line-height:32px; font-weight:bold; text-align:center; padding-bottom:25px;">Well done <%= @trainer.user.first_name %>, your class was successfully created!</td>
                                   </tr>
-                                  <tr>
-                                    <td class="text-center pb25" style="color:#777777; font-family:'Montserrat', Arial,sans-serif; font-size:17px; line-height:30px; text-align:center; padding-bottom:25px;">You have successfully added your class to yance!<br>Thanks for joining and have a great day!</td>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <th class="column" width="145" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td class="fluid-img" style="border-bottom: 7px solid #FEDF44; font-size:0pt; line-height:0pt; text-align:left;">
+
+                                    <%= cl_image_tag @sportsclass.photo.key, width: "200" %>
+
+                                  </td>
+                                </tr>
+                              </table>
+                            </th>
+                            <th class="column-empty2" width="20" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;"></th>
+                            <th class="column" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td class="text-header" style="color:#999999; font-family:'Montserrat', Arial ,sans-serif; font-size:14px; line-height:18px; text-align:left;">
+                                    <p><strong><%= @sportsclass.date_time.strftime("%A %b %d %Y %H:%M") %></strong></p>
                                     <br>
+                                    <p><%= @sportsclass.title %></p>
+                                    <br>
+                                    <p><%= @sportsclass.duration %></p>
+                                    <br>
+                                    <p><strong><%= @sportsclass.category %></strong></p>
+                                  </span></td>
+                                </tr>
+                              </table>
+                            </th>
+                          </tr>
+                        </table>
+                      </tr>
+
+                      <tr>
+                        <td class="bbrr" bgcolor="#ffffff" style="border-radius:0px 0px 12px 12px;">
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td class="p30-15" style="padding: 50px 30px 60px 30px;">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td class="text-center pb25" style="color:#777777; font-family:'Montserrat', Arial,sans-serif; font-size:17px; line-height:30px; text-align:center; padding-bottom:25px;">You have successfully added your class to yance!
+                                      <br>
+                                      Thanks for joining and have a great day!</td>
                                   </tr>
                                 </table>
                               </td>
@@ -84,6 +127,7 @@
           </tr>
         </table>
         <!-- END Intro -->
+
 
         <!-- Footer -->
         <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#F7F7F7">
