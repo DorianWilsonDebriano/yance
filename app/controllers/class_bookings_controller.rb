@@ -13,7 +13,7 @@ class ClassBookingsController < ApplicationController
     @classbooking.user = current_user
     @classbooking.sports_class = @sports_class
     @subscription = current_user.subscription
-    @membership = current_user.subscription.membership if current_user.subscription != nil
+    @membership = current_user.subscription.membership if current_user.subscription.subscription_status == "active"
     if @classbooking.save
       redirect_to sports_classes_path, notice: "Your class is successfully booked!"
     else
