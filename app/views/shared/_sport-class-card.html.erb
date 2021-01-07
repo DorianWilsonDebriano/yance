@@ -8,9 +8,15 @@
     </div>
     <div class="card-header-right">
       <p class="class-card-category"><%= sports_class.category %></p>
-      <p class="class-card-duration"><%= sports_class.duration %> minutes</p>
-      <p class="class-card-language">in <%= sports_class.language %></p>
+      <p class="class-card-language"><%= sports_class.language %></p>
+      <p class="class-card-duration"><i class="far fa-clock pr-1"></i>   <%= sports_class.duration %> minutes</p>
     </div>
+<!--     <div class="card-header-right">
+      <div class="class-card-detail-icon">
+        <p class="class-card-duration"><%= sports_class.duration %></p>
+        <p class="class-card-duration-min">min</p>
+      </div>
+    </div> -->
   </div>
   <% if sports_class.photo.attached? %>
     <div>

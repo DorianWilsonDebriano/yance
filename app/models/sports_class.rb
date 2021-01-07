@@ -1,7 +1,7 @@
 class SportsClass < ApplicationRecord
   after_create :send_new_class_confirmation_email
-  CATEGORIES = ["yoga", "pilates", "cardio", "strength", "stretching", "barre", "meditation", "dance", "full body", "back", "legs", "arms", "abs", "HIIT", "crossfit", "body building", "aerobics", "martial arts"]
-  LANGUAGES = ["English", "German"]
+  CATEGORIES = ["Yoga", "Pilates", "Cardio", "Strength", "Stretching", "Barre", "Meditation", "Dance", "Full body", "Back", "Legs", "Arms", "Abs", "HIIT", "Crossfit", "Body Building", "Aerobics", "Martial Arts"]
+  LANGUAGES = ["English", "Deutsch", "Français", "Español"]
   belongs_to :trainer
   has_one(:user, through: :trainer)
   has_one_attached :photo
