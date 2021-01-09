@@ -53,3 +53,26 @@
     background-color: #400090;
  }
 }
+
+#sports_class_difficulty_level {
+  [value~="1"] {
+    color: red !important;
+    // font-family: "Font Awesome 5 Free";
+    // font-size: 12px;
+    // content: "\f44b";
+  }
+
+  option[value~="2"] {
+    appearance: none;
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    content: "\f44b    \f44b";
+  }
+
+  option[value~="3"] {
+    appearance: none;
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    content: "\f44b    \f44b   \f44b";
+  }
+}

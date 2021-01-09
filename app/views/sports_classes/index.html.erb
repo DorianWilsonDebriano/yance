@@ -11,7 +11,7 @@
       </div>
       <div class="dropdown-filter">
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-          <%= s.select(:difficulty_level, SportsClass.difficulty_level,  {prompt: 'Difficulty Level', selected:  params.dig(:sports_class, :difficulty_level) }, { onchange: "this.form.submit()" })  %>
+          <%= s.select(:difficulty_level, SportsClass.difficulty_level, {prompt: 'Difficulty Level', selected:  params.dig(:sports_class, :difficulty_level) }, { onchange: "this.form.submit()" })  %>
           <% if  params[:sports_class].present? %>
             <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
           <% end %>
