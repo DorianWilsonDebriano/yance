@@ -37,6 +37,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 gem 'activeadmin'
+gem 'sucker_punch'
 gem 'bootstrap', '~> 4.5', '>= 4.5.3'
 
 #setting up dotenv

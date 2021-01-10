@@ -28,6 +28,8 @@ module Yance
 
     config.hosts << "8a1e5899b647.ngrok.io"
 
+    config.active_job.queue_adapter = :sucker_punch
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
