@@ -1,9 +1,9 @@
 <div class="new-class-page">
   <div class="row d-flex">
-    <div class="form-image col-xs-12 col-lg-12">
+    <div class="form-image col-xs-12 col-lg-5">
       <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609606411/OH5C5721_qoqpqw.jpg", class: "form-image" %>
     </div>
-    <div class="col-xs-12 col-lg-12 ">
+    <div class="col-xs-12 col-lg-7 ">
       <div class="form-create-class">
         <h2>Create a new class</h2>
         <%= simple_form_for [@trainer, @sportsclass], html: { autocomplete: 'off' } do |f| %>
@@ -34,10 +34,14 @@
                       collection: [1, 2, 3] %>
           <%= f.input :password, as: :string, label: "Set a password (optional)", placeholder: "Share this password to allow free access to your class" %>
           <%= f.input :language, collection: SportsClass::LANGUAGES, prompt: :translate %>
-          <%= image_tag "", width: 300, class: 'hidden', id: "photo-preview" %>
-          <%= f.input :photo, input_html: { class: 'hidden d-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
-
-          <%= f.button :submit, class: 'btn class-sign-up-button' %>
+          <div class="d-flex mb-2">
+            <%= image_tag "", class: 'hidden img-thumbnail mr-4', id: "photo-preview" %>
+            <%= f.input :photo,
+                        input_html: { class: 'hidden d-none', id: 'photo-input' },
+                        label_html: { class: 'upload-photo mt-3'},
+                        label: '📷 Upload a photo' %>
+          </div>
+          <%= f.button :submit, class: 'btn class-log-in-button' %>
         <% end %>
       </div>
     </div>

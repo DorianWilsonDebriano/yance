@@ -3,16 +3,31 @@
 }
 
 .form-image {
-  height: 300px;
+  // height: 300px;
   width: 100%;
   object-fit: cover;
   object-position: center;
-  // height: 1145px;
+  height: 1150px;
   padding: 0px;
 }
 
 @media(max-width: 992px) {
   .form-image {
+    height: 200px;
+  }
+}
+
+.form-image-edit {
+  // height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 1350px;
+  padding: 0px;
+}
+
+@media(max-width: 992px) {
+  .form-image-edit {
     height: 200px;
   }
 }
@@ -122,7 +137,7 @@
 }
 
 .form-create-class {
-  margin: 0px 300px;
+  margin: 0px 150px;
   margin-bottom: 0px;
   h2 {
     margin-top: 20px;
@@ -244,7 +259,7 @@
   object-position: center;
   object-fit: cover;
   max-height: 100px;
-  min-width: 100px;
+  width: 100px;
 }
 
 .user_remember_me {

@@ -58,6 +58,6 @@ class SportsClass < ApplicationRecord
   private
 
   def send_new_class_confirmation_email
-    # SportsClassMailer.with(sports_class: self, trainer: trainer).new_class_confirmation.deliver_later(wait: 15.seconds)
+    SportsClassMailer.with(sports_class: self, trainer: trainer).new_class_confirmation.deliver_later(wait: 15.seconds)
   end
 end
