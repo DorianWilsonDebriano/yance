@@ -13,13 +13,16 @@ class ClassBookingsController < ApplicationController
     @classbooking.user = current_user
     @classbooking.sports_class = @sports_class
     @subscription = current_user.subscription
-    @membership = current_user.subscription.membership if current_user.subscription.subscription_status == "active"
-    if @classbooking.save
+    @membership = current_user.subscription.membership
+    if current_user.subscription.subscription_status == "active"
+      @classbooking.save
       redirect_to sports_classes_path, notice: "Your class is successfully booked!"
+    elsif current_user.subscription.subscription_status == "incomplete"
+      redirect_to sports_classes_path, notice: "Please subcribe to a membership."
     else
       redirect_to sports_classes_path, notice: "You have already booked this class"
     end
-    authorize @classbooking
+      authorize @classbooking
   end
 
   def destroy
