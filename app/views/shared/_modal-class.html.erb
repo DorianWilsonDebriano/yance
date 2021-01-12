@@ -43,6 +43,15 @@
           <div class="class-modal-right-header d-flex justify-content-between">
             <div class="class-modal-trainer-name">
               <span> with <strong> <%= sports_class.user.first_name %> <%= sports_class.user.last_name %> </strong> </span>
+              <p class="ratings-average">
+                <% sports_class.trainer.reviews.average("rating::int").to_i.times do %>
+                  <i class="fas fa-star color-star"></i>
+                <% end %>
+                <% (5 - sports_class.trainer.reviews.average("rating::int").to_i).times do %>
+                  <i class="far fa-star color-star"></i>
+                <% end %>
+                (<%= sports_class.trainer.reviews.count %>)
+              </p>
             </div>
             <% if sports_class.user.photo.attached? %>
               <div class="class-modal-avatar">

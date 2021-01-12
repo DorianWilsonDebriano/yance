@@ -4,7 +4,7 @@
       <% if current_user.photo.present? %>
         <%= cl_image_tag current_user.photo.key, class: "avatar-settings" %>
       <% else %>
-        <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "avatar-large" %>
+        <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606236817/placeholder-avatar-square_nduu1o.jpg", class: "avatar-settings" %>
       <% end %>
     </div>
     <div class="user-name">
