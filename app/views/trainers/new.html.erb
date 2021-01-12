@@ -1,20 +1,26 @@
-<div class="page container">
-  <div class="backbutton">
-    <%= link_to "BACK", sports_classes_path, class: "btn back-button-profile"%>
-  </div>
-  <div class="row d-flex justify-content-center">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-6 ">
-      <div class="form-login mb-5">
-          <h2>Become a trainer</h2>
-          <%= simple_form_for @trainer do |f| %>
-            <%= f.input :city %>
-            <%= f.input :sport_category %>
-            <%= f.input :bio %>
-            <%= f.input :profile_photo, as: :file %>
-            <%= f.input :time_line_photo, as: :file %>
-            <%= f.button :submit, class: 'btn class-sign-up-button', id:'sweet-alert-trainer'%>
-          <% end %>
-        </div>
+<div class="new-class-page">
+  <div class="row d-flex">
+    <div class="form-image-trainer col-xs-12 col-lg-5">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608823717/OH5C6490_copy_j0afya.jpg", class: "form-image-trainer" %>
+    </div>
+    <div class="col-xs-12 col-lg-7 ">
+      <div class="form-create-trainer my-5">
+        <h2>Become a trainer</h2>
+        <%= simple_form_for @trainer do |f| %>
+          <%= f.input :city %>
+          <%= f.input :sport_category %>
+          <%= f.input :bio %>
+          <div class="d-flex mb-2">
+            <%= image_tag "", class: 'hidden img-thumbnail rounded-circle mr-4', id: "photo-preview" %>
+            <%= f.input :profile_photo,
+                        input_html: { class: 'hidden d-none', id: 'photo-input' },
+                        label_html: { class: 'upload-photo mt-3'},
+                        label: '📷 trainer profile photo',
+                        hint: "leave blank if you want to use your user profile photo"%>
+          </div>
+          <%= f.button :submit, class: 'btn class-log-in-button' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
