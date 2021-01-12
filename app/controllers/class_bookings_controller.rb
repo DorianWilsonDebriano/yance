@@ -14,7 +14,7 @@ class ClassBookingsController < ApplicationController
     @classbooking.sports_class = @sports_class
     @subscription = current_user.subscription
     @membership = current_user.subscription.membership
-    if current_user.subscription.subscription_status == "active"
+    if current_user.subscription.subscription_status == "active" || "trialing"
       @classbooking.save
       redirect_to sports_classes_path, notice: "Your class is successfully booked!"
     elsif current_user.subscription.subscription_status == "incomplete"

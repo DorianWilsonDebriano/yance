@@ -101,9 +101,12 @@ class SubscriptionsController < ApplicationController
         payment_method_types: ['card'],
         line_items: [{
           price: price.id,
-          quantity: 1,
+          quantity: 1
         }],
         mode: 'subscription',
+        subscription_data: {
+          trial_period_days: 14
+        }
       })
     # session = event.data.object
     # @subscription = Subscription.find_by(user_id: current_user.id)
