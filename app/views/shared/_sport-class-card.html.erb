@@ -58,6 +58,8 @@
             <% unless current_user.all_booked_classes.include?(sports_class) %>
               <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, @classbooking), method: :post, class: "sweet-alert-booked-#{sports_class.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
             <% end %>
+        <% elsif current_user.subscription.subscription_status == "incomplete" %>
+          <%= link_to "BOOK", customer_portal_sessions_path, method: :post, class: "card-book-class-link btn class-card-book-button" %>
         <% else %>
           <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
         <% end %>
