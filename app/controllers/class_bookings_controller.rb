@@ -17,10 +17,10 @@ class ClassBookingsController < ApplicationController
     if current_user.subscription.subscription_status == "active" || "trialing"
       @classbooking.save
       redirect_to sports_classes_path, notice: "Your class is successfully booked!"
-    elsif current_user.subscription.subscription_status == "incomplete"
+    elsif current_user.subscription.subscription_status == "incomplete" || "canceled"
       redirect_to sports_classes_path, notice: "Please subcribe to a membership."
     else
-      redirect_to sports_classes_path, notice: "You have already booked this class"
+      redirect_to sports_classes_path, notice: "You have already booked this class."
     end
       authorize @classbooking
   end
