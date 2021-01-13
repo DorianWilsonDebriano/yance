@@ -54,6 +54,14 @@
   color: rgba(0, 0, 0, 0.8);
 }
 
+.nav-link {
+  &:hover {
+    border: none;
+    border-bottom: 3px solid #555555 !important;
+    background-color: transparent !important;
+  }
+}
+
 #navbarDropdown {
   cursor: pointer;
 }

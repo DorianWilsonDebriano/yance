@@ -1,26 +1,30 @@
-
-<div class="page container">
-  <div class="row d-flex justify-content-center">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4 ">
+<div class="new-class-page">
+   <div class="row d-flex">
+    <div class="form-image-edit-user col-sm-12 col-lg-5">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609606910/OH5C6089_copy_tnifjq.jpg", class: "form-image-edit-user" %>
+    </div>
+    <div class="col-sm-12 col-lg-7">
       <div class="form-login">
-        <h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <h2>Edit your profile</h2>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= f.error_notification %>
 
-          <div class="form-inputs">
+          <div class="form-inputs my-5">
             <%= f.input :email, required: true, autofocus: true %>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
             <% end %>
-            <%= f.input :first_name,
-                        hint: "leave it blank if you don't want to change it",
-                        required: false,
-                        input_html: { autocomplete: "first name" } %>
-            <%= f.input :last_name,
-                        hint: "leave it blank if you don't want to change it",
-                        required: false,
-                        input_html: { autocomplete: "last name" } %>
+            <div class="d-flex justify-content-between ">
+              <%= f.input :first_name,
+                          hint: "leave it blank if you don't want to change it",
+                          required: false,
+                          input_html: { autocomplete: "first name" } %>
+              <%= f.input :last_name,
+                          hint: "leave it blank if you don't want to change it",
+                          required: false,
+                          input_html: { autocomplete: "last name" } %>
+            </div>
             <%= f.input :bio,
                         hint: "leave it blank if you don't want to change it",
                         required: false,
@@ -29,11 +33,15 @@
                         hint: "leave it blank if you don't want to change it",
                         required: false,
                         input_html: { autocomplete: "preferred class language" } %>
-            <%= f.input :photo,
-                        as: :file,
-                        hint: "leave it blank if you don't want to change it",
-                        required: false,
-                        input_html: { autocomplete: "your profile picture" } %>
+            <div class="d-flex mb-2">
+              <%= image_tag "", class: 'hidden img-thumbnail rounded-circle mr-4', id: "photo-preview" %>
+              <%= f.input :photo,
+                          input_html: { class: 'hidden d-none', id: 'photo-input' },
+                          label_html: { class: 'upload-photo mt-3'},
+                          label: '📷 profile photo',
+                          hint: "leave it blank if you don't want to change it",
+                          required: false %>
+            </div>
             <%= f.input :password,
                         hint: "leave it blank if you don't want to change it",
                         required: false,
@@ -45,16 +53,14 @@
                         hint: "we need your current password to confirm your changes",
                         required: true,
                         input_html: { autocomplete: "current-password" } %>
-          </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Update", class:"btn form-login class-log-in-button" %>
+            <div class="form-actions">
+              <%= f.button :submit, "Update", class: "btn class-log-in-button" %>
+              <%= link_to "Cancel account", registration_path(resource_name),class:"btn class-sign-up-button", data: { confirm: "Are you sure?" }, method: :delete%>
+            </div>
           </div>
         <% end %>
 
-        <p>Unhappy? Cancel my account</p>
-
-        <%= link_to "Cancel my account", registration_path(resource_name),class:"btn class-sign-up-button", data: { confirm: "Are you sure?" }, method: :delete%>
         </div>
     </div>
   </div>

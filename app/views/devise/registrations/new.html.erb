@@ -1,30 +1,43 @@
-<div class="page container">
-  <div class="row d-flex justify-content-center">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4 ">
+<div class="new-class-page">
+  <div class="row d-flex">
+    <div class="form-image-sign-up col-sm-12 col-lg-5">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609606910/OH5C6089_copy_tnifjq.jpg", class: "form-image-sign-up" %>
+    </div>
+    <div class="col-sm-12 col-lg-7">
       <div class="form-login">
-        <h2>Sign up</h2>
-
+        <div class="form-header">
+          <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609194683/Yance-logo-svg_qq3q16.svg", class: "form-logo-login" %>
+          <h2 class="">Sign up to yance</h2>
+          <p>Alreay have an account? <strong><%= link_to "login", new_user_session_path %></strong> </p>
+        </div>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :first_name,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "first name" }%>
-            <%= f.input :last_name,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "last name" }%>
+            <div class="d-flex justify-content-between ">
+              <%= f.input :first_name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "first name" },
+                          class: "login-name" %>
+              <%= f.input :last_name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "last name" },
+                          class: "login-name" %>
+            </div>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "email" }%>
-            <%= f.input :photo,
-                        as: :file,
-                        required: false,
-                        hint: "leave it blank if you don't want a profile picture",
-                        input_html: { autocomplete: "your profile picture" } %>
+            <div class="d-flex mb-2">
+              <%= image_tag "", class: 'hidden img-thumbnail rounded-circle mr-4', id: "photo-preview" %>
+              <%= f.input :photo,
+                          input_html: { class: 'hidden d-none', id: 'photo-input' },
+                          label_html: { class: 'upload-photo mt-3'},
+                          label: '📷 profile photo',
+                          hint: "leave it blank for no profile picture" %>
+            </div>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -32,16 +45,15 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
-          </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: "btn form-login class-log-in-button" %>
-            <%= render "devise/shared/links", class: "btn class-sign-up-button" %>
+            <div class="form-actions">
+              <%= f.button :submit, "Sign up", class: "btn class-log-in-button" %>
+              <%= render "devise/shared/links", class: "btn class-sign-up-button" %>
+            </div>
           </div>
         <% end %>
         </div>
     </div>
   </div>
 </div>
-
 
