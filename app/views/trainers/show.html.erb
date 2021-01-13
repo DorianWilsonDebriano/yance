@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="header-image">
   <% if @trainer.time_line_photo.attached? %>
     <%= cl_image_tag @trainer.time_line_photo.key, class: "" %>
@@ -6,8 +6,8 @@
     <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606934530/pexels-cottonbro-4753885_tsedne.jpg", class: "timeline-image" %>
   <% end %>
   </div>
-</div>
-<div class="container">
+</div> -->
+<div class="container page mt-5 mb-5">
   <div class="row">
     <div class="col-sm-12 col-lg-8">
       <div class="trainer-tags">
@@ -22,14 +22,25 @@
             <% end %>
           </div>
           <div class="trainer-name-follow">
-            <p class="trainer-name"><%=@trainer.user.first_name%> <%=@trainer.user.last_name%></p>
+            <div class="d-flex">
+              <p class="trainer-name"><%=@trainer.user.first_name%> <%=@trainer.user.last_name%></p>
+              <p class="ratings-average">
+                <% @trainer.reviews.average("rating::int").to_i.times do %>
+                  <i class="fas fa-star color-star"></i>
+                <% end %>
+                <% (5 - @trainer.reviews.average("rating::int").to_i).times do %>
+                  <i class="far fa-star color-star"></i>
+                <% end %>
+              </p>
+              <p class="ratings-count pl-0">(<%= @trainer.reviews.count %>)</p>
+            </div>
             <% if @trainer.user == current_user %>
               <p> <%= link_to "edit your trainer page", edit_trainer_path(@trainer), class: "trainer-edit" %> </p>
             <% end %>
           </div>
         </div>
         <div class="tags">
-          <p class="title-font">Tags</p>
+          <p class="title-font">Sport type</p>
           <p class="category"><%=@trainer.sport_category%></p>
         </div>
         <div class="bio">
