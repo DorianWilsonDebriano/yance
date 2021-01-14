@@ -27,6 +27,10 @@ class WebhooksController < ApplicationController
     when 'checkout.session.completed'
       session = event.data.object
       @user = User.find_by(stripe_customer_id: session.customer)
+      @subscription = Subscription.new(user_id:@user.id)
+      @subscription.stripe_id = session.subscription
+      @subscription.membership_id = session.metadata.membership_id
+      @subscription.save
       @user.subscription.update(subscription_status: "active")
     when 'customer.subscription.updated', 'customer.subscription.deleted'
       subscription = event.data.object
