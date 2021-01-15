@@ -29,9 +29,12 @@ class WebhooksController < ApplicationController
       @user = User.find_by(stripe_customer_id: session.customer)
       @subscription = Subscription.new(user_id:@user.id)
       @subscription.stripe_id = session.subscription
+      subscription_status = Stripe::Subscription.retrieve(session.subscription).status
       @subscription.membership_id = session.metadata.membership_id
       @subscription.save
-      @user.subscription.update(subscription_status: "active")
+      @user.subscription.update(
+        subscription_status: subscription_status
+      )
     when 'customer.subscription.updated', 'customer.subscription.deleted'
       subscription = event.data.object
       @user = User.find_by(stripe_customer_id: subscription.customer)
