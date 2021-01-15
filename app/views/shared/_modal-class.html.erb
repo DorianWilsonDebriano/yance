@@ -64,7 +64,7 @@
           <div>
             <div class="align-center pr-3 py-2">
               <% if user_signed_in? %>
-                <% if current_user.subscription.present? %>
+                <% if current_user.subscription.subscription_status == "active" || "trialing" %>
                   <% unless current_user.all_booked_classes.include?(sports_class) %>
                     <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, @classbooking), method: :post, class: "sweet-alert-booked-#{sports_class.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
                   <% end %>

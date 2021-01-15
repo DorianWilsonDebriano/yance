@@ -35,7 +35,6 @@ class WebhooksController < ApplicationController
       @user.subscription.update(
         subscription_status: subscription_status
       )
-      flash[:alert] = "Subscription created"
     when 'customer.subscription.updated', 'customer.subscription.deleted'
       subscription = event.data.object
       @user = User.find_by(stripe_customer_id: subscription.customer)
@@ -43,7 +42,5 @@ class WebhooksController < ApplicationController
         subscription_status: subscription.status
       )
     end
-
-    render json: { message: 'success' }
   end
 end
