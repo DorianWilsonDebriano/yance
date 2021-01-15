@@ -22,20 +22,14 @@
       <li> <strong>login:</strong> <%= current_user.email %> </li>
       <li> <strong>password:</strong> ************ <%= link_to "edit password", edit_user_registration_path %> </li>
       <% if current_user.subscription.present? %>
-        <li><strong>membership:</strong> <%= current_user.subscription.membership.title %></li>
-        <li><strong>renews on:</strong> <%= current_user.subscription.membership.expiration_date %></li>
+        <li> <strong>Subscription status:</strong><%= current_user.subscription.subscription_status %></li><br>
+        <li> <strong>Subscribed to:</strong><%= current_user.membership.title %></li><br>
+        <form action="/customer_portal_sessions" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="submit" value="Manage billing" class="btn class-card-info-button class-info-link">
+        </form>
       <% else %>
-        <li><strong>membership:</strong> <%= link_to "choose a membership", memberships_path %> </li>
-        <li><strong>renews on:</strong> <%= link_to "choose a membership", memberships_path %></li>
-      <% end %>
-
-      <% if current_user.subscription.present? %>
-      <form action="/customer_portal_sessions" method="post">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="submit" value="Manage billing">
-      </form>
-      Subscription status: <strong><%= current_user.subscription.subscription_status %></strong><br>
-      Subscribed to: <strong><%= current_user.membership.title %></strong><br>
+        <%= link_to "choose a membership", memberships_path %>
       <% end %>
 
     </div>

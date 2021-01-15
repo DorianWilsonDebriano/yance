@@ -93,28 +93,26 @@ class SubscriptionsController < ApplicationController
   def create_checkout_session(customer, user)
     price = Stripe::Price.list(lookup_keys: [@membership.title]).data.first
     @checkout_session = Stripe::Checkout::Session.create({
-        customer: current_user.stripe_customer_id,
-        success_url: 'http://localhost:3000/',
-        cancel_url: 'http://localhost:3000/memberships',
-        payment_method_types: ['card'],
-        line_items: [{
-          price: price.id,
-          quantity: 1
-        }],
-        mode: 'subscription',
-        subscription_data: {
-          trial_period_days: 14
-        },
-        metadata: {
-          membership_id: @membership.id
-        }
-      })
+      customer: current_user.stripe_customer_id,
+      success_url: 'http://localhost:3000/',
+      cancel_url: 'http://localhost:3000/memberships',
+      payment_method_types: ['card'],
+      line_items: [{
+        price: price.id,
+        quantity: 1
+      }],
+      mode: 'subscription',
+      subscription_data: {
+        trial_period_days: 14
+      },
+      metadata: {
+        membership_id: @membership.id
+      }
+    })
   end
 
   def is_stripe_customer?(user)
     !Stripe::Customer.list({ email: @user.email }).empty?
-    # customer = Stripe::Customer.retrieve(@user.stripe_customer_id)
-    # customer.email == @user.email
   end
 
   def update_stripe_customer(user)
