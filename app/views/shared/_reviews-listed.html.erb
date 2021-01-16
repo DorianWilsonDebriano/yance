@@ -9,7 +9,7 @@
     </div>
     <p class="review-user-name"><%= review.user.first_name %> <%= review.user.last_name %>
       <br>
-      <span> <%= review.created_at.in_time_zone("#{Time.now.zone}").strftime("%b %d %Y") %> </span>
+      <span> <%= local_time(review.created_at, "%b %d %Y") %> </span>
      </p>
   </div>
   <div class="review-stars">

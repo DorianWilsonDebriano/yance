@@ -6,7 +6,7 @@
         </div>
       <% end %>
       <div class="booked-class-card-header">
-        <p class="booked-class-card-datetime"><%= user_sports_classes.date_time.in_time_zone(Time.now.zone).strftime("%A %b %d %Y at %H:%M") %></p>
+        <p class="booked-class-card-datetime"><%= local_time(user_sports_classes.date_time, "%A %b %d at %H:%M") %></p>
         <p class="booked-class-card-title"><%= user_sports_classes.title %></p>
         <p class="booked-class-card-duration"><%= user_sports_classes.duration %> minutes</p>
         <p class="booked-class-card-category"><strong><%= user_sports_classes.category %></strong></p>

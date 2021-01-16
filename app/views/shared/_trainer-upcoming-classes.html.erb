@@ -1,9 +1,9 @@
 <div class="sports-classes-card">
   <div class="class-card-header d-flex justify-content-between">
     <div class="time-label">
-      <p class="class-card-month"><%= sportsclass.date_time.in_time_zone(Time.now.zone).strftime("%A") %></p>
-      <p class="class-card-day"><%= sportsclass.date_time.in_time_zone(Time.now.zone).strftime("%b %d") %></p>
-      <p class="class-card-time"><%= sportsclass.date_time.in_time_zone(Time.now.zone).strftime("%H:%M") %></p>
+      <p class="class-card-month"><%= local_time(sportsclass.date_time, "%A") %></p>
+      <p class="class-card-day"><%= local_time(sportsclass.date_time, "%b %d") %></p>
+      <p class="class-card-time"><%= local_time(sportsclass.date_time, "%H:%M") %></p>
     </div>
     <div class="card-header-right">
       <p class="class-card-category"><%= sportsclass.category %></p>

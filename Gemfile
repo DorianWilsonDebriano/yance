@@ -20,6 +20,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 
+#To display times and dates to users in their local time
+gem 'local_time'
+
 #for deep clones (duplicates)
 gem 'deep_cloneable', '~> 3.0.0'
 
