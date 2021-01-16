@@ -42,5 +42,7 @@ class WebhooksController < ApplicationController
         subscription_status: subscription.status
       )
     end
+
+    render json: { message: 'success' }
   end
 end

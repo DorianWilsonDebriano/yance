@@ -46,32 +46,34 @@ class SubscriptionsController < ApplicationController
   # end
 
   def create
-      skip_authorization
-      @membership = Membership.find(params[:membership_id])
-      @user = current_user
-      #if the email of the user is already on the stripe database then update the existing customer
-      #define a function that returns true if the email adress of the customer is already on stripe
-      if is_stripe_customer?(@user)
-        #if true call a method to update existing customer on stripe
-        customer = update_stripe_customer(@user)
-        @session = create_checkout_session(customer, @user)
-        session[:token] = @user.session_token
-        render :checkout
-        if @user.subscription.present?
+    skip_authorization
+    @membership = Membership.find(params[:membership_id])
+    @user = current_user
+    #if the email of the user is already on the stripe database then update the existing customer
+    #define a function that returns true if the email adress of the customer is already on stripe
+    if is_stripe_customer?(@user)
+      #if true call a method to update existing customer on stripe
+      customer = update_stripe_customer(@user)
+      @session = create_checkout_session(customer, @user)
+      session[:token] = @user.session_token
+      render :checkout
+      @subscription = Subscription.find_by(user_id: current_user.id)
+        if true
           flash.notice = "You are now subscribed to the #{@membership.title} package."
         end
-      elsif !@membership.nil?
-        customer = create_stripe_customer(@user)
-        @session = create_checkout_session(customer, @user)
-        session[:token] = @user.session_token
-        render :checkout
-        if current_user.subscription.present?
+    elsif !@membership.nil?
+      customer = create_stripe_customer(@user)
+      @session = create_checkout_session(customer, @user)
+      session[:token] = @user.session_token
+      render :checkout
+      @subscription = Subscription.find_by(user_id: current_user.id)
+        if true
           flash.notice = "You are now subscribed to the #{@membership.title} package."
         end
-      elsif
-        @membership == current_user.membership
-        redirect_to memberships_path, notice: "You are alredy subscribed to this membership"
-      end
+    elsif
+      @membership == current_user.membership
+      redirect_to memberships_path, notice: "You are alredy subscribed to this membership"
+    end
     end
 
   def edit
