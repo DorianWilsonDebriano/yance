@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'webhooks/create'
   devise_for :users
 
   authenticated :user do
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
   get "/profile", to: "pages#profile"
   get "/settings", to: "pages#settings"
 
-   resources :trainers, only: %i[show new create] do
+  resources :trainers, only: %i[show new create] do
     resources :sports_classes, only: %i[new create]
     resources :reviews, only: %i[new create]
   end
@@ -31,10 +30,14 @@ Rails.application.routes.draw do
 
   resources :subscriptions, only: %i[edit update destroy]
 
+  get '/success', to: 'subscriptions#success', as: :success
+
+
   resources :class_bookings, only: %i[edit update destroy]
   get "/stream", to: "classes#stream"
 
   resources :customer_portal_sessions, only: [:create]
 
   resources :webhooks
+  # get 'webhooks/create'
 end

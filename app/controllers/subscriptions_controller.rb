@@ -26,25 +26,6 @@ class SubscriptionsController < ApplicationController
   #   end
   # end
 
-  # def create
-  #   skip_authorization
-  #   @membership = Membership.find(params[:membership_id])
-  #   @user = current_user
-  #   #if the email of the user is already on the stripe database then update the existing customer
-  #   #define a function that returns true if the email adress of the customer is already on stripe
-  #   #if true then create stripe customer
-  #   #elseif call a method to update existing customer on stripe
-  #   if !@membership.nil?
-  #     customer = create_stripe_customer(@user)
-  #     @session = create_checkout_session(customer, @user)
-  #     session[:token] = @user.session_token
-  #     render :checkout
-  #   elsif
-  #     @membership == current_user.membership
-  #     redirect_to memberships_path, notice: "You are alredy subscribed to this membership"
-  #   end
-  # end
-
   def create
     skip_authorization
     @membership = Membership.find(params[:membership_id])
@@ -57,24 +38,16 @@ class SubscriptionsController < ApplicationController
       @session = create_checkout_session(customer, @user)
       session[:token] = @user.session_token
       render :checkout
-      @subscription = Subscription.find_by(user_id: current_user.id)
-        if true
-          flash.notice = "You are now subscribed to the #{@membership.title} package."
-        end
     elsif !@membership.nil?
       customer = create_stripe_customer(@user)
       @session = create_checkout_session(customer, @user)
       session[:token] = @user.session_token
       render :checkout
-      @subscription = Subscription.find_by(user_id: current_user.id)
-        if true
-          flash.notice = "You are now subscribed to the #{@membership.title} package."
-        end
     elsif
       @membership == current_user.membership
       redirect_to memberships_path, notice: "You are alredy subscribed to this membership"
     end
-    end
+  end
 
   def edit
   end
@@ -85,13 +58,23 @@ class SubscriptionsController < ApplicationController
   def destroy
   end
 
+  def success
+    skip_authorization
+    @session = Stripe::Checkout::Session.retrieve(params[:session_id])
+    @customer = Stripe::Customer.retrieve(@session.customer)
+    if @session.payment_status == "paid"
+      flash.notice = "Congratulations #{current_user.first_name}! You are now subscribed to the Yance Experience package."
+    end
+  end
+
   private
 
   def create_stripe_customer(user)
     customer = Stripe::Customer.create(
       email: current_user.email,
       metadata: {
-        selected_membership: current_user.membership
+        selected_membership: current_user.membership,
+        membership_title: current_user.membership.title
       }
     )
     user.update!(stripe_customer_id: customer.id)
@@ -102,7 +85,7 @@ class SubscriptionsController < ApplicationController
     price = Stripe::Price.list(lookup_keys: [@membership.title]).data.first
     @checkout_session = Stripe::Checkout::Session.create({
       customer: current_user.stripe_customer_id,
-      success_url: 'http://localhost:3000/settings',
+      success_url: 'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: 'http://localhost:3000/memberships',
       payment_method_types: ['card'],
       line_items: [{
@@ -114,7 +97,8 @@ class SubscriptionsController < ApplicationController
         trial_period_days: 14
       },
       metadata: {
-        membership_id: @membership.id
+        membership_id: @membership.id,
+        membership_title: @membership.title
       }
     })
   end

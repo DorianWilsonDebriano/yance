@@ -31,7 +31,6 @@ class WebhooksController < ApplicationController
       @subscription.stripe_id = session.subscription
       subscription_status = Stripe::Subscription.retrieve(session.subscription).status
       @subscription.membership_id = session.metadata.membership_id
-      @subscription.save
       @user.subscription.update(
         subscription_status: subscription_status
       )
@@ -42,7 +41,5 @@ class WebhooksController < ApplicationController
         subscription_status: subscription.status
       )
     end
-
-    render json: { message: 'success' }
   end
 end
