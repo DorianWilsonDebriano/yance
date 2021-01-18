@@ -9,7 +9,7 @@
     <div class="card-header-right">
       <p class="class-card-category"><%= sports_class.category %></p>
       <p class="class-card-language"><%= sports_class.language %></p>
-      <p class="class-card-duration"><i class="far fa-clock pr-1"></i>   <%= sports_class.duration %> minutes</p>
+      <p class="class-card-duration"><i class="far fa-clock pr-1"></i> <%= t('.duration', duration: sports_class.duration) %></p>
     </div>
 <!--     <div class="card-header-right">
       <div class="class-card-detail-icon">
@@ -28,7 +28,7 @@
     <p class="class-card-title"><%= sports_class.title %></p>
     <div class="class-card-levels row">
       <div class="class-card-difficulty col-4">
-        <p class="class-card-level-title">DIFFICULTY</p>
+        <p class="class-card-level-title"><%= t('.levels.difficulty') %></p>
         <p class="class-card-level-content">
           <% sports_class.difficulty_level.times do %>
           <i class="fas fa-dumbbell" id="difficulty"></i>
@@ -36,7 +36,7 @@
         </p>
       </div>
       <div class="class-card-sweat col-4">
-        <p class="class-card-level-title">SWEAT</p>
+        <p class="class-card-level-title"><%= t('.levels.sweat') %></p>
         <p class="class-card-level-content">
           <% sports_class.sweat_level.times do %>
           <i class="fas fa-tint" id="sweat"></i>
@@ -44,7 +44,7 @@
         </p>
       </div>
       <div class="class-card-experience col-4">
-        <p class="class-card-level-title">LEVEL</p>
+        <p class="class-card-level-title"><%= t('.levels.experience') %></p>
         <p class="class-card-level-content"> <%= sports_class.experience_level %> </p>
       </div>
     </div>
@@ -68,27 +68,27 @@
         <% if current_user.subscription.present? %>
           <% if current_user.subscription.credits > 0 %>
             <% unless current_user.all_booked_classes.include?(sports_class) %>
-              <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sports_class.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
+              <%= link_to t('.book'), sports_class_class_bookings_path(sports_class, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sports_class.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
             <% end %>
           <% else %>
             <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
-            <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
+            <%= link_to t('.book'), sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
           <% end %>
         <% else %>
           <% if sports_class.password.present? %>
             <button type="button" class="card-book-class-link btn class-card-book-button" data-toggle="modal" data-target="#password-modal-<%= sports_class.id %>">
-              BOOK
+              <%= t('.password') %>
             </button>
           <% else %>
-            <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
+            <%= link_to t('.trial'), memberships_path, class: "card-book-class-link btn class-card-book-button" %>
           <% end %>
         <% end %>
         <% else %>
-          <%= link_to "BOOK", new_user_session_path, class: "card-book-class-link btn class-card-book-button" %>
+          <%= link_to t('.log-in'), new_user_session_path, class: "card-book-class-link btn class-card-book-button" %>
       <% end %>
 
       <button type="button" class="btn class-card-info-button class-info-link" data-toggle="modal" data-target="#modal-<%= sports_class.id %>">
-        INFO
+        <%= t('.info') %>
       </button>
     </div>
   </div>

@@ -1,0 +1,23 @@
+de:
+  sports_classes:
+    index:
+      sidebar:
+        title: "Grenzen Sie Ihre Suche ein"
+      booked-classes:
+        title: "Your upcoming classes"
+      filter-cards:
+        title: "Most popular classes"
+      all-classes:
+        title: "All classes"
+  shared:
+    sport-class-card:
+      duration: " %{duration} minutes"
+      levels:
+        difficulty: "DIFFICULTY"
+        sweat: "SWEAT"
+        experience: "LEVEL"
+      book: "BOOK"
+      log-in: "LOG IN"
+      trial: "Get your free trial"
+      password: "book with password"
+      info: "INFO"

@@ -16,7 +16,7 @@
           <br>
           <div class="class-modal-levels d-flex row pr-3 pl-2">
             <div class="class-modal-difficulty col-sm-12 col-lg-4">
-              <p class="class-modal-level-title">DIFFICULTY</p>
+              <p class="class-modal-level-title"><%= t('.levels.difficulty') %></p>
               <p class="class-modal-level-content">
                 <% sports_class.difficulty_level.times do %>
                 <i class="fas fa-dumbbell" id="difficulty"></i>
@@ -24,7 +24,7 @@
               </p>
             </div>
             <div class="class-modal-sweat col-sm-12 col-lg-4">
-              <p class="class-modal-level-title">SWEAT</p>
+              <p class="class-modal-level-title"><%= t('.levels.sweat') %></p>
               <p class="class-modal-level-content">
                 <% sports_class.sweat_level.times do %>
                 <i class="fas fa-tint" id="sweat"></i>
@@ -32,7 +32,7 @@
               </p>
             </div>
             <div class="class-modal-experience col-sm-12 col-lg-4">
-              <p class="class-modal-level-title">LEVEL</p>
+              <p class="class-modal-level-title"><%= t('.levels.experience') %></p>
               <p class="class-modal-level-content">
                 <%= sports_class.experience_level %>
               </p>
@@ -42,7 +42,7 @@
         <div class="class-modal-right-column col-7 pt-4 pr-5">
           <div class="class-modal-right-header d-flex justify-content-between">
             <div class="class-modal-trainer-name">
-              <span> with <strong> <%= sports_class.user.first_name %> <%= sports_class.user.last_name %> </strong> </span>
+              <span><%= t('.trainer_name_html', trainer_firstname: sports_class.user.first_name, trainer_lastname: sports_class.user.last_name) %></span>
               <p class="ratings-average">
                 <% sports_class.trainer.reviews.average("rating::int").to_i.times do %>
                   <i class="fas fa-star color-star"></i>
@@ -63,11 +63,11 @@
             </button>
           </div>
           <div class="class-modal-description">
-            <p> <strong> Class description </strong></p>
+            <p> <strong><%= t('.class_description') %></strong></p>
             <p><%= sports_class.description %></p>
           </div>
           <div class="class-modal-bio">
-            <p> <strong> Trainer bio </strong></p>
+            <p> <strong><%= t('.trainer_bio') %></strong></p>
             <p><%= sports_class.trainer.bio %></p>
           </div>
           <div>
@@ -76,17 +76,17 @@
                 <% if current_user.subscription.present? %>
                   <% if current_user.subscription.credits > 0 %>
                     <% unless current_user.all_booked_classes.include?(sports_class) %>
-                      <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sports_class.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
+                      <%= link_to t('.book'), sports_class_class_bookings_path(sports_class, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sports_class.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
                     <% end %>
                   <% else %>
                     <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
-                    <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
+                    <%= link_to t('.book'), sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
                   <% end %>
                 <% end %>
               <% end %>
             </div>
             <div class="align-center pr-3 py-2">
-              <%= link_to "VISIT TRAINER", trainer_path(sports_class.trainer), class: "visit-trainer-link btn class-modal-info-button" %>
+              <%= link_to t('.visit-trainer'), trainer_path(sports_class.trainer), class: "visit-trainer-link btn class-modal-info-button" %>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
 <!-- sidebar filters -->
   <div class="sidebar">
     <div class="sidebar-position">
-      <p> Narrow your search </p>
+      <p> <%= t('.sidebar.title') %> </p>
       <div class="dropdown-filter">
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
             <%= s.select(:category, SportsClass.categories, {prompt: 'Sport Type', selected: params.dig(:sports_class, :category) }, { onchange: "this.form.submit()" } )%>
@@ -76,7 +76,7 @@
     <!-- user bookings -->
     <% if user_signed_in? %>
       <% if @classbookings.length > 0 %>
-          <h2 class="all-classes-title pt-5">Your upcoming classes</h2>
+          <h2 class="all-classes-title pt-5"><%= t('.booked-classes.title') %></h2>
           <div class="booked-sports-classes-cards pt-3 ">
               <%= render collection: @classbookings, partial: "shared/booked-sport-class-card", as: :classbooking %>
           </div>
@@ -84,12 +84,12 @@
     <% end %>
   <!-- favorite classes -->
     <div class="filter-cards">
-      <h2 class="all-classes-title">Most popular classes</h2>
+      <h2 class="all-classes-title"><%= t('.filter-cards.title') %></h2>
       <%= render "shared/filter-cards" %>
     </div>
 
   <!-- all classes -->
-    <h2 class="all-classes-title mt-5">All classes</h2>
+    <h2 class="all-classes-title mt-5"><%= t('.all-classes.title') %></h2>
     <div class="sports-classes-cards pt-3">
       <%= render collection: @sports_classes, partial: "shared/sport-class-card", as: :sports_class %>
     </div>

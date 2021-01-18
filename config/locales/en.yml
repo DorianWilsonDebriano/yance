@@ -30,4 +30,88 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  sports_classes:
+    index:
+      sidebar:
+        title: "Narrow your search"
+      booked-classes:
+        title: "Your upcoming classes"
+      filter-cards:
+        title: "Most popular classes"
+      all-classes:
+        title: "All classes"
+  shared:
+    navbar:
+      home: "Home"
+      memberships: "Memberships"
+      become_a_trainer: "Become a trainer"
+      your_classes: "Your Classes"
+      trainer_profile: "Trainer profile"
+      settings: "Settings"
+      log_out: "Log out"
+      log_in: "Log in"
+    sport-class-card:
+      duration: " %{duration} minutes"
+      levels:
+        difficulty: "DIFFICULTY"
+        sweat: "SWEAT"
+        experience: "LEVEL"
+      book: "BOOK"
+      log-in: "LOG IN"
+      trial: "Get your free trial"
+      password: "book with password"
+      info: "INFO"
+    modal-class:
+      duration: " %{duration} minutes"
+      levels:
+        difficulty: "DIFFICULTY"
+        sweat: "SWEAT"
+        experience: "LEVEL"
+      book: "BOOK"
+      log-in: "LOG IN"
+      trial: "Get your free trial"
+      password: "book with password"
+      info: "INFO"
+      trainer_name_html: "with <strong>%{trainer_firstname} %{trainer_lastname}</strong>"
+      class_description: "Class description"
+      trainer_bio: "Trainer bio"
+      visit-trainer: "SEE TRAINER PROFILE"
+    password-popup:
+      title: "Class password"
+      book: "BOOK"
+      close: "Close"
+    booked-sport-class-card:
+      duration: " %{duration} minutes"
+      category_trainer_html: "<strong>%{category}</strong> with <strong>%{trainer_firstname} %{trainer_lastname}</strong>"
+      live_stream_modal: "Join the live stream"
+      cancel: "cancel"
+      confirm: "are your sure?"
+    filter-cards:
+      yoga: "Yoga"
+      pilates: "Pilates"
+      stretching: "Stretching"
+      cardio: "Cardio"
+      strength: "Strength"
+    profile-created-classes:
+      duration: " %{duration} minutes"
+      live_stream_modal: "Join the live stream"
+    profile-upcoming-classes:
+      duration: " %{duration} minutes"
+      category_trainer_html: "<strong>%{category}</strong> with <strong>%{trainer_firstname} %{trainer_lastname}</strong>"
+      live_stream_modal: "Join the live stream"
+      cancel: "cancel"
+    class-stats:
+      done: "past"
+      coming: "coming"
+      duplicate: "Duplicate this class's information for a quick-create"
+      edit: "Edit this class's information"
+      cancel: "Cancel this class"
+      live_stream_modal: "Join the live stream"
+
+
+
+
+
+
+
+
