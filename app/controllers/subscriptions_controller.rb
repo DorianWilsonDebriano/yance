@@ -68,8 +68,8 @@ class SubscriptionsController < ApplicationController
     @checkout_session = Stripe::Checkout::Session.create(
       {
         customer: current_user.stripe_customer_id,
-        success_url: 'https://yancesport.com/success?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url: 'https://yancesport.com/memberships',
+        success_url: 'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url: 'http://localhost:3000/memberships',
         payment_method_types: ['card'],
         line_items: [{
           price: price.id,
@@ -88,7 +88,9 @@ class SubscriptionsController < ApplicationController
   end
 
   def stripe_customer?(user)
-    !Stripe::Customer.list({ email: @user.email }).empty?
+
+    @customer = Stripe::Customer.retrieve(@user.stripe_customer_id)
+
   end
 
   def update_stripe_customer(user)
@@ -97,5 +99,3 @@ class SubscriptionsController < ApplicationController
     customer
   end
 end
-
-
