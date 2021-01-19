@@ -63,7 +63,7 @@ class SubscriptionsController < ApplicationController
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @customer = Stripe::Customer.retrieve(@session.customer)
     if @session.payment_status == "paid"
-      flash.notice = "Congratulations #{current_user.first_name}! You are now subscribed to the Yance Experience package."
+      flash.notice = "Congratulations #{current_user.first_name}! You are now subscribed to the #{@session.metadata.membership_title}."
     end
   end
 
@@ -73,8 +73,8 @@ class SubscriptionsController < ApplicationController
     customer = Stripe::Customer.create(
       email: current_user.email,
       metadata: {
-        selected_membership: current_user.membership,
-        membership_title: current_user.membership.title
+        selected_membership: @membership,
+        membership_title: @membership.title
       }
     )
     user.update!(stripe_customer_id: customer.id)
