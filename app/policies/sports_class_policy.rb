@@ -25,6 +25,10 @@ class SportsClassPolicy < ApplicationPolicy
     record.trainer.user == user
   end
 
+  def duplicate?
+    record.trainer.user == user
+  end
+
   def destroy?
     record.trainer.user == user
   end

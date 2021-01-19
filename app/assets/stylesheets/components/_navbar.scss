@@ -54,6 +54,14 @@
   color: rgba(0, 0, 0, 0.8);
 }
 
+.nav-link {
+  &:hover {
+    border: none;
+    border-bottom: 3px solid #555555 !important;
+    background-color: transparent !important;
+  }
+}
+
 #navbarDropdown {
   cursor: pointer;
 }
@@ -81,14 +89,6 @@
     color: black;
     text-decoration: none;
    }
-}
-
-.available-credits {
-  position: relative;
-  right: 250px;
-  top: 10px;
-  font-size: 14px;
-  font-weight: bolder;
 }
 
 .dropdown-menu-right {

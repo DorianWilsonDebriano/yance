@@ -1,0 +1,103 @@
+.trainer-stats-section {
+  margin-top: 20px;
+    h2 {
+    font-size: 18px;
+    font-weight: bolder;
+    color: $dark-text;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.stat-highlights{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.stat-highlight-box {
+  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  p {
+    font-size: 12px;
+  }
+}
+
+#stat-hightlight-title {
+  font-weight: bolder;
+  font-size: 12px;
+  color: $dark-text;
+}
+
+#stat-hightlight-number {
+  font-weight: bolder;
+  font-size: 24px;
+  color: #FEDF44;
+}
+
+.class-stats {
+  margin-top: 20px;
+  border-radius: 4px;
+  min-height: 50vh;
+  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  padding: 12px;
+}
+
+.class-stats-labels {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  font-weight: bolder;
+  font-size: 14px;
+  gap: 8px;
+  margin-left: 16px;
+  padding-bottom: 12px;
+}
+
+.class-stat-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  margin-left: 16px;
+  p {
+    font-size: 12px;
+  }
+}
+
+#stat-date {
+}
+
+#stat-coming {
+  color: #19E2A8;
+}
+
+.manage-duplicate-button {
+  color: #4FA1BF;
+  font-size: 22px;
+
+}
+
+#manage-edit-button {
+  padding: 0px;
+  margin: 0px;
+  font-size: 22px;
+  margin-left: 12px;
+}
+
+#manage-cancel-button {
+  padding: 0px;
+  margin: 0px;
+  font-size: 22px;
+  margin-left: 12px;
+}
+
+#manage-stream-button {
+  padding: 0px;
+  margin: 0px;
+  font-size: 22px;
+  margin-left: 12px;
+}
+
+

@@ -1,4 +1,4 @@
-<% if user_booking.sports_class.date_time > Time.now %>
+<% if user_booking.sports_class.date_time > (Time.now - 1.hour) %>
   <div class="booked-sports-classes-card d-flex">
     <% if user_booking.sports_class.photo.attached? %>
       <div>
@@ -6,14 +6,14 @@
       </div>
     <% end %>
     <div class="booked-class-card-header">
-      <p class="booked-class-card-datetime"><%= user_booking.sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
+      <p class="booked-class-card-datetime"><%= local_time(user_booking.sports_class.date_time, "%A %b %d at %H:%M") %></p>
       <p class="booked-class-card-title"><%= user_booking.sports_class.title %></p>
       <p class="booked-class-card-duration"><%= user_booking.sports_class.duration %> minutes</p>
       <p class="booked-class-card-category"><strong><%= user_booking.sports_class.category %></strong> with <strong><%= user_booking.sports_class.trainer.user.first_name %> <%= user_booking.sports_class.trainer.user.last_name %></strong> </p>
     </div>
     <div class="booked-class-info-buttons">
       <button class="btn go-to-class-icon"><%= link_to sports_class_path(user_booking.sports_class), method: "GET" do %>
-          <i class="fas fa-video"></i>
+          <i class="fas fa-video" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Join the live stream"></i>
         <% end %>
       </button>
       <button class="btn profile-cancel-booking-icon"> <%= link_to class_booking_path(user_booking), method: :delete, data: {confirm: "Are you sure?"}, class: "profile-cancel-button", id:"sweet-alert-delete" do %>

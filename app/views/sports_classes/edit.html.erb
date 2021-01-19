@@ -1,49 +1,77 @@
-<div class="page container">
-  <%= simple_form_for [@trainer, @sportsclass] do |f| %>
-    <%= f.input :title,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: 'The title of your class' } %>
-    <%= f.input :description,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: 'Your class in a few sentences' } %>
-    <%= f.input :date_time,
-                hint: "leave it blank if you don't want to change it",
-                required: false %>
-    <%= f.input :duration,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: 'How long will your class be?' } %>
-    <%= f.input :category,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: 'What type of sport category fits best to your class?' } %>
-    <%= f.input :experience_level,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                as: :radio_buttons, collection: ["Beginner", "Good", "Advanced"], wrapper: :vertical_collection_inline %>
-    <%= f.input :difficulty_level,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                as: :radio_buttons, collection: [1, 2, 3], wrapper: :vertical_collection_inline %>
-    <%= f.input :sweat_level,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                as: :radio_buttons, collection: [1, 2, 3], wrapper: :vertical_collection_inline %>
-    <%= f.input :equipment,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                as: :radio_buttons%>
-    <%= f.input :language,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: 'In which language will you do your class?' } %>
-    <%= f.input :photo,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                as: :file %>
-    <%= f.button :submit, class: 'btn btn-primary sweet-alert' %>
-    <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-  <% end %>
+<div class="new-class-page">
+  <div class="row d-flex">
+    <div class="form-image-edit col-xs-12 col-lg-5">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608741555/OH5C6497_mt2r3x.jpg", class: "form-image-edit" %>
+    </div>
+    <div class="col-xs-12 col-lg-7 ">
+      <div class="form-create-class">
+        <h2>Information about your class</h2>
+        <%= simple_form_for [@trainer, @sportsclass], html: { autocomplete: 'off' } do |f| %>
+          <%= f.input :title,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      placeholder: 'The title of your class' %>
+          <%= f.input :description,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                       placeholder: 'Your class in a few sentences' %>
+          <%= f.input :date_time, as: :string,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      label: "Date and Time", placeholder: "Date and Time", input_html: {class: "datetimepicker"} %>
+          <%= f.input :duration, label: "Duration (in minutes)",
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      placeholder: 'How long will your class be?', input_html: {id: "duration-selector"} %>
+          <%= f.input :category, as: :radio_buttons,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      input_html: {class: "sport-category-selector"},
+                      item_wrapper_class: 'sport-category-item',
+                      collection: SportsClass::CATEGORIES %>
+<!--           <div class="d-flex justify-content-around"> -->
+          <%= f.input :experience_level, as: :radio_buttons,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      input_html: { class: "experience"},
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper',
+                      item_wrapper_class: 'category-item',
+                      collection: ["Beginner", "Good", "Experienced"] %>
+          <%= f.input :difficulty_level, as: :radio_buttons,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      input_html: { class: "difficulty"},
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper-difficulty',
+                      item_wrapper_class: 'category-item',
+                      collection: [1, 2, 3] %>
+          <%= f.input :sweat_level, as: :radio_buttons,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      input_html: { class: "sweat"},
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper-difficulty',
+                      item_wrapper_class: 'category-item',
+                      collection: [1, 2, 3] %>
+<!--           </div> -->
+          <%= f.input :password, as: :string, label: "Set a password (optional)", placeholder: "Share this password to allow free access to your class" %>
+          <%= f.input :language,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      collection: SportsClass::LANGUAGES, prompt: :translate %>
+          <div class="d-flex mb-2">
+            <%= image_tag "", class: 'hidden img-thumbnail mr-4', id: "photo-preview" %>
+            <%= f.input :photo,
+                        hint: "leave it blank if you don't want to change it",
+                        required: false,
+                        input_html: { class: 'hidden d-none', id: 'photo-input' },
+                        label_html: { class: 'upload-photo mt-3'},
+                        label: '📷 Upload a photo' %>
+          </div>
+          <%= f.button :submit, class: 'btn class-sign-up-button sweet-alert', id:"sweet-alert-class" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

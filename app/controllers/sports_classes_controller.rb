@@ -5,11 +5,11 @@ require 'openssl'
 require 'json'
 
 class SportsClassesController < ApplicationController
-  before_action :set_sports_class, only: [:show, :edit, :update, :destroy]
+  before_action :set_sports_class, only: [:show, :edit, :update, :duplicate, :destroy]
 
   def index
-    start_range = Time.zone.now.in_time_zone(Time.now.zone)
-    end_range = Time.zone.now.in_time_zone(Time.now.zone).advance(days: 8)
+    start_range = Time.zone.now.in_time_zone(Time.now.zone) - 30.minutes
+    end_range = Time.zone.now.in_time_zone(Time.now.zone).advance(days: 90)
     @sports_classes = policy_scope(SportsClass)
       .where(date_time: Range.new(start_range, end_range))
       .order(date_time: :asc)
@@ -41,6 +41,8 @@ class SportsClassesController < ApplicationController
     if @sportsclass.save
       room = create_room(@sportsclass)
       @sportsclass.update(room: JSON.parse(room.body)["name"])
+      mail = SportsClassMailer.with(sports_class: @sportsclass, trainer: @trainer).new_class_confirmation
+      mail.deliver_later(wait: 15.seconds)
       redirect_to profile_path, notice: "#{@sportsclass.title} has been created!"
     else
       render :new
@@ -54,14 +56,25 @@ class SportsClassesController < ApplicationController
   def update
     authorize @sportsclass
     if @sportsclass.update(sports_class_params)
-      redirect_to profile_path, notice: "#{@sportsclass.title} has been updated."
+      redirect_to profile_path, notice: "#{@sportsclass.title}'s information has been saved."
     else
       render :edit
     end
   end
 
+  def duplicate
+    @dup_sportsclass = @sportsclass.deep_clone include: [:photo_attachment, :photo_blob]
+    @trainer = @dup_sportsclass.trainer
+    authorize @dup_sportsclass
+    if @dup_sportsclass.save
+      room = create_room(@dup_sportsclass)
+      @dup_sportsclass.update(room: JSON.parse(room.body)["name"])
+      redirect_to edit_sports_class_path(@dup_sportsclass)
+    end
+  end
+
   def destroy
-    # authorize @sportsclass
+    authorize @sportsclass
     @sportsclass.destroy
     redirect_to profile_path, notice: "Your class has been deleted."
   end
@@ -90,7 +103,7 @@ class SportsClassesController < ApplicationController
   end
 
   def sports_class_params
-    params.require(:sports_class).permit(:title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :photo)
+    params.require(:sports_class).permit(:title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :password, :photo)
   end
 
   def handle_search
@@ -137,7 +150,11 @@ class SportsClassesController < ApplicationController
 
   def handle_filter_cards
     if params[:category].present?
-      @sports_classes = SportsClass.where(category: params[:category]).order(date_time: :asc)
+      start_range = Time.zone.now.in_time_zone(Time.now.zone) - 30.minutes
+      end_range = Time.zone.now.in_time_zone(Time.now.zone).advance(days: 90)
+      @sports_classes = SportsClass
+        .where(category: params[:category], date_time: Range.new(start_range, end_range))
+        .order(date_time: :asc)
     end
   end
 end

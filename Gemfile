@@ -20,6 +20,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 
+#To display times and dates to users in their local time
+gem 'local_time'
+
+#for deep clones (duplicates)
+gem 'deep_cloneable', '~> 3.0.0'
+
 gem 'redis-rails'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -33,6 +39,8 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+gem 'activeadmin'
+gem 'sucker_punch'
 gem 'bootstrap', '~> 4.5', '>= 4.5.3'
 
 #setting up dotenv
@@ -51,6 +59,7 @@ gem 'postmark-rails'
 gem 'money-rails'
 #handles payments
 gem 'stripe'
+gem 'activeadmin'
 
 group :development, :test do
   gem 'pry-byebug'

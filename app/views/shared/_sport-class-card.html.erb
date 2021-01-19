@@ -1,15 +1,19 @@
-<div class="sports-classes-card pt-3">
-  <p class="class-card-datetime"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
+<div class="sports-classes-card">
   <div class="class-card-header d-flex justify-content-between">
-    <div class="card-header-left">
-      <p class="class-card-duration"><%= sports_class.duration %> minutes</p>
+    <div class="time-label">
+      <p class="class-card-month"><%= local_time(sports_class.date_time, "%A") %></p>
+      <p class="class-card-day"><%= local_time(sports_class.date_time, "%b %d") %></p>
+      <p class="class-card-time"><%= local_time(sports_class.date_time, "%H:%M") %></p>
     </div>
     <div class="card-header-right">
       <p class="class-card-category"><%= sports_class.category %></p>
+      <p class="class-card-language"><%= sports_class.language %></p>
+      <p class="class-card-duration"><i class="far fa-clock pr-1"></i>   <%= sports_class.duration %> minutes</p>
     </div>
   </div>
   <% if sports_class.photo.attached? %>
     <div>
+      <!-- time label -->
       <%= cl_image_tag sports_class.photo.key, class: "class-card-image" %>
     </div>
   <% end %>
@@ -63,17 +67,25 @@
             <%= link_to "BOOK", customer_portal_sessions_path, method: :post, class: "card-book-class-link btn class-card-book-button" %>
           <% end %>
         <% else %>
-            <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
-        <% end %>
+          <% if sports_class.password.present? %>
+            <button type="button" class="card-book-class-link btn class-card-book-button" data-toggle="modal" data-target="#password-modal-<%= sports_class.id %>">
+              BOOK
+            </button>
           <% else %>
-            <%= link_to "BOOK", new_user_session_path, class: "card-book-class-link btn class-card-book-button" %>
+            <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
+          <% end %>
         <% end %>
+      <% else %>
+        <%= link_to "BOOK", new_user_session_path, class: "card-book-class-link btn class-card-book-button" %>
+      <% end %>
 
       <button type="button" class="btn class-card-info-button class-info-link" data-toggle="modal" data-target="#modal-<%= sports_class.id %>">
         INFO
       </button>
     </div>
   </div>
+<!-- password modal -->
+  <%= render partial: "shared/password-popup", locals: { sports_class: sports_class } %>
 <!-- class modal -->
   <%= render partial: "shared/modal-class", locals: { sports_class: sports_class } %>
 </div>

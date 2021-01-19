@@ -5,7 +5,7 @@
         <div class="class-modal-left-column col-5 pt-4 pl-5">
           <div class="class-modal-header">
             <h5 class="modal-title" id="exampleModalLabel"> <strong> <%= sports_class.title %> </strong></h5>
-            <p class="class-modal-date"><%= sports_class.date_time.in_time_zone("#{Time.now.zone}").strftime("%A %b %d %Y %H:%M") %></p>
+            <p class="class-modal-date"><%= local_time(sports_class.date_time, "%A %b %d at %H:%M") %></p>
             <p class="class-modal-category"><%= sports_class.category %></p>
           </div>
           <% if sports_class.photo.attached? %>
@@ -43,6 +43,15 @@
           <div class="class-modal-right-header d-flex justify-content-between">
             <div class="class-modal-trainer-name">
               <span> with <strong> <%= sports_class.user.first_name %> <%= sports_class.user.last_name %> </strong> </span>
+              <p class="ratings-average">
+                <% sports_class.trainer.reviews.average("rating::int").to_i.times do %>
+                  <i class="fas fa-star color-star"></i>
+                <% end %>
+                <% (5 - sports_class.trainer.reviews.average("rating::int").to_i).times do %>
+                  <i class="far fa-star color-star"></i>
+                <% end %>
+                (<%= sports_class.trainer.reviews.count %>)
+              </p>
             </div>
             <% if sports_class.user.photo.attached? %>
               <div class="class-modal-avatar">
@@ -68,8 +77,6 @@
                   <% unless current_user.all_booked_classes.include?(sports_class) %>
                     <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, @classbooking), method: :post, class: "sweet-alert-booked-#{sports_class.id} book-class-link btn class-modal-book-button", id:'book-link sweet-alert-booked' %>
                   <% end %>
-                <% else %>
-                  <%= link_to "BOOK", memberships_path, class: "book-class-link btn class-modal-book-button" %>
                 <% end %>
               <% end %>
             </div>

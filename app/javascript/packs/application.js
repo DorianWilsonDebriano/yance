@@ -7,6 +7,7 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
+require("plugins/local-time");
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -22,13 +23,17 @@ require("channels");
 
 // External imports
 import "bootstrap";
+// import LocalTime from "local-time";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import "../plugins/flatpickr";
+import LocalTime from '../plugins/local-time'
+LocalTime.start()
 
 import { previewImageOnFileSelect } from "../components/photo_preview";
 import { initStarRating } from "../plugins/init_star_rating";
+import { init_popover } from "../components/popover";
 // for confirmations
 // import { initSweetalert } from "../plugins/init_sweetalert";
 // for cancellations
@@ -39,10 +44,11 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   initStarRating();
   previewImageOnFileSelect();
+  init_popover();
 
   flatpickr(".datepicker", {
   altInput: true,
-  altFormat: "d M Y",
+  altFormat: "d M",
   dateFormat: "Z",
   minDate: "today",
   mode: "range"
