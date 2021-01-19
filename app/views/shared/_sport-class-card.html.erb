@@ -1,22 +1,15 @@
 <div class="sports-classes-card">
-  <!-- <p class="class-card-datetime"><%= sports_class.date_time.in_time_zone(Time.now.zone).strftime("%A %b %d %Y at %H:%M") %></p> -->
   <div class="class-card-header d-flex justify-content-between">
     <div class="time-label">
-      <p class="class-card-month"><%= sports_class.date_time.in_time_zone(Time.now.zone).strftime("%A") %></p>
-      <p class="class-card-day"><%= sports_class.date_time.in_time_zone(Time.now.zone).strftime("%b %d") %></p>
-      <p class="class-card-time"><%= sports_class.date_time.in_time_zone(Time.now.zone).strftime("%H:%M") %></p>
+      <p class="class-card-month"><%= local_time(sports_class.date_time, "%A") %></p>
+      <p class="class-card-day"><%= local_time(sports_class.date_time, "%b %d") %></p>
+      <p class="class-card-time"><%= local_time(sports_class.date_time, "%H:%M") %></p>
     </div>
     <div class="card-header-right">
       <p class="class-card-category"><%= sports_class.category %></p>
       <p class="class-card-language"><%= sports_class.language %></p>
       <p class="class-card-duration"><i class="far fa-clock pr-1"></i>   <%= sports_class.duration %> minutes</p>
     </div>
-<!--     <div class="card-header-right">
-      <div class="class-card-detail-icon">
-        <p class="class-card-duration"><%= sports_class.duration %></p>
-        <p class="class-card-duration-min">min</p>
-      </div>
-    </div> -->
   </div>
   <% if sports_class.photo.attached? %>
     <div>
