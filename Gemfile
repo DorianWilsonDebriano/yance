@@ -28,6 +28,8 @@ gem 'deep_cloneable', '~> 3.0.0'
 
 gem 'route_translator'
 
+gem 'rails-i18n'
+
 gem 'redis-rails'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
