@@ -8,37 +8,18 @@ class SubscriptionsController < ApplicationController
     authorize @subscription
   end
 
-  # def create
-  #   @membership = Membership.find(params[:membership_id])
-  #   @user = current_user
-  #   @subscription = Subscription.new
-  #   @subscription.user = current_user
-  #   @subscription.membership = @membership
-  #   authorize @subscription
-  #   if @subscription.save
-  #     customer = create_stripe_customer(@user)
-  #     @session = create_checkout_session(customer, @user)
-  #     session[:token] = @user.session_token
-  #     render :checkout
-  #   elsif
-  #     @membership == current_user.membership
-  #     redirect_to memberships_path, notice: "You are alredy subscribed to this membership"
-  #   end
-  # end
-
   def create
     skip_authorization
     @membership = Membership.find(params[:membership_id])
     @user = current_user
     #if the email of the user is already on the stripe database then update the existing customer
-    #define a function that returns true if the email adress of the customer is already on stripe
-    if is_stripe_customer?(@user)
+    if stripe_customer?(@user)
       #if true call a method to update existing customer on stripe
       customer = update_stripe_customer(@user)
       @session = create_checkout_session(customer, @user)
       session[:token] = @user.session_token
       render :checkout
-    elsif !@membership.nil?
+    elsif !stripe_customer?(@user)
       customer = create_stripe_customer(@user)
       @session = create_checkout_session(customer, @user)
       session[:token] = @user.session_token
@@ -63,7 +44,8 @@ class SubscriptionsController < ApplicationController
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @customer = Stripe::Customer.retrieve(@session.customer)
     if @session.payment_status == "paid"
-      flash.notice = "Congratulations #{current_user.first_name}! You are now subscribed to the #{@session.metadata.membership_title}."
+      flash.notice = "Congratulations #{current_user.first_name}!
+                        You are now subscribed to the #{@session.metadata.membership_title}."
     end
   end
 
@@ -83,36 +65,34 @@ class SubscriptionsController < ApplicationController
 
   def create_checkout_session(customer, user)
     price = Stripe::Price.list(lookup_keys: [@membership.title]).data.first
-    @checkout_session = Stripe::Checkout::Session.create({
-      customer: current_user.stripe_customer_id,
-      success_url: 'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
-      cancel_url: 'http://localhost:3000/memberships',
-      payment_method_types: ['card'],
-      line_items: [{
-        price: price.id,
-        quantity: 1
-      }],
-      mode: 'subscription',
-      subscription_data: {
-        trial_period_days: 14
-      },
-      metadata: {
-        membership_id: @membership.id,
-        membership_title: @membership.title
+    @checkout_session = Stripe::Checkout::Session.create(
+      {
+        customer: current_user.stripe_customer_id,
+        success_url: 'https://yancesport.com/success?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url: 'https://yancesport.com/memberships',
+        payment_method_types: ['card'],
+        line_items: [{
+          price: price.id,
+          quantity: 1
+        }],
+        mode: 'subscription',
+        subscription_data: {
+          trial_period_days: 14
+        },
+        metadata: {
+          membership_id: @membership.id,
+          membership_title: @membership.title
+        }
       }
-    })
+    )
   end
 
-  def is_stripe_customer?(user)
+  def stripe_customer?(user)
     !Stripe::Customer.list({ email: @user.email }).empty?
   end
 
   def update_stripe_customer(user)
-    customer = Stripe::Customer.update(@user.stripe_customer_id,
-      metadata: {
-        selected_membership: @membership
-      }
-    )
+    customer = Stripe::Customer.update(@user.stripe_customer_id, metadata: { selected_membership: @membership })
     user.update!(stripe_customer_id: customer.id)
     customer
   end

@@ -39,5 +39,5 @@ Rails.application.routes.draw do
   resources :customer_portal_sessions, only: [:create]
 
   resources :webhooks
-  # get 'webhooks/create'
+  get 'webhooks/create'
 end
