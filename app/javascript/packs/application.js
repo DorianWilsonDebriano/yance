@@ -34,6 +34,7 @@ LocalTime.start()
 import { previewImageOnFileSelect } from "../components/photo_preview";
 import { initStarRating } from "../plugins/init_star_rating";
 import { init_popover } from "../components/popover";
+import { initChatroomCable } from "../channels/chatroom_channel";
 // for confirmations
 // import { initSweetalert } from "../plugins/init_sweetalert";
 // for cancellations
@@ -45,6 +46,7 @@ document.addEventListener("turbolinks:load", () => {
   initStarRating();
   previewImageOnFileSelect();
   init_popover();
+  initChatroomCable();
 
   flatpickr(".datepicker", {
   altInput: true,
