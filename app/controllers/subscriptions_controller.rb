@@ -90,8 +90,7 @@ class SubscriptionsController < ApplicationController
   def stripe_customer?(user)
     customer_email_list = Stripe::Customer.list({ email: @user.email })
     customers_ids = customer_email_list.data
-    @stripe_id = @user.stripe_customer_id
-    customers_ids.select { |id| id [" #{@stripe_id} "] }.include?(@stripe_id)
+    customers_ids.any? { |customer| customer["id"] == @user.stripe_customer_id }
   end
 
   def update_stripe_customer(user)
