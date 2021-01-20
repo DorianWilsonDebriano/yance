@@ -58,7 +58,7 @@
     </div>
     <div class="class-info-book-buttons d-flex justify-content-center">
       <% if user_signed_in? %>
-        <% if !current_user.subscription.nil? %>
+        <% if current_user.subscription.present? %>
           <% if current_user.subscription.subscription_status == "active" || "trialing" %>
               <% unless current_user.all_booked_classes.include?(sports_class) %>
                 <%= link_to "BOOK", sports_class_class_bookings_path(sports_class, class_booking: {class_booking: @classbooking}
