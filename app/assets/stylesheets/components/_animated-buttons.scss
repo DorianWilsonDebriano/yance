@@ -32,6 +32,34 @@
   margin-left: 0px;
 }
 
+  #check-it-out-hero {
+    left: 2%;
+    margin-left: 0px;
+    padding: 1em 12em;
+  }
+
+@media(max-width: 1000px) {
+  #check-it-out-hero {
+    left: 3%;
+    margin-left: 0px;
+    padding: 1em 8em;
+  }
+}
+
+@media(max-width: 750px) {
+  #check-it-out-hero {
+    left: 6%;
+    margin-left: 0px;
+    padding: 1em 6em;
+  }
+}
+
+#check-it-out-hero {
+  left: 2%;
+  margin-left: 0px;
+  padding: 1em 12em;
+}
+
 .draw {
     transition: color 0.25s;
 

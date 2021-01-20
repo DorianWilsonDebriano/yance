@@ -19,7 +19,13 @@
 }
 
 .navigation {
-  height: 300px;
+  height: 75vh;
+  padding: 40px;
+
+  background-color: white;
+  position: relative;
+  right: 5%;
+  border-radius: 4px;
 }
 
 @media(max-width: 768px) {
@@ -29,10 +35,21 @@
 }
 
 #home-title {
-    font-size: 24px;
-    font-weight: bolder;
-    color: $dark-text;
-  }
+  font-size: 36px;
+  font-weight: bolder;
+  color: $dark-text;
+}
+
+#hero-text {
+  font-size: 24px;
+  color: $dark-text;
+}
+
+#home-price {
+  font-size: 36px;
+  font-weight: bolder;
+  color: $yance-yellow;
+}
 
   #browse-text{
     color: $dark-text;
@@ -55,28 +72,16 @@
 }
 
 .banner-image {
-  // border-radius: 200px 70px 200px 460px;
-  animation: morph 8s ease-in-out infinite;
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  transition: all 1s ease-in-out;
-  width: 100%;
+  padding: 0px;
+  height: 100vh;
+  width: 1000px;
+  object-fit: fill;
+  object-position: center;
 }
 
-@keyframes morph {
-  0% {
-      border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
-  }
-  50% {
-      border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
-  }
-  100% {
-    border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
-  }
-}
 
 @media(max-width: 950px) {
   .banner-image {
-    width: 95%;
   }
 }
 
@@ -84,21 +89,19 @@
   .banner-image {
     margin-top: 36px;
     padding-bottom: 26px;
-    width: 95%;
   }
 }
 
 .banner-content {
   margin: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608752031/background-shape_aucxuq.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: fill;
+  background-color: #FCF8E3;
+  // background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608752031/background-shape_aucxuq.svg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: fill;
 }
 
 .sport-category-section {
@@ -118,9 +121,9 @@
 
 .sport-category-grid {
   display: grid;
-  gap: 36px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-top: 46px;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 24px;
 }
 
 @media(max-width: 950px) {
@@ -138,7 +141,7 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .explore-category {
@@ -236,7 +239,7 @@
 
 .punchliner-right {
   position: relative;
-  height: 200px;
+  height: 600px;
   h2 {
     font-weight: bolder;
     font-size: 24px;
