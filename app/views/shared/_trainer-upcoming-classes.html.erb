@@ -47,7 +47,7 @@
         <% if !current_user.subscription.nil? %>
           <% if current_user.subscription.subscription_status == "active" || "trialing" %>
               <% unless current_user.all_booked_classes.include?(sportsclass) %>
-                <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, @classbooking), method: :post, class: "sweet-alert-booked-#{sportsclass.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
+                <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sportsclass.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
               <% end %>
           <% else current_user.subscription.subscription_status == "incomplete" %>
             <%= link_to "BOOK", customer_portal_sessions_path, method: :post, class: "card-book-class-link btn class-card-book-button" %>

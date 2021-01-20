@@ -13,7 +13,10 @@ class SubscriptionsController < ApplicationController
     @membership = Membership.find(params[:membership_id])
     @user = current_user
     #if the email of the user is already on the stripe database then update the existing customer
-    if stripe_customer?(@user)
+    if
+      @membership == current_user.membership
+      redirect_to memberships_path, notice: "You already have an active subscription."
+    elsif stripe_customer?(@user)
       #if true call a method to update existing customer on stripe
       customer = update_stripe_customer(@user)
       @session = create_checkout_session(customer, @user)
@@ -24,9 +27,6 @@ class SubscriptionsController < ApplicationController
       @session = create_checkout_session(customer, @user)
       session[:token] = @user.session_token
       render :checkout
-    elsif
-      @membership == current_user.membership
-      redirect_to memberships_path, notice: "You are alredy subscribed to this membership"
     end
   end
 
@@ -88,9 +88,10 @@ class SubscriptionsController < ApplicationController
   end
 
   def stripe_customer?(user)
-
-    @customer = Stripe::Customer.retrieve(@user.stripe_customer_id)
-
+    customer_email_list = Stripe::Customer.list({ email: @user.email })
+    customers_ids = customer_email_list.data
+    @stripe_id = @user.stripe_customer_id
+    customers_ids.select { |id| id [" #{@stripe_id} "] }.include?(@stripe_id)
   end
 
   def update_stripe_customer(user)
