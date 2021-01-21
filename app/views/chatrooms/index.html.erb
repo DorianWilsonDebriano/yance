@@ -1,6 +1,8 @@
 <div class="pt-5 mt-5 d-flex flex-column">
-<%= link_to @chatrooms.first.name, chatroom_path(@chatrooms.first.id) %>
-
+  <%= link_to @chatrooms.first.name, chatroom_path(@chatrooms.first.id) %>
+  <%if !@user.trainer_ids.empty? %>
+      <%= link_to "Trainers", chatroom_path(@chatrooms.second.id)%>
+  <% end %>
   <% if !@user_chatrooms.empty? %>
     <% @chatrooms_all.each do |chatroom| %>
       <%= link_to chatroom.name, chatroom_path(chatroom) %>

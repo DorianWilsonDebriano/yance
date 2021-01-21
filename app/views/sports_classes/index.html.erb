@@ -47,7 +47,9 @@
           <% end %>
         <% end %>
       </div>
-      <%= link_to "Connect with Yancers", chatrooms_path , class: "yancers" %>
+      <% if !current_user.nil? %>
+        <%= link_to "Connect with Yancers", chatrooms_path , class: "yancers" %>
+      <% end %>
     </div>
   </div>
     <div class="page container d-flex justify-content-center flex-column">
