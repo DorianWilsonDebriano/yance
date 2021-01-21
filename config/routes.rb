@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "/search", to: "pages#search", as: :search
   get "/profile", to: "pages#profile"
   get "/settings", to: "pages#settings"
+  get "/become-a-trainer", to: "pages#trainer_info"
   get "sports_classes/:id/duplicate", to: "sports_classes#duplicate", as: :duplicate
 
    resources :trainers, only: %i[show new create] do

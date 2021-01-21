@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 1em;
   padding: 1em 2em;
-  top: 10%;
+  top: 8%;
   left: 5%;
 
   // Using inset box-shadow instead of border for sizing simplicity
@@ -35,14 +35,14 @@
   #check-it-out-hero {
     left: 2%;
     margin-left: 0px;
-    padding: 1em 12em;
+    padding: 1em 4em;
   }
 
 @media(max-width: 1000px) {
   #check-it-out-hero {
     left: 3%;
     margin-left: 0px;
-    padding: 1em 8em;
+    padding: 1em 2em;
   }
 }
 
@@ -50,14 +50,8 @@
   #check-it-out-hero {
     left: 6%;
     margin-left: 0px;
-    padding: 1em 6em;
+    padding: 1em 2em;
   }
-}
-
-#check-it-out-hero {
-  left: 2%;
-  margin-left: 0px;
-  padding: 1em 12em;
 }
 
 .draw {
