@@ -35,7 +35,8 @@ class WebhooksController < ApplicationController
     when 'customer.subscription.updated', 'customer.subscription.deleted'
       subscription = event.data.object
       @user = User.find_by(stripe_customer_id: subscription.customer)
-      @user.subscription.update(subscription_status: subscription.status)
+      user_subscription = Subscription.find_by(user_id: @user.id)
+      user_subscription.update(subscription_status: subscription.status)
     end
   end
 end
