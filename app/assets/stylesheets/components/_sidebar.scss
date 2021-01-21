@@ -1,16 +1,31 @@
 .sidebar {
-  display: flex;
-  flex-direction: column;
   width: 16%;
   padding: 20px;
 
   .sidebar-position {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     width: 12%;
+    height: 100vh;
     p {
       color: $dark-text;
       font-size: 14px;
       font-weight: bold;
+    }
+    a.yancers {
+      display: flex;
+      justify-content: center;
+      color: black !important;
+      margin-top: 150px;
+      background-color: $yance-yellow;
+      padding: 8px;
+      border-radius: 5px;
+    }
+    a.yancers:hover {
+      box-shadow: rgba(251, 223, 68, 0.8) 1px 1px 15px;
+      padding: 10px;
+      font-size: 18px;
     }
   }
 }
