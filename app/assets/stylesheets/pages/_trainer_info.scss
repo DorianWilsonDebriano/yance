@@ -1,0 +1,48 @@
+.trainer-info-page {
+  padding-top: 48px;
+}
+
+.trainer-banner-content {
+  height: 75vh;
+  width: 100%;
+  background-color: #EDECE0;
+  text-align: center;
+  padding-top: 150px;
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611332431/pexels-elly-fairytale-3822140_ofme0f.jpg");
+  background-size: cover;
+  background-position: center;
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    padding: 30px 100px;
+    margin: 0px;
+    color: white;
+  }
+  p {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: white;
+  }
+}
+
+.reasons-section {
+  padding: 60px 150px;
+}
+
+.reasons-grid {
+  display: grid;
+  gap: 120px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 24px;
+  h2 {
+    font-weight: bolder;
+    font-size: 18px;
+    color: $dark-text;
+    padding-bottom: 12px;
+  }
+  p {
+    font-size: 16px;
+    color: $dark-text;
+  }
+}
