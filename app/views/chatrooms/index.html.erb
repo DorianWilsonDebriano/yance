@@ -3,7 +3,7 @@
   <%if !@user.trainer_ids.empty? %>
       <%= link_to "Trainers", chatroom_path(@chatrooms.second.id)%>
   <% end %>
-  <% if !@user_chatrooms.empty? %>
+  <% if !@user_class_chatrooms.empty? %>
     <% @chatrooms_all.each do |chatroom| %>
       <%= link_to chatroom.name, chatroom_path(chatroom) %>
     <% end %>

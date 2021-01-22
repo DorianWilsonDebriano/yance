@@ -5,7 +5,7 @@ class ChatroomsController < ApplicationController
     @user = current_user
     @user_bookings = @user.all_booked_classes.pluck(:title)
     @chatroom_names = @chatrooms.pluck(:name)
-    @user_chatrooms = @user_bookings & @chatroom_names
+    @user_class_chatrooms = @user_bookings & @chatroom_names
     class_chatrooms
     authorize @chatrooms
   end
@@ -28,8 +28,8 @@ class ChatroomsController < ApplicationController
   private
 
   def class_chatrooms
-    if !@user_chatrooms.empty?
-      @chatrooms_all = Chatroom.where(name: @user_chatrooms)
+    if !@user_class_chatrooms.empty?
+      @chatrooms_all = Chatroom.where(name: @user_class_chatrooms)
     end
   end
 
