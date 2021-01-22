@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :sports_classes, through: :trainers
   has_many :class_bookings, dependent: :destroy
   has_many :messages
+  has_many :sports_class_messages
   has_many :reviews, dependent: :destroy
   has_one :subscription, dependent: :destroy
   has_one :membership, through: :subscription

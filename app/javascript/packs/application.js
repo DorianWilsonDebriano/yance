@@ -35,6 +35,8 @@ import { previewImageOnFileSelect } from "../components/photo_preview";
 import { initStarRating } from "../plugins/init_star_rating";
 import { init_popover } from "../components/popover";
 import { initChatroomCable } from "../channels/chatroom_channel";
+import { initSportsClassChatroomCable } from "../channels/sports_class_chatroom_channel";
+
 // for confirmations
 // import { initSweetalert } from "../plugins/init_sweetalert";
 // for cancellations
@@ -47,6 +49,7 @@ document.addEventListener("turbolinks:load", () => {
   previewImageOnFileSelect();
   init_popover();
   initChatroomCable();
+  initSportsClassChatroomCable();
 
   flatpickr(".datepicker", {
   altInput: true,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_19_150159) do
+ActiveRecord::Schema.define(version: 2021_01_22_140306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,24 @@ ActiveRecord::Schema.define(version: 2021_01_19_150159) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "sports_class_chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.bigint "sports_class_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sports_class_id"], name: "index_sports_class_chatrooms_on_sports_class_id"
+  end
+
+  create_table "sports_class_messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "sports_class_chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sports_class_chatroom_id"], name: "index_sports_class_messages_on_sports_class_chatroom_id"
+    t.index ["user_id"], name: "index_sports_class_messages_on_user_id"
+  end
+
   create_table "sports_classes", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -178,6 +196,9 @@ ActiveRecord::Schema.define(version: 2021_01_19_150159) do
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "trainers"
   add_foreign_key "reviews", "users"
+  add_foreign_key "sports_class_chatrooms", "sports_classes"
+  add_foreign_key "sports_class_messages", "sports_class_chatrooms"
+  add_foreign_key "sports_class_messages", "users"
   add_foreign_key "sports_classes", "trainers"
   add_foreign_key "subscriptions", "memberships"
   add_foreign_key "subscriptions", "users"
