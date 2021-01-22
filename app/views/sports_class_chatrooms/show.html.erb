@@ -1,4 +1,4 @@
-<h1>#<%= @sports_class_chatroom.name %></h1>
+<h1><%= @sports_class_chatroom.name %></h1>
 <div id="sports-class-messages" data-sports-class-chatroom-id="<%= @sports_class_chatroom.id %>">
   <% @sports_class_chatroom.sports_class_messages.each do |sports_class_message| %>
     <%= render 'sports_class_messages/sports_class_message', sports_class_message: sports_class_message %>

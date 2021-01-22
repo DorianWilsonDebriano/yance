@@ -1,1 +1,8 @@
+<div class="pt-5 mt-5 d-flex flex-column">
+  <% @sports_class_chatrooms.each do |sports_class_chatroom| %>
+    <%= link_to sports_class_chatroom.name, sports_class_chatroom_path(sports_class_chatroom) %>
+  <% end %>
+</div>
+
+
 
