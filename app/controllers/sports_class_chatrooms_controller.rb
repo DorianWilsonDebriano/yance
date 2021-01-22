@@ -8,11 +8,11 @@ class SportsClassChatroomsController < ApplicationController
   end
 
   def index
-    @sports_classes = SportsClass.find(SportsClassChatroom.pluck(:sports_class_id))
-    @sports_class_times = @sports_classes.pluck(:date_time).each do |sc|
+    # @sports_classes = SportsClass.find(SportsClassChatroom.pluck(:sports_class_id))
+    # @sports_class_times = @sports_classes.pluck(:date_time).each do |sc|
       @sports_class_chatrooms = policy_scope(SportsClassChatroom)
-        .where(['created_at < ?', sc ])
-    end
+        .where(['date_time > ?', Time.now])
+    # end
   end
 end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_22_140306) do
+ActiveRecord::Schema.define(version: 2021_01_22_175428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 2021_01_22_140306) do
     t.bigint "sports_class_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "date_time"
     t.index ["sports_class_id"], name: "index_sports_class_chatrooms_on_sports_class_id"
   end
 

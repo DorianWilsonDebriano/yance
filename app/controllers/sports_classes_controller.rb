@@ -43,7 +43,7 @@ class SportsClassesController < ApplicationController
       @sportsclass.update(room: JSON.parse(room.body)["name"])
       mail = SportsClassMailer.with(sports_class: @sportsclass, trainer: @trainer).new_class_confirmation
       mail.deliver_later(wait: 15.seconds)
-      SportsClassChatroom.create(name: @sportsclass.title, sports_class_id: @sportsclass.id)
+      SportsClassChatroom.create(name: @sportsclass.title, date_time: @sportsclass.date_time, sports_class_id: @sportsclass.id)
       redirect_to profile_path, notice: "#{@sportsclass.title} has been created!"
     else
       render :new
