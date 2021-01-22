@@ -1,5 +1,4 @@
 class WebhooksController < ApplicationController
-
   skip_before_action :verify_authenticity_token
   before_action :skip_authorization
 
@@ -10,7 +9,7 @@ class WebhooksController < ApplicationController
 
     begin
       event = Stripe::Webhook.construct_event(
-        payload, sig_header, Rails.application.credentials.dig(:stripe, :webhook_secret)
+        payload, sig_header, Rails.application.credentials.stripe[:webhook_secret]
       )
     rescue JSON::ParserError => e
       status 400
@@ -38,5 +37,6 @@ class WebhooksController < ApplicationController
       user_subscription = Subscription.find_by(user_id: @user.id)
       user_subscription.update(subscription_status: subscription.status)
     end
+    render json: { message: 'success' }
   end
 end
