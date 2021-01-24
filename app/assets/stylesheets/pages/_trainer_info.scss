@@ -16,7 +16,6 @@
     font-weight: bold;
     font-size: 26px;
     padding: 30px 100px;
-    margin: 0px;
     color: white;
   }
   p {
@@ -28,6 +27,12 @@
 
 .reasons-section {
   padding: 60px 150px;
+  h2 {
+    font-weight: bolder;
+    font-size: 26px;
+    color: $dark-text;
+    padding-bottom: 12px;
+  }
 }
 
 .reasons-grid {
@@ -45,4 +50,44 @@
     font-size: 16px;
     color: $dark-text;
   }
+}
+
+.how-it-works-element {
+  position: relative;
+  background-color: #F4F4F4;
+  margin: 0px;
+  height: 80vh;
+  padding-top: 100px;
+  padding-left: 60px;
+  h2 {
+    color: $dark-text;
+    font-weight: bolder;
+    font-size: 24px;
+    padding: 26px 36px 0px 40px;
+  }
+  p {
+    padding: 12px 36px;
+    color: $dark-text;
+    font-size: 18px;
+  }
+}
+
+#how-it-works-number {
+  position: absolute;
+  font-size: 120px;
+  font-weight: bold;
+  color: rgba(254, 186, 141, 0.3);
+  top: 0px;
+  left: 0px;
+  line-height: 0.7;
+}
+
+.how-it-works-image {
+  width: 600px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.how-it-works-trainers {
+
 }
