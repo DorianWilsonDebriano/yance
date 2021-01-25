@@ -33,9 +33,14 @@ class WebhooksController < ApplicationController
       @subscription.update(subscription_status: subscription_status)
     when 'customer.subscription.updated', 'customer.subscription.deleted'
       subscription = event.data.object
-      @user = User.find_by(stripe_customer_id: subscription.customer)
-      user_subscription = Subscription.find_by(user_id: @user.id)
-      user_subscription.update(subscription_status: subscription.status)
+      invoice = Stripe::Invoice.retrieve(subscription.latest_invoice)
+      if invoice.billing_reason == "subscription_create"
+        puts "success"
+      else
+        @user = User.find_by(stripe_customer_id: subscription.customer)
+        user_subscription = Subscription.find_by(user_id: @user.id)
+        user_subscription.update(subscription_status: subscription.status)
+      end
     end
     render json: { message: 'success' }
   end

@@ -68,8 +68,8 @@ class SubscriptionsController < ApplicationController
     @checkout_session = Stripe::Checkout::Session.create(
       {
         customer: current_user.stripe_customer_id,
-        success_url: 'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url: 'http://localhost:3000/memberships',
+        success_url: 'http://64a33ac232fa.ngrok.io//success?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url: 'http://64a33ac232fa.ngrok.io//memberships',
         payment_method_types: ['card'],
         line_items: [{
           price: price.id,
