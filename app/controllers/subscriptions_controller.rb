@@ -64,12 +64,17 @@ class SubscriptionsController < ApplicationController
   end
 
   def create_checkout_session(customer, user)
+    if Rails.env == "development"
+      @successUrl = "http://localhost:3000"
+    elsif Rails.env == "production"
+      @successUrl = "https://yancesport.com"
+    end
     price = Stripe::Price.list(lookup_keys: [@membership.title]).data.first
     @checkout_session = Stripe::Checkout::Session.create(
       {
         customer: current_user.stripe_customer_id,
-        success_url: 'http://64a33ac232fa.ngrok.io//success?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url: 'http://64a33ac232fa.ngrok.io//memberships',
+        success_url: 'http://{@successUrl}/success?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url: 'http://{@successUrl}/memberships',
         payment_method_types: ['card'],
         line_items: [{
           price: price.id,
