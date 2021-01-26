@@ -1,6 +1,6 @@
 <div class="home-page banner-section">
   <div class="banner-content row">
-    <div class="navigation col-sm-12 col-md-5 col-lg-6">
+    <div class="navigation col-sm-12 col-md-6 col-lg-6">
       <h1 id="home-title" class="pt-5">Unlimited <i class="highlighted-yellow">live</i> fitness classes to join from home</h1>
       <p id="hero-text" class="pt-3">With just one membership, access unlimited live classes provided by independent trainers from around the world!</p>
       <p id="home-price">Sign up for just <i class="highlighted-yellow">€26.99/mo</i></p>
@@ -9,7 +9,7 @@
         <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button" %>
       </div>
     </div>
-    <div class="banner-image col-sm-12 col-md-7 col-lg-6">
+    <div class="banner-image col-sm-12 col-md-6 col-lg-6">
       <p>FEEL AMAZING FROM HOME</p>
       <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1611163751/yance-hero-video_cd0f0t.mp4" type="video/mov" autoplay muted loop class="banner-image">
         <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1611163751/yance-hero-video_cd0f0t.mp4" type="video/mov" class="banner-image">
@@ -18,7 +18,7 @@
   </div>
 </div>
 <!-- How it works section -->
-<div class="container how-it-works-section mb-5">
+<div class="how-it-works-section">
   <h2 class="text-center">How it works</h2>
   <div class="row">
     <div class="col-sm-12 col-lg-4 text-center">
@@ -45,9 +45,9 @@
   </div>
 </div>
 <!-- all classes live -->
-<div class="container description-section">
+<div class="container description-section" id="clay-background-section">
   <div class="row pb-5 classes-focus-section">
-    <div class="home-info-section col-sm-7 col-md-6 col-lg-7">
+    <div class="home-info-section col-sm-12 col-md-12 col-lg-7">
       <%= link_to sports_classes_path do %>
         <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608746160/OH5C6033_letm5o.jpg", class: "home-info-section" %>
       <% end %>
@@ -63,7 +63,7 @@
   </div>
 </div>
 <!-- info-images section -->
-<div class="container description-section">
+<div class="container description-section" id="grey-background-section">
   <div class="row py-5 classes-focus-section">
     <div class="punchliner-left col-sm-12 col-md-12 col-lg-5 py-3">
       <h2 class="mt-5">Made for an interactive home sports experience</h2>
@@ -73,7 +73,7 @@
         <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button", id: "section-grey-button" %>
       </div>
     </div>
-    <div class="home-info-section col-sm-7 col-md-6 col-lg-7">
+    <div class="home-info-section col-sm-12 col-md-12 col-lg-7">
       <%= link_to sports_classes_path do %>
        <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608746503/OH5C5826_h1dkmm.jpg", class: "home-info-section" %>
       <% end %>
@@ -130,14 +130,14 @@
   </div>
 </div>
 <!--You're a trainer section -->
-<div class="container description-section">
+<div class="container description-section" id="peach-background-section">
   <div class="row py-5 classes-focus-section">
-    <div class="home-info-section col-sm-7 col-md-6 col-lg-7">
+    <div class="home-info-section col-sm-12 col-md-12 col-lg-7">
       <%= link_to new_trainer_path do %>
         <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1608823717/OH5C6490_copy_j0afya.jpg", class: "home-info-section" %>
       <% end %>
     </div>
-    <div class="punchliner-right col-sm-12 col-md-12 col-lg-5 py-3" id="pale-background">
+    <div class="punchliner-right col-sm-12 col-md-12 col-lg-5 py-3" id="peach-background">
       <h2 class="mt-5">You're a trainer?</h2>
       <p>Yance is open for trainers! Sign up, click on become a trainer, create a profile and start scheduling your classes. It's as easy as that!</p>
       <div class="d-flex pt-3 justify-content-center">

@@ -4,19 +4,27 @@
   height: 54px;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
 }
 
+@media(max-width: 575px) {
+  .navbar-lewagon {
+    height: 64px;
+  }
+  .mr-auto {
+    text-align: center;
+    background-color: rgb(250, 250, 250);
+    height: 100vh;
+    padding-top: 200px;
+  }
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 50px;
-  // position: absolute;
-  // top: 14%;
-  // left: 4%;
   margin-right: 20px;
 }
 
@@ -61,6 +69,12 @@
     background-color: transparent !important;
   }
 }
+@media(max-width: 575px) {
+  .nav-link {
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+}
 
 #navbarDropdown {
   cursor: pointer;
@@ -101,4 +115,12 @@
   &:hover {
     background-color: rgba(254, 223, 68, 0.2);
   }
+}
+
+.dropdown {
+  list-style: none;
+}
+
+.navbar-toggler {
+  border: none;
 }
