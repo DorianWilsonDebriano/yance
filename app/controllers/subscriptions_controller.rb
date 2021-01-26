@@ -43,10 +43,6 @@ class SubscriptionsController < ApplicationController
     skip_authorization
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @customer = Stripe::Customer.retrieve(@session.customer)
-    if @session.payment_status == "paid"
-      flash.notice = "Congratulations #{current_user.first_name}!
-                        You are now subscribed to the #{@session.metadata.membership_title}."
-    end
   end
 
   private
@@ -64,15 +60,15 @@ class SubscriptionsController < ApplicationController
   end
 
   def create_checkout_session(customer, user)
-    success_URL = Rails.env.development? ? "http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}" : "http://yancesport.com/settings"
-    cancel_URL = Rails.env.development? ? "http://localhost:3000/memberships" : "http://yancesport.com/memberships"
+    success_url = Rails.env.development? ? "http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}" : "https://yancesport.com/success?session_id={CHECKOUT_SESSION_ID}"
+    cancel_url = Rails.env.development? ? "http://localhost:3000/memberships" : "https://yancesport.com/memberships"
 
     price = Stripe::Price.list(lookup_keys: [@membership.title]).data.first
     @checkout_session = Stripe::Checkout::Session.create(
       {
         customer: current_user.stripe_customer_id,
-        success_url: success_URL,
-        cancel_url: cancel_URL,
+        success_url: success_url,
+        cancel_url: cancel_url,
         payment_method_types: ['card'],
         line_items: [{
           price: price.id,

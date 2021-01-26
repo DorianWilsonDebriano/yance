@@ -7,7 +7,6 @@ class CustomerPortalSessionsController < ApplicationController
       #laura sample user id 'cus_Ia6uu8xXbZUSPw'
       return_url: return_URL,
     })
-
     redirect_to portal_session.url
   end
 end
