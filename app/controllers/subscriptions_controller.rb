@@ -64,17 +64,15 @@ class SubscriptionsController < ApplicationController
   end
 
   def create_checkout_session(customer, user)
-    if Rails.env == "development"
-      @successUrl = "http://localhost:3000"
-    elsif Rails.env == "production"
-      @successUrl = "https://yancesport.com"
-    end
+    success_URL = Rails.env.development? ? "http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}" : "http://yancesport.com/settings"
+    cancel_URL = Rails.env.development? ? "http://localhost:3000/memberships" : "http://yancesport.com/memberships"
+
     price = Stripe::Price.list(lookup_keys: [@membership.title]).data.first
     @checkout_session = Stripe::Checkout::Session.create(
       {
         customer: current_user.stripe_customer_id,
-        success_url: 'http://{@successUrl}/success?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url: 'http://{@successUrl}/memberships',
+        success_url: success_URL,
+        cancel_url: cancel_URL,
         payment_method_types: ['card'],
         line_items: [{
           price: price.id,
