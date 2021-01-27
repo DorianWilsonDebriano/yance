@@ -1,0 +1,14 @@
+<div class="new-class-page">
+  <div class="row d-flex">
+    <div class="form-image col-xs-12 col-lg-5">
+      <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609606411/OH5C5721_qoqpqw.jpg", class: "form-image" %>
+    </div>
+    <div class="col-xs-12 col-lg-7 ">
+      <div class="success-message">
+        <h1>WELCOME, <%= current_user.first_name.upcase %></h1>
+        <p>Your 14 days free trial has started!</p>
+        <%= link_to "CONTINUE TO YANCE", sports_classes_path, class: "btn class-card-info-button class-info-link" %>
+      </div>
+    </div>
+  </div>
+</div>

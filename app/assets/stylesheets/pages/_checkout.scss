@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-    body {
+body {
       font-family: 'Montserrat', monospace;
       font-size: 24px;
       box-sizing: border-box;
@@ -21,7 +13,7 @@
     *, *:before, *:after {
       box-sizing: inherit;
     }
-    .container {
+    .checkout-container {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -52,7 +44,7 @@
       animation-name: blink;
     }
 
-/*    @-webkit-keyframes blink {
+    @-webkit-keyframes blink {
       0% {
         opacity: 0.8;
       }
@@ -62,18 +54,4 @@
       100% {
         opacity: 0.8;
       }
-    }*/
-
-
-  </style>
-</head>
-
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="container">
-    <p class="message"><img src="https://res.cloudinary.com/dorianwilsondebriano/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1606231079/Yance-yelloy-logo_weypsf.png" style="width:42px; position: relative;
-    top: 13px;" alt=""> our page was not found. Now b<span class="selector">a</span>ck to training.</p>
-  </div>
-</body>
-
-</html>
+    }
