@@ -16,8 +16,8 @@ class SubscriptionsController < ApplicationController
     if
       @membership == current_user.membership
       redirect_to memberships_path, notice: "You already have an active subscription."
+    #if true update existing customer on stripe
     elsif stripe_customer?(@user)
-      #if true call a method to update existing customer on stripe
       customer = update_stripe_customer(@user)
       @session = create_checkout_session(customer, @user)
       session[:token] = @user.session_token
