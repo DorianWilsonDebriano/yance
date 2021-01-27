@@ -86,8 +86,10 @@
                     <% end %>
                   <% end %>
                 <% else %>
-                  <%= link_to "BOOK", new_user_session_path, class: "card-book-class-link btn class-modal-book-button" %>
+                  <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-modal-book-button" %>
                 <% end %>
+              <% else %>
+                  <%= link_to "BOOK", new_user_session_path, class: "card-book-class-link btn class-modal-book-button" %>
               <% end %>
             </div>
           </div>
