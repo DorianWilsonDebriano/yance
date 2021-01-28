@@ -9,7 +9,6 @@ Rails.application.configure do
 
   # whitelist host to allow requests to hostname
   config.hosts << "www.yancesport.com"
-
   # Do not eager load code on boot.
   config.eager_load = false
 

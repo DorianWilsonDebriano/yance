@@ -45,13 +45,12 @@
     <div class="class-info-book-buttons d-flex justify-content-center">
       <% if user_signed_in? %>
         <% if current_user.subscription.present? %>
-          <% if current_user.subscription.credits > 0 %>
-            <% unless current_user.all_booked_classes.include?(sportsclass) %>
-              <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sportsclass.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
-            <% end %>
-          <% else %>
-            <% flash.now[:notice] = params[:flash_notice] if params[:flash_notice] %>
-            <%= link_to "BOOK", sports_classes_path(:flash_notice => "You have no more credits. Please upgrade plan"), class: "card-book-class-link btn class-card-book-button" %>
+          <% if current_user.subscription.subscription_status == "active" || "trialing" %>
+              <% unless current_user.all_booked_classes.include?(sportsclass) %>
+                <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sportsclass.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
+              <% end %>
+          <% else current_user.subscription.subscription_status == "incomplete" %>
+            <%= link_to "BOOK", customer_portal_sessions_path, method: :post, class: "card-book-class-link btn class-card-book-button" %>
           <% end %>
         <% else %>
           <% if sportsclass.password.present? %>
