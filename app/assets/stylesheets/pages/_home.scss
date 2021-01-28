@@ -21,13 +21,8 @@
 .navigation {
   height: 100vh;
   padding: 40px;
-
-  background-color: $dark-text;
-  text-align: center;
-  // position: relative;
-  // right: 5%;
+  text-align: left;
   border-radius: 4px 0 0 4px;
-  // box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 8px;
 }
 
 @media(max-width: 768px) {
@@ -41,9 +36,9 @@
 #home-title {
   font-size: 34px;
   font-weight: bolder;
-  color: white;
-  margin-bottom: 50px;
-  margin-top: 24px;
+  color: $dark-text;
+  margin-bottom: 30px;
+  margin-top: 0px;
 }
 
 @media(max-width: 1100px) {
@@ -63,8 +58,8 @@
 
 #hero-text {
   font-size: 18px;
-  color: white;
-  margin-bottom: 50px;
+  color: $dark-text;
+  margin-bottom: 30px;
 }
 
 @media(max-width: 800px) {
@@ -78,7 +73,7 @@
   font-size: 34px;
   font-weight: bolder;
   margin-bottom: 70px;
-  color: white;
+  color: $dark-text;
 }
 
 @media(max-width: 1100px) {
@@ -97,7 +92,6 @@
 
 .highlighted-yellow {
   color: $yance-yellow;
-  // background-color: #FCF8E3;
   font-style: normal;
 }
 
@@ -184,9 +178,6 @@
   }
 }
 
-.banner-section {
-}
-
 .banner-image {
   padding: 0px;
   width: 100%;
@@ -202,7 +193,6 @@
     color: white;
   }
 }
-
 
 @media(max-width: 1100px) {
   .banner-image p {
@@ -230,7 +220,6 @@
   align-items: center;
   height: 100vh;
   background-color: white;
-  padding: 32px;
 }
 
 .sport-category-section {
@@ -276,13 +265,13 @@
   font-weight: bolder;
   font-size: 24px;
   color: $dark-text;
-   &:hover {
+  &:hover {
     color: $yance-yellow;
     transition: 0.2s;
-   }
-   p {
+  }
+  p {
     font-size: 24px;
-   }
+  }
 }
 
 .explore-center {
