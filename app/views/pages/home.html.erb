@@ -6,7 +6,7 @@
       <p id="home-price">Sign up for just <i class="highlighted-yellow">€26.99/mo</i></p>
       <div class="d-flex justify-content-left">
         <%= link_to "Sign up now", memberships_path, class: "sign-up-button" %>
-        <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button", id: "section-visit-button"%>
+        <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button" %>
       </div>
     </div>
     <div class="banner-image col-sm-12 col-md-6 col-lg-6">
@@ -138,11 +138,10 @@
       <% end %>
     </div>
     <div class="punchliner-right col-sm-12 col-md-12 col-lg-5 py-3" id="peach-background">
-      <h2 class="mt-5">You're a trainer?</h2>
+      <h2 class="pt-2 mt-5">You're a trainer?</h2>
       <p>Yance is open for trainers! Sign up, click on become a trainer, create a profile and start scheduling your classes. It's as easy as that!</p>
       <div class="d-flex pt-3 justify-content-center">
-        <%= link_to "Become a trainer", become_a_trainer_path, class: "sign-up-button", id: "section-white-button" %>
-        <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button", id: "section-visit-button" %>
+        <%= link_to "Learn how to give classes", become_a_trainer_path, class: "sign-up-button", id: "section-white-button" %>
       </div>
     </div>
   </div>
