@@ -1,13 +1,18 @@
-<div>
-  <div class="pricing-banner-image">
-    <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611747874/OH5C5731-min_brqv7a.jpg", class: "banner-image" %>
-  </div>
-  <div class="pricing-box">
-    <h1 id="pricing-title"> €26.99 per month and get unlimited access to all live classes given on the yance platform </h1>
-    <p> Start with our 14 day free trial</p>
-    <p id="small-text">Cancel anytime</p>
-  </div>
-  <div class="pricing-content">
-
+<div class="pricing-banner">
+  <div class="pricing-banner-content">
+    <p>ONE MEMBERSHIP TO RULE THEM ALL</p>
+    <h1 class="mt-4"> For just <i class="highlighted-yellow">€26.99</i> per month get unlimited access to all live classes on the yance platform! <br> Start your 14 day trial now!</h1>
+    <p>The only membership that will make you feel this good at home</p>
+    <p class="mt-5">How to get started</p>
+    <div class="d-flex">
+      <div class="round-border">1</div> <p class="ml-3">Create a free account</p>
+    </div>
+    <div class="d-flex">
+      <div class="round-border">2</div> <p class="ml-3">Go to the memberships section</p>
+    </div>
+    <div class="d-flex mb-5">
+      <div class="round-border">3</div> <p class="ml-3">Start your 14 day trial for free!</p>
+    </div>
+    <%= link_to "Create a free account", new_user_registration_path, class: "visit-platform-button ml-0" %>
   </div>
 </div>

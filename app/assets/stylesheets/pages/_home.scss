@@ -38,7 +38,7 @@
   font-weight: bolder;
   color: $dark-text;
   margin-bottom: 30px;
-  margin-top: 0px;
+  margin-top: 20px;
 }
 
 @media(max-width: 1100px) {
@@ -59,7 +59,8 @@
 #hero-text {
   font-size: 18px;
   color: $dark-text;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
 }
 
 @media(max-width: 800px) {
@@ -233,6 +234,7 @@
   p {
     font-size: 16px;
     margin-top: 24px;
+    letter-spacing: 2px;
   }
 }
 
@@ -373,6 +375,7 @@
     font-size: 16px;
     color: white;
     padding: 24px;
+    letter-spacing: 2px;
   }
 }
 
@@ -413,6 +416,7 @@
     font-size: 16px;
     color: $dark-text;
     padding: 24px;
+    letter-spacing: 2px;
   }
 }
 

@@ -3,14 +3,12 @@
     <div class="navigation col-sm-12 col-md-6 col-lg-6">
       <h1 id="home-title" class="pt-5">Unlimited <i class="highlighted-yellow">live</i> fitness classes to join from home</h1>
       <p id="hero-text" class="pt-3">With just one membership, access unlimited live classes provided by independent trainers from around the world!</p>
-      <p id="home-price">Sign up for just <i class="highlighted-yellow">€26.99/mo</i></p>
+      <p id="home-price">Join now and start your 14 day trial for free! Afterwards just <i class="highlighted-yellow">€26.99/mo</i></p>
       <div class="d-flex justify-content-left">
-        <%= link_to "Sign up now", memberships_path, class: "sign-up-button" %>
-        <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button" %>
+        <%= link_to "Get started for free", new_user_registration_path, class: "sign-up-button" %>
       </div>
     </div>
     <div class="banner-image col-sm-12 col-md-6 col-lg-6">
-      <p>FEEL AMAZING FROM HOME</p>
       <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1611163751/yance-hero-video_cd0f0t.mp4" type="video/mov" autoplay muted loop class="banner-image">
         <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1611163751/yance-hero-video_cd0f0t.mp4" type="video/mov" class="banner-image">
       </video>
@@ -56,7 +54,7 @@
       <h2 class="mt-5">All classes live</h2>
       <p>Forget the cold recorded videos and have fun with unique, interactive live classes! All classes are provided live right from yance. No extra tools needed.</p>
       <div class="d-flex pt-3 justify-content-center">
-        <%= link_to "Sign up now", memberships_path, class: "sign-up-button", id: "section-white-button"%>
+        <%= link_to "Sign up now", new_user_registration_path, class: "sign-up-button", id: "section-white-button"%>
         <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button", id: "section-visit-button" %>
       </div>
     </div>
@@ -69,7 +67,7 @@
       <h2 class="mt-5">Made for an interactive home sports experience</h2>
       <p>All classes are provided live by independent trainers and studios making every class unique and the experience personal.</p>
       <div class="d-flex justify-content-center pt-3">
-        <%= link_to "Sign up now", memberships_path, class: "sign-up-button", id: "section-button"%>
+        <%= link_to "Sign up now", new_user_registration_path, class: "sign-up-button", id: "section-button"%>
         <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button", id: "section-grey-button" %>
       </div>
     </div>
@@ -123,7 +121,7 @@
         </div>
       </div>
       <div class="d-flex pt-3 justify-content-center">
-        <%= link_to "Sign up now", memberships_path, class: "sign-up-button", id: "section-button"%>
+        <%= link_to "Sign up now", new_user_registration_path, class: "sign-up-button", id: "section-button"%>
         <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button", id: "section-visit-button" %>
       </div>
     </div>
