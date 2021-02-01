@@ -82,10 +82,20 @@ ActiveRecord::Schema.define(version: 2021_01_22_175428) do
     t.string "title"
     t.date "expiration_date"
     t.integer "credits"
-    t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+    t.integer "price_cents", default: 0, null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -153,6 +163,8 @@ ActiveRecord::Schema.define(version: 2021_01_22_175428) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "credits"
+    t.string "subscription_status", default: "incomplete"
+    t.string "stripe_id"
     t.index ["membership_id"], name: "index_subscriptions_on_membership_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
@@ -185,9 +197,12 @@ ActiveRecord::Schema.define(version: 2021_01_22_175428) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "stripe_customer_id"
+    t.string "session_token"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["stripe_customer_id"], name: "index_users_on_stripe_customer_id", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

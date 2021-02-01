@@ -23,7 +23,7 @@ unlimited = Membership.new(
   description: "Unlimited access to live classes, start your free 14 day trial now.",
   expiration_date: Time.now + 30.days,
   credits: 20,
-  price: 26.99,
+  price_cents: 2699,
   )
 unlimited.save!
 
@@ -76,6 +76,7 @@ edoardo = User.new(
   last_name: "Maraia",
   bio: "I live, breathe, eat sports",
   language: "English, Italian",
+  stripe_customer_id: "cus_Ick9TpTq5MQogn"
   )
 edoardo.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
 edoardo.save!
@@ -123,7 +124,7 @@ file = URI.open('https://images.pexels.com/photos/2294361/pexels-photo-2294361.j
 sports_class_1 = SportsClass.new(
     title: "Kick Start",
     description: "Let's kick start our way into the coming week right! Excellent energizer, challenges your technique, endurance, and above all, concentration. This class will give you the ultimate kick to boost your fitness.",
-    date_time: DateTime.new(2020,12,6,18),
+    date_time: DateTime.new(2020,5,6,18),
     duration: "60",
     category: "Cardio",
     difficulty_level: 2,
@@ -140,7 +141,7 @@ file = URI.open('https://images.pexels.com/photos/4498155/pexels-photo-4498155.j
 sports_class_2 = SportsClass.new(
     title: "Monday Morning Wake-up",
     description: "Before you set off to work or start your day, let's start your week right with this slow-burner! We'll engage your muscles and wake-up our bodies together, giving you the best boost for the week.",
-    date_time: DateTime.new(2020,12,7,7),
+    date_time: DateTime.new(2021,5,7,7),
     duration: "50",
     category: "Pilates",
     difficulty_level: 2,
@@ -157,7 +158,7 @@ file = URI.open('https://images.pexels.com/photos/4753928/pexels-photo-4753928.j
 sports_class_3 = SportsClass.new(
     title: "Tuesday Flex",
     description: "Lets make the week even better together and work off the Monday blues. We'll focus on our positions and balance and achieve the perfect downward dog!",
-    date_time: DateTime.new(2020,12,23,17),
+    date_time: DateTime.new(2021,5,23,17),
     duration: "60",
     category: "Yoga",
     difficulty_level: 2,
@@ -175,7 +176,7 @@ file = URI.open('https://images.pexels.com/photos/3766226/pexels-photo-3766226.j
 sports_class_4 = SportsClass.new(
     title: "Ballet Fit",
     description: "Look and feel like a dancer with me. My workout consists of ballet and palettes, which will help sculpt and shape your body. You won't be twirling or prancing, but you will feel the burn!",
-    date_time: DateTime.new(2020,12,17,13),
+    date_time: DateTime.new(2021,5,17,13),
     duration: "30",
     category: "Cardio",
     difficulty_level: 3,
@@ -193,7 +194,7 @@ file = URI.open('https://images.pexels.com/photos/3764396/pexels-photo-3764396.j
 sports_class_5 = SportsClass.new(
     title: "Feel it Friday",
     description: "Push off the week's stress and frustrations! We will be focusing on our glutes and calves and thighs with squats and lunges, get ready for the burn.",
-    date_time: DateTime.new(2020,12,26,18),
+    date_time: DateTime.new(2021,5,26,18),
     duration: "40",
     category: "Strength",
     difficulty_level: 2,
@@ -212,7 +213,7 @@ file = URI.open('https://images.pexels.com/photos/416778/pexels-photo-416778.jpe
 sports_class_6 = SportsClass.new(
     title: "Lunch Break Energizer",
     description: "No time for both a lunch break and a workout? Those days are over when you try the new 20-minute version of my popular lunch break workout!",
-    date_time: DateTime.new(2020,12,24,20),
+    date_time: DateTime.new(2021,5,24,20),
     duration: "20",
     category: "Pilates",
     difficulty_level: 2,
@@ -231,7 +232,7 @@ file = URI.open('https://images.pexels.com/photos/2780762/pexels-photo-2780762.j
 sports_class_7 = SportsClass.new(
     title: "Pure Pilates",
     description: "Your everyday go-to pilates flow. Perfect for all levels this class is designed to lengthen, align and sculpt. I will take time in these class to focus on technique and breathing!",
-    date_time: DateTime.new(2020,12,18,15),
+    date_time: DateTime.new(2021,5,18,15),
     duration: "40",
     category: "Pilates",
     difficulty_level: 2,
@@ -250,7 +251,7 @@ sports_class_7.save!
 # sports_class_8 = SportsClass.new(
 #     title: "Yoga Vinyasa",
 #     description: "Vinyasa flow is a strong and well rounded practice that includes core conditioning, flexibility, balance and movement.",
-#     date_time: DateTime.new(2020,12,9,16),
+#     date_time: DateTime.new(2021,12,9,16),
 #     duration: "90",
 #     category: "Yoga",
 #     difficulty_level: 2,

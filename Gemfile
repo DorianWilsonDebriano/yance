@@ -55,6 +55,10 @@ gem 'simple_form'
 
 gem 'postmark-rails'
 
+#Library for dealing with money and currency conversion
+gem 'money-rails'
+#handles payments
+gem 'stripe'
 gem 'activeadmin'
 
 group :development, :test do
