@@ -10,6 +10,12 @@ class User < ApplicationRecord
   has_one :membership, through: :subscription
   has_one_attached :photo
 
+  validates :session_token, presence: true
+
+  before_validation(on: :create) do
+    self.session_token ||= SecureRandom.hex
+  end
+
   def all_booked_classes
     SportsClass.find(class_bookings.pluck(:sports_class_id))
   end
