@@ -174,3 +174,14 @@
     height: 300px;
   }
 }
+
+.round-number {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 4px;
+  margin-bottom: 12px;
+  margin-left: 42%;
+}
