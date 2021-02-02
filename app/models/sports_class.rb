@@ -2,7 +2,7 @@ class SportsClass < ApplicationRecord
   CATEGORIES = ["Yoga", "Pilates", "Cardio", "Strength", "Stretching", "Barre", "Meditation", "Dance", "Full body", "Back", "Legs", "Arms", "Abs", "HIIT", "Crossfit", "Body Building", "Aerobics", "Martial Arts"]
   LANGUAGES = ["English", "German", "French", "Spanish"]
   belongs_to :trainer
-  has_one :sports_class_chatroom
+  has_one :sports_class_chatroom, dependent: :destroy
   has_one(:user, through: :trainer)
   has_one_attached :photo
   has_many :class_bookings, dependent: :destroy

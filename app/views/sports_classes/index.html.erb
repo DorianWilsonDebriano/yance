@@ -48,6 +48,9 @@
         <% end %>
       </div>
       <% if !current_user.nil? %>
+        <%= link_to "Connect with Classes", sports_class_chatrooms_path , class: "yancers" %>
+      <% end %>
+      <% if !current_user.class_bookings.nil? %>
         <%= link_to "Connect with Yancers", chatrooms_path , class: "yancers" %>
       <% end %>
     </div>

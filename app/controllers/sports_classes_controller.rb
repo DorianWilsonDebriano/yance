@@ -70,6 +70,7 @@ class SportsClassesController < ApplicationController
     if @dup_sportsclass.save
       room = create_room(@dup_sportsclass)
       @dup_sportsclass.update(room: JSON.parse(room.body)["name"])
+      SportsClassChatroom.create(name: @dup_sportsclass.title, date_time: @dup_sportsclass.date_time, sports_class_id: @dup_sportsclass.id)
       redirect_to edit_sports_class_path(@dup_sportsclass)
     end
   end
