@@ -28,6 +28,41 @@
   }
 }
 
+
+@media(max-width: 1325px) {
+  .pricing-banner-content {
+    h1 {
+    width: 600px;
+    }
+    p {
+    width: 600px;
+    }
+  }
+}
+
+@media(max-width: 1130px) {
+  .pricing-banner-content {
+    h1 {
+    width: 500px;
+    }
+    p {
+    width: 500px;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .pricing-banner-content {
+    h1 {
+    font-size: 18px;
+    width: 400px;
+    }
+    p {
+    font-size: 16px;
+    width: 400px;
+    }
+  }
+}
 #small-text {
   font-size: 12px;
 }
@@ -49,6 +84,13 @@
   overflow: hidden;
 }
 
+@media(max-width: 600px) {
+  .screenshot-section {
+    padding-top: 30px;
+    overflow: hidden;
+  }
+}
+
 .screenshot-right {
   max-height: 576px;
   max-width: 1048px;
@@ -60,4 +102,42 @@
   box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.4);
   width: 100%;
   overflow: hidden;
+}
+
+@media(max-width: 992px) {
+  .screenshot-right {
+  width: 70%;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+  }
+}
+
+@media(max-width: 810px) {
+  .screenshot-right {
+  min-width: 600px;
+  min-height: 300px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+
+  }
+}
+
+@media(max-width: 640px) {
+  .screenshot-right {
+  min-width: 450px;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+
+  }
 }

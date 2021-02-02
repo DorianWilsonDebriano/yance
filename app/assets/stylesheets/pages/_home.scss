@@ -306,14 +306,16 @@
 .classes-focus-section {
   display: flex;
   align-items: center;
+  margin-right: 0px;
 }
 
 .home-info-section {
   height: 580px;
-  width: 700px;
+  // width: 700px;
   border-radius: 4px;
   object-fit: cover;
   object-position: center;
+  overflow: hidden;
 }
 
 @media(max-width: 1250px) {
@@ -350,6 +352,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-left: 5px;
   }
 }
 
