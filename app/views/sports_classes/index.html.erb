@@ -50,6 +50,19 @@
     </div>
   </div>
     <div class="page container d-flex justify-content-center flex-column">
+      <!-- sign up call to action -->
+      <% if !user_signed_in? || !current_user.subscription.present? %>
+        <div class="index-call-to-action">
+          <h1>Join now to access unlimited live classes from independent trainers around the world</h1>
+          <% if user_signed_in? %>
+            <p>Become a member now and benefit from a 14 day free trial. Afterwards 26.99€/month</p>
+            <%= link_to "Start your 14 day free trial", memberships_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
+          <% else %>
+            <p>Create an account for free and sign up to our 14 day trial. Afterwards €26,99/month</p>
+            <%= link_to "Create a free account", new_user_registration_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
+          <% end %>
+        </div>
+      <% end %>
       <!-- search bar -->
       <div class="search-container">
        <div class="row justify-content-center">

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [ :home , :trainer_info, :pricing]
 
   def home
   end
@@ -11,5 +11,11 @@ class PagesController < ApplicationController
     @user = current_user
     @user_bookings = current_user.class_bookings
     @user_sports_classes = current_user.sports_classes.order(date_time: :asc)
+  end
+
+  def trainer_info
+  end
+
+  def pricing
   end
 end

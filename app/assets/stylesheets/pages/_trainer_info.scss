@@ -1,0 +1,187 @@
+.trainer-info-page {
+  padding-top: 48px;
+}
+
+.trainer-banner-content {
+  height: 75vh;
+  width: 100%;
+  background-color: #EDECE0;
+  text-align: center;
+  padding-top: 150px;
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611748417/pexels-elly-fairytale-3822140-min_llir4z.jpg");
+  background-size: cover;
+  background-position: center;
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    padding: 30px 100px;
+    color: white;
+  }
+  p {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: white;
+  }
+}
+
+.reasons-section {
+  padding: 60px 150px;
+  h2 {
+    font-weight: bolder;
+    font-size: 26px;
+    color: $dark-text;
+    padding-bottom: 12px;
+  }
+}
+
+@media(max-width: 800px) {
+  .reasons-section {
+    padding: 60px 70px;
+  }
+}
+
+.reasons-grid {
+  display: grid;
+  gap: 120px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 24px;
+  h2 {
+    font-weight: bolder;
+    font-size: 18px;
+    color: $dark-text;
+    padding-bottom: 12px;
+  }
+  p {
+    font-size: 16px;
+    color: $dark-text;
+  }
+}
+
+@media(max-width: 1000px) {
+  .reasons-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  .reasons-grid {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+}
+
+.reasons-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  padding-bottom: 24px;
+}
+
+@media(max-width: 600px) {
+  .reasons-image {
+    height: 250px;
+    margin-bottom: 12px;
+  }
+}
+
+.how-it-works-title {
+  background-color: #F4F4F4;
+  text-align: center;
+  padding-top: 100px;
+  margin: 0px;
+  color: $dark-text;
+  font-weight: bolder;
+  font-size: 26px;
+}
+
+.how-it-works-element {
+  position: relative;
+  background-color: #F4F4F4;
+  margin: 0px;
+  height: 90vh;
+  padding-top: 100px;
+  padding-left: 60px;
+  h2 {
+    color: $dark-text;
+    font-weight: bolder;
+    font-size: 24px;
+    padding: 36px 46px 0px 70px;
+  }
+  p {
+    padding: 12px 70px;
+    color: $dark-text;
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 1300px) {
+  .how-it-works-element {
+    padding-left: 0px;
+  }
+}
+
+@media(max-width: 1000px) {
+  .how-it-works-element {
+    text-align: center;
+    height: 100%;
+  }
+}
+
+@media(max-width: 600px) {
+  .how-it-works-element {
+    text-align: center;
+    height: 100%;
+  }
+}
+
+
+#how-it-works-number {
+  position: absolute;
+  font-size: 120px;
+  font-weight: bold;
+  color: rgba(254, 186, 141, 0.3);
+  top: 0px;
+  left: 0px;
+  line-height: 1;
+}
+
+.how-it-works-image {
+  width: 600px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  height: 100%;
+}
+
+@media(max-width: 1300px) {
+  .how-it-works-image {
+    width: 500px;
+  }
+}
+
+
+@media(max-width: 1000px) {
+  .how-it-works-image {
+    height: 450px;
+  }
+}
+
+@media(max-width: 600px) {
+  .how-it-works-image {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.round-number {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 4px;
+  margin-bottom: 12px;
+  margin-left: 42%;
+}

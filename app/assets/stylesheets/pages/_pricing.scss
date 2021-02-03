@@ -1,0 +1,143 @@
+.pricing-banner {
+  background-image: url("https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1612199720/background-yellow_xwjmp8.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  width: 100%;
+  margin: 0px;
+}
+
+.pricing-banner-content {
+  height: 100vh;
+  width: 100%;
+  text-align: start;
+  padding-top: 100px;
+  padding-left: 80px;
+  h1 {
+    width: 650px;
+    text-align: start;
+    font-weight: bold;
+    font-size: 26px;
+    color: $dark-text;
+  }
+  p {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: $dark-text;
+    width: 650px;
+  }
+}
+
+
+@media(max-width: 1325px) {
+  .pricing-banner-content {
+    h1 {
+    width: 600px;
+    }
+    p {
+    width: 600px;
+    }
+  }
+}
+
+@media(max-width: 1130px) {
+  .pricing-banner-content {
+    h1 {
+    width: 500px;
+    }
+    p {
+    width: 500px;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .pricing-banner-content {
+    h1 {
+    font-size: 18px;
+    width: 400px;
+    }
+    p {
+    font-size: 16px;
+    width: 400px;
+    }
+  }
+}
+#small-text {
+  font-size: 12px;
+}
+
+.round-border {
+  border-radius: 50%;
+  padding: 4px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  display: inline;
+  background-color: $dark-text;
+  color: white;
+  font-weight: bold;
+}
+
+.screenshot-section {
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+@media(max-width: 600px) {
+  .screenshot-section {
+    padding-top: 30px;
+    overflow: hidden;
+  }
+}
+
+.screenshot-right {
+  max-height: 576px;
+  max-width: 1048px;
+  min-height: 426px;
+  min-width: 775px;
+  margin-left: 64px;
+  margin-right: -207px;
+  border-radius: 8px;
+  box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  overflow: hidden;
+}
+
+@media(max-width: 992px) {
+  .screenshot-right {
+  width: 70%;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+  }
+}
+
+@media(max-width: 810px) {
+  .screenshot-right {
+  min-width: 600px;
+  min-height: 300px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+
+  }
+}
+
+@media(max-width: 640px) {
+  .screenshot-right {
+  min-width: 450px;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+
+  }
+}
