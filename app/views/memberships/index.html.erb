@@ -1,23 +1,51 @@
-<div class="page container d-flex justify-content-center flex-column mb-5">
-  <h2 class="text-center">All you need is one subscription</h2>
-  <p class="text-center">Choose the model that works best for you and start working out immediately!</p>
-  <div class="membership-cards pt-5">
-    <% @memberships.each do |membership| %>
-      <div class="membership-card">
-        <div class="membership-header">
-          <p class="membership-title"><%= membership.title %></p>
-        </div>
-        <div class="membership-details">
-          <p class="membership-credits"> <strong>Includes:</strong> <br> <br> <%= membership.credits %> live classes available per month</p>
-          <p class="membership-description"> <%= membership.description %> </p>
-        </div>
-        <div class="membership-footer">
-          <p class="membership-price"><strong><%= membership.price %> € </strong><span><strong> /month</strong> <br> Renewed monthly </span></p>
-          <div class="membership-buttons">
-            <div><%= link_to "Choose", new_membership_subscription_path(membership), class: "btn subscribe-button" %></div>
+<div class="memberships-banner row">
+  <div class="memberships-banner-content col-sm-12 col-lg-6">
+    <p>ONE MEMBERSHIP TO RULE THEM ALL</p>
+    <h1 class="mt-5"> Get unlimited access to all <i class="highlighted-yellow">live</i> classes on the yance platform! Just <i class="highlighted-yellow">€26.99</i> per month.</h1>
+    <p class="mt-4">The only membership that will make you feel this good at home</p>
+    <p class="mt-5">How to use the free trial</p>
+    <div class="d-flex">
+      <div class="round-border">1</div> <p class="ml-3">Click on "Start your 14 day trial now"</p>
+    </div>
+    <div class="d-flex">
+      <div class="round-border">2</div> <p class="ml-3">Add your billing information in our system</p>
+    </div>
+    <div class="d-flex mb-5">
+      <div class="round-border">3</div> <p class="ml-3">Browse, book and join all the live classes you want!</p>
+    </div>
+    <p>You can cancel your subscription any time through your <%= link_to "settings", settings_path, class: "link-text" %> area.</p>
+  </div>
+
+  <div class="d-flex justify-content-center col-sm-12 col-lg-6">
+    <div class="membership-cards pt-5">
+      <% @memberships.each do |membership| %>
+        <div class="membership-card">
+          <div class="membership-header">
+            <p class="membership-title"><%= membership.title %></p>
+          </div>
+          <div>
+            <div class="membership-details">
+              <p class="membership-description"><i class="fas fa-check"></i> 14 day free trial</p>
+              <p class="membership-description"><i class="fas fa-check"></i> Unlimited access to all live classes</p>
+              <p class="membership-description"><i class="fas fa-check"></i> Integrated chat and live streaming</p>
+              <p class="membership-description"><i class="fas fa-check"></i> Personal profile</p>
+              <p class="membership-description"><i class="fas fa-check"></i> Cancel anytime</p>
+            </div>
+            <div class="membership-footer">
+              <p class="membership-price"><strong><%= humanized_money_with_symbol("26.99")  %></strong><span><strong> /month</strong> <br> Renewed monthly</span></p>
+              <div class="membership-buttons">
+                <form class="form-signin" action="/memberships/<%= membership.id %>/subscriptions" method="POST">
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                  <label for="inputEmail" class="sr-only">Email address</label>
+                  <input type="hidden" name="user[email]" value="<%= current_user.email %>" id="user[email]" class="form-control" required="" autofocus="">
+                  <input type="hidden" type="text" value="<%= membership.title %>" name="user[membership]">
+                  <button class="btn subscribe-button" type="submit">Start your 14 day trial now</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -28,8 +28,6 @@ module Yance
       end
     end
 
-    config.hosts << "8a1e5899b647.ngrok.io"
-
     config.active_job.queue_adapter = :sucker_punch
 
 

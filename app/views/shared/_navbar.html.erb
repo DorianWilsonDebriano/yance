@@ -7,6 +7,7 @@
       <h1 id="nav-name">yance</h1>
     </div>
   </div>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -27,11 +28,9 @@
             <%= link_to t('.become_a_trainer'), new_trainer_path, class: "nav-link" %>
           </li>
         <% end %>
-        <% if current_user.trainers.present? %>
-          <li class="nav-item" id="">
-            <%= link_to t('.your_classes'), profile_path, class: "nav-link" %>
-          </li>
-        <% end %>
+        <li class="nav-item" id="">
+          <%= link_to t('.your_classes'), profile_path, class: "nav-link" %>
+        </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -51,6 +50,12 @@
             </div>
         </li>
       <% else %>
+        <li class="nav-item">
+          <%= link_to "Pricing", pricing_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Give classes", become_a_trainer_path , class: "nav-link" %>
+        </li>
         <li class="nav-item">
           <%= link_to t('.log_in'), new_user_session_path, class: "nav-link" %>
         </li>

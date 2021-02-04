@@ -21,14 +21,15 @@ class ClassBookingsController < ApplicationController
       else
         redirect_to sports_classes_path, notice: "wrong password for this class"
       end
+    elsif current_user.subscription.subscription_status == "active" || "trialing"
+      @classbooking.save
+      redirect_to sports_classes_path, notice: "Your class is successfully booked!"
+    elsif current_user.subscription.subscription_status == "incomplete"
+      redirect_to memberships_path, notice: "Please subcribe to a membership."
     else
-      if @classbooking.save
-        redirect_to sports_classes_path, notice: "Your class is successfully booked!"
-      else
-        redirect_to sports_classes_path, notice: "You have already booked this class"
-      end
+      redirect_to sports_classes_path, notice: "You have already booked this class."
     end
-    authorize @classbooking
+      authorize @classbooking
   end
 
   def destroy

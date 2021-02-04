@@ -8,6 +8,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   # whitelist host to allow requests to hostname
+
   config.hosts << "www.yancesport.com"
 
   # Do not eager load code on boot.
@@ -56,6 +57,8 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = false
+
+  config.assets.check_precompiled_asset = false
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
