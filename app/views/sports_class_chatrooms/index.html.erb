@@ -1,14 +1,15 @@
-<div class="chatroom-cards">
-  <div class="chatroom-card">
-    <div class="p-5 m-5 d-flex flex-column">
-      <% @sports_class_chatrooms.each do |sports_class_chatroom| %>
-        <%= link_to sports_class_chatroom.name, sports_class_chatroom_path(sports_class_chatroom) %>
-      <% end %>
-      <% @sports_classes.each do |c| %>
-        <%= cl_image_tag c.photo.key, class: "class-card-image" %>
-        <%= c.date_time %>
-      <% end %>
-    </div>
+<h3 class='chatroom-header pt-5'> Chat with fellow yancers in your classes</h3>
+<div class="chatroom-container">
+  <div class="chatroom-cards">
+    <% @sports_classes.each do |sports_class| %>
+      <div class="chatroom-card">
+        <div class="card-info text-left">
+          <strong><%= link_to sports_class.sports_class_chatroom.name.capitalize, sports_class_chatroom_path(sports_class.sports_class_chatroom.id) %></strong>
+          <p> Your class is: <%=local_time(sports_class.date_time, "%A %b %d %H:%M ") %></p>
+        </div>
+        <%= link_to image_tag(sports_class.photo), sports_class_chatroom_path(sports_class.sports_class_chatroom.id)%>
+      </div>
+    <% end %>
   </div>
 </div>
 

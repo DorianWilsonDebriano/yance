@@ -12,7 +12,6 @@ class SportsClassChatroomsController < ApplicationController
     @sports_class_chatrooms = policy_scope(SportsClassChatroom).where(['date_time > ?', Time.now])
     # @sports_class_chatrooms = policy_scope(SportsClassChatroom)
     @sports_classes = SportsClass.find(@sports_class_chatrooms.pluck(:sports_class_id))
-    # end
   end
 
   # classes = SportsClass.find(SportsClassChatroom.pluck(:sports_class_id))
