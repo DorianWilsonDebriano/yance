@@ -1,5 +1,5 @@
 <div class="class-stat-details">
-  <p id="stat-date"> <%= local_time(sports_class.date_time, "%d/%m/%Y at %H:%M") %></p>
+  <p id="stat-date"> <%= local_time(l(sports_class.date_time), format: :at_numeric) %></p>
   <p> <%= sports_class.title %> </p>
   <p> <%= sports_class.class_bookings.count %> </p>
   <% if sports_class.password.present? %>

@@ -30,16 +30,39 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  time:
+    formats:
+      day: "%A"
+      month_day: "%b %d"
+      time: "%H:%M"
+      at_time: "%A %b %d at %H:%M"
+      at_numeric: "%d/%m/%Y at %H:%M"
   sports_classes:
     index:
       sidebar:
         title: "Narrow your search"
+      call_to_action:
+        header_text: "Join now to access unlimited live classes from independent trainers around the world"
+        body_text: "Become a member now and benefit from a 14 day free trial. Afterwards 26.99€/month"
+        button:
+          start_trial: "Start your 14 day free trial"
+          sign_up: "Create a free account"
       booked-classes:
         title: "Your upcoming classes"
       filter-cards:
         title: "Most popular classes"
       all-classes:
         title: "All classes"
+  trainers:
+    show:
+      edit: "edit your trainer page"
+      sport_type: "Sport type"
+      trainer_bio: "A little bit about me"
+      upcoming_classes: "%{trainer}'s upcoming classes"
+      reviews:
+        zero: " No reviews yet!"
+        one: " One review"
+        other: " %{count} reviews"
   shared:
     navbar:
       home: "Home"
@@ -47,6 +70,8 @@ en:
       become_a_trainer: "Become a trainer"
       your_classes: "Your Classes"
       trainer_profile: "Trainer profile"
+      pricing: "Pricing"
+      give_classes: "Give classes"
       settings: "Settings"
       log_out: "Log out"
       log_in: "Log in"
@@ -55,7 +80,7 @@ en:
       description: "Yance is an online platform bringing together sportsclasses of all types to the luxury of your living room."
       socials: "Socials"
       information: "Information"
-      subscriptions: "Subscriptions"
+      pricing: "Pricing"
       quick_links: "Quick Links"
       terms_conditions: "Terms & Conditions"
       privacy: "Privacy Policy"
@@ -63,21 +88,17 @@ en:
       newsletter_description: "Subscribe to our newsletter for updates and special offers."
       newsletter_subscribe: "Subscribe"
     sport-class-card:
-      date:
-        formats:
-          day: "%A"
-          month_day: "%b %d"
-          time: "%H:%M"
       duration: " %{duration} minutes"
       levels:
         difficulty: "DIFFICULTY"
         sweat: "SWEAT"
         experience: "LEVEL"
       book: "BOOK"
-      log-in: "LOG IN"
-      trial: "Get your free trial"
-      password: "book with password"
-      info: "INFO"
+      complete-info: "FINISH SETUP"
+      log-in: "LOG IN TO BOOK"
+      trial: "START YOUR FREE TRIAL"
+      password: "BOOK WITH PASSWORD"
+      info: "i"
     modal-class:
       duration: " %{duration} minutes"
       levels:
@@ -89,12 +110,12 @@ en:
       trial: "Get your free trial"
       password: "book with password"
       info: "INFO"
-      trainer_name_html: "with <strong>%{trainer_firstname} %{trainer_lastname}</strong>"
+      trainer_name_html: "with <strong> %{trainer_firstname} %{trainer_lastname} </strong>"
       class_description: "Class description"
       trainer_bio: "Trainer bio"
       visit-trainer: "SEE TRAINER PROFILE"
     password-popup:
-      title: "Class password"
+      title: "Enter Class Password"
       book: "BOOK"
       close: "Close"
     booked-sport-class-card:
@@ -124,11 +145,35 @@ en:
       edit: "Edit this class's information"
       cancel: "Cancel this class"
       live_stream_modal: "Join the live stream"
-
-
-
-
-
+    trainer-upcoming-classes:
+      duration: " %{duration} minutes"
+      levels:
+        difficulty: "DIFFICULTY"
+        sweat: "SWEAT"
+        experience: "LEVEL"
+      book: "BOOK"
+      complete-info: "FINISH SETUP"
+      log-in: "LOG IN TO BOOK"
+      trial: "START YOUR FREE TRIAL"
+      password: "BOOK WITH PASSWORD"
+    trainer-modal-class:
+      duration: " %{duration} minutes"
+      levels:
+        difficulty: "DIFFICULTY"
+        sweat: "SWEAT"
+        experience: "LEVEL"
+      book: "BOOK"
+      log-in: "LOG IN"
+      trial: "Get your free trial"
+      password: "book with password"
+      info: "INFO"
+      trainer_name_html: "with <strong> %{trainer_firstname} %{trainer_lastname} </strong>"
+      class_description: "Class description"
+      trainer_bio: "Trainer bio"
+    password-popup-trainer:
+      title: "Enter Class Password"
+      book: "BOOK"
+      close: "Close"
 
 
 

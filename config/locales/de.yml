@@ -1,4 +1,10 @@
 de:
+  time:
+    formats:
+      day: "%A"
+      month_day: "%b %d"
+      time: "%H:%M"
+    month_names:
   sports_classes:
     index:
       sidebar:
@@ -10,7 +16,42 @@ de:
       all-classes:
         title: "All classes"
   shared:
+    navbar:
+      home: "Home"
+      memberships: "Memberships"
+      become_a_trainer: "Become a trainer"
+      your_classes: "Your Classes"
+      trainer_profile: "Trainer profile"
+      pricing: "Pricing"
+      give_classes: "Give classes"
+      settings: "Settings"
+      log_out: "Log out"
+      log_in: "Log in"
+    footer:
+      about_us: "About us"
+      description: "Yance is an online platform bringing together sportsclasses of all types to the luxury of your living room."
+      socials: "Socials"
+      information: "Information"
+      pricing: "Pricing"
+      quick_links: "Quick Links"
+      terms_conditions: "Terms & Conditions"
+      privacy: "Privacy Policy"
+      newsletter: "Newsletter"
+      newsletter_description: "Subscribe to our newsletter for updates and special offers."
+      newsletter_subscribe: "Subscribe"
     sport-class-card:
+      duration: " %{duration} minutes"
+      levels:
+        difficulty: "DIFFICULTY"
+        sweat: "SWEAT"
+        experience: "LEVEL"
+      book: "BOOK"
+      complete-info: "FINISH SETUP"
+      log-in: "LOG IN TO BOOK"
+      trial: "START YOUR FREE TRIAL"
+      password: "BOOK WITH PASSWORD"
+      info: "i"
+    modal-class:
       duration: " %{duration} minutes"
       levels:
         difficulty: "DIFFICULTY"
@@ -21,3 +62,67 @@ de:
       trial: "Get your free trial"
       password: "book with password"
       info: "INFO"
+      trainer_name_html: "with <strong> %{trainer_firstname} %{trainer_lastname} </strong>"
+      class_description: "Class description"
+      trainer_bio: "Trainer bio"
+      visit-trainer: "SEE TRAINER PROFILE"
+    password-popup:
+      title: "Enter Class Password"
+      book: "BOOK"
+      close: "Close"
+    booked-sport-class-card:
+      duration: " %{duration} minutes"
+      category_trainer_html: "<strong>%{category}</strong> with <strong>%{trainer_firstname} %{trainer_lastname}</strong>"
+      live_stream_modal: "Join the live stream"
+      cancel: "cancel"
+      confirm: "are your sure?"
+    filter-cards:
+      yoga: "Yoga"
+      pilates: "Pilates"
+      stretching: "Stretching"
+      cardio: "Cardio"
+      strength: "Strength"
+    profile-created-classes:
+      duration: " %{duration} minutes"
+      live_stream_modal: "Join the live stream"
+    profile-upcoming-classes:
+      duration: " %{duration} minutes"
+      category_trainer_html: "<strong>%{category}</strong> with <strong>%{trainer_firstname} %{trainer_lastname}</strong>"
+      live_stream_modal: "Join the live stream"
+      cancel: "cancel"
+    class-stats:
+      done: "past"
+      coming: "coming"
+      duplicate: "Duplicate this class's information for a quick-create"
+      edit: "Edit this class's information"
+      cancel: "Cancel this class"
+      live_stream_modal: "Join the live stream"
+    trainer-upcoming-classes:
+      duration: " %{duration} minutes"
+      levels:
+        difficulty: "DIFFICULTY"
+        sweat: "SWEAT"
+        experience: "LEVEL"
+      book: "BOOK"
+      complete-info: "FINISH SETUP"
+      log-in: "LOG IN TO BOOK"
+      trial: "START YOUR FREE TRIAL"
+      password: "BOOK WITH PASSWORD"
+    trainer-modal-class:
+      duration: " %{duration} minutes"
+      levels:
+        difficulty: "DIFFICULTY"
+        sweat: "SWEAT"
+        experience: "LEVEL"
+      book: "BOOK"
+      log-in: "LOG IN"
+      trial: "Get your free trial"
+      password: "book with password"
+      info: "INFO"
+      trainer_name_html: "with <strong> %{trainer_firstname} %{trainer_lastname} </strong>"
+      class_description: "Class description"
+      trainer_bio: "Trainer bio"
+    password-popup-trainer:
+      title: "Enter Class Password"
+      book: "BOOK"
+      close: "Close"

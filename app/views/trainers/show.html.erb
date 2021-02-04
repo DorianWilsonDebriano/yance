@@ -35,20 +35,20 @@
               <p class="ratings-count pl-0">(<%= @trainer.reviews.count %>)</p>
             </div>
             <% if @trainer.user == current_user %>
-              <p> <%= link_to "edit your trainer page", edit_trainer_path(@trainer), class: "trainer-edit" %> </p>
+              <p> <%= link_to t('.edit'), edit_trainer_path(@trainer), class: "trainer-edit" %> </p>
             <% end %>
           </div>
         </div>
         <div class="tags">
-          <p class="title-font">Sport type</p>
+          <p class="title-font"><%= t('.sport_type') %></p>
           <p class="category"><%=@trainer.sport_category%></p>
         </div>
         <div class="bio">
-          <p class="title-font"> A little bit about me</p>
+          <p class="title-font"><%= t('.trainer_bio') %></p>
           <p class="content-font"><%=@trainer.bio%></p>
         </div>
         <div class="upcoming">
-          <p class="title-font"> <%= @trainer.user.first_name%>'s upcoming classes</p>
+          <p class="title-font"><%= t('.upcoming_classes', trainer: @trainer.user.first_name) %></p>
           <div class="d-flex justify-content-center flex-column">
             <div class="classes">
               <%= render collection: @trainer_classes, partial: "shared/trainer-upcoming-classes", as: :sportsclass  %>
@@ -64,11 +64,7 @@
           <%= render "reviews/new" %>
         <% end %>
         <div class="top-review-row pt-2">
-          <% if @trainer.reviews.count == 1 %>
-            <p class="review-count"><i class="fas fa-star"></i> <%= @trainer.reviews.count %> review</p>
-          <% else %>
-            <p class="review-count"><i class="fas fa-star"></i> <%= @trainer.reviews.count %> reviews</p>
-          <% end %>
+          <p class="review-count"><i class="fas fa-star"></i><%= t('.reviews', count: @trainer.reviews.count) %></p>
         </div>
         <div class="user-reviews">
           <%= render collection: @reviews, partial: "shared/reviews-listed", as: :review %>
