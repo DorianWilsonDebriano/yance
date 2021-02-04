@@ -1,8 +1,8 @@
 <div class="sports-classes-card">
   <div class="class-card-header d-flex justify-content-between">
     <div class="time-label">
-      <p class="class-card-month"><%= local_time(l(sports_class.date_time), format: :day) %></p>
-      <p class="class-card-day"><%= local_time(l(sports_class.date_time), format: :month_day) %></p>
+      <p class="class-card-month"><%= l(sports_class.date_time, format: :day) %></p>
+      <p class="class-card-day"><%= l(sports_class.date_time, format: :month_day) %></p>
       <p class="class-card-time"><%= local_time(l(sports_class.date_time), format: :time) %></p>
     </div>
     <div class="card-header-right">

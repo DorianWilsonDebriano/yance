@@ -5,7 +5,7 @@
         <div class="class-modal-left-column col-5 pt-4 pl-5">
           <div class="class-modal-header">
             <h5 class="modal-title" id="exampleModalLabel"> <strong> <%= sports_class.title %> </strong></h5>
-            <p class="class-modal-date"><%= local_time(l(sports_class.date_time), format: :at_time) %></p>
+            <p class="class-modal-date"><%= l(sports_class.date_time, format: :date) %><%= local_time(l(sports_class.date_time), format: :at_time) %></p>
             <p class="class-modal-duration"><i class="far fa-clock pr-1"></i> <%= t('.duration', duration: sports_class.duration) %></p>
             <p class="class-modal-category"><%= sports_class.category %></p>
           </div>

@@ -4,17 +4,41 @@ de:
       day: "%A"
       month_day: "%b %d"
       time: "%H:%M"
-    month_names:
+      date: "%A %b %d"
+      at_time: " um %H:%M Uhr"
+      at_numeric: "%d/%m/%Y at %H:%M"
   sports_classes:
     index:
       sidebar:
         title: "Grenzen Sie Ihre Suche ein"
+      call_to_action:
+        header_text: "Join now to access unlimited live classes from independent trainers around the world"
+        body_text: "Become a member now and benefit from a 14 day free trial. Afterwards 26.99€/month"
+        button:
+          start_trial: "Start your 14 day free trial"
+          sign_up: "Create a free account"
       booked-classes:
         title: "Your upcoming classes"
       filter-cards:
         title: "Most popular classes"
       all-classes:
         title: "All classes"
+  trainers:
+    show:
+      edit: "edit your trainer page"
+      sport_type: "Sport type"
+      trainer_bio: "A little bit about me"
+      upcoming_classes: "%{trainer}'s upcoming classes"
+      reviews:
+        zero: " No reviews yet!"
+        one: " One review"
+        other: " %{count} reviews"
+  subscriptions:
+    checkout:
+    success:
+      welcome: "WELCOME, %{user}"
+      message: "Your 14 days free trial has started!"
+      button: "CONTINUE TO YANCE"
   shared:
     navbar:
       home: "Home"

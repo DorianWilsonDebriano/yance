@@ -6,7 +6,7 @@
         </div>
       <% end %>
       <div class="booked-class-card-header">
-        <p class="booked-class-card-datetime"><%= local_time(l(user_sports_classes.date_time), format: :at_time) %></p>
+        <p class="booked-class-card-datetime"><%= l(user_sports_classes.date_time, format: :date) %><%= local_time(l(user_sports_classes.date_time), format: :at_time) %></p>
         <p class="booked-class-card-title"><%= user_sports_classes.title %></p>
         <p class="booked-class-card-duration"><i class="far fa-clock pr-1"></i><%= t('.duration', duration: user_sports_classes.duration) %></p>
         <p class="booked-class-card-category"><strong><%= user_sports_classes.category %></strong></p>

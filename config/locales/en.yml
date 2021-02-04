@@ -35,7 +35,8 @@ en:
       day: "%A"
       month_day: "%b %d"
       time: "%H:%M"
-      at_time: "%A %b %d at %H:%M"
+      date: "%A %b %d"
+      at_time: " at %H:%M"
       at_numeric: "%d/%m/%Y at %H:%M"
   sports_classes:
     index:
@@ -63,6 +64,13 @@ en:
         zero: " No reviews yet!"
         one: " One review"
         other: " %{count} reviews"
+  subscriptions:
+    checkout:
+      message_html: "<span class='selector'>Please hold</span>... Yancing to your call"
+    success:
+      welcome: "WELCOME, %{user}"
+      message: "Your 14 days free trial has started!"
+      button: "CONTINUE TO YANCE"
   shared:
     navbar:
       home: "Home"
