@@ -51,3 +51,16 @@ a {
     padding-bottom: 12px;
   }
 }
+
+button:focus {
+  outline: transparent;
+}
+
+input:focus {
+  outline: transparent;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
