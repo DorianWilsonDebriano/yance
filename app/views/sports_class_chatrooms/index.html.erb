@@ -1,8 +1,14 @@
-<div class="pt-5 mt-5 d-flex flex-column">
-  <% @sports_class_chatrooms.each do |sports_class_chatroom| %>
-    <%= link_to sports_class_chatroom.name, sports_class_chatroom_path(sports_class_chatroom) %>
-  <% end %>
+<div class="chatroom-cards">
+  <div class="chatroom-card">
+    <div class="p-5 m-5 d-flex flex-column">
+      <% @sports_class_chatrooms.each do |sports_class_chatroom| %>
+        <%= link_to sports_class_chatroom.name, sports_class_chatroom_path(sports_class_chatroom) %>
+      <% end %>
+      <% @sports_classes.each do |c| %>
+        <%= cl_image_tag c.photo.key, class: "class-card-image" %>
+        <%= c.date_time %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-
 

@@ -43,7 +43,7 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :sports_class_chatrooms, only: %i[index show] do
+  resources :sports_class_chatrooms, only: %i[index show update] do
     resources :sports_class_messages, only: :create
   end
 

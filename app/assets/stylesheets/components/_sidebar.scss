@@ -13,20 +13,37 @@
       font-size: 14px;
       font-weight: bold;
     }
-    a.yancers {
+    a.chatroom-button {
       display: flex;
       justify-content: center;
       color: black !important;
-      margin-top: 20%;
+      margin: 10% 5%;
       background-color: $yance-yellow;
       padding: 8px;
-      border-radius: 5px;
+      border-radius: 16px;
     }
-    a.yancers:hover {
+    a.chatroom-button:hover {
       box-shadow: rgba(251, 223, 68, 0.8) 1px 1px 15px;
-      padding: 10px;
-      font-size: 18px;
+      // padding: 10px;
+      // font-size: 18px;
     }
+  }
+}
+
+.connect {
+
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  .connect-header {
+    border-bottom: 1px solid $light-gray;
+    margin: 0 8px;
+    padding: 24px 0;
+    // padding: 5px;
+    font-size: 14px;
+    color: $dark-text;
+    font-weight: lighter !important;
   }
 }
 
