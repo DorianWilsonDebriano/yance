@@ -8,21 +8,12 @@ class SportsClassChatroomsController < ApplicationController
   end
 
   def index
-    # @sports_class_times = @sports_classes.pluck(:date_time).each do |sc|
     @sports_class_chatrooms = policy_scope(SportsClassChatroom).where(['date_time > ?', Time.now])
     # @sports_class_chatrooms = policy_scope(SportsClassChatroom)
     @sports_classes = SportsClass.find(@sports_class_chatrooms.pluck(:sports_class_id))
+    # raise
   end
 
-  # classes = SportsClass.find(SportsClassChatroom.pluck(:sports_class_id))
-  # <% @sports_class_chatrooms.each do |sports_class_chatroom| %>
-  #       <%= SportsClass.find(sports_class_chatroom.sports_class_id)  %>
-  #       <%= link_to sports_class_chatroom.name, sports_class_chatroom_path(sports_class_chatroom) %>
-  #     <% end %>
-
-  # def edit
-  #   authorize @sports_class_chatroom
-  # # end
   def update
     authorize @sports_class_chatroom
     if @sports_class_chatroom.update(sports_class_chatroom_params)
