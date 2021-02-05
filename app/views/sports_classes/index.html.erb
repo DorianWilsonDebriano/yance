@@ -1,5 +1,8 @@
 <div class="page d-flex">
+  <%= render "shared/sidebar.html.erb" %>
+
 <!-- sidebar filters -->
+<% if false %>
   <div class="sidebar">
     <div class="sidebar-position">
       <p> Narrow your search </p>
@@ -49,7 +52,10 @@
       </div>
     </div>
   </div>
-    <div class="page container d-flex justify-content-center flex-column">
+<% end %>
+
+    
+    <div class="sportsclasses-container container d-flex justify-content-center flex-column">
       <!-- sign up call to action -->
       <% if !user_signed_in? || !current_user.subscription.present? %>
         <div class="index-call-to-action">
