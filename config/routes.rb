@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get "/search", to: "pages#search", as: :search
     get "/profile", to: "pages#profile"
     get "/settings", to: "pages#settings"
+    get "/policy", to: "pages#policy"
     get "/become-a-trainer", to: "pages#trainer_info"
     get "/pricing", to: "pages#pricing", as: :pricing
     get "sports_classes/:id/duplicate", to: "sports_classes#duplicate", as: :duplicate
