@@ -69,8 +69,64 @@ en:
       message_html: "<span class='selector'>Please hold</span>... Yancing to your call"
     success:
       welcome: "WELCOME, %{user}"
-      message: "Your 14 days free trial has started!"
+      message: "Your 14 day free trial has started!"
       button: "CONTINUE TO YANCE"
+  reviews:
+    new:
+      write_review: "Write a review"
+      rating: "Rating"
+      create_review: "Post review"
+  memberships:
+    index:
+      punchline: "The only membership that will make you feel this good at home!"
+      how_to: "How to use the free trial"
+      first: "Click on 'Start your 14 day trial now'"
+      second: "Add your billing information in our system"
+      third: "Browse, book and join all the live classes you want!"
+      membership_details:
+        first: " 14 day free trial"
+        second: " Unlimited access to all live classes"
+        third: " Integrated chat and live streaming"
+        fourth: " Personal profile"
+        fifth: " Cancel anytime"
+      price_html: "<strong> /month</strong> <br> Renewed monthly"
+      subscribe: "Start your 14 day trial now"
+  pages:
+    profile:
+      title: "Your classes"
+      created:
+        created_tab: "Created"
+        created_title: "Your upcoming created classes"
+      booked:
+        booked_tab: "Booked"
+        booked_title: "Your bookings"
+        nothing_booked: "Nothings booked yet! Go book your first class!"
+        explore_button: "Explore yance"
+      manage:
+        manage_tab: "Manage Classes"
+        manage_title: "Manage your classes"
+        create_button: "Create a class"
+        columns:
+          date: "Date"
+          class: "Class name"
+          count: "Participants"
+          password: "Password"
+          status: "Status"
+          actions: "Actions"
+    settings:
+      edit_info: "update your information"
+      title: "Your information"
+      account:
+        title: "Your account"
+        login_html: "<strong>login:</strong> %{email}"
+        password_html: "<strong>password:</strong> *************"
+        status_html: "<strong>Subscription status:</strong> %{status}"
+        subscription_html: "<strong>Subscribed to: </strong> %{subscription}"
+        subscribe_button: "CHOOSE A MEMBERSHIP"
+      about:
+        title: "About you"
+        language_html: " <strong>language:</strong> %{language}"
+        bio_html: "<strong>bio:</strong> %{bio}"
   shared:
     navbar:
       home: "Home"

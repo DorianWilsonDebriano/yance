@@ -1,19 +1,16 @@
 <div class="memberships-banner row">
   <div class="memberships-banner-content col-sm-12 col-lg-6">
-    <p>ONE MEMBERSHIP TO RULE THEM ALL</p>
-    <h1 class="mt-5"> Get unlimited access to all <i class="highlighted-yellow">live</i> classes on the yance platform! Just <i class="highlighted-yellow">€26.99</i> per month.</h1>
-    <p class="mt-4">The only membership that will make you feel this good at home</p>
-    <p class="mt-5">How to use the free trial</p>
+    <h1 class="mt-5"><%= t('.punchline') %></h1>
+    <p class="mt-5"><%= t('.how_to') %></p>
     <div class="d-flex">
-      <div class="round-border">1</div> <p class="ml-3">Click on "Start your 14 day trial now"</p>
+      <div class="round-border">1</div> <p class="ml-3"><%= t('.first') %></p>
     </div>
     <div class="d-flex">
-      <div class="round-border">2</div> <p class="ml-3">Add your billing information in our system</p>
+      <div class="round-border">2</div> <p class="ml-3"><%= t('.second') %></p>
     </div>
     <div class="d-flex mb-5">
-      <div class="round-border">3</div> <p class="ml-3">Browse, book and join all the live classes you want!</p>
+      <div class="round-border">3</div> <p class="ml-3"><%= t('.third') %></p>
     </div>
-    <p>You can cancel your subscription any time through your <%= link_to "settings", settings_path, class: "link-text" %> area.</p>
   </div>
 
   <div class="d-flex justify-content-center col-sm-12 col-lg-6">
@@ -25,21 +22,21 @@
           </div>
           <div>
             <div class="membership-details">
-              <p class="membership-description"><i class="fas fa-check"></i> 14 day free trial</p>
-              <p class="membership-description"><i class="fas fa-check"></i> Unlimited access to all live classes</p>
-              <p class="membership-description"><i class="fas fa-check"></i> Integrated chat and live streaming</p>
-              <p class="membership-description"><i class="fas fa-check"></i> Personal profile</p>
-              <p class="membership-description"><i class="fas fa-check"></i> Cancel anytime</p>
+              <p class="membership-description"><i class="fas fa-check"></i><%= t('.membership_details.first') %></p>
+              <p class="membership-description"><i class="fas fa-check"></i><%= t('.membership_details.second') %></p>
+              <p class="membership-description"><i class="fas fa-check"></i><%= t('.membership_details.third') %></p>
+              <p class="membership-description"><i class="fas fa-check"></i><%= t('.membership_details.fourth') %></p>
+              <p class="membership-description"><i class="fas fa-check"></i><%= t('.membership_details.fifth') %></p>
             </div>
             <div class="membership-footer">
-              <p class="membership-price"><strong><%= humanized_money_with_symbol("26.99")  %></strong><span><strong> /month</strong> <br> Renewed monthly</span></p>
+              <p class="membership-price"><strong><%= humanized_money_with_symbol("26.99")  %></strong><span><%= t('.price_html') %></span></p>
               <div class="membership-buttons">
                 <form class="form-signin" action="/memberships/<%= membership.id %>/subscriptions" method="POST">
                   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                   <label for="inputEmail" class="sr-only">Email address</label>
                   <input type="hidden" name="user[email]" value="<%= current_user.email %>" id="user[email]" class="form-control" required="" autofocus="">
                   <input type="hidden" type="text" value="<%= membership.title %>" name="user[membership]">
-                  <button class="btn subscribe-button" type="submit">Start your 14 day trial now</button>
+                  <button class="btn subscribe-button" type="submit"><%= t('.subscribe') %></button>
                 </form>
               </div>
             </div>
