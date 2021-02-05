@@ -1,11 +1,11 @@
 <div class="home-page banner-section">
   <div class="banner-content row">
     <div class="navigation col-sm-12 col-md-6 col-lg-6">
-      <h1 id="home-title" class="pt-5">Unlimited <i class="highlighted-yellow">live</i> fitness sessions to join from home</h1>
-      <p id="hero-text" class="pt-3">With just one membership, access unlimited live classes provided by independent trainers from around the world!</p>
-      <p id="home-price">Join now and start your 14 day trial for free! Afterwards just <i class="highlighted-yellow">€26.99/mo</i></p>
+      <h1 id="home-title" class="pt-5"><%= t('.header.header_html') %></h1>
+      <p id="hero-text" class="pt-3"><%= t('.header.punchline') %></p>
+      <p id="home-price"><%= t('.header.join_now_html') %></p>
       <div class="d-flex justify-content-left">
-        <%= link_to "Get started for free", new_user_registration_path, class: "sign-up-button" %>
+        <%= link_to t('.header.button'), new_user_registration_path, class: "sign-up-button" %>
       </div>
     </div>
     <div class="banner-image col-sm-12 col-md-6 col-lg-6">
@@ -17,28 +17,28 @@
 </div>
 <!-- How it works section -->
 <div class="how-it-works-section">
-  <h2 class="text-center">How it works</h2>
+  <h2 class="text-center"><%= t('.how_it_works.title') %></h2>
   <div class="row">
     <div class="col-sm-12 col-lg-4 text-center">
       <div>
         <img src="https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606485037/Screenshot_2020-11-27_at_14.43.26_tohryh.png" class="how-to-image">
       </div>
-      <h2>Find your class</h2>
-      <p>Search our growing variety of classes scheduled on the platform</p>
+      <h2><%= t('.how_it_works.first') %></h2>
+      <p><%= t('.how_it_works.first_explanation') %></p>
     </div>
     <div class="col-sm-12 col-lg-4 text-center">
       <div>
         <img src="https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606484960/Screenshot_2020-11-27_at_14.44.35_r7bvml.png" class="how-to-image">
       </div>
-      <h2>Book your class</h2>
-      <p>Book the classes you’d like to join. These classes will be added to your profile</p>
+      <h2><%= t('.how_it_works.second') %></h2>
+      <p><%= t('.how_it_works.second_explanation') %></p>
     </div>
     <div class="col-sm-12 col-lg-4 text-center">
       <div>
         <img src="https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1606484729/Screenshot_2020-11-27_at_14.45.14_vvlule.png" class="how-to-image">
       </div>
-      <h2>Join your class, live</h2>
-      <p>Show up at the time of your class and click on “go to class” to workout!</p>
+      <h2><%= t('.how_it_works.third') %></h2>
+      <p><%= t('.how_it_works.third_explanation') %></p>
     </div>
   </div>
 </div>
@@ -51,24 +51,24 @@
       <% end %>
     </div>
     <div class="punchliner-right col-sm-12 col-md-12 col-lg-5 py-3">
-      <h2 class="mt-5">All classes live</h2>
-      <p>Forget the cold recorded videos and have fun with unique, interactive live classes! All classes are provided live right from yance. No extra tools needed.</p>
+      <h2 class="mt-5"><%= t('.live_section.title') %></h2>
+      <p><%= t('.live_section.description') %></p>
       <div class="d-flex pt-3 justify-content-center">
-        <%= link_to "Sign up now", new_user_registration_path, class: "sign-up-button", id: "section-white-button"%>
-        <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button", id: "section-visit-button" %>
+        <%= link_to t('.live_section.sign_up'), new_user_registration_path, class: "sign-up-button", id: "section-white-button"%>
+        <%= link_to t('.live_section.visit'), sports_classes_path, class: "visit-platform-button", id: "section-visit-button" %>
       </div>
     </div>
   </div>
 </div>
-<!-- info-images section -->
+<!-- interactive section -->
 <div class="description-section" id="grey-background-section">
   <div class="row py-5 classes-focus-section">
     <div class="punchliner-left col-sm-12 col-md-12 col-lg-5 py-3">
-      <h2 class="mt-5">Made for an interactive home sports experience</h2>
-      <p>All classes are provided live by independent trainers and studios making every class unique and the experience personal.</p>
+      <h2 class="mt-5"><%= t('.interactive_section.title') %></h2>
+      <p><%= t('.interactive_section.description') %></p>
       <div class="d-flex justify-content-center pt-3">
-        <%= link_to "Sign up now", new_user_registration_path, class: "sign-up-button", id: "section-button"%>
-        <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button", id: "section-grey-button" %>
+        <%= link_to t('.interactive_section.sign_up'), new_user_registration_path, class: "sign-up-button", id: "section-button"%>
+        <%= link_to t('.interactive_section.visit'), sports_classes_path, class: "visit-platform-button", id: "section-grey-button" %>
       </div>
     </div>
     <div class="home-info-section col-sm-12 col-md-12 col-lg-7">
@@ -82,9 +82,8 @@
 <div class="container sport-category-section">
   <div class="row py-5 classes-focus-section">
     <div class="col-sm-12 col-md-12 col-lg-12 py-3 text-center">
-      <h2>Never alone in sport!</h2>
-      <p>We want you to never be alone while doing sports, even from home. No matter the kind of sport you do, whether you're a beginner or pro or you just want to have fun, we're here to provide you interactive live sessions so that you are never alone again in sport.</p>
-      <!-- <p>Being active from home is a part of our lifestyle. Whether you're new to home sports or it's already in your routine, we want to give you an awesome, interactive experience with many opportunities to find the sport you love.</p> -->
+      <h2><%= t('.categories_section.title') %></h2>
+      <p><%= t('.categories_section.description') %></p>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-12 py-3 pl-5">
       <div class="sport-category-grid">
@@ -93,7 +92,7 @@
             <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609253928/carla-photo_lwjnvi.jpg", class: "sport-category-image" %>
           <% end %>
           <%= link_to sports_classes_path(query:[:yoga]), class: "explore-category" do %>
-            <p>yoga  <i class="fas fa-angle-right"></i></p>
+            <p><%= t('.categories_section.first') %>  <i class="fas fa-angle-right"></i></p>
           <% end %>
         </div>
         <div class="sport-category-block">
@@ -101,7 +100,7 @@
             <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611747683/OH5C5934_copy-min_a2rz6l.jpg", class: "sport-category-image" %>
           <% end %>
           <%= link_to sports_classes_path(query:[:abs]), class: "explore-category" do %>
-            <p>abs  <i class="fas fa-angle-right"></i></p>
+            <p><%= t('.categories_section.second') %>  <i class="fas fa-angle-right"></i></p>
           <% end %>
         </div>
         <div class="sport-category-block">
@@ -109,7 +108,7 @@
             <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611747694/OH5C6445-min_dawhgy.jpg", class: "sport-category-image" %>
           <% end %>
           <%= link_to sports_classes_path(query:[:cardio]), class: "explore-category" do %>
-            <p>cardio  <i class="fas fa-angle-right"></i></p>
+            <p><%= t('.categories_section.thrid') %>  <i class="fas fa-angle-right"></i></p>
           <% end %>
         </div>
         <div class="sport-category-block">
@@ -117,13 +116,13 @@
             <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1609254082/IMG_6126_edubet.jpg", class: "sport-category-image" %>
           <% end %>
           <%= link_to sports_classes_path(query:[:stretching]), class: "explore-category" do %>
-            <p>stretching  <i class="fas fa-angle-right"></i></p>
+            <p><%= t('.categories_section.fourth') %>  <i class="fas fa-angle-right"></i></p>
           <% end %>
         </div>
       </div>
       <div class="d-flex pt-3 justify-content-center">
-        <%= link_to "Sign up now", new_user_registration_path, class: "sign-up-button", id: "section-button"%>
-        <%= link_to "Visit platform", sports_classes_path, class: "visit-platform-button", id: "section-visit-button" %>
+        <%= link_to t('.categories_section.sign_up'), new_user_registration_path, class: "sign-up-button", id: "section-button"%>
+        <%= link_to t('.categories_section.visit'), sports_classes_path, class: "visit-platform-button", id: "section-visit-button" %>
       </div>
     </div>
   </div>
@@ -137,10 +136,10 @@
       <% end %>
     </div>
     <div class="punchliner-right col-sm-12 col-md-12 col-lg-5 py-3" id="peach-background">
-      <h2 class="pt-2 mt-5">You're a trainer?</h2>
-      <p>Yance is open for trainers! Sign up, click on become a trainer, create a profile and start scheduling your classes. It's as easy as that!</p>
+      <h2 class="pt-2 mt-5"><%= t('.trainer_section.title') %></h2>
+      <p><%= t('.trainer_section.description') %></p>
       <div class="d-flex pt-3 justify-content-center">
-        <%= link_to "Learn how to give classes", become_a_trainer_path, class: "sign-up-button", id: "section-white-button" %>
+        <%= link_to t('.trainer_section.give_classes'), become_a_trainer_path, class: "sign-up-button", id: "section-white-button" %>
       </div>
     </div>
   </div>

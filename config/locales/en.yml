@@ -238,7 +238,77 @@ en:
         title: "About you"
         language_html: " <strong>language:</strong> %{language}"
         bio_html: "<strong>bio:</strong> %{bio}"
-
+    pricing:
+      punchline_html: "For just <i class='highlighted-yellow'>€26.99</i> per month get unlimited access to all live classes on the yance platform! <br> Start your 14 day trial now!"
+      how_to: "How to get started"
+      first: "Create a free account"
+      second: "Go to the memberships section"
+      third: "Start your 14 day trial for free!"
+      sign_up: "Create a free account"
+    trainer_info:
+      slogan: "LIMITLESS OPPORTUNITIES"
+      punchline: "Expand your opportunities and give a great class experience become a trainer on yance"
+      why: "Why give classes on yance"
+      reasons:
+        first: "All-in-one solution"
+        first_explanation: "Forget about external links and complicated tools. From one place, schedule, manage and live-stream your classes."
+        second: "Earn more money"
+        second_explanation: "With yance, you earn money in more ways than one. Make more money from your existing clients and open up a new income stream by leveraging the yance community."
+        third: "Grow your community"
+        third_explanation: "Yance has a growing member base. By giving classes on yance, you will be a part of our community and we will help you build your presence on yance and outside."
+      how_to:
+        title: "How to become a trainer on yance"
+        first: "Create a free account"
+        second: "Click on 'Become a trainer'"
+        third: "Fill out our new trainer form"
+      steps:
+        title: "How teaching works on yance"
+        first: "Create your class"
+        first_explanation: "Give your class a title, description, category, levels and an image. In less than 5 minutes your class is scheduled thanks to our super easy class wizard. Manage all your classes from the 'manage your classes' section."
+        second: "Promote your class"
+        second_explanation: "Great! once your class has been scheduled, promoting it will help you build a community of participants and earn more money. Share the link to your yance trainer profile on social media channels like Facebook and Instagram. The more participants to your class, the more money you'll make!"
+        third: "Give your class"
+        third_explanation: "Stream your class live right from our platform. Forget external links and complicated tools. Our solution is easy and efficient, perfect for you to focus on what matters most - your participants."
+        fourth: "Earn money"
+        fourth_explanation: "Yance's works on a subscription based model, therefore each yance member pays a monthly fee to get unlimited access to the live classes provided on our platform. We compensate our trainers based on the number of participants that join a class."
+        payout: "We pay our trainers a minimum of 15€ per class. Above 15 participants, we pay an additional 1€ per participant with no limits!"
+    home:
+      header:
+        header_html: "Unlimited <i class='highlighted-yellow'>live</i> fitness sessions to join from home"
+        punchline: "With just one membership, access unlimited live classes provided by independent trainers from around the world!"
+        join_now_html: "Join now and start your 14 day trial for free! Afterwards just <i class='highlighted-yellow'>€26.99/mo</i>"
+        button: "Get started for free"
+      how_it_works:
+        title: "How it works"
+        first: "Find your class"
+        first_explanation: "Search our growing variety of classes scheduled on the platform"
+        second: "Book your class"
+        second_explanation: "Book the classes you’d like to join. These classes will be added to your profile"
+        third: "Join your class, live"
+        third_explanation: "Show up at the time of your class and click on “go to class” to workout!"
+      live_section:
+        title: "All classes live"
+        description: "Forget the cold recorded videos and have fun with unique, interactive live classes! All classes are provided live right from yance. No extra tools needed."
+        sign_up: "Sign up now"
+        visit: "Visit platform"
+      interactive_section:
+        title: "Made for an interactive home sports experience"
+        description: "All classes are provided live by independent trainers and studios making every class unique and the experience personal."
+        sign_up: "Sign up now"
+        visit: "Visit platform"
+      categories_section:
+        title: "Never alone in sport!"
+        description: "We want you to never be alone while doing sports, even from home. No matter the kind of sport you do, whether you're a beginner or pro or you just want to have fun, we're here to provide you interactive live sessions so that you are never alone again in sport."
+        first: "yoga"
+        second: "abs"
+        third: "cardio"
+        fourth: "stretching"
+        sign_up: "Sign up now"
+        visit: "Visit platform"
+      trainer_section:
+        title: "Want to give classes on yance?"
+        description: "Yance is open for trainers! Sign up, click on become a trainer, create a profile and start scheduling your classes. It's as easy as that!"
+        give_classes: "Learn how to give classes"
     policy:
       tabs:
         terms_tab: "Terms & Conditions"
