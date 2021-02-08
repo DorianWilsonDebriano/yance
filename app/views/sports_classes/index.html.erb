@@ -1,110 +1,116 @@
 <div class="page d-flex">
-<!-- sidebar filters -->
-  <div class="sidebar">
-    <div class="sidebar-position">
-      <p> <%= t('.sidebar.title') %> </p>
-      <div class="dropdown-filter">
-        <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-            <%= s.select(:category, SportsClass.categories, {prompt: 'Sport Type', selected: params.dig(:sports_class, :category) }, { onchange: "this.form.submit()" } )%>
-          <%= s.hidden_field(:starts_at, value: params[:starts_at] ) %>
-        <% end %>
-      </div>
-      <div class="dropdown-filter">
-        <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-          <%= s.select(:difficulty_level, SportsClass.difficulty_level,  {prompt: 'Difficulty Level', selected:  params.dig(:sports_class, :difficulty_level) }, { onchange: "this.form.submit()" })  %>
-          <% if  params[:sports_class].present? %>
-            <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="dropdown-filter">
-        <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-          <%= s.select(:experience_level, SportsClass.experience_level, {prompt: 'Experience Level', selected: params.dig(:sports_class, :experience_level) }, { onchange: "this.form.submit()" })  %>
-          <% if  params[:sports_class].present? %>
-            <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
-            <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="dropdown-filter">
-        <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-          <%= s.select(:sweat_level, SportsClass.sweat_level, {prompt: 'Sweat Level', selected:  params.dig(:sports_class, :sweat_level) }, { onchange: "this.form.submit()" })  %>
-          <% if  params[:sports_class].present? %>
-            <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
-            <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
-            <%= s.hidden_field(:experience_level, value: params[:sports_class][:experience_level]) %>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="dropdown-filter">
-        <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-          <%= s.select(:duration, SportsClass.durations, {prompt: 'Duration', selected: params.dig(:sports_class, :duration) }, { onchange: "this.form.submit()" })  %>
-          <% if  params[:sports_class].present? %>
-            <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
-            <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
-            <%= s.hidden_field(:experience_level, value: params[:sports_class][:experience_level]) %>
-            <%= s.hidden_field(:sweat_level, value: params[:sports_class][:sweat_level]) %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="page container d-flex justify-content-center flex-column">
-    <!-- sign up call to action -->
-    <% if !user_signed_in? || !current_user.subscription.present? %>
-      <div class="index-call-to-action">
-        <h1><%= t('.call_to_action.header_text') %></h1>
-        <% if user_signed_in? %>
-          <p><%= t('.call_to_action.body_text') %></p>
-          <%= link_to t('.call_to_action.button.start_trial'), memberships_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
-        <% else %>
-          <p>Create an account for free and sign up to our 14 day trial. Afterwards €26,99/month</p>
-          <%= link_to t('.call_to_action.button.sign_up'), new_user_registration_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
-        <% end %>
-      </div>
-    <% end %>
-      <!-- search bar -->
-    <div class="search-container">
-       <div class="row justify-content-center">
-          <div class="col-sm-8 mt-3">
-            <%= form_tag sports_classes_path, method: :get do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control searchbar",
-                placeholder: t('.searchbar.entry')
-              %>
-               <%= text_field_tag :starts_at,
-                params[:starts_at],
-                class: "datepicker",
-                placeholder: t('.searchbar.date')
-                %>
-              <div class="button">
-                <%= button_tag(type: "submit", class: "btn search-button") do %>
-                  <i class="fas fa-search search-icon"></i>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-    </div>
-    <!-- user bookings -->
-    <% if user_signed_in? %>
-      <% if @classbookings.length > 0 %>
-          <h2 class="all-classes-title pt-5"><%= t('.booked-classes.title') %></h2>
-          <div class="booked-sports-classes-cards pt-3 ">
-              <%= render collection: @classbookings, partial: "shared/booked-sport-class-card", as: :classbooking %>
-          </div>
-      <% end %>
-    <% end %>
-  <!-- favorite classes -->
-    <div class="filter-cards">
-      <h2 class="all-classes-title"><%= t('.filter-cards.title') %></h2>
-      <%= render "shared/filter-cards" %>
-    </div>
+  <%= render "shared/sidebar.html.erb" %>
 
-  <!-- all classes -->
-    <h2 class="all-classes-title mt-5"><%= t('.all-classes.title') %></h2>
-    <div class="sports-classes-cards pt-3">
-      <%= render collection: @sports_classes, partial: "shared/sport-class-card", as: :sports_class %>
+  <!-- sidebar filters -->
+  <% if false %>
+    <div class="sidebar">
+      <div class="sidebar-position">
+        <p> <%= t('.sidebar.title') %> </p>
+        <div class="dropdown-filter">
+          <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
+              <%= s.select(:category, SportsClass.categories, {prompt: 'Sport Type', selected: params.dig(:sports_class, :category) }, { onchange: "this.form.submit()" } )%>
+            <%= s.hidden_field(:starts_at, value: params[:starts_at] ) %>
+          <% end %>
+        </div>
+        <div class="dropdown-filter">
+          <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
+            <%= s.select(:difficulty_level, SportsClass.difficulty_level,  {prompt: 'Difficulty Level', selected:  params.dig(:sports_class, :difficulty_level) }, { onchange: "this.form.submit()" })  %>
+            <% if  params[:sports_class].present? %>
+              <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="dropdown-filter">
+          <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
+            <%= s.select(:experience_level, SportsClass.experience_level, {prompt: 'Experience Level', selected: params.dig(:sports_class, :experience_level) }, { onchange: "this.form.submit()" })  %>
+            <% if  params[:sports_class].present? %>
+              <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
+              <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="dropdown-filter">
+          <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
+            <%= s.select(:sweat_level, SportsClass.sweat_level, {prompt: 'Sweat Level', selected:  params.dig(:sports_class, :sweat_level) }, { onchange: "this.form.submit()" })  %>
+            <% if  params[:sports_class].present? %>
+              <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
+              <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
+              <%= s.hidden_field(:experience_level, value: params[:sports_class][:experience_level]) %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="dropdown-filter">
+          <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
+            <%= s.select(:duration, SportsClass.durations, {prompt: 'Duration', selected: params.dig(:sports_class, :duration) }, { onchange: "this.form.submit()" })  %>
+            <% if  params[:sports_class].present? %>
+              <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
+              <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
+              <%= s.hidden_field(:experience_level, value: params[:sports_class][:experience_level]) %>
+              <%= s.hidden_field(:sweat_level, value: params[:sports_class][:sweat_level]) %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="sportsclasses-container container d-flex justify-content-center flex-column">
+      <!-- sign up call to action -->
+      <% if !user_signed_in? || !current_user.subscription.present? %>
+        <div class="index-call-to-action">
+          <h1><%= t('.call_to_action.header_text') %></h1>
+          <% if user_signed_in? %>
+            <p><%= t('.call_to_action.body_text') %></p>
+            <%= link_to t('.call_to_action.button.start_trial'), memberships_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
+          <% else %>
+            <p>Create an account for free and sign up to our 14 day trial. Afterwards €26,99/month</p>
+            <%= link_to t('.call_to_action.button.sign_up'), new_user_registration_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
+          <% end %>
+        </div>
+      <% end %>
+        <!-- search bar -->
+      <div class="search-container">
+         <div class="row justify-content-center">
+            <div class="col-sm-8 mt-3">
+              <%= form_tag sports_classes_path, method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control searchbar",
+                  placeholder: t('.searchbar.entry')
+                %>
+                 <%= text_field_tag :starts_at,
+                  params[:starts_at],
+                  class: "datepicker",
+                  placeholder: t('.searchbar.date')
+                  %>
+                <div class="button">
+                  <%= button_tag(type: "submit", class: "btn search-button") do %>
+                    <i class="fas fa-search search-icon"></i>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+      </div>
+      <!-- user bookings -->
+      <% if user_signed_in? %>
+        <% if @classbookings.length > 0 %>
+            <h2 class="all-classes-title pt-5"><%= t('.booked-classes.title') %></h2>
+            <div class="booked-sports-classes-cards pt-3 ">
+                <%= render collection: @classbookings, partial: "shared/booked-sport-class-card", as: :classbooking %>
+            </div>
+        <% end %>
+      <% end %>
+    <!-- favorite classes -->
+      <div class="filter-cards">
+        <h2 class="all-classes-title"><%= t('.filter-cards.title') %></h2>
+        <%= render "shared/filter-cards" %>
+      </div>
+
+    <!-- all classes -->
+      <h2 class="all-classes-title mt-5"><%= t('.all-classes.title') %></h2>
+      <div class="sports-classes-cards pt-3">
+        <%= render collection: @sports_classes, partial: "shared/sport-class-card", as: :sports_class %>
+      </div>
     </div>
   </div>
 </div>

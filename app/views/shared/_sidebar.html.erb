@@ -1,0 +1,444 @@
+<div class="sidebar">
+    <div class="sidebar-position">
+        <h4 class="sidebar-header">Narrow your search</h4>
+    </div>
+    <div class="dropdown-filter">
+        <form
+            class="new_sports_class"
+            id="new_sports_class-1"
+            accept-charset="UTF-8"
+            method="get"
+        >
+            <button
+                onchange="this.form.submit()"
+                name="sports_class[category]"
+                id="sports_class_category-1"
+                class="sidebar-btn-select"
+            >
+                Sport Type
+                <%= image_tag("icons/icon-arrow-down.svg", alt: "Arrow down",
+                class: "sidebar-btn-arrow") %>
+            </button>
+            <div class="dropdown-container">
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="cardio"
+                        value="cardio"
+                        name="radio"
+                    />
+                    <label for="cardio" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/icon-cardio.png", alt: "icon cardio",
+                        class: "sidebar-icon") %>
+                        Cardio
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="pilates"
+                        value="pilates"
+                        name="radio"
+                    >
+                    <label for="pilates" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/icon-pilates.png", alt: "icon pilates",
+                        class: "sidebar-icon") %>
+                        Pilates
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="strength"
+                        value="strength"
+                        name="radio"
+                    >
+                    <label for="strength" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/icon-strength.png", alt: "icon strength",
+                        class: "sidebar-icon") %>
+                        Strength
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="yoga"
+                        value="yoga"
+                        name="radio"
+                    >
+                <label for="yoga" class="form-radio-label">
+                    <span class="form-radio-button"></span>
+                    <%= image_tag("icons/icon-yoga.png", alt: "icon strength",
+                        class: "sidebar-icon") %>
+                    Yoga
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="abs"
+                        value="abs"
+                        name="radio"
+                    />
+                    <label for="abs" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/icon-abs.png", alt: "icon dance",
+                        class: "sidebar-icon") %>
+                            Abs
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="dance"
+                        value="dance"
+                        name="radio"
+                    />
+                    <label for="dance" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/icon-dance.png", alt: "icon dance",
+                        class: "sidebar-icon") %>
+                        Dance
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="full body"
+                        value="full body"
+                        name="radio"
+                    />
+                    <label for="full body" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/icon-fullbody.png", alt: "icon fullbody",
+                        class: "sidebar-icon") %>
+                        Full body
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="meditation"
+                        value="meditation"
+                        name="radio"
+                    />
+                    <label for="meditation" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/icon-mediation.png", alt: "icon meditation",
+                        class: "sidebar-icon") %>
+                        Meditation
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- ******** Diffculty level ***********-->
+    <div class="dropdown-filter">
+        <form
+            class="new_sports_class"
+            id="new_sports_class-2"
+            accept-charset="UTF-8"
+            method="get"
+        >
+            <button
+                onchange="this.form.submit()"
+                name="sports_class[category]"
+                id="sports_class_category-2"
+                class="sidebar-btn-select"
+            >
+                Difficulty
+                <%= image_tag("icons/icon-arrow-down.svg", alt: "Arrow down",
+                class: "sidebar-btn-arrow") %>
+            </button>
+            <div class="dropdown-container">
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="level-one"
+                        value="level-one"
+                        name="radio"
+                    />
+                    <label for="level-one" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/barbell-outline.svg", alt: "icon barbell",
+                        class: "sidebar-icon") %>
+
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="level-two"
+                        value="level two"
+                        name="radio"
+                    />
+                    <label for="level-two" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/barbell-outline.svg", alt: "icon barbell",
+                        class: "sidebar-icon") %>
+                        <%= image_tag("icons/barbell-outline.svg", alt: "icon barbell", class: "sidebar-icon") %>
+
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="level-3"
+                        value="level 3"
+                        name="radio"
+                    />
+                        <label for="level-3" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/barbell-outline.svg", alt: "icon barbell", class: "sidebar-icon") %>
+                        <%= image_tag("icons/barbell-outline.svg", alt: "icon barbell", class: "sidebar-icon") %>
+                        <%= image_tag("icons/barbell-outline.svg", alt: "icon barbell", class: "sidebar-icon") %>
+
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- ************ experience ************ -->
+    <div class="dropdown-filter">
+        <form
+            class="new_sports_class"
+            id="new_sports_class-3"
+            accept-charset="UTF-8"
+            method="get"
+        >
+            <button
+                onchange="this.form.submit()"
+                name="sports_class[category]"
+                id="sports_class_category-3"
+                class="sidebar-btn-select"
+            >
+                Experience
+                <%= image_tag("icons/icon-arrow-down.svg", alt: "Arrow down",
+                class: "sidebar-btn-arrow") %>
+            </button>
+
+            <div class="dropdown-container">
+            <div class="sidebar-radio-group">
+                <input
+                class="form-radio-input"
+                type="radio"
+                id="beginner"
+                value="beginner"
+                name="radio"
+                />
+                <label for="beginner" class="form-radio-label">
+                    <span class="form-radio-button"></span>
+                    <%= image_tag("icons/icon-beginner.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                    Beginner
+                </label>
+            </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="intermediate"
+                        value="intermediate"
+                        name="radio"
+                    />
+                    <label for="intermediate" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/icon-good.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        Intermediate
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="advanced"
+                        value="advanced"
+                        name="radio"
+                    />
+                    <label for="advanced" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/icon-advanced.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        Advanced
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="experienced"
+                        value="experienced"
+                        name="radio"
+                    />
+                    <label for="experienced" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/icon-experienced.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        Experienced
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- ************ sweat level ************ -->
+    <div class="dropdown-filter">
+        <form
+            class="new_sports_class"
+            id="new_sports_class-4"
+            accept-charset="UTF-8"
+            method="get"
+        >
+            <button
+                onchange="this.form.submit()"
+                name="sports_class[category]"
+                id="sports_class_category-4"
+                class="sidebar-btn-select"
+            >
+                Sweat
+                <%= image_tag("icons/icon-arrow-down.svg", alt: "Arrow down",
+                class: "sidebar-btn-arrow") %>
+            </button>
+
+            <div class="dropdown-container">
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="glistening"
+                        value="glistening"
+                        name="radio"
+                    />
+                    <label for="glistening" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/water-outline.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        Glistening
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="perspiring"
+                        value="perspiring"
+                        name="radio"
+                    />
+                    <label for="perspiring" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/water-outline.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        <%= image_tag("icons/water-outline.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        Perspiring
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="sweaty"
+                        value="sweaty"
+                        name="radio"
+                    />
+                    <label for="sweaty" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/water-outline.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        <%= image_tag("icons/water-outline.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        <%= image_tag("icons/water-outline.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        Sweaty
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- ************ time ************ -->
+    <div class="dropdown-filter">
+        <form
+            class="new_sports_class"
+            id="new_sports_class"
+            accept-charset="UTF-8"
+            method="get"
+        >
+            <button
+                onchange="this.form.submit()"
+                name="sports_class[category]"
+                id="sports_class_category-5"
+                class="sidebar-btn-select"
+            >
+                Duration
+                <%= image_tag("icons/icon-arrow-down.svg", alt: "Arrow down",
+                class: "sidebar-btn-arrow") %>
+            </button>
+
+            <div class="dropdown-container">
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="minutes-15"
+                        value="15 minutes"
+                        name="radio"
+                    />
+                    <label for="minutes-15" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/hourglass-outline.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        15 minutes
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="minutes-30"
+                        value="30 minutes"
+                        name="radio"
+                    />
+                    <label for="minutes-30" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/hourglass-outline.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        30 minutes
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="minutes-45"
+                        value="45 minutes"
+                    name="radio"
+                    />
+                    <label for="minutes-45" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/hourglass-outline.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        45 minutes
+                    </label>
+                </div>
+                <div class="sidebar-radio-group">
+                    <input
+                        class="form-radio-input"
+                        type="radio"
+                        id="minutes-60"
+                        value="60 minutes"
+                        name="radio"
+                    />
+                    <label for="minutes-60" class="form-radio-label">
+                        <span class="form-radio-button"></span>
+                        <%= image_tag("icons/hourglass-outline.svg", alt: "Arrow down", class: "sidebar-icon") %>
+                        60 minutes
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <button class="btn btn-reset">Clear</button>
+</div>
