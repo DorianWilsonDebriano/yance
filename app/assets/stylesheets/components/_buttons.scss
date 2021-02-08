@@ -199,38 +199,3 @@
   color: red;
   margin-left: 10px;
 }
-
-.chatroom-buttons {
-  margin-top: 15%;
-  .chatroom-button {
-    justify-content: space-evenly;
-    display: flex;
-    color: black !important;
-    background-color: $yance-yellow;
-    padding: 8px;
-    border-radius: 8px;
-    position: absolute;
-    height: 4%;
-    width: 90%;
-    align-items: center;
-    a {
-      text-decoration: none;
-      color: black;
-    }
-  }
-  #chat-button-text{
-    margin: 0;
-  }
-  #community-button-text{
-    margin: 0;
-  }
-  #classes-chatrooms {
-    margin-bottom: 35%;
-  }
-  .fa-comments {
-    font-size: 1.3em;
-    position: relative;
-    display: flex;
-    align-self: center;
-  }
-}
