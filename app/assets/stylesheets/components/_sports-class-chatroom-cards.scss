@@ -1,18 +1,11 @@
 .chatroom-header {
   margin: 230px 0 0 200px;
-  width: 40vw;
+  width: 75vw;
   text-align: start;
-  animation: MoveUpDown 5s alternate infinite;
-}
-
-@keyframes MoveUpDown {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-100px); }
-  100% { transform: translateY(0); }
 }
 
 .chatroom-container {
-  padding: 200px;
+  padding: 100px 200px;
   display: flex;
   justify-content: center;
 
