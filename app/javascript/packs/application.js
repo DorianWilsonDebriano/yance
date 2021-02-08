@@ -13,8 +13,8 @@ require("plugins/local-time");
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
 //
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
+// const images = require.context("../images", true);
+// const imagePath = (name) => images(name, true);
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -28,12 +28,14 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import "../plugins/flatpickr";
-import LocalTime from '../plugins/local-time'
-LocalTime.start()
+import "../components/sidebar.js";
+import LocalTime from "../plugins/local-time";
+LocalTime.start();
 
 import { previewImageOnFileSelect } from "../components/photo_preview";
 import { initStarRating } from "../plugins/init_star_rating";
 import { init_popover } from "../components/popover";
+
 // for confirmations
 // import { initSweetalert } from "../plugins/init_sweetalert";
 // for cancellations
@@ -47,19 +49,19 @@ document.addEventListener("turbolinks:load", () => {
   init_popover();
 
   flatpickr(".datepicker", {
-  altInput: true,
-  altFormat: "d M",
-  dateFormat: "Z",
-  minDate: "today",
-  mode: "range"
+    altInput: true,
+    altFormat: "d M",
+    dateFormat: "Z",
+    minDate: "today",
+    mode: "range",
   });
 
   flatpickr(".datetimepicker", {
-  altInput: true,
-  enableTime: true,
-  altFormat: "F j, Y, H:i",
-  dateFormat: "Z",
-  minDate: "today",
-  time_24hr: true
+    altInput: true,
+    enableTime: true,
+    altFormat: "F j, Y, H:i",
+    dateFormat: "Z",
+    minDate: "today",
+    time_24hr: true,
   });
 });
