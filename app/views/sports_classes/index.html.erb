@@ -63,7 +63,7 @@
             <p><%= t('.call_to_action.body_text') %></p>
             <%= link_to t('.call_to_action.button.start_trial'), memberships_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
           <% else %>
-            <p>Create an account for free and sign up to our 14 day trial. Afterwards €26,99/month</p>
+            <p><%= t('.call_to_action.alt_text') %></p>
             <%= link_to t('.call_to_action.button.sign_up'), new_user_registration_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
           <% end %>
         </div>

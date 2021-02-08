@@ -45,6 +45,7 @@ en:
       call_to_action:
         header_text: "Join now to access unlimited live classes from independent trainers around the world"
         body_text: "Become a member now and benefit from a 14 day free trial. Afterwards 26.99€/month"
+        alt_text: "Create an account for free and sign up to our 14 day trial. Afterwards €26,99/month"
         button:
           start_trial: "Start your 14 day free trial"
           sign_up: "Create a free account"
