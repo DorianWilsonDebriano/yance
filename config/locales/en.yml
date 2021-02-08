@@ -50,6 +50,9 @@ en:
           sign_up: "Create a free account"
       booked-classes:
         title: "Your upcoming classes"
+      searchbar:
+        entry: "All sports"
+        date: "Date"
       filter-cards:
         title: "Most popular classes"
       all-classes:
