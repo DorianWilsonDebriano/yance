@@ -9,9 +9,9 @@ class SportsClassChatroomsController < ApplicationController
 
   def index
     @sports_class_chatrooms = policy_scope(SportsClassChatroom).where(['date_time > ?', Time.now])
-    # @sports_class_chatrooms = policy_scope(SportsClassChatroom)
-    @sports_classes = SportsClass.find(@sports_class_chatrooms.pluck(:sports_class_id))
-    # raise
+    @booked_sports_chatrooms = @sports_class_chatrooms.where(sports_class_id: current_user.all_booked_classes.pluck(:id))
+    @sports_classes = SportsClass.find(@booked_sports_chatrooms.pluck(:sports_class_id))
+    # @sports_classes = SportsClass.find(@sports_class_chatrooms.pluck(:sports_class_id))
   end
 
   def update
@@ -32,3 +32,35 @@ end
 
 
 
+#   def index
+#     @chatrooms = policy_scope(Chatroom)
+#     @user = current_user
+#     @user_bookings = @user.all_booked_classes.pluck(:title)
+#     @chatroom_names = @chatrooms.pluck(:name)
+#     @user_class_chatrooms = @user_bookings & @chatroom_names
+#     class_chatrooms
+#     authorize @chatrooms
+#   end
+
+#   def show
+#     @chatroom = Chatroom.find(params[:id])
+#     @message = Message.new
+#     authorize @chatroom
+#   end
+
+# #   def create
+# #     @chatroom = Chatroom.new(chatroom_params)
+# #     if @chatroom.save
+# #       redirect_to chatrooms_path
+# #     else
+# #       render '/profile'
+# #     end
+# #   end
+
+#   private
+
+#   def class_chatrooms
+#     if !@user_class_chatrooms.empty?
+#       @chatrooms_all = Chatroom.where(name: @user_class_chatrooms)
+#     end
+#   end

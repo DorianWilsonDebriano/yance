@@ -50,10 +50,24 @@
       <div class="connect">
         <p class="connect-header">Connect</p>
         <% if !current_user.nil? %>
-          <%= link_to "Classes", sports_class_chatrooms_path , class: "chatroom-button" %>
-        <% end %>
-        <% if !current_user.class_bookings.nil? %>
-          <%= link_to "Yancers", chatrooms_path , class: "chatroom-button" %>
+          <div class="chatroom-buttons">
+            <div id="classes-chatrooms">
+              <%= link_to sports_class_chatrooms_path do %>
+                <div class="chatroom-button">
+                  <h6 id="chat-button-text">Class Chat</h6>
+                  <i class="fas fa-comments"></i>
+                </div>
+              <% end %>
+            </div>
+            <div id="yancers-chatrooms">
+              <%= link_to chatrooms_path do %>
+                <div class="chatroom-button">
+                  <h6 id="community-button-text">Community</h6>
+                  <i class="fas fa-comments"></i>
+                </div>
+              <% end %>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>

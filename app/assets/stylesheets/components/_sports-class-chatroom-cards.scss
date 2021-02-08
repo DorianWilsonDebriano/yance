@@ -1,11 +1,8 @@
 .chatroom-container{
-  // height: 100vh;
-  // width: 95vw;
-  // margin: 10% 0;
   padding: 100px 0;
   display: flex;
   justify-content: center;
-  // flex-direction: column;
+
 }
 .chatroom-header {
   margin: 5% 0 0 16%;
@@ -45,7 +42,6 @@
   }
   .chatroom-card:hover {
       transform: translateY(-2rem);
-      z-index: 5;
   }
   @keyframes MoveUpDown {
      0%, 100% {
@@ -66,4 +62,8 @@
   .card-info {
     padding: 8px;
   }
+}
+.no-bookings {
+  padding-top: 10%;
+  font-size: 3em;
 }

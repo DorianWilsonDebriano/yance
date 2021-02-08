@@ -1,5 +1,13 @@
-.main-messages-container {
+.sports-class-message-container {
+  p {
+    background-color: $yance-yellow;
+    border-radius: 8px;
+    // width: 70%;
+    padding: 2%;
+    margin: 2% 0;
+  }
 }
 
-#sports-class-messages {
+#user-chatroom-avatar {
+  margin: 0;
 }

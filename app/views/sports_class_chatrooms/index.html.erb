@@ -1,14 +1,18 @@
 <h3 class='chatroom-header pt-5'> Chat with fellow yancers in your classes</h3>
 <div class="chatroom-container">
+    <% if @sports_classes.empty? %>
+      <h5 class="no-bookings">Book some classes to chat!</h5>
+    <% else %>
   <div class="chatroom-cards">
-    <% @sports_classes.each do |sports_class| %>
-      <div class="chatroom-card">
-        <div class="card-info text-left">
-          <strong><%= link_to sports_class.sports_class_chatroom.name.capitalize, sports_class_chatroom_path(sports_class.sports_class_chatroom.id) %></strong>
-          <p> Your class is: <%=local_time(sports_class.date_time, "%A %b %d %H:%M ") %></p>
+      <% @sports_classes.each do |sports_class| %>
+        <div class="chatroom-card">
+          <div class="card-info text-left">
+            <strong><%= link_to sports_class.sports_class_chatroom.name.capitalize, sports_class_chatroom_path(sports_class.sports_class_chatroom.id) %></strong>
+            <p> Your class is: <%=local_time(sports_class.date_time, "%A %b %d %H:%M ") %></p>
+          </div>
+          <%= link_to image_tag(sports_class.photo), sports_class_chatroom_path(sports_class.sports_class_chatroom.id)%>
         </div>
-        <%= link_to image_tag(sports_class.photo), sports_class_chatroom_path(sports_class.sports_class_chatroom.id)%>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
