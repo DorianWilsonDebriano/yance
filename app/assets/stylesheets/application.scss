@@ -17,6 +17,7 @@
 @import "pages/index";
 @import "pages/trainershow";
 @import "pages/checkout";
+@import "pages/sports_classes.scss";
 @import "pages/success";
 
 // Body style
@@ -28,7 +29,8 @@ a {
   text-decoration: none !important;
 }
 
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active,
+.dropdown-item:active {
   background-color: white;
 }
 
@@ -43,7 +45,7 @@ a {
 
 .section-title {
   margin-top: 20px;
-    h2 {
+  h2 {
     font-size: 18px;
     font-weight: bolder;
     color: $dark-text;
@@ -63,4 +65,3 @@ input:focus {
 .form-control:focus {
   box-shadow: none;
 }
-
