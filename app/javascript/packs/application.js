@@ -28,7 +28,7 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import "../plugins/flatpickr";
-import "../components/sidebar.js";
+// import "../components/sidebar.js";
 import LocalTime from "../plugins/local-time";
 LocalTime.start();
 

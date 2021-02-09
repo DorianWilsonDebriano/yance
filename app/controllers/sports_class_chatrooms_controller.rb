@@ -1,5 +1,5 @@
 class SportsClassChatroomsController < ApplicationController
-  skip_before_action :authenticate_user!, except: [:show, :index]
+  skip_before_action :authenticate_user!, except: [:show, :index, :update]
 
   def show
     @sports_class_chatroom = SportsClassChatroom.find(params[:id])

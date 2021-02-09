@@ -59,7 +59,6 @@ class SportsClassesController < ApplicationController
     if @sportsclass.update(sports_class_params)
       @sports_class_chatroom = @sportsclass.sports_class_chatroom
       @sports_class_chatroom.update(date_time: params[:sports_class][:date_time], name: params[:sports_class][:title])
-      # raise
       redirect_to profile_path, notice: "#{@sportsclass.title}'s information has been saved."
     else
       render :edit
