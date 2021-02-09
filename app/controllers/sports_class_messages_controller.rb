@@ -20,7 +20,7 @@ class SportsClassMessagesController < ApplicationController
   private
 
   def sports_class_message_params
-    params.require(:sports_class_message).permit(:content)
+    params.require(:sports_class_message).permit(:content, :name)
   end
 end
 
