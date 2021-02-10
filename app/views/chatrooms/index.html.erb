@@ -1,15 +1,20 @@
-<div class="pt-5 mt-5 d-flex flex-column">
-  <%= link_to @chatrooms.first.name, chatroom_path(@chatrooms.first.id) %>
-  <%if !@user.trainer_ids.empty? %>
-      <%= link_to "Trainers", chatroom_path(@chatrooms.second.id)%>
-  <% end %>
-  <% if !@user_class_chatrooms.empty? %>
-    <% @chatrooms_all.each do |chatroom| %>
-      <%= link_to chatroom.name, chatroom_path(chatroom) %>
+<div class="chatroom-page pt-5 mt-5">
+  <h2 class="text-center">Welcome to the Yance bubble</h2>
+  <div class="chatroom-index-container">
+    <%= link_to chatroom_path(@chatrooms.first.id) do %>
+      <div class="chatroom" id="yancers-chatroom">
+        <%= @chatrooms.first.name %>
+        <i class="fas fa-users"></i>
+      </div>
     <% end %>
-  <% end %>
-</div>
-
-
-
+    <%if !@user.trainer_ids.empty? %>
+        <%= link_to chatroom_path(@chatrooms.second.id) do %>
+          <div class="chatroom" id="trainers-chatroom">
+            <%= @chatrooms.last.name %>
+            <i class="fas fa-users"></i>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+ </div>
 

@@ -1,19 +1,8 @@
-<!-- <div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.first_name %></span>
-    <span><%= message.user.last_name %></span>
-    <small><%= local_time(message.created_at.strftime("%a %b %e at %l:%M%p")) %></small>
-  </i>
-  <p><%= message.content %></p>
-</div>
-
- -->
-
 <div class="main-messages-container">
   <% if message.user == current_user %>
     <div class="message-container text-right current-user-message-container" id="message-<%= message.id %>">
       <i class="author current-user-author">
-
+        <small><%= local_time(message.created_at.strftime("%a %b %e at %l:%M%p")) %></small>
         <span><%= message.user.first_name %></span>
         <span><%= message.user.last_name %></span>
         <% if message.user.photo.attached? %>
@@ -23,7 +12,6 @@
       <div class="message-paragraph current-user-messenger">
         <p><%= message.content %></p>
       </div>
-      <small>sent: <%= local_time(message.created_at.strftime("%a %b %e at %l:%M%p")) %></small>
     </div>
   <% else %>
     <div class="sports-class-message-container text-left not-current-user-message-container" id="message-<%= message.id %>">
@@ -33,11 +21,11 @@
         <% end %>
         <span><%= message.user.first_name %></span>
         <span><%= message.user.last_name %></span>
+        <small>sent: <%= local_time(message.created_at.strftime("%a %b %e at %l:%M%p")) %></small>
       </i>
       <div class="message-paragraph">
         <p><%= message.content %></p>
       </div>
-        <small>sent: <%= local_time(message.created_at.strftime("%a %b %e at %l:%M%p")) %></small>
     </div>
   <% end %>
 </div>

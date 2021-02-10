@@ -1,3 +1,9 @@
+// COMMUNITY MESSAGE STYLE (has the same styling as sessions apart from the below id)
+
+#messages {
+  margin: 0 2%;
+}
+
 // SESSIONS MESSAGE STYLE
 
 .current-user-message-container {
@@ -52,8 +58,3 @@
   width: 90%;
 }
 
-// COMMUNITY MESSAGE STYLE
-
-#messages {
-  margin: 0 2%;
-}

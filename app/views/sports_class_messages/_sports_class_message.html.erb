@@ -2,9 +2,9 @@
   <% if sports_class_message.user == current_user %>
     <div class="sports-class-message-container text-right current-user-message-container" id="sports_class_message-<%= sports_class_message.id %>">
       <i class="author current-user-author">
-
         <span><%= sports_class_message.user.first_name %></span>
         <span><%= sports_class_message.user.last_name %></span>
+        <small><%= local_time(sports_class_message.created_at.strftime("%a %b %e at %l:%M%p")) %></small>
         <% if sports_class_message.user.photo.attached? %>
           <%= cl_image_tag sports_class_message.user.photo.key, class: "avatar dropdown-toggle user-avatar", id: "user-chatroom-avatar" %>
         <% end %>
@@ -12,7 +12,6 @@
       <div class="message-paragraph current-user-messenger">
         <p><%= sports_class_message.content %></p>
       </div>
-      <small>sent: <%= local_time(sports_class_message.created_at.strftime("%a %b %e at %l:%M%p")) %></small>
     </div>
   <% else %>
     <div class="sports-class-message-container text-left not-current-user-message-container" id="sports_class_message-<%= sports_class_message.id %>">
@@ -22,11 +21,11 @@
         <% end %>
         <span><%= sports_class_message.user.first_name %></span>
         <span><%= sports_class_message.user.last_name %></span>
+        <small><%= local_time(sports_class_message.created_at.strftime("%a %b %e at %l:%M%p")) %></small>
       </i>
       <div class="message-paragraph">
         <p><%= sports_class_message.content %></p>
       </div>
-        <small>sent: <%= local_time(sports_class_message.created_at.strftime("%a %b %e at %l:%M%p")) %></small>
     </div>
   <% end %>
 </div>

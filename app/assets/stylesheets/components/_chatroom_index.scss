@@ -1,0 +1,87 @@
+.chatroom-index-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  // animation: morph 8s ease-in-out infinite;
+  // border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  // transition: all 1s ease-in-out;
+  // width: 100%;
+  // background-color: red;
+  a {
+    text-decoration: none;
+    font-size: 36px;
+    font-family: $body-font;
+    color: $dark-text;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 16px;
+  }
+}
+
+.chatroom {
+  height: 40vh;
+  width: 40vw;
+  padding: 100px;
+  box-shadow: 0 2px 14px $yance-yellow;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  .fa-users {
+    line-height: unset;
+    padding-left: 4%;
+  }
+ }
+
+.chatroom:hover {
+  transform: translateY(-2rem);
+}
+
+#yancers-chatroom {
+  margin-right: 5%;
+  animation: morph 8s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+  width: 100%;
+}
+
+#trainers-chatroom {
+  animation: morph 7s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+  width: 100%;
+}
+
+@keyframes morph {
+  0% {
+      border-radius:  60% 70% 80% 65% / 60% 80% 70% 75%;
+  }
+  20% {
+      border-radius:  90% 80% / 90% 80%;
+  }
+  50% {
+      border-radius:  60% 60% 70% 70% / 65% 60% 75% 70%;
+  }
+  100% {
+    border-radius:  65% 75% 70% 70% / 65% 80% 75% 70%;
+  }
+}
+
+@media(max-width: 768px) {
+  .chatroom-index-container {
+    a {
+      font-size: 24px;
+    }
+  }
+}
+
+@media(max-width: 375px) {
+  .chatroom-index-container {
+    a {
+      font-size: 18px;
+    }
+  }
+}
+
