@@ -38,10 +38,40 @@ en:
       date: "%A %b %d"
       at_time: " at %H:%M"
       at_numeric: "%d/%m/%Y at %H:%M"
+  devise:
+    registrations:
+      new:
+        tagline: "Sign up to yance"
+        switch: "alreay have an account?"
+        login: " Log in"
+        first_name: "First name"
+        last_name: "Last name"
+        password: "Password"
+        new_password: "create a new password"
+        security: "%{security} characters minimum"
+        confirmation: "Password confirmation"
+        confirmation_placeholder: "repeat your password"
+        submit: "Sign up"
+        terms: "by clicking 'Sign up' you certify that you agree to our"
+        terms_link: "terms and conditions"
+    sessions:
+      new:
+        tagline: "Log in to yance"
+        switch: "Not a client yet?"
+        signup: "Sign up"
+        password: "Password"
+        remember: "Remember me"
+        submit: "Log in"
   sports_classes:
     index:
       sidebar:
-        title: "Narrow your search"
+        title: "NARROW YOUR SEARCH"
+        dropdowns:
+          sport_type: "SPORT TYPE"
+          difficulty_level: "DIFFICULTY LEVEL"
+          experience_level: "EXPERIENCE LEVEL"
+          sweat_level: "SWEAT LEVEL"
+          duration: "DURATION"
       call_to_action:
         header_text: "Join now to access unlimited live classes from independent trainers around the world"
         body_text: "Become a member now and benefit from a 14 day free trial. Afterwards 26.99€/month"
@@ -58,6 +88,26 @@ en:
         title: "Most popular classes"
       all-classes:
         title: "All classes"
+    new:
+      tagline: "Create a new class"
+      title: "Title"
+      title_description: "The title of your class"
+      description: "Description of your class"
+      description_placeholder: "Your class in a few sentences"
+      date_time: "Date and Time"
+      date_time_description: "Date and time of your class"
+      duration: "Duration (in minutes)"
+      duration_description: "How long will your class be?"
+      category: "Sport type"
+      experience_level: "Experience level"
+      difficulty_level: "Difficulty level"
+      sweat_level: "Sweat level"
+      password: "Set a password (optional)"
+      password_description: "Share this password to allow free access to your class"
+      language: "Language"
+      upload: "📷 Upload a photo"
+      submit: "Create your class"
+      loading: "Please wait..."
   trainers:
     show:
       edit: "edit your trainer page"
@@ -68,6 +118,16 @@ en:
         zero: " No reviews yet!"
         one: " One review"
         other: " %{count} reviews"
+    new:
+      tagline: "Become a trainer"
+      location: "City/Town"
+      city-description: "In what city or town do you live?"
+      sport_category: "Sport Category"
+      category-description: "What is your main type of sport?"
+      bio: "Bio"
+      bio_description: "Write a few sentences about yourself"
+      submit: "Submit"
+      loading: "Please wait..."
   subscriptions:
     checkout:
       message_html: "<span class='selector'>Please hold</span>... Yancing to your call"
@@ -577,8 +637,4 @@ en:
         <p>04109 Leipzig</p>
         <p>Telefon: 0176-32302327</p>
         <p>E-Mail: info@yancesports.com</p>
-        <br>
-        <p>Vertreten durch:</p>
-        <p>Dorian Wilson-Debriano - Geschäftsführer</p>
-        <p>Gabriel Pasquet - Gesellschafter</p>
       "
