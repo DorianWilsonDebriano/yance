@@ -1,6 +1,12 @@
 <div class="chatroom-page pt-5 mt-5">
   <h2 class="text-center">Welcome to the Yance bubble</h2>
   <div class="chatroom-index-container">
+    <!-- <div class="chatroom-back-button">
+      <%= link_to sports_classes_path do %>
+          <i class="fas fa-chevron-left"></i>
+          <h6 class="community-button-text">Back</h6>
+      <% end %>
+    </div> -->
     <%= link_to chatroom_path(@chatrooms.first.id) do %>
       <div class="chatroom" id="yancers-chatroom">
         <%= @chatrooms.first.name %>
@@ -16,5 +22,5 @@
         <% end %>
     <% end %>
   </div>
- </div>
+</div>
 

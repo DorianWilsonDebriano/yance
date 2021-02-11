@@ -1,11 +1,5 @@
 class SportsClassChatroomsController < ApplicationController
-  skip_before_action :authenticate_user!, except: [:show, :index, :update]
-
-  def show
-    @sports_class_chatroom = SportsClassChatroom.find(params[:id])
-    @sports_class_message = SportsClassMessage.new
-    authorize @sports_class_chatroom
-  end
+  before_action :authenticate_user!
 
   def index
     @sports_class_chatrooms = policy_scope(SportsClassChatroom).where(['date_time > ?', Time.now])
@@ -13,6 +7,13 @@ class SportsClassChatroomsController < ApplicationController
     @sports_classes = SportsClass.find(@booked_sports_chatrooms.pluck(:sports_class_id))
     # @sports_classes = SportsClass.find(@sports_class_chatrooms.pluck(:sports_class_id))
   end
+
+  def show
+    @sports_class_chatroom = SportsClassChatroom.find(params[:id])
+    @sports_class_message = SportsClassMessage.new
+    authorize @sports_class_chatroom
+  end
+
 
   def update
     authorize @sports_class_chatroom
