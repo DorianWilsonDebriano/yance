@@ -1,31 +1,31 @@
 <div class="cards">
   <%= link_to sports_classes_path(category: "Yoga"), method: :get, controller: "sports_classes" do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1552196563-55cd4e45efb3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=926&q=80)">
-      Yoga
+      <%= t('.yoga') %>
     </div>
   <% end %>
 
   <%= link_to sports_classes_path(category: "Pilates"), method: :get, controller: "sports_classes" do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)">
-      Pilates
+      <%= t('.pilates') %>
     </div>
   <% end %>
 
   <%= link_to sports_classes_path(category: "Stretching"), method: :get, controller: "sports_classes" do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1600881333195-dbad115a6162?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1051&q=80)">
-      Stretching
+      <%= t('.stretching') %>
     </div>
   <% end %>
 
   <%= link_to sports_classes_path(category: "Cardio"), method: :get, controller: "sports_classes" do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80)">
-      Cardio
+      <%= t('.cardio') %>
     </div>
   <% end %>
 
   <%= link_to sports_classes_path(category: "Strength"), method: :get, controller: "sports_classes" do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)">
-      Strength
+      <%= t('.strength') %>
     </div>
   <% end %>
 </div>

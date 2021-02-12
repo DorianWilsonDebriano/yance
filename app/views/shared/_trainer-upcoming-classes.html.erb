@@ -1,14 +1,14 @@
 <div class="sports-classes-card">
   <div class="class-card-header d-flex justify-content-between">
     <div class="time-label">
-      <p class="class-card-month"><%= local_time(sportsclass.date_time, "%A") %></p>
-      <p class="class-card-day"><%= local_time(sportsclass.date_time, "%b %d") %></p>
-      <p class="class-card-time"><%= local_time(sportsclass.date_time, "%H:%M") %></p>
+      <p class="class-card-month"><%= local_time(l(sportsclass.date_time), format: :day) %></p>
+      <p class="class-card-day"><%= local_time(l(sportsclass.date_time), format: :month_day) %></p>
+      <p class="class-card-time"><%= local_time(l(sportsclass.date_time), format: :time) %></p>
     </div>
     <div class="card-header-right">
       <p class="class-card-category"><%= sportsclass.category %></p>
       <p class="class-card-language"><%= sportsclass.language %></p>
-      <p class="class-card-duration"><i class="far fa-clock pr-1"></i>   <%= sportsclass.duration %> minutes</p>
+      <p class="class-card-duration"><i class="far fa-clock pr-1"></i><%= t('.duration', duration: sportsclass.duration) %></p>
     </div>
   </div>
   <% if sportsclass.photo.attached? %>
@@ -20,7 +20,7 @@
     <p class="class-card-title"><%= sportsclass.title %></p>
     <div class="class-card-levels row">
       <div class="class-card-difficulty col-4">
-        <p class="class-card-level-title">DIFFICULTY</p>
+        <p class="class-card-level-title"><%= t('.levels.difficulty') %></p>
         <p class="class-card-level-content">
           <% sportsclass.difficulty_level.times do %>
           <i class="fas fa-dumbbell" id="difficulty"></i>
@@ -28,7 +28,7 @@
         </p>
       </div>
       <div class="class-card-sweat col-4">
-        <p class="class-card-level-title">SWEAT</p>
+        <p class="class-card-level-title"><%= t('.levels.sweat') %></p>
         <p class="class-card-level-content">
           <% sportsclass.sweat_level.times do %>
           <i class="fas fa-tint" id="sweat"></i>
@@ -36,7 +36,7 @@
         </p>
       </div>
       <div class="class-card-experience col-4">
-        <p class="class-card-level-title">LEVEL</p>
+        <p class="class-card-level-title"><%= t('.levels.experience') %></p>
         <p class="class-card-level-content"> <%= sportsclass.experience_level %> </p>
       </div>
     </div>
@@ -47,25 +47,25 @@
         <% if current_user.subscription.present? %>
           <% if current_user.subscription.subscription_status == "active" || "trialing" %>
               <% unless current_user.all_booked_classes.include?(sportsclass) %>
-                <%= link_to "BOOK", sports_class_class_bookings_path(sportsclass, class_booking: {class_booking: @classbooking}), method: :post, class: "sweet-alert-booked-#{sportsclass.id} card-book-class-link btn class-card-book-button", id:'book-link sweet-alert-booked' %>
+                <%= link_to t('.book'), sports_class_class_bookings_path(sportsclass, class_booking: {class_booking: @classbooking}), method: :post, class: "card-book-class-link btn class-card-book-button" %>
               <% end %>
           <% else current_user.subscription.subscription_status == "incomplete" %>
-            <%= link_to "BOOK", customer_portal_sessions_path, method: :post, class: "card-book-class-link btn class-card-book-button" %>
+            <%= link_to t('.complete-info'), customer_portal_sessions_path, method: :post, class: "card-book-class-link btn class-card-book-button" %>
           <% end %>
         <% else %>
           <% if sportsclass.password.present? %>
             <button type="button" class="card-book-class-link btn class-card-book-button" data-toggle="modal" data-target="#password-modal-<%= sportsclass.id %>">
-              BOOK
+               <%= t('.password') %>
             </button>
           <% else %>
-            <%= link_to "BOOK", memberships_path, class: "card-book-class-link btn class-card-book-button" %>
+            <%= link_to t('.trial'), memberships_path, class: "card-book-class-link btn class-card-book-button" %>
           <% end %>
         <% end %>
       <% else %>
-        <%= link_to "BOOK", new_user_session_path, class: "card-book-class-link btn class-card-book-button" %>
+        <%= link_to t('.log-in'), new_user_session_path, class: "card-book-class-link btn class-card-book-button" %>
       <% end %>
       <button type="button" class="btn class-card-info-button class-info-link" data-toggle="modal" data-target="#modal-<%= sportsclass.id %>">
-        INFO
+        <i class="fas fa-info"></i>
       </button>
     </div>
   </div>

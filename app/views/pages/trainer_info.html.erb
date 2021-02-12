@@ -1,66 +1,66 @@
 <div class="trainer-info-page trainer-banner">
   <div class="trainer-banner-content">
     <div class="container trainer-hero-title">
-      <p>LIMITLESS OPPORTUNITIES</p>
-      <h1>Expand your opportunities and give a great class experience become a trainer on yance</h1>
+      <p><%= t('.slogan') %></p>
+      <h1><%= t('.punchline') %></h1>
     </div>
   </div>
   <div class="reasons-section">
-    <h2 class="text-center">Why give classes on yance</h2>
+    <h2 class="text-center"><%= t('.why') %></h2>
     <div class="reasons-grid">
       <div>
         <div class="reasons-image">
           <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611667049/all-in-one_vzt7n6.png", class: "reasons-image" %>
         </div>
-        <h2>All-in-one solution</h2>
-        <p>Forget about external links and complicated tools. From one place, schedule, manage and live-stream your classes.</p>
+        <h2><%= t('.reasons.first') %></h2>
+        <p><%= t('.reasons.first_explanation') %></p>
       </div>
       <div>
         <div class="reasons-image">
           <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611667049/earn-money-illustration_rbjedn.png", class: "reasons-image" %>
         </div>
-        <h2>Earn more money</h2>
-        <p>With yance, you earn money in more ways than one. Make more money from your existing clients and open up a new income stream by leveraging the yance community.</p>
+        <h2><%= t('.reasons.second') %></h2>
+        <p><%= t('.reasons.second_explanation') %></p>
       </div>
       <div>
         <div class="reasons-image">
           <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611667050/community_htquu2.png", class: "reasons-image" %>
         </div>
-        <h2>Grow your community</h2>
-        <p>Yance has a growing member base. By giving classes on yance, you will be a part of our community and we will help you build your presence on yance and outside.</p>
+        <h2><%= t('.reasons.third') %></h2>
+        <p><%= t('.reasons.third_explanation') %></p>
       </div>
     </div>
   </div>
   <div class="reasons-section mb-5">
-    <h2 class="text-center">How to become a trainer on yance</h2>
+    <h2 class="text-center"><%= t('.how_to.title') %></h2>
     <div class="reasons-grid">
       <div class="text-center">
         <div class="round-number">
           1
         </div>
-        <h2>Create a free account</h2>
+        <h2><%= t('.how_to.first') %></h2>
       </div>
       <div class="text-center">
         <div class="round-number">
           2
         </div>
-        <h2>Click on "Become a trainer"</h2>
+        <h2><%= t('.how_to.second') %></h2>
       </div>
       <div class="text-center">
         <div class="round-number">
           3
         </div>
-        <h2>Fill out our new trainer form</h2>
+        <h2><%= t('.how_to.third') %></h2>
       </div>
     </div>
   </div>
   <div class="how-it-works-trainers">
-    <h2 class="how-it-works-title">How teaching works on yance</h2>
+    <h2 class="how-it-works-title"><%= t('.steps.title') %></h2>
     <div class="how-it-works-element row">
       <div class="col-sm-12 col-lg-6 pt-5">
-        <h2>Create your class</h2>
+        <h2><%= t('.steps.first') %></h2>
         <p id="how-it-works-number">1</p>
-        <p>Give your class a title, description, category, levels and an image. In less than 5 minutes your class is scheduled thanks to our super easy class wizard. Manage all your classes from the "manage your classes" section.</p>
+        <p><%= t('.steps.first_explanation') %></p>
       </div>
       <div class="col-sm-12 col-lg-6 how-it-works-image">
         <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611513498/create-class_ceeobc.png", class: "how-it-works-image" %>
@@ -68,9 +68,9 @@
     </div>
     <div class="how-it-works-element row">
       <div class="col-sm-12 col-lg-6 p-5">
-        <h2>Promote your class</h2>
+        <h2><%= t('.steps.second') %></h2>
         <p id="how-it-works-number">2</p>
-        <p>Great! once your class has been scheduled, promoting it will help you build a community of participants and earn more money. Share the link to your yance trainer profile on social media channels like Facebook and Instagram. The more participants to your class, the more money you'll make!</p>
+        <p><%= t('.steps.second_explanation') %></p>
       </div>
       <div class="col-sm-12 col-lg-6 how-it-works-image">
         <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611748433/pexels-ketut-subiyanto-4350099-min_l4b5y3.jpg", class: "how-it-works-image"%>
@@ -78,9 +78,9 @@
     </div>
     <div class="how-it-works-element row">
       <div class="col-sm-12 col-lg-6">
-        <h2>Give your class</h2>
+        <h2><%= t('.steps.third') %></h2>
         <p id="how-it-works-number">3</p>
-        <p>Stream your class live right from our platform. Forget external links and complicated tools. Our solution is easy and efficient, perfect for you to focus on what matters most - your participants.</p>
+        <p><%= t('.steps.third_explanation') %></p>
       </div>
       <div class="col-sm-12 col-lg-6 how-it-works-image">
         <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611513500/give-your-class_aspj42.png", class: "how-it-works-image"%>
@@ -88,10 +88,10 @@
     </div>
     <div class="how-it-works-element row pb-5">
       <div class="col-sm-12 col-lg-6">
-        <h2>Earn money</h2>
+        <h2><%= t('.steps.fourth') %></h2>
         <p id="how-it-works-number">4</p>
-        <p>Yance's works on a subscription based model, therefore each yance member pays a monthly fee to get unlimited access to the live classes provided on our platform. We compensate our trainers based on the number of participants that join a class. </p>
-        <p>We pay our trainers a minimum of 15€ per class. Above 15 participants, we pay an additional 1€ per participant with no limits!</p>
+        <p><%= t('.steps.fourth_explanation') %></p>
+        <p><%= t('.steps.payout') %></p>
       </div>
       <div class="col-sm-12 col-lg-6 how-it-works-image">
         <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1611748438/pexels-anna-shvets-3727465-min_x2di78.jpg", class: "how-it-works-image"%>

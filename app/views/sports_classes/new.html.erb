@@ -5,43 +5,67 @@
     </div>
     <div class="col-xs-12 col-lg-7 ">
       <div class="form-create-class">
-        <h2>Create a new class</h2>
+        <h2><%= t('.tagline') %></h2>
         <%= simple_form_for [@trainer, @sportsclass], html: { autocomplete: 'off' } do |f| %>
-          <%= f.input :title, placeholder: 'The title of your class' %>
-          <%= f.input :description, placeholder: 'Your class in a few sentences' %>
-          <%= f.input :date_time, as: :string, label: "Date and Time", placeholder: "Date and Time", input_html: {class: "datetimepicker"} %>
-          <%= f.input :duration, label: "Duration (in minutes)", placeholder: 'How long will your class be?', input_html: {id: "duration-selector"} %>
-          <%= f.input :category, as: :radio_buttons,
+          <%= f.input :title,
+                      label: t('.title'),
+                      placeholder: t('.title_description') %>
+          <%= f.input :description,
+                      label: t('.description'),
+                      placeholder: t('.description_placeholder') %>
+          <%= f.input :date_time,
+                      label: t('.date_time'),
+                      as: :string,
+                      placeholder: t('.date_time_description'),
+                      input_html: {class: "datetimepicker"} %>
+          <%= f.input :duration,
+                      label: t('.duration'),
+                      placeholder: t('.duration_description'),
+                      input_html: {id: "duration-selector"} %>
+          <%= f.input :category, label: t('.category'), as: :radio_buttons,
                       input_html: {class: "sport-category-selector"},
                       item_wrapper_class: 'sport-category-item',
                       collection: SportsClass::CATEGORIES %>
-            <%= f.input :experience_level, as: :radio_buttons,
+            <%= f.input :experience_level,
+                      label: t('.experience_level'),
+                      as: :radio_buttons,
                       input_html: { class: "experience"},
                       collection_wrapper_tag: 'div',
                       collection_wrapper_class: 'category-wrapper',
                       item_wrapper_class: 'category-item',
                       collection: ["Beginner", "Good", "Experienced"] %>
-            <%= f.input :difficulty_level, as: :radio_buttons,
+            <%= f.input :difficulty_level,
+                      label: t('.difficulty_level'),
+                      as: :radio_buttons,
                       input_html: { class: "difficulty"},
                       collection_wrapper_tag: 'div',
                       collection_wrapper_class: 'category-wrapper-difficulty',
                       item_wrapper_class: 'category-item',
                       collection: [1, 2, 3] %>
-            <%= f.input :sweat_level, as: :radio_buttons, input_html: { class: "sweat"},
+            <%= f.input :sweat_level,
+                      label: t('.sweat_level'),
+                      as: :radio_buttons,
+                      input_html: { class: "sweat"},
                       collection_wrapper_tag: 'div',
                       collection_wrapper_class: 'category-wrapper-difficulty',
                       item_wrapper_class: 'category-item',
                       collection: [1, 2, 3] %>
-          <%= f.input :password, as: :string, label: "Set a password (optional)", placeholder: "Share this password to allow free access to your class" %>
-          <%= f.input :language, collection: SportsClass::LANGUAGES, prompt: :translate %>
+          <%= f.input :password,
+                      label: t('.password'),
+                      as: :string,
+                      placeholder: t('.password_description') %>
+          <%= f.input :language,
+                      label: t('.language'),
+                      collection: SportsClass::LANGUAGES,
+                      prompt: :translate %>
           <div class="d-flex mb-2">
             <%= image_tag "", class: 'hidden img-thumbnail mr-4', id: "photo-preview" %>
             <%= f.input :photo,
                         input_html: { class: 'hidden d-none', id: 'photo-input' },
                         label_html: { class: 'upload-photo mt-3'},
-                        label: '📷 Upload a photo' %>
+                        label: t('.upload') %>
           </div>
-          <%= f.button :submit, class: 'btn class-log-in-button' %>
+          <%= f.button :submit, t('.submit'), class: 'btn class-log-in-button', data: {disable_with: t('.loading')} %>
         <% end %>
       </div>
     </div>

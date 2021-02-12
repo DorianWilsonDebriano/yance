@@ -1,0 +1,609 @@
+de:
+  time:
+    formats:
+      day: "%A"
+      month_day: "%b %d"
+      time: "%H:%M"
+      date: "%A %b %d"
+      at_time: " um %H:%M Uhr"
+      at_numeric: "%d/%m/%Y at %H:%M"
+  devise:
+    registrations:
+      new:
+        tagline: "Sign up to yance"
+        switch: "alreay have an account?"
+        login: " Log in"
+        first_name: "First name"
+        last_name: "Last name"
+        password: "Password"
+        new_password: "new password"
+        security: "%{security} characters minimum"
+        confirmation: "Password confirmation"
+        confirmation_placeholder: "repeat your password"
+        submit: "Sign up"
+        terms: "by clicking 'Sign up' you certify that you agree to our"
+        terms_link: "terms and conditions"
+    sessions:
+      new:
+        tagline: "Log in to yance"
+        switch: "Not a client yet?"
+        signup: "Sign up"
+        password: "Password"
+        remember: "Remember me"
+        submit: "Log in"
+  sports_classes:
+    index:
+      sidebar:
+        title: "SUCHE EINGRENZEN"
+        dropdowns:
+          sport_type: "SPORTART"
+          difficulty_level: "SCHWIERIGKEITSLEVEL"
+          experience_level: "ERFAHRUNGSSTUFE"
+          sweat_level: "INTENSITÄTSLEVEL"
+          duration: "DAUER"
+      call_to_action:
+        header_text: "Melde dich jetzt an und erhalte unbegrenzten Zugang zu Livekursen"
+        body_text: " Werde jetzt Mitglied und starte deine 14-Tage Testphase. Danach nur 26,99€/Monat"
+        alt_text: "Erstelle jetzt einen Account und starte deine kostenlose 14-Tage Testphase. Danach €26,99/Monat"
+        button:
+          start_trial: "Starte deine 14-Tage Testphase"
+          sign_up: " Kostenlosen Account erstellen"
+      booked-classes:
+        title: "Deine anstehenden Kurse"
+      searchbar:
+        entry: "Alle Kurse"
+        date: "Datum"
+      filter-cards:
+        title: "Beliebteste Kurse"
+      all-classes:
+        title: "Alle Kurse"
+    new:
+      tagline: "Create a new class"
+      title: "Kursname"
+      title_description: "der Kursname"
+      description: "Kursbeschreibung"
+      description_placeholder: "Kursbeschreibung in Sätzen"
+      date_time: "Datum und Zeit"
+      date_time_description: "Datum und Zeit des Kurses"
+      duration: "Dauer (in Minuten)"
+      duration_description: "Die Dauer des Kurses?"
+      category: "Sportart"
+      experience_level: "Erfahrungslevel"
+      difficulty_level: "Schwierigkeitslevel"
+      sweat_level: "Anstrengung"
+      password: "Passwort (optional)"
+      password_description: "Kreiere & teile ein Passwort für den Gratis-Zugang zum Kurs"
+      language: "Sprache"
+      upload: "📷 Foto hochladen"
+      submit: "Kurs jetzt hinzufügen"
+      loading: "Bitte warten..."
+  trainers:
+    show:
+      edit: "Trainerprofil bearbeiten"
+      sport_type: "Sportart"
+      trainer_bio: "Etwas über mich"
+      upcoming_classes: "%{trainer}'s nächste Kurse"
+      reviews:
+        zero: " Bisher keine Bewertungen"
+        one: " Eine Bewertung"
+        other: " %{count} Bewertungen"
+    new:
+      tagline: "Trainer werden"
+      location: "Stadt"
+      city-description: "In welcher Stadt lebst du?"
+      sport_category: "Sportart"
+      category-description: "Was ist deine Hauptsportart?"
+      bio: "Wer bist du?"
+      bio_description: "Schreib ein paar Sätze über dich"
+      submit: "bestätigen"
+      loading: "Bitte warten..."
+  subscriptions:
+    checkout:
+      message_html: "<span class='selector'>Bitte warten</span>... Du wirst weitergeleitet"
+    success:
+      welcome: "Willkommen"
+      message: "Deine kostenlose 14-Tage Testphase hat begonnen"
+      button: "WEITER ZU YANCE"
+  reviews:
+    new:
+      write_review: "Bewertung schreiben"
+      rating: "Bewertungen"
+      create_review: "Bewertung senden"
+  memberships:
+    index:
+      punchline: "Die einzige Mitgliedschaft die dich zuhause so gut fühlen lässt"
+      how_to: "Wie funktioniert die kostenlose Testphase"
+      first: "Klicke auf ‘Starte jetzt deine 14-Tage Testphase’"
+      second: "Gib deine Zahlungsdaten in unser System ein"
+      third: "Suche, buche und mach mit bei so vielen Livekursen wie du willst! "
+      membership_details:
+        first: "Kostenlose 14-Tage Testphase"
+        second: "Unbegrenzter Zugang zu allen Livekursen"
+        third: "Integrierter Chat und Liveübertragung"
+        fourth: "Mein Profil"
+        fifth: "Jederzeit kündbar"
+      price_html: "<strong> /month</strong> <br> Monatlich verlängert"
+      subscribe: "Starte jetzt deine 14-Tage Testphase"
+  shared:
+    navbar:
+      home: "Home"
+      memberships: "Mitgliedschaften"
+      become_a_trainer: "Trainer werden"
+      your_classes: "Meine Kurse"
+      trainer_profile: "Trainerprofil"
+      pricing: "Preise"
+      give_classes: "Kurse geben"
+      settings: "Einstellungen"
+      log_out: "Ausloggen"
+      log_in: "Einloggen"
+    footer:
+      about_us: "Über uns"
+      description: "yance ist eine Online-Plattform, die Sportkurse jeder Art in den dein Wohnzimmer bringt. "
+      socials: "Soziale Netzwerke"
+      information: "Informationen"
+      pricing: "Preise"
+      quick_links: "Schnelleinstieg"
+      terms_conditions: "Allgemeine Geschäftsbedinungen"
+      privacy: "Datenschutz"
+      newsletter: "Newsletter"
+      newsletter_description: "Newsletter abonnieren und Vorteile sichern"
+      newsletter_subscribe: "Abonnieren"
+    sport-class-card:
+      duration: "%{duration} Minuten"
+      levels:
+        difficulty: "SCHWIERIGKEIT"
+        sweat: "INTENSITÄT"
+        experience: "ERFAHRUNG"
+      book: "BUCHEN"
+      complete-info: "EINRICHTUNG ABSCHLIESSEN"
+      log-in: "ANMELDEN UM ZU BUCHEN"
+      trial: "KOSTENLOSE TESTPHASE STARTEN"
+      password: "MIT PASSWORT BUCHEN"
+      info: "i"
+    modal-class:
+      duration: " %{duration} Minuten"
+      levels:
+        difficulty: "SCHWIERIGKEIT"
+        sweat: "INTENSITÄT"
+        experience: "ERFAHRUNG"
+      book: "BUCHEN"
+      log-in: "EINLOGGEN"
+      trial: "Kostenlose Testphase beantragen"
+      password: "mit Passwort buchen"
+      info: "INFO"
+      trainer_name_html: "mit <strong> %{trainer_firstname} %{trainer_lastname} </strong>"
+      class_description: "Kursbeschreibung"
+      trainer_bio: "Trainerprofil"
+      visit-trainer: "TRAINERPROFIL ANSEHEN"
+    password-popup:
+      title: "Kurspasswort eingeben"
+      book: "BUCHEN"
+      close: "Schließen"
+    booked-sport-class-card:
+      duration: " %{duration} Minuten"
+      category_trainer_html: "<strong>%{category}</strong> mit <strong>%{trainer_firstname} %{trainer_lastname}</strong>"
+      live_stream_modal: "Livestram beitreten"
+      cancel: "stornieren"
+      confirm: "bist du dir sicher?"
+    filter-cards:
+      yoga: "Yoga"
+      pilates: "Pilates"
+      stretching: "Stretching"
+      cardio: "Ausdauer"
+      strength: "Kraft"
+    profile-created-classes:
+      duration: " %{duration} Minuten"
+      live_stream_modal: "Livestream beitreten"
+    profile-upcoming-classes:
+      duration: " %{duration} Minuten"
+      category_trainer_html: "<strong>%{category}</strong> mit  <strong>%{trainer_firstname} %{trainer_lastname}</strong>"
+      live_stream_modal: "Livestream beitreten"
+      cancel: "stornieren"
+    class-stats:
+      done: "abelaufen"
+      coming: "anstehend"
+      duplicate: "Diese Kursinformationen duplizieren "
+      edit: "Kursinformationen bearbeiten"
+      cancel: "Kurs stornieren"
+      live_stream_modal: "Livestream starten"
+    trainer-upcoming-classes:
+      duration: " %{duration} Minuten"
+      levels:
+        difficulty: "SCHWIERIGKEIT"
+        sweat: "INTENSITÄT"
+        experience: "ERFAHRUNG"
+      book: "BUCHEN"
+      complete-info: "EINRICHTUNG ABSCHLIEßEN"
+      log-in: "ANMELDEN UM ZU BUCHEN"
+      trial: "KOSTENLOSE TESTPHASE STARTEN"
+      password: "MIT PASSWORT BUCHEN"
+    trainer-modal-class:
+      duration: " %{duration} Minuten"
+      levels:
+        difficulty: "SCHWIERIGKEIT"
+        sweat: "INTENSITÄT"
+        experience: "ERFAHRUNG"
+      book: "BUCHEN"
+      log-in: "EINLOGGEN"
+      trial: "Kostenlose Testphase starten"
+      password: "Mit Passwort buchen"
+      info: "INFO"
+      trainer_name_html: "Mit <strong> %{trainer_firstname} %{trainer_lastname} </strong>"
+      class_description: "Kursbeschreibung"
+      trainer_bio: "Trainerprofil"
+    password-popup-trainer:
+      title: "Kurspasswort eingeben"
+      book: "BUCHEN"
+      close: "Schließen"
+  pages:
+    profile:
+      title: "Meine Kurse"
+      created:
+        created_tab: "Erstellt"
+        created_title: "Deine bevorstehenden erstellen Kurse"
+      booked:
+        booked_tab: "Gebucht"
+        booked_title: "Deine Buchungen"
+        nothing_booked: "Bisher nichts gebuch! Buche deinen ersten Kurs!"
+        explore_button: "yance entdecken"
+      manage:
+        manage_tab: "Kurse verwalten"
+        manage_title: "Verwalte deine Kurse"
+        create_button: "Kurs erstellen"
+        columns:
+          date: "Datum"
+          class: "Kursbezeichnung"
+          count: "Teilnehmer"
+          password: "Passwort"
+          status: "Status"
+          actions: "Aktionen"
+    settings:
+      edit_info: "Informationen bearbeiten"
+      title: "Deine informationen"
+      account:
+        title: "Dein Account"
+        login_html: "<strong>Login:</strong> %{email}"
+        password_html: "<strong>Passwort:</strong> *************"
+        status_html: "<strong>Abonnementstatus:</strong> %{status}"
+        subscription_html: "<strong>Abonniert: </strong> %{subscription}"
+        subscribe_button: "Abonnement auswählen"
+      about:
+        title: "Über dich"
+        language_html: " <strong>Sprache:</strong> %{language}"
+        bio_html: "<strong>Beschreibung:</strong> %{bio}"
+    pricing:
+      punchline_html: "Erhalte unbegrenzten Zugang zu allen Livekursen auf yance für nur <i class='highlighted-yellow'>€26.99</i>! <br> Starte jetzt deine 14-Tage Testphase!"
+      how_to: "Wie lege ich los"
+      first: "Kostenlosen Account erstellen"
+      second: "Besuche den Bereich Mitgliedschaften "
+      third: "Starte deine kostenloste 14-Tage Testphase!"
+      sign_up: "Kostenlosen Account erstellen"
+    trainer_info:
+      slogan: "UNBEGRENZTE MÖGLICHKEITEN"
+      punchline: "Erweitere deine Möglichkeiten und gib einzigartige Kurse – werde Trainer auf yance "
+      why: "Warum Kurse auf yance geben"
+      reasons:
+        first: "Die Komplettlösung"
+        first_explanation: "Vergiss externe Links und komplizierte Programme. Erstelle, plane, verwalte und streame deine Kurse auf einer Plattform."
+        second: "Verdien mehr Geld"
+        second_explanation: "Mit yance verdienst du auf mehr als einem Wege Geld. Mach mehr Geld mit deinen bereits existierenden Kunden und kreiere eine neue Einkommensquelle durch die yance Community."
+        third: "Vergrößere deine Community"
+        third_explanation: "yance hat steigende Mitgliederzahlen. Wenn du Kurse auf yance gibst, bist du Mitglied dieser einzigartigen Community. Wir helfen dir, dich auf yance und auch außerhalb bestmöglich zu präsentieren."
+      how_to:
+        title: "Wie werde ich Trainer auf yance"
+        first: "Erstelle einen kostenlosen Account"
+        second: "Klicke auf ‘Trainer werden‘'"
+        third: "Fülle unser Trainerformular aus"
+      steps:
+        title: "Wie Kurse auf yance geben funktioniert"
+        first: "Erstelle deinen Kurs"
+        first_explanation: "Gib deinem Kurs einen Namen, eine Beschreibung, eine Kategorie, Erfahrungslevels und ein Bild. Durch unsere intuitiven Kursassistenten ist dein Kurs in weniger als 5 Minuten erstellt. Verwalte all deine Kurse im “Kurse verwalten”-Bereich."
+        second: "Bewerbe deinen Kurs"
+        second_explanation: "Super! Sobald du deinen Kurs erstellt hast, kannst du ihn bewerben, um so die Teilnehmerzahl zu erhöhen und mehr Geld zu verdienen. Teile den Link zu deinem yance Profil auf Social-Media-Kanälen wie Facebook und Instagram. Je mehr Teilnehmer an deinem Kurs teilnehmen, desto höher dein Verdienst!"
+        third: "Gib deinen Kurs"
+        third_explanation: "Streame deinen Kurs live von unserer Plattform. Vergiss externe Links und komplizierte Programme. Unsere Lösung ist einfach und effizient. Perfekt, damit du dich auf das konzentrieren kannst, was wirklich zählt – deine Teilnehmer."
+        fourth: "Verdien Geld"
+        fourth_explanation: "yance basiert auf deinem Abonnement-Modell. Demnach zahlt jedes yance-Mitglied eine monatliche Gebühr, um unbegrenzten Zugang zu allen auf yance erstellten Kursen zu erhalten. Wir bezahlen unsere Trainer auf Basis der am Kurs teilgenommenen Mitglieder."
+        payout: "Wir zahlen unseren Trainern ein Minimum von 15€ pro Kurs. Liegt die Teilnehmerzahl des Kurses über 15, zahlen wir darüber hinaus 1€ pro zusätzlichen Teilnehmer."
+    home:
+      header:
+        header_html: "Unbegrenzte <i class='highlighted-yellow'>Live-</i> Fitnesskurse - von Zuhause"
+        punchline: "Mit nur einer Mitgliedschaft unbegrenzten Zugang zu Livekursen von unabhängigen Trainern weltweit erhalten!"
+        join_now_html: "Starte jetzt deine kostenlose 14-Tage Testphase. Danach nur <i class='highlighted-yellow'>€26.99/Monat</i>"
+        button: "Kostenlos anmelden"
+      how_it_works:
+        title: "Wie funktioniert yance"
+        first: "Finde deinen Kurs"
+        first_explanation: "Durchsuche unser wachsendes Angebot an Kursen auf unserer Plattform"
+        second: "Buche deinen Kurs"
+        second_explanation: "Buche den Kurs an dem du gerne teilnehmen möchtest. Dieser Kurs wird zu deinem Profil hinzugefügt. "
+        third: "Nimm an deinen Kursen teil. Live!"
+        third_explanation: "Logge dich zu der Uhrzeit deines Kurses ein und klicke auf “Livestream starten!"
+      live_section:
+        title: "Alle Kurse live"
+        description: "Vergiss unpersönlich aufgenommene Videos und genieß unsere einzigartigen interaktiven Livekurse. Alle Kurse werden live und direkt auf yance übertragen. Keine versteckten Kosten durch zusätzliche Programme."
+        sign_up: "Jetzt registrieren"
+        visit: "Plattform ansehen"
+      interactive_section:
+        title: "Für ein interaktives Sporterlebnis von Zuhause aus"
+        description: "Unsere Kurse werden von unabhängigen Trainern und Studios angeboten. Einzigartige und persönliche Sporterlebnisse garantiert!"
+        sign_up: "Jetzt registrieren"
+        visit: "Plattform ansehen"
+      categories_section:
+        title: "Never alone in sport!"
+        description: "Unsere Mission ist, dass du dich beim Sport niemals alleine fühlst. Nicht einmal Zuhause. Egal welche Sportart, ob Beginner oder Profi – wir versorgen dich mit interaktiven Livekursen. Damit bist du nie mehr alleine!"
+        first: "Yoga"
+        second: "Bauch"
+        third: "Ausdauer"
+        fourth: "Stretching"
+        sign_up: "Jetzt registrieren"
+        visit: "Plattform ansehen"
+      trainer_section:
+        title: "Willst du auf yance Kurse geben?"
+        description: "yance is offen für Trainer! Registriere dich, klicke auf “Trainer werden”, erstelle ein Profil und fang an deine Kurse zu planen. So einfach gehts!"
+        give_classes: "Erfahre, wie man Kurse gibt"
+    policy:
+      tabs:
+        terms_tab: "Allgemeine Geschäftsbedingungen"
+        privacy_tab: "Datenschutz"
+        imprint_tab: "Impressum"
+      terms_html: "
+      <h3>Allgemeine Geschäftsbedingungen mit Kundeninformationen</h3>
+      <p>Inhaltsverzeichnis</p>
+      <ul>
+        <li>1. Geltungsbereich</li>
+        <li>2. Leistungen des Anbieters</li>
+        <li>3. Vertragsschluss</li>
+        <li>4. Widerrufsrecht</li>
+        <li>5. Preise und Zahlungsbedingungen</li>
+        <li>6. Unterschreitung der Mindestteilnehmerzahl bei Online-Live-Kursen</li>
+        <li>7. Änderungen oder Ausfall von Online-Live-Kursen</li>
+        <li>8. Inhalte der Leistungen und Lehrmaterial</li>
+        <li>9. Mängelhaftung</li>
+        <li>10. Haftung</li>
+        <li>11. Anwendbares Recht</li>
+        <li>12. Alternative Streitbeilegung</li>
+      </ul>
+
+      <p>
+        1) Geltungsbereich
+        1.1 Diese Allgemeinen Geschäftsbedingungen (nachfolgend 'AGB') der yance UG (nachfolgend 'Anbieter'), gelten für alle Verträge über die Teilnahme an Online-Live-Kurse und die Lieferung von digitalen Inhalten (nachstehend „Leistungen“), die ein Verbraucher oder Unternehmer (nachfolgend „Kunde“) mit dem Anbieter hinsichtlich der auf der Website des Anbieters dargestellten Leistungen abschließt.
+        Hiermit wird der Einbeziehung von eigenen Bedingungen des Kunden widersprochen, es sei denn, es ist etwas anderes vereinbart.
+        1.2 Unternehmer im Sinne dieser AGB ist eine natürliche oder juristische Person oder eine rechtsfähige Personengesellschaft, die bei Abschluss eines Rechtsgeschäfts in Ausübung ihrer gewerblichen oder selbständigen beruflichen Tätigkeit handelt. Verbraucher im Sinne dieser AGB ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können.
+        1.3 Digitale Inhalte im Sinne dieser AGB sind alle nicht auf einem körperlichen Datenträger befindlichen Daten, die in digitaler Form hergestellt und vom Anbieter unter Einräumung bestimmter in diesen AGB genauer geregelten Nutzungsrechte bereitgestellt werden.
+        1.4 Gegenstand des Vertrages kann – je nach Leistungsbeschreibung des Anbieters- sowohl der einmalige Bezug von Leistungen als auch der Bezug von Leistungen im Wege einer wiederkehrenden Leistungserbringung (nachfolgend „Abonnementvertrag“) sein. Beim Abonnementvertrag verpflichtet sich der Anbieter, dem Kunden die vertraglich geschuldete Leistung für die Dauer der vereinbarten Vertragslaufzeit in den vertraglich geschuldeten Zeitintervallen zu erbringen.
+      </p>
+      <p>
+        2) Leistungen des Anbieters
+        2.1 Der Anbieter hält über seine Website Live Online Sportkurse ab. Der Inhalt der Kurse ergibt sich aus der jeweiligen Kursbeschreibung auf der Website des Anbieters.
+        2.2 Soweit der Anbieter Online-Live-Kurse abhält, erbringt er seine Leistungen ausschließlich in elektronischer Form per Online-Video-Konferenz unter Einsatz entsprechender technischer Mittel. Hierzu stellt der Anbieter dem Kunden vor Beginn einer Live Kurses eine passende Anwendungssoftware zur Verfügung. Um diese nutzen zu können, muss der Kunde den Anweisungen auf der Homepage folgen. Zur fehlerfreien Teilnahme an der Online-Video-Konferenz muss das System des Kunden bestimmte Mindestvoraussetzungen erfüllen, die dem Kunden auf der Website des Anbieters mitgeteilt werden. Für die Einhaltung der Systemvoraussetzungen trägt der Kunde die Verantwortung. Der Anbieter haftet nicht für technische Probleme, die auf mangelhafte Systemvoraussetzungen beim Kunden zurückzuführen sind.
+        2.3 Der Anbieter erbringt seine Leistungen durch unabhängige Trainer und Studios, die Ihre Leistung auf der Seite des Anbieters anbieten. Dabei kann sich der Anbieter auch der Leistungen Dritter (Subunternehmer) bedienen, die in seinem Auftrag tätig werden. Der Kunde kann sich durch die Auswahl eines bestimmten Kurses aussuchen, welche Person die beauftragte Leistung erbringt, indem er das Angebot der jeweiligen Person bucht
+        2.4 Der Anbieter erbringt seine Leistungen mit größter Sorgfalt und nach bestem Wissen und Gewissen. Einen bestimmten Erfolg schuldet der Anbieter aber nicht. Insbesondere übernimmt der Anbieter keine Gewähr dafür, dass sich beim Kunden ein bestimmter Lernerfolg einstellt oder dass der Kunde ein bestimmtes Leistungsziel erreicht. Dies ist nicht zuletzt auch vom persönlichen Einsatz und Willen des Kunden abhängig, auf den der Anbieter keinen Einfluss hat.
+      </p>
+      <p>
+        3) Vertragsschluss
+        3.1 Die auf der Website des Anbieters beschriebenen Leistungen stellen keine verbindlichen Angebote seitens des Anbieters dar, sondern dienen zur Abgabe eines verbindlichen Angebots durch den Kunden.
+        3.2 Der Kunde kann sein Angebot über das auf der Website des Anbieters bereitgestellte Online-Formular abgeben. Dabei gibt der Kunde, nachdem er seine Daten in das Formular eingetragen hat, durch Klicken des den Anmeldevorgang abschließenden Buttons ein rechtlich verbindliches Vertragsangebot in Bezug auf die ausgewählte Leistung ab.
+        3.3 Der Anbieter kann das Angebot des Kunden innerhalb von fünf Tagen annehmen,
+        - indem er dem Kunden eine schriftliche Anmeldebestätigung oder eine Anmeldebestätigung in Textform (Fax oder E-Mail) übermittelt, wobei insoweit der Zugang der Anmeldebestätigung beim Kunden maßgeblich ist, oder
+        - indem er den Kunden nach Abgabe von dessen Vertragserklärung zur Zahlung auffordert
+        Liegen mehrere der vorgenannten Alternativen vor, kommt der Vertrag in dem Zeitpunkt zustande, in dem eine der vorgenannten Alternativen zuerst eintritt. Nimmt der Anbieter das Angebot des Kunden innerhalb vorgenannter Frist nicht an, so gilt dies als Ablehnung des Angebots mit der Folge, dass der Kunde nicht mehr an seine Willenserklärung gebunden ist. Im Falle der Abhaltung eines Online-Live-Kurses gilt Gleiches für den Fall, dass der vom Kunden ausgewählte Kurs schon vor Ablauf der Annahmefrist beginnt und der Anbieter das Angebot des Kunden nicht bis spätestens 24 Stunden vor Beginn des Kurses annimmt, sofern zwischen den Parteien nichts anderes vereinbart wurde.
+        3.4 Bei der Abgabe eines Angebots über das Online-Formular des Anbieters wird der Vertragstext nach dem Vertragsschluss vom Anbieter gespeichert und dem Kunden nach Absendung von dessen Angebot in Textform (z. B. E-Mail, Fax oder Brief) übermittelt. Eine darüberhinausgehende Zugänglichmachung des Vertragstextes durch den Anbieter erfolgt nicht. Sofern der Kunde vor Absendung des Angebots ein Nutzerkonto auf der Website des Anbieters eingerichtet hat, werden die Daten über die beauftragte Leistung auf der Website des Anbieters archiviert und können vom Kunden über dessen passwortgeschütztes Nutzerkonto unter Angabe der entsprechenden Login-Daten kostenlos abgerufen werden.
+        3.5 Vor verbindlicher Abgabe des Angebots über das Online-Formular kann der Kunde seine Eingaben laufend über die üblichen Tastatur- und Mausfunktionen korrigieren. Darüber hinaus werden alle Eingaben vor der verbindlichen Abgabe des Angebots noch einmal in einem Bestätigungsfenster angezeigt und können auch dort mittels der üblichen Tastatur- und Mausfunktionen korrigiert werden.
+        3.6 Für den Vertragsschluss steht ausschließlich die deutsche Sprache zur Verfügung.
+        3.7 Kontaktaufnahmen des Anbieters zur Vertragsabwicklung finden in der Regel per E-Mail statt. Der Kunde hat sicherzustellen, dass die von ihm bei der Abgabe des Angebots angegebene E-Mail-Adresse zutreffend ist, sodass unter dieser Adresse die vom Anbieter versandten E-Mails empfangen werden können. Insbesondere hat der Kunde bei dem Einsatz von SPAM-Filtern sicherzustellen, dass alle vom Anbieter oder von diesem mit der Vertragsabwicklung beauftragten Dritten versandten E-Mails zugestellt werden können.
+      </p>
+      <p>
+        4) Widerrufsrecht
+        Nähere Informationen zum Widerrufsrecht ergeben sich aus der Widerrufsbelehrung des Anbieters.
+      </p>
+      <p>
+        5) Preise und Zahlungsbedingungen
+        5.1 Sofern sich aus den Leistungsbeschreibungen des Anbieters nichts anderes ergibt, handelt es sich bei den angegebenen Preisen um Gesamtpreise, die die gesetzliche Umsatzsteuer enthalten.
+        5.2 Dem Kunden stehen verschiedene Zahlungsmöglichkeiten zur Verfügung, die auf der Website des Anbieters angegeben werden.
+        5.3 Bei Zahlungen in Ländern außerhalb der Europäischen Union können im Einzelfall weitere Kosten anfallen, die der Anbieter nicht zu vertreten hat und die vom Kunden zu tragen sind. Hierzu zählen beispielsweise Kosten für die Geldübermittlung durch Kreditinstitute (z.B. Überweisungsgebühren, Wechselkursgebühren).
+      </p>
+      <p>
+        6) Unterschreitung der Mindestteilnehmerzahl bei Online-Live-Kursen
+        6.1 Der Anbieter kann für seine Online-Live-Kurse eine Mindestteilnehmerzahl bestimmen. Bei Bestimmung einer Mindestteilnehmerzahl wird der Anbieter hierauf im Rahmen der Kursbeschreibung ausdrücklich hinweisen.
+        6.2 Bei Unterschreitung der Mindestteilnehmerzahl kann der Anbieter bis spätestens sieben Tage vor Kursbeginn durch Erklärung gegenüber dem Kunden vom Vertrag zurücktreten. Sind mehrere Leistungen Gegenstand des Vertrages, ist in den vorbenannten Fällen der Rücktritt durch den Anbieter auf die von der Unterschreitung der Mindestteilnehmerzahl betroffene Leistung beschränkt („Teilrücktritt“). Auf die übrigen vereinbarten Leistungen bleibt der Teilrücktritt ohne Auswirkungen. Der Anbieter wird dem Kunden seine Rücktrittserklärung unverzüglich nach Kenntnis der nicht erreichten Teilnehmerzahl, spätestens bis sieben Tage vor Kursbeginn zugehen lassen.
+        6.3 Macht der Anbieter von seinem Rücktrittsrecht gemäß vorstehender Ziffer Gebrauch, so kann der Kunde die Teilnahme an einem mindestens gleichwertigen anderen Online-Live-Kurs verlangen, wenn der Anbieter in der Lage ist, einen solchen ohne Aufpreis für den Kunden aus seinem Angebot anzubieten. Der Kunde hat sein Verlangen unverzüglich nach Zugang der Erklärung des Anbieters diesem gegenüber geltend zu machen.
+        6.4 Macht der Kunde nicht von seinem Recht gemäß vorstehender Ziffer Gebrauch, so wird der Anbieter dem Kunden ein für die Teilnahme am betroffenen Online-Live-Kurs bereits gezahltes Entgelt unverzüglich zurückerstatten. Hierbei verwendet der Anbieter dasselbe Zahlungsmittel, das der Kunde bei der ursprünglichen Transaktion eingesetzt hat, es sei denn, es wurde ausdrücklich etwas anderes vereinbart.
+      </p>
+      <p>
+        7) Änderungen oder Ausfall von Online-Live-Kursen
+        7.1 Der Anbieter behält sich vor, Zeit, Kursleiter und/oder Inhalt der Online-Live-Kurse zu ändern, sofern die Änderung unter Berücksichtigung der Interessen des Anbieters für den Kunden zumutbar ist. Zumutbar sind nur unerhebliche Leistungsänderungen, die nach Vertragsabschluss notwendig werden und nicht vom Anbieter wider Treu und Glauben herbeigeführt wurden. Der Anbieter wird den Kunden im Falle einer Änderung von Zeit, Kursleiter und/oder Kursinhalt rechtzeitig hierüber informieren.
+        7.2 Bei einer erheblichen Leistungsänderung kann der Kunde kostenlos vom Vertrag zurücktreten oder stattdessen die Teilnahme an einem mindestens gleichwertigen anderen Online-Live-Kurs verlangen, wenn der Anbieter in der Lage ist, einen solchen ohne Aufpreis für den Kunden aus seinem Angebot anzubieten.
+        7.3 Sind mehrere Leistungen Gegenstand des Vertrages, ist in den vorbenannten Fällen der Rücktritt durch den Kunden auf die von der Änderung betroffene Leistung beschränkt („Teilrücktritt“). Auf die übrigen vereinbarten Leistungen bleibt der Teilrücktritt ohne Auswirkungen. Vom ganzen Vertrag kann der Kunde nur zurücktreten, wenn er an den übrigen vereinbarten Leistungen kein Interesse hat.
+        7.4 Die Rechte gemäß vorstehender Ziffer hat der Kunde unverzüglich nach der Information des Anbieters über die Leistungsänderung diesem gegenüber geltend zu machen.
+        7.5 Der Anbieter ist berechtigt, Online-Live-Kurse aus wichtigen Gründen, wie etwa höherer Gewalt oder Erkrankung des Kursleiters, kurzfristig gegen volle Erstattung eines ggf. bereits gezahlten Teilnahmeentgelts abzusagen. Der Anbieter wird sich bei Ausfall des Online-Live-Kurses um einen Ersatztermin bemühen.
+      </p>
+      <p>
+        8) Inhalte der Leistungen und Lehrmaterial
+        8.1 Der Anbieter ist Inhaber sämtlicher Nutzungsrechte, die zur Erbringung der Leistungen erforderlich sind.
+        8.2 Etwaiges leistungsbegleitendes Lehrmaterial (z. B. Lehrunterlagen) wird dem Kunden ausschließlich in elektronischer Form per E-Mail oder zum Download zur Verfügung gestellt. Sofern nichts anderes vereinbart ist, hat der Kunde keinen Anspruch auf Überlassung des Lehrmaterials in körperlicher Form.
+        8.3 Der Kunde darf die Inhalte der Leistungen einschließlich gegebenenfalls überlassener Lehrunterlagen lediglich in dem Umfang nutzen, der nach dem von beiden Parteien zugrunde gelegten Vertragszweck erforderlich ist. Ohne gesonderte Erlaubnis des Anbieters ist der Kunde insbesondere nicht berechtigt, Inhalte der Leistungen oder Teile daraus aufzuzeichnen oder Lehrunterlagen zu vervielfältigen, zu verbreiten oder öffentlich zugänglich zu machen.
+      </p>
+      <p>
+        9) Mängelhaftung
+        Es gilt die gesetzliche Mängelhaftung.
+      </p>
+      <p>
+        10) Haftung
+        Der Anbieter haftet dem Kunden aus allen vertraglichen, vertragsähnlichen und gesetzlichen, auch deliktischen Ansprüchen auf Schadens- und Aufwendungsersatz wie folgt:
+        10.1 Der Anbieter haftet aus jedem Rechtsgrund uneingeschränkt
+        <br>
+        - bei Vorsatz oder grober Fahrlässigkeit,
+        <br>
+        - bei vorsätzlicher oder fahrlässiger Verletzung des Lebens, des Körpers oder der Gesundheit,
+        <br>
+        - aufgrund eines Garantieversprechens, soweit diesbezüglich nichts anderes geregelt ist,
+        <br>
+        - aufgrund zwingender Haftung wie etwa nach dem Produkthaftungsgesetz.
+        <br>
+        10.2 Verletzt der Anbieter fahrlässig eine wesentliche Vertragspflicht, ist die Haftung auf den vertragstypischen, vorhersehbaren Schaden begrenzt, sofern nicht gemäß vorstehender Ziffer unbeschränkt gehaftet wird. Wesentliche Vertragspflichten sind Pflichten, die der Vertrag dem Anbieter nach seinem Inhalt zur Erreichung des Vertragszwecks auferlegt, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und auf deren Einhaltung der Kunde regelmäßig vertrauen darf.
+        10.3 Im Übrigen ist eine Haftung des Anbieters ausgeschlossen.
+        10.4 Vorstehende Haftungsregelungen gelten auch im Hinblick auf die Haftung des Anbieters für seine Erfüllungsgehilfen und gesetzlichen Vertreter.
+      </p>
+      <p>
+        11) Anwendbares Recht
+        11.1 Für sämtliche Rechtsbeziehungen der Parteien gilt das Recht der Bundesrepublik Deutschland unter Ausschluss der Gesetze über den internationalen Kauf beweglicher Waren. Bei Verbrauchern gilt diese Rechtswahl nur insoweit, als nicht der gewährte Schutz durch zwingende Bestimmungen des Rechts des Staates, in dem der Verbraucher seinen gewöhnlichen Aufenthalt hat, entzogen wird.
+        11.2 Ferner gilt diese Rechtswahl im Hinblick auf das gesetzliche Widerrufsrecht nicht bei Verbrauchern, die zum Zeitpunkt des Vertragsschlusses keinem Mitgliedstaat der Europäischen Union angehören und deren alleiniger Wohnsitz und Lieferadresse zum Zeitpunkt des Vertragsschlusses außerhalb der Europäischen Union liegen.
+      </p>
+      <p>
+        12) Alternative Streitbeilegung
+        12.1 Die EU-Kommission stellt im Internet unter folgendem Link eine Plattform zur Online-Streitbeilegung bereit: https://ec.europa.eu/consumers/odr
+        Diese Plattform dient als Anlaufstelle zur außergerichtlichen Beilegung von Streitigkeiten aus Online-Kauf- oder Dienstleistungsverträgen, an denen ein Verbraucher beteiligt ist.
+        12.2 Der Verkäufer ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
+      </p>
+      "
+      privacy_html: "
+      <h3>Datenschutzerklärung</h3>
+      <p>
+        1) Information über die Erhebung personenbezogener Daten und Kontaktdaten des Verantwortlichen
+        1.1 Wir freuen uns, dass Sie unsere Website besuchen und bedanken uns für Ihr Interesse. Im Folgenden informieren wir Sie über den Umgang mit Ihren personenbezogenen Daten bei der Nutzung unserer Website. Personenbezogene Daten sind hierbei alle Daten, mit denen Sie persönlich identifiziert werden können.
+        1.2 Verantwortlicher für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist die yance UG, Friedrich-Ebert-Straße 82, 04109 Leipzig, Deutschland, Tel.: 017632302327, E-Mail: info@yancesports.com. Der für die Verarbeitung von personenbezogenen Daten Verantwortliche ist diejenige natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
+        1.3 Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung personenbezogener Daten und anderer vertraulicher Inhalte (z.B. Bestellungen oder Anfragen an den Verantwortlichen) eine SSL-bzw. TLS-Verschlüsselung. Sie können eine verschlüsselte Verbindung an der Zeichenfolge „https://“ und dem Schloss-Symbol in Ihrer Browserzeile erkennen.
+      </p>
+      <p>
+        2) Datenerfassung beim Besuch unserer Website
+        Bei der bloß informatorischen Nutzung unserer Website, also wenn Sie sich nicht registrieren oder uns anderweitig Informationen übermitteln, erheben wir nur solche Daten, die Ihr Browser an unseren Server übermittelt (sog. „Server-Logfiles“). Wenn Sie unsere Website aufrufen, erheben wir die folgenden Daten, die für uns technisch erforderlich sind, um Ihnen die Website anzuzeigen:
+        <br>
+        - Unsere besuchte Website
+        <br>
+        - Datum und Uhrzeit zum Zeitpunkt des Zugriffes
+        <br>
+        - Menge der gesendeten Daten in Byte
+        <br>
+        - Quelle/Verweis, von welchem Sie auf die Seite gelangten
+        <br>
+        - Verwendeter Browser
+        <br>
+        - Verwendetes Betriebssystem
+        <br>
+        - Verwendete IP-Adresse (ggf.: in anonymisierter Form)
+        <br>
+        Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf Basis unseres berechtigten Interesses an der Verbesserung der Stabilität und Funktionalität unserer Website. Eine Weitergabe oder anderweitige Verwendung der Daten findet nicht statt. Wir behalten uns allerdings vor, die Server-Logfiles nachträglich zu überprüfen, sollten konkrete Anhaltspunkte auf eine rechtswidrige Nutzung hinweisen.
+      </p>
+      <p>
+        3) Cookies
+        Um den Besuch unserer Website attraktiv zu gestalten und die Nutzung bestimmter Funktionen zu ermöglichen, verwenden wir auf verschiedenen Seiten sogenannte Cookies. Hierbei handelt es sich um kleine Textdateien, die auf Ihrem Endgerät abgelegt werden. Einige der von uns verwendeten Cookies werden nach dem Ende der Browser-Sitzung, also nach Schließen Ihres Browsers, wieder gelöscht (sog. Sitzungs-Cookies). Andere Cookies verbleiben auf Ihrem Endgerät und ermöglichen, Ihren Browser beim nächsten Besuch wiederzuerkennen (sog. persistente Cookies). Werden Cookies gesetzt, erheben und verarbeiten diese im individuellen Umfang bestimmte Nutzerinformationen wie Browser- und Standortdaten sowie IP-Adresswerte. Persistente Cookies werden automatisiert nach einer vorgegebenen Dauer gelöscht, die sich je nach Cookie unterscheiden kann. Die Dauer der jeweiligen Cookie-Speicherung können Sie der Übersicht zu den Cookie-Einstellungen Ihres Webbrowsers entnehmen.
+        Teilweise dienen die Cookies dazu, durch Speicherung von Einstellungen den Bestellprozess zu vereinfachen (z.B. Merken des Inhalts eines virtuellen Warenkorbs für einen späteren Besuch auf der Website). Sofern durch einzelne von uns eingesetzte Cookies auch personenbezogene Daten verarbeitet werden, erfolgt die Verarbeitung gemäß Art. 6 Abs. 1 lit. b DSGVO entweder zur Durchführung des Vertrages, gemäß Art. 6 Abs. 1 lit. a DSGVO im Falle einer erteilten Einwilligung oder gemäß Art. 6 Abs. 1 lit. f DSGVO zur Wahrung unserer berechtigten Interessen an der bestmöglichen Funktionalität der Website sowie einer kundenfreundlichen und effektiven Ausgestaltung des Seitenbesuchs.
+        Bitte beachten Sie, dass Sie Ihren Browser so einstellen können, dass Sie über das Setzen von Cookies informiert werden und einzeln über deren Annahme entscheiden oder die Annahme von Cookies für bestimmte Fälle oder generell ausschließen können. Jeder Browser unterscheidet sich in der Art, wie er die Cookie-Einstellungen verwaltet. Diese ist in dem Hilfemenü jedes Browsers beschrieben, welches Ihnen erläutert, wie Sie Ihre Cookie-Einstellungen ändern können. Diese finden Sie für die jeweiligen Browser unter den folgenden Links:
+        Internet Explorer: https://support.microsoft.com/de-de/help/17442/windows-internet-explorer-delete-manage-cookies
+        Firefox: https://support.mozilla.org/de/kb/cookies-erlauben-und-ablehnen
+        Chrome: https://support.google.com/chrome/answer/95647?hl=de&hlrm=en
+        Safari: https://support.apple.com/de-de/guide/safari/sfri11471/mac
+        Opera: https://help.opera.com/de/latest/web-preferences/#cookies
+        Bitte beachten Sie, dass bei Nichtannahme von Cookies die Funktionalität unserer Website eingeschränkt sein kann.
+      </p>
+      <p>
+        4) Kontaktaufnahme
+        Im Rahmen der Kontaktaufnahme mit uns (z.B. per Kontaktformular oder E-Mail) werden personenbezogene Daten erhoben. Welche Daten im Falle eines Kontaktformulars erhoben werden, ist aus dem jeweiligen Kontaktformular ersichtlich. Diese Daten werden ausschließlich zum Zweck der Beantwortung Ihres Anliegens bzw. für die Kontaktaufnahme und die damit verbundene technische Administration gespeichert und verwendet. Rechtsgrundlage für die Verarbeitung dieser Daten ist unser berechtigtes Interesse an der Beantwortung Ihres Anliegens gemäß Art. 6 Abs. 1 lit. f DSGVO. Zielt Ihre Kontaktierung auf den Abschluss eines Vertrages ab, so ist zusätzliche Rechtsgrundlage für die Verarbeitung Art. 6 Abs. 1 lit. b DSGVO. Ihre Daten werden nach abschließender Bearbeitung Ihrer Anfrage gelöscht. Dies ist der Fall, wenn sich aus den Umständen entnehmen lässt, dass der betroffene Sachverhalt abschließend geklärt ist und sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+      </p>
+      <p>
+        5) Datenverarbeitung bei Eröffnung eines Kundenkontos und zur Vertragsabwicklung
+        Gemäß Art. 6 Abs. 1 lit. b DSGVO werden personenbezogene Daten weiterhin erhoben und verarbeitet, wenn Sie uns diese zur Durchführung eines Vertrages oder bei der Eröffnung eines Kundenkontos mitteilen. Welche Daten erhoben werden, ist aus den jeweiligen Eingabeformularen ersichtlich. Eine Löschung Ihres Kundenkontos ist jederzeit möglich und kann durch eine Nachricht an die o.g. Adresse des Verantwortlichen erfolgen. Wir speichern und verwenden die von Ihnen mitgeteilten Daten zur Vertragsabwicklung. Nach vollständiger Abwicklung des Vertrages oder Löschung Ihres Kundenkontos werden Ihre Daten mit Rücksicht auf steuer- und handelsrechtliche Aufbewahrungsfristen gesperrt und nach Ablauf dieser Fristen gelöscht, sofern Sie nicht ausdrücklich in eine weitere Nutzung Ihrer Daten eingewilligt haben oder eine gesetzlich erlaubte weitere Datenverwendung von unserer Seite vorbehalten wurde.
+      </p>
+      <p>
+        6) Kommentarfunktion
+        Im Rahmen der Kommentarfunktion auf dieser Website werden neben Ihrem Kommentar auch Angaben zum Zeitpunkt der Erstellung des Kommentars und der von Ihnen gewählte Kommentatorenname gespeichert und auf dieser Website veröffentlicht. Ferner wird Ihre IP-Adresse mitprotokolliert und gespeichert. Diese Speicherung der IP-Adresse erfolgt aus Sicherheitsgründen und für den Fall, dass die betroffene Person durch einen abgegebenen Kommentar die Rechte Dritter verletzt oder rechtswidrige Inhalte postet. Ihre E-Mailadresse benötigen wir, um mit Ihnen in Kontakt zu treten, falls ein Dritter Ihren veröffentlichten Inhalt als rechtswidrig beanstanden sollte. Rechtsgrundlagen für die Speicherung Ihrer Daten sind die Art. 6 Abs. 1 lit. b und f DSGVO. Wir behalten uns vor, Kommentare zu löschen, wenn sie von Dritten als rechtswidrig beanstandet werden.
+      </p>
+      <p>
+        7) Nutzung von Kundendaten zur Direktwerbung
+        7.1 Anmeldung zu unserem E-Mail-Newsletter
+        Wenn Sie sich zu unserem E-Mail Newsletter anmelden, übersenden wir Ihnen regelmäßig Informationen zu unseren Angeboten. Pflichtangabe für die Übersendung des Newsletters ist allein Ihre E-Mailadresse. Die Angabe weiterer Daten ist freiwillig und wird verwendet, um Sie persönlich ansprechen zu können. Für den Versand des Newsletters verwenden wir das sog. Double Opt-in Verfahren. Dies bedeutet, dass wir Ihnen erst dann einen E-Mail Newsletter übermitteln werden, wenn Sie uns ausdrücklich bestätigt haben, dass Sie in den Empfang von Newsletter einwilligen. Wir schicken Ihnen dann eine Bestätigungs-E-Mail, mit der Sie gebeten werden durch Anklicken eines entsprechenden Links zu bestätigen, dass Sie künftig den Newsletter erhalten wollen.
+        Mit der Aktivierung des Bestätigungslinks erteilen Sie uns Ihre Einwilligung für die Nutzung Ihrer personenbezogenen Daten gemäß Art. 6 Abs. 1 lit. a DSGVO. Bei der Anmeldung zum Newsletter speichern wir Ihre vom Internet Service-Provider (ISP) eingetragene IP-Adresse sowie das Datum und die Uhrzeit der Anmeldung, um einen möglichen Missbrauch Ihrer E-Mail- Adresse zu einem späteren Zeitpunkt nachvollziehen zu können. Die von uns bei der Anmeldung zum Newsletter erhobenen Daten werden ausschließlich für Zwecke der werblichen Ansprache im Wege des Newsletters benutzt. Sie können den Newsletter jederzeit über den dafür vorgesehenen Link im Newsletter oder durch entsprechende Nachricht an den eingangs genannten Verantwortlichen abbestellen. Nach erfolgter Abmeldung wird Ihre E-Mailadresse unverzüglich in unserem Newsletter-Verteiler gelöscht, soweit Sie nicht ausdrücklich in eine weitere Nutzung Ihrer Daten eingewilligt haben oder wir uns eine darüberhinausgehende Datenverwendung vorbehalten, die gesetzlich erlaubt ist und über die wir Sie in dieser Erklärung informieren.
+        7.2 Newsletter-Versand via MailChimp
+        Der Versand unserer E-Mail-Newsletter erfolgt über den technischen Dienstleister The Rocket Science Group, LLC d/b/a MailChimp, 675 Ponce de Leon Ave NE, Suite 5000, Atlanta, GA 30308, USA (http://www.mailchimp.com/), an den wir Ihre bei der Newsletteranmeldung bereitgestellten Daten weitergeben. Diese Weitergabe erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO und dient unserem berechtigten Interesse an der Verwendung eines werbewirksamen, sicheren und nutzerfreundlichen Newslettersystems. Bitte beachten Sie, dass Ihre Daten in der Regel an einen Server von MailChimp in den USA übertragen und dort gespeichert werden.
+        MailChimp verwendet diese Informationen zum Versand der Newsletter in unserem Auftrag. MailChimp nutzt die Daten unserer Newsletterempfänger nicht, um diese selbst anzuschreiben oder sie an Dritte weiterzugeben.
+        Zum Schutz Ihrer Daten in den USA haben wir mit MailChimp einen Datenverarbeitungsauftrag („Data-Processing-Agreement“) auf Basis der Standardvertragsklauseln der Europäischen Kommission abgeschlossen, um die Übermittlung Ihrer personenbezogenen Daten an MailChimp zu ermöglichen. Dieser Datenverarbeitungsvertrag kann bei Interesse unter nachstehender Internetadresse eingesehen werden: https://mailchimp.com/legal/data-processing-addendum/
+        Die Datenschutzbestimmungen von MailChimp können Sie hier einsehen: https://mailchimp.com/legal/privacy/
+      </p>
+      <p>
+        8) Datenverarbeitung zur Bestellabwicklung
+        8.1 - Übermittlung von Bilddateien zur Bestellabwicklung per Upload-Funktion
+        Auf unserer Website bieten wir Kunden die Möglichkeit, durch die Übermittlung von Bilddateien über eine Upload-Funktion die Personalisierung von Produkten zu beauftragen. Dabei wird das eingereichte Bildmotiv als Vorlage für die Personalisierung des gewählten Produktes verwendet.
+        Über das Upload-Formular auf der Website kann der Kunde eine oder mehrere Bilddateien aus dem Speicher des verwendeten Endgerätes unmittelbar per automatisierter, verschlüsselter Datenübertragung an uns übermitteln. Wir erfassen, speichern und verwenden die übermittelten Dateien daraufhin ausschließlich zur Anfertigung des personalisierten Produktes im Sinne der jeweiligen Leistungsbeschreibung auf unserer Website. Sofern die übermittelten Bilddateien zur Anfertigung und Abwicklung der Bestellung an spezielle Dienstleister weitergegeben werden, werden Sie hierüber in den folgenden Absätzen explizit informiert. Eine darüberhinausgehende Weitergabe erfolgt nicht. Sofern die übermittelten Dateien bzw. die digitalen Motive personenbezogene Daten (insbesondere Abbildungen von identifizierbaren Personen) enthalten, erfolgen sämtliche soeben benannten Verarbeitungsvorgänge ausschließlich zum Zwecke der Abwicklung Ihrer Online-Bestellung gemäß Art. 6 Abs. 1 lit. b DSGVO. Nach abschließender Abwicklung der Bestellung werden die übermittelten Bilddateien automatisch und vollständig gelöscht.
+        8.2 Zur Abwicklung Ihrer Bestellung arbeiten wir mit dem / den nachstehenden Dienstleistern zusammen, die uns ganz oder teilweise bei der Durchführung geschlossener Verträge unterstützen. An diese Dienstleister werden nach Maßgabe der folgenden Informationen gewisse personenbezogene Daten übermittelt.
+        Die von uns erhobenen personenbezogenen Daten werden im Rahmen der Vertragsabwicklung an das mit der Lieferung beauftragte Transportunternehmen weitergegeben, soweit dies zur Lieferung der Ware erforderlich ist. Ihre Zahlungsdaten geben wir im Rahmen der Zahlungsabwicklung an das beauftragte Kreditinstitut weiter, sofern dies für die Zahlungsabwicklung erforderlich ist. Sofern Zahlungsdienstleister eingesetzt werden, informieren wir Sie hierüber nachstehend explizit. Rechtsgrundlage für die Weitergabe der Daten ist Art. 6 Abs. 1 lit. b DSGVO.
+        8.3 Verwendung von Paymentdienstleistern (Zahlungsdiensten)
+        <br>
+        - Stripe
+        Wenn Sie sich für eine Zahlungsart des Paymentdienstleisters Stripe entscheiden, erfolgt die Zahlungsabwicklung über den Paymentdienstleister Stripe Payments Europe Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Irland, an den wir Ihre im Rahmen des Bestellvorgangs mitgeteilten Informationen nebst den Informationen über Ihre Bestellung (Name, Anschrift, Kontonummer, Bankleitzahl, evtl. Kreditkartennummer, Rechnungsbetrag, Währung und Transaktionsnummer) gemäß Art. 6 Abs. 1 lit. b DSGVO weitergeben. Nähere Informationen zum Datenschutz von Stripe finden Sie unter der URL https://stripe.com/de/privacy#translation.
+        Stripe behält sich vor, eine Bonitätsprüfung auf der Grundlage mathematisch-statistischer Verfahren durchzuführen, um das berechtigte Interesse an der Feststellung der Zahlungsfähigkeit des Nutzers zu wahren. Die für eine Bonitätsprüfung notwendigen und im Rahmen der Zahlungsabwicklung erhaltenen personenbezogenen Daten übermittelt Stripe gegebenenfalls an ausgewählte Auskunfteien, welche Stripe Nutzern auf Anfrage offenlegt. Die Bonitätsauskunft kann Wahrscheinlichkeitswerte enthalten (sog. Score-Werte). Soweit Score-Werte in das Ergebnis der Bonitätsauskunft einfließen, haben diese ihre Grundlage in einem wissenschaftlich anerkannten mathematisch-statistischem Verfahren. In die Berechnung der Score-Werte fließen unter anderem, aber nicht ausschließlich, Anschriftendaten ein. Das Ergebnis der Bonitätsprüfung in Bezug auf die statistische Zahlungsausfallwahrscheinlichkeit verwendet Stripe zum Zwecke der Entscheidung über die Nutzungsberechtigung für die gewählte Zahlungsmethode.
+        Sie können dieser Verarbeitung Ihrer Daten jederzeit durch eine Nachricht an Stripe oder die beauftragten Auskunfteien widersprechen.
+        Jedoch bleibt Stripe ggf. weiterhin berechtigt, Ihre personenbezogenen Daten zu verarbeiten, sofern dies zur vertragsgemäßen Zahlungsabwicklung erforderlich ist.
+      </p>
+      <p>
+        9) Online-Marketing
+        Einsatz von Google Ads Conversion-Tracking
+        Diese Website nutzt das Online-Werbeprogramm 'Google Ads' und im Rahmen von Google Ads das Conversion-Tracking der Google Ireland Limited, Gordon House, 4 Barrow St, Dublin, D04 E5W5, Irland ('Google'). Wir nutzen das Angebot von Google Ads, um mit Hilfe von Werbemitteln (sogenannten Google Adwords) auf externen Webseiten auf unsere attraktiven Angebote aufmerksam zu machen. Wir können in Bezug zu den Daten der Werbekampagnen ermitteln, wie erfolgreich die einzelnen Werbemaßnahmen sind. Wir verfolgen damit das Anliegen, Ihnen Werbung anzuzeigen, die für Sie von Interesse ist, unsere Website für Sie interessanter zu gestalten und eine faire Berechnung der anfallenden Werbekosten zu erreichen.
+        Das Cookie für Conversion-Tracking wird gesetzt, wenn ein Nutzer auf eine von Google geschaltete Ads-Anzeige klickt. Bei Cookies handelt es sich um kleine Textdateien, die auf Ihrem Endgerät abgelegt werden. Diese Cookies verlieren in der Regel nach 30 Tagen ihre Gültigkeit und dienen nicht der persönlichen Identifizierung. Besucht der Nutzer bestimmte Seiten dieser Website und ist das Cookie noch nicht abgelaufen, können Google und wir erkennen, dass der Nutzer auf die Anzeige geklickt hat und zu dieser Seite weitergeleitet wurde. Jeder Google Ads-Kunde erhält ein anderes Cookie. Cookies können somit nicht über die Websites von Google Ads-Kunden nachverfolgt werden. Die mithilfe des Conversion-Cookies eingeholten Informationen dienen dazu, Conversion-Statistiken für Google Ads-Kunden zu erstellen, die sich für Conversion-Tracking entschieden haben. Die Kunden erfahren die Gesamtanzahl der Nutzer, die auf ihre Anzeige geklickt haben und zu einer mit einem Conversion-Tracking-Tag versehenen Seite weitergeleitet wurden. Sie erhalten jedoch keine Informationen, mit denen sich Nutzer persönlich identifizieren lassen. Wenn Sie nicht am Tracking teilnehmen möchten, können Sie diese Nutzung blockieren, indem Sie das Cookie des Google Conversion-Trackings über ihren Internet-Browser unter dem Stichwort „Nutzereinstellungen“ deaktivieren. Sie werden sodann nicht in die Conversion-Tracking Statistiken aufgenommen. Wir setzen Google Ads auf Grund unseres berechtigten Interesses an einer zielgerichteten Werbung gem. Art. 6 Abs. 1 lit. f DSGVO ein. Im Rahmen der Nutzung von Google Ads kann es auch zu einer Übermittlung von personenbezogenen Daten an die Server der Google LLC. in den USA kommen.
+        Unter der nachstehenden Internetadresse erhalten Sie weitere Informationen über die Datenschutzbestimmungen von Google, https://www.google.de/policies/privacy/
+        Sie können dem Setzen von Cookies durch Google Ads Conversion-Tracking dauerhaft widersprechen, indem Sie das unter folgendem Link verfügbare Browser-Plug-in von Google herunterladen und installieren,
+        https://www.google.com/settings/ads/plugin?hl=de
+        Bitte beachten Sie, dass bestimmte Funktionen dieser Website möglicherweise nicht oder nur eingeschränkt genutzt werden können, wenn Sie die Verwendung von Cookies deaktiviert haben.
+        Soweit rechtlich erforderlich, haben wir zur vorstehend dargestellten Verarbeitung Ihrer Daten Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO eingeholt. Sie können Ihre erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Um Ihren Widerruf auszuüben, deaktivieren Sie diesen Dienst im auf der Webseite bereitgestellten 'Cookie-Consent-Tool' oder befolgen Sie alternativ die vorstehend geschilderte Möglichkeit zur Vornahme eines Widerspruchs.
+      </p>
+      <p>
+        10) Webanalysedienste
+        Google (Universal) Analytics
+        Diese Website benutzt Google (Universal) Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, 4 Barrow St, Dublin, D04 E5W5, Irland ('Google'). Google (Universal) Analytics verwendet sog. 'Cookies', das sind Textdateien, die auf Ihrem Endgerät gespeichert werden und die eine Analyse Ihrer Nutzung der Website ermöglichen. Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Website (einschließlich der gekürzten IP-Adresse) werden in der Regel an einen Server von Google übertragen und dort gespeichert, hierbei kann es auch zu einer Übermittlung an die Server der Google LLC. in den USA kommen.
+        Diese Website verwendet Google (Universal) Analytics ausschließlich mit der Erweiterung '_anonymizeIp()', die eine Anonymisierung der IP-Adresse durch Kürzung sicherstellt und eine direkte Personenbeziehbarkeit ausschließt. Durch die Erweiterung wird Ihre IP-Adresse von Google innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google LLC.in den USA übertragen und dort gekürzt. In unserem Auftrag wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen uns gegenüber zu erbringen. Dabei wird die im Rahmen von Google (Universal) Analytics von Ihrem Browser übermittelte IP-Adresse nicht mit anderen Daten von Google zusammengeführt.
+        Google Analytics ermöglicht über eine spezielle Funktion, die sog. „demografischen Merkmale“, darüber hinaus die Erstellung von Statistiken mit Aussagen über Alter, Geschlecht und Interessen der Seitenbesucher auf Basis einer Auswertung von interessenbezogener Werbung und unter Hinzuziehung von Drittanbieterinformationen. Dies erlaubt die Definition und Differenzierung von Nutzerkreisen der Webseite zum Zwecke der zielgruppenoptimierten Ausrichtung von Marketingmaßnahmen. Über die „demografischen Merkmale“ erfasste Datensätze können jedoch keiner bestimmten Person zugeordnet werden.
+        Alle oben beschriebenen Verarbeitungen, insbesondere das Setzen von Google Analytics-Cookies für das Auslesen von Informationen auf dem verwendeten Endgerät, werden nur dann vollzogen, wenn Sie uns gemäß Art. 6 Abs. 1 lit. a DSGVO dazu Ihre ausdrückliche Einwilligung erteilt haben. Ohne diese Einwilligungserteilung unterbleibt der Einsatz von Google Analytics während Ihres Seitenbesuchs.
+        Sie können Ihre erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Um Ihren Widerruf auszuüben, deaktivieren Sie diesen Dienst bitte in dem auf der Webseite bereitgestellten „Cookie-Consent-Tool“. Wir haben mit Google für die Nutzung von Google Analytics einen Auftragsverarbeitungsvertrag abgeschlossen, mit dem Google verpflichtet wird, die Daten unserer Seitenbesucher zu schützen und sie nicht an Dritte weiter zu geben.
+        Für die Übermittlung von Daten aus der EU in die USA beruft sich Google hierbei auf sog. Standarddatenschutzklauseln der Europäischen Kommission, welche die Einhaltung des europäischen Datenschutzniveaus in den USA gewährleisten sollen.
+        Weitere Hinweise zu Google (Universal) Analytics finden Sie hier, https://policies.google.com/privacy?hl=de&gl=de
+      </p>
+      <p>
+        11) Tools und Sonstiges
+        Google reCAPTCHA
+        Auf dieser Website verwenden wir auch die reCAPTCHA Funktion von Google Ireland Limited, Gordon House, 4 Barrow St, Dublin, D04 E5W5, Irland („Google“). Diese Funktion dient vor allem zur Unterscheidung, ob eine Eingabe durch eine natürliche Person erfolgt oder missbräuchlich durch maschinelle und automatisierte Verarbeitung erfolgt. Der Dienst umfasst den Versand der IP-Adresse und ggf. weiterer von Google für den Dienst reCAPTCHA benötigter Daten an Google und erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf Basis unseres berechtigten Interesses an der Feststellung der individuellen Eigenverantwortung im Internet und der Vermeidung von Missbrauch und Spam. Im Rahmen der Nutzung von Google reCAPTCHA kann es auch zu einer Übermittlung von personenbezogenen Daten an die Server der Google LLC. in den USA kommen.
+        Weiterführende Informationen zu Google reCAPTCHA sowie die Datenschutzerklärung von Google können Sie einsehen unter: https://www.google.com/intl/de/policies/privacy/
+        Soweit rechtlich erforderlich, haben wir zur vorstehend dargestellten Verarbeitung Ihrer Daten Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO eingeholt. Sie können Ihre erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Um Ihren Widerruf auszuüben, befolgen Sie bitte die vorstehend geschilderte Möglichkeit zur Vornahme eines Widerspruchs
+      </p>
+      <p>
+        12) Rechte des Betroffenen
+        12.1 Das geltende Datenschutzrecht gewährt Ihnen gegenüber dem Verantwortlichen hinsichtlich der Verarbeitung Ihrer personenbezogenen Daten umfassende Betroffenenrechte (Auskunfts- und Interventionsrechte), über die wir Sie nachstehend informieren:
+        <br>
+        - Auskunftsrecht gemäß Art. 15 DSGVO: Sie haben insbesondere ein Recht auf Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten, die Verarbeitungszwecke, die Kategorien der verarbeiteten personenbezogenen Daten, die Empfänger oder Kategorien von Empfängern, gegenüber denen Ihre Daten offengelegt wurden oder werden, die geplante Speicherdauer bzw. die Kriterien für die Festlegung der Speicherdauer, das Bestehen eines Rechts auf Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch gegen die Verarbeitung, Beschwerde bei einer Aufsichtsbehörde, die Herkunft Ihrer Daten, wenn diese nicht durch uns bei Ihnen erhoben wurden, das Bestehen einer automatisierten Entscheidungsfindung einschließlich Profiling und ggf. aussagekräftige Informationen über die involvierte Logik und die Sie betreffende Tragweite und die angestrebten Auswirkungen einer solchen Verarbeitung, sowie Ihr Recht auf Unterrichtung, welche Garantien gemäß Art. 46 DSGVO bei Weiterleitung Ihrer Daten in Drittländer bestehen;
+        <br>
+        - Recht auf Berichtigung gemäß Art. 16 DSGVO: Sie haben ein Recht auf unverzügliche Berichtigung Sie betreffender unrichtiger Daten und/oder Vervollständigung Ihrer bei uns gespeicherten unvollständigen Daten;
+        <br>
+        - Recht auf Löschung gemäß Art. 17 DSGVO: Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten bei Vorliegen der Voraussetzungen des Art. 17 Abs. 1 DSGVO zu verlangen. Dieses Recht besteht jedoch insbesondere dann nicht, wenn die Verarbeitung zur Ausübung des Rechts auf freie Meinungsäußerung und Information, zur Erfüllung einer rechtlichen Verpflichtung, aus Gründen des öffentlichen Interesses oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich ist;
+        <br>
+        - Recht auf Einschränkung der Verarbeitung gemäß Art. 18 DSGVO: Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen, solange die von Ihnen bestrittene Richtigkeit Ihrer Daten überprüft wird, wenn Sie eine Löschung Ihrer Daten wegen unzulässiger Datenverarbeitung ablehnen und stattdessen die Einschränkung der Verarbeitung Ihrer Daten verlangen, wenn Sie Ihre Daten zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen benötigen, nachdem wir diese Daten nach Zweckerreichung nicht mehr benötigen oder wenn Sie Widerspruch aus Gründen Ihrer besonderen Situation eingelegt haben, solange noch nicht feststeht, ob unsere berechtigten Gründe überwiegen;
+        <br>
+        - Recht auf Unterrichtung gemäß Art. 19 DSGVO: Haben Sie das Recht auf Berichtigung, Löschung oder Einschränkung der Verarbeitung gegenüber dem Verantwortlichen geltend gemacht, ist dieser verpflichtet, allen Empfängern, denen die Sie betreffenden personenbezogenen Daten offengelegt wurden, diese Berichtigung oder Löschung der Daten oder Einschränkung der Verarbeitung mitzuteilen, es sei denn, dies erweist sich als unmöglich oder ist mit einem unverhältnismäßigen Aufwand verbunden. Ihnen steht das Recht zu, über diese Empfänger unterrichtet zu werden.
+        <br>
+        - Recht auf Datenübertragbarkeit gemäß Art. 20 DSGVO: Sie haben das Recht, Ihre personenbezogenen Daten, die Sie uns bereitgestellt haben, in einem strukturierten, gängigen und maschinenlesebaren Format zu erhalten oder die Übermittlung an einen anderen Verantwortlichen zu verlangen, soweit dies technisch machbar ist;
+        <br>
+        - Recht auf Widerruf erteilter Einwilligungen gemäß Art. 7 Abs. 3 DSGVO: Sie haben das Recht, eine einmal erteilte Einwilligung in die Verarbeitung von Daten jederzeit mit Wirkung für die Zukunft zu widerrufen. Im Falle des Widerrufs werden wir die betroffenen Daten unverzüglich löschen, sofern eine weitere Verarbeitung nicht auf eine Rechtsgrundlage zur einwilligungslosen Verarbeitung gestützt werden kann. Durch den Widerruf der Einwilligung wird die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt;
+        <br>
+        - Recht auf Beschwerde gemäß Art. 77 DSGVO: Wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt, haben Sie - unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs - das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat Ihres Aufenthaltsortes, Ihres Arbeitsplatzes oder des Ortes des mutmaßlichen Verstoßes.
+        12.2 WIDERSPRUCHSRECHT
+        WENN WIR IM RAHMEN EINER INTERESSENABWÄGUNG IHRE PERSONENBEZOGENEN DATEN AUFGRUND UNSERES ÜBERWIEGENDEN BERECHTIGTEN INTERESSES VERARBEITEN, HABEN SIE DAS JEDERZEITIGE RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIESE VERARBEITUNG WIDERSPRUCH MIT WIRKUNG FÜR DIE ZUKUNFT EINZULEGEN.
+        MACHEN SIE VON IHREM WIDERSPRUCHSRECHT GEBRAUCH, BEENDEN WIR DIE VERARBEITUNG DER BETROFFENEN DATEN. EINE WEITERVERARBEITUNG BLEIBT ABER VORBEHALTEN, WENN WIR ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN KÖNNEN, DIE IHRE INTERESSEN, GRUNDRECHTE UND GRUNDFREIHEITEN ÜBERWIEGEN, ODER WENN DIE VERARBEITUNG DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN DIENT.
+        WERDEN IHRE PERSONENBEZOGENEN DATEN VON UNS VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN. SIE KÖNNEN DEN WIDERSPRUCH WIE OBEN BESCHRIEBEN AUSÜBEN.
+        MACHEN SIE VON IHREM WIDERSPRUCHSRECHT GEBRAUCH, BEENDEN WIR DIE VERARBEITUNG DER BETROFFENEN DATEN ZU DIREKTWERBEZWECKEN.
+      </p>
+      <p>
+        13) Dauer der Speicherung personenbezogener Daten
+        Die Dauer der Speicherung von personenbezogenen Daten bemisst sich anhand der jeweiligen Rechtsgrundlage, am Verarbeitungszweck und – sofern einschlägig – zusätzlich anhand der jeweiligen gesetzlichen Aufbewahrungsfrist (z.B. handels- und steuerrechtliche Aufbewahrungsfristen).
+        Bei der Verarbeitung von personenbezogenen Daten auf Grundlage einer ausdrücklichen Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO werden diese Daten so lange gespeichert, bis der Betroffene seine Einwilligung widerruft.
+        Existieren gesetzliche Aufbewahrungsfristen für Daten, die im Rahmen rechtsgeschäftlicher bzw. rechtsgeschäftsähnlicher Verpflichtungen auf der Grundlage von Art. 6 Abs. 1 lit. b DSGVO verarbeitet werden, werden diese Daten nach Ablauf der Aufbewahrungsfristen routinemäßig gelöscht, sofern sie nicht mehr zur Vertragserfüllung oder Vertragsanbahnung erforderlich sind und/oder unsererseits kein berechtigtes Interesse an der Weiterspeicherung fortbesteht.
+        Bei der Verarbeitung von personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO werden diese Daten so lange gespeichert, bis der Betroffene sein Widerspruchsrecht nach Art. 21 Abs. 1 DSGVO ausübt, es sei denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die die Interessen, Rechte und Freiheiten der betroffenen Person überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.
+        Bei der Verarbeitung von personenbezogenen Daten zum Zwecke der Direktwerbung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO werden diese Daten so lange gespeichert, bis der Betroffene sein Widerspruchsrecht nach Art. 21 Abs. 2 DSGVO ausübt.
+        Sofern sich aus den sonstigen Informationen dieser Erklärung über spezifische Verarbeitungssituationen nichts anderes ergibt, werden gespeicherte personenbezogene Daten im Übrigen dann gelöscht, wenn sie für die Zwecke, für die sie erhoben oder auf sonstige Weise verarbeitet wurden, nicht mehr notwendig sind.
+      </p>
+      "
+      imprint_html: "
+        <h4 class='mt-3'>yance UG</h4>
+
+        <p>Friedrich-Ebert-Straße 82
+        <p>04109 Leipzig</p>
+        <p>Telefon: 0176-32302327</p>
+        <p>E-Mail: info@yancesports.com</p>
+      "
