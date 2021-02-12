@@ -36,3 +36,15 @@
 #upcoming-tab {
   margin-left: 12px;
 }
+
+.legal-tab {
+  color: black;
+  border: none;
+  padding: 8px 8px 16px 8px;
+  margin: 0px 4px;
+  &:hover {
+    border: none;
+    color: black;
+    background-color: rgb(245, 245, 245);
+  }
+}

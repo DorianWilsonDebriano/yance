@@ -15,21 +15,28 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Home", sports_classes_path, class: "nav-link" %>
+        <li class="nav-item" id="">
+          <%= link_to t('.home'), sports_classes_path, class: "nav-link" %>
         </li>
         <% if current_user.subscription.nil? %>
-          <li class="nav-item">
-            <%= link_to "Memberships", memberships_path, class: "nav-link" %>
+          <li class="nav-item" id="">
+            <%= link_to t('.memberships'), memberships_path, class: "nav-link" %>
           </li>
         <% end %>
         <% if current_user.trainers.empty? %>
-          <li class="nav-item">
-            <%= link_to "Become a trainer", new_trainer_path , class: "nav-link" %>
+          <li class="nav-item" id="">
+            <%= link_to t('.become_a_trainer'), new_trainer_path, class: "nav-link" %>
           </li>
         <% end %>
-        <li class="nav-item">
-          <%= link_to "Your Classes", profile_path, class: "nav-link" %>
+        <li class="nav-item" id="">
+          <%= link_to t('.your_classes'), profile_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <i class="fas fa-globe dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
+          <div class="dropdown-menu dropdown-menu-right mt-1" aria-labelledby="navbarDropdown" id="language-dropdown">
+            <%= link_to "DE", "/de" , class: "dropdown-item" %>
+            <%= link_to "EN", "/" , class: "dropdown-item" %>
+          </div>
         </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
@@ -39,25 +46,32 @@
           <% end %>
             <div class="dropdown-menu dropdown-menu-right mt-1" aria-labelledby="navbarDropdown">
               <% if current_user.trainers.present? %>
-                <%= link_to "Trainer profile", trainer_path(current_user.trainers.ids), class: "dropdown-item" %>
+                <%= link_to t('.trainer_profile'), trainer_path(current_user.trainers.ids), class: "dropdown-item" %>
               <% end %>
-              <%= link_to "Your classes", profile_path , class: "dropdown-item" %>
-              <%= link_to "Settings", settings_path , class: "dropdown-item" %>
+              <%= link_to t('.your_classes'), profile_path , class: "dropdown-item" %>
+              <%= link_to t('.settings'), settings_path , class: "dropdown-item" %>
+              <%= link_to t('.log_out'), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <% if current_user.admin? %>
                 <%= link_to "Admin", admin_root_path, class: "dropdown-item" %>
               <% end %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Pricing", pricing_path, class: "nav-link" %>
+          <%= link_to t('.pricing'), pricing_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Give classes", become_a_trainer_path , class: "nav-link" %>
+          <%= link_to t('.give_classes'), become_a_trainer_path , class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to t('.log_in'), new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <i class="fas fa-globe dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
+          <div class="dropdown-menu dropdown-menu-right mt-1" aria-labelledby="navbarDropdown" id="language-dropdown">
+            <%= link_to "DE", "/de" , class: "dropdown-item" %>
+            <%= link_to "EN", "/" , class: "dropdown-item" %>
+          </div>
         </li>
       <% end %>
     </ul>

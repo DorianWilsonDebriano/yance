@@ -6,14 +6,14 @@
         </div>
       <% end %>
       <div class="booked-class-card-header">
-        <p class="booked-class-card-datetime"><%= local_time(user_sports_classes.date_time, "%A %b %d at %H:%M") %></p>
+        <p class="booked-class-card-datetime"><%= l(user_sports_classes.date_time, format: :date) %><%= local_time(l(user_sports_classes.date_time), format: :at_time) %></p>
         <p class="booked-class-card-title"><%= user_sports_classes.title %></p>
-        <p class="booked-class-card-duration"><%= user_sports_classes.duration %> minutes</p>
+        <p class="booked-class-card-duration"><i class="far fa-clock pr-1"></i><%= t('.duration', duration: user_sports_classes.duration) %></p>
         <p class="booked-class-card-category"><strong><%= user_sports_classes.category %></strong></p>
       </div>
       <div class="created-class-info-buttons" id="created-class-profile">
         <button class="btn go-to-class-icon"><%= link_to sports_class_path(user_sports_classes), method: "GET" do %>
-            <i class="fas fa-video created-class-join-video" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Join the live stream"></i>
+            <i class="fas fa-video created-class-join-video" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<%= t('.live_stream_modal') %>"></i>
           <% end %>
         </button>
       </div>

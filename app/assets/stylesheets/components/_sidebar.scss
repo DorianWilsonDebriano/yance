@@ -1,38 +1,199 @@
-// *,
-// *::before,
-// *::after {
-//   box-sizing: inherit;
-//   padding: 0;
-//   margin: 0;
+// ---------------- mary's code ----------------
+
+// .sidebar {
+//   font-family: $body-font;
+//   color: $dark-text;
+//   width: 25%;
+//   padding-left: 30px;
+//   padding-right: 20px;
+//   padding-top: 65px;
+
+//   .sidebar-header {
+//     color: $yance-yellow;
+//     font-weight: 700;
+//     letter-spacing: 0.5px;
+//     text-transform: uppercase;
+//     font-size: 15px;
+//   }
 // }
 
-// html {
-//   font-size: 62.5%; // base 10px
-//   box-sizing: border-box;
+// // btn sidebar
+// // .sidebar-btn-container {
+
+// // }
+
+// .sidebar-btn-select {
+//   margin: 20px 0px;
+//   transition: transform 5s;
+//   background-color: transparent;
+//   color: $dark-text;
+//   font-family: $body-font;
+//   font-weight: 600;
+//   text-align: center;
+//   text-transform: uppercase;
+//   border: none;
+//   border-radius: 5px;
+//   font-size: 18px;
+
+//   letter-spacing: 0.5px;
+//   cursor: pointer;
+//   outline: none;
+
+//   &:hover {
+//     opacity: 0.8;
+//     // background-color: $yance-yellow;
+//     // // border: 1px solid $yance-yellow;
+//   }
 // }
 
-// body {
-//   background-color: #fff;
-//   text-rendering: optimizeLegibility;
-//   font-size: 1.6rem;
+// .sidebar-btn-arrow {
+//   margin-left: 10px;
+//   margin-bottom: 0.2px;
+//   transform: rotate(0deg);
+//   transition: transform 0.6s;
 // }
+
+// .sidebar-btn-arrow.open {
+//   transform: rotate(180deg);
+// }
+// // user choice after rahio button change
+
+// .sidebar-choice {
+//   font-size: 18px;
+//   display: flex;
+//   align-items: center;
+//   font-weight: 400;
+
+//   .sidebar-choice-icon {
+//     height: 20px;
+//     width: 20px;
+//     margin-right: 10px;
+//     margin-bottom: 5px;
+//   }
+// }
+// // dropdown.
+
+// .dropdown-filter {
+//   position: relative;
+// }
+
+// .dropdown-container {
+//   overflow: hidden;
+//   transition-property: max-height;
+//   transition-duration: 0.8s;
+//   transition-timing-function: ease;
+//   max-height: 0px;
+// }
+
+// .dropdown-container.open {
+//   overflow: hidden;
+//   transition-property: max-height;
+//   transition-duration: 0.8s;
+//   transition-timing-function: ease;
+//   max-height: 500px;
+// }
+
+// .dropdown-container.open .sidebar-radio-group {
+//   max-height: 400px;
+// }
+
+// // radio butttons
+
+// .sidebar-radio-group {
+//   display: flex;
+//   margin: 20px 0px;
+//   padding: 0px 12px 0.8px 12px;
+//   // border-bottom: 1px solid ;
+//   width: 80%;
+// }
+
+// .form-radio-input {
+//   display: none;
+// }
+
+// .form-radio-label {
+//   font-size: 16px;
+//   cursor: pointer;
+//   position: relative;
+//   padding-left: 40px;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+// }
+
+// .form-radio-button {
+//   height: 16px;
+//   width: 16px;
+//   border: 2px solid $dark-text;
+//   border-radius: 50%;
+//   display: inline-block;
+//   position: absolute;
+//   left: 0;
+//   top: 2px;
+// }
+
+// .form-radio-button::after {
+//   content: "";
+//   display: block;
+//   height: 8px;
+//   width: 8px;
+//   border-radius: 50%;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   background-color: $dark-text;
+//   opacity: 0;
+//   transition: opacity 0.2s;
+// }
+
+// .form-radio-input:checked ~ .form-radio-label .form-radio-button::after {
+//   opacity: 1;
+// }
+
+// .sidebar-icon {
+//   margin-right: 10px;
+//   height: 16px;
+//   width: 16px;
+//   margin-bottom: 4px;
+// }
+
+// .btn-reset {
+//   margin-top: 30px;
+//   border: none;
+//   background-color: $yance-yellow;
+//   color: $dark-text;
+//   font-family: inherit;
+//   padding: 12px 24px;
+//   text-transform: uppercase;
+//   letter-spacing: 0.7px;
+//   font-weight: 700;
+//   outline: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// }
+
+// -------------------- Original code -------------------------------
+
 .sidebar {
-  font-family:
- $body-font;
-  color: $dark-text;
-  width: 25%;
-  padding-left: 30px;
-  padding-right: 20px;
-  padding-top: 65px;
+  display: flex;
+  flex-direction: column;
+  width: 14%;
+  padding: 20px;
 
-  .sidebar-header {
-    color: $yance-yellow;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    font-size: 15px;
-  }
-  .connect {
+  .sidebar-position {
+    position: fixed;
+    width: 16%;
+    p {
+      color: $yance-yellow;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .connect {
       padding-top: 28vh;
       border-radius: 8px;
       display: flex;
@@ -88,219 +249,46 @@
       color: $dark-text;
       padding-bottom: 3px;
     }
+    }
   }
 }
 
-// btn sidebar
-// .sidebar-btn-container {
-
-// }
-
-.sidebar-btn-select {
-  margin: 20px 0px;
-  transition: transform 5s;
-  background-color: transparent;
-  color: $dark-text;
-  font-family: $body-font;
-  font-weight: 600;
-  text-align: center;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  outline: none;
-
-  &:hover {
-    opacity: 0.8;
-    // background-color: $yance-yellow;
-    // // border: 1px solid $yance-yellow;
-  }
-}
-
-.sidebar-btn-arrow {
-  margin-left: 10px;
-  margin-bottom: 0.2px;
-  transform: rotate(0deg);
-  transition: transform 0.6s;
-}
-
-.sidebar-btn-arrow.open {
-  transform: rotate(180deg);
-}
-// user choice after rahio button change
-
-.sidebar-choice {
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  font-weight: 400;
-
-  .sidebar-choice-icon {
-    height: 20px;
-    width: 20px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-  }
-}
-// dropdown.
-
-.dropdown-filter {
-  position: relative;
-}
-
-.dropdown-container {
-  overflow: hidden;
-  transition-property: max-height;
-  transition-duration: 0.8s;
-  transition-timing-function: ease;
-  max-height: 0px;
-}
-
-.dropdown-container.open {
-  overflow: hidden;
-  transition-property: max-height;
-  transition-duration: 0.8s;
-  transition-timing-function: ease;
-  max-height: 500px;
-}
-
-.dropdown-container.open .sidebar-radio-group {
-  max-height: 400px;
-}
-
-// radio butttons
-
-.sidebar-radio-group {
-  display: flex;
-  margin: 20px 0px;
-  padding: 0px 12px 0.8px 12px;
-  // border-bottom: 1px solid ;
-  width: 80%;
-}
-
-.form-radio-input {
-  display: none;
-}
-
-.form-radio-label {
-  font-size: 16px;
-  cursor: pointer;
-  position: relative;
-  padding-left: 40px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.form-radio-button {
-  height: 16px;
-  width: 16px;
-  border: 2px solid $dark-text;
-  border-radius: 50%;
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  top: 2px;
-}
-
-.form-radio-button::after {
-  content: "";
-  display: block;
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: $dark-text;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.form-radio-input:checked ~ .form-radio-label .form-radio-button::after {
-  opacity: 1;
-}
-
-.sidebar-icon {
-  margin-right: 10px;
-  height: 16px;
-  width: 16px;
-  margin-bottom: 4px;
-}
-
-.btn-reset {
-  margin-top: 30px;
-  border: none;
-  background-color: $yance-yellow;
-  color: $dark-text;
-  font-family: inherit;
-  padding: 12px 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-  font-weight: 700;
-  outline: none;
-  border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
-// .sidebar {
-//   display: flex;
-//   flex-direction: column;
-//   width: 16%;
-//   padding: 20px;
-
-//   .sidebar-position {
-//     position: fixed;
-//     width: 12%;
-//     p {
-//       color: $dark-text;
-//       font-size: 14px;
-//       font-weight: bold;
-//     }
-//   }
-// }
 @media(max-width: 992px) {
   .sidebar {
     display: none;
   }
 }
-// #new_sports_class {
-//   padding: 24px 0;
-// }
 
-// .dropdown-filter {
-//   form {
-//     display: flex;
-//     flex-direction: column;
-//     border-bottom: 1px solid $light-gray;
-//     width: 100%;
-//   }
-//   select {
-//     border: none;
-//     border-radius: 4px;
-//     width: 100%;
-//     font-size: 14px;
-//     color: $dark-text;
-//     background-color: white !important;
-//   }
-//   select:focus {
-//     outline: 0 !important;
-//   }
-//   label {
-//     margin: 0px;
-//   }
-//   input {
-//     margin: 0 8px;
-//   }
-//   input[type=range]+.thumb{
-//     background-color: #400090;
-//  }
-// }
+#new_sports_class {
+  padding: 24px 0;
+}
+
+.dropdown-filter {
+  form {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $light-gray;
+    width: 100%;
+  }
+  select {
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bolder;
+    color: $dark-text;
+    background-color: white !important;
+  }
+  select:focus {
+    outline: 0 !important;
+  }
+  label {
+    margin: 0px;
+  }
+  input {
+    margin: 0 8px;
+  }
+  input[type=range]+.thumb{
+    background-color: #400090;
+ }
+}
