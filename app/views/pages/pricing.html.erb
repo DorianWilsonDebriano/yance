@@ -1,19 +1,17 @@
 <div class="pricing-banner row">
   <div class="pricing-banner-content col-sm-12 col-lg-6">
-    <p>NEVER ALONE IN SPORT</p>
-    <h1 class="mt-4"> For just <i class="highlighted-yellow">€26.99</i> per month get unlimited access to all live classes on the yance platform! <br> Start your 14 day trial now!</h1>
-    <p>The only membership that will make you feel this good at home</p>
-    <p class="mt-5">How to get started</p>
+    <h1 class="mt-4"><%= t('.punchline_html') %></h1>
+    <p class="mt-5"><%= t('.how_to') %></p>
     <div class="d-flex">
-      <div class="round-border">1</div> <p class="ml-3">Create a free account</p>
+      <div><strong>1.</strong></div> <p class="ml-3"><%= t('.first') %></p>
     </div>
     <div class="d-flex">
-      <div class="round-border">2</div> <p class="ml-3">Go to the memberships section</p>
+      <div><strong>2.</strong></div> <p class="ml-3"><%= t('.second') %></p>
     </div>
     <div class="d-flex mb-5">
-      <div class="round-border">3</div> <p class="ml-3">Start your 14 day trial for free!</p>
+      <div><strong>3.</strong></div> <p class="ml-3"><%= t('.third') %></p>
     </div>
-    <%= link_to "Create a free account", new_user_registration_path, class: "visit-platform-button ml-0" %>
+    <%= link_to t('.sign_up'), new_user_registration_path, class: "visit-platform-button ml-0" %>
   </div>
   <div class="screenshot-section col-sm-12 col-lg-6">
     <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1612217133/Screenshot_2021-02-01_at_23.02.30_xgd6ok.png", class: "screenshot-right" %>

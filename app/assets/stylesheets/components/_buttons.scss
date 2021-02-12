@@ -31,17 +31,6 @@
   width: 100%;
 }
 
-.class-card-book-button {
-  background-color: $yance-yellow;
-  border-radius: 4px;
-  width: 40%;
-  width: 40%;
-  margin-right: 17px;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
 .booked-class-info-buttons {
   align-items: center;
   text-align: center;
@@ -56,11 +45,21 @@
   padding-bottom: 20px;
 }
 
+.class-card-book-button {
+  background-color: $yance-yellow;
+  border-radius: 4px;
+  width: 70%;
+  margin-right: 17px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .class-card-info-button {
   background-color: black;
   border-radius: 4px;
   color: white;
-  width: 40%;
+  width: 10%;
   &:hover{
     text-decoration: none;
   }
