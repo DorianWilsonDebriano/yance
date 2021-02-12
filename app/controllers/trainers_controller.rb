@@ -22,7 +22,7 @@ class TrainersController < ApplicationController
     @trainer = Trainer.new(trainer_params)
     @trainer.user = current_user
     authorize @trainer
-    if @trainer.save!
+    if @trainer.save
       redirect_to trainer_path(@trainer), notice: "Your trainer profile has been created!"
     else
       render :new

@@ -6,19 +6,19 @@
       </div>
     <% end %>
     <div class="booked-class-card-header">
-      <p class="booked-class-card-datetime"><%= local_time(user_booking.sports_class.date_time, "%A %b %d at %H:%M") %></p>
+      <p class="booked-class-card-datetime"><%= l(user_booking.sports_class.date_time, format: :date) %><%= local_time(l(user_booking.sports_class.date_time), format: :at_time) %></p>
       <p class="booked-class-card-title"><%= user_booking.sports_class.title %></p>
-      <p class="booked-class-card-duration"><%= user_booking.sports_class.duration %> minutes</p>
-      <p class="booked-class-card-category"><strong><%= user_booking.sports_class.category %></strong> with <strong><%= user_booking.sports_class.trainer.user.first_name %> <%= user_booking.sports_class.trainer.user.last_name %></strong> </p>
+      <p class="booked-class-card-duration"><i class="far fa-clock pr-1"></i><%= t('.duration', duration: user_booking.sports_class.duration) %></p>
+      <p class="booked-class-card-category"><%= t('.category_trainer_html', category: user_booking.sports_class.category, trainer_firstname: user_booking.sports_class.trainer.user.first_name, trainer_lastname: user_booking.sports_class.trainer.user.last_name) %></p>
     </div>
     <div class="booked-class-info-buttons">
       <button class="btn go-to-class-icon"><%= link_to sports_class_path(user_booking.sports_class), method: "GET" do %>
-          <i class="fas fa-video" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Join the live stream"></i>
+          <i class="fas fa-video" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<%= t('.live_stream_modal') %>"></i>
         <% end %>
       </button>
       <button class="btn profile-cancel-booking-icon"> <%= link_to class_booking_path(user_booking), method: :delete, data: {confirm: "Are you sure?"}, class: "profile-cancel-button", id:"sweet-alert-delete" do %>
           <i class="fas fa-window-close"></i>
-          <p id="cancel-class">cancel</p>
+          <p id="cancel-class"><%= t('.cancel') %></p>
         <% end %>
       </button>
     </div>

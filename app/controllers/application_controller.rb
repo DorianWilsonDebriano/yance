@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+  around_action :switch_locale
   before_action :authenticate_user!, :configure_permitted_parameters, if: :devise_controller?
 
   include Pundit
@@ -12,6 +12,15 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :photo, :bio, :language])
   end
 
+  def switch_locale(&action)
+    locale = params[:locale] || I18n.default_locale
+    I18n.with_locale(locale, &action)
+  end
+
+  def default_url_options
+    { locale: I18n.locale }
+  end
+
   private
 
   def skip_pundit?
@@ -21,5 +30,4 @@ class ApplicationController < ActionController::Base
   def default_url_options
     { host: ENV["DOMAIN"] || "localhost:3000" }
   end
-
 end

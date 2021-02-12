@@ -3,10 +3,10 @@
     <div class="col-12 p-0">
       <div class="review-form mb-5">
         <%= simple_form_for [@trainer, @review] do |f| %>
-          <%= f.input :content, label: "Write a review" %>
-          <%= f.input :rating, collection: (1..5), label: "Rating:"%>
+          <%= f.input :content, label: t('.write_review') %>
+          <%= f.input :rating, collection: (1..5), label: t('.rating')%>
 
-          <%=f.submit 'Create Review', class: "btn review-button"%>
+          <%=f.submit t('.create_review'), class: "btn review-button"%>
         <% end %>
       </div>
     </div>

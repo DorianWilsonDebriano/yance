@@ -7,18 +7,17 @@
       <div class="form-create-trainer my-5">
         <h2>Become a trainer</h2>
         <%= simple_form_for @trainer do |f| %>
-          <%= f.input :city %>
-          <%= f.input :sport_category %>
-          <%= f.input :bio %>
-          <div class="d-flex mb-2">
-            <%= image_tag "", class: 'hidden img-thumbnail rounded-circle mr-4', id: "photo-preview" %>
-            <%= f.input :profile_photo,
-                        input_html: { class: 'hidden d-none', id: 'photo-input' },
-                        label_html: { class: 'upload-photo mt-3'},
-                        label: '📷 trainer profile photo',
-                        hint: "leave blank if you want to use your user profile photo"%>
-          </div>
-          <%= f.button :submit, class: 'btn class-log-in-button' %>
+          <%= f.input :city,
+                      label: t('.location'),
+                      placeholder: t('.city-description')%>
+          <%= f.input :sport_category,
+                      label: t('.sport_category'),
+                      placeholder: t('.category-description') %>
+          <%= f.input :bio, label: t('.bio'),
+                      placeholder: t('.bio_description') %>
+          <%= f.button :submit, t('.submit'),
+                       class: 'btn class-log-in-button',
+                       data: {disable_with: t('.loading')} %>
         <% end %>
       </div>
     </div>

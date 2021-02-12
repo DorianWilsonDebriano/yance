@@ -13,14 +13,20 @@
 }
 
 .class-modal-date {
-  font-weight: bolder;
-  color: #929292;
   margin-top: 4px;
   margin-bottom: 4px;
 }
 
 .class-modal-category {
   font-weight: bolder;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+.class-modal-duration {
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .class-image {
@@ -49,10 +55,6 @@
   height: 30%;
   font-size: 14px;
 }
-
-// .class-modal-class-image {
-//   height: 30%;
-// }
 
 .class-modal-avatar {
 
