@@ -50,43 +50,44 @@
       </div>
     </div>
   </div>
-
   <div class="sportsclasses-container container d-flex justify-content-center flex-column">
-      <!-- sign up call to action -->
-      <% if !user_signed_in? || !current_user.subscription.present? %>
-        <div class="index-call-to-action">
-          <h1><%= t('.call_to_action.header_text') %></h1>
-          <% if user_signed_in? %>
-            <p><%= t('.call_to_action.body_text') %></p>
-            <%= link_to t('.call_to_action.button.start_trial'), memberships_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
-          <% else %>
-            <p><%= t('.call_to_action.alt_text') %></p>
-            <%= link_to t('.call_to_action.button.sign_up'), new_user_registration_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
-          <% end %>
-        </div>
-      <% end %>
+    <!-- flash reminder to update profile settings -->
+    <%= render partial: "shared/index-alerts" %>
+    <!-- sign up call to action -->
+    <% if !user_signed_in? || !current_user.subscription.present? %>
+      <div class="index-call-to-action">
+        <h1><%= t('.call_to_action.header_text') %></h1>
+        <% if user_signed_in? %>
+          <p><%= t('.call_to_action.body_text') %></p>
+          <%= link_to t('.call_to_action.button.start_trial'), memberships_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
+        <% else %>
+          <p><%= t('.call_to_action.alt_text') %></p>
+          <%= link_to t('.call_to_action.button.sign_up'), new_user_registration_path, class: "sign-up-button banner-button", id: "section-visit-button" %>
+        <% end %>
+      </div>
+    <% end %>
         <!-- search bar -->
-      <div class="search-container">
-         <div class="row justify-content-center">
-            <div class="col-sm-8 mt-3">
-              <%= form_tag sports_classes_path, method: :get do %>
-                <%= text_field_tag :query,
-                  params[:query],
-                  class: "form-control searchbar",
-                  placeholder: t('.searchbar.entry')
-                %>
-                 <%= text_field_tag :starts_at,
-                  params[:starts_at],
-                  class: "datepicker",
-                  placeholder: t('.searchbar.date')
-                  %>
-                <div class="button">
-                  <%= button_tag(type: "submit", class: "btn search-button") do %>
-                    <i class="fas fa-search search-icon"></i>
-                <% end %>
+    <div class="search-container">
+      <div class="row justify-content-center">
+        <div class="col-sm-8 mt-3">
+          <%= form_tag sports_classes_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control searchbar",
+              placeholder: t('.searchbar.entry')
+            %>
+             <%= text_field_tag :starts_at,
+              params[:starts_at],
+              class: "datepicker",
+              placeholder: t('.searchbar.date')
+              %>
+            <div class="button">
+              <%= button_tag(type: "submit", class: "btn search-button") do %>
+                <i class="fas fa-search search-icon"></i>
               <% end %>
             </div>
-          </div>
+          <% end %>
+        </div>
       </div>
       <!-- user bookings -->
       <% if user_signed_in? %>
@@ -97,13 +98,8 @@
             </div>
         <% end %>
       <% end %>
-    <!-- favorite classes -->
-      <div class="filter-cards">
-        <h2 class="all-classes-title"><%= t('.filter-cards.title') %></h2>
-        <%= render "shared/filter-cards" %>
-      </div>
 
-    <!-- all classes -->
+      <!-- all classes -->
       <h2 class="all-classes-title mt-5"><%= t('.all-classes.title') %></h2>
       <div class="sports-classes-cards pt-3">
         <%= render collection: @sports_classes, partial: "shared/sport-class-card", as: :sports_class %>

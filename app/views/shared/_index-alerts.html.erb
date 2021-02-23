@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <% if !current_user.photo.present? %>
+    <div class="flash flash-warning alert alert-dismissible fade show profile-warning" role="alert">
+      <span class="flash-text"> <%= t('.profile-warning', user: current_user.first_name) %> <%= link_to t('.settings_area'), settings_path, class: "link-button" %> </span>
+      <a data-dismiss="alert" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </a>
+    </div>
+  <% end %>
+<% end %>

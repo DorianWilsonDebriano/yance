@@ -19,20 +19,26 @@
     padding-top: 200px;
   }
 }
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 50px;
-  margin-right: 20px;
+  width: 130px;
+  margin-top: -8px;
+}
+
+@media(max-width: 575px) {
+  .navbar-lewagon .navbar-brand img {
+    margin-top: -18px;
+  }
 }
 
 .logo-credits {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 20px;
 }
 
 #nav-name {
