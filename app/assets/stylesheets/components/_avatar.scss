@@ -9,6 +9,17 @@
   object-position: center;
 }
 
+.participant-avatar {
+  height: 43px;
+  width: 43px;
+  border-radius: 50%;
+  border: 2px solid $yance-yellow;
+  margin-right: 12px;
+  margin-left: 12px;
+  object-fit: cover;
+  object-position: center;
+}
+
 .avatar-settings {
   height: 90px;
   width: 90px;
