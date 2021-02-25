@@ -1,24 +1,31 @@
 <div class="chatroom-page">
-    <div class="videos col-sm-12 col-md-6 col-lg-6">
-      <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" autoplay muted loop class="left-video">
-        <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" class="left-video">
-      </video>
-      <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149172/pexels-sam-lion-6000604_ba4fnj.mp4" type="video/mov" autoplay muted loop class="right-video">
-        <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149172/pexels-sam-lion-6000604_ba4fnj.mp4" type="video/mov" class="right-video">
-      </video>
-    </div>
-    <%= link_to chatroom_path(@chatrooms.first.id) do %>
-      <div class="chatroom" id="yancers-chatroom">
-        <i class="fas fa-users"></i>
-        <%= @chatrooms.first.name %>
-      </div>
-    <% end %>
-    <%if !@user.trainer_ids.empty? %>
-        <%= link_to chatroom_path(@chatrooms.second.id) do %>
-          <div class="chatroom" id="trainers-chatroom">
-            <%= @chatrooms.last.name %>
-            <i class="fas fa-users"></i>
+  <div class="videos col-sm-12 col-md-6 col-lg-6">
+    <%if @user.trainer_ids.empty? %>
+        <div class="video-gradient"></div>
+        <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" autoplay muted loop class="left-video">
+          <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" class="left-video">
+        </video>
+    <% else %>
+      <%= link_to chatroom_path(@chatrooms.second.id) do %>
+          <div class="chatroom-name">
+            <h2 id="trainers-chatroom-name"><%= @chatrooms.second.name %></h2>
           </div>
-        <% end %>
+        <div class="video-gradient">
+        </div>
+        <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" autoplay muted loop class="left-video">
+          <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" class="left-video">
+        </video>
+      <% end %>
     <% end %>
+    <%= link_to chatroom_path(@chatrooms.first.id) do %>
+        <div class="chatroom-name">
+          <h2 id="yancers-chatroom-name"><%= @chatrooms.first.name %></h2>
+        </div>
+      <div class="video-gradient">
+      </div>
+      <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149172/pexels-sam-lion-6000604_ba4fnj.mp4" type="video/mov" autoplay muted loop class="right-video">
+          <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149172/pexels-sam-lion-6000604_ba4fnj.mp4" type="video/mov" class="right-video">
+      </video>
+    <% end %>
+  </div>
 </div>

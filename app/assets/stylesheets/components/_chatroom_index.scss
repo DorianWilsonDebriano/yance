@@ -2,43 +2,51 @@
   height: 100vh;
   overflow: hidden;
   h2 {
+    position: fixed;
+    z-index: 2;
     font-size: 36px;
     font-family: $body-font;
     color: $dark-text;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin: 0;
+    // margin: 400px;
     padding: 16px;
+    top: 50%;
+    left: 60%;
   }
   a {
-    text-decoration: none;
-    font-size: 30px;
-    font-family: $body-font;
-    color: $dark-text;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+  //   text-decoration: none;
+  //   font-size: 30px;
+  //   font-family: $body-font;
+  //   color: $dark-text;
+  //   font-weight: 700;
+  //   letter-spacing: 0.5px;
+  //   text-transform: uppercase;
+    height: 100%;
+    width: 100%;
     margin: 0;
-    padding: 16px;
+    padding: 0;
     display: flex;
     align-self: center;
+    position: relative;
   }
 }
-
-.videos-gradient {
-    display: block;
+.chatroom-name {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: ' ';
-  z-index: 2;
-  backface-visibility: hidden;
-  background: #3452ff;
-  background: linear-gradient(135deg,rgba(126,87,88,.1) 0%,rgba(126,87,88,.1) 100%);
-  opacity: 0.8;
+    z-index: 10;
+    top: 50%;
+}
+#trainers-chatroom-name {
+  position: unset;
+  // left: 35%;
+  // margin-left: 5%;
+}
+
+#yancers-chatroom-name {
+  position: unset;
+  // left: 50%;
+  // margin-right: 5%;
 }
 
 .chatroom {
@@ -87,32 +95,43 @@
 .videos {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 140vh;
   padding: 0;
-  // bottom: 535px;
-  background-color: black;
-  z-index: 2;
+  bottom: 20rem;
+  .video-gradient:hover {
+    display: flex;
+    background-color: black;
+    height: 140vh;
+    width: 50vw;
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.5;
+  }
+  a:hover {
+    .video-gradient {
+      display: flex;
+      background-color: black;
+      height: 140vh;
+      width: 100%;
+      z-index: 10;
+      position: absolute;
+      bottom: 0;
+      opacity: 0.5;
+    }
+  }
 }
 
-.video-gradient {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  height: 100vh;
-  overflow: hidden;
-}
+
 .left-video {
   transform: rotateY(180deg);
   -webkit-transform:rotateY(180deg); /* Safari and Chrome */
   -moz-transform:rotateY(180deg); /* Firefox */
-  width: 100%;
-  // height: 100vh;
+  width: 50vw;
   object-fit: cover;
 }
 .right-video {
-  width: 100%;
-  // height: 100vh;
+  width: 50vw;
   object-fit: cover;
 }
 
@@ -153,24 +172,31 @@
 @media(max-width: 1966px) {
   .chatroom-page {
     .videos {
-      bottom: 0;
+      // bottom: 0;
     }
   }
 }
+
+// @media(max-width: 768px) {
+//   .chatroom-index-container {
+//     a {
+//       font-size: 24px;
+//     }
+//   }
+// }
 
 @media(max-width: 768px) {
-  .chatroom-index-container {
+  .videos {
+    bottom: 0;
     a {
-      font-size: 24px;
+      .right-video {
+        // visibility: hidden
+      }
     }
-  }
-}
-
-@media(max-width: 375px) {
-  .chatroom-index-container {
-    a {
-      font-size: 18px;
-    }
+      .left-video {
+        width: 100vw;
+        height: 100vh;
+      }
   }
 }
 
