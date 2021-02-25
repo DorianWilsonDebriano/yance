@@ -184,13 +184,14 @@
   flex-direction: column;
   width: 14%;
   padding: 20px;
+  padding-top: 30px;
 
   .sidebar-position {
     position: fixed;
-    width: 16%;
+    width: 14%;
     p {
-      color: $yance-yellow;
-      font-size: 16px;
+      color: $dark-text;
+      font-size: 14px;
       font-weight: bold;
     }
     .connect {
@@ -274,7 +275,7 @@
     border: none;
     border-radius: 4px;
     width: 100%;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bolder;
     color: $dark-text;
     background-color: white !important;

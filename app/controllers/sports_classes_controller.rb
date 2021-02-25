@@ -59,6 +59,7 @@ class SportsClassesController < ApplicationController
     if @sportsclass.update(sports_class_params)
       @sports_class_chatroom = @sportsclass.sports_class_chatroom
       @sports_class_chatroom.update(date_time: params[:sports_class][:date_time], name: params[:sports_class][:title])
+      update_room(@sportsclass)
       redirect_to profile_path, notice: "#{@sportsclass.title}'s information has been saved."
     else
       render :edit
@@ -96,6 +97,22 @@ class SportsClassesController < ApplicationController
     request["Content-Type"] = 'application/json'
     request["Authorization"] = 'Bearer ' + ENV["DAILY"]
     request.body = "{\"properties\":{\"exp\":\"#{sportsclass.date_time.to_i + 86400}\",\"enable_chat\":true},\"name\":\"#{sportsclass.id}\",\"privacy\":\"public\"}"
+
+    response = http.request(request)
+    return response
+  end
+
+  def update_room(sportsclass)
+    url = URI("https://api.daily.co/v1/rooms/#{sportsclass.room}")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Post.new(url)
+    request["Content-Type"] = 'application/json'
+    request["Authorization"] = 'Bearer ' + ENV["DAILY"]
+    request.body = "{\"properties\":{\"exp\":\"#{sportsclass.date_time.to_i + 86400}\"}}"
 
     response = http.request(request)
     return response

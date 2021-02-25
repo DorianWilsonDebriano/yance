@@ -1,0 +1,32 @@
+<div class="modal fade" id="list-<%= sports_class.id %>" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"><%= t('.title') %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% if sports_class.class_bookings.count > 0 %>
+          <ol>
+            <% sports_class.class_bookings.each do |booking| %>
+                <li class="participant-list">
+                  <% if booking.user.photo.present? %>
+                    <%= cl_image_tag booking.user.photo.key, class: "participant-avatar" %>
+                  <% end %>
+                  <%= booking.user.first_name %>
+                  <%= booking.user.last_name %>
+                </li>
+            <% end %>
+          </ol>
+        <% else %>
+          <p><%= t('.no_bookings') %></p>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t('.close') %></button>
+      </div>
+    </div>
+  </div>
+</div>
