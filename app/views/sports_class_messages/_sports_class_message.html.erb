@@ -7,6 +7,8 @@
         <small><%= local_time(sports_class_message.created_at.strftime("%a %b %e at %l:%M%p")) %></small>
         <% if sports_class_message.user.photo.attached? %>
           <%= cl_image_tag sports_class_message.user.photo.key, class: "avatar dropdown-toggle user-avatar", id: "user-chatroom-avatar" %>
+        <% else %>
+          <%= image_tag "http://squashcity.pl/wp-content/uploads/2020/08/placeholder-avatar-square.jpg", class: "avatar dropdown-toggle user-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
       </i>
       <div class="message-paragraph current-user-messenger">
@@ -18,6 +20,8 @@
       <i class="author">
         <% if sports_class_message.user.photo.attached? %>
           <%= cl_image_tag sports_class_message.user.photo.key, class: "avatar dropdown-toggle user-avatar" %>
+        <% else %>
+          <%= image_tag "http://squashcity.pl/wp-content/uploads/2020/08/placeholder-avatar-square.jpg", class: "avatar dropdown-toggle user-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
         <span><%= sports_class_message.user.first_name %></span>
         <span><%= sports_class_message.user.last_name %></span>

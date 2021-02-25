@@ -1,19 +1,20 @@
 class SportsClassChatroomsController < ApplicationController
   before_action :authenticate_user!
+  before_action :enforce_tenancy, only: [:show]
 
   def index
     @sports_class_chatrooms = policy_scope(SportsClassChatroom).where(['date_time > ?', Time.now])
     @booked_sports_chatrooms = @sports_class_chatrooms.where(sports_class_id: current_user.all_booked_classes.pluck(:id))
     @sports_classes = SportsClass.find(@booked_sports_chatrooms.pluck(:sports_class_id))
-    # @sports_classes = SportsClass.find(@sports_class_chatrooms.pluck(:sports_class_id))
   end
 
   def show
     @sports_class_chatroom = SportsClassChatroom.find(params[:id])
     @sports_class_message = SportsClassMessage.new
+    @sports_class_chatrooms = policy_scope(SportsClassChatroom).where(['date_time > ?', Time.now])
+    @booked_sports_chatrooms = @sports_class_chatrooms.where(sports_class_id: current_user.all_booked_classes.pluck(:id))
     authorize @sports_class_chatroom
   end
-
 
   def update
     authorize @sports_class_chatroom
@@ -26,42 +27,15 @@ class SportsClassChatroomsController < ApplicationController
 
   private
 
-   def sports_class_chatroom_params
-     params.require(:sports_class_chatroom).permit(:date_time)
+  def sports_class_chatroom_params
+     params.require(:sports_class_chatroom).permit(:date_time, :name)
+  end
+
+  def enforce_tenancy
+    @sports_class_chatrooms = policy_scope(SportsClassChatroom).where(['date_time > ?', Time.now])
+    @booked_sports_chatrooms_ids = @sports_class_chatrooms.where(sports_class_id: current_user.all_booked_classes.pluck(:id)).ids
+    @user_booked_chatrooms = @booked_sports_chatrooms_ids.map(&:to_s)
+    @user_access_to_show = @user_booked_chatrooms.include?(params[:id])
+    redirect_to sports_class_chatrooms_path, notice: "You don't have access to this chatroom." unless @user_access_to_show
   end
 end
-
-
-
-#   def index
-#     @chatrooms = policy_scope(Chatroom)
-#     @user = current_user
-#     @user_bookings = @user.all_booked_classes.pluck(:title)
-#     @chatroom_names = @chatrooms.pluck(:name)
-#     @user_class_chatrooms = @user_bookings & @chatroom_names
-#     class_chatrooms
-#     authorize @chatrooms
-#   end
-
-#   def show
-#     @chatroom = Chatroom.find(params[:id])
-#     @message = Message.new
-#     authorize @chatroom
-#   end
-
-# #   def create
-# #     @chatroom = Chatroom.new(chatroom_params)
-# #     if @chatroom.save
-# #       redirect_to chatrooms_path
-# #     else
-# #       render '/profile'
-# #     end
-# #   end
-
-#   private
-
-#   def class_chatrooms
-#     if !@user_class_chatrooms.empty?
-#       @chatrooms_all = Chatroom.where(name: @user_class_chatrooms)
-#     end
-#   end
