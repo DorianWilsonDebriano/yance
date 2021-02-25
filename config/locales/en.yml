@@ -234,9 +234,17 @@ en:
       done: "past"
       coming: "coming"
       duplicate: "Duplicate this class's information for a quick-create"
+      participants: "See who has booked your class"
       edit: "Edit this class's information"
       cancel: "Cancel this class"
       live_stream_modal: "Join the live stream"
+    participant-list:
+      title: "Participants list"
+      no_bookings: "No bookings yet! We recommend also promoting your class on your social media to get more bookings!"
+      close: "Close"
+    index-alerts:
+      profile-warning: "Hey %{user}, don't forget to update your profile info under your"
+      settings_area: " settings area!"
     trainer-upcoming-classes:
       duration: " %{duration} minutes"
       levels:

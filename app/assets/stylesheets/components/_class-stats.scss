@@ -42,13 +42,15 @@
   margin-top: 20px;
   border-radius: 4px;
   min-height: 50vh;
+  max-height: 50vh;
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   padding: 12px;
+  overflow: auto;
 }
 
 .class-stats-labels {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr 1.5fr;
   font-weight: bolder;
   font-size: 14px;
   gap: 8px;
@@ -58,7 +60,7 @@
 
 .class-stat-details {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr 1.5fr;
   gap: 8px;
   margin-left: 16px;
   p {
@@ -77,6 +79,14 @@
   color: #4FA1BF;
   font-size: 22px;
 
+}
+
+#manage-participants {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  margin-left: 12px;
+  font-size: 22px;
 }
 
 #manage-edit-button {

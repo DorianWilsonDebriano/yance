@@ -58,7 +58,7 @@ de:
       all-classes:
         title: "Alle Kurse"
     new:
-      tagline: "Create a new class"
+      tagline: "Einen neuen Kurs erstellen"
       title: "Kursname"
       title_description: "der Kursname"
       description: "Kursbeschreibung"
@@ -203,9 +203,17 @@ de:
       done: "abelaufen"
       coming: "anstehend"
       duplicate: "Diese Kursinformationen duplizieren "
+      participants: "Schaue nach, wer deinen Kurs gebucht hat"
       edit: "Kursinformationen bearbeiten"
       cancel: "Kurs stornieren"
       live_stream_modal: "Livestream starten"
+    participant-list:
+      title: "Teilnehmerliste"
+      no_bookings: "Bisher keine Buchungen. Wir empfehlen dir deinen Kurs in den sozialen Medien zu bewerben, um mehr Buchungen zu erhalten."
+      close: "Schließen"
+    index-alerts:
+      profile-warning: "Hey %{user}, vergiss nicht, dein Profil zu aktualisieren. Hier:"
+      settings_area: " Einstellungen !"
     trainer-upcoming-classes:
       duration: " %{duration} Minuten"
       levels:
