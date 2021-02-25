@@ -100,33 +100,55 @@
   margin-bottom: 0px;
   h2 {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 26px;
     font-weight: bold;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
-  input{
-    border-radius: 32px !important;
-    font-size: 12px;
+  input {
+    border-radius: 4px !important;
+    font-size: 16px;
   }
 
-  textarea{
-    border-radius: 32px !important;
-    font-size: 12px;
+  select {
+    font-size: 14px;
   }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: $yance-yellow;
+  }
+
+  ::placeholder {
+    font-size: 14px;
+  }
+
+  textarea {
+    border-radius: 4px !important;
+    font-size: 16px;
+  }
+
   a {
     text-decoration: none;
     text-align: center;
     color: black;
     font-size: 12px;
   }
+
   label {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
+    letter-spacing: .8px;
   }
   legend {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
+  }
+  .invalid-feedback {
+    margin-left: 12px;
   }
 }
 
@@ -135,39 +157,86 @@
     margin: 20px;
   }
 }
+// ********* CREATE CLASS *******//
 
 .form-create-class {
+
   margin: 0px 150px;
   margin-bottom: 0px;
+
   h2 {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 26px;
     font-weight: bold;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
-  input{
-    border-radius: 32px !important;
-    font-size: 12px;
+  .form-group {
+    margin-bottom: 1.5rem;
   }
 
-  textarea{
-    border-radius: 32px !important;
-    font-size: 12px;
+  .form-group .datetimepicker {
+    background-color: #fff;
   }
+
+  .form-group input.form-control.string.required.datetimepicker.input.active {
+    border: 1px solid $yance-yellow;
+  }
+
+  input {
+    border-radius: 4px !important;
+    font-size: 16px;
+  }
+
+  select {
+    font-size: 14px;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: $yance-yellow;
+  }
+
+  ::placeholder {
+    font-size: 14px;
+  }
+
+  textarea {
+    border-radius: 4px !important;
+    font-size: 16px;
+  }
+
   a {
     text-decoration: none;
     text-align: center;
     color: black;
     font-size: 12px;
   }
+
   label {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
+    letter-spacing: .8px;
   }
   legend {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
+    letter-spacing: .8px;
+  }
+
+  .class-log-in-button {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .invalid-feedback {
+    margin-left: 12px;
   }
 }
 
@@ -177,40 +246,55 @@
   }
 }
 
+/*********** FORM SIGNIN//LOGIN ************/
+
 .form-login {
   background: white;
   border-radius: 32px !important;
   padding-top: 20px;
   padding-top: 20px;
   margin: 0px 150px;
+
   h2 {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 26px;
+    letter-spacing: 1px;
     font-weight: bold;
     text-align: center;
+    text-transform: uppercase;
   }
+
   p {
     text-align: center;
-    font-size: 12px;
+    font-size: 18px;
+    letter-spacing: 1px;
   }
 
-  input{
-    border-radius: 18px !important;
-  }
-
-  textarea{
-    border-radius: 18px !important;
-  }
-
-  a {
+   a {
     text-decoration: none;
     text-align: center;
     color: black;
-    font-size: 12px;
-  }
- label {
-    font-weight: bold;
     font-size: 14px;
+    margin-left: 5px;
+  }
+
+  input{
+    border-radius: 6px !important;
+    font-size: 16px;
+  }
+
+  ::placeholder {
+    font-size: 13px;
+  }
+
+  textarea{
+    border-radius: 6px !important;
+  }
+
+  label {
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: .5px;
   }
 
   legend {
@@ -220,7 +304,28 @@
 
   .form-control:focus{
     box-shadow: none;
-    border-color: #ced4da;
+    border-color: $yance-yellow;
+  }
+
+  .form-text {
+    margin-left: .5rem;
+    font-weight: 500;
+  }
+
+  .class-log-in-button {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .pt-2 {
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 14px;
+  }
+
+  .invalid-feedback {
+    margin-left: 12px;
   }
 }
 

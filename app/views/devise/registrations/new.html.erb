@@ -33,12 +33,12 @@
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        placeholder: "email",
+                        placeholder: "Email",
                         input_html: { autocomplete: "email" }%>
             <%= f.input :password,
                         label: t('.password'),
                         required: true,
-                        hint: (t('.security', security: @minimum_password_length) if @minimum_password_length),
+                        # hint: (t('.security', security: @minimum_password_length) if @minimum_password_length),
                         placeholder: t('.new_password'),
                         input_html: { autocomplete: t('.new_password') } %>
             <%= f.input :password_confirmation,
