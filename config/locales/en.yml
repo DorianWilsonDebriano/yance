@@ -42,17 +42,17 @@ en:
     registrations:
       new:
         tagline: "Sign up to yance"
-        switch: "alreay have an account?"
+        switch: "Already have an account?"
         login: " Log in"
         first_name: "First name"
         last_name: "Last name"
         password: "Password"
-        new_password: "create a new password"
-        security: "%{security} characters minimum"
+        new_password: "Create a new password"
+        security: "Password requires %{security} characters minimum"
         confirmation: "Password confirmation"
-        confirmation_placeholder: "repeat your password"
+        confirmation_placeholder: "Repeat your password"
         submit: "Sign up"
-        terms: "by clicking 'Sign up' you certify that you agree to our"
+        terms: "By clicking 'Sign up' you certify that you agree to our"
         terms_link: "terms and conditions"
     sessions:
       new:
