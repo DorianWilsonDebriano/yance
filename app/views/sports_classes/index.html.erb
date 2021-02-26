@@ -128,5 +128,30 @@
         <%= render collection: @sports_classes, partial: "shared/sport-class-card", as: :sports_class %>
       </div>
     </div>
+      <div class="connect-2">
+          <p class="connect-header">Chat with Yancers</p>
+          <% if !current_user.nil? %>
+            <div class="chatroom-buttons">
+              <div id="classes-chatrooms">
+                <%= link_to sports_class_chatrooms_path do %>
+                  <div class="chatroom-button">
+                    <i class="fas fa-comments"></i>
+                    <h6 class="chat-button-text">Sessions</h6>
+                    <i class="fas fa-chevron-right"></i>
+                  </div>
+                <% end %>
+              </div>
+              <div id="yancers-chatrooms">
+                <%= link_to chatrooms_path do %>
+                  <div class="chatroom-button">
+                    <i class="fas fa-comments"></i>
+                    <h6 class="community-button-text">Community</h6>
+                    <i class="fas fa-chevron-right"></i>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+      </div>
   </div>
 </div>

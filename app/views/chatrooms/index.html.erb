@@ -1,10 +1,16 @@
 <div class="chatroom-page">
   <div class="videos col-sm-12 col-md-6 col-lg-6">
     <%if @user.trainer_ids.empty? %>
+      <%= link_to sports_classes_path, class: "d-flex justify-content-end" do %>
+        <div class="chatroom-name">
+          <h2 id="home-chatroom-button">Home</h2>
+        </div>
         <div class="video-gradient"></div>
+      <!-- <a href="#" id="no-chatroom-link"> -->
         <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" autoplay muted loop class="left-video">
           <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" class="left-video">
         </video>
+      <% end %>
     <% else %>
       <%= link_to chatroom_path(@chatrooms.second.id), class: "d-flex justify-content-end" do %>
           <div class="chatroom-name">

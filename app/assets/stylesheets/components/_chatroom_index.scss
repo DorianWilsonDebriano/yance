@@ -33,6 +33,9 @@
 #trainers-chatroom-name {
   position: unset;
 }
+#home-chatroom-button {
+  position: unset;
+}
 
 #yancers-chatroom-name {
   position: unset;
@@ -50,7 +53,7 @@
     .video-gradient {
       display: flex;
       background-color: black;
-      height: 140vh;
+      height: 100%;
       width: 100%;
       z-index: 3;
       position: absolute;
@@ -102,17 +105,44 @@
 // }
 
 @media(max-width: 768px) {
+  .chatroom-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
   .videos {
+    height: 100vh;
     bottom: 0;
-    a {
-      .right-video {
-        // visibility: hidden
-      }
+    display: flex;
+    flex-direction: column-reverse;
+    .chatroom-name {
+      padding: 0;
     }
+    a {
+      height: 50%;
+      width: 100vw;
+      .right-video {
+        width: 100vw;
+        height: 100%;
+      }
       .left-video {
         width: 100vw;
-        height: 100vh;
+        height: 100%;
       }
+      #no-chatroom-link:hover {
+        a {
+          cursor: default !important;
+        }
+      }
+    }
+    // .left-video {
+    //     width: 100vw;
+    //     height: 100%;
+    //   }
+    // .right-video {
+    //     width: 100vw;
+    //     height: 100%;
+    //   }
   }
 }
 
