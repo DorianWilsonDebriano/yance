@@ -8,7 +8,8 @@ Rails.application.routes.draw do
       get "/:locale", to: "sports_classes#index"
       get "/", to: "sports_classes#index"
     end
-    root to: 'pages#home'
+
+    root to: 'pages#index'
     get "/search", to: "pages#search", as: :search
     get "/profile", to: "pages#profile"
     get "/settings", to: "pages#settings"
