@@ -4,25 +4,17 @@
   h2 {
     position: fixed;
     z-index: 2;
-    font-size: 36px;
+    font-size: 3rem;
     font-family: $body-font;
     color: $dark-text;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    // margin: 400px;
     padding: 16px;
     top: 50%;
     left: 60%;
   }
   a {
-  //   text-decoration: none;
-  //   font-size: 30px;
-  //   font-family: $body-font;
-  //   color: $dark-text;
-  //   font-weight: 700;
-  //   letter-spacing: 0.5px;
-  //   text-transform: uppercase;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -34,62 +26,18 @@
 }
 .chatroom-name {
   position: absolute;
-    z-index: 10;
-    top: 50%;
+  z-index: 10;
+  top: 50%;
+  padding-top: 8%;
 }
 #trainers-chatroom-name {
   position: unset;
-  // left: 35%;
-  // margin-left: 5%;
 }
 
 #yancers-chatroom-name {
   position: unset;
-  // left: 50%;
-  // margin-right: 5%;
-}
-
-.chatroom {
-  height: 40vh;
-  width: 40vw;
-  padding: 100px;
-  border-radius: 8px;
-  .fa-users {
-    line-height: unset;
-    padding: 0 10%;
-  }
- }
-
-.chatroom:hover {
-  transform: translateY(-2rem);
-}
-
-#yancers-chatroom {
-  background-color: #FFBA8D;
-  opacity: 0.7;
-  border-radius: 8px;
-  height: 100px;
-  width: 275px;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 45%;
-  left: 50%;
-}
-
-#trainers-chatroom {
-  background-color: #EDECE0;
-  opacity: 0.7;
-  border-radius: 8px;
-  height: 100px;
-  width: 275px;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 35%;
-  right: 50%;
+  color: #FFBA8D;
+  text-shadow: 4px 4px 40px #936749;
 }
 
 .videos {
@@ -98,30 +46,31 @@
   height: 140vh;
   padding: 0;
   bottom: 20rem;
-  .video-gradient:hover {
-    display: flex;
-    background-color: black;
-    height: 140vh;
-    width: 50vw;
-    z-index: 10;
-    position: absolute;
-    bottom: 0;
-    opacity: 0.5;
-  }
   a:hover {
     .video-gradient {
       display: flex;
       background-color: black;
       height: 140vh;
       width: 100%;
-      z-index: 10;
+      z-index: 3;
       position: absolute;
       bottom: 0;
       opacity: 0.5;
     }
+    h2 {
+      color: white;
+      font-size: 3.5rem;
+      z-index: 4;
+      text-shadow: 4px 4px 50px #fff
+    }
+    #yancers-chatroom-name {
+      color: white;
+      font-size: 3.5rem;
+      z-index: 4;
+      text-shadow: 4px 4px 50px #fff
+    }
   }
 }
-
 
 .left-video {
   transform: rotateY(180deg);
@@ -135,39 +84,6 @@
   object-fit: cover;
 }
 
-.chatroom-back-button {
-  display: flex;
-  justify-content: center;
-  padding: 50px 0;
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: $body-font;
-    color: $dark-text;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin: 0;
-    padding: 16px;
-
-    h6 {
-    text-decoration: none;
-    font-size: 18px;
-    font-family: $body-font;
-    color: $dark-text;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin: 0;
-    padding: 16px;
-    }
-  }
-  .fa-chevron-left {
-    padding-right: 2%;
-  }
-}
 
 @media(max-width: 1966px) {
   .chatroom-page {

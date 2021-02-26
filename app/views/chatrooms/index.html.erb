@@ -6,7 +6,7 @@
           <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" class="left-video">
         </video>
     <% else %>
-      <%= link_to chatroom_path(@chatrooms.second.id) do %>
+      <%= link_to chatroom_path(@chatrooms.second.id), class: "d-flex justify-content-end" do %>
           <div class="chatroom-name">
             <h2 id="trainers-chatroom-name"><%= @chatrooms.second.name %></h2>
           </div>
@@ -17,11 +17,11 @@
         </video>
       <% end %>
     <% end %>
-    <%= link_to chatroom_path(@chatrooms.first.id) do %>
+    <%= link_to chatroom_path(@chatrooms.first.id), class: "d-flex justify-content-start" do %>
         <div class="chatroom-name">
           <h2 id="yancers-chatroom-name"><%= @chatrooms.first.name %></h2>
         </div>
-      <div class="video-gradient">
+      <div class="video-gradient" id="right-video-gradient">
       </div>
       <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149172/pexels-sam-lion-6000604_ba4fnj.mp4" type="video/mov" autoplay muted loop class="right-video">
           <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149172/pexels-sam-lion-6000604_ba4fnj.mp4" type="video/mov" class="right-video">
