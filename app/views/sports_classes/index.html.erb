@@ -69,6 +69,18 @@
               <% end %>
             </div>
           </div>
+        <% else %>
+          <div class="chatroom-buttons">
+            <div id="yancers-chatrooms">
+              <%= link_to chatrooms_path do %>
+                <div class="chatroom-button">
+                  <h6 id="community-button-text">Community</h6>
+                  <i class="fas fa-comments"></i>
+                </div>
+              <% end %>
+            </div>
+          </div>
+      </div>
         <% end %>
       </div>
     </div>
