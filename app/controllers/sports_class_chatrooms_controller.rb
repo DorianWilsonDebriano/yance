@@ -28,7 +28,7 @@ class SportsClassChatroomsController < ApplicationController
   private
 
   def sports_class_chatroom_params
-     params.require(:sports_class_chatroom).permit(:date_time, :name)
+   params.require(:sports_class_chatroom).permit(:date_time, :name)
   end
 
   def enforce_tenancy

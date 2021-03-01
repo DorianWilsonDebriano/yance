@@ -1,27 +1,31 @@
-<div class="chatroom-header">
-  <h3 class="pt-5"> Chat with fellow yancers in your classes</h3>
-  <h5 class="pt-5">Welcome to the Yance bubble! Here is where you can connect with people in your classes. Simply click on your class and violà, a whole class at your fingertips.</h5>
-</div>
-<div class="chatroom-container">
-    <% if @sports_classes.empty? %>
-      <h5 class="no-bookings">Book some classes to chat!</h5>
-    <% else %>
-  <div class="chatroom-cards">
-      <% @sports_classes.each do |sports_class| %>
-        <div class="chatroom-card">
-          <%= link_to sports_class_chatroom_path(sports_class.sports_class_chatroom.id) do %>
-          <div class="card-info text-left">
-            <strong><%= sports_class.sports_class_chatroom.name.capitalize %></strong>
-              <p class="pt-3"> Your class is on <%=local_time(sports_class.date_time, "%A, %b")%>
-                <%= local_time(sports_class.date_time, "%d ") %>
-                at <%= local_time(sports_class.date_time, " %H:%M") %>
-              </p>
-              <p>Yancers booked in: <%= sports_class.class_bookings.count %></p>
-          </div>
-          <%= cl_image_tag sports_class.photo.key %>
-          <% end %>
-        </div>
+<div class="d-flex justify-content-center flex-column">
+  <div class="chatroom-header">
+    <h3 class="pt-5">Chat with fellow Yancers in your classes</h3>
+    <h5 class="pt-5">Welcome to the Yance bubble! Here is where you can connect with people in your classes. Simply click on your class and violà, a whole class at your fingertips.</h5>
+  </div>
+  <div class="chatroom-container">
+      <% if @sports_classes.empty? %>
+        <h5 class="no-bookings">Book some classes to chat!</h5>
+      <% else %>
+        <div class="chatroom-cards">
+            <% @sports_classes.each do |sports_class| %>
+              <div class="chatroom-card">
+                <%= link_to sports_class_chatroom_path(sports_class.sports_class_chatroom.id) do %>
+                <div class="card-info">
+                  <p class="px-3"><strong><%= sports_class.sports_class_chatroom.name.capitalize %></strong></p>
+                  <p class="px-3"> Your class is on <%=local_time(sports_class.date_time, "%A, %b")%>
+                    <%= local_time(sports_class.date_time, "%d ") %>
+                    at <%= local_time(sports_class.date_time, " %H:%M") %>
+                  </p>
+                  <p class="px-3">Participants: <strong><%= sports_class.class_bookings.count %></strong></p>
+                </div>
+                <div>
+                  <%= cl_image_tag sports_class.photo.key %>
+                </div>
+                <% end %>
+              </div>
+            <% end %>
       <% end %>
-    <% end %>
+        </div>
   </div>
 </div>

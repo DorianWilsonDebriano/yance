@@ -1,40 +1,51 @@
 <div class="footer">
-  <div class="container justify-content-between pt-5">
+  <div class="container justify-content-between py-5">
     <div class="top-part">
-      <div class="logo-socials">
-        <h6 class="about"><%= t('.about_us') %></h6>
-        <p class="description"><%= t('.description') %></p>
-        <h6 class="about pt-16"><%= t('.socials') %></h6>
-        <div class="socials">
-          <%= link_to "https://www.instagram.com/yancesports/", class: "color-icon" do %>
-            <i class="fab fa-instagram color-icon"></i>
-          <% end %>
+      <!-- <div class="footer-colum"> -->
+        <div class="company-name  mx-1">
+          <i class="far fa-copyright"></i>
+          <ul>
+            <li class="list-item link-color"> 2021 Yance Sports</li>
+          </ul>
         </div>
-      </div>
+        <div class="links  mx-1">
+          <!-- <h6 class="about"><%= t('.quick_links') %></h6> -->
+          <ul>
+            <li class="list-item"><%=link_to t('.terms_conditions'), policy_path, class: "link-color"%></li>
+          </ul>
+        </div>
 
-      <div class="information">
-        <h6 class="about"> <%= t('.information') %></h6>
+      <div class="information  mx-1">
+        <!-- <h6 class="about"> <%= t('.information') %></h6> -->
         <ul>
           <li class="list-item"><%=link_to t('.pricing'), pricing_path, class: "link-color"%></li>
         </ul>
       </div>
-
-      <div class="links">
-        <h6 class="about"><%= t('.quick_links') %></h6>
-        <ul>
-          <li class="list-item"><%=link_to t('.terms_conditions'), policy_path, class: "link-color"%></li>
-        </ul>
+      <div class="logo-socials  mx-1">
+        <!-- <h6 class="about"><%= t('.about_us') %></h6>
+        <p class="description"><%= t('.description') %></p> -->
+        <!-- <h6 class="about pt-16"><%= t('.socials') %></h6> -->
+        <div class="socials">
+          <!-- <%= link_to "https://www.instagram.com/yancesports/", class: "color-icon" do %> -->
+          <%= link_to "Instagram", "https://www.instagram.com/yancesports/", class: "color-icon", :target => "_blank" %>
+            <!-- <i class="fab fa-instagram color-icon"></i> -->
+          <!-- <% end %> -->
+        </div>
       </div>
-      <div class="newsletter">
+
+      <!-- <div class="newsletter">
         <h6 class="about"><%= t('.newsletter') %></h6>
-        <p class="description"><%= t('.newsletter_description') %></p>
-        <div class="subscribe-email">
+        <p class="description"><%= t('.newsletter_description') %></p> -->
+        <!-- <div class="subscribe-email"> -->
           <!-- Begin Mailchimp Signup Form -->
+          <!--End mc_embed_signup-->
+          </div>
+        </div>
           <div id="mc_embed_signup">
             <form action="https://yahoo.us2.list-manage.com/subscribe/post?u=61b0eb7c87d55915b6338db89&amp;id=f9fe4e7482" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
               <div id="mc_embed_signup_scroll footer-signup-form">
-                <label for="mce-EMAIL" id="newsletter-label"><%= t('.newsletter_subscribe') %></label>
-                <input type="email" value="" name="EMAIL" class="required email email-input" id="mce-EMAIL" placeholder="email address" required>
+                <!-- <label for="mce-EMAIL" id="newsletter-label"><%= t('.newsletter_subscribe') %></label> -->
+                <input type="email" value="" name="EMAIL" class="required email email-input text-center" id="mce-EMAIL" placeholder="email address" required>
                 <div id="mce-responses" class="clear">
                   <div class="response" id="mce-error-response" style="display:none"></div>
                   <div class="response" id="mce-success-response" style="display:none"></div>
@@ -45,10 +56,8 @@
               </div>
             </form>
           </div>
-          <!--End mc_embed_signup-->
-        </div>
       </div>
     </div>
-  </div>
-</div>
+  <!-- </div> -->
+<!-- </div> -->
 

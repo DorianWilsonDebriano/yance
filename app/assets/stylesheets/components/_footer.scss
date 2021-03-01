@@ -1,14 +1,33 @@
 .footer {
   background-color: #F7F7F7;
   z-index: 1;
+  #mc_embed_signup {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3%;
+  }
+  form {
+    width: 40%;
+  }
 }
 
 .top-part{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1.4fr;
-  height: 250px;
-  grid-gap:16px;
+  display: flex;
+  justify-content: space-evenly;
+  // display:grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+  // height: 140px;
+  // grid-gap:16px;
+}
 
+.company-name {
+  display: flex;
+  white-space: nowrap;
+  .fa-copyright {
+    padding-top: 2.5%;
+    padding-right: 4%;
+    font-size: 0.7rem;
+  }
 }
 
 .about{
@@ -25,18 +44,20 @@
 }
 
 .color-icon{
-  margin-left:4px;
-  margin-right:4px;
+  font-size: 1rem;
+  color: black;
 }
+
 .list-item{
-  font-family:"Montserrat";
-  font-size:12px;
-  align-items:center;
-  text-align:center;
+  font-family: "Montserrat";
+  font-size: 1rem;
+  align-items: center;
+  text-align: center;
 }
 ul {
   list-style-type: none;
-  padding:0;
+  padding: 0;
+  margin: 0;
 }
 .color-plane{
  color:$yance-yellow;
@@ -63,14 +84,13 @@ justify-content:center;
   font-weight:bold !important;
 }
 
-// .footer-link {
-//   text-decoration: none;
-  // color: black;
-
-// }
-
-// .rights {
-//   color: $dark-text;
-//   font-weight: bolder;
-//   font-size: 16px;
-// }
+@media(max-width: 768px) {
+    .footer {
+      .list-item {
+        font-size: 0.8rem;
+      }
+      .color-icon {
+        font-size: 0.8rem;
+      }
+    }
+  }
