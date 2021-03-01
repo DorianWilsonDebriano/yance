@@ -52,7 +52,7 @@ form_tag {
 .datepicker {
   position: absolute;
   height: 50px;
-  right: 75px;
+  right: 35px;
   top: 0px;
   width: 34%;
   padding: 5px 12px;
@@ -132,4 +132,10 @@ form_tag {
   background-color: $yance-yellow !important;
   border: none;
   box-shadow: none !important;
+}
+
+@media(max-width: 575px) {
+  .searchbar{
+    padding: 1.0rem 1.0rem 1.0rem 1.5rem;
+  }
 }
