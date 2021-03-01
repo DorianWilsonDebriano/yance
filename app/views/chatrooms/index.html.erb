@@ -1,9 +1,19 @@
 <div class="chatroom-page">
   <div class="videos col-sm-12 col-md-6 col-lg-6">
-    <%if @user.trainer_ids.empty? %>
-      <%= link_to sports_classes_path, class: "d-flex justify-content-end" do %>
+    <%= link_to chatroom_path(@chatrooms.first.id), class: "d-flex justify-content-end" do %>
         <div class="chatroom-name">
-          <h2 id="home-chatroom-button">Home</h2>
+          <h2 id="yancers-chatroom-name"><%= @chatrooms.first.name %></h2>
+        </div>
+      <div class="video-gradient" id="right-video-gradient">
+      </div>
+      <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149172/pexels-sam-lion-6000604_ba4fnj.mp4" type="video/mov" autoplay muted loop class="right-video">
+          <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149172/pexels-sam-lion-6000604_ba4fnj.mp4" type="video/mov" class="right-video">
+      </video>
+    <% end %>
+    <%if @user.trainer_ids.empty? %>
+      <%= link_to sports_classes_path, class: "d-flex justify-content-start" do %>
+        <div class="chatroom-name">
+          <h2 id="home-chatroom-button">Back to Home</h2>
         </div>
         <div class="video-gradient"></div>
       <!-- <a href="#" id="no-chatroom-link"> -->
@@ -12,7 +22,7 @@
         </video>
       <% end %>
     <% else %>
-      <%= link_to chatroom_path(@chatrooms.second.id), class: "d-flex justify-content-end" do %>
+      <%= link_to chatroom_path(@chatrooms.second.id), class: "d-flex justify-content-start" do %>
           <div class="chatroom-name">
             <h2 id="trainers-chatroom-name"><%= @chatrooms.second.name %></h2>
           </div>
@@ -22,16 +32,6 @@
           <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" class="left-video">
         </video>
       <% end %>
-    <% end %>
-    <%= link_to chatroom_path(@chatrooms.first.id), class: "d-flex justify-content-start" do %>
-        <div class="chatroom-name">
-          <h2 id="yancers-chatroom-name"><%= @chatrooms.first.name %></h2>
-        </div>
-      <div class="video-gradient" id="right-video-gradient">
-      </div>
-      <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149172/pexels-sam-lion-6000604_ba4fnj.mp4" type="video/mov" autoplay muted loop class="right-video">
-          <source src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149172/pexels-sam-lion-6000604_ba4fnj.mp4" type="video/mov" class="right-video">
-      </video>
     <% end %>
   </div>
 </div>

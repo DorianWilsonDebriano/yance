@@ -46,9 +46,9 @@
 .videos {
   display: flex;
   width: 100%;
-  height: 140vh;
+  height: 145vh;
   padding: 0;
-  bottom: 20rem;
+  bottom: 18rem;
   a:hover {
     .video-gradient {
       display: flex;
@@ -76,33 +76,16 @@
 }
 
 .left-video {
+  width: 50vw;
+  object-fit: cover;
+}
+.right-video {
   transform: rotateY(180deg);
   -webkit-transform:rotateY(180deg); /* Safari and Chrome */
   -moz-transform:rotateY(180deg); /* Firefox */
   width: 50vw;
   object-fit: cover;
 }
-.right-video {
-  width: 50vw;
-  object-fit: cover;
-}
-
-
-@media(max-width: 1966px) {
-  .chatroom-page {
-    .videos {
-      // bottom: 0;
-    }
-  }
-}
-
-// @media(max-width: 768px) {
-//   .chatroom-index-container {
-//     a {
-//       font-size: 24px;
-//     }
-//   }
-// }
 
 @media(max-width: 768px) {
   .chatroom-page {
@@ -135,15 +118,5 @@
         }
       }
     }
-    // .left-video {
-    //     width: 100vw;
-    //     height: 100%;
-    //   }
-    // .right-video {
-    //     width: 100vw;
-    //     height: 100%;
-    //   }
   }
 }
-
-
