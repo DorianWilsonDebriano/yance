@@ -1,6 +1,79 @@
 .search-container {
   padding-bottom: 100px;
+  .connect-mobile {
+      padding-top: 14vh;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      .connect-header-mobile {
+        margin: 0 !important;
+        padding: 6px 0;
+        padding: 1px 6px;
+        color: $yance-yellow;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 15px;
+      }
+    }
+    .chatroom-buttons-mobile {
+      margin-top: 3vh;
+    .chatroom-button-mobile {
+      display: flex;
+      background-color: none;
+      border-radius: 4px;
+      // position: absolute;
+      width: 200px;
+      align-items: center;
+      h6 {
+
+        font-size: 18px;
+        font-family: $body-font;
+        color: $dark-text;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 16px;
+      }
+    }
+    #community-button-text-mobile{
+      margin: 0;
+    }
+    #classes-chatrooms-mobile {
+      // margin-bottom: 8vh;
+    }
+    .fa-comments {
+      font-size: 1.3em;
+      position: relative;
+      display: flex;
+      align-self: center;
+      color: $dark-text;
+      padding-left: 16px;
+    }
+    .fa-chevron-right {
+      color: $dark-text;
+      padding-bottom: 3px;
+    }
+    }
+  }
+
+
+
+@media(min-width: 992px) {
+  .sportsclasses-container {
+    .connect-mobile {
+      display: none;
+      .connect-header-mobile {
+        display: none;
+      }
+    }
+  }
 }
+
+
 
 
 .searchbar {
