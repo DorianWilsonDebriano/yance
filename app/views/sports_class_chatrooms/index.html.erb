@@ -18,7 +18,7 @@
                     <%= local_time(sports_class.date_time, "%d ") %>
                     at <%= local_time(sports_class.date_time, " %H:%M") %>
                   </p>
-                  <p class="px-3">Participants: <strong><%= sports_class.class_bookings.count %></strong></p>
+                  <p class="px-3">Other Yancers joining your class: <strong><%= sports_class.class_bookings.count %></strong></p>
                 </div>
                 <div>
                   <%= cl_image_tag sports_class.photo.key %>
