@@ -86,6 +86,17 @@ justify-content:center;
 
 @media(max-width: 768px) {
     .footer {
+      #mc_embed_signup {
+        padding-bottom: 10%;
+      }
+      form {
+        .email-input{
+        padding: 8px;
+        }
+      .newsletter-signup {
+        padding: 8px;
+      }
+      }
       .list-item {
         font-size: 0.8rem;
       }
