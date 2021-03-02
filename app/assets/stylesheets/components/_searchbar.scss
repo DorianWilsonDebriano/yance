@@ -1,6 +1,9 @@
 .search-container {
   padding-bottom: 100px;
   .connect-mobile {
+      animation: cssAnimation 0s 1.5s ease-in;
+      visibility: hidden;
+      animation-fill-mode: forwards;
       padding-top: 14vh;
       border-radius: 8px;
       display: flex;
@@ -69,6 +72,9 @@
   }
 }
 
+@keyframes cssAnimation {
+  to  { visibility: visible; }
+}
 
 
 @media(min-width: 992px) {
@@ -92,6 +98,7 @@
       }
     }
   }
+
 
 
 
