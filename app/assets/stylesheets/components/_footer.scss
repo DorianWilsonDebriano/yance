@@ -45,7 +45,10 @@
 
 .color-icon{
   font-size: 1rem;
-  color: black;
+  color: black !important;
+  a:hover {
+    color: black !important;
+  }
 }
 
 .list-item{
