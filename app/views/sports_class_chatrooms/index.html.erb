@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center flex-column">
   <div class="chatroom-header">
-    <h3 class="pt-5">Chat with fellow Yancers in your classes</h3>
-    <h5 class="pt-5">Welcome to the Yance bubble! Here is where you can connect with people in your classes. Simply click on your class and violà, a whole class at your fingertips.</h5>
+    <h3><strong>Chat with fellow Yancers in your classes</strong></h3>
+    <h5 class="pt-5">Welcome to your Yance breakout rooms! Here is where you can connect with people in your classes. Simply click on your class and violà, a whole class at your fingertips.</h5>
   </div>
   <div class="chatroom-container">
       <% if @sports_classes.empty? %>
@@ -12,8 +12,9 @@
               <div class="chatroom-card">
                 <%= link_to sports_class_chatroom_path(sports_class.sports_class_chatroom.id) do %>
                 <div class="card-info">
-                  <p class="px-3"><strong><%= sports_class.sports_class_chatroom.name.capitalize %></strong></p>
-                  <p class="px-3"> Your class is on <%=local_time(sports_class.date_time, "%A, %b")%>
+                  <p class="class-name px-3">Chat with Yancers in <strong><%= sports_class.sports_class_chatroom.name.capitalize %></strong></p>
+                  <p class="class-date-time px-3 mb-3"> Your class is on
+                    <%=local_time(sports_class.date_time, "%A %B")%>
                     <%= local_time(sports_class.date_time, "%d ") %>
                     at <%= local_time(sports_class.date_time, " %H:%M") %>
                   </p>
