@@ -1,6 +1,11 @@
 .sportsclasses-container {
     height: fit-content;
     padding: 65px;
-  }
+}
 
 
+@media(max-width: 575px) {
+    .sportsclasses-container {
+        padding: 30px;
+    }
+}

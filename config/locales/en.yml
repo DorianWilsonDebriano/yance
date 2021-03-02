@@ -82,7 +82,7 @@ en:
       booked-classes:
         title: "Your upcoming classes"
       searchbar:
-        entry: "All sports"
+        entry: "Sport, teacher.."
         date: "Date"
       filter-cards:
         title: "Most popular classes"
