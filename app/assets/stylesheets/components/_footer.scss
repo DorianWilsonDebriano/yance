@@ -1,32 +1,45 @@
 .footer {
-  background-color: #F7F7F7;
+  background-color: #f9f9f9;
   z-index: 1;
   #mc_embed_signup {
     display: flex;
     justify-content: center;
-    padding-bottom: 3%;
+    padding-bottom: 2%;
   }
   form {
     width: 40%;
+  }
+  .email-input {
+    border: none;
+    padding: 6px;
+  }
+  .newsletter-signup {
+    color: $dark-text !important;
   }
 }
 
 .top-part{
   display: flex;
   justify-content: space-evenly;
-  // display:grid;
-  // grid-template-columns: 1fr 1fr 1fr 1fr;
-  // height: 140px;
-  // grid-gap:16px;
+}
+
+.links {
+  white-space: nowrap;
 }
 
 .company-name {
   display: flex;
   white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3%;
+  li  {
+    color: $dark-text !important;
+  }
   .fa-copyright {
-    padding-top: 2.5%;
-    padding-right: 4%;
+    padding-right: 0.5%;
     font-size: 0.7rem;
+    color: $dark-text !important;
   }
 }
 
@@ -45,9 +58,9 @@
 
 .color-icon{
   font-size: 1rem;
-  color: black !important;
+  color: $dark-text !important;
   a:hover {
-    color: black !important;
+    color: $dark-text !important;
   }
 }
 
@@ -56,7 +69,11 @@
   font-size: 1rem;
   align-items: center;
   text-align: center;
+  a {
+    color: $dark-text !important;
+  }
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -66,14 +83,14 @@ ul {
  color:$yance-yellow;
 }
 .btn-style{
-  border:2px solid black;
+  // border:2px solid black;
   border-radius:8px;
   font-size:10px;
   font-weight:bold;
   width:72px;
 }
 .background{
-  background-color:black
+  // background-color:black
 }
 .socials{
 display:flex;
@@ -81,10 +98,12 @@ justify-content:center;
 }
 .link-color{
   color:black !important;
-
 }
 .link-color:hover{
   font-weight:bold !important;
+}
+#copyright-text {
+  font-size: 0.7rem;
 }
 
 @media(max-width: 768px) {
@@ -93,12 +112,13 @@ justify-content:center;
         padding-bottom: 10%;
       }
       form {
-        .email-input{
-        padding: 8px;
+        width: 65%;
+        .email-input {
+          padding: 8px;
         }
-      .newsletter-signup {
-        padding: 8px;
-      }
+        .newsletter-signup {
+          padding: 8px;
+        }
       }
       .list-item {
         font-size: 0.8rem;

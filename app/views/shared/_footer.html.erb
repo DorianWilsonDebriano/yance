@@ -1,12 +1,6 @@
 <div class="footer">
   <div class="container justify-content-between py-5">
     <div class="top-part">
-        <div class="company-name  mx-1">
-          <i class="far fa-copyright"></i>
-          <ul>
-            <li class="list-item link-color"> 2021 Yance Sports</li>
-          </ul>
-        </div>
         <div class="links  mx-1">
           <ul>
             <li class="list-item"><%=link_to t('.terms_conditions'), policy_path, class: "link-color"%></li>
@@ -36,5 +30,11 @@
         <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn newsletter-signup"></div>
       </div>
     </form>
+  </div>
+  <div class="company-name  mx-1">
+    <i class="far fa-copyright"></i>
+    <ul>
+      <li class="list-item link-color" id="copyright-text"> 2021 Yance Sports</li>
+    </ul>
   </div>
 </div>
