@@ -110,4 +110,59 @@
   margin-left: 12px;
 }
 
+@media(max-width: 900px) {
+  .class-stat-details {
+    grid-template-columns: 1.5fr 1fr 1fr 3.5fr;
+    gap: 12px;
+    height: 65px;
+    font-size: 12px;
+  }
+
+  .class-stats-labels {
+    grid-template-columns: 1.5fr 1fr 1fr 3.5fr;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+  #stat-date {
+    font-size: 12px;
+  }
+
+  #class-password {
+    font-size: 12px;
+  }
+
+  #class-title {
+    display: none;
+  }
+
+  .class-status {
+    display: none;
+  }
+
+  .manage-duplicate-button {
+    font-size: 12px;
+  }
+
+  #manage-participants {
+  margin-left: 4px;
+  font-size: 12px;
+  }
+
+  #manage-edit-button {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+  #manage-cancel-button {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+  #manage-stream-button {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+}
 

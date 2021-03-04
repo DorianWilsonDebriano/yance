@@ -35,6 +35,10 @@ class SportsClass < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  def self.languages
+    SportsClass.pluck(:language).uniq.sort
+  end
+
   def self.categories
     SportsClass.pluck(:category).uniq.sort
   end

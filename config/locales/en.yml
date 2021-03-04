@@ -88,6 +88,7 @@ en:
       sidebar:
         title: "NARROW YOUR SEARCH"
         dropdowns:
+          language: "LANGUAGE"
           sport_type: "SPORT TYPE"
           difficulty_level: "DIFFICULTY LEVEL"
           experience_level: "EXPERIENCE LEVEL"

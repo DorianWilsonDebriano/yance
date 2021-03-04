@@ -57,6 +57,7 @@ de:
       sidebar:
         title: "SUCHE EINGRENZEN"
         dropdowns:
+          language: "SPRACHE"
           sport_type: "SPORTART"
           difficulty_level: "SCHWIERIGKEITSLEVEL"
           experience_level: "ERFAHRUNGSSTUFE"

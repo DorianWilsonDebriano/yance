@@ -6,14 +6,23 @@
       <p> <%= t('.sidebar.title') %> </p>
       <div class="dropdown-filter">
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
-            <%= s.select(:category, SportsClass.categories, {prompt: t('.sidebar.dropdowns.sport_type'), selected: params.dig(:sports_class, :category) }, { onchange: "this.form.submit()" } )%>
+          <%= s.select(:language, SportsClass.languages, {prompt: t('.sidebar.dropdowns.language'), selected: params.dig(:sports_class, :language) }, { onchange: "this.form.submit()" } )%>
           <%= s.hidden_field(:starts_at, value: params[:starts_at] ) %>
+        <% end %>
+      </div>
+      <div class="dropdown-filter">
+        <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
+          <%= s.select(:category, SportsClass.categories, {prompt: t('.sidebar.dropdowns.sport_type'), selected: params.dig(:sports_class, :category) }, { onchange: "this.form.submit()" } )%>
+          <% if  params[:sports_class].present? %>
+            <%= s.hidden_field(:language, value: params[:sports_class][:language]) %>
+          <% end %>
         <% end %>
       </div>
       <div class="dropdown-filter">
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
           <%= s.select(:difficulty_level, SportsClass.difficulty_level,  {prompt: t('.sidebar.dropdowns.difficulty_level'), selected:  params.dig(:sports_class, :difficulty_level) }, { onchange: "this.form.submit()" })  %>
           <% if  params[:sports_class].present? %>
+            <%= s.hidden_field(:language, value: params[:sports_class][:language]) %>
             <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
           <% end %>
         <% end %>
@@ -22,6 +31,7 @@
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
           <%= s.select(:experience_level, SportsClass.experience_level, {prompt: t('.sidebar.dropdowns.experience_level'), selected: params.dig(:sports_class, :experience_level) }, { onchange: "this.form.submit()" })  %>
           <% if  params[:sports_class].present? %>
+            <%= s.hidden_field(:language, value: params[:sports_class][:language]) %>
             <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
             <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
           <% end %>
@@ -31,6 +41,7 @@
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
           <%= s.select(:sweat_level, SportsClass.sweat_level, {prompt: t('.sidebar.dropdowns.sweat_level'), selected:  params.dig(:sports_class, :sweat_level) }, { onchange: "this.form.submit()" })  %>
           <% if  params[:sports_class].present? %>
+            <%= s.hidden_field(:language, value: params[:sports_class][:language]) %>
             <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
             <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
             <%= s.hidden_field(:experience_level, value: params[:sports_class][:experience_level]) %>
@@ -41,6 +52,7 @@
         <%= form_for(SportsClass.new, url: sports_classes_path, method: :get) do |s| %>
           <%= s.select(:duration, SportsClass.durations, {prompt: t('.sidebar.dropdowns.duration'), selected: params.dig(:sports_class, :duration) }, { onchange: "this.form.submit()" })  %>
           <% if  params[:sports_class].present? %>
+            <%= s.hidden_field(:language, value: params[:sports_class][:language]) %>
             <%= s.hidden_field(:category, value: params[:sports_class][:category]) %>
             <%= s.hidden_field(:difficulty_level, value: params[:sports_class][:difficulty_level]) %>
             <%= s.hidden_field(:experience_level, value: params[:sports_class][:experience_level]) %>
