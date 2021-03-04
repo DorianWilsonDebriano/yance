@@ -1,16 +1,16 @@
 <div class="class-stat-details">
   <p id="stat-date"> <%= local_time(l(sports_class.date_time), format: :at_numeric) %></p>
-  <p> <%= sports_class.title %> </p>
+  <p id="class-title"> <%= sports_class.title %> </p>
   <p> <%= sports_class.class_bookings.count %> </p>
   <% if sports_class.password.present? %>
-    <p><%= sports_class.password %></p>
+    <p id="class-password"><%= sports_class.password %></p>
   <% else %>
-    <p>--</p>
+    <p id="class-password">--</p>
   <% end %>
   <% if sports_class.date_time < Time.now %>
-    <p id="stat-done"><%= t('.done') %></p>
+    <p class="class-status" id="stat-done"><%= t('.done') %></p>
   <% else %>
-    <p id="stat-coming"><%= t('.coming') %></p>
+    <p class="class-status" id="stat-coming"><%= t('.coming') %></p>
   <% end %>
   <div class="manage-action-buttons">
     <%= link_to duplicate_path(sports_class) do %>
