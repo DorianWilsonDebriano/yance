@@ -2,7 +2,7 @@
   <% if message.user == current_user %>
     <div class="message-container text-right current-user-message-container" id="message-<%= message.id %>">
       <i class="author current-user-author">
-        <small><%= l(message.created_at, format: :date) %><%= local_time(l(message.created_at), format: :at_time) %></small>
+        <small><%= l(message.created_at, format: :day) %> <%= l(message.created_at, format: :month_day) %> <%= local_time(l(message.created_at), format: :at_time) %></small>
         <span><%= message.user.first_name %></span>
         <span><%= message.user.last_name %></span>
         <% if message.user.photo.attached? %>
@@ -25,7 +25,7 @@
         <% end %>
         <span><%= message.user.first_name %></span>
         <span><%= message.user.last_name %></span>
-        <small><%= l(message.created_at, format: :date) %><%= local_time(l(message.created_at), format: :at_time) %></small>
+        <small><%= l(message.created_at, format: :day) %> <%= l(message.created_at, format: :month_day) %> <%= local_time(l(message.created_at), format: :at_time) %></small>
       </i>
       <div class="message-paragraph">
         <p><%= message.content %></p>
