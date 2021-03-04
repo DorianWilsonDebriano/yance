@@ -56,7 +56,8 @@ class SportsClassesController < ApplicationController
   def update
     authorize @sportsclass
     if @sportsclass.update(sports_class_params)
-      update_room(@sportsclass)
+      room = update_room(@sportsclass)
+      @sportsclass.update(room: JSON.parse(room.body)["name"])
       redirect_to profile_path, notice: "#{@sportsclass.title}'s information has been saved."
     else
       render :edit
@@ -120,7 +121,7 @@ class SportsClassesController < ApplicationController
   end
 
   def sports_class_params
-    params.require(:sports_class).permit(:title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :password, :photo)
+    params.require(:sports_class).permit(:title, :description, :date_time, :duration, :category, :difficulty_level, :sweat_level, :experience_level, :equipment, :language, :password, :photo, :room)
   end
 
   def handle_search
@@ -144,6 +145,10 @@ class SportsClassesController < ApplicationController
   end
 
   def handle_filters
+    if params.dig(:sports_class, :language).present?
+      @sports_classes = @sports_classes.where(language: params[:sports_class][:language])
+    end
+
     if params.dig(:sports_class, :category).present?
       @sports_classes = @sports_classes.where(category: params[:sports_class][:category])
     end

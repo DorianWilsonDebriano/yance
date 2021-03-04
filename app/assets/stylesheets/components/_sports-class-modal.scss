@@ -6,6 +6,11 @@
 .class-modal-content {
   height: 100vh;
   border-radius: 4px;
+  overflow: auto;
+}
+
+.modal-dialog-scrollable .modal-content {
+  overflow: auto;
 }
 
 .class-modal-inner-content {
