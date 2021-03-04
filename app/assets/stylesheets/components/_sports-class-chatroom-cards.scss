@@ -1,12 +1,10 @@
 .chatroom-header {
-  padding: 5%;
-  width: 80vw;
+  padding: 110px 5%;
   align-self: center;
-  text-align: start;
-  background-color: #FEDF44;
+  text-align: center;
+  background: linear-gradient(#F4F4F4, #E4E2E2);
   color: black;
-  margin-top: 8rem;
-  border-radius: 16px;
+  margin: 3% 0;
 }
 
 .chatroom-container {
@@ -50,7 +48,7 @@
   }
 
   .chatroom-card {
-    box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+    box-shadow: 0px 4px 15px rgba(0,0,0,.25);
     border-radius: 8px;
     img {
       width: 100%;
@@ -70,7 +68,7 @@
       padding: 8px;
       height: 114px;
       .class-name {
-        height: 35px;
+        height: 50px;
       }
       .class-date-time {
         height: 75px;

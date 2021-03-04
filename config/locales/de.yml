@@ -37,7 +37,7 @@ de:
       trainers: "Trainer"
   sports_class_chatrooms:
       index:
-        title: "Chatte mit anderen Yancers in deinen Kursen"
+        title_html: "C&nbspH&nbspA&nbspT&nbspT&nbspE &nbsp M&nbspI&nbspT &nbsp Y&nbspA&nbspN&nbspC&nbspE&nbspR&nbspS"
         welcome: "Willkommen in deinen Yance Breakout-Räumen! Hier kannst du dich mit Personen aus deinen Kursen verbinden. Klicke einfach auf deinen Kurs und Violà, du kannst dich sofort mit anderen Teilnehmern austauschen"
         book: "Buche einen Kurs, um mit dem Chatten zu beginnen!"
         chat: "Chatte mit Yancers in "
