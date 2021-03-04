@@ -36,6 +36,6 @@ class SportsClassChatroomsController < ApplicationController
     @booked_sports_chatrooms_ids = @sports_class_chatrooms.where(sports_class_id: current_user.all_booked_classes.pluck(:id)).ids
     @user_booked_chatrooms = @booked_sports_chatrooms_ids.map(&:to_s)
     @user_access_to_show = @user_booked_chatrooms.include?(params[:id])
-    redirect_to sports_class_chatrooms_path, notice: "You don't have access to this chatroom." unless @user_access_to_show
+    redirect_to sports_class_chatrooms_path, notice: t('controllers.sports_class_chatrooms.enforce_tenancy.flash.notice') unless @user_access_to_show
   end
 end

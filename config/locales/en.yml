@@ -74,6 +74,15 @@ en:
         chat: "Chat with Yancers in "
         class_time: "Your class is on"
         participants: "Yancers joining your class: "
+  controllers:
+    sports_class_chatrooms:
+      enforce_tenancy:
+        flash:
+          notice: "You don't have access to this chatroom."
+    chatrooms:
+      enforce_tenancy_trainers:
+        flash:
+          notice: "You don't have access to this chatroom."
   sports_classes:
     index:
       sidebar:

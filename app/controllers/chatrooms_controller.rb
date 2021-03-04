@@ -26,6 +26,6 @@ class ChatroomsController < ApplicationController
   end
 
   def enforce_tenancy_trainers
-    redirect_to chatrooms_path, notice: "You don't have access to this chatroom." unless current_user_trainer?
+    redirect_to chatrooms_path, notice: t('controllers.chatrooms.enforce_tenancy_trainers.flash.notice') unless current_user_trainer?
   end
 end
