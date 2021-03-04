@@ -2,7 +2,7 @@ de:
   time:
     formats:
       day: "%A"
-      month_day: "%b %d"
+      month_day: "%d %b"
       time: "%H:%M"
       date: "%A %b %d"
       at_time: " um %H:%M Uhr"
@@ -31,6 +31,27 @@ de:
         password: "Password"
         remember: "Remember me"
         submit: "Log in"
+  chatrooms:
+    index:
+      back: "Home"
+      trainers: "Trainer"
+  sports_class_chatrooms:
+      index:
+        title_html: "C&nbspH&nbspA&nbspT&nbspT&nbspE &nbsp M&nbspI&nbspT &nbsp Y&nbspA&nbspN&nbspC&nbspE&nbspR&nbspS"
+        welcome: "Willkommen in deinen Yance Breakout-Räumen! Hier kannst du dich mit Personen aus deinen Kursen verbinden. Klicke einfach auf deinen Kurs und violà, du kannst dich sofort mit anderen Teilnehmern austauschen."
+        book: "Buche einen Kurs, um mit dem Chatten zu beginnen!"
+        chat: "Chatte mit Yancers in "
+        class_time: "Dein Kurs ist am"
+        participants: "Yancers, die an deinem Kurs teilnehmen: "
+  controllers:
+    sports_class_chatrooms:
+      enforce_tenancy:
+        flash:
+          notice: "Du hast keinen Zugang zu diesem Chatroom."
+    chatrooms:
+      enforce_tenancy_trainers:
+        flash:
+          notice: "Du hast keinen Zugang zu diesem Chatroom."
   sports_classes:
     index:
       sidebar:
@@ -58,6 +79,10 @@ de:
         title: "Beliebteste Kurse"
       all-classes:
         title: "Alle Kurse"
+      chatrooms:
+        header: "Connect"
+        class_chat: "Kurs-Chats"
+        community: "Community"
     new:
       tagline: "Einen neuen Kurs erstellen"
       title: "Kursname"
@@ -144,7 +169,7 @@ de:
       information: "Informationen"
       pricing: "Preise"
       quick_links: "Schnelleinstieg"
-      terms_conditions: "Allgemeine Geschäftsbedinungen"
+      terms_conditions: "Allgemeine Geschäftsbedingungen"
       privacy: "Datenschutz"
       newsletter: "Newsletter"
       newsletter_description: "Newsletter abonnieren und Vorteile sichern"

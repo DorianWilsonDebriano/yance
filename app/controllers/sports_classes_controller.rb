@@ -43,6 +43,7 @@ class SportsClassesController < ApplicationController
       @sportsclass.update(room: JSON.parse(room.body)["name"])
       mail = SportsClassMailer.with(sports_class: @sportsclass, trainer: @trainer).new_class_confirmation
       mail.deliver_later(wait: 15.seconds)
+      SportsClassChatroom.create(name: @sportsclass.title, date_time: @sportsclass.date_time, sports_class_id: @sportsclass.id)
       redirect_to profile_path, notice: "#{@sportsclass.title} has been created!"
     else
       render :new
@@ -56,6 +57,8 @@ class SportsClassesController < ApplicationController
   def update
     authorize @sportsclass
     if @sportsclass.update(sports_class_params)
+      @sports_class_chatroom = @sportsclass.sports_class_chatroom
+      @sports_class_chatroom.update(date_time: params[:sports_class][:date_time], name: params[:sports_class][:title])
       room = update_room(@sportsclass)
       @sportsclass.update(room: JSON.parse(room.body)["name"])
       redirect_to profile_path, notice: "#{@sportsclass.title}'s information has been saved."
@@ -71,6 +74,7 @@ class SportsClassesController < ApplicationController
     if @dup_sportsclass.save
       room = create_room(@dup_sportsclass)
       @dup_sportsclass.update(room: JSON.parse(room.body)["name"])
+      SportsClassChatroom.create(name: @dup_sportsclass.title, date_time: @dup_sportsclass.date_time, sports_class_id: @dup_sportsclass.id)
       redirect_to edit_sports_class_path(@dup_sportsclass)
     end
   end

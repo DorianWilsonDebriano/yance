@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { registrations: "registrations", confirmations: 'confirmations' }
 
@@ -41,6 +40,14 @@ Rails.application.routes.draw do
 
     resources :class_bookings, only: %i[edit update destroy]
     get "/stream", to: "classes#stream"
+
+    resources :chatrooms, only: %i[index show] do
+      resources :messages, only: :create
+    end
+
+    resources :sports_class_chatrooms, only: %i[index show update] do
+      resources :sports_class_messages, only: :create
+    end
 
     resources :customer_portal_sessions, only: [:create]
 

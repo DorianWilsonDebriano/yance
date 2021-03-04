@@ -1,0 +1,35 @@
+<div class="main-messages-container">
+  <% if sports_class_message.user == current_user %>
+    <div class="sports-class-message-container text-right current-user-message-container" id="sports_class_message-<%= sports_class_message.id %>">
+      <i class="author current-user-author">
+        <span><%= sports_class_message.user.first_name %></span>
+        <span><%= sports_class_message.user.last_name %></span>
+        <small><%= l(sports_class_message.created_at, format: :day) %> <%= l(sports_class_message.created_at, format: :month_day) %> <%= local_time(l(sports_class_message.created_at), format: :at_time) %></small>
+        <% if sports_class_message.user.photo.attached? %>
+          <%= cl_image_tag sports_class_message.user.photo.key, class: "avatar dropdown-toggle user-avatar", id: "user-chatroom-avatar" %>
+        <% else %>
+          <%= image_tag "http://squashcity.pl/wp-content/uploads/2020/08/placeholder-avatar-square.jpg", class: "avatar dropdown-toggle user-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+      </i>
+      <div class="message-paragraph current-user-messenger">
+        <p><%= sports_class_message.content %></p>
+      </div>
+    </div>
+  <% else %>
+    <div class="sports-class-message-container text-left not-current-user-message-container" id="sports_class_message-<%= sports_class_message.id %>">
+      <i class="author">
+        <% if sports_class_message.user.photo.attached? %>
+          <%= cl_image_tag sports_class_message.user.photo.key, class: "avatar dropdown-toggle user-avatar" %>
+        <% else %>
+          <%= image_tag "http://squashcity.pl/wp-content/uploads/2020/08/placeholder-avatar-square.jpg", class: "avatar dropdown-toggle user-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+        <span><%= sports_class_message.user.first_name %></span>
+        <span><%= sports_class_message.user.last_name %></span>
+        <small><%= l(sports_class_message.created_at, format: :day) %> <%= l(sports_class_message.created_at, format: :month_day) %> <%= local_time(l(sports_class_message.created_at), format: :at_time) %></small>
+      </i>
+      <div class="message-paragraph">
+        <p><%= sports_class_message.content %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,55 @@
+// COMMUNITY MESSAGE STYLE (has the same styling as sessions apart from the below id)
+
+#messages {
+  margin: 0 2%;
+}
+
+// SESSIONS MESSAGE STYLE
+
+.current-user-message-container {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.not-current-user-message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.message-paragraph {
+  background-color: rgb(234, 237, 242);
+  border-radius: 32px;
+  padding: 1.5%;
+  margin: 2% 0;
+  p {
+    margin: 0;
+  }
+}
+
+.user-avatar {
+  margin: 0 0.5%;
+}
+
+.current-user-messenger {
+  background-color: rgb(252, 240, 181);
+  p {
+    text-align: left;
+  }
+}
+
+#sports-class-messages {
+  margin: 0 2%;
+}
+
+.current-user-author {
+  width: 90%;
+}
+
+.author {
+  width: 90%;
+}
+

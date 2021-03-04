@@ -46,7 +46,11 @@ ActiveAdmin.register User do
       link_to user.last_name, admin_user_path(user)
     end
     column "Photo" do |user|
-      link_to image_tag(user.photo), admin_user_path(user)
+      if !user.photo_attachment.nil?
+        link_to image_tag(user.photo), admin_user_path(user)
+      else
+        "  "
+      end
     end
     column "Email" do |user|
       link_to user.email, admin_user_path(user)

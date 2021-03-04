@@ -1,0 +1,27 @@
+.chatroom-show-container {
+  height: 110vh;
+  width: 80vw;
+  margin: 10%;
+  h1 {
+    font-size: 32px;
+    font-family: $body-font;
+    color: $dark-text;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 3%;
+    padding: 16px;
+    background-color: rgba(196, 196, 196, 0.1);
+    border-radius: 16px;
+  }
+}
+
+.box-container {
+  box-shadow: 0 2px 14px rgba(126,87,88, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

@@ -1,6 +1,106 @@
 .search-container {
   padding-bottom: 100px;
+  .connect-mobile {
+      animation: cssAnimation 0s 1.5s ease-in;
+      visibility: hidden;
+      animation-fill-mode: forwards;
+      padding-top: 14vh;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      z-index: 5;
+      left: 30px;
+      /* top: 41px; */
+      bottom: 92px;
+      .connect-header-mobile {
+        margin: 0 !important;
+        padding: 6px 0;
+        padding: 1px 6px;
+        color: $yance-yellow;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 15px;
+      }
+    }
+    .chatroom-buttons-mobile {
+      margin-top: 3vh;
+    .chatroom-button-mobile {
+        box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 15px;
+        background-color: #FFBA8D;
+        display: flex;
+        background-color: none;
+        border-radius: 50px;
+        padding: 4px;
+        width: 108%;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+      h6 {
+        font-size: 16px;
+        font-family: $body-font;
+        color: black;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin: 0;
+        padding: 12px;
+      }
+    }
+    .chatroom-button-mobile:hover {
+      h6 {
+        padding: 14px;
+      }
+    }
+    #community-button-text-mobile{
+      margin: 0;
+
+    }
+    #classes-chatrooms-mobile {
+      // background-color: $yance-yellow;
+      // margin-bottom: 8vh;
+    }
+    .fa-comments {
+      font-size: 1.3em;
+      position: relative;
+      display: flex;
+      align-self: center;
+      color: black;
+    }
+  }
 }
+
+@keyframes cssAnimation {
+  to  { visibility: visible; }
+}
+
+
+@media(min-width: 992px) {
+  .sportsclasses-container {
+    .connect-mobile {
+      display: none;
+      .connect-header-mobile {
+        display: none;
+      }
+    }
+  }
+}
+  @media(max-width: 449px){
+    .sportsclasses-container {
+      .connect-mobile {
+        left: 4px;
+        bottom: 78px;
+        .connect-header-mobile {
+          display: none;
+        }
+      }
+    }
+  }
+
+
+
 
 .searchbar {
   padding: 1px 50px;
