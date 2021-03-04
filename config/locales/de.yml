@@ -31,6 +31,18 @@ de:
         password: "Password"
         remember: "Remember me"
         submit: "Log in"
+  chatrooms:
+    index:
+      back: "Zurück"
+      trainers: "Trainer"
+  sports_class_chatrooms:
+      index:
+        title: "Chatte mit anderen Yancers in deinen Kursen"
+        welcome: "Willkommen in deinen Yance Breakout-Räumen! Hier kannst du dich mit Personen aus deinen Kursen verbinden. Klicke einfach auf deinen Kurs und Violà, du kannst dich sofort mit anderen Teilnehmern austauschen"
+        book: "Buche einen Kurs, um mit dem Chatten zu beginnen!"
+        chat: "Chatte mit Yancers in "
+        class_time: "Dein Kurs ist am"
+        participants: "Yancers, die an deinem Kurs teilnehmen: "
   sports_classes:
     index:
       sidebar:
@@ -57,6 +69,10 @@ de:
         title: "Beliebteste Kurse"
       all-classes:
         title: "Alle Kurse"
+      chatrooms:
+        header: "Connect"
+        class_chat: "Kurs-Chats"
+        community: "Community"
     new:
       tagline: "Einen neuen Kurs erstellen"
       title: "Kursname"

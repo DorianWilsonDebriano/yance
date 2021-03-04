@@ -16,7 +16,7 @@
       <%if @user.trainer_ids.empty? %>
         <%= link_to sports_classes_path, class: "d-flex justify-content-start" do %>
           <div class="chatroom-name">
-            <h2 id="home-chatroom-button">Back to Home</h2>
+            <h2 id="home-chatroom-button"><%= t('.back')%></h2>
           </div>
           <div class="video-gradient"></div>
           <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" autoplay muted loop class="left-video">
@@ -26,7 +26,7 @@
       <% else %>
         <%= link_to chatroom_path(@chatrooms.second.id), class: "d-flex justify-content-start" do %>
             <div class="chatroom-name">
-              <h2 id="trainers-chatroom-name"><%= @chatrooms.second.name %></h2>
+              <h2 id="trainers-chatroom-name"><%= t('.trainers') %></h2>
             </div>
           <div class="video-gradient">
           </div>
@@ -38,7 +38,7 @@
     <% else %>
       <%= link_to sports_classes_path, class: "d-flex justify-content-start" do %>
           <div class="chatroom-name">
-            <h2 id="home-chatroom-button">Back to Home</h2>
+            <h2 id="home-chatroom-button"><%= t('.back')%></h2>
           </div>
           <div class="video-gradient"></div>
           <video src="https://res.cloudinary.com/dorianwilsondebriano/video/upload/v1613149079/pexels-anna-nekrashevich-6794391_eprh9x.mp4" type="video/mov" autoplay muted loop class="left-video">

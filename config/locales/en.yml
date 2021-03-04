@@ -62,6 +62,18 @@ en:
         password: "Password"
         remember: "Remember me"
         submit: "Log in"
+  chatrooms:
+    index:
+      back: "Back to Home"
+      trainers: "Trainers"
+  sports_class_chatrooms:
+      index:
+        title: "Chat with fellow Yancers in your classes"
+        welcome: "Welcome to your Yance breakout rooms! Here is where you can connect with people in your classes. Simply click on your class and violà, a whole class at your fingertips."
+        book: "Book some classes to chat!"
+        chat: "Chat with Yancers in "
+        class_time: "Your class is on"
+        participants: "Yancers joining your class: "
   sports_classes:
     index:
       sidebar:
@@ -88,6 +100,10 @@ en:
         title: "Most popular classes"
       all-classes:
         title: "All classes"
+      chatrooms:
+        header: "Connect"
+        class_chat: "Class Chat"
+        community: "Community"
     new:
       tagline: "Create a new class"
       title: "Title"

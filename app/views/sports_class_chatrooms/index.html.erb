@@ -1,24 +1,24 @@
 <div class="d-flex justify-content-center flex-column">
   <div class="chatroom-header">
-    <h3><strong>Chat with fellow Yancers in your classes</strong></h3>
-    <h5 class="pt-5">Welcome to your Yance breakout rooms! Here is where you can connect with people in your classes. Simply click on your class and violà, a whole class at your fingertips.</h5>
+    <h3><strong><%= t('.title') %></strong></h3>
+    <h5 class="pt-5"><%= t('.welcome') %></h5>
   </div>
   <div class="chatroom-container">
       <% if @sports_classes.empty? %>
-        <h5 class="no-bookings">Book some classes to chat!</h5>
+        <h5 class="no-bookings"><%= t('.book') %></h5>
       <% else %>
         <div class="chatroom-cards">
             <% @sports_classes.each do |sports_class| %>
               <div class="chatroom-card">
                 <%= link_to sports_class_chatroom_path(sports_class.sports_class_chatroom.id) do %>
                 <div class="card-info">
-                  <p class="class-name px-3">Chat with Yancers in <strong><%= sports_class.sports_class_chatroom.name.capitalize %></strong></p>
-                  <p class="class-date-time px-3 mb-3"> Your class is on
-                    <%=local_time(sports_class.date_time, "%A %B")%>
-                    <%= local_time(sports_class.date_time, "%d ") %>
-                    at <%= local_time(sports_class.date_time, " %H:%M") %>
+                  <p class="class-name px-3"><%= t('.chat') %><strong><%= sports_class.sports_class_chatroom.name.capitalize %></strong></p>
+                  <p class="class-date-time px-3 mb-3"><%= t('.class_time') %>
+                    <%= l(sports_class.date_time, format: :day) %>,
+                    <%= l(sports_class.date_time, format: :month_day) %>
+                    <%= local_time(l(sports_class.date_time), format: :at_time) %>
                   </p>
-                  <p class="px-3">Other Yancers joining your class: <strong><%= sports_class.class_bookings.count %></strong></p>
+                  <p class="px-3"><%= t('.participants') %><strong><%= sports_class.class_bookings.count %></strong></p>
                 </div>
                 <div>
                   <%= cl_image_tag sports_class.photo.key %>

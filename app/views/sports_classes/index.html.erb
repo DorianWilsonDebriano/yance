@@ -49,13 +49,13 @@
         <% end %>
       </div>
       <div class="connect">
-        <p class="connect-header">Connect</p>
+        <p class="connect-header"><%= t('.chatrooms.header') %></p>
         <% if !current_user.nil? %>
           <div class="chatroom-buttons">
             <div id="classes-chatrooms">
               <%= link_to sports_class_chatrooms_path do %>
                 <div class="chatroom-button">
-                  <h6 id="chat-button-text">Class Chat</h6>
+                  <h6 id="chat-button-text"><%= t('.chatrooms.class_chat') %></h6>
                   <i class="fas fa-comments"></i>
                 </div>
               <% end %>
@@ -63,7 +63,7 @@
             <div id="yancers-chatrooms">
               <%= link_to chatrooms_path do %>
                 <div class="chatroom-button">
-                  <h6 id="community-button-text">Community</h6>
+                  <h6 id="community-button-text"><%= t('.chatrooms.community') %></h6>
                   <i class="fas fa-comments"></i>
                 </div>
               <% end %>
@@ -74,7 +74,7 @@
             <div id="yancers-chatrooms">
               <%= link_to chatrooms_path do %>
                 <div class="chatroom-button">
-                  <h6 id="community-button-text">Community</h6>
+                  <h6 id="community-button-text"><%= t('.chatrooms.community') %></h6>
                   <i class="fas fa-comments"></i>
                 </div>
               <% end %>
@@ -139,15 +139,15 @@
       <div class="sports-classes-cards pt-3">
         <%= render collection: @sports_classes, partial: "shared/sport-class-card", as: :sports_class %>
       </div>
+      <!-- chatroom mobie acces -->
       <div class="connect-mobile">
-        <!-- <p class="connect-header-mobile">Connect</p> -->
         <% if !current_user.nil? %>
           <div class="chatroom-buttons-mobile">
             <div id="classes-chatrooms-mobile">
               <%= link_to sports_class_chatrooms_path do %>
                 <div class="chatroom-button-mobile">
                   <i class="fas fa-comments"></i>
-                  <h6 id="chat-button-text-mobile">Class Chat</h6>
+                  <h6 id="chat-button-text-mobile"><%= t('.chatrooms.class_chat') %></h6>
                 </div>
               <% end %>
             </div>
@@ -155,7 +155,7 @@
               <%= link_to chatrooms_path do %>
                 <div class="chatroom-button-mobile">
                   <i class="fas fa-comments"></i>
-                  <h6 id="community-button-text-mobile">Community</h6>
+                  <h6 id="community-button-text-mobile"><%= t('.chatrooms.community') %></h6>
                 </div>
               <% end %>
             </div>
@@ -166,7 +166,7 @@
               <%= link_to chatrooms_path do %>
                 <div class="chatroom-button-mobile">
                   <i class="fas fa-comments"></i>
-                  <h6 id="community-button-text-mobile">Community</h6>
+                  <h6 id="community-button-text-mobile"><%= t('.chatrooms.community') %></h6>
                 </div>
               <% end %>
             </div>
