@@ -67,10 +67,10 @@
             <div class="class-stats">
               <div class="class-stats-labels">
                 <p><%= t('.manage.columns.date') %></p>
-                <p><%= t('.manage.columns.class') %></p>
+                <p id="class-title"><%= t('.manage.columns.class') %></p>
                 <p><%= t('.manage.columns.count') %></p>
-                <p><%= t('.manage.columns.password') %></p>
-                <p><%= t('.manage.columns.status') %></p>
+                <p id="class-password"><%= t('.manage.columns.password') %></p>
+                <p class="class-status"><%= t('.manage.columns.status') %></p>
                 <p><%= t('.manage.columns.actions') %></p>
               </div>
               <%= render collection: current_user.sports_classes.order(date_time: :desc), partial: "shared/class-stats", as: :sports_class %>
