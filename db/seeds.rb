@@ -30,16 +30,16 @@ unlimited.save!
 # USER SEEDS
 file = URI.open('https://avatars0.githubusercontent.com/u/71378921?s=400&u=8724f6aa24fc0e1a31a8a5b6435ef4881cb46d6c&v=4')
 
-briz = User.new(
-  email: "briz@yancesports.com",
-  password: "briz123!",
-  first_name: "Briz",
-  last_name: "Le Lem",
-  bio: "I live, breathe, eat sports",
+otavios = User.new(
+  email: "otavio@yancesports.com",
+  password: "otavio123!",
+  first_name: "Otavio",
+  last_name: "Serra",
+  bio: "Go go go",
   language: "English",
   )
-briz.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
-briz.save!
+otavio.photo.attach(io: file, filename: 'profile_pic.jpg', content_type: 'image/jpg')
+otavio.save!
 
 file = URI.open('https://avatars1.githubusercontent.com/u/68464312?s=400&u=9cca4a525d11b96017a6892fac06a8b708868b71&v=4')
 

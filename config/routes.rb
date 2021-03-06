@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'invoices/index'
+  get 'invoices/new'
+  get 'invoices/create'
+  get 'invoices/destroy'
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { registrations: "registrations", confirmations: 'confirmations' }
 

@@ -2,6 +2,8 @@ class User < ApplicationRecord
   # after_create :send_welcome_email
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
+
+  #associations
   has_many :trainers, dependent: :destroy
   has_many :sports_classes, through: :trainers
   has_many :class_bookings, dependent: :destroy
@@ -10,6 +12,7 @@ class User < ApplicationRecord
   has_one :membership, through: :subscription
   has_one_attached :photo
 
+  #validations
   validates :session_token, presence: true
 
   before_validation(on: :create) do

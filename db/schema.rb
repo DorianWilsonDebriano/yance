@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_09_125037) do
+ActiveRecord::Schema.define(version: 2021_03_06_123813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(version: 2021_01_09_125037) do
     t.index ["user_id"], name: "index_class_bookings_on_user_id"
   end
 
+  create_table "invoices", force: :cascade do |t|
+    t.float "value"
+    t.boolean "status"
+    t.string "attachment"
+    t.bigint "trainer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["trainer_id"], name: "index_invoices_on_trainer_id"
+  end
+
   create_table "memberships", force: :cascade do |t|
     t.string "title"
     t.date "expiration_date"
@@ -131,6 +141,9 @@ ActiveRecord::Schema.define(version: 2021_01_09_125037) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "total_revenues"
+    t.integer "revenue_to_invoice"
+    t.boolean "invoice_paid"
     t.index ["user_id"], name: "index_trainers_on_user_id"
   end
 
@@ -147,13 +160,13 @@ ActiveRecord::Schema.define(version: 2021_01_09_125037) do
     t.string "last_name"
     t.text "bio"
     t.string "language"
+    t.string "stripe_customer_id"
+    t.string "session_token"
     t.boolean "admin", default: false, null: false
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "stripe_customer_id"
-    t.string "session_token"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -163,6 +176,7 @@ ActiveRecord::Schema.define(version: 2021_01_09_125037) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "class_bookings", "sports_classes"
   add_foreign_key "class_bookings", "users"
+  add_foreign_key "invoices", "trainers"
   add_foreign_key "reviews", "trainers"
   add_foreign_key "reviews", "users"
   add_foreign_key "sports_classes", "trainers"

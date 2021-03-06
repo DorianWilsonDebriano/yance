@@ -311,6 +311,10 @@ en:
         title: "About you"
         language_html: " <strong>language:</strong> %{language}"
         bio_html: "<strong>bio:</strong> %{bio}"
+      invoicing:
+        title: "Trainer revenunes"
+        value_html: " <strong>value to invoice:</strong>"
+        send_invoice: "SEND INVOICE"
     pricing:
       punchline_html: "For just <i class='highlighted-yellow'>€26.99</i> per month get unlimited access to all live classes on the yance platform! <br> Start your 14 day trial now!"
       how_to: "How to get started"

@@ -57,4 +57,5 @@ class TrainersController < ApplicationController
     @trainer = Trainer.find(params[:id])
     authorize @trainer
   end
+
 end

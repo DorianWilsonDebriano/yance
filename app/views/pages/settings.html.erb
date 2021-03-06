@@ -9,21 +9,21 @@
     </div>
     <div class="user-name">
       <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
-      <p> <%= link_to t('.edit_info'), edit_user_registration_path, class: "edit-profile" %> </p>
+      <p> <%= link_to t(".edit_info"), edit_user_registration_path, class: "edit-profile" %> </p>
     </div>
   </div>
 <!-- user info section -->
  <div class="section-title">
-    <h2><%= t('.title') %></h2>
+    <h2><%= t(".title") %></h2>
   </div>
   <div class="user-info d-flex">
     <div class="my-account">
-      <p><%= t('.account.title') %></p>
-      <li><%= t('.account.login_html', email: current_user.email) %></li>
-      <li> <%= t('.account.password_html') %></li>
+      <p><%= t(".account.title") %></p>
+      <li><%= t(".account.login_html", email: current_user.email) %></li>
+      <li> <%= t(".account.password_html") %></li>
       <% if current_user.subscription.present? %>
-        <li><%= t('.account.status_html', status: current_user.subscription.subscription_status) %></li><br>
-        <li><%= t('.account.subscription_html', subscription: current_user.membership.title) %></li>
+        <li><%= t(".account.status_html", status: current_user.subscription.subscription_status) %></li><br>
+        <li><%= t(".account.subscription_html", subscription: current_user.membership.title) %></li>
         <br>
         <form action="/customer_portal_sessions" method="post">
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -31,13 +31,36 @@
         </form>
       <% else %>
         <br>
-        <%= link_to t('.account.subscribe_button'), memberships_path, class: "btn black-return-button class-info-link" %>
+        <%= link_to t(".account.subscribe_button"), memberships_path, class: "btn black-return-button class-info-link" %>
       <% end %>
     </div>
     <div class="about-me">
-      <p><%= t('.about.title') %></p>
-      <li><%= t('.about.language_html', language: current_user.language) %> </li>
-      <li><%= t('.about.bio_html', bio: current_user.bio) %> </li>
+      <p><%= t(".about.title") %></p>
+      <li><%= t(".about.language_html", language: current_user.language) %> </li>
+      <li><%= t(".about.bio_html", bio: current_user.bio) %> </li>
+    </div>
+  </div>
+  <div class="invoicing-container d-flex container">
+     <div class="invoicing-info  row">
+      <div class="col-sm">
+        <p><%= t(".invoicing.title") %></p>
+        <li><%= t(".invoicing.value_html") %>
+        <!-- 
+        # Get all classes given by the trainer on the past month
+        # Check if the class had users / memberships >= 15
+        # Calculate how many users / memberships in a class
+          # Case >= 15, pay 1 euro per user
+          # Case < 15, pay 0
+          -->
+        </li>
+        <br>
+        <%= mail_to "invoice@yancesports.com", t(".invoicing.send_invoice"), class: "btn black-return-button class-info-link" %> 
+      </div>
+      <div class="yance-billing-info col-sm">
+        <p>Yance UG</p>
+        <p>Friedrich Ebert Strasse 82</p>
+        <p>04109 Leipzig, Germany</p>
+      </div>
     </div>
   </div>
 </div>
