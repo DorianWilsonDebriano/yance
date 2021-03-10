@@ -1,0 +1,50 @@
+.trainer-invoice-section {
+  margin-top: 20px;
+  h2 {
+    font-size: 18px;
+    font-weight: bolder;
+    color: $dark-text;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.to-be-invoiced {
+  position: relative;
+  bottom: -45px;
+  left: -15px;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.value-to-invoice {
+  right: -60px;
+  position: relative;
+}
+
+.headers-invoice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.class-invoice {
+  margin-top: 20px;
+  border-radius: 4px;
+  min-height: 50vh;
+  max-height: 50vh;
+  box-shadow: 0 2px 14px rgba(126, 87, 88, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+  overflow: auto;
+  padding: 25px;
+}
+
+.yance-tax-info {
+  padding: 0px 0px 0px 30px;
+}
+
+@media (max-width: 480px) {
+  .yance-tax-info {
+    padding: 30px 15px 0px 15px;
+  }
+}

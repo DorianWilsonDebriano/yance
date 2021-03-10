@@ -70,34 +70,3 @@
     color: $dark-text;
   }
 }
-
-.invoicing-info {
-  box-shadow: 0 2px 14px rgba(126, 87, 88, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
-  width: 50%;
-  margin-right: 20px;
-  padding: 12px;
-  position: relative;
-  li {
-    text-decoration: none;
-    list-style: none;
-    font-size: 12px;
-  }
-  p {
-    font-weight: bolder;
-    color: $dark-text;
-  }
-}
-
-.invoicing-container {
-  margin-top: 12px;
-  justify-content: left;
-}
-.yance-billing-info {
-  line-height: 10%;
-  margin-top: 10px;
-
-  p {
-    font-size: 10px;
-  }
-}

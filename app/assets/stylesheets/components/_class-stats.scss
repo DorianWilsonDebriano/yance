@@ -1,6 +1,6 @@
 .trainer-stats-section {
   margin-top: 20px;
-    h2 {
+  h2 {
     font-size: 18px;
     font-weight: bolder;
     color: $dark-text;
@@ -9,14 +9,14 @@
   }
 }
 
-.stat-highlights{
+.stat-highlights {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 40px;
 }
 
 .stat-highlight-box {
-  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  box-shadow: 0 2px 14px rgba(126, 87, 88, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   text-align: center;
   padding: 12px;
@@ -35,7 +35,7 @@
 #stat-hightlight-number {
   font-weight: bolder;
   font-size: 24px;
-  color: #FEDF44;
+  color: #fedf44;
 }
 
 .class-stats {
@@ -43,7 +43,7 @@
   border-radius: 4px;
   min-height: 50vh;
   max-height: 50vh;
-  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  box-shadow: 0 2px 14px rgba(126, 87, 88, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
   padding: 12px;
   overflow: auto;
 }
@@ -68,17 +68,13 @@
   }
 }
 
-#stat-date {
-}
-
 #stat-coming {
-  color: #19E2A8;
+  color: #19e2a8;
 }
 
 .manage-duplicate-button {
-  color: #4FA1BF;
+  color: #4fa1bf;
   font-size: 22px;
-
 }
 
 #manage-participants {
@@ -110,7 +106,7 @@
   margin-left: 12px;
 }
 
-@media(max-width: 900px) {
+@media (max-width: 900px) {
   .class-stat-details {
     grid-template-columns: 1.5fr 1fr 1fr 3.5fr;
     gap: 12px;
@@ -145,8 +141,8 @@
   }
 
   #manage-participants {
-  margin-left: 4px;
-  font-size: 12px;
+    margin-left: 4px;
+    font-size: 12px;
   }
 
   #manage-edit-button {
@@ -163,6 +159,4 @@
     font-size: 12px;
     margin-left: 4px;
   }
-
 }
-

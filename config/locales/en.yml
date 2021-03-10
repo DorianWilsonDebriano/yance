@@ -290,10 +290,6 @@ en:
         manage_tab: "Manage Classes"
         manage_title: "Manage your classes"
         create_button: "Create a class"
-      invoice:
-        title: "Invoices"
-        value_html: " <strong>value to invoice:</strong>"
-        send_invoice: "Send Invoice"
         columns:
           date: "Date"
           class: "Class name"
@@ -301,6 +297,16 @@ en:
           password: "Password"
           status: "Status"
           actions: "Actions"
+      invoice:
+        title: "Invoices"
+        value_html: " <strong>value to invoice:</strong>"
+        send_invoice: "Send Invoice"
+        how_to: "How should I invoice Yance?"
+        check_revenue: "Check your revenue at the top of this page."
+        generate_invoice_pdf: "Generate an invoice in a PDF format. It should contain the value presented (1st step), your tax informations, and Yance tax information (beside)."
+        attach_invoice_email: "Click on 'Send invoice' button. It will open your default email client in your device with our email filled. You should attach the PDF you generated, and send."
+        wait_payment: "We will validate all the invoice informations and if everything is correct, we will pay you in 10 business days. Otherwise we will answer you by email."
+        yance_tax_info: "Yance tax informations"
     settings:
       edit_info: "update your information"
       title: "Your information"

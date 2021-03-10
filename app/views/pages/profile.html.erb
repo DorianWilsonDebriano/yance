@@ -99,8 +99,51 @@
         <!-- invoice section -->
         <% if current_user.trainers.present? %>
           <div class="trainer-invoice-section">
-            <h2><%= t('.invoice.title') %></h2>
-            <%= link_to t('.invoice.send-invoice'), new_trainer_sports_class_path(current_user.trainers.ids), class: "btn browse-button" %>
+            <div class="row headers-invoice">
+              <div class="invoice-title button-send-invoice">
+                <h2><%= t('.invoice.title') %></h2>
+                <%= mail_to "invoice@yancesports.com", t(".invoice.send_invoice"), class: "btn browse-button class-info-link" %> 
+              </div>
+              <div class="to-be-invoiced">
+                <p>To be invoiced:</p>
+                <p class="value-to-invoice"><strong>2,035€</strong></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="container class-invoice">
+                <div class="row">
+                  <div class="invoice-steps col-sm-6">
+                    <p><strong><%= t('.invoice.how_to') %></strong></p>
+                    <div class="d-flex">
+                      <div>1.</div> <p class="ml-3"><%= t('.invoice.check_revenue') %></p>
+                    </div>
+                    <div class="d-flex">
+                      <div>2.</div> <p class="ml-3"><%= t('.invoice.generate_invoice_pdf') %></p>
+                    </div>
+                    <div class="d-flex">
+                      <div>3.</div> <p class="ml-3"><%= t('.invoice.attach_invoice_email') %></p>
+                    </div>
+                    <div class="d-flex">
+                      <div>4.</div> <p class="ml-3"><%= t('.invoice.wait_payment') %></p>
+                    </div>
+                  </div>
+                  <div class="yance-tax-info col-sm-6">
+                    <p><strong><%= t('.invoice.yance_tax_info') %></strong></p>
+                    <div class="d-flex">
+                      <p class="ml-3">Yance UG</p>
+                    </div>
+                    <div class="d-flex">
+                      <p class="ml-3">Friedrich Ebert Strasse 82</p>
+                    </div>
+                    <div class="d-flex">
+                      <p class="ml-3">04109 Leipzig, Germany</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         <% end %>
       </div>
