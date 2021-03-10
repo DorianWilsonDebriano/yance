@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="logo-credits">
     <div class="navbar-brand d-flex justify-content-between">
@@ -13,7 +14,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item" id="">
           <%= link_to t('.home'), sports_classes_path, class: "nav-link" %>
@@ -31,13 +32,17 @@
         <li class="nav-item" id="">
           <%= link_to t('.your_classes'), profile_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item nav-lang">
+          <%= link_to "EN", "/", data: {turbolinks: false }, class: "nav-link-lang nav-link-english" %>
+          <%= link_to "DE", "/de", data: {turbolinks: false }, class: "nav-link-lang nav-link-german" %>
+        </li>
+        <!-- <li class="nav-item dropdown">
           <i class="fas fa-globe dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
           <div class="dropdown-menu dropdown-menu-right mt-1" aria-labelledby="navbarDropdown" id="language-dropdown">
             <%= link_to "DE", "/de" , class: "dropdown-item" %>
             <%= link_to "EN", "/" , class: "dropdown-item" %>
           </div>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -57,6 +62,8 @@
             </div>
         </li>
       <% else %>
+
+       <!--  *********NOT LOGGED IN NAVBAR  ********-->
         <li class="nav-item">
           <%= link_to t('.pricing'), pricing_path, class: "nav-link" %>
         </li>
@@ -64,15 +71,22 @@
           <%= link_to t('.give_classes'), become_a_trainer_path , class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to t('.log_in'), new_user_session_path, class: "nav-link" %>
+          <%= link_to t('.log_in'), new_user_session_path, class: "nav-link btn-nav-login" %>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          <%= link_to t('.sign_up'), new_user_registration_path, class: "nav-link btn-nav-signup" %>
+        </li>
+        <li class="nav-item nav-lang">
+          <%= link_to "EN", "/", data: {turbolinks: false }, class: "nav-link-lang nav-link-english" %>
+          <%= link_to "DE", "/de", data: {turbolinks: false }, class: "nav-link-lang nav-link-german" %>
+        </li>
+         <!-- <li class="nav-item dropdown">
           <i class="fas fa-globe dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
           <div class="dropdown-menu dropdown-menu-right mt-1" aria-labelledby="navbarDropdown" id="language-dropdown">
             <%= link_to "DE", "/de" , class: "dropdown-item" %>
             <%= link_to "EN", "/" , class: "dropdown-item" %>
           </div>
-        </li>
+        </li> -->
       <% end %>
     </ul>
   </div>

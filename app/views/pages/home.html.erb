@@ -1,4 +1,215 @@
-<div class="home-page banner-section">
+<main class="homepage">
+  <section class="banner">
+    <div class="banner__slide banner__slide--0 active">
+      <div class="banner__header">
+          <h1 class="heading--primary u-margin-bottom-small">
+            <%= t('.header.header_start_html') %>
+            <span class="heading--primary__highlight"><%= t('.header.span_html') %></span> 
+            <%= t('.header.header_end_html') %>
+          </h1>
+          <h3 class="heading--primary__subtitle u-margin-bottom-large">
+            <%= t('.header.punchline') %>
+          </h3>
+          <%= link_to t('.header.button'), new_user_registration_path, class: "btn btn-signup" %>
+      </div>
+    </div>
+    <div class="banner__slide banner__slide--1">
+      <div class="banner__header">
+          <h1 class="heading--primary u-margin-bottom-small">
+            <%= t('.header.header_start_html') %>
+            <span class="heading--primary__highlight"><%= t('.header.span_html') %></span> 
+            <%= t('.header.header_end_html') %>
+          </h1>
+          <h3 class="heading--primary__subtitle u-margin-bottom-large">
+            <%= t('.header.punchline') %>
+          </h3>
+          <%= link_to t('.header.button'), new_user_registration_path, class: "btn btn-signup" %>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works section -->
+  <section class="howitworks section" id="how-it-works">
+      <div class="howitworks__content">
+        <h2 class="heading--secondary"><%= t('.how_it_works.title') %></h2>
+  
+        <h3 class="heading--tertiary">
+          <%= t('.how_it_works.first') %>
+        </h3>
+        <p class="paragraph">
+          <%= t('.how_it_works.first_explanation') %>
+        </p>
+
+ 
+        <h3 class="heading--tertiary">
+          <%= t('.how_it_works.second') %>
+        </h3>
+        <p class="paragraph">
+          <%= t('.how_it_works.second_explanation') %>
+        </p>
+   
+        <h3 class="heading--tertiary">
+          <%= t('.how_it_works.third') %>
+        </h3>
+        <p class="paragraph">
+          <%= t('.how_it_works.third_explanation') %>
+        </p>
+        <div class="btn-container">
+          <%= link_to t('.header.button'), new_user_registration_path, class: "btn btn-signup" %>
+        </div>    
+      </div>
+
+      <div class="howitworks__image">
+        <img src="https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1614950983/carl-barcelo-nqUHQkuVj3c-unsplash_1_copy_maj925.jpg" class="howitworks__image--img">
+      </div>
+  </section>
+
+  <!-- sport classes section -->
+  <section class="sport-classes section" id="sport-classes">
+    <h2 class="heading--secondary u-margin-bottom-medium-plus">
+      <%= t('.sportsclasses_section.title') %>
+    </h2>
+    <div class="sport-classes__content">
+      <div class="sport-classes__card sport-classes__card--strength">
+        <%= link_to sports_classes_path(query:[:strength]) do %>
+          <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1615367326/77i02j6spgezn7sfbro08oht2k6a_nwg4sv_1_u24y1h_zcwxuf.jpg", 
+            class: "sport-classes__card--img" %> 
+          <h3 class="heading--tertiary">
+            <%= t('.sportsclasses_section.first_heading') %>        
+          </h3>
+          <p class="paragraph">
+            <%= t('.sportsclasses_section.first_paragraph') %> 
+          </p>
+        <% end %>
+      </div>
+
+      <div class="sport-classes__card sport-classes__card--yoga">
+        <%= link_to sports_classes_path(query:[:yoga]) do %>
+          <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1615367445/3ogs4tgy69x9tp65407cabwgqakm_qhyvbu_mr6dvw.jpg", class: "sport-classes__card--img" %> 
+          <h3 class="heading--tertiary">
+            <%= t('.sportsclasses_section.second_heading') %>  
+          </h3>
+          <p class="paragraph">
+            <%= t('.sportsclasses_section.second_paragraph') %> 
+          </p>
+        <% end %>
+      </div>
+
+      <div class="sport-classes__card sport-classes__card--fullbody">
+        <%= link_to sports_classes_path(query:[:fullbody]) do %>
+          <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1615367943/yance-strength_rdac6y_2_kyoi1b.jpg", class: "sport-classes__card--img" %> 
+        <h3 class="heading--tertiary">
+          <%= t('.sportsclasses_section.third_heading') %>  
+        </h3>
+        <p class="paragraph">
+          <%= t('.sportsclasses_section.third_paragraph') %>  
+        </p>
+        <% end %>
+      </div>
+
+      <div class="sport-classes__card sport-classes__card--more">
+        <%= link_to sports_classes_path do %>
+          <%= cl_image_tag "https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1615367548/more_kilzb4_nhx02d.jpg", class: "sport-classes__card--img" %> 
+        <h3 class="heading--tertiary">
+          <%= t('.sportsclasses_section.fourth_heading') %>  
+        </h3>
+        <p class="paragraph">
+          <%= t('.sportsclasses_section.fourth_paragraph') %> 
+        </p>
+        <% end %>
+      </div>
+    </div>
+    <div class="btn-container">
+      <%= link_to t('.sportsclasses_section.visit'), sports_classes_path, class: "btn btn-sportclasses", id: "section-visit-button" %>
+    </div>  
+  </section>
+
+  <!-- trainers section -->
+  <section class="trainers section" id="trainers">
+      <div class="trainers__image">
+        <img src="https://res.cloudinary.com/dorianwilsondebriano/image/upload/v1615319537/OH5C7424_1_v7dksn.jpg">
+      </div>
+
+      <div class="trainers__content">
+        <h2 class="heading--secondary">
+          <%= t('.trainer_section.title') %> 
+        </h2>
+      
+        <h3 class="heading--tertiary">
+          <%= t('.trainer_section.first_heading') %> 
+        </h3>
+        <p class="paragraph">
+          <%= t('.trainer_section.first_paragraph') %> 
+        </p>
+
+        <h3 class="heading--tertiary">
+          <%= t('.trainer_section.second_heading') %> 
+        </h3>
+        <p class="paragraph">
+          <%= t('.trainer_section.second_paragraph') %> 
+        </p>
+   
+        <h3 class="heading--tertiary">
+          <%= t('.trainer_section.third_heading') %> 
+        </h3>
+        <p class="paragraph">
+          <%= t('.trainer_section.third_paragraph') %> 
+        </p>
+        <div class="btn-container">
+        <%= link_to t('.trainer_section.give_classes'), become_a_trainer_path, class: "btn btn-signup", id: "section-white-button" %>   
+        </div>
+      </div>
+  </section>
+
+  <!-- newsletter section -->
+  <section class="newsletter-section" id="newsletter">
+    <h3 class="heading--tertiary-dark"> 
+      <%= t('.newsletter_section.title') %> 
+    </h3>
+    <p class="paragraph-dark">
+      <%= t('.newsletter_section.subtitle') %> 
+    </p>
+    <div id="mc_embed_signup" class="">
+      <form action="https://yahoo.us2.list-manage.com/subscribe/post?u=61b0eb7c87d55915b6338db89&amp;id=f9fe4e7482" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter-section__form" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll footer-signup-form">
+          <!-- <label for="mce-EMAIL" id="newsletter-label"></label> -->
+          <input type="text" value="" name="NAME" class="required newsletter-section__input" id="mce-NAME" placeholder="Name" required>
+          <input type="email" value="" name="EMAIL" class="required newsletter-section__input" id="mce-EMAIL" placeholder="Email address" required>
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input type="text" name="b_61b0eb7c87d55915b6338db89_f9fe4e7482" tabindex="-1" value="">
+          </div>
+          <div class="clear">
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-newsletter">
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<script type="text/javascript">
+
+  const bannerSlide0 = document.querySelector('.banner__slide--0');
+  const bannerSlide1 = document.querySelector('.banner__slide--1');
+ 
+  window.setInterval(function() {
+    if(bannerSlide0.classList.contains('active')) {
+      bannerSlide0.classList.remove('active');
+      bannerSlide1.classList.add('active');
+    } else if(bannerSlide1.classList.contains('active')) {
+      bannerSlide0.classList.add('active');
+      bannerSlide1.classList.remove('active');
+    }
+  }, 4000);
+  
+</script>
+
+<!-- <div class="home-page banner-section">
   <div class="banner-content row">
     <div class="navigation col-sm-12 col-md-6 col-lg-6">
       <h1 id="home-title" class="pt-1"><%= t('.header.header_html') %></h1>
@@ -14,9 +225,9 @@
       </video>
     </div>
   </div>
-</div>
+</div> -->
 <!-- How it works section -->
-<div class="how-it-works-section">
+<!-- <div class="how-it-works-section">
   <h2 class="text-center"><%= t('.how_it_works.title') %></h2>
   <div class="row">
     <div class="col-sm-12 col-lg-4 text-center">
@@ -41,9 +252,9 @@
       <p><%= t('.how_it_works.third_explanation') %></p>
     </div>
   </div>
-</div>
+</div> -->
 <!-- all classes live -->
-<div class="description-section" id="clay-background-section">
+<!-- <div class="description-section" id="clay-background-section">
   <div class="row pb-5 classes-focus-section">
     <div class="home-info-section col-sm-12 col-md-12 col-lg-7">
       <%= link_to sports_classes_path do %>
@@ -59,9 +270,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- interactive section -->
-<div class="description-section" id="grey-background-section">
+<!-- <div class="description-section" id="grey-background-section">
   <div class="row py-5 classes-focus-section">
     <div class="punchliner-left col-sm-12 col-md-12 col-lg-5 py-3">
       <h2 class="mt-5"><%= t('.interactive_section.title') %></h2>
@@ -77,9 +288,9 @@
       <% end %>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Sport Categories section -->
-<div class="container sport-category-section">
+<!-- <div class="container sport-category-section">
   <div class="row py-5 classes-focus-section">
     <div class="col-sm-12 col-md-12 col-lg-12 py-3 text-center">
       <h2><%= t('.categories_section.title') %></h2>
@@ -126,9 +337,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!--You're a trainer section -->
-<div class="description-section" id="peach-background-section">
+<!-- <div class="description-section" id="peach-background-section">
   <div class="row py-5 classes-focus-section">
     <div class="home-info-section col-sm-12 col-md-12 col-lg-7">
       <%= link_to new_trainer_path do %>
@@ -143,4 +354,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

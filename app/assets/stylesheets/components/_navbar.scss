@@ -1,27 +1,83 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-  height: 54px;
+  background: $white;
+  padding: 1rem 2rem;
+  height: 90px;
   position: fixed;
   width: 100%;
   z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
 }
 
-@media(max-width: 575px) {
+// LANGUAGE LINKS
+.nav-lang {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-small) {
+    margin-bottom: 20px !important;
+  }
+    
+}
+
+.nav-link-lang {
+  display: block;
+  padding: 10px 12px;
+  background-color: $light-gray;
+  font-size: 12px;
+  line-height: 10px;
+  border-radius: 10px;
+  color: #000;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.nav-link-english {
+  background-color: $yance-yellow;
+  margin-right: -13px;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.nav-link-english.switch {
+  padding-right: 30px;
+  background-color: $light-gray;
+  z-index: 0;
+  transition: all 0.2s;
+}
+
+.nav-link-german {
+  padding-left: 20px;
+  transition: all 0.2s;
+}
+
+.nav-link-german.switch {
+  padding-left: 10px;
+  background-color: $yance-yellow;
+  z-index: 10;
+  margin-left: -13px;
+  transition: all 0.2s;
+}
+
+@media only screen and (max-width: $bp-small) {
   .navbar-lewagon {
-    height: 64px;
+    // height: 64px;
   }
 
   .navbar-toggler {
-    padding: 0.5rem 2rem 2.0rem 2.3rem;
+    // padding: 0.5rem 2rem 2rem 2.3rem;
   }
 
-  .mr-auto {
-    text-align: center;
-    background-color: rgb(250, 250, 250);
+  .navbar-nav {
+    background-color: $white;
     height: 100vh;
-    padding-top: 200px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-left: -32px;
   }
 }
 
@@ -34,9 +90,9 @@
   margin-top: -8px;
 }
 
-@media(max-width: 575px) {
+@media (max-width: 575px) {
   .navbar-lewagon .navbar-brand img {
-    margin-top: -18px;
+    // margin-top: -18px;
   }
 }
 
@@ -51,15 +107,15 @@
 }
 
 #nav-credits {
- margin: 0;
- font-weight: bolder;
+  margin: 0;
+  font-weight: bolder;
 }
 
 #navbarLogoAndName {
   flex-grow: 0;
 }
 
-#nav-statement{
+#nav-statement {
   position: absolute;
   left: 14%;
   top: 31%;
@@ -73,14 +129,38 @@
   color: rgba(0, 0, 0, 0.8);
 }
 
+// marys changes 
+.navbar-nav {
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0 .5rem;
+}
+
 .nav-link {
+  padding-left: 0rem !important;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+
   &:hover {
-    border: none;
-    border-bottom: 3px solid #555555 !important;
-    background-color: transparent !important;
+    // border: none;
+    // border-bottom: 3px solid #555555 !important;
+    // background-color: transparent !important;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 16px;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 20px;
   }
 }
-@media(max-width: 575px) {
+
+@media (max-width: 575px) {
   .nav-link {
     margin-bottom: 12px;
     font-weight: bold;
@@ -110,10 +190,10 @@
   left: 430px;
   font-size: 15px;
   color: black;
-   &:hover {
+  &:hover {
     color: black;
     text-decoration: none;
-   }
+  }
 }
 
 .dropdown-menu-right {
@@ -123,6 +203,7 @@
 }
 
 .dropdown-item {
+  font-size: 14px;
   &:hover {
     background-color: rgba(254, 223, 68, 0.2);
   }
@@ -146,21 +227,21 @@
 
 #language-dropdown {
   min-width: 72px;
-  left: -30%;
+  left: -50%;
 }
 
 .fa-language {
-  font-size: 26px;
+  font-size: 22px;
   color: $dark-text;
   padding-top: 7px;
   margin-left: 8px;
-
 }
 
 .fa-globe {
-  font-size: 26px;
+  font-size: 22px;
   color: $dark-text;
   padding-top: 7px;
   margin-left: 8px;
-
 }
+
+

@@ -315,18 +315,44 @@ de:
         payout: "Wir zahlen unseren Trainern ein Minimum von 15€ pro Kurs. Liegt die Teilnehmerzahl des Kurses über 15, zahlen wir darüber hinaus 1€ pro zusätzlichen Teilnehmer."
     home:
       header:
-        header_html: "Unbegrenzte <i class='highlighted-yellow'>Live-</i> Fitnesskurse - von Zuhause"
+        header_start_html: "Unbegrenzte"
+        span_html: "live"
+        header_end_html: "von Zuhause"
         punchline: "Mit nur einer Mitgliedschaft unbegrenzten Zugang zu Livekursen von unabhängigen Trainern weltweit erhalten!"
         join_now_html: "Starte jetzt deine kostenlose 14-Tage Testphase. Danach nur <i class='highlighted-yellow'>€26.99/Monat</i>"
         button: "Kostenlos anmelden"
       how_it_works:
-        title: "Wie funktioniert yance"
+        title: "Warum Yance?"
         first: "Finde deinen Kurs"
         first_explanation: "Durchsuche unser wachsendes Angebot an Kursen auf unserer Plattform"
         second: "Buche deinen Kurs"
         second_explanation: "Buche den Kurs an dem du gerne teilnehmen möchtest. Dieser Kurs wird zu deinem Profil hinzugefügt. "
         third: "Nimm an deinen Kursen teil. Live!"
         third_explanation: "Logge dich zu der Uhrzeit deines Kurses ein und klicke auf “Livestream starten!"
+      sportsclasses_section: 
+        title: "Our Classes"
+        first_heading: "Strength"
+        first_paragraph: "Stay strong with our training and conditioning classes."
+        second_heading: "Yoga"
+        second_paragraph: "Find your inner flow with our vast selection of practices."
+        third_heading: "Full Body"
+        third_paragraph: "Movement with a focus on your breathing and core balance."
+        fourth_heading: "More"
+        fourth_paragraph: "Explore our wide range of classes to find your perfect fit."
+        visit: "Explore classes"
+      trainer_section:
+        title: "Sind Sie ein Trainer?"
+        first_heading: "Grow your following."
+        first_paragraph: "Cultivate your audience with our growing network of fitness enthusiasts."
+        second_heading: "Flexible booking"
+        second_paragraph: "Schedule your courses where and when you want."
+        third_heading: "Quick & direct payments"
+        third_paragraph: "Get paid swiftly and securely - without the bureacracy. "
+        give_classes: "Trainer Sign up"
+      newsletter_section: 
+        title: "Subscribe for special offers, fitness tips, and community news."
+        subtitle: "Join our newsletter"
+        subscribe: "Subscribe"
       live_section:
         title: "Alle Kurse live"
         description: "Vergiss unpersönlich aufgenommene Videos und genieß unsere einzigartigen interaktiven Livekurse. Alle Kurse werden live und direkt auf yance übertragen. Keine versteckten Kosten durch zusätzliche Programme."
@@ -346,10 +372,10 @@ de:
         fourth: "Stretching"
         sign_up: "Jetzt registrieren"
         visit: "Plattform ansehen"
-      trainer_section:
-        title: "Willst du auf yance Kurse geben?"
-        description: "yance is offen für Trainer! Registriere dich, klicke auf “Trainer werden”, erstelle ein Profil und fang an deine Kurse zu planen. So einfach gehts!"
-        give_classes: "Erfahre, wie man Kurse gibt"
+      # trainer_section:
+      #   title: "Willst du auf yance Kurse geben?"
+      #   description: "yance is offen für Trainer! Registriere dich, klicke auf “Trainer werden”, erstelle ein Profil und fang an deine Kurse zu planen. So einfach gehts!"
+      #   give_classes: "Erfahre, wie man Kurse gibt"
     policy:
       tabs:
         terms_tab: "Allgemeine Geschäftsbedingungen"

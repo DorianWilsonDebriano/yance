@@ -35,6 +35,7 @@ LocalTime.start();
 import { previewImageOnFileSelect } from "../components/photo_preview";
 import { initStarRating } from "../plugins/init_star_rating";
 import { init_popover } from "../components/popover";
+import "../components/home_page";
 
 // for confirmations
 // import { initSweetalert } from "../plugins/init_sweetalert";
@@ -47,6 +48,8 @@ document.addEventListener("turbolinks:load", () => {
   initStarRating();
   previewImageOnFileSelect();
   init_popover();
+
+
 
   flatpickr(".datepicker", {
     altInput: true,

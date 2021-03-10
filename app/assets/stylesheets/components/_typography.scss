@@ -1,0 +1,78 @@
+.heading--primary {
+	padding: 0px 10px;
+	color: $text-white;
+	font-weight: bold;
+	font-size: 60px;
+	line-height: 75px;
+	letter-spacing: 0.05em;
+
+	@media only screen and (max-width: $bp-medium) {
+		font-size: 48px;
+		line-height: 50px;
+	}
+
+	@media only screen and (max-width: $bp-smallest) {
+		font-size: 30px;
+		line-height: 30px;
+	}
+
+	&__highlight{
+		color: $yance-yellow;
+	}
+
+	&__subtitle {
+		padding: 0px 10px;
+		color: $text-white;
+		font-size: 28px;
+		line-height: 42px;
+
+		@media only screen and (max-width: $bp-medium) {
+			font-size: 24px;
+			line-height: 35px;
+			margin-bottom: 30px;
+		}
+
+		@media only screen and (max-width: $bp-smallest) {
+			font-size: 20px;
+		}
+
+	}
+}
+
+.heading--secondary {
+	font-weight: 700;
+	font-size: 44px;
+	line-height: 56px;
+	letter-spacing: 0.1em;
+	margin-bottom: 30px;
+	color: $black;
+
+	@media only screen and (max-width: $bp-medium) {
+		font-size: 36px;
+	}
+}
+
+.heading--tertiary {
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 42px;
+	margin-bottom: 15px;
+	color: $black;
+}
+
+.heading--tertiary-dark {
+	color: $text-darkish;
+}
+
+.paragraph {
+	font-size: 22px;
+	line-height: 28px;
+	color: #8B8B8B;
+	margin-bottom: 36px;
+}
+
+.paragraph-dark {
+	font-size: 22px;
+	color: $text-darkish
+}
+
