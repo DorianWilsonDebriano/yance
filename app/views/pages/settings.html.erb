@@ -40,27 +40,4 @@
       <li><%= t(".about.bio_html", bio: current_user.bio) %> </li>
     </div>
   </div>
-  <div class="invoicing-container d-flex container">
-     <div class="invoicing-info  row">
-      <div class="col-sm">
-        <p><%= t(".invoicing.title") %></p>
-        <li><%= t(".invoicing.value_html") %>
-        <!-- 
-        # Get all classes given by the trainer on the past month
-        # Check if the class had users / memberships >= 15
-        # Calculate how many users / memberships in a class
-          # Case >= 15, pay 1 euro per user
-          # Case < 15, pay 0
-          -->
-        </li>
-        <br>
-        <%= mail_to "invoice@yancesports.com", t(".invoicing.send_invoice"), class: "btn black-return-button class-info-link" %> 
-      </div>
-      <div class="yance-billing-info col-sm">
-        <p>Yance UG</p>
-        <p>Friedrich Ebert Strasse 82</p>
-        <p>04109 Leipzig, Germany</p>
-      </div>
-    </div>
-  </div>
 </div>

@@ -6,8 +6,8 @@ class TrainersController < ApplicationController
     authorize @trainer
     @reviews = @trainer.reviews
     @review = Review.new
-    start_range = Time.zone.now.in_time_zone(Time.now.zone) - 30.minutes
-    end_range = Time.zone.now.in_time_zone(Time.now.zone).advance(days: 30)
+    start_range = Time.zone.now - 30.minutes
+    end_range = Time.zone.now.advance(days: 30)
     @trainer_classes = @trainer.sports_classes
       .where(date_time: Range.new(start_range, end_range))
       .order(date_time: :asc)
