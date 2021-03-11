@@ -9,10 +9,16 @@
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-bottom: 3%;
     padding: 16px;
     background-color: rgba(196, 196, 196, 0.1);
     border-radius: 16px;
+  }
+  form {
+    margin: 2% 3% 0 3%;
+    .form-control {
+      height: 8vh;
+      border-radius: 8px;
+    }
   }
 }
 
