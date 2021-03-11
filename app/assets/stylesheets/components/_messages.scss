@@ -10,32 +10,26 @@
   display: flex;
   justify-content: end;
   flex-direction: column;
-  align-items: flex-end;
-}
-
-.not-current-user-message-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  padding: 16px 12px;
 }
 
 .message-paragraph {
-  background-color: rgb(234, 237, 242);
   border-radius: 32px;
-  padding: 1.5%;
-  margin: 2% 0;
   p {
     margin: 0;
+    font-size: 1.2rem;
   }
 }
 
 .user-avatar {
   margin: 0 0.5%;
+  height: 60px;
+  width: 60px;
 }
 
 .current-user-messenger {
-  background-color: rgb(252, 240, 181);
+    width: 50%;
+    padding-left: 6%;
   p {
     text-align: left;
   }
@@ -47,9 +41,12 @@
 
 .current-user-author {
   width: 90%;
-}
-
-.author {
-  width: 90%;
+  padding-top: 1.5%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-style: normal;
+  small {
+    color: gray;
+  }
 }
 
